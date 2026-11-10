@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>হিফজ মোবাইল — Whisper গতি পরীক্ষা</title>
+<script src="coi-serviceworker.js"></script>
+<style>
+  :root { --teal: #0f766e; --bg: #f3f8f7; --card: #fff; --ink: #1f2937; --mute: #6b7280; --line: #e5e7eb;
+          --ok: #15803d; --warn: #b45309; --bad: #b91c1c; }
+  @media (prefers-color-scheme: dark) {
+    :root { --teal: #2dd4bf; --bg: #0b1514; --card: #13201f; --ink: #e5e7eb; --mute: #9ca3af; --line: #26403d;
+            --ok: #4ade80; --warn: #fbbf24; --bad: #f87171; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, "Noto Sans Bengali", sans-serif; background: var(--bg); color: var(--ink); }
+  main { max-width: 640px; margin: 0 auto; padding: 14px; }
+  h1 { font-size: 1.25rem; margin: 6px 0 2px; color: var(--teal); }
+  .sub { margin: 0 0 10px; color: var(--mute); font-size: .88rem; }
+  .card { background: var(--card); border-radius: 12px; padding: 12px 14px; margin: 10px 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  select, button { font: inherit; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--line);
+                   background: var(--card); color: var(--ink); }
+  #rec { flex: 1; min-width: 170px; background: var(--teal); color: #fff; border: none; font-weight: 600; font-size: 1.05rem; }
+  #rec.on { background: var(--bad); }
+  button:disabled, select:disabled, input:disabled { opacity: .5; }
+  #device { font-size: .85rem; line-height: 1.7; }
+  .note { color: var(--mute); font-size: .8rem; line-height: 1.5; }
+  .bar { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin-top: 8px; }
+  .bar > i { display: block; height: 100%; width: 0; background: var(--teal); transition: width .2s; }
+  #verdict { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+  .ok { color: var(--ok); } .warn { color: var(--warn); } .bad { color: var(--bad); }
+  table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+  th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--mute); font-weight: 600; }
+  .ar { font-family: "Noto Naskh Arabic", "Amiri", "Scheherazade New", serif; font-size: 1.35rem; line-height: 2;
+        direction: rtl; text-align: right; margin: 4px 0; }
+  details { margin-top: 8px; } summary { cursor: pointer; color: var(--teal); font-size: .9rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>হিফজ মোবাইল — Whisper গতি পরীক্ষা</h1>
+  <p class="sub">Tarteel Whisper মডেল ফোনের ব্রাউজারেই চলে। সার্ভার নেই, অডিও ফোনের বাইরে যায় না।
+    <a href="./">← নতুন streaming পরীক্ষা</a></p>
+
+  <div class="card" id="device">ডিভাইস দেখা হচ্ছে…</div>
+
+  <div class="card">
+    <div class="row">
+      <select id="model">
+        <option value="whisper-tiny-ar-quran">tiny — ছোট, দ্রুত</option>
+        <option value="whisper-base-ar-quran">base — বড়, বেশি নির্ভুল</option>
+      </select>
+      <button id="rec" disabled>● রেকর্ড শুরু</button>
+    </div>
+    <p class="note">রেকর্ড চাপো → সূরা ইখলাস পড়ো → থামাও। তারপর পেজ নিজেই প্রতিটা পদ্ধতিতে (GPU, CPU)
+      পুরো রেকর্ডিং আর ৫ সেকেন্ডের টুকরোগুলো পড়ে সময় মাপবে। প্রথমবার মডেল নামবে
+      (tiny ~১২০ MB, base ~২২০ MB — Wi-Fi-তে খোলো), পরের বার ক্যাশ থেকে। শেষ না হওয়া পর্যন্ত স্ক্রিন চালু রাখো।</p>
+    <label class="note">অথবা অডিও ফাইল দাও: <input type="file" id="file" accept="audio/*" disabled></label>
+  </div>
+
+  <div class="card" id="statusCard" hidden>
+    <div id="status"></div>
+    <div class="bar"><i id="barFill"></i></div>
+  </div>
+
+  <div class="card" id="resultCard" hidden>
+    <div id="verdict"></div>
+    <table id="table"></table>
+    <div id="texts"></div>
+    <div class="row" style="margin-top:12px">
+      <button id="copy">ফল কপি করো</button><span id="copied" class="note"></span>
+    </div>
+    <p class="note">কপি করে Claude-কে পাঠাও। "৫ সে." = ৫ সেকেন্ডের অডিও থেকে লেখা পেতে কত সময় (মধ্যমা);
+      ১.৫ সেকেন্ডের মধ্যে হলে live হিফজ মোড চলবে।</p>
+  </div>
+</main>
+<script type="module" src="whisper.js"></script>
+</body>
+</html>
