@@ -1,90 +1,69 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="bn">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>হিফজ মোবাইল — streaming পরীক্ষা</title>
-<script src="coi-serviceworker.js"></script>
-<style>
-  :root { --teal: #0f766e; --bg: #f3f8f7; --card: #fff; --ink: #1f2937; --mute: #6b7280; --line: #e5e7eb;
-          --ok: #15803d; --warn: #b45309; --bad: #b91c1c; }
-  @media (prefers-color-scheme: dark) {
-    :root { --teal: #2dd4bf; --bg: #0b1514; --card: #13201f; --ink: #e5e7eb; --mute: #9ca3af; --line: #26403d;
-            --ok: #4ade80; --warn: #fbbf24; --bad: #f87171; }
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; font-family: system-ui, "Noto Sans Bengali", sans-serif; background: var(--bg); color: var(--ink); }
-  main { max-width: 640px; margin: 0 auto; padding: 14px; }
-  h1 { font-size: 1.25rem; margin: 6px 0 2px; color: var(--teal); }
-  a { color: var(--teal); }
-  .sub { margin: 0 0 10px; color: var(--mute); font-size: .88rem; }
-  .card { background: var(--card); border-radius: 12px; padding: 12px 14px; margin: 10px 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
-  .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-  button { font: inherit; padding: 10px 14px; border-radius: 10px; border: 1px solid var(--line);
-           background: var(--card); color: var(--ink); }
-  #rec { width: 100%; background: var(--teal); color: #fff; border: none; font-weight: 600; font-size: 1.05rem; }
-  #rec.on { background: var(--bad); }
-  button:disabled, input:disabled { opacity: .5; }
-  #device { font-size: .85rem; line-height: 1.7; }
-  .note { color: var(--mute); font-size: .8rem; line-height: 1.5; }
-  .bar { height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; margin-top: 8px; }
-  .bar > i { display: block; height: 100%; width: 0; background: var(--teal); transition: width .2s; }
-  #verdict { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
-  .ok { color: var(--ok); } .warn { color: var(--warn); } .bad { color: var(--bad); }
-  table { width: 100%; border-collapse: collapse; font-size: .85rem; }
-  th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { color: var(--mute); font-weight: 600; width: 46%; }
-  .ar { font-family: "Noto Naskh Arabic", "Amiri", "Scheherazade New", serif; font-size: 1.35rem; line-height: 2;
-        direction: rtl; text-align: right; margin: 4px 0; overflow-wrap: anywhere; }
-  #liveText { min-height: 2.7rem; max-height: 11rem; overflow-y: auto; }
-  #lag { margin-left: auto; }
-  #ikhlas { margin-top: 10px; }
-  details { margin-top: 8px; } summary { cursor: pointer; color: var(--teal); font-size: .9rem; }
-</style>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d9488">
+<title>হিফজ সহায়ক</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="app/icon-192.png">
+<link rel="apple-touch-icon" href="app/icon-192.png">
+<link rel="stylesheet" href="app/style.css">
 </head>
 <body>
-<main>
-  <h1>হিফজ মোবাইল — streaming পরীক্ষা</h1>
-  <p class="sub">কুরআনের streaming মডেল ফোনের ব্রাউজারেই চলে: পড়ার সাথে সাথে ধ্বনি লেখা হয়।
-    সার্ভার নেই, অডিও ফোনের বাইরে যায় না।</p>
-
-  <div class="card" id="device">ডিভাইস দেখা হচ্ছে…</div>
-
-  <div class="card">
-    <button id="rec" disabled>● রেকর্ড শুরু</button>
-    <p class="note">মডেল তৈরি হলে রেকর্ড চাপো → সূরা ইখলাস পড়ো → থামাও। পড়ার সময়ই নিচে ধ্বনি আসবে;
-      থামানোর পর পেজ নিজেই গতি মাপবে। প্রথমবার মডেল নামবে (~৭৩ MB — Wi-Fi-তে খোলো), পরের বার ক্যাশ থেকে।
-      শেষ না হওয়া পর্যন্ত স্ক্রিন চালু রাখো।</p>
-    <label class="note">অথবা অডিও ফাইল দাও: <input type="file" id="file" accept="audio/*" disabled></label>
+<div id="app">
+  <div class="hz-hero">
+    <div class="hz-hero-ico" id="hero-ico"></div>
+    <div><div class="hz-hero-title">হিফজ সহায়ক</div>
+    <div class="hz-hero-sub">মুখস্থ তিলাওয়াত শুনে সাথে সাথে ভুল ধরিয়ে দেয় · কোথায় বারবার আটকাও তা মনে রাখে</div></div>
+    <div class="hz-hero-tools"><button class="hz-mini" id="theme-btn" aria-label="রং বদলাও" data-tip="দিন / রাতের রং"></button></div>
+  </div>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" id="tab-recite" aria-selected="true" aria-controls="panel-recite"></button>
+    <button class="tab" role="tab" id="tab-progress" aria-selected="false" aria-controls="panel-progress"></button>
   </div>
 
-  <div class="card">
-    <div id="status">শুরু হচ্ছে…</div>
-    <div class="bar"><i id="barFill"></i></div>
-  </div>
-
-  <div class="card" id="liveCard" hidden>
-    <div class="row"><b>লাইভ ধ্বনি</b><span id="lag" class="note"></span></div>
-    <p class="ar" id="liveText"></p>
-  </div>
-
-  <div class="card" id="resultCard" hidden>
-    <div id="verdict"></div>
-    <table id="table"></table>
-    <div id="ikhlas"></div>
-    <div id="texts"></div>
-    <div class="row" style="margin-top:12px">
-      <button id="copy">ফল কপি করো</button><span id="copied" class="note"></span>
+  <section class="panel" id="panel-recite" role="tabpanel">
+    <div class="hz-modelcard" id="modelcard"><div id="modeltext">মডেল তৈরি হচ্ছে…</div><div class="hz-progressbar"><i id="modelbar"></i></div></div>
+    <div id="hz-settings">
+      <label>সূরা<select id="s-surah"></select></label>
+      <label id="l-first" hidden>আয়াত থেকে<input id="s-first" type="number" min="1" inputmode="numeric"></label>
+      <label id="l-last" hidden>আয়াত পর্যন্ত<input id="s-last" type="number" min="1" inputmode="numeric"></label>
+      <label>থামলে আলাফাসি পড়া শুরু করবেন<select id="s-wait"></select><small>কত সেকেন্ড চুপ থাকলে</small></label>
     </div>
-    <p class="note">কপি করে Claude-কে পাঠাও। RTF = ১ সেকেন্ডের অডিও পড়তে মডেলের কত সেকেন্ড লাগে;
-      ০.৫-এর নিচে হলে live হিফজ মোড চলবে।</p>
-  </div>
+    <details class="help"><summary>কীভাবে ব্যবহার করবে</summary><ul id="help"></ul></details>
+    <div id="hz-live" class="card"></div>
+    <div class="hz-final" id="hz-final"></div>
+    <div class="hz-footer" id="footer"></div>
+  </section>
 
-  <p class="note">স্বয়ংক্রিয় চেক ভুল হতে পারে। এটা শিক্ষকের বিকল্প নয়, কোনো ধর্মীয় রায়ও নয়।<br>
-    মডেল: <a href="https://huggingface.co/Quran-Lab/zipformer_p-arabic-v3">Quran-Lab zipformer_p-arabic-v3.1</a>,
-    <a href="models/zipformer-quran-v3.1/LICENSE">NPL-1.2 লাইসেন্স</a> (বিনামূল্যে, বিক্রির জন্য নয়) ·
-    <a href="whisper.html">পুরনো Whisper পরীক্ষা</a></p>
-</main>
-<script type="module" src="stream.js"></script>
+  <section class="panel" id="panel-progress" role="tabpanel" hidden>
+    <div id="hp-overview" class="card"></div>
+    <div id="hp-weak-box" class="card" style="margin-top:12px">
+      <h3>কোথায় বারবার আটকে যাও</h3>
+      <div class="hp-row"><select id="hp-surah" aria-label="সূরা বেছে নাও"></select><button class="btn btn-red" id="hp-clear-all" data-tip="এই সূরার সব লাল দাগ মুছে দাও (আগে জিজ্ঞেস করবে)">সব দাগ মুছে দাও</button></div>
+      <div id="hp-weak"></div>
+    </div>
+    <div class="hp-actions">
+      <button class="btn" id="btn-export">ডেটা ফাইলে সরিয়ে রাখো (ব্যাকআপ)</button>
+      <button class="btn" id="btn-import">ফাইল থেকে ডেটা ফেরত আনো</button>
+      <button class="btn" id="btn-install" hidden>অ্যাপ হিসেবে যোগ করো</button>
+      <input type="file" id="file-import" accept="application/json,.json" hidden>
+    </div>
+    <div class="hz-footer" id="storage-info"></div>
+  </section>
+</div>
+
+<div id="hz-bar" role="toolbar">
+  <button class="hz-rec" id="rec" disabled aria-label="রেকর্ড" data-tip="রেকর্ড শুরু — পড়া শুরু করো"></button>
+  <div class="hz-tools">
+    <button class="hz-tool hz-t-pause" id="hz-t-pause" disabled data-tip="বিরতি — যেখানে আছ সেখানেই থামবে, পরে আবার চালু করা যাবে" aria-label="বিরতি"></button>
+    <button class="hz-tool hz-t-look" id="hz-t-look" data-tip="দেখে পড়া: পুরো লেখা দেখাও" aria-label="দেখে পড়া / মুখস্থ"></button>
+    <button class="hz-tool hz-t-hint" id="hz-t-hint" data-tip="ইঙ্গিত: পরের শব্দটা দেখাও" aria-label="ইঙ্গিত"></button>
+  </div>
+  <div id="hz-status"></div>
+</div>
+<div class="hz-toast" id="toast" hidden></div>
+<script type="module" src="app/main.js"></script>
 </body>
 </html>
