@@ -29,6 +29,13 @@ export function level(r) {
   return Math.max(1, Math.min(3, r.err) - r.streak);
 }
 
+// How many more right-from-memory sessions (in a row, each one a separate session) clear this word's red mark: the rule in
+// record() clears it when streak reaches CLEAR_STREAK; a mistake resets streak to 0. 0 = not red now.
+export function remainingToClear(r) {
+  if (!r || !r.err) return 0;
+  return Math.max(1, CLEAR_STREAK - (r.streak || 0));
+}
+
 const cellLevel = (score) => (!score ? 0 : score < CELL_LEVELS[0] ? 1 : score < CELL_LEVELS[1] ? 2 : 3);
 
 export function createHistory({ data = {}, persist = () => {}, now = () => new Date(), hasRecording = () => false, alafasy = null } = {}) {
@@ -161,7 +168,7 @@ export function createHistory({ data = {}, persist = () => {}, now = () => new D
     weakAttrs(surah) {
       return weakRecords(surah).map(([a, k, r]) => {
         const events = r.events ?? [];
-        const d = { wk: `${surah}:${a}:${k}`, count: r.total, last: r.last_err ?? '', kind: KINDS[events.length ? events.at(-1).kind : 'missed'] };
+        const d = { wk: `${surah}:${a}:${k}`, count: r.total, last: r.last_err ?? '', kind: KINDS[events.length ? events.at(-1).kind : 'missed'], left: remainingToClear(r), streak: r.streak || 0 };
         const place = h.placeOf(surah, a, k, r);
         if (place) {
           const span = place.ctx || place.span;

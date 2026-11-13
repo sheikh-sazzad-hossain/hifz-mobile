@@ -9,6 +9,7 @@ import * as quran from '../core/quran.js';
 import * as alafasy from '../core/alafasy.js';
 import * as indopak from '../core/indopak.js';
 import { Follower, SAMPLE_RATE } from '../core/follower.js';
+import { createTimer, formatTime } from '../core/timer.js';
 import { createHistory } from '../core/history.js';
 import { createFeedback } from '../core/feedback.js';
 import { createReview } from '../core/review.js';
@@ -149,6 +150,19 @@ function setRecButton(on) {
   for (const id of ['s-surah', 's-first', 's-last']) $(id).disabled = on;
 }
 
+// recitation timer (core/timer.js): shown from start until the next start; refreshed by rAF/interval for display only
+const timer = createTimer();
+let timerTick = null;
+function paintTimer() {
+  const el = $('hz-timer');
+  el.hidden = false;
+  el.textContent = formatTime(timer.elapsedMs());
+  el.classList.toggle('is-run', timer.running);
+  el.classList.toggle('is-paused', !timer.running && !timer.stopped);
+}
+function timerLoop() { clearInterval(timerTick); paintTimer(); if (timer.running) timerTick = setInterval(paintTimer, 250); }
+window.__timer = timer;
+
 async function start() {
   if (S.running || !S.ready) return;
   $('hz-final').innerHTML = '';
@@ -156,6 +170,7 @@ async function start() {
   fol.started = new Date();
   S.started = fol.started;
   S.lastErrors = 0; S.lastStray = null; S.lastPrompt = null;
+  timer.start(); timerLoop(); // starts the moment the button is pressed
   try {
     const fake = params.get('fakemic');
     S.mic = await openMic({
@@ -163,6 +178,7 @@ async function start() {
       fake: fake ? { url: fake, speed: Number(params.get('fakespeed')) || 1, loop: params.get('fakeloop') === '1', onEnd: () => { if (params.get('fakestop') !== '0') stop(); } } : undefined,
     });
   } catch (e) {
+    timer.stop(); timerLoop(); $('hz-timer').hidden = true;
     toast(`মাইক চালু হয়নি: ${e.message || e}`, 6000);
     return;
   }
@@ -176,6 +192,7 @@ async function start() {
 async function stop() {
   if (!S.running) return;
   S.running = false;
+  timer.stop(); timerLoop();
   const fol = S.fol;
   S.mic?.stop();
   S.mic = null;
@@ -208,8 +225,8 @@ async function stop() {
 async function togglePause() {
   const fol = S.fol;
   if (!fol || !S.running) return;
-  if (fol.paused) { S.mic?.resume(); fol.resume(S.asr); render(true); }
-  else { S.mic?.pause(); await fol.pause(S.asr); render(true); }
+  if (fol.paused) { timer.resume(); timerLoop(); S.mic?.resume(); fol.resume(S.asr); render(true); }
+  else { timer.pause(); timerLoop(); S.mic?.pause(); await fol.pause(S.asr); render(true); }
 }
 
 // ---------------------------------------------------------------- popups
@@ -222,7 +239,7 @@ function popup() {
   pop.hidden = true;
   pop.innerHTML = `<div class="hz-card"><div class="hz-card-top"></div>
     <button class="hz-x hz-tip-left" data-tip="বন্ধ করো" aria-label="বন্ধ">${ICONS.x}</button>
-    <div class="hz-card-body"><div class="hz-meta"></div>
+    <div class="hz-card-body"><div class="hz-meta"></div><div class="hz-left" hidden></div>
       <div class="hz-row"><div class="hz-row-main"><div class="hz-lbl hz-said-lbl"></div><div class="hz-ar hz-said"></div></div>
         <button class="hz-round hz-mine" aria-label="আমার পড়া শুনি">${ICONS.headphones}</button></div>
       <div class="hz-row"><div class="hz-row-main"><div class="hz-lbl">যা পড়া উচিত</div><div class="hz-ar hz-should"></div></div>
@@ -262,6 +279,14 @@ function openPopup(c) { // c: { mode: 'err' | 'wk', word, pre, post, heard, hear
   popup.current = c;
   const meta = pop.querySelector('.hz-meta');
   meta.hidden = c.mode === 'err';
+  const left = pop.querySelector('.hz-left');
+  left.hidden = !(c.mode === 'wk' && c.left > 0);
+  left.replaceChildren();
+  if (!left.hidden) {
+    left.append(part('hz-left-main', `আর ${bn(c.left)} বার না দেখে সঠিক পড়লে লাল দাগ চলে যাবে`));
+    left.append(part('hz-left-sub', (Number(c.streak) > 0 ? `এ পর্যন্ত পরপর ${bn(c.streak)} সেশন ঠিক হয়েছে। ` : '') +
+      'প্রতি সেশনে একবার গোনা হয়, পরপর হতে হবে — মাঝে ভুল বা আটকালে গোনা আবার শুরু থেকে; দেখে পড়লে গোনা হয় না।'));
+  }
   meta.textContent = c.mode === 'wk' ? `আগের সেশনে এখানে ${c.kind} — মোট ${bn(c.count)} বার, শেষবার ${c.last}` : '';
   pop.querySelector('.hz-said-lbl').textContent = c.mode === 'err' ? 'তুমি যা পড়েছ (মডেল যা শুনেছে)' : 'তখন তুমি যা পড়েছিলে (মডেল যা শুনেছিল)';
   const said = pop.querySelector('.hz-said');
@@ -294,7 +319,7 @@ function errorPopup(item) {
 
 function markPopup(mark, info) { // a word marked from earlier sessions
   openPopup({ mode: 'wk', wk: `${mark.surah}:${mark.ayah}:${mark.wi}`, word: mark.word, pre: mark.pre, post: mark.post,
-    kind: info?.kind, count: info?.count, last: info?.last ? when(info.last) : '', heard: info?.heard, heardpre: '',
+    kind: info?.kind, count: info?.count, left: info?.left, streak: info?.streak, last: info?.last ? when(info.last) : '', heard: info?.heard, heardpre: '',
     rec: info?.rec, rfrom: info?.rfrom, rto: info?.rto, src: info?.src, from: info?.from, to: info?.to });
 }
 

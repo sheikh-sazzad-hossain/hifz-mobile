@@ -317,3 +317,17 @@ details.help ul { padding-inline-start: 20px; line-height: 1.7; }
 .hz-tip-left[data-tip]:hover::after { right: 0; }
 @media (max-width: 520px) { .hz-hero { padding: 12px 14px; } .hz-hero-title { font-size: 1.35rem; } .hz-hero-ico { width: 42px; height: 42px; }
   .hz-hero-sub { display: none; } .hz-tool { width: 52px; height: 52px; } [data-tip]:hover::after { display: none; } }
+
+/* recitation timer: a pill just above the bottom bar, always visible while reciting and after stopping */
+#hz-timer { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(100px + env(safe-area-inset-bottom)); z-index: 999;
+            padding: 4px 16px; border-radius: 999px; background: var(--hz-card); border: 1px solid var(--hz-line);
+            font: 700 1.15rem/1.4 ui-monospace, Consolas, monospace; font-variant-numeric: tabular-nums; color: var(--hz-ink);
+            box-shadow: 0 4px 14px rgba(15, 23, 42, .15); white-space: nowrap; }
+#hz-timer[hidden] { display: none; }
+#hz-timer.is-paused { color: var(--hz-muted); }
+#hz-timer.is-run::before { content: ''; display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #dc2626; margin-inline-end: 8px; }
+.hz-left { margin: 4px 44px 2px 0; padding: 8px 12px; border-radius: 10px; background: #ecfdf5; color: #065f46; font-size: .95rem; line-height: 1.5; }
+.dark .hz-left { background: #052e2b; color: #a7f3d0; }
+.hz-left[hidden] { display: none; }
+.hz-left-main { display: block; font-weight: 700; }
+.hz-left-sub { display: block; font-size: .85rem; opacity: .85; }
