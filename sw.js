@@ -21,7 +21,9 @@ self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET' || (req.cache === 'only-if-cached' && req.mode !== 'same-origin')) return;
   const url = new URL(req.url);
-  if (url.origin !== location.origin) { e.respondWith(fetch(req).then(isolate)); return; }
+  // Cross-origin (Alafasy's mp3, Quran.com): not handled here at all. A response that passes through this worker
+  // is refused by the isolated page (media element "Format error"); the browser's own credentialless fetch works.
+  if (url.origin !== location.origin) return;
   e.respondWith((async () => {
     const cache = await caches.open(APP);
     const keep = async (res) => { if (res.ok && res.status === 200) await cache.put(req, res.clone()).catch(() => {}); return res; };
