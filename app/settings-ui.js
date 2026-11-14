@@ -8,8 +8,8 @@ import { bn } from '../core/bn.js';
 import { ratio } from '../core/contrast.js';
 import { resolveTheme, COLOR_KEYS } from './view.js';
 
-const COLOR_INFO = { ok: ['সঠিক', '--w-ok', 'text'], bad: ['ভুল', '--w-bad', 'text'], peek: ['উঁকি', '--w-peek', 'text'], pend: ['যাচাই হচ্ছে', '--w-pend', 'text'],
-  next: ['পরের শব্দ', '--w-next-ring', 'bg'], weak: ['পুরোনো দুর্বলতা', '--w-3', 'bg'], listen: ['শোনার আলো', '--w-listen', 'bg'] };
+const COLOR_INFO = { ok: ['--w-ok', 'text'], bad: ['--w-bad', 'text'], peek: ['--w-peek', 'text'], pend: ['--w-pend', 'text'],
+  next: ['--w-next-ring', 'bg'], weak: ['--w-3', 'bg'], listen: ['--w-listen', 'bg'] }; // the names are strings s.col.<key>
 const cssVar = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const ico = (n) => ICONS[n] ?? ICONS.sliders;
 
@@ -24,7 +24,7 @@ export function createSettingsUi({ root, settings, ctx }) {
   let opened = false;
 
   const valueLabel = (d, v) => {
-    if (d.control === 'tog') return v ? 'চালু' : 'বন্ধ';
+    if (d.control === 'tog') return t(v ? 's.on' : 's.off');
     if (d.control === 'sld') return withUnit(v, d.unit, { scale: d.scale ?? 1 }) .replace(/^(\d|[০-৯])/, '$1');
     const o = d.options?.find((x) => JSON.stringify(x.v) === JSON.stringify(v));
     return o ? (o.label ?? withUnit(o.v, d.unit)) : withUnit(v, d.unit);
@@ -71,7 +71,8 @@ export function createSettingsUi({ root, settings, ctx }) {
     const ink = cssVar('--ink');
     const style = settings.get('view.wordStyle');
     return COLOR_KEYS.map((k) => {
-      const [name, varName, kind] = COLOR_INFO[k];
+      const [varName, kind] = COLOR_INFO[k];
+      const name = t(`s.col.${k}`);
       const val = (cur[k] ?? cssVar(varName)).toUpperCase();
       const ok = /^#[0-9A-F]{6}$/.test(val);
       const r = ok ? (kind === 'text' && style === 'text' ? ratio(val, surface) : ratio(ink, val)) : 21;
@@ -133,14 +134,14 @@ export function createSettingsUi({ root, settings, ctx }) {
     const G = (id) => settings.get(id);
     const lab = (id) => valueLabel(settings.def(id), G(id));
     const s = {
-      recite: () => [`আলাফাসি ${G('recite.waitS') ? withUnit(G('recite.waitS'), 's') : 'বন্ধ'}`, G('detect.added') ? 'বাড়তি শব্দ ধরো' : 'বাড়তি শব্দ ধরা বন্ধ', ({ easy: 'সহজ', normal: 'স্বাভাবিক', strict: 'কড়া' })[settings.presetMatch('recite')] ?? t('s.presetCustom')],
-      hide: () => [lab('hide.style'), G('peek.countsAsMistake') ? 'উঁকি = ভুল' : 'উঁকি ভুল নয়'],
-      test: () => [`${lab('test.endBy')}`, `হিন্ট ${lab('test.hintWords')}`],
-      listen: () => [`গতি ${lab('listen.speed')}`, `প্রতি আয়াত ×${num(G('listen.repeatAyah'))}`],
-      goals: () => [`সপ্তাহ শুরু ${lab('goals.weekStart')}`, G('goals.countTests') ? 'টেস্টও গোনা' : 'টেস্ট গোনা নয়'],
-      history: () => [`ভালো মুখস্থ ${withUnit(G('history.good'), 'pct')}`, `পরপর ${num(G('history.clearStreak'))} সেশনে দাগ মোছে`],
-      view: () => [lab('view.theme'), `আরবি ${withUnit(G('view.arabicScale'), 'pct')}`, `নড়াচড়া ${lab('view.motion')}`],
-      device: () => [lab('device.sensitivity'), G('device.keepAwake') ? 'স্ক্রিন জ্বলে থাকবে' : 'স্ক্রিন নিজের মতো'],
+      recite: () => [t('s.sum.alafasy', { v: G('recite.waitS') ? withUnit(G('recite.waitS'), 's') : t('s.off') }), t(G('detect.added') ? 's.sum.added' : 's.sum.addedOff'), schema.presets?.recite?.items.find((i) => i.id === settings.presetMatch('recite'))?.label ?? t('s.presetCustom')],
+      hide: () => [lab('hide.style'), t(G('peek.countsAsMistake') ? 's.sum.peekMistake' : 's.sum.peekOk')],
+      test: () => [`${lab('test.endBy')}`, t('s.sum.hint', { v: lab('test.hintWords') })],
+      listen: () => [t('s.sum.speed', { v: lab('listen.speed') }), t('s.sum.perAyah', { n: num(G('listen.repeatAyah')) })],
+      goals: () => [t('s.sum.weekStart', { v: lab('goals.weekStart') }), t(G('goals.countTests') ? 's.sum.countTests' : 's.sum.noTests')],
+      history: () => [t('s.sum.good', { v: withUnit(G('history.good'), 'pct') }), t('s.sum.clear', { n: num(G('history.clearStreak')) })],
+      view: () => [lab('view.theme'), t('s.sum.arabic', { v: withUnit(G('view.arabicScale'), 'pct') }), t('s.sum.motion', { v: lab('view.motion') })],
+      device: () => [lab('device.sensitivity'), t(G('device.keepAwake') ? 's.sum.awake' : 's.sum.awakeOff')],
       adv: () => [t('s.advSummary')],
     };
     return s[g]().join(' · ');

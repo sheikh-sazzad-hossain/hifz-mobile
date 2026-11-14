@@ -4,6 +4,7 @@
 //   data = { sessions: [], weak: { "surah:ayah:wi": record }, index: { "<recording stem>": {...} } }
 import * as quran from './quran.js';
 import { bn, isoLocal, parseLocal, pyRound } from './bn.js';
+import { t } from './i18n.js';
 
 export const CLEAR_STREAK = 3; // right this many sessions in a row (without looking): the red mark goes
 export const MIN_WORDS = 3; // shorter sessions aren't kept
@@ -14,7 +15,7 @@ export const CELL_LEVELS = [3, 6]; // an ayah's weak words, levels added up: fro
 export const STRIP_CELLS = 40; // a surah's strip in the overview has at most this many cells
 export const HOT_ZONES = 3; // the weak view names this many of a surah's weakest stretches
 
-export const KINDS = { missed: 'ভুল/বাদ', hint: 'আটকে গিয়েছিলে (ইঙ্গিত)', slip: 'ভুল, পরে আবার পড়ে ঠিক করেছিলে' };
+export const KINDS = { get missed() { return t('hk.missed'); }, get hint() { return t('hk.hint'); }, get slip() { return t('hk.slip'); } }; // texts of the current language
 
 // 'error' (red, or had to be prompted/hinted, or red before the reciter went back and fixed it), 'right', or null
 function outcome(w, peekCounts = true) {
@@ -317,10 +318,10 @@ export function strip(cells, max = STRIP_CELLS) {
 }
 
 export function grade(acc, good = GOOD, fair = FAIR) {
-  if (acc === null) return { cls: 'hp-none', label: 'শুধু দেখে পড়া' };
-  if (acc >= good) return { cls: 'hp-good', label: 'ভালো মুখস্থ' };
-  if (acc >= fair) return { cls: 'hp-fair', label: 'মোটামুটি' };
-  return { cls: 'hp-weak', label: 'আরও অনুশীলন দরকার' };
+  if (acc === null) return { cls: 'hp-none', label: t('gr.none') };
+  if (acc >= good) return { cls: 'hp-good', label: t('gr.good') };
+  if (acc >= fair) return { cls: 'hp-fair', label: t('gr.fair') };
+  return { cls: 'hp-weak', label: t('gr.weak') };
 }
 
 export { bn };

@@ -15,6 +15,7 @@
     if (t === 'auto') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'paper';
     var m = v['view.motion'] || 'auto';
     if (m === 'auto') m = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'gentle' : 'full';
+    var L = v['view.lang'] || 'bn'; h.lang = L; h.dir = (L === 'ar' || L === 'ur' || L === 'fa') ? 'rtl' : 'ltr'; h.dataset.lang = L;
     h.dataset.theme = t; h.dataset.words = v['view.wordSet'] || 'default'; h.dataset.wordstyle = v['view.wordStyle'] || 'text'; h.dataset.motion = m;
     h.dataset.uifont = v['view.uiFont'] || 'app'; h.dataset.hidestyle = v['hide.style'] || 'bar';
     if (t === 'night') h.classList.add('dark');
@@ -25,9 +26,10 @@
   } catch (e) { h.classList.add('st-boot'); }
 })();
 </script>
+<script src="app/intro.js"></script>
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="app/icon-192.png">
-<link rel="apple-touch-icon" href="app/icon-192.png">
+<link rel="icon" type="image/png" href="app/icon-192.png">
+<link rel="apple-touch-icon" href="app/apple-touch-icon.png">
 <link rel="preload" href="fonts/hind-siliguri-400-bn.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="app/style.css">
 </head>
@@ -35,24 +37,24 @@
 <div id="app">
   <header class="hz-head-bar">
     <div class="hz-logo" id="hero-ico"></div>
-    <div><div class="hz-title">হিফজ সহায়ক</div>
-    <div class="hz-sub">মুখস্থ তিলাওয়াত শুনে সাথে সাথে ভুল ধরিয়ে দেয় · কোথায় বারবার আটকাও তা মনে রাখে</div></div>
+    <div><div class="hz-title" data-t="app.title">হিফজ সহায়ক</div>
+    <div class="hz-sub" data-t="a.sub">মুখস্থ তিলাওয়াত শুনে সাথে সাথে ভুল ধরিয়ে দেয় · কোথায় বারবার আটকাও তা মনে রাখে</div></div>
     <div class="hz-hero-tools">
-      <button class="hz-mini" id="theme-btn" aria-label="রং বদলাও" data-tip="রং বদলাও: কাগজ / রাতের মুসহাফ / পুরোনো কাগজ (চেপে ধরলে সব সেটিং)"></button>
-      <button class="hz-mini" id="gear-btn" aria-label="সেটিংস" data-tip="সেটিংস"></button>
+      <button class="hz-mini" id="theme-btn" aria-label="রং বদলাও" data-tip="রং বদলাও: কাগজ / রাতের মুসহাফ / পুরোনো কাগজ (চেপে ধরলে সব সেটিং)" data-t-aria="a.themeAria" data-t-tip="nav.themeTip"></button>
+      <button class="hz-mini" id="gear-btn" aria-label="সেটিংস" data-tip="সেটিংস" data-t-aria="nav.tab.settings" data-t-tip="nav.tab.settings"></button>
     </div>
   </header>
   <nav class="tabs" role="tablist" id="tabs"><i class="tab-ribbon" id="ribbon"></i></nav>
 
   <section class="panel" id="panel-recite" role="tabpanel">
-    <div class="hz-modelcard" id="modelcard"><div id="modeltext">মডেল তৈরি হচ্ছে…</div><div class="hz-progressbar"><i id="modelbar"></i></div></div>
+    <div class="hz-modelcard" id="modelcard"><div id="modeltext" data-t="a.modelBuilding">মডেল তৈরি হচ্ছে…</div><div class="hz-progressbar"><i id="modelbar"></i></div></div>
     <div id="hz-settings">
-      <label>সূরা<select id="s-surah"></select></label>
-      <label id="l-first" hidden>আয়াত থেকে<input id="s-first" type="number" min="1" inputmode="numeric"></label>
-      <label id="l-last" hidden>আয়াত পর্যন্ত<input id="s-last" type="number" min="1" inputmode="numeric"></label>
-      <label>থামলে আলাফাসি পড়া শুরু করবেন<select id="s-wait"></select><small>কত সেকেন্ড চুপ থাকলে</small></label>
+      <label><span data-t="a.lblSurah">সূরা</span><select id="s-surah"></select></label>
+      <label id="l-first" hidden><span data-t="l.from">আয়াত থেকে</span><input id="s-first" type="number" min="1" inputmode="numeric"></label>
+      <label id="l-last" hidden><span data-t="l.to">আয়াত পর্যন্ত</span><input id="s-last" type="number" min="1" inputmode="numeric"></label>
+      <label><span data-t="a.lblWait">থামলে আলাফাসি পড়া শুরু করবেন</span><select id="s-wait"></select><small data-t="a.lblWaitSub">কত সেকেন্ড চুপ থাকলে</small></label>
     </div>
-    <details class="help"><summary>কীভাবে ব্যবহার করবে</summary><ul id="help"></ul></details>
+    <details class="help"><summary data-t="a.howTo">কীভাবে ব্যবহার করবে</summary><ul id="help"></ul></details>
     <div id="hz-legend" class="hz-legend" hidden></div>
     <div id="hz-today"></div>
     <div id="hz-live" class="card"></div>
@@ -74,14 +76,14 @@
     <div id="hp-overview" class="card" style="margin-top:12px"></div>
     <div id="hp-recent" class="card" style="margin-top:12px"></div>
     <div id="hp-weak-box" class="card" style="margin-top:12px">
-      <h3>কোথায় বারবার আটকে যাও</h3>
-      <div class="hp-row"><select id="hp-surah" aria-label="সূরা বেছে নাও"></select><button class="btn btn-red" id="hp-clear-all" data-tip="এই সূরার সব লাল দাগ মুছে দাও (আগে জিজ্ঞেস করবে)">সব দাগ মুছে দাও</button></div>
+      <h3 data-t="a.weakTitle">কোথায় বারবার আটকে যাও</h3>
+      <div class="hp-row"><select id="hp-surah" aria-label="সূরা বেছে নাও" data-t-aria="a.pickSurahAria"></select><button class="btn btn-red" id="hp-clear-all" data-tip="এই সূরার সব লাল দাগ মুছে দাও (আগে জিজ্ঞেস করবে)" data-t-tip="a.clearAllTip" data-t="a.clearAll">সব দাগ মুছে দাও</button></div>
       <div id="hp-weak"></div>
     </div>
     <div class="hp-actions">
-      <button class="btn" id="btn-export">ডেটা ফাইলে সরিয়ে রাখো (ব্যাকআপ)</button>
-      <button class="btn" id="btn-import">ফাইল থেকে ডেটা ফেরত আনো</button>
-      <button class="btn" id="btn-install" hidden>অ্যাপ হিসেবে যোগ করো</button>
+      <button class="btn" id="btn-export" data-t="a.export">ডেটা ফাইলে সরিয়ে রাখো (ব্যাকআপ)</button>
+      <button class="btn" id="btn-import" data-t="a.import">ফাইল থেকে ডেটা ফেরত আনো</button>
+      <button class="btn" id="btn-install" hidden data-t="a.install">অ্যাপ হিসেবে যোগ করো</button>
       <input type="file" id="file-import" accept="application/json,.json" hidden>
     </div>
     <div class="hz-footer" id="storage-info"></div>
@@ -89,19 +91,19 @@
   </section>
 </div>
 
-<div id="st" role="dialog" aria-label="সেটিংস"></div>
-<div id="hz-timer" role="timer" aria-live="off" aria-label="তিলাওয়াতের সময়" hidden>00:00</div>
+<div id="st" role="dialog" aria-label="সেটিংস" data-t-aria="nav.tab.settings"></div>
+<div id="hz-timer" role="timer" aria-live="off" aria-label="তিলাওয়াতের সময়" data-t-aria="a.timerAria" hidden>00:00</div>
 <div id="hz-bar" role="toolbar">
-  <button class="hz-rec" id="rec" disabled aria-label="রেকর্ড" data-tip="রেকর্ড শুরু — পড়া শুরু করো"></button>
+  <button class="hz-rec" id="rec" disabled aria-label="রেকর্ড" data-tip="রেকর্ড শুরু — পড়া শুরু করো" data-t-aria="a.record" data-t-tip="a.recTip"></button>
   <div class="hz-tools">
-    <button class="hz-tool hz-t-pause" id="hz-t-pause" disabled data-tip="বিরতি — যেখানে আছ সেখানেই থামবে, পরে আবার চালু করা যাবে" aria-label="বিরতি"></button>
-    <button class="hz-tool hz-t-look" id="hz-t-look" data-tip="দেখে পড়া: পুরো লেখা দেখাও" aria-label="দেখে পড়া / মুখস্থ"></button>
-    <button class="hz-tool hz-t-next" id="hz-t-next" hidden data-tip="পরের প্রশ্ন" aria-label="পরের প্রশ্ন"></button>
-    <button class="hz-tool hz-t-hint" id="hz-t-hint" data-tip="ইঙ্গিত: পরের শব্দটা দেখাও" aria-label="ইঙ্গিত"></button>
+    <button class="hz-tool hz-t-pause" id="hz-t-pause" disabled data-tip="বিরতি — যেখানে আছ সেখানেই থামবে, পরে আবার চালু করা যাবে" aria-label="বিরতি" data-t-tip="a.pauseTip" data-t-aria="a.pauseAria"></button>
+    <button class="hz-tool hz-t-look" id="hz-t-look" data-tip="দেখে পড়া: পুরো লেখা দেখাও" aria-label="দেখে পড়া / মুখস্থ" data-t-tip="a.lookOff" data-t-aria="a.lookAria"></button>
+    <button class="hz-tool hz-t-next" id="hz-t-next" hidden data-tip="পরের প্রশ্ন" aria-label="পরের প্রশ্ন" data-t-tip="t.next" data-t-aria="t.next"></button>
+    <button class="hz-tool hz-t-hint" id="hz-t-hint" data-tip="ইঙ্গিত: পরের শব্দটা দেখাও" aria-label="ইঙ্গিত" data-t-tip="r.hintTip" data-t-aria="a.hintAria"></button>
   </div>
   <div id="hz-status" role="status" aria-live="polite"></div>
 </div>
-<div id="hz-player" role="toolbar" aria-label="শোনা" hidden></div>
+<div id="hz-player" role="toolbar" aria-label="শোনা" data-t-aria="nav.tab.listen" hidden></div>
 <div class="hz-toast" id="toast" role="status" aria-live="polite" hidden></div>
 <script type="module" src="app/main.js"></script>
 </body>

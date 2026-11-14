@@ -1,10 +1,15 @@
 // Bengali numerals and dates (history.py's bn, _when, _duration) and Python-style rounding.
-const DIGITS = '০১২৩৪৫৬৭৮৯';
+import { t, lang, digitSet, dateText } from './i18n.js';
 const MONTHS = ['জানু', 'ফেব্রু', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টে', 'অক্টো', 'নভে', 'ডিসে'];
 
-let digitsOn = true; // view.bnDigits: off gives plain 0-9
+let digitsOn = true; // view.bnDigits (Bengali only): off gives plain 0-9
 export const setDigits = (on) => { digitsOn = !!on; };
-export const bn = (x) => (digitsOn ? String(x).replace(/[0-9]/g, (d) => DIGITS[Number(d)]) : String(x));
+// the name stays `bn` (used everywhere): it writes the digits of the CURRENT language: Bengali (or 0-9 when view.bnDigits is off), Arabic-Indic for ar, Persian for fa, Latin for the rest
+export const bn = (x) => {
+  const set = digitSet(lang());
+  if (!set || (lang() === 'bn' && !digitsOn)) return String(x);
+  return String(x).replace(/[0-9]/g, (d) => set[Number(d)]);
+};
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -17,13 +22,14 @@ export const parseLocal = (iso) => new Date(iso.length === 10 ? `${iso}T00:00:00
 
 export function when(iso) {
   const d = parseLocal(iso);
+  if (lang() !== 'bn') return bn(dateText(d, { time: true }));
   return bn(`${d.getDate()} ${MONTHS[d.getMonth()]}, ${pad(d.getHours())}:${pad(d.getMinutes())}`);
 }
 
 export function duration(seconds) {
   const m = Math.floor(Math.floor(seconds) / 60);
   const s = Math.floor(seconds) % 60;
-  return m ? bn(`${m} মি ${s} সে`) : bn(`${s} সে`);
+  return m ? bn(t('fmt.durMS', { m, s })) : bn(t('fmt.durS', { s }));
 }
 
 // Python's round(x, digits): ties (only exactly representable ones) go to the even digit.
@@ -43,5 +49,6 @@ export function pyRound(x, digits = 0) {
 
 export function dateOnly(iso) { // "১৪ নভে"
   const d = parseLocal(iso);
+  if (lang() !== 'bn') return bn(dateText(d));
   return bn(`${d.getDate()} ${MONTHS[d.getMonth()]}`);
 }

@@ -64,7 +64,7 @@ export function createListenUi(ctx) {
         const hidden = mode === 'hide' || (mode === 'reveal' && !L.played.has(`${s}:${a}:${i}`));
         return `<span class="${hidden ? 'hz-hid' : ''}" data-ls="${s}" data-la="${a}" data-lu="${i}">${esc(u.text)}</span>`;
       }).join(' ');
-      return `${a === 1 ? `<div class="hz-sura"><span class="hz-sura-ar">${esc(quran.surahInfo(s).name)}</span><span class="hz-sura-bn">সূরা ${bn(s)}. ${esc(quran.surahInfo(s).english)}</span></div>` : ''}${spans} <span class="hz-end" data-ls="${s}" data-la="${a}" data-lu="-1">${esc(indopak.endMark(s, a))}</span> `;
+      return `${a === 1 ? `<div class="hz-sura"><span class="hz-sura-ar">${esc(quran.surahInfo(s).name)}</span><span class="hz-sura-bn">${esc(t('p.sura', { n: bn(s), english: quran.surahInfo(s).english }))}</span></div>` : ''}${spans} <span class="hz-end" data-ls="${s}" data-la="${a}" data-lu="-1">${esc(indopak.endMark(s, a))}</span> `;
     }).join('');
     el.innerHTML = `<div class="ls-bar card"><button class="btn" data-lb="pick">${esc(t('l.pick'))}</button><span class="hp-note">${esc(parts)}</span><button class="btn" data-lb="off">${esc(t('l.offTitle'))}</button></div>
       <div id="ls-text" class="card"><div class="hz-text" data-live="0">${text || ''}</div></div><div class="hz-footer"></div>`;
@@ -149,7 +149,7 @@ export function createListenUi(ctx) {
     L.status = 'playing';
     L.statusText = step.basmala ? '﷽' : `${t('l.playing', { a: bn(step.a), k: bn(step.k), n: bn(step.n) })}${opts().repeatRange === 0 ? ` · ${t('l.round', { r: bn(step.round) })}` : ''}`;
     if ('mediaSession' in navigator && !step.basmala) {
-      navigator.mediaSession.metadata = new MediaMetadata({ title: `${quran.surahInfo(step.s).english} · আয়াত ${bn(step.a)}`, artist: 'মিশারি রাশিদ আলাফাসি', album: 'হিফজ সহায়ক' });
+      navigator.mediaSession.metadata = new MediaMetadata({ title: `${quran.surahInfo(step.s).english} · ${t('fmt.ayah1', { a: bn(step.a) })}`, artist: t('l.artist'), album: t('app.title') });
     }
   }
 

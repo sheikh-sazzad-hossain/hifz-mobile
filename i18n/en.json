@@ -1,0 +1,1460 @@
+{
+ "strings": {
+  "intro.preparing": "Getting ready…",
+  "nav.tab.recite": "Recite",
+  "nav.tab.test": "Test",
+  "nav.tab.listen": "Listen",
+  "nav.tab.progress": "Progress",
+  "nav.tab.settings": "Settings",
+  "nav.busy": "Recording is on — stop it first (■), then go to another page.",
+  "nav.themeTip": "Change colour: Paper / Night mushaf / Old paper (hold for all settings)",
+  "s.title": "Settings",
+  "s.search": "Search settings…",
+  "s.searchEmpty": "No setting has this name.",
+  "s.back": "All settings",
+  "s.changedN": "{n} changed",
+  "s.rowReset": "Back to default",
+  "s.sectionReset": "Reset this section",
+  "s.sectionResetQ": "All settings in “{group}” will go back to their defaults. OK?",
+  "s.allReset": "Reset all settings",
+  "s.allResetQ": "All settings will go back to their defaults. Your sessions, marks, recordings, tests and goals stay as they are. OK?",
+  "s.resetDone": "Reset done.",
+  "s.export": "Save settings to a file",
+  "s.import": "Load settings from a file",
+  "s.importOk": "{n} settings loaded.",
+  "s.importSkip": "{n} settings loaded, {m} were unknown or out of range — skipped.",
+  "s.importBad": "The file could not be read: {err}",
+  "s.importWrong": "This is not a Hifz Helper settings file.",
+  "s.where": "Settings stay on this phone. To move them to another phone or computer use ‘Save settings to a file’.",
+  "s.whenNext": "Takes effect from the next session",
+  "s.whenReload": "Takes effect when the app is reopened",
+  "s.reloadNow": "Open again now",
+  "s.live": "Recording is on — takes effect after you stop",
+  "s.invalid": "This value is not allowed — kept the old one.",
+  "s.presetCustom": "Custom",
+  "s.presetApplied": "Preset “{name}” applied.",
+  "s.undo": "Undo",
+  "s.custom": "Custom…",
+  "s.advWarn": "These are the app's inner calculations. A wrong value can make mistake detection worse. If unsure, press “Reset this section”.",
+  "s.advSummary": "Inner calculations — change with care",
+  "s.contrast": "Low contrast: {r}:1 — may be hard to read (4.5:1 or more is better).",
+  "s.platOnly": "Phone only",
+  "r.listTip": "See all mistakes of this session",
+  "r.listTitle": "Mistakes of this session ({n})",
+  "r.ayahRef": "Ayah {a}",
+  "r.kind.skipped": "Skipped",
+  "r.kind.changed": "Read another word",
+  "r.kind.added": "Read an extra word",
+  "r.kind.peek": "Peek",
+  "r.listen": "Listen",
+  "r.remove": "Dismiss",
+  "r.removed": "Dismissed.",
+  "r.removedTaught": "Dismissed — reading it this way here will not be flagged again.",
+  "r.removedTitle": "Dismissed ({n})",
+  "r.restore": "Restore",
+  "r.restored": "Counted as a mistake again.",
+  "r.removeAll": "Dismiss all",
+  "r.removeAllQ": "Dismiss all mistakes of this session? You can bring them back with “Restore”.",
+  "r.empty": "No mistakes yet.",
+  "r.hintTip": "Hint: show the next word (hold for the rest of the ayah)",
+  "r.blockBanner": "Read the red word correctly — then you can move on.",
+  "r.lg.ok": "Correct",
+  "r.lg.bad": "Wrong/skipped",
+  "r.lg.peek": "Hint/peek",
+  "r.lg.pend": "Checking",
+  "r.lg.next": "Current word",
+  "r.lg.weak": "Earlier weakness",
+  "r.lg.given": "Hint",
+  "r.menu.listen": "Listen from here",
+  "r.menu.test": "Test from here",
+  "h.times": "Recited {t} times in total, {e} of them wrong",
+  "r.help.list": "Press the <b>Wrong/skipped</b> counter above to see all mistakes of this session at once; <b>Dismiss</b> one that was not a mistake, <b>Restore</b> it if needed.",
+  "r.help.hint": "Hold the hint button to open the rest of the ayah.",
+  "t.setupTitle": "What do you want to test?",
+  "t.suggested": "Suggested for you",
+  "t.myRanges": "My ranges",
+  "t.myMemorized": "My memorised",
+  "t.newRange": "Make a new range",
+  "t.noMemorized": "Nothing is marked as memorised yet",
+  "t.rename": "Rename",
+  "t.delete": "Delete",
+  "t.up": "Up",
+  "t.down": "Down",
+  "t.deleteQ": "Delete the range “{name}”? (Old test results stay)",
+  "t.rangeSummary": "Selected: {name} · {n} ayahs",
+  "t.rules": "{q} questions · {w} words each · hint {h} words",
+  "t.changeRules": "Change rules",
+  "t.temporary": "Temporary (nothing is saved)",
+  "t.start": "Start test",
+  "t.emptyRange": "The range has no ayahs",
+  "t.modelWait": "Preparing the model…",
+  "t.starterTitle": "To get started",
+  "t.starterBody": "End of juz 30: surah {a} to surah {b}",
+  "t.markMemorized": "Mark as memorised",
+  "t.resumeQ": "The last test was not finished ({i} / {n} questions). Continue?",
+  "t.resume": "Continue",
+  "t.seeResults": "See results",
+  "t.discard": "Discard",
+  "t.introTitle": "How the test works",
+  "t.intro1": "Each question shows the first few words — recite the rest without looking.",
+  "t.intro2": "Correct words open; at the end the card turns green (flawless) or red (had mistakes).",
+  "t.intro3": "If you get stuck: “next word” or “rest of the ayah” — peeking counts as a mistake.",
+  "t.intro4": "Swipe the card aside or press “Next question” to skip the question.",
+  "t.intro5": "Everything works on the phone, no internet needed.",
+  "t.introOk": "Got it",
+  "t.go": "Go!",
+  "t.ref": "Surah {n}. {english} · {span}",
+  "t.refHidden": "Surah and ayah hidden",
+  "t.eyeTip": "Show / hide surah and ayah number",
+  "t.listening": "Listening… recite from after the hint",
+  "t.checking": "Checking…",
+  "t.peekWord": "Next word",
+  "t.peekRest": "Rest of the ayah",
+  "t.next": "Next question",
+  "t.pass": "Flawless!",
+  "t.failN": "{m} mistakes",
+  "t.skipped": "Skipped",
+  "t.kind.stray": "You went to another surah",
+  "t.timeUp": "Time is up — finish this question",
+  "t.qOfN": "Question {i} / {n}",
+  "t.qTime": "Question {i} · {mm:ss} left",
+  "t.qOpen": "Question {i}",
+  "t.mistakesN": "Mistakes {m}",
+  "t.score": "Score {p}%",
+  "t.streak": "Streak {s}",
+  "t.paused": "Paused — the test is on hold. Press “Continue” to listen from the same question.",
+  "t.continue": "Continue",
+  "t.end": "Finish",
+  "t.autoPaused": "Silent for a long time — the test was paused.",
+  "t.resTitle": "Test result",
+  "t.tempLabel": "Temporary test — nothing was saved",
+  "t.resScore": "{p}%",
+  "t.resCorrect": "Correct {c} / {n}",
+  "t.resBest": "Longest streak: {s}",
+  "t.resTime": "Time: {time}",
+  "t.resAll": "All mistakes ({n})",
+  "t.resRemoved": "Dismissed mistakes ({n})",
+  "t.resNone": "No mistakes — mashaAllah!",
+  "t.keepGoing": "Recite more",
+  "t.done": "Done",
+  "t.replay": "Same test again",
+  "t.newTest": "New test",
+  "t.saveThis": "Keep this range",
+  "t.sg.warmup.name": "Warm-up",
+  "t.sg.warmup.sub": "What you do best",
+  "t.sg.weak.name": "Weak places",
+  "t.sg.weak.sub": "Where you make the most mistakes",
+  "t.sg.stale.name": "Not recited for long",
+  "t.sg.stale.sub": "Not recited from memory for a long time",
+  "t.sg.fresh.name": "Newly memorised",
+  "t.sg.fresh.sub": "Added to the memorised list in the last 14 days",
+  "t.sg.mixed.name": "Mixed",
+  "t.sg.mixed.sub": "From your whole memorised list",
+  "l.from": "From ayah",
+  "l.to": "To ayah",
+  "l.pick": "Choose by juz or page",
+  "l.speedChip": "{x}×",
+  "l.ayahChip": "Ayah ×{n}",
+  "l.rangeChip": "Part ×{n}",
+  "l.rangeChipInf": "Part ∞",
+  "l.gapChip": "Gap {s} s",
+  "l.sleepChip": "Sleep {m} min",
+  "l.play": "Play",
+  "l.pause": "Pause",
+  "l.prev": "Previous ayah",
+  "l.next": "Next ayah",
+  "l.idle": "Choose what to listen to and press ▶.",
+  "l.loading": "Loading audio…",
+  "l.playing": "Ayah {a} · {k} / {n} times",
+  "l.round": "Round {r}",
+  "l.gap": "Gap… {s}",
+  "l.pausedS": "Paused",
+  "l.ended": "Finished.",
+  "l.again": "Play again",
+  "l.error": "The audio could not be played — are you online? To listen offline, download the surah first.",
+  "l.offline": "Available offline",
+  "l.online": "Needs internet — download it",
+  "l.slept": "Sleep timer — listening stopped.",
+  "l.offTitle": "Offline audio",
+  "l.offRow": "{n}. {english} — {size}",
+  "l.offGet": "Download",
+  "l.offGetting": "Downloading {p}%",
+  "l.offHave": "Downloaded",
+  "l.offTooBig": "Too big — internet only",
+  "l.offDel": "Delete",
+  "l.offDelQ": "Delete the offline audio of surah {english}? You can download it again later.",
+  "l.offTotal": "Total space: {mb} MB",
+  "l.offGetAll": "Download all",
+  "l.offGetAllQ": "{n} surahs, about {mb} MB will be downloaded. OK?",
+  "pk.title": "Choose a range",
+  "pk.unit": "Surah · Juz · Hizb · Page · Ayah",
+  "pk.quarters": "Show rub (quarters)",
+  "pk.pageNote": "Page numbers follow the Madinah print (604 pages)",
+  "pk.summary": "Selected: {n} ayahs ({parts})",
+  "pk.clear": "Clear",
+  "pk.save": "Save with a name",
+  "pk.use": "Use this",
+  "pk.namePh": "Give a name (e.g. Surah Mulk revision)",
+  "pk.saved": "Saved “{name}”.",
+  "pk.full": "No more than 50 ranges can be kept — delete an old one.",
+  "m.title": "Memorised list",
+  "m.summary": "{n} ayahs marked as memorised in total (in {s} surahs)",
+  "m.add": "Add memorised",
+  "m.edit": "Change",
+  "m.remove": "Remove",
+  "m.removeQ": "Remove surah {english} from the memorised list? (Sessions and marks stay)",
+  "m.sgTitle": "Your history says you recited these well without looking:",
+  "m.sgAdd": "Add",
+  "m.sgAddAll": "Add all",
+  "m.empty": "Nothing is marked yet. Press “Add memorised” and choose a surah or ayahs.",
+  "g.title": "Goals",
+  "g.new": "New goal",
+  "g.create": "Create goal",
+  "g.s1": "What kind of goal?",
+  "g.s2": "Which part?",
+  "g.s3": "How to divide it?",
+  "g.s4": "On which days?",
+  "g.s5": "What happens at the end?",
+  "g.type.memorize": "New memorisation (recite a new part without looking)",
+  "g.type.review": "Revision (recite a memorised part again without looking)",
+  "g.type.recite": "Recitation (any reading)",
+  "g.type.test": "Test (number of questions)",
+  "g.order.normal": "In normal order",
+  "g.order.reverse": "In reverse order (from the last surah)",
+  "g.strict": "Keep the order — the next part does not count until the earlier one is done",
+  "g.plan.daily": "A fixed amount every day",
+  "g.plan.bydate": "Finish by a set date",
+  "g.plan.flexible": "As much as I can — the rest is added to the next day",
+  "g.unit.ayah": "ayahs",
+  "g.unit.page": "pages",
+  "g.unit.juz": "juz",
+  "g.unit.minute": "minutes",
+  "g.unit.word": "words",
+  "g.unit.question": "questions",
+  "g.round.none": "As the division falls",
+  "g.round.up": "Whole pages — up",
+  "g.round.down": "Whole pages — down",
+  "g.round.nearest": "Whole pages — nearest",
+  "g.sch.daily": "Every day",
+  "g.sch.days": "Certain days of the week",
+  "g.sch.perWeek": "{n} days a week",
+  "g.cycle.auto": "Start again (a new khatm) by itself",
+  "g.cycle.manual": "I will start it",
+  "g.cycle.off": "Stop",
+  "g.autoName": "{type}: {range}",
+  "g.tpl.manzil": "Weekly khatm (7 manzils)",
+  "g.tpl.page": "1 new page memorised every day",
+  "g.tpl.juz": "1 juz revision every day",
+  "g.tpl.minutes": "15 minutes a day",
+  "g.today": "Today's goal",
+  "g.todayLine": "{name}: {done} / {target} {unit}",
+  "g.progressLine": "Total {done} / {total} {unit} · end date {date}",
+  "g.restart": "Start again",
+  "g.completed": "Completed — alhamdulillah!",
+  "g.pause": "Pause",
+  "g.resumeGoal": "Resume",
+  "g.edit": "Change",
+  "g.delete": "Delete",
+  "g.deleteQ": "Delete the goal “{name}”? (Sessions stay as they are)",
+  "st.current": "{n} days in a row",
+  "st.best": "Longest: {n} days in a row",
+  "st.keep": "Recite today to keep the streak",
+  "st.cellTip": "{date}: {m} min",
+  "bd.title": "Achievements",
+  "bd.new": "New achievement: {name}",
+  "bd.locked": "Not yet — {req}",
+  "x.add": "Add recitation done outside the app",
+  "x.title": "Add recitation done outside the app",
+  "x.date": "Date",
+  "x.minutes": "How many minutes",
+  "x.range": "Which part (optional)",
+  "x.note": "Note",
+  "x.int.memorize": "Recited new memorisation to someone",
+  "x.int.review": "Revision",
+  "x.int.recite": "Recited from the page",
+  "x.save": "Add",
+  "x.delete": "Delete",
+  "x.deleteQ": "Delete this session that was added by hand?",
+  "h.f.all": "All",
+  "h.f.hifz": "Memory",
+  "h.f.look": "Page",
+  "h.f.test": "Test",
+  "h.f.manual": "Outside",
+  "h.f.listen": "Listening",
+  "h.chip.test": "Test",
+  "h.chip.manual": "Outside",
+  "h.chip.listen": "Listening",
+  "h.play": "Listen",
+  "h.testRow": "{date} · {range} · {p}% · correct {c}/{n}",
+  "h.testEditNote": "Dismissing a mistake here changes only this test's score; to clear weak marks, press the red word.",
+  "h.seg": "Summary · Goals · Memorised · Tests · Achievements",
+  "h.weekN": "Last {n} days",
+  "help.1": "<b>Press the mic button</b> and start reading; the app finds the surah by itself (you can also choose it above). Pressing <b>■</b> ends the session and saves it.",
+  "help.2": "Words open as you read: <span class=\"hz-ok\">green = correct</span>, <span class=\"hz-bad\">red = wrong/skipped</span> (with a warning word), <span class=\"hz-hint\">purple = hint/stuck</span>. The blinking blue box = the word you should read now.",
+  "help.3": "Pause with the <b>Pause</b> button, look at the red words and listen, then press the same button to continue. If you like, read again from an earlier ayah to fix the mistake; the app will follow from there.",
+  "help.4": "When you finish one surah and start the next (or any other surah) the app moves there by itself — it follows as long as you read.",
+  "help.5": "The <b>eye button</b> switches between reading from the text (all text shown) and from memory (text hidden).",
+  "help.6": "If you are stuck press <b>Hint</b>, or <b>keep silent</b> (as many seconds as set in \"Alafasy starts after a pause\" above, {wait} at first): Mishary Alafasy will recite on from there and the words open in purple. When you start reading again (or press Pause/Stop) he stops and the app listens to you. Press and hold the hint button to open the rest of the ayah.",
+  "help.7": "<b>Tap a red word</b> to hear what you read and what you should have read — both with the surrounding words. If you read it correctly press ✓.",
+  "help.8": "Words where you made a mistake or got stuck in an earlier session stay <span class=\"hz-w1 hz-swatch\">light</span> to <span class=\"hz-w3 hz-swatch\">dark red</span>; after reading them correctly from memory {clear} times in a row the mark goes away.",
+  "help.9": "If you think a mark is wrong (when not recording, or in the <b>Progress</b> tab) tap the red box: listen to what you read and press <b>✓ Wrong mark — remove</b>. The mark goes away and reading it that way will not be flagged again.",
+  "help.10": "In the <b>Progress</b> tab every surah has a coloured strip by ayah — you can see at a glance which ayahs are weakest (dark red). Tap a box to open that ayah below.",
+  "help.11": "On the phone: the model (about 19 MB) downloads the first time, then it works without internet. All data stays on this phone — you can back it up to a file from the <b>Progress</b> tab. Automatic checking can be wrong; it is not a replacement for a teacher.",
+  "a.autoSurah": "Automatic — finds the surah by listening",
+  "a.lookOn": "From memory: hide the text",
+  "a.lookOff": "Reading: show the full text",
+  "a.pauseResumeTip": "Continue — from where you stopped",
+  "a.pauseTip": "Pause — stops right here, you can continue later",
+  "a.stopTip": "Stop — ends and saves the session",
+  "a.recTip": "Start recording — start reading",
+  "a.stop": "Stop",
+  "a.record": "Record",
+  "a.micFail": "The microphone could not be started: {err}",
+  "a.maxRec": "Maximum recording time reached — stopped.",
+  "a.listening": "Listening…",
+  "a.checking": "Checking…",
+  "a.tooShort": "The recording is too short.",
+  "a.noMatch": "It did not match any ayah. Read a little longer, or choose the surah yourself.",
+  "a.entry": "Surah {english}: {words} words, accuracy {acc}%, mistakes {missed}, stuck {stuck}",
+  "a.saved": "Session saved — {parts}. See everything in the Progress tab.",
+  "a.close": "Close",
+  "a.closeAria": "Close",
+  "a.listenMine": "Listen to my reading",
+  "a.shouldBe": "What it should be",
+  "a.listenAlafasyTip": "Mishary Alafasy’s recitation (with the surrounding words)",
+  "a.listenAlafasy": "Alafasy’s recitation",
+  "a.iWasRight": "I read it correctly",
+  "a.leftMain": "Read it correctly from memory {n} more times and the red mark goes away",
+  "a.leftStreak": "So far {n} sessions in a row were correct. ",
+  "a.leftSub": "Counted once per session, and they must be in a row — a mistake or getting stuck restarts the count; reading from the text does not count.",
+  "a.wkMeta": "In earlier sessions here: {kind} — {count} times in total, last time {last}",
+  "a.saidErr": "What you read (what the model heard)",
+  "a.saidWk": "What you read then (what the model heard)",
+  "a.heardNothing": "Nothing was heard — the word seems to have been skipped",
+  "a.noRecording": "The recording from then is not available",
+  "a.mineErrTip": "Listen to my reading (with the two words before)",
+  "a.mineWkTip": "Listen to my reading from then",
+  "a.okErrTip": "I read it correctly — the model heard wrongly",
+  "a.okWkTip": "I did read it correctly — remove the mark, reading it this way will not be flagged again",
+  "a.okErrLbl": "I read it correctly",
+  "a.okWkLbl": "Wrong mark — remove",
+  "a.markCleared": "Mark removed",
+  "a.markClearedTaught": "Mark removed — reading it this way here will not be flagged again.",
+  "a.forgetSurahQ": "Remove all red marks of this surah? Places that have a recording will be remembered as read correctly — reading them the same way later will not be flagged again.",
+  "a.marksCleared": "{n} marks removed — reading these places this way will not be flagged again.",
+  "a.storage": "Stored on the phone: {n} session entries, {r} recordings ({mb} MB).",
+  "a.pv.overview": "Summary",
+  "a.pv.goals": "Goals",
+  "a.pv.memorized": "Memorised",
+  "a.pv.tests": "Tests",
+  "a.pv.badges": "Achievements",
+  "a.importQ": "Merge the data in the file with the current data? (OK = merge, Cancel = replace all current data with the data in the file)",
+  "a.importOk": "Data restored — reopening the page…",
+  "a.importBad": "Could not read the file: {err}",
+  "a.defaultMic": "The device’s own microphone",
+  "a.micN": "Microphone {n}",
+  "a.modelBuilding": "Preparing the model…",
+  "a.modelDownload": "Downloading the model (about 19 MB, first time only)…",
+  "a.modelFooter": "Model: quran-asr-tiny · {backend}, {threads} threads. After the first time it works without internet. Automatic checking can be wrong; it is not a replacement for a teacher.",
+  "a.modelFail": "The model did not start: {err}",
+  "a.ayahMenuTitle": "{english} · Ayah {a}",
+  "a.startFail": "Could not start: {err}",
+  "p.sura": "Surah {n}. {english}",
+  "p.paused": "Paused — listening starts again when you continue.",
+  "p.waiting": "Listening… start reading, it <b>finds the surah by itself</b> after a few words.",
+  "p.autoDetected": "Detected automatically",
+  "p.hCount": "Ayah {a} / {n}",
+  "p.hOk": "Correct {n}",
+  "p.hBad": "Wrong/skipped {n}",
+  "p.hHint": "Hints {n}",
+  "p.stray": "Mistake: this sounds like ayah {ayah} of Surah {english}. You were reading Surah {current}; read again from the word marked in blue.",
+  "p.pausedBanner": "Paused: tap a red word to see and listen. When you continue it listens from here; you can also read again from an earlier ayah to fix a red word.",
+  "p.cellWeak": "{span}: {n} weak words",
+  "p.cellOk": "fine",
+  "p.cellNone": "not yet read from memory",
+  "p.empty": "No sessions yet. Record in the Recite tab; when you stop (■) the session is saved here.",
+  "p.cSessions": "Total sessions",
+  "p.cSurahs": "Surahs practised",
+  "p.cMinutes": "Total minutes",
+  "p.cWeek": "This week",
+  "p.cWeekN": "Last {n} days",
+  "p.ayahCount": "{a}/{n} ayahs",
+  "p.weakCount": "{n} weak words",
+  "p.th.surah": "Surah",
+  "p.th.state": "State",
+  "p.th.acc": "Recent accuracy",
+  "p.th.read": "How much read",
+  "p.th.weak": "Weak spots",
+  "p.th.sessions": "Sessions",
+  "p.th.last": "Last practice",
+  "p.th.when": "When",
+  "p.th.surahAyah": "Surah (ayahs)",
+  "p.th.mode": "Type",
+  "p.th.words": "Words",
+  "p.th.acc2": "Accuracy",
+  "p.th.missed": "Mistakes",
+  "p.th.stuck": "Stuck",
+  "p.th.time": "Time",
+  "p.mode.look": "Reading",
+  "p.mode.hifz": "Memorised",
+  "p.mode.mixed": "Mixed",
+  "p.bySurah": "Memorisation state by surah",
+  "p.recent": "Recent sessions",
+  "p.stateNote": "State: average accuracy of the last {w} memorisation sessions — {good}% or more = well memorised, {fair}–{good}% = fair. Sessions read from the text are not counted.",
+  "p.weakNote": "Weak spots: every box is one ayah, from ayah 1 to the end — {k0}, {k1}, {k2}. Tap a box to show that ayah below.",
+  "p.key0": "green = fine",
+  "p.key1": "light to dark red = the weaker, the darker",
+  "p.key2": "grey = not yet read from memory",
+  "p.hotChipTip": "Tap to show below",
+  "p.hotLabel": "Weakest places:",
+  "p.legend1": "fine",
+  "p.legend2": "light to dark red = more weak words",
+  "p.legend3": "not yet read from memory",
+  "p.mapTitle": "Weakness map by ayah",
+  "p.mapSub": "Every box is one ayah — tap to jump to that ayah in the text below",
+  "p.weakHead": "{n} weak words. Light red = sometimes wrong/stuck, dark red = again and again. After reading correctly from memory {clear} sessions in a row the mark goes away. <b>Tap a red word</b> to hear what you read then; if the mark is wrong you can remove it.",
+  "p.noWeak": "No weak spot in this surah — mashaAllah!",
+  "s.col.ok": "Correct",
+  "s.col.bad": "Wrong",
+  "s.col.peek": "Peek",
+  "s.col.pend": "Checking",
+  "s.col.next": "Next word",
+  "s.col.weak": "Old weakness",
+  "s.col.listen": "Listening light",
+  "s.on": "On",
+  "s.off": "Off",
+  "s.sum.alafasy": "Alafasy {v}",
+  "s.sum.added": "Catch extra words",
+  "s.sum.addedOff": "Extra words not caught",
+  "s.sum.peekMistake": "Peek = mistake",
+  "s.sum.peekOk": "Peek is no mistake",
+  "s.sum.hint": "Hint {v}",
+  "s.sum.speed": "Speed {v}",
+  "s.sum.perAyah": "Each ayah ×{n}",
+  "s.sum.weekStart": "Week starts {v}",
+  "s.sum.countTests": "Tests counted too",
+  "s.sum.noTests": "Tests not counted",
+  "s.sum.good": "Well memorised {v}",
+  "s.sum.clear": "Mark clears after {n} sessions in a row",
+  "s.sum.arabic": "Arabic {v}",
+  "s.sum.motion": "Motion {v}",
+  "s.sum.awake": "Screen stays on",
+  "s.sum.awakeOff": "Screen as usual",
+  "bd.n.first": "First step",
+  "bd.r.first": "Save your first session",
+  "bd.n.streak7": "A week in a row",
+  "bd.r.streak7": "Read 7 days in a row",
+  "bd.n.streak30": "A month in a row",
+  "bd.r.streak30": "Read 30 days in a row",
+  "bd.n.sessions100": "Hundredth session",
+  "bd.r.sessions100": "100 sessions in total",
+  "bd.n.hours10": "Ten hours",
+  "bd.r.hours10": "10 hours of recitation in total",
+  "bd.n.good1": "First solid surah",
+  "bd.r.good1": "Bring one surah to ‘well memorised’",
+  "bd.n.good5": "Five solid surahs",
+  "bd.r.good5": "5 surahs ‘well memorised’",
+  "bd.n.test100": "Perfect test",
+  "bd.r.test100": "100% in a test of at least 10 questions",
+  "bd.n.tests10": "Regular testing",
+  "bd.r.tests10": "Finish 10 tests",
+  "bd.n.juz1": "One juz memorised",
+  "bd.r.juz1": "A whole juz in the memorised list",
+  "bd.n.cleared50": "Master of clearing marks",
+  "bd.r.cleared50": "Clear 50 weak marks by reading correctly from memory",
+  "bd.n.goal1": "Goal reached",
+  "bd.r.goal1": "Reach the goal of a day for the first time",
+  "app.title": "Hifz Helper",
+  "c.ok": "OK",
+  "c.no": "No",
+  "fmt.ayah1": "Ayah {a}",
+  "fmt.ayahN": "Ayah {a}–{b}",
+  "fmt.durMS": "{m} min {s} s",
+  "fmt.durS": "{s} s",
+  "u.s": "{n} seconds",
+  "u.min": "{n} minutes",
+  "u.words": "{n} words",
+  "u.ayah": "{n} ayahs",
+  "u.sC": "{n} s",
+  "u.minC": "{n} min",
+  "hk.missed": "Wrong/skipped",
+  "hk.hint": "You got stuck (hint)",
+  "hk.slip": "A mistake, corrected by reading again",
+  "gr.none": "Read from the text only",
+  "gr.good": "Well memorised",
+  "gr.fair": "Fair",
+  "gr.weak": "Needs more practice",
+  "d.0": "Sun",
+  "d.1": "Mon",
+  "d.2": "Tue",
+  "d.3": "Wed",
+  "d.4": "Thu",
+  "d.5": "Fri",
+  "d.6": "Sat",
+  "g.nParts": "{n} parts",
+  "g.minutesNote": "{n} min {note}",
+  "g.mode.look": "Reading",
+  "g.mode.hifz": "Memorised",
+  "g.mode.mixed": "Mixed",
+  "pk.l.juz": "Juz {n}",
+  "pk.l.hizb": "Hizb {n}",
+  "pk.l.rub": "Rub {n}",
+  "pk.l.page": "Page {n}",
+  "pk.l.pages": "Pages {a}–{b}",
+  "pk.l.mem": "My memorised parts",
+  "pk.pageRange": "Page {from} to {to}",
+  "pk.u.surah": "Surah",
+  "pk.u.juz": "Juz",
+  "pk.u.hizb": "Hizb",
+  "pk.u.page": "Page",
+  "pk.u.ayah": "Ayah",
+  "t.ayahBadge": "{n} ayahs",
+  "l.artist": "Mishary Rashid Alafasy",
+  "m.sugRow": "Surah {n}. {english}: ayah {a}–{b}",
+  "m.cover": "{c} / {n} ayahs",
+  "t.starterRange": "{n}. {english}",
+  "a.sub": "Listens to your recitation from memory and catches mistakes at once · remembers where you keep getting stuck",
+  "a.themeAria": "Change colours",
+  "a.lblSurah": "Surah",
+  "a.lblWait": "Alafasy starts after a pause of",
+  "a.lblWaitSub": "How many seconds of silence",
+  "a.howTo": "How to use it",
+  "a.weakTitle": "Where you keep getting stuck",
+  "a.pickSurahAria": "Choose a surah",
+  "a.clearAll": "Remove all marks",
+  "a.clearAllTip": "Remove all red marks of this surah (asks first)",
+  "a.export": "Move data to a file (backup)",
+  "a.import": "Bring data back from a file",
+  "a.install": "Add as an app",
+  "a.timerAria": "Recitation time",
+  "a.pauseAria": "Pause",
+  "a.lookAria": "Reading / from memory",
+  "a.hintAria": "Hint"
+ },
+ "settings": {
+  "recite.waitS": {
+   "label": "Alafasy starts after a pause of",
+   "help": "How many seconds of silence before help starts; ‘Off’ = never",
+   "sub": "When you are stuck",
+   "options": {
+    "0": "Off"
+   }
+  },
+  "recite.silenceHelp": {
+   "label": "What happens when you are silent",
+   "help": "How much help the app gives when you are stuck",
+   "sub": "When you are stuck",
+   "options": {
+    "surah": "Alafasy recites to the end of the surah",
+    "ayah": "To the end of the ayah",
+    "words3": "The next 3 words",
+    "word": "Only the next word",
+    "show": "Only show the next word, no audio"
+   }
+  },
+  "recite.promptOnLook": {
+   "label": "Help also when reading from the text",
+   "help": "Help comes after silence even when the eye button is on",
+   "sub": "When you are stuck"
+  },
+  "detect.changed": {
+   "label": "Catch wrong words",
+   "help": "A word turns red when you read a different word in its place",
+   "sub": "Which mistakes to catch"
+  },
+  "detect.skipped": {
+   "label": "Catch skipped words",
+   "help": "A word turns red when you move on without reading it",
+   "sub": "Which mistakes to catch"
+  },
+  "detect.added": {
+   "label": "Catch extra words",
+   "help": "The next word turns red when you read something extra inside an ayah; turning it off saves work on the phone",
+   "sub": "Which mistakes to catch"
+  },
+  "detect.stray": {
+   "label": "Warn when you move into another surah",
+   "help": "A red banner and warning sound when you slip into a similar ayah of another surah",
+   "sub": "Which mistakes to catch"
+  },
+  "detect.confirmedWords": {
+   "label": "Words read correctly before another surah counts as a mistake",
+   "help": "Low = warns sooner; high = fewer false warnings when you start a new surah",
+   "sub": "Which mistakes to catch"
+  },
+  "detect.similarRatio": {
+   "label": "Strictness of word matching",
+   "help": "High = catches even close pronunciations; low = more forgiving",
+   "sub": "Which mistakes to catch"
+  },
+  "detect.noAdvance": {
+   "label": "Do not go on until a mistake is fixed",
+   "help": "When a word is red the next word does not open until you read it correctly",
+   "sub": "Which mistakes to catch"
+  },
+  "detect.teachOnRemove": {
+   "label": "Remember dismissed mistakes",
+   "help": "After ‘I read it correctly’ or ‘Dismiss’ the same reading will not be flagged again",
+   "sub": "Which mistakes to catch"
+  },
+  "detect.errorTone": {
+   "label": "Warning sound",
+   "help": "A sound when a word turns red or you enter another surah (only while recording)",
+   "sub": "Warning sound",
+   "options": {
+    "off": "Off",
+    "soft": "Soft",
+    "normal": "Normal",
+    "loud": "Loud"
+   }
+  },
+  "detect.toneKind": {
+   "label": "Kind of warning sound",
+   "sub": "Warning sound",
+   "options": {
+    "two": "Two tones",
+    "beep": "One beep",
+    "double": "Two beeps"
+   }
+  },
+  "detect.vibrate": {
+   "label": "Vibrate on a mistake",
+   "help": "The phone vibrates a little on a red word",
+   "sub": "Warning sound"
+  },
+  "recite.startAt": {
+   "label": "Which surah at the start",
+   "help": "How the surah choice is when the app opens",
+   "sub": "Start",
+   "options": {
+    "auto": "Find it by listening",
+    "last": "Surah and ayah of last time",
+    "continue": "Continue after where you stopped last time"
+   }
+  },
+  "recite.autoAyahs": {
+   "label": "How many ayahs ahead to show",
+   "help": "How many ayahs are added at once while you read",
+   "sub": "Start"
+  },
+  "recite.mistakeList": {
+   "label": "Show the mistake list",
+   "help": "Tapping the ‘wrong/skipped’ count above shows all mistakes of this session together",
+   "sub": "Start"
+  },
+  "recite.look": {
+   "label": "Read from the text (show all text)",
+   "help": "Like the eye button; words read from the text do not count for clearing marks",
+   "sub": "Hidden text"
+  },
+  "hide.style": {
+   "label": "How hidden words look",
+   "sub": "Hidden text",
+   "options": {
+    "bar": "A box the size of the word",
+    "line": "Only a line below",
+    "blank": "Completely blank"
+   }
+  },
+  "hide.weakTint": {
+   "label": "Colour of earlier weakness on hidden words",
+   "help": "Words that were wrong in earlier sessions show a light to dark red box",
+   "sub": "Hidden text"
+  },
+  "hide.ayahMarks": {
+   "label": "Hide ayah marks",
+   "help": "The mark at the end of an ayah is not shown until the ayah is fully read",
+   "sub": "Hidden text"
+  },
+  "hide.nextWord": {
+   "label": "Mark the box of the next word",
+   "help": "A ring on the box of the word you should read now",
+   "sub": "Hidden text"
+  },
+  "hide.head": {
+   "label": "Show surah and ayah number at the top",
+   "help": "When off, which ayah you are in stays hidden",
+   "sub": "Hidden text"
+  },
+  "peek.countsAsMistake": {
+   "label": "Count peeking as a mistake",
+   "help": "Words opened by a hint or peek count as a mistake in weak marks and the test score",
+   "sub": "Peeking"
+  },
+  "peek.longPressRest": {
+   "label": "Press and hold the hint for the rest of the ayah",
+   "help": "Holding the hint button for half a second (right-click on a computer) opens all remaining words of the ayah",
+   "sub": "Peeking"
+  },
+  "peek.doubleTap": {
+   "label": "Double tap on the text for the next word",
+   "help": "While recording, double tapping a word box (double-click on a computer) opens the next word like a hint",
+   "sub": "Peeking"
+  },
+  "test.endBy": {
+   "label": "When the test ends",
+   "sub": "Length",
+   "options": {
+    "count": "By number of questions",
+    "time": "By time",
+    "open": "When I stop it"
+   }
+  },
+  "test.questions": {
+   "label": "How many questions",
+   "sub": "Length"
+  },
+  "test.minutes": {
+   "label": "How many minutes",
+   "help": "When the time is over the current question is finished and the result is shown",
+   "sub": "Length"
+  },
+  "test.lengthUnit": {
+   "label": "Measure the length of a question",
+   "sub": "Questions",
+   "options": {
+    "words": "In words",
+    "ayahs": "In ayahs"
+   }
+  },
+  "test.lengthWords": {
+   "label": "Words to read in each question",
+   "help": "The words after the hint",
+   "sub": "Questions",
+   "options": {
+    "8": "Short 8",
+    "15": "Medium 15",
+    "30": "Long 30"
+   }
+  },
+  "test.lengthAyahs": {
+   "label": "Ayahs in each question",
+   "sub": "Questions"
+  },
+  "test.extendToAyahEnd": {
+   "label": "Go on to the end of the ayah",
+   "help": "A question does not stop in the middle of an ayah but finishes it",
+   "sub": "Questions"
+  },
+  "test.hintWords": {
+   "label": "How many words to show at the start",
+   "help": "You read the rest without looking; 0 = only surah and ayah number",
+   "sub": "Questions"
+  },
+  "test.start": {
+   "label": "Where a question starts",
+   "sub": "Questions",
+   "options": {
+    "ayah": "From the start of an ayah",
+    "random": "From anywhere in the ayah"
+   }
+  },
+  "test.order": {
+   "label": "Order of questions",
+   "sub": "Questions",
+   "options": {
+    "shuffle": "Shuffled",
+    "seq": "In order",
+    "weak": "Weak spots first"
+   }
+  },
+  "test.noRepeat": {
+   "label": "No question repeats until the whole range is done",
+   "sub": "Questions"
+  },
+  "test.showRef": {
+   "label": "Show surah and ayah number",
+   "help": "Can also be switched with the eye button on the card",
+   "sub": "Questions"
+  },
+  "test.silence": {
+   "label": "When you are silent",
+   "sub": "When you are stuck",
+   "options": {
+    "none": "Nothing",
+    "show": "Show the next word",
+    "alafasy": "Alafasy recites the next word"
+   }
+  },
+  "test.silenceS": {
+   "label": "How many seconds of silence",
+   "sub": "When you are stuck"
+  },
+  "test.doubleTapPeek": {
+   "label": "Double tap on the card for the next word",
+   "help": "Double-click on a computer",
+   "sub": "When you are stuck"
+  },
+  "test.skipCounts": {
+   "label": "Count skipped questions in the score",
+   "help": "When on, a skipped question counts as ‘not correct’",
+   "sub": "Score"
+  },
+  "test.streakAt": {
+   "label": "Flame mark after how many correct in a row",
+   "sub": "Score"
+  },
+  "test.advance": {
+   "label": "After a question",
+   "sub": "How it runs",
+   "options": {
+    "auto": "Show the result, then the next by itself",
+    "tap": "When I press ‘Next question’"
+   }
+  },
+  "test.holdS": {
+   "label": "How long to show the result",
+   "help": "After the card turns green/red, before the next question",
+   "sub": "How it runs"
+  },
+  "test.countdown": {
+   "label": "Countdown before the start",
+   "sub": "How it runs",
+   "options": {
+    "0": "Off",
+    "3": "3 seconds",
+    "5": "5 seconds"
+   }
+  },
+  "test.autoPauseS": {
+   "label": "Pause by itself when silent",
+   "help": "The test pauses when nothing is read for this many seconds",
+   "sub": "How it runs",
+   "options": {
+    "0": "Off",
+    "15": "15",
+    "30": "30",
+    "60": "60",
+    "120": "120 seconds"
+   }
+  },
+  "test.sound": {
+   "label": "Sound after a question",
+   "help": "A high tone when correct, a low tone when wrong",
+   "sub": "How it runs"
+  },
+  "test.vibrate": {
+   "label": "Vibrate after a question",
+   "sub": "How it runs"
+  },
+  "test.temporary": {
+   "label": "Temporary test",
+   "help": "Nothing is saved — no result, mistakes or recordings; useful for testing someone else",
+   "sub": "Saving"
+  },
+  "test.countInHistory": {
+   "label": "Add test mistakes to weak marks",
+   "help": "When off, the test result is kept but weak marks do not change",
+   "sub": "Saving"
+  },
+  "test.checkAdded": {
+   "label": "Catch extra words in the test",
+   "help": "When off, checking after a question is faster",
+   "sub": "Saving"
+  },
+  "listen.reciter": {
+   "label": "Reciter: Mishary Rashid Alafasy (only one for now)",
+   "sub": "Reciter"
+  },
+  "listen.speed": {
+   "label": "Speed",
+   "help": "Listening slowly makes memorising easier",
+   "sub": "Speed and repeats",
+   "options": {
+    "0.5": "0.5×",
+    "0.75": "0.75×",
+    "1": "1×",
+    "1.25": "1.25×",
+    "1.5": "1.5×",
+    "2": "2×"
+   }
+  },
+  "listen.repeatAyah": {
+   "label": "How many times each ayah",
+   "sub": "Speed and repeats"
+  },
+  "listen.repeatRange": {
+   "label": "How many times the whole part",
+   "sub": "Speed and repeats",
+   "options": {
+    "0": "Without end"
+   }
+  },
+  "listen.gapRepeatS": {
+   "label": "Pause before the same ayah repeats",
+   "help": "Time to say it yourself",
+   "sub": "Speed and repeats"
+  },
+  "listen.gapAyahS": {
+   "label": "Pause after each ayah",
+   "help": "Before going to the next ayah",
+   "sub": "Speed and repeats"
+  },
+  "listen.gapAuto": {
+   "label": "Pause as long as the ayah",
+   "help": "When on, after each ayah it waits as long as the ayah takes to read — to say it yourself after listening",
+   "sub": "Speed and repeats"
+  },
+  "listen.highlight": {
+   "label": "Show what is being recited",
+   "sub": "Text",
+   "options": {
+    "word": "By word",
+    "ayah": "By ayah",
+    "none": "Nothing"
+   }
+  },
+  "listen.text": {
+   "label": "Text",
+   "sub": "Text",
+   "options": {
+    "show": "Show all",
+    "reveal": "Opens as you listen",
+    "hide": "Hidden"
+   }
+  },
+  "listen.autoScroll": {
+   "label": "Scroll along",
+   "sub": "Text"
+  },
+  "listen.basmala": {
+   "label": "Bismillah at the start of a surah",
+   "help": "When listening from ayah 1 the Bismillah is recited first (except Surah Fatiha and Tawbah)",
+   "sub": "Text"
+  },
+  "listen.nextSurah": {
+   "label": "Play the next surah at the end",
+   "sub": "Text"
+  },
+  "listen.sleepMin": {
+   "label": "Sleep timer",
+   "help": "Listening stops after this many minutes",
+   "sub": "Text",
+   "options": {
+    "0": "Off",
+    "10": "10",
+    "15": "15",
+    "30": "30",
+    "60": "60 minutes"
+   }
+  },
+  "listen.countAsSession": {
+   "label": "Keep listening in the history",
+   "help": "How long you listened to which part is saved; it counts for goals or streak only when turned on in ‘Goals and streak’",
+   "sub": "Text"
+  },
+  "audio.ctxBefore": {
+   "label": "Alafasy on a red word: words before",
+   "help": "How many words before the word the popup recites",
+   "sub": "Audio of red words"
+  },
+  "audio.ctxAfter": {
+   "label": "Alafasy on a red word: words after",
+   "sub": "Audio of red words"
+  },
+  "audio.myCtxWords": {
+   "label": "My reading: words before",
+   "help": "How many words earlier your own recording starts in the popup",
+   "sub": "Audio of red words"
+  },
+  "audio.popupSpeed": {
+   "label": "Alafasy’s speed in the popup",
+   "sub": "Audio of red words"
+  },
+  "audio.offlineMaxMB": {
+   "label": "Largest size to keep offline (per surah)",
+   "help": "Surahs bigger than this play only online",
+   "sub": "Offline",
+   "options": {
+    "40": "40",
+    "80": "80",
+    "150": "150",
+    "250": "250 MB"
+   }
+  },
+  "goals.dayStart": {
+   "label": "The day starts at",
+   "help": "If you read late at night it counts for the previous day",
+   "options": {
+    "0": "Midnight",
+    "1": "1 am",
+    "2": "2 am",
+    "3": "3 am",
+    "4": "4 am",
+    "5": "5 am",
+    "6": "6 am"
+   }
+  },
+  "goals.weekStart": {
+   "label": "The week starts on",
+   "options": {
+    "6": "Saturday",
+    "0": "Sunday",
+    "1": "Monday"
+   }
+  },
+  "goals.streakMin": {
+   "label": "A day counts for the streak with at least",
+   "options": {
+    "any": "Any one session",
+    "m5": "5 minutes",
+    "m10": "10 minutes",
+    "m20": "20 minutes",
+    "goals": "All goals of today done"
+   }
+  },
+  "goals.countLook": {
+   "label": "Count reading from the text for memorisation and revision goals"
+  },
+  "goals.countListen": {
+   "label": "Count listening for recitation goals and the streak"
+  },
+  "goals.countTests": {
+   "label": "Count tests for goals too"
+  },
+  "goals.countManual": {
+   "label": "Count reading outside the app too"
+  },
+  "goals.showToday": {
+   "label": "Show today’s goal on the Recite page",
+   "help": "Nothing is shown when there is no goal"
+  },
+  "history.clearStreak": {
+   "label": "Sessions in a row to clear a mark",
+   "help": "A red mark goes away after reading correctly from memory in this many separate sessions in a row",
+   "sub": "Weak marks"
+  },
+  "history.lookClears": {
+   "label": "Count reading from the text for clearing marks",
+   "sub": "Weak marks"
+  },
+  "history.good": {
+   "label": "‘Well memorised’ from what %",
+   "sub": "State thresholds"
+  },
+  "history.fair": {
+   "label": "‘Fair’ from what %",
+   "help": "Must be lower than ‘Well memorised’",
+   "sub": "State thresholds"
+  },
+  "history.gradeWindow": {
+   "label": "Last how many memorisation sessions decide the state",
+   "sub": "State thresholds"
+  },
+  "history.recent": {
+   "label": "How many recent sessions to show",
+   "sub": "Lists",
+   "options": {
+    "10": "10",
+    "30": "30",
+    "100": "100",
+    "0": "All"
+   }
+  },
+  "history.weekDays": {
+   "label": "Days in the ‘This week’ card",
+   "help": "With a value other than 7 the card is called ‘Last {n} days’",
+   "sub": "Lists"
+  },
+  "history.minWords": {
+   "label": "Smallest session (in words) that is saved",
+   "sub": "Lists"
+  },
+  "history.maxEvents": {
+   "label": "How many mistakes to remember per weak word",
+   "sub": "Lists"
+  },
+  "history.hotZones": {
+   "label": "How many ‘weakest places’ to show",
+   "sub": "Lists"
+  },
+  "history.heatmap": {
+   "label": "Show the heat map",
+   "help": "How many minutes you read on each day — the last 12 weeks",
+   "sub": "Lists"
+  },
+  "history.popupTimes": {
+   "label": "Show how many times you read it in the mark popup",
+   "sub": "Lists"
+  },
+  "history.saveRecordings": {
+   "label": "Keep the recordings of sessions",
+   "help": "When off, new recordings are not saved, so you cannot listen to your own reading at a mark later; old ones stay",
+   "sub": "Recordings"
+  },
+  "view.lang": {
+   "label": "ভাষা / Language",
+   "help": "App text language; the Quran text does not change",
+   "sub": "Language",
+   "options": {
+    "bn": "বাংলা",
+    "en": "English",
+    "ar": "العربية",
+    "ur": "اردو",
+    "hi": "हिन्दी",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "tr": "Türkçe",
+    "fa": "فارسی",
+    "fr": "Français",
+    "es": "Español",
+    "pt": "Português",
+    "de": "Deutsch",
+    "ru": "Русский",
+    "zh": "中文（简体）",
+    "sw": "Kiswahili"
+   }
+  },
+  "view.theme": {
+   "label": "Page colours",
+   "sub": "Colours",
+   "options": {
+    "auto": "Automatic",
+    "paper": "Paper",
+    "night": "Night mushaf",
+    "sepia": "Old paper"
+   }
+  },
+  "view.wordSet": {
+   "label": "Colour set of the words",
+   "sub": "Colours",
+   "options": {
+    "default": "Normal",
+    "cb": "Easier to tell apart",
+    "brown": "Brown peek",
+    "custom": "My own"
+   }
+  },
+  "view.wordStyle": {
+   "label": "How colours are applied",
+   "help": "Highlight = text stays black with a coloured box behind it",
+   "sub": "Colours",
+   "options": {
+    "text": "Text colour",
+    "highlight": "Highlight"
+   }
+  },
+  "view.customColors": {
+   "label": "My own colours",
+   "help": "Choose a colour for each state; it is remembered separately for each page colour",
+   "sub": "Colours"
+  },
+  "view.arabicScale": {
+   "label": "Size of the Arabic text",
+   "sub": "Text"
+  },
+  "view.lineGap": {
+   "label": "Space between lines",
+   "sub": "Text"
+  },
+  "view.wordGap": {
+   "label": "Space between words",
+   "sub": "Text"
+  },
+  "view.uiScale": {
+   "label": "Size of the interface text",
+   "sub": "Text",
+   "options": {
+    "90": "Small",
+    "100": "Normal",
+    "115": "Large",
+    "130": "Larger"
+   }
+  },
+  "view.uiFont": {
+   "label": "Interface font",
+   "sub": "Text",
+   "options": {
+    "app": "The app’s font",
+    "system": "The device’s own font"
+   }
+  },
+  "view.motion": {
+   "label": "Motion (animation)",
+   "help": "Always off while recording",
+   "sub": "Motion",
+   "options": {
+    "auto": "Automatic",
+    "full": "Full",
+    "gentle": "Gentle",
+    "off": "Off"
+   }
+  },
+  "view.intro": {
+   "label": "Start-up animation (the mushaf opens)",
+   "help": "Shown when the app opens; tapping the screen skips it at once",
+   "sub": "Motion",
+   "options": {
+    "every": "Every time",
+    "daily": "Once a day",
+    "off": "Off"
+   }
+  },
+  "view.scroll": {
+   "label": "Where the reading line stays",
+   "sub": "Motion",
+   "options": {
+    "second": "On the second line from the top",
+    "middle": "In the middle",
+    "off": "I will scroll myself"
+   }
+  },
+  "view.timer": {
+   "label": "Show the time",
+   "sub": "Information at the top"
+  },
+  "view.legend": {
+   "label": "Show what the colours mean",
+   "help": "A small key above the text",
+   "sub": "Information at the top"
+  },
+  "view.headStats": {
+   "label": "Show the count of correct, wrong and hints",
+   "sub": "Information at the top"
+  },
+  "view.bnDigits": {
+   "label": "Write numbers in Bengali digits",
+   "help": "When off: 0–9 (Bengali only)",
+   "sub": "Information at the top"
+  },
+  "device.micId": {
+   "label": "Microphone",
+   "options": {
+    "default": "The device’s own microphone"
+   }
+  },
+  "device.echoCancel": {
+   "label": "Reduce echo",
+   "help": "Reduces Alafasy’s sound entering the microphone; when off, the help after silence may misbehave"
+  },
+  "device.noiseSuppress": {
+   "label": "Reduce surrounding noise",
+   "help": "Useful in noise, but a low voice may be cut too"
+  },
+  "device.autoGain": {
+   "label": "Adjust the microphone level by itself",
+   "options": {
+    "browser": "As the browser does",
+    "on": "On",
+    "off": "Off"
+   }
+  },
+  "device.sensitivity": {
+   "label": "Microphone sensitivity",
+   "help": "Use ‘High’ when reading softly, ‘Low’ in noise",
+   "options": {
+    "low": "Low",
+    "normal": "Normal",
+    "high": "High"
+   }
+  },
+  "device.threads": {
+   "label": "Processor threads",
+   "help": "More = faster, but the phone may get hot",
+   "options": {
+    "auto": "Automatic",
+    "1": "1",
+    "2": "2",
+    "4": "4"
+   }
+  },
+  "device.slowPhone": {
+   "label": "Adapt to a slow phone",
+   "help": "On a slow phone less audio is processed each time so it does not fall behind"
+  },
+  "device.liveModel": {
+   "label": "Live model",
+   "help": "A bigger model hears more accurately but is slower",
+   "options": {
+    "tiny": "tiny",
+    "base": "base"
+   }
+  },
+  "device.checkModel": {
+   "label": "Checking model",
+   "help": "Listens again before recognising the surah and marking red",
+   "options": {
+    "base": "base",
+    "tiny": "tiny"
+   }
+  },
+  "device.keepAwake": {
+   "label": "Keep the screen on while recording and listening"
+  },
+  "device.shortcuts": {
+   "label": "Keyboard shortcuts",
+   "help": "Space = pause, H = hint, R = rest of the ayah, E = eye, M = mistake list, N = next question, P = play/pause listening"
+  },
+  "device.maxRecMin": {
+   "label": "Longest recording",
+   "help": "The recording stops by itself after this",
+   "options": {
+    "30": "30",
+    "60": "60",
+    "90": "90",
+    "120": "120 minutes",
+    "0": "No limit"
+   }
+  },
+  "adv.windowS": {
+   "label": "Seconds of audio processed each time"
+  },
+  "adv.updateEveryS": {
+   "label": "How often new audio is processed",
+   "help": "A lower value = more work for the phone"
+  },
+  "adv.lookahead": {
+   "label": "How many words ahead are matched"
+  },
+  "adv.shortSkip": {
+   "label": "How many words may be skipped when two words match"
+  },
+  "adv.longSkipRun": {
+   "label": "Words in a row that must match to skip more"
+  },
+  "adv.finalSkip": {
+   "label": "Most words skipped in the final check"
+  },
+  "adv.detectMinWords": {
+   "label": "Fewest words to recognise a surah"
+  },
+  "adv.detectMargin": {
+   "label": "How many times ahead of the next likely surah it must be"
+  },
+  "adv.detectSureWords": {
+   "label": "After this many words it chooses even when close"
+  },
+  "adv.lostS": {
+   "label": "Seconds without progress before it looks for the place again"
+  },
+  "adv.lostReds": {
+   "label": "Reds among the last words that make it look again: reds"
+  },
+  "adv.lostOf": {
+   "label": "…among the last how many words"
+  },
+  "adv.rewindRun": {
+   "label": "Words in a row to recognise reading backwards"
+  },
+  "adv.backWords": {
+   "label": "Most words going back that are recognised"
+  },
+  "adv.verifyWindowS": {
+   "label": "Seconds to listen again for skipped words"
+  },
+  "adv.verifyMaxS": {
+   "label": "…the most seconds"
+  },
+  "adv.autoExtendAt": {
+   "label": "More ayahs are added when this many words are left ahead"
+  },
+  "adv.sameAudio": {
+   "label": "Audio match for remembering ‘I read it correctly’",
+   "help": "Low = strict (it must be read exactly the same)"
+  },
+  "adv.sameHeard": {
+   "label": "Heard-text match for remembering ‘I read it correctly’",
+   "help": "High = strict"
+  },
+  "adv.maxClipS": {
+   "label": "Longest own clip of a red word, in seconds"
+  },
+  "adv.stripCells": {
+   "label": "Most boxes in a progress strip"
+  },
+  "adv.cellMid": {
+   "label": "A box turns medium red from this weakness total"
+  },
+  "adv.cellDark": {
+   "label": "…dark red from"
+  }
+ },
+ "groups": {
+  "recite": {
+   "name": "Recitation and mistakes",
+   "help": "What the app catches while you read, what it does when you are stuck"
+  },
+  "hide": {
+   "name": "Hiding and peeking",
+   "help": "How the text is hidden when reading from memory, what peeking does"
+  },
+  "test": {
+   "name": "Test",
+   "help": "Length, hints and score of the flash-card test"
+  },
+  "listen": {
+   "name": "Listening and audio",
+   "help": "Alafasy’s recitation — speed, repeats, offline"
+  },
+  "goals": {
+   "name": "Goals and streak",
+   "help": "Daily counting, streak, which reading counts towards goals"
+  },
+  "history": {
+   "name": "Progress and history",
+   "help": "Rules for clearing marks, state thresholds, recordings"
+  },
+  "view": {
+   "name": "Appearance",
+   "help": "Colours, text size, motion"
+  },
+  "device": {
+   "name": "Microphone and device",
+   "help": "Microphone, processor, screen"
+  },
+  "adv": {
+   "name": "Advanced",
+   "help": "Internal calculation values — change with care"
+  }
+ },
+ "presets": {
+  "recite": {
+   "label": "Strictness of mistake catching",
+   "items": {
+    "easy": {
+     "label": "Easy",
+     "help": "For new memorisation: forgives small pronunciation differences, extra words are not caught"
+    },
+    "normal": {
+     "label": "Normal",
+     "help": "Daily revision"
+    },
+    "strict": {
+     "label": "Strict",
+     "help": "Before reciting to a teacher: even close pronunciation is a mistake, no moving on without fixing"
+    }
+   }
+  },
+  "test": {
+   "label": "Kind of test",
+   "items": {
+    "quick": {
+     "label": "Quick practice"
+    },
+    "normal": {
+     "label": "Normal"
+    },
+    "hard": {
+     "label": "Hard"
+    }
+   }
+  },
+  "listen": {
+   "label": "Kind of listening",
+   "items": {
+    "only": {
+     "label": "Listen only"
+    },
+    "memo": {
+     "label": "For memorising"
+    },
+    "say": {
+     "label": "Listen and say"
+    },
+    "slow": {
+     "label": "Slow learning"
+    }
+   }
+  }
+ }
+}

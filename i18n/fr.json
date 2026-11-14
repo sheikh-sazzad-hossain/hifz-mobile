@@ -1,0 +1,1460 @@
+{
+ "strings": {
+  "intro.preparing": "Préparation…",
+  "nav.tab.recite": "Réciter",
+  "nav.tab.test": "Test",
+  "nav.tab.listen": "Écouter",
+  "nav.tab.progress": "Progrès",
+  "nav.tab.settings": "Réglages",
+  "nav.busy": "L’enregistrement est en cours — arrêtez-le d’abord (■), puis changez de page.",
+  "nav.themeTip": "Changer la couleur : Papier / Mushaf de nuit / Vieux papier (appui long : tous les réglages)",
+  "s.title": "Réglages",
+  "s.search": "Rechercher un réglage…",
+  "s.searchEmpty": "Aucun réglage ne porte ce nom.",
+  "s.back": "Tous les réglages",
+  "s.changedN": "{n} modifié(s)",
+  "s.rowReset": "Valeur par défaut",
+  "s.sectionReset": "Réinitialiser cette section",
+  "s.sectionResetQ": "Tous les réglages de « {group} » reviendront à leurs valeurs par défaut. OK ?",
+  "s.allReset": "Réinitialiser tous les réglages",
+  "s.allResetQ": "Tous les réglages reviendront à leurs valeurs par défaut. Vos séances, marques, enregistrements, tests et objectifs sont conservés. OK ?",
+  "s.resetDone": "Réinitialisation effectuée.",
+  "s.export": "Enregistrer les réglages dans un fichier",
+  "s.import": "Charger les réglages depuis un fichier",
+  "s.importOk": "{n} réglages chargés.",
+  "s.importSkip": "{n} réglages chargés, {m} inconnus ou hors limites — ignorés.",
+  "s.importBad": "Le fichier n’a pas pu être lu : {err}",
+  "s.importWrong": "Ce n’est pas un fichier de réglages de Hifz Helper.",
+  "s.where": "Les réglages restent sur ce téléphone. Pour les transférer vers un autre téléphone ou ordinateur, utilisez « Enregistrer les réglages dans un fichier ».",
+  "s.whenNext": "Pris en compte dès la prochaine séance",
+  "s.whenReload": "Pris en compte à la réouverture de l’app",
+  "s.reloadNow": "Rouvrir maintenant",
+  "s.live": "L’enregistrement est en cours — pris en compte après l’arrêt",
+  "s.invalid": "Cette valeur n’est pas autorisée — l’ancienne est conservée.",
+  "s.presetCustom": "Personnalisé",
+  "s.presetApplied": "Préréglage « {name} » appliqué.",
+  "s.undo": "Annuler",
+  "s.custom": "Personnalisé…",
+  "s.advWarn": "Ce sont les calculs internes de l’app. Une mauvaise valeur peut dégrader la détection des erreurs. En cas de doute, appuyez sur « Réinitialiser cette section ».",
+  "s.advSummary": "Calculs internes — à modifier avec prudence",
+  "s.contrast": "Faible contraste : {r}:1 — lecture peut-être difficile (4,5:1 ou plus est préférable).",
+  "s.platOnly": "Téléphone uniquement",
+  "r.listTip": "Voir toutes les erreurs de cette séance",
+  "r.listTitle": "Erreurs de cette séance ({n})",
+  "r.ayahRef": "Verset {a}",
+  "r.kind.skipped": "Omis",
+  "r.kind.changed": "Autre mot lu",
+  "r.kind.added": "Mot en trop lu",
+  "r.kind.peek": "Coup d’œil",
+  "r.listen": "Écouter",
+  "r.remove": "Écarter",
+  "r.removed": "Écarté.",
+  "r.removedTaught": "Écarté — lire ainsi ici ne sera plus signalé.",
+  "r.removedTitle": "Écartées ({n})",
+  "r.restore": "Rétablir",
+  "r.restored": "Compté de nouveau comme erreur.",
+  "r.removeAll": "Tout écarter",
+  "r.removeAllQ": "Écarter toutes les erreurs de cette séance ? Vous pouvez les rétablir avec « Rétablir ».",
+  "r.empty": "Aucune erreur pour l’instant.",
+  "r.hintTip": "Indice : afficher le mot suivant (appui long pour le reste du verset)",
+  "r.blockBanner": "Lisez correctement le mot rouge — vous pourrez ensuite continuer.",
+  "r.lg.ok": "Correct",
+  "r.lg.bad": "Faux/omis",
+  "r.lg.peek": "Indice/coup d’œil",
+  "r.lg.pend": "Vérification",
+  "r.lg.next": "Mot actuel",
+  "r.lg.weak": "Faiblesse passée",
+  "r.lg.given": "Indice",
+  "r.menu.listen": "Écouter à partir d’ici",
+  "r.menu.test": "Tester à partir d’ici",
+  "h.times": "Récité {t} fois au total, dont {e} avec erreur",
+  "r.help.list": "Appuyez sur le compteur <b>Faux/omis</b> ci-dessus pour voir toutes les erreurs de cette séance ; <b>Écarter</b> celle qui n’en était pas une, <b>Rétablir</b> au besoin.",
+  "r.help.hint": "Maintenez le bouton d’indice pour ouvrir le reste du verset.",
+  "t.setupTitle": "Que voulez-vous tester ?",
+  "t.suggested": "Suggéré pour vous",
+  "t.myRanges": "Mes plages",
+  "t.myMemorized": "Mon mémorisé",
+  "t.newRange": "Créer une nouvelle plage",
+  "t.noMemorized": "Rien n’est encore marqué comme mémorisé",
+  "t.rename": "Renommer",
+  "t.delete": "Supprimer",
+  "t.up": "Monter",
+  "t.down": "Descendre",
+  "t.deleteQ": "Supprimer la plage « {name} » ? (Les anciens résultats de test sont conservés)",
+  "t.rangeSummary": "Sélection : {name} · {n} versets",
+  "t.rules": "{q} questions · {w} mots chacune · indice de {h} mots",
+  "t.changeRules": "Changer les règles",
+  "t.temporary": "Temporaire (rien n’est enregistré)",
+  "t.start": "Commencer le test",
+  "t.emptyRange": "La plage ne contient aucun verset",
+  "t.modelWait": "Préparation du modèle…",
+  "t.starterTitle": "Pour commencer",
+  "t.starterBody": "Fin du juz 30 : de la sourate {a} à la sourate {b}",
+  "t.markMemorized": "Marquer comme mémorisé",
+  "t.resumeQ": "Le dernier test n’est pas terminé ({i} / {n} questions). Continuer ?",
+  "t.resume": "Continuer",
+  "t.seeResults": "Voir les résultats",
+  "t.discard": "Abandonner",
+  "t.introTitle": "Comment fonctionne le test",
+  "t.intro1": "Chaque question montre les premiers mots — récitez la suite sans regarder.",
+  "t.intro2": "Les mots justes s’ouvrent ; à la fin, la carte devient verte (sans faute) ou rouge (avec erreurs).",
+  "t.intro3": "Si vous bloquez : « mot suivant » ou « reste du verset » — un coup d’œil compte comme une erreur.",
+  "t.intro4": "Faites glisser la carte de côté ou appuyez sur « Question suivante » pour passer.",
+  "t.intro5": "Tout fonctionne sur le téléphone, sans internet.",
+  "t.introOk": "Compris",
+  "t.go": "C’est parti !",
+  "t.ref": "Sourate {n}. {english} · {span}",
+  "t.refHidden": "Sourate et verset masqués",
+  "t.eyeTip": "Afficher / masquer le numéro de sourate et de verset",
+  "t.listening": "J’écoute… récitez à partir de l’indice",
+  "t.checking": "Vérification…",
+  "t.peekWord": "Mot suivant",
+  "t.peekRest": "Reste du verset",
+  "t.next": "Question suivante",
+  "t.pass": "Sans faute !",
+  "t.failN": "{m} erreurs",
+  "t.skipped": "Passée",
+  "t.kind.stray": "Vous êtes passé à une autre sourate",
+  "t.timeUp": "Temps écoulé — terminez cette question",
+  "t.qOfN": "Question {i} / {n}",
+  "t.qTime": "Question {i} · {mm:ss} restant",
+  "t.qOpen": "Question {i}",
+  "t.mistakesN": "Erreurs {m}",
+  "t.score": "Score {p} %",
+  "t.streak": "Série {s}",
+  "t.paused": "En pause — le test est suspendu. Appuyez sur « Continuer » pour écouter à partir de la même question.",
+  "t.continue": "Continuer",
+  "t.end": "Terminer",
+  "t.autoPaused": "Silence prolongé — le test a été mis en pause.",
+  "t.resTitle": "Résultat du test",
+  "t.tempLabel": "Test temporaire — rien n’a été enregistré",
+  "t.resScore": "{p} %",
+  "t.resCorrect": "Correct {c} / {n}",
+  "t.resBest": "Plus longue série : {s}",
+  "t.resTime": "Temps : {time}",
+  "t.resAll": "Toutes les erreurs ({n})",
+  "t.resRemoved": "Erreurs écartées ({n})",
+  "t.resNone": "Aucune erreur — mashaAllah !",
+  "t.keepGoing": "Réciter encore",
+  "t.done": "Terminé",
+  "t.replay": "Refaire le même test",
+  "t.newTest": "Nouveau test",
+  "t.saveThis": "Garder cette plage",
+  "t.sg.warmup.name": "Échauffement",
+  "t.sg.warmup.sub": "Ce que vous faites le mieux",
+  "t.sg.weak.name": "Points faibles",
+  "t.sg.weak.sub": "Où vous faites le plus d’erreurs",
+  "t.sg.stale.name": "Pas récité depuis longtemps",
+  "t.sg.stale.sub": "Pas récité de mémoire depuis longtemps",
+  "t.sg.fresh.name": "Récemment mémorisé",
+  "t.sg.fresh.sub": "Ajouté à la liste mémorisée ces 14 derniers jours",
+  "t.sg.mixed.name": "Mélange",
+  "t.sg.mixed.sub": "Tirés de toute votre liste mémorisée",
+  "l.from": "Du verset",
+  "l.to": "Au verset",
+  "l.pick": "Choisir par juz ou page",
+  "l.speedChip": "{x}×",
+  "l.ayahChip": "Verset ×{n}",
+  "l.rangeChip": "Partie ×{n}",
+  "l.rangeChipInf": "Partie ∞",
+  "l.gapChip": "Pause {s} s",
+  "l.sleepChip": "Veille {m} min",
+  "l.play": "Lecture",
+  "l.pause": "Pause",
+  "l.prev": "Verset précédent",
+  "l.next": "Verset suivant",
+  "l.idle": "Choisissez ce que vous voulez écouter et appuyez sur ▶.",
+  "l.loading": "Chargement de l’audio…",
+  "l.playing": "Verset {a} · {k} / {n} fois",
+  "l.round": "Tour {r}",
+  "l.gap": "Pause… {s}",
+  "l.pausedS": "En pause",
+  "l.ended": "Terminé.",
+  "l.again": "Réécouter",
+  "l.error": "L’audio n’a pas pu être lu — êtes-vous en ligne ? Pour écouter hors ligne, téléchargez d’abord la sourate.",
+  "l.offline": "Disponible hors ligne",
+  "l.online": "Nécessite internet — à télécharger",
+  "l.slept": "Minuterie de veille — l’écoute s’est arrêtée.",
+  "l.offTitle": "Audio hors ligne",
+  "l.offRow": "{n}. {english} — {size}",
+  "l.offGet": "Télécharger",
+  "l.offGetting": "Téléchargement {p} %",
+  "l.offHave": "Téléchargé",
+  "l.offTooBig": "Trop volumineux — internet uniquement",
+  "l.offDel": "Supprimer",
+  "l.offDelQ": "Supprimer l’audio hors ligne de la sourate {english} ? Vous pourrez le télécharger de nouveau plus tard.",
+  "l.offTotal": "Espace total : {mb} Mo",
+  "l.offGetAll": "Tout télécharger",
+  "l.offGetAllQ": "{n} sourates, environ {mb} Mo seront téléchargés. OK ?",
+  "pk.title": "Choisir une plage",
+  "pk.unit": "Sourate · Juz · Hizb · Page · Verset",
+  "pk.quarters": "Afficher les rub (quarts)",
+  "pk.pageNote": "Les numéros de page suivent l’édition de Médine (604 pages)",
+  "pk.summary": "Sélection : {n} versets ({parts})",
+  "pk.clear": "Effacer",
+  "pk.save": "Enregistrer sous un nom",
+  "pk.use": "Utiliser",
+  "pk.namePh": "Donnez un nom (ex. : révision sourate Al-Mulk)",
+  "pk.saved": "« {name} » enregistré.",
+  "pk.full": "Pas plus de 50 plages — supprimez-en une ancienne.",
+  "m.title": "Liste mémorisée",
+  "m.summary": "{n} versets marqués comme mémorisés au total (dans {s} sourates)",
+  "m.add": "Ajouter du mémorisé",
+  "m.edit": "Modifier",
+  "m.remove": "Retirer",
+  "m.removeQ": "Retirer la sourate {english} de la liste mémorisée ? (Les séances et marques sont conservées)",
+  "m.sgTitle": "Votre historique indique que vous avez bien récité ceci sans regarder :",
+  "m.sgAdd": "Ajouter",
+  "m.sgAddAll": "Tout ajouter",
+  "m.empty": "Rien n’est encore marqué. Appuyez sur « Ajouter du mémorisé » et choisissez une sourate ou des versets.",
+  "g.title": "Objectifs",
+  "g.new": "Nouvel objectif",
+  "g.create": "Créer l’objectif",
+  "g.s1": "Quel type d’objectif ?",
+  "g.s2": "Quelle partie ?",
+  "g.s3": "Comment le répartir ?",
+  "g.s4": "Quels jours ?",
+  "g.s5": "Que se passe-t-il à la fin ?",
+  "g.type.memorize": "Nouvelle mémorisation (réciter une nouvelle partie sans regarder)",
+  "g.type.review": "Révision (réciter de nouveau une partie mémorisée sans regarder)",
+  "g.type.recite": "Récitation (toute lecture)",
+  "g.type.test": "Test (nombre de questions)",
+  "g.order.normal": "Dans l’ordre normal",
+  "g.order.reverse": "Dans l’ordre inverse (à partir de la dernière sourate)",
+  "g.strict": "Garder l’ordre — la partie suivante ne compte pas tant que la précédente n’est pas faite",
+  "g.plan.daily": "Une quantité fixe chaque jour",
+  "g.plan.bydate": "Terminer à une date fixée",
+  "g.plan.flexible": "Autant que je peux — le reste est reporté au jour suivant",
+  "g.unit.ayah": "versets",
+  "g.unit.page": "pages",
+  "g.unit.juz": "juz",
+  "g.unit.minute": "minutes",
+  "g.unit.word": "mots",
+  "g.unit.question": "questions",
+  "g.round.none": "Selon la répartition",
+  "g.round.up": "Pages entières — vers le haut",
+  "g.round.down": "Pages entières — vers le bas",
+  "g.round.nearest": "Pages entières — au plus proche",
+  "g.sch.daily": "Tous les jours",
+  "g.sch.days": "Certains jours de la semaine",
+  "g.sch.perWeek": "{n} jours par semaine",
+  "g.cycle.auto": "Recommencer automatiquement (nouvelle khatm)",
+  "g.cycle.manual": "Je la relancerai moi-même",
+  "g.cycle.off": "Arrêter",
+  "g.autoName": "{type} : {range}",
+  "g.tpl.manzil": "Khatm hebdomadaire (7 manzils)",
+  "g.tpl.page": "1 nouvelle page mémorisée par jour",
+  "g.tpl.juz": "1 juz de révision par jour",
+  "g.tpl.minutes": "15 minutes par jour",
+  "g.today": "Objectif du jour",
+  "g.todayLine": "{name} : {done} / {target} {unit}",
+  "g.progressLine": "Total {done} / {total} {unit} · date de fin {date}",
+  "g.restart": "Recommencer",
+  "g.completed": "Terminé — alhamdulillah !",
+  "g.pause": "Pause",
+  "g.resumeGoal": "Reprendre",
+  "g.edit": "Modifier",
+  "g.delete": "Supprimer",
+  "g.deleteQ": "Supprimer l’objectif « {name} » ? (Les séances sont conservées)",
+  "st.current": "{n} jours d’affilée",
+  "st.best": "Record : {n} jours d’affilée",
+  "st.keep": "Récitez aujourd’hui pour garder votre série",
+  "st.cellTip": "{date} : {m} min",
+  "bd.title": "Réussites",
+  "bd.new": "Nouvelle réussite : {name}",
+  "bd.locked": "Pas encore — {req}",
+  "x.add": "Ajouter une récitation faite hors de l’app",
+  "x.title": "Ajouter une récitation faite hors de l’app",
+  "x.date": "Date",
+  "x.minutes": "Combien de minutes",
+  "x.range": "Quelle partie (facultatif)",
+  "x.note": "Note",
+  "x.int.memorize": "Nouvelle mémorisation récitée à quelqu’un",
+  "x.int.review": "Révision",
+  "x.int.recite": "Récité depuis la page",
+  "x.save": "Ajouter",
+  "x.delete": "Supprimer",
+  "x.deleteQ": "Supprimer cette séance ajoutée à la main ?",
+  "h.f.all": "Tout",
+  "h.f.hifz": "Mémoire",
+  "h.f.look": "Page",
+  "h.f.test": "Test",
+  "h.f.manual": "Hors app",
+  "h.f.listen": "Écoute",
+  "h.chip.test": "Test",
+  "h.chip.manual": "Hors app",
+  "h.chip.listen": "Écoute",
+  "h.play": "Écouter",
+  "h.testRow": "{date} · {range} · {p} % · correct {c}/{n}",
+  "h.testEditNote": "Écarter une erreur ici ne change que le score de ce test ; pour effacer les marques de faiblesse, appuyez sur le mot rouge.",
+  "h.seg": "Résumé · Objectifs · Mémorisé · Tests · Réussites",
+  "h.weekN": "{n} derniers jours",
+  "help.1": "<b>Appuyez sur le bouton du micro</b> et commencez à lire ; l’app trouve la sourate toute seule (vous pouvez aussi la choisir ci-dessus). Appuyer sur <b>■</b> termine la séance et l’enregistre.",
+  "help.2": "Les mots s’ouvrent au fil de la lecture : <span class=\"hz-ok\">vert = correct</span>, <span class=\"hz-bad\">rouge = faux/omis</span> (avec un son d’alerte), <span class=\"hz-hint\">violet = indice/blocage</span>. Le cadre bleu clignotant = le mot à lire maintenant.",
+  "help.3": "Faites une pause avec le bouton <b>Pause</b>, regardez les mots rouges et écoutez, puis appuyez sur le même bouton pour continuer. Si vous voulez, relisez depuis un verset précédent pour corriger l’erreur ; l’app suivra à partir de là.",
+  "help.4": "Quand vous finissez une sourate et commencez la suivante (ou une autre), l’app s’y déplace toute seule — elle suit tant que vous lisez.",
+  "help.5": "Le <b>bouton œil</b> bascule entre lecture sur le texte (tout le texte affiché) et lecture de mémoire (texte masqué).",
+  "help.6": "Si vous bloquez, appuyez sur <b>Indice</b>, ou <b>restez silencieux</b> (autant de secondes que réglé dans « Alafasy commence après une pause de » ci-dessus, {wait} au départ) : Mishary Alafasy récitera la suite et les mots s’ouvriront en violet. Quand vous recommencez à lire (ou appuyez sur Pause/Stop), il s’arrête et l’app vous écoute. Maintenez le bouton d’indice pour ouvrir le reste du verset.",
+  "help.7": "<b>Touchez un mot rouge</b> pour entendre ce que vous avez lu et ce que vous auriez dû lire — avec les mots autour. Si vous l’avez lu correctement, appuyez sur ✓.",
+  "help.8": "Les mots où vous avez fait une erreur ou bloqué lors d’une séance précédente restent <span class=\"hz-w1 hz-swatch\">rose clair</span> à <span class=\"hz-w3 hz-swatch\">rouge foncé</span> ; après les avoir lus correctement de mémoire {clear} fois de suite, la marque disparaît.",
+  "help.9": "Si vous pensez qu’une marque est fausse (hors enregistrement, ou dans l’onglet <b>Progrès</b>), touchez la case rouge : écoutez ce que vous avez lu et appuyez sur <b>✓ Marque fausse — retirer</b>. La marque disparaît et lire ainsi ne sera plus signalé.",
+  "help.10": "Dans l’onglet <b>Progrès</b>, chaque sourate a une bande colorée par verset — vous voyez d’un coup d’œil les versets les plus faibles (rouge foncé). Touchez une case pour ouvrir ce verset en dessous.",
+  "help.11": "Sur le téléphone : le modèle (environ 19 Mo) se télécharge la première fois, puis fonctionne sans internet. Toutes les données restent sur ce téléphone — vous pouvez les sauvegarder dans un fichier depuis l’onglet <b>Progrès</b>. La vérification automatique peut se tromper ; elle ne remplace pas un enseignant.",
+  "a.autoSurah": "Automatique — trouve la sourate à l’écoute",
+  "a.lookOn": "De mémoire : masquer le texte",
+  "a.lookOff": "Lecture : afficher tout le texte",
+  "a.pauseResumeTip": "Continuer — là où vous vous êtes arrêté",
+  "a.pauseTip": "Pause — s’arrête ici, vous pourrez continuer plus tard",
+  "a.stopTip": "Stop — termine et enregistre la séance",
+  "a.recTip": "Démarrer l’enregistrement — commencez à lire",
+  "a.stop": "Stop",
+  "a.record": "Enregistrer",
+  "a.micFail": "Le microphone n’a pas pu démarrer : {err}",
+  "a.maxRec": "Durée maximale d’enregistrement atteinte — arrêté.",
+  "a.listening": "J’écoute…",
+  "a.checking": "Vérification…",
+  "a.tooShort": "L’enregistrement est trop court.",
+  "a.noMatch": "Aucun verset ne correspond. Lisez un peu plus longtemps, ou choisissez la sourate vous-même.",
+  "a.entry": "Sourate {english} : {words} mots, précision {acc} %, erreurs {missed}, blocages {stuck}",
+  "a.saved": "Séance enregistrée — {parts}. Tout est visible dans l’onglet Progrès.",
+  "a.close": "Fermer",
+  "a.closeAria": "Fermer",
+  "a.listenMine": "Écouter ma lecture",
+  "a.shouldBe": "Ce qu’il fallait lire",
+  "a.listenAlafasyTip": "Récitation de Mishary Alafasy (avec les mots autour)",
+  "a.listenAlafasy": "Récitation d’Alafasy",
+  "a.iWasRight": "Je l’ai lu correctement",
+  "a.leftMain": "Lisez-le correctement de mémoire encore {n} fois et la marque rouge disparaît",
+  "a.leftStreak": "Jusqu’ici {n} séances de suite étaient correctes.",
+  "a.leftSub": "Compté une fois par séance, et de suite — une erreur ou un blocage remet le compte à zéro ; la lecture sur le texte ne compte pas.",
+  "a.wkMeta": "Lors des séances précédentes ici : {kind} — {count} fois au total, dernière fois {last}",
+  "a.saidErr": "Ce que vous avez lu (ce que le modèle a entendu)",
+  "a.saidWk": "Ce que vous aviez lu alors (ce que le modèle a entendu)",
+  "a.heardNothing": "Rien n’a été entendu — le mot semble avoir été omis",
+  "a.noRecording": "L’enregistrement de l’époque n’est pas disponible",
+  "a.mineErrTip": "Écouter ma lecture (avec les deux mots précédents)",
+  "a.mineWkTip": "Écouter ma lecture de l’époque",
+  "a.okErrTip": "Je l’ai lu correctement — le modèle a mal entendu",
+  "a.okWkTip": "Je l’ai bien lu correctement — retirer la marque, lire ainsi ne sera plus signalé",
+  "a.okErrLbl": "Je l’ai lu correctement",
+  "a.okWkLbl": "Marque fausse — retirer",
+  "a.markCleared": "Marque retirée",
+  "a.markClearedTaught": "Marque retirée — lire ainsi ici ne sera plus signalé.",
+  "a.forgetSurahQ": "Retirer toutes les marques rouges de cette sourate ? Les endroits qui ont un enregistrement seront retenus comme bien lus — les lire de la même façon plus tard ne sera plus signalé.",
+  "a.marksCleared": "{n} marques retirées — lire ces endroits ainsi ne sera plus signalé.",
+  "a.storage": "Stocké sur le téléphone : {n} entrées de séance, {r} enregistrements ({mb} Mo).",
+  "a.pv.overview": "Résumé",
+  "a.pv.goals": "Objectifs",
+  "a.pv.memorized": "Mémorisé",
+  "a.pv.tests": "Tests",
+  "a.pv.badges": "Réussites",
+  "a.importQ": "Fusionner les données du fichier avec les données actuelles ? (OK = fusionner, Annuler = remplacer toutes les données actuelles par celles du fichier)",
+  "a.importOk": "Données restaurées — réouverture de la page…",
+  "a.importBad": "Impossible de lire le fichier : {err}",
+  "a.defaultMic": "Le microphone de l’appareil",
+  "a.micN": "Microphone {n}",
+  "a.modelBuilding": "Préparation du modèle…",
+  "a.modelDownload": "Téléchargement du modèle (environ 19 Mo, la première fois seulement)…",
+  "a.modelFooter": "Modèle : quran-asr-tiny · {backend}, {threads} threads. Après la première fois, il fonctionne sans internet. La vérification automatique peut se tromper ; elle ne remplace pas un enseignant.",
+  "a.modelFail": "Le modèle n’a pas démarré : {err}",
+  "a.ayahMenuTitle": "{english} · Verset {a}",
+  "a.startFail": "Démarrage impossible : {err}",
+  "p.sura": "Sourate {n}. {english}",
+  "p.paused": "En pause — l’écoute reprend quand vous continuez.",
+  "p.waiting": "J’écoute… commencez à lire, l’app <b>trouve la sourate toute seule</b> après quelques mots.",
+  "p.autoDetected": "Détectée automatiquement",
+  "p.hCount": "Verset {a} / {n}",
+  "p.hOk": "Correct {n}",
+  "p.hBad": "Faux/omis {n}",
+  "p.hHint": "Indices {n}",
+  "p.stray": "Erreur : cela ressemble au verset {ayah} de la sourate {english}. Vous lisiez la sourate {current} ; reprenez au mot marqué en bleu.",
+  "p.pausedBanner": "En pause : touchez un mot rouge pour voir et écouter. Quand vous continuez, l’écoute reprend ici ; vous pouvez aussi relire depuis un verset précédent pour corriger un mot rouge.",
+  "p.cellWeak": "{span} : {n} mots faibles",
+  "p.cellOk": "bon",
+  "p.cellNone": "pas encore lu de mémoire",
+  "p.empty": "Aucune séance pour l’instant. Enregistrez dans l’onglet Réciter ; quand vous arrêtez (■), la séance est enregistrée ici.",
+  "p.cSessions": "Séances au total",
+  "p.cSurahs": "Sourates travaillées",
+  "p.cMinutes": "Minutes au total",
+  "p.cWeek": "Cette semaine",
+  "p.cWeekN": "{n} derniers jours",
+  "p.ayahCount": "{a}/{n} versets",
+  "p.weakCount": "{n} mots faibles",
+  "p.th.surah": "Sourate",
+  "p.th.state": "État",
+  "p.th.acc": "Précision récente",
+  "p.th.read": "Part lue",
+  "p.th.weak": "Points faibles",
+  "p.th.sessions": "Séances",
+  "p.th.last": "Dernier entraînement",
+  "p.th.when": "Quand",
+  "p.th.surahAyah": "Sourate (versets)",
+  "p.th.mode": "Type",
+  "p.th.words": "Mots",
+  "p.th.acc2": "Précision",
+  "p.th.missed": "Erreurs",
+  "p.th.stuck": "Blocages",
+  "p.th.time": "Durée",
+  "p.mode.look": "Lecture",
+  "p.mode.hifz": "Mémorisé",
+  "p.mode.mixed": "Mixte",
+  "p.bySurah": "État de mémorisation par sourate",
+  "p.recent": "Séances récentes",
+  "p.stateNote": "État : précision moyenne des {w} dernières séances de mémorisation — {good} % ou plus = bien mémorisé, {fair}–{good} % = moyen. Les séances lues sur le texte ne comptent pas.",
+  "p.weakNote": "Points faibles : chaque case est un verset, du verset 1 à la fin — {k0}, {k1}, {k2}. Touchez une case pour afficher ce verset en dessous.",
+  "p.key0": "vert = bon",
+  "p.key1": "rose clair à rouge foncé = plus c’est faible, plus c’est foncé",
+  "p.key2": "gris = pas encore lu de mémoire",
+  "p.hotChipTip": "Touchez pour afficher en dessous",
+  "p.hotLabel": "Endroits les plus faibles :",
+  "p.legend1": "bon",
+  "p.legend2": "rose clair à rouge foncé = plus de mots faibles",
+  "p.legend3": "pas encore lu de mémoire",
+  "p.mapTitle": "Carte des faiblesses par verset",
+  "p.mapSub": "Chaque case est un verset — touchez pour aller à ce verset dans le texte en dessous",
+  "p.weakHead": "{n} mots faibles. Rose clair = parfois faux/bloqué, rouge foncé = encore et encore. Après {clear} séances de suite lues correctement de mémoire, la marque disparaît. <b>Touchez un mot rouge</b> pour entendre ce que vous aviez lu alors ; si la marque est fausse, vous pouvez la retirer.",
+  "p.noWeak": "Aucun point faible dans cette sourate — mashaAllah !",
+  "s.col.ok": "Correct",
+  "s.col.bad": "Faux",
+  "s.col.peek": "Coup d’œil",
+  "s.col.pend": "Vérification",
+  "s.col.next": "Mot suivant",
+  "s.col.weak": "Ancienne faiblesse",
+  "s.col.listen": "Lueur d’écoute",
+  "s.on": "Activé",
+  "s.off": "Désactivé",
+  "s.sum.alafasy": "Alafasy {v}",
+  "s.sum.added": "Détecte les mots en trop",
+  "s.sum.addedOff": "Mots en trop non détectés",
+  "s.sum.peekMistake": "Coup d’œil = erreur",
+  "s.sum.peekOk": "Coup d’œil sans erreur",
+  "s.sum.hint": "Indice {v}",
+  "s.sum.speed": "Vitesse {v}",
+  "s.sum.perAyah": "Chaque verset ×{n}",
+  "s.sum.weekStart": "La semaine commence {v}",
+  "s.sum.countTests": "Tests comptés aussi",
+  "s.sum.noTests": "Tests non comptés",
+  "s.sum.good": "Bien mémorisé {v}",
+  "s.sum.clear": "La marque disparaît après {n} séances de suite",
+  "s.sum.arabic": "Arabe {v}",
+  "s.sum.motion": "Animation {v}",
+  "s.sum.awake": "L’écran reste allumé",
+  "s.sum.awakeOff": "Écran normal",
+  "bd.n.first": "Premier pas",
+  "bd.r.first": "Enregistrez votre première séance",
+  "bd.n.streak7": "Une semaine d’affilée",
+  "bd.r.streak7": "Lisez 7 jours de suite",
+  "bd.n.streak30": "Un mois d’affilée",
+  "bd.r.streak30": "Lisez 30 jours de suite",
+  "bd.n.sessions100": "Centième séance",
+  "bd.r.sessions100": "100 séances au total",
+  "bd.n.hours10": "Dix heures",
+  "bd.r.hours10": "10 heures de récitation au total",
+  "bd.n.good1": "Première sourate solide",
+  "bd.r.good1": "Amenez une sourate à « bien mémorisé »",
+  "bd.n.good5": "Cinq sourates solides",
+  "bd.r.good5": "5 sourates « bien mémorisé »",
+  "bd.n.test100": "Test parfait",
+  "bd.r.test100": "100 % à un test d’au moins 10 questions",
+  "bd.n.tests10": "Tests réguliers",
+  "bd.r.tests10": "Terminez 10 tests",
+  "bd.n.juz1": "Un juz mémorisé",
+  "bd.r.juz1": "Un juz entier dans la liste mémorisée",
+  "bd.n.cleared50": "Maître de l’effacement",
+  "bd.r.cleared50": "Effacez 50 marques de faiblesse en lisant correctement de mémoire",
+  "bd.n.goal1": "Objectif atteint",
+  "bd.r.goal1": "Atteignez l’objectif d’un jour pour la première fois",
+  "app.title": "Hifz Helper",
+  "c.ok": "OK",
+  "c.no": "Non",
+  "fmt.ayah1": "Verset {a}",
+  "fmt.ayahN": "Versets {a}–{b}",
+  "fmt.durMS": "{m} min {s} s",
+  "fmt.durS": "{s} s",
+  "u.s": "{n} secondes",
+  "u.min": "{n} minutes",
+  "u.words": "{n} mots",
+  "u.ayah": "{n} versets",
+  "u.sC": "{n} s",
+  "u.minC": "{n} min",
+  "hk.missed": "Faux/omis",
+  "hk.hint": "Vous avez bloqué (indice)",
+  "hk.slip": "Une erreur, corrigée en relisant",
+  "gr.none": "Lu sur le texte seulement",
+  "gr.good": "Bien mémorisé",
+  "gr.fair": "Moyen",
+  "gr.weak": "À retravailler",
+  "d.0": "Dim",
+  "d.1": "Lun",
+  "d.2": "Mar",
+  "d.3": "Mer",
+  "d.4": "Jeu",
+  "d.5": "Ven",
+  "d.6": "Sam",
+  "g.nParts": "{n} parties",
+  "g.minutesNote": "{n} min {note}",
+  "g.mode.look": "Lecture",
+  "g.mode.hifz": "Mémorisé",
+  "g.mode.mixed": "Mixte",
+  "pk.l.juz": "Juz {n}",
+  "pk.l.hizb": "Hizb {n}",
+  "pk.l.rub": "Rub {n}",
+  "pk.l.page": "Page {n}",
+  "pk.l.pages": "Pages {a}–{b}",
+  "pk.l.mem": "Mes parties mémorisées",
+  "pk.pageRange": "Page {from} à {to}",
+  "pk.u.surah": "Sourate",
+  "pk.u.juz": "Juz",
+  "pk.u.hizb": "Hizb",
+  "pk.u.page": "Page",
+  "pk.u.ayah": "Verset",
+  "t.ayahBadge": "{n} versets",
+  "l.artist": "Mishary Rashid Alafasy",
+  "m.sugRow": "Sourate {n}. {english} : versets {a}–{b}",
+  "m.cover": "{c} / {n} versets",
+  "t.starterRange": "{n}. {english}",
+  "a.sub": "Écoute votre récitation de mémoire et repère les erreurs aussitôt · retient où vous bloquez souvent",
+  "a.themeAria": "Changer les couleurs",
+  "a.lblSurah": "Sourate",
+  "a.lblWait": "Alafasy commence après une pause de",
+  "a.lblWaitSub": "Combien de secondes de silence",
+  "a.howTo": "Mode d’emploi",
+  "a.weakTitle": "Où vous bloquez souvent",
+  "a.pickSurahAria": "Choisir une sourate",
+  "a.clearAll": "Retirer toutes les marques",
+  "a.clearAllTip": "Retirer toutes les marques rouges de cette sourate (demande confirmation)",
+  "a.export": "Déplacer les données vers un fichier (sauvegarde)",
+  "a.import": "Restaurer les données depuis un fichier",
+  "a.install": "Ajouter comme application",
+  "a.timerAria": "Durée de récitation",
+  "a.pauseAria": "Pause",
+  "a.lookAria": "Lecture / de mémoire",
+  "a.hintAria": "Indice"
+ },
+ "settings": {
+  "recite.waitS": {
+   "label": "Alafasy commence après une pause de",
+   "help": "Combien de secondes de silence avant l’aide ; « Désactivé » = jamais",
+   "sub": "Quand vous bloquez",
+   "options": {
+    "0": "Désactivé"
+   }
+  },
+  "recite.silenceHelp": {
+   "label": "Ce qui se passe quand vous restez silencieux",
+   "help": "Quelle aide l’app donne quand vous bloquez",
+   "sub": "Quand vous bloquez",
+   "options": {
+    "surah": "Alafasy récite jusqu’à la fin de la sourate",
+    "ayah": "Jusqu’à la fin du verset",
+    "words3": "Les 3 mots suivants",
+    "word": "Seulement le mot suivant",
+    "show": "Afficher seulement le mot suivant, sans audio"
+   }
+  },
+  "recite.promptOnLook": {
+   "label": "Aide aussi pendant la lecture sur le texte",
+   "help": "L’aide arrive après un silence même quand le bouton œil est activé",
+   "sub": "Quand vous bloquez"
+  },
+  "detect.changed": {
+   "label": "Détecter les mots remplacés",
+   "help": "Un mot devient rouge quand vous lisez un autre mot à sa place",
+   "sub": "Quelles erreurs détecter"
+  },
+  "detect.skipped": {
+   "label": "Détecter les mots omis",
+   "help": "Un mot devient rouge quand vous passez à la suite sans l’avoir lu",
+   "sub": "Quelles erreurs détecter"
+  },
+  "detect.added": {
+   "label": "Détecter les mots en trop",
+   "help": "Le mot suivant devient rouge quand vous lisez quelque chose en plus dans un verset ; le désactiver allège le travail du téléphone",
+   "sub": "Quelles erreurs détecter"
+  },
+  "detect.stray": {
+   "label": "Avertir en cas de passage à une autre sourate",
+   "help": "Bandeau rouge et son d’alerte quand vous glissez vers un verset semblable d’une autre sourate",
+   "sub": "Quelles erreurs détecter"
+  },
+  "detect.confirmedWords": {
+   "label": "Mots lus correctement avant qu’une autre sourate compte comme erreur",
+   "help": "Bas = avertit plus tôt ; haut = moins de fausses alertes quand vous commencez une nouvelle sourate",
+   "sub": "Quelles erreurs détecter"
+  },
+  "detect.similarRatio": {
+   "label": "Rigueur de la correspondance des mots",
+   "help": "Haut = détecte même les prononciations proches ; bas = plus indulgent",
+   "sub": "Quelles erreurs détecter"
+  },
+  "detect.noAdvance": {
+   "label": "Ne pas avancer tant qu’une erreur n’est pas corrigée",
+   "help": "Quand un mot est rouge, le suivant ne s’ouvre pas avant que vous le lisiez correctement",
+   "sub": "Quelles erreurs détecter"
+  },
+  "detect.teachOnRemove": {
+   "label": "Retenir les erreurs écartées",
+   "help": "Après « Je l’ai lu correctement » ou « Écarter », la même lecture ne sera plus signalée",
+   "sub": "Quelles erreurs détecter"
+  },
+  "detect.errorTone": {
+   "label": "Son d’alerte",
+   "help": "Un son quand un mot devient rouge ou que vous passez à une autre sourate (pendant l’enregistrement seulement)",
+   "sub": "Son d’alerte",
+   "options": {
+    "off": "Désactivé",
+    "soft": "Doux",
+    "normal": "Normal",
+    "loud": "Fort"
+   }
+  },
+  "detect.toneKind": {
+   "label": "Type de son d’alerte",
+   "sub": "Son d’alerte",
+   "options": {
+    "two": "Deux tons",
+    "beep": "Un bip",
+    "double": "Deux bips"
+   }
+  },
+  "detect.vibrate": {
+   "label": "Vibrer en cas d’erreur",
+   "help": "Le téléphone vibre légèrement sur un mot rouge",
+   "sub": "Son d’alerte"
+  },
+  "recite.startAt": {
+   "label": "Quelle sourate au démarrage",
+   "help": "Comment la sourate est choisie à l’ouverture de l’app",
+   "sub": "Démarrage",
+   "options": {
+    "auto": "La trouver à l’écoute",
+    "last": "Sourate et verset de la dernière fois",
+    "continue": "Continuer après l’endroit où vous vous êtes arrêté la dernière fois"
+   }
+  },
+  "recite.autoAyahs": {
+   "label": "Combien de versets afficher à l’avance",
+   "help": "Combien de versets sont ajoutés d’un coup pendant la lecture",
+   "sub": "Démarrage"
+  },
+  "recite.mistakeList": {
+   "label": "Afficher la liste des erreurs",
+   "help": "Toucher le compteur « faux/omis » ci-dessus affiche toutes les erreurs de cette séance",
+   "sub": "Démarrage"
+  },
+  "recite.look": {
+   "label": "Lire sur le texte (afficher tout le texte)",
+   "help": "Comme le bouton œil ; les mots lus sur le texte ne comptent pas pour effacer les marques",
+   "sub": "Texte masqué"
+  },
+  "hide.style": {
+   "label": "Aspect des mots masqués",
+   "sub": "Texte masqué",
+   "options": {
+    "bar": "Une case de la taille du mot",
+    "line": "Seulement un trait dessous",
+    "blank": "Complètement vide"
+   }
+  },
+  "hide.weakTint": {
+   "label": "Couleur de la faiblesse passée sur les mots masqués",
+   "help": "Les mots faux lors de séances précédentes montrent une case rose clair à rouge foncé",
+   "sub": "Texte masqué"
+  },
+  "hide.ayahMarks": {
+   "label": "Masquer les marques de verset",
+   "help": "La marque de fin de verset n’apparaît que lorsque le verset est entièrement lu",
+   "sub": "Texte masqué"
+  },
+  "hide.nextWord": {
+   "label": "Marquer la case du mot suivant",
+   "help": "Un anneau sur la case du mot à lire maintenant",
+   "sub": "Texte masqué"
+  },
+  "hide.head": {
+   "label": "Afficher le numéro de sourate et de verset en haut",
+   "help": "Désactivé, le verset où vous êtes reste masqué",
+   "sub": "Texte masqué"
+  },
+  "peek.countsAsMistake": {
+   "label": "Compter le coup d’œil comme erreur",
+   "help": "Les mots ouverts par un indice ou un coup d’œil comptent comme erreur dans les marques de faiblesse et le score du test",
+   "sub": "Coup d’œil"
+  },
+  "peek.longPressRest": {
+   "label": "Appui long sur l’indice pour le reste du verset",
+   "help": "Maintenir le bouton d’indice une demi-seconde (clic droit sur ordinateur) ouvre tous les mots restants du verset",
+   "sub": "Coup d’œil"
+  },
+  "peek.doubleTap": {
+   "label": "Double toucher sur le texte pour le mot suivant",
+   "help": "Pendant l’enregistrement, un double toucher sur une case de mot (double clic sur ordinateur) ouvre le mot suivant comme un indice",
+   "sub": "Coup d’œil"
+  },
+  "test.endBy": {
+   "label": "Fin du test",
+   "sub": "Durée",
+   "options": {
+    "count": "Selon le nombre de questions",
+    "time": "Selon le temps",
+    "open": "Quand je l’arrête"
+   }
+  },
+  "test.questions": {
+   "label": "Combien de questions",
+   "sub": "Durée"
+  },
+  "test.minutes": {
+   "label": "Combien de minutes",
+   "help": "Quand le temps est écoulé, la question en cours se termine et le résultat s’affiche",
+   "sub": "Durée"
+  },
+  "test.lengthUnit": {
+   "label": "Mesurer la longueur d’une question",
+   "sub": "Questions",
+   "options": {
+    "words": "En mots",
+    "ayahs": "En versets"
+   }
+  },
+  "test.lengthWords": {
+   "label": "Mots à lire dans chaque question",
+   "help": "Les mots après l’indice",
+   "sub": "Questions",
+   "options": {
+    "8": "Court 8",
+    "15": "Moyen 15",
+    "30": "Long 30"
+   }
+  },
+  "test.lengthAyahs": {
+   "label": "Versets dans chaque question",
+   "sub": "Questions"
+  },
+  "test.extendToAyahEnd": {
+   "label": "Aller jusqu’à la fin du verset",
+   "help": "Une question ne s’arrête pas au milieu d’un verset mais le termine",
+   "sub": "Questions"
+  },
+  "test.hintWords": {
+   "label": "Combien de mots montrer au début",
+   "help": "Vous lisez la suite sans regarder ; 0 = seulement le numéro de sourate et de verset",
+   "sub": "Questions"
+  },
+  "test.start": {
+   "label": "Où commence une question",
+   "sub": "Questions",
+   "options": {
+    "ayah": "Au début d’un verset",
+    "random": "N’importe où dans le verset"
+   }
+  },
+  "test.order": {
+   "label": "Ordre des questions",
+   "sub": "Questions",
+   "options": {
+    "shuffle": "Mélangé",
+    "seq": "Dans l’ordre",
+    "weak": "Points faibles d’abord"
+   }
+  },
+  "test.noRepeat": {
+   "label": "Aucune question ne se répète avant la fin de toute la plage",
+   "sub": "Questions"
+  },
+  "test.showRef": {
+   "label": "Afficher le numéro de sourate et de verset",
+   "help": "Peut aussi être basculé avec le bouton œil de la carte",
+   "sub": "Questions"
+  },
+  "test.silence": {
+   "label": "Quand vous restez silencieux",
+   "sub": "Quand vous bloquez",
+   "options": {
+    "none": "Rien",
+    "show": "Afficher le mot suivant",
+    "alafasy": "Alafasy récite le mot suivant"
+   }
+  },
+  "test.silenceS": {
+   "label": "Combien de secondes de silence",
+   "sub": "Quand vous bloquez"
+  },
+  "test.doubleTapPeek": {
+   "label": "Double toucher sur la carte pour le mot suivant",
+   "help": "Double clic sur ordinateur",
+   "sub": "Quand vous bloquez"
+  },
+  "test.skipCounts": {
+   "label": "Compter les questions passées dans le score",
+   "help": "Activé, une question passée compte comme « non correcte »",
+   "sub": "Score"
+  },
+  "test.streakAt": {
+   "label": "Flamme après combien de bonnes réponses de suite",
+   "sub": "Score"
+  },
+  "test.advance": {
+   "label": "Après une question",
+   "sub": "Déroulement",
+   "options": {
+    "auto": "Afficher le résultat, puis passer seul à la suivante",
+    "tap": "Quand j’appuie sur « Question suivante »"
+   }
+  },
+  "test.holdS": {
+   "label": "Durée d’affichage du résultat",
+   "help": "Après que la carte devient verte/rouge, avant la question suivante",
+   "sub": "Déroulement"
+  },
+  "test.countdown": {
+   "label": "Compte à rebours avant le début",
+   "sub": "Déroulement",
+   "options": {
+    "0": "Désactivé",
+    "3": "3 secondes",
+    "5": "5 secondes"
+   }
+  },
+  "test.autoPauseS": {
+   "label": "Pause automatique en cas de silence",
+   "help": "Le test se met en pause quand rien n’est lu pendant ce nombre de secondes",
+   "sub": "Déroulement",
+   "options": {
+    "0": "Désactivé",
+    "15": "15",
+    "30": "30",
+    "60": "60",
+    "120": "120 secondes"
+   }
+  },
+  "test.sound": {
+   "label": "Son après une question",
+   "help": "Un son aigu si correct, grave si faux",
+   "sub": "Déroulement"
+  },
+  "test.vibrate": {
+   "label": "Vibrer après une question",
+   "sub": "Déroulement"
+  },
+  "test.temporary": {
+   "label": "Test temporaire",
+   "help": "Rien n’est enregistré — ni résultat, ni erreurs, ni enregistrements ; utile pour tester quelqu’un d’autre",
+   "sub": "Enregistrement"
+  },
+  "test.countInHistory": {
+   "label": "Ajouter les erreurs du test aux marques de faiblesse",
+   "help": "Désactivé, le résultat du test est gardé mais les marques de faiblesse ne changent pas",
+   "sub": "Enregistrement"
+  },
+  "test.checkAdded": {
+   "label": "Détecter les mots en trop dans le test",
+   "help": "Désactivé, la vérification après une question est plus rapide",
+   "sub": "Enregistrement"
+  },
+  "listen.reciter": {
+   "label": "Récitateur : Mishary Rashid Alafasy (le seul pour l’instant)",
+   "sub": "Récitateur"
+  },
+  "listen.speed": {
+   "label": "Vitesse",
+   "help": "Écouter lentement facilite la mémorisation",
+   "sub": "Vitesse et répétitions",
+   "options": {
+    "1": "1×",
+    "2": "2×",
+    "0.5": "0.5×",
+    "0.75": "0.75×",
+    "1.25": "1.25×",
+    "1.5": "1.5×"
+   }
+  },
+  "listen.repeatAyah": {
+   "label": "Combien de fois chaque verset",
+   "sub": "Vitesse et répétitions"
+  },
+  "listen.repeatRange": {
+   "label": "Combien de fois toute la partie",
+   "sub": "Vitesse et répétitions",
+   "options": {
+    "0": "Sans fin"
+   }
+  },
+  "listen.gapRepeatS": {
+   "label": "Pause avant la répétition du même verset",
+   "help": "Le temps de le dire vous-même",
+   "sub": "Vitesse et répétitions"
+  },
+  "listen.gapAyahS": {
+   "label": "Pause après chaque verset",
+   "help": "Avant de passer au verset suivant",
+   "sub": "Vitesse et répétitions"
+  },
+  "listen.gapAuto": {
+   "label": "Pause aussi longue que le verset",
+   "help": "Activé, après chaque verset l’app attend le temps qu’il faut pour le lire — pour le dire vous-même après l’avoir écouté",
+   "sub": "Vitesse et répétitions"
+  },
+  "listen.highlight": {
+   "label": "Montrer ce qui est récité",
+   "sub": "Texte",
+   "options": {
+    "word": "Par mot",
+    "ayah": "Par verset",
+    "none": "Rien"
+   }
+  },
+  "listen.text": {
+   "label": "Texte",
+   "sub": "Texte",
+   "options": {
+    "show": "Tout afficher",
+    "reveal": "S’ouvre au fil de l’écoute",
+    "hide": "Masqué"
+   }
+  },
+  "listen.autoScroll": {
+   "label": "Défilement automatique",
+   "sub": "Texte"
+  },
+  "listen.basmala": {
+   "label": "Bismillah au début d’une sourate",
+   "help": "En écoutant depuis le verset 1, la Bismillah est récitée d’abord (sauf sourates Al-Fatiha et At-Tawba)",
+   "sub": "Texte"
+  },
+  "listen.nextSurah": {
+   "label": "Lire la sourate suivante à la fin",
+   "sub": "Texte"
+  },
+  "listen.sleepMin": {
+   "label": "Minuterie de veille",
+   "help": "L’écoute s’arrête après ce nombre de minutes",
+   "sub": "Texte",
+   "options": {
+    "0": "Désactivé",
+    "10": "10",
+    "15": "15",
+    "30": "30",
+    "60": "60 minutes"
+   }
+  },
+  "listen.countAsSession": {
+   "label": "Garder l’écoute dans l’historique",
+   "help": "La durée d’écoute et la partie écoutée sont enregistrées ; cela compte pour les objectifs ou la série seulement si activé dans « Objectifs et série »",
+   "sub": "Texte"
+  },
+  "audio.ctxBefore": {
+   "label": "Alafasy sur un mot rouge : mots avant",
+   "help": "Combien de mots avant le mot la fenêtre récite",
+   "sub": "Audio des mots rouges"
+  },
+  "audio.ctxAfter": {
+   "label": "Alafasy sur un mot rouge : mots après",
+   "sub": "Audio des mots rouges"
+  },
+  "audio.myCtxWords": {
+   "label": "Ma lecture : mots avant",
+   "help": "Combien de mots plus tôt votre propre enregistrement commence dans la fenêtre",
+   "sub": "Audio des mots rouges"
+  },
+  "audio.popupSpeed": {
+   "label": "Vitesse d’Alafasy dans la fenêtre",
+   "sub": "Audio des mots rouges"
+  },
+  "audio.offlineMaxMB": {
+   "label": "Taille maximale à garder hors ligne (par sourate)",
+   "help": "Les sourates plus grandes ne se lisent qu’en ligne",
+   "sub": "Hors ligne",
+   "options": {
+    "40": "40",
+    "80": "80",
+    "150": "150",
+    "250": "250 Mo"
+   }
+  },
+  "goals.dayStart": {
+   "label": "Le jour commence à",
+   "help": "Si vous lisez tard dans la nuit, cela compte pour le jour précédent",
+   "options": {
+    "0": "Minuit",
+    "1": "1 h",
+    "2": "2 h",
+    "3": "3 h",
+    "4": "4 h",
+    "5": "5 h",
+    "6": "6 h"
+   }
+  },
+  "goals.weekStart": {
+   "label": "La semaine commence le",
+   "options": {
+    "0": "Dimanche",
+    "1": "Lundi",
+    "6": "Samedi"
+   }
+  },
+  "goals.streakMin": {
+   "label": "Un jour compte pour la série avec au moins",
+   "options": {
+    "any": "Une séance, quelle qu’elle soit",
+    "m5": "5 minutes",
+    "m10": "10 minutes",
+    "m20": "20 minutes",
+    "goals": "Tous les objectifs du jour atteints"
+   }
+  },
+  "goals.countLook": {
+   "label": "Compter la lecture sur le texte pour les objectifs de mémorisation et de révision"
+  },
+  "goals.countListen": {
+   "label": "Compter l’écoute pour les objectifs de récitation et la série"
+  },
+  "goals.countTests": {
+   "label": "Compter aussi les tests pour les objectifs"
+  },
+  "goals.countManual": {
+   "label": "Compter aussi la lecture hors de l’app"
+  },
+  "goals.showToday": {
+   "label": "Afficher l’objectif du jour sur la page Réciter",
+   "help": "Rien n’est affiché quand il n’y a pas d’objectif"
+  },
+  "history.clearStreak": {
+   "label": "Séances de suite pour effacer une marque",
+   "help": "Une marque rouge disparaît après une lecture correcte de mémoire pendant ce nombre de séances distinctes de suite",
+   "sub": "Marques de faiblesse"
+  },
+  "history.lookClears": {
+   "label": "Compter la lecture sur le texte pour effacer les marques",
+   "sub": "Marques de faiblesse"
+  },
+  "history.good": {
+   "label": "« Bien mémorisé » à partir de quel %",
+   "sub": "Seuils d’état"
+  },
+  "history.fair": {
+   "label": "« Moyen » à partir de quel %",
+   "help": "Doit être inférieur à « Bien mémorisé »",
+   "sub": "Seuils d’état"
+  },
+  "history.gradeWindow": {
+   "label": "Combien de dernières séances de mémorisation décident de l’état",
+   "sub": "Seuils d’état"
+  },
+  "history.recent": {
+   "label": "Combien de séances récentes afficher",
+   "sub": "Listes",
+   "options": {
+    "0": "Toutes",
+    "10": "10",
+    "30": "30",
+    "100": "100"
+   }
+  },
+  "history.weekDays": {
+   "label": "Jours dans la carte « Cette semaine »",
+   "help": "Avec une valeur autre que 7, la carte s’appelle « {n} derniers jours »",
+   "sub": "Listes"
+  },
+  "history.minWords": {
+   "label": "Plus petite séance (en mots) qui est enregistrée",
+   "sub": "Listes"
+  },
+  "history.maxEvents": {
+   "label": "Combien d’erreurs retenir par mot faible",
+   "sub": "Listes"
+  },
+  "history.hotZones": {
+   "label": "Combien d’« endroits les plus faibles » afficher",
+   "sub": "Listes"
+  },
+  "history.heatmap": {
+   "label": "Afficher la carte de chaleur",
+   "help": "Combien de minutes vous lisez chaque jour — les 12 dernières semaines",
+   "sub": "Listes"
+  },
+  "history.popupTimes": {
+   "label": "Afficher combien de fois vous l’avez lu dans la fenêtre de marque",
+   "sub": "Listes"
+  },
+  "history.saveRecordings": {
+   "label": "Garder les enregistrements des séances",
+   "help": "Désactivé, les nouveaux enregistrements ne sont pas sauvegardés, donc vous ne pourrez plus écouter votre lecture à une marque plus tard ; les anciens restent",
+   "sub": "Enregistrements"
+  },
+  "view.lang": {
+   "label": "Langue / Language",
+   "help": "Langue du texte de l’app ; le texte du Coran ne change pas",
+   "sub": "Langue",
+   "options": {
+    "bn": "বাংলা",
+    "en": "English",
+    "ar": "العربية",
+    "ur": "اردو",
+    "hi": "हिन्दी",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "tr": "Türkçe",
+    "fa": "فارسی",
+    "fr": "Français",
+    "es": "Español",
+    "pt": "Português",
+    "de": "Deutsch",
+    "ru": "Русский",
+    "zh": "中文（简体）",
+    "sw": "Kiswahili"
+   }
+  },
+  "view.theme": {
+   "label": "Couleurs de la page",
+   "sub": "Couleurs",
+   "options": {
+    "auto": "Automatique",
+    "paper": "Papier",
+    "night": "Mushaf de nuit",
+    "sepia": "Vieux papier"
+   }
+  },
+  "view.wordSet": {
+   "label": "Jeu de couleurs des mots",
+   "sub": "Couleurs",
+   "options": {
+    "default": "Normal",
+    "cb": "Plus facile à distinguer",
+    "brown": "Coup d’œil brun",
+    "custom": "Les miennes"
+   }
+  },
+  "view.wordStyle": {
+   "label": "Mode d’application des couleurs",
+   "help": "Surlignage = le texte reste noir avec un fond coloré",
+   "sub": "Couleurs",
+   "options": {
+    "text": "Couleur du texte",
+    "highlight": "Surlignage"
+   }
+  },
+  "view.customColors": {
+   "label": "Mes propres couleurs",
+   "help": "Choisissez une couleur pour chaque état ; elle est retenue séparément pour chaque couleur de page",
+   "sub": "Couleurs"
+  },
+  "view.arabicScale": {
+   "label": "Taille du texte arabe",
+   "sub": "Texte"
+  },
+  "view.lineGap": {
+   "label": "Espace entre les lignes",
+   "sub": "Texte"
+  },
+  "view.wordGap": {
+   "label": "Espace entre les mots",
+   "sub": "Texte"
+  },
+  "view.uiScale": {
+   "label": "Taille du texte de l’interface",
+   "sub": "Texte",
+   "options": {
+    "90": "Petite",
+    "100": "Normale",
+    "115": "Grande",
+    "130": "Très grande"
+   }
+  },
+  "view.uiFont": {
+   "label": "Police de l’interface",
+   "sub": "Texte",
+   "options": {
+    "app": "La police de l’app",
+    "system": "La police de l’appareil"
+   }
+  },
+  "view.motion": {
+   "label": "Animation",
+   "help": "Toujours désactivée pendant l’enregistrement",
+   "sub": "Animation",
+   "options": {
+    "auto": "Automatique",
+    "full": "Complète",
+    "gentle": "Douce",
+    "off": "Désactivée"
+   }
+  },
+  "view.intro": {
+   "label": "Animation de démarrage (le mushaf s’ouvre)",
+   "help": "Affichée à l’ouverture de l’app ; toucher l’écran la passe aussitôt",
+   "sub": "Animation",
+   "options": {
+    "every": "À chaque fois",
+    "daily": "Une fois par jour",
+    "off": "Désactivée"
+   }
+  },
+  "view.scroll": {
+   "label": "Où reste la ligne de lecture",
+   "sub": "Animation",
+   "options": {
+    "second": "Sur la deuxième ligne depuis le haut",
+    "middle": "Au milieu",
+    "off": "Je défile moi-même"
+   }
+  },
+  "view.timer": {
+   "label": "Afficher le temps",
+   "sub": "Informations en haut"
+  },
+  "view.legend": {
+   "label": "Afficher la signification des couleurs",
+   "help": "Une petite légende au-dessus du texte",
+   "sub": "Informations en haut"
+  },
+  "view.headStats": {
+   "label": "Afficher le nombre de corrects, faux et indices",
+   "sub": "Informations en haut"
+  },
+  "view.bnDigits": {
+   "label": "Écrire les nombres en chiffres bengalis",
+   "help": "Désactivé : 0–9 (bengali uniquement)",
+   "sub": "Informations en haut"
+  },
+  "device.micId": {
+   "label": "Microphone",
+   "options": {
+    "default": "Le microphone de l’appareil"
+   }
+  },
+  "device.echoCancel": {
+   "label": "Réduire l’écho",
+   "help": "Réduit le son d’Alafasy qui entre dans le microphone ; désactivé, l’aide après silence peut mal fonctionner"
+  },
+  "device.noiseSuppress": {
+   "label": "Réduire le bruit ambiant",
+   "help": "Utile dans le bruit, mais une voix basse peut aussi être coupée"
+  },
+  "device.autoGain": {
+   "label": "Régler seul le niveau du microphone",
+   "options": {
+    "browser": "Comme le fait le navigateur",
+    "on": "Activé",
+    "off": "Désactivé"
+   }
+  },
+  "device.sensitivity": {
+   "label": "Sensibilité du microphone",
+   "help": "Utilisez « Haute » en lisant doucement, « Basse » dans le bruit",
+   "options": {
+    "low": "Basse",
+    "normal": "Normale",
+    "high": "Haute"
+   }
+  },
+  "device.threads": {
+   "label": "Threads du processeur",
+   "help": "Plus = plus rapide, mais le téléphone peut chauffer",
+   "options": {
+    "1": "1",
+    "2": "2",
+    "4": "4",
+    "auto": "Automatique"
+   }
+  },
+  "device.slowPhone": {
+   "label": "S’adapter à un téléphone lent",
+   "help": "Sur un téléphone lent, moins d’audio est traité à chaque fois pour ne pas prendre de retard"
+  },
+  "device.liveModel": {
+   "label": "Modèle en direct",
+   "help": "Un modèle plus grand entend plus précisément mais est plus lent",
+   "options": {
+    "tiny": "tiny",
+    "base": "base"
+   }
+  },
+  "device.checkModel": {
+   "label": "Modèle de vérification",
+   "help": "Réécoute avant de reconnaître la sourate et de marquer en rouge",
+   "options": {
+    "base": "base",
+    "tiny": "tiny"
+   }
+  },
+  "device.keepAwake": {
+   "label": "Garder l’écran allumé pendant l’enregistrement et l’écoute"
+  },
+  "device.shortcuts": {
+   "label": "Raccourcis clavier",
+   "help": "Espace = pause, H = indice, R = reste du verset, E = œil, M = liste des erreurs, N = question suivante, P = lecture/pause de l’écoute"
+  },
+  "device.maxRecMin": {
+   "label": "Enregistrement le plus long",
+   "help": "L’enregistrement s’arrête de lui-même après cette durée",
+   "options": {
+    "0": "Sans limite",
+    "30": "30",
+    "60": "60",
+    "90": "90",
+    "120": "120 minutes"
+   }
+  },
+  "adv.windowS": {
+   "label": "Secondes d’audio traitées à chaque fois"
+  },
+  "adv.updateEveryS": {
+   "label": "Fréquence de traitement du nouvel audio",
+   "help": "Une valeur plus basse = plus de travail pour le téléphone"
+  },
+  "adv.lookahead": {
+   "label": "Combien de mots en avant sont comparés"
+  },
+  "adv.shortSkip": {
+   "label": "Combien de mots peuvent être omis quand deux mots correspondent"
+  },
+  "adv.longSkipRun": {
+   "label": "Mots de suite devant correspondre pour en omettre davantage"
+  },
+  "adv.finalSkip": {
+   "label": "Maximum de mots omis à la vérification finale"
+  },
+  "adv.detectMinWords": {
+   "label": "Minimum de mots pour reconnaître une sourate"
+  },
+  "adv.detectMargin": {
+   "label": "Combien de fois devant la sourate suivante probable il doit être"
+  },
+  "adv.detectSureWords": {
+   "label": "Après ce nombre de mots, il choisit même si c’est serré"
+  },
+  "adv.lostS": {
+   "label": "Secondes sans progression avant de rechercher à nouveau l’endroit"
+  },
+  "adv.lostReds": {
+   "label": "Rouges parmi les derniers mots qui déclenchent une nouvelle recherche : rouges"
+  },
+  "adv.lostOf": {
+   "label": "…parmi les derniers combien de mots"
+  },
+  "adv.rewindRun": {
+   "label": "Mots de suite pour reconnaître une lecture en arrière"
+  },
+  "adv.backWords": {
+   "label": "Maximum de mots en arrière reconnus"
+  },
+  "adv.verifyWindowS": {
+   "label": "Secondes de réécoute pour les mots omis"
+  },
+  "adv.verifyMaxS": {
+   "label": "…maximum de secondes"
+  },
+  "adv.autoExtendAt": {
+   "label": "D’autres versets sont ajoutés quand il reste ce nombre de mots devant"
+  },
+  "adv.sameAudio": {
+   "label": "Correspondance audio pour retenir « Je l’ai lu correctement »",
+   "help": "Bas = strict (doit être lu exactement pareil)"
+  },
+  "adv.sameHeard": {
+   "label": "Correspondance du texte entendu pour retenir « Je l’ai lu correctement »",
+   "help": "Haut = strict"
+  },
+  "adv.maxClipS": {
+   "label": "Plus long extrait personnel d’un mot rouge, en secondes"
+  },
+  "adv.stripCells": {
+   "label": "Maximum de cases dans une bande de progression"
+  },
+  "adv.cellMid": {
+   "label": "Une case devient rouge moyen à partir de ce total de faiblesse"
+  },
+  "adv.cellDark": {
+   "label": "…rouge foncé à partir de"
+  }
+ },
+ "groups": {
+  "recite": {
+   "name": "Récitation et erreurs",
+   "help": "Ce que l’app détecte pendant que vous lisez, ce qu’elle fait quand vous bloquez"
+  },
+  "hide": {
+   "name": "Masquage et coup d’œil",
+   "help": "Comment le texte est masqué en lisant de mémoire, ce que fait le coup d’œil"
+  },
+  "test": {
+   "name": "Test",
+   "help": "Durée, indices et score du test à cartes"
+  },
+  "listen": {
+   "name": "Écoute et audio",
+   "help": "Récitation d’Alafasy — vitesse, répétitions, hors ligne"
+  },
+  "goals": {
+   "name": "Objectifs et série",
+   "help": "Comptage quotidien, série, quelle lecture compte pour les objectifs"
+  },
+  "history": {
+   "name": "Progrès et historique",
+   "help": "Règles d’effacement des marques, seuils d’état, enregistrements"
+  },
+  "view": {
+   "name": "Apparence",
+   "help": "Couleurs, taille du texte, animation"
+  },
+  "device": {
+   "name": "Microphone et appareil",
+   "help": "Microphone, processeur, écran"
+  },
+  "adv": {
+   "name": "Avancé",
+   "help": "Valeurs de calcul internes — à modifier avec prudence"
+  }
+ },
+ "presets": {
+  "recite": {
+   "label": "Rigueur de détection des erreurs",
+   "items": {
+    "easy": {
+     "label": "Facile",
+     "help": "Pour une nouvelle mémorisation : pardonne les petites différences de prononciation, les mots en trop ne sont pas détectés"
+    },
+    "normal": {
+     "label": "Normal",
+     "help": "Révision quotidienne"
+    },
+    "strict": {
+     "label": "Strict",
+     "help": "Avant de réciter à un enseignant : même une prononciation proche est une erreur, pas d’avancée sans correction"
+    }
+   }
+  },
+  "test": {
+   "label": "Type de test",
+   "items": {
+    "quick": {
+     "label": "Entraînement rapide"
+    },
+    "normal": {
+     "label": "Normal"
+    },
+    "hard": {
+     "label": "Difficile"
+    }
+   }
+  },
+  "listen": {
+   "label": "Type d’écoute",
+   "items": {
+    "only": {
+     "label": "Écoute seule"
+    },
+    "memo": {
+     "label": "Pour mémoriser"
+    },
+    "say": {
+     "label": "Écouter et dire"
+    },
+    "slow": {
+     "label": "Apprentissage lent"
+    }
+   }
+  }
+ }
+}

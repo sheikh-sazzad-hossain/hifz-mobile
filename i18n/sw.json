@@ -1,0 +1,1460 @@
+{
+ "strings": {
+  "intro.preparing": "Inaandaa…",
+  "nav.tab.recite": "Soma",
+  "nav.tab.test": "Jaribio",
+  "nav.tab.listen": "Sikiliza",
+  "nav.tab.progress": "Maendeleo",
+  "nav.tab.settings": "Mipangilio",
+  "nav.busy": "Kurekodi kunaendelea — kisimamishe kwanza (■), kisha nenda ukurasa mwingine.",
+  "nav.themeTip": "Badili rangi: Karatasi / Msahafu wa usiku / Karatasi ya zamani (shikilia kwa mipangilio yote)",
+  "s.title": "Mipangilio",
+  "s.search": "Tafuta mipangilio…",
+  "s.searchEmpty": "Hakuna mpangilio wenye jina hili.",
+  "s.back": "Mipangilio yote",
+  "s.changedN": "{n} imebadilishwa",
+  "s.rowReset": "Rudi kwenye chaguo-msingi",
+  "s.sectionReset": "Weka upya sehemu hii",
+  "s.sectionResetQ": "Mipangilio yote ya “{group}” itarudi kwenye chaguo-msingi. Sawa?",
+  "s.allReset": "Weka upya mipangilio yote",
+  "s.allResetQ": "Mipangilio yote itarudi kwenye chaguo-msingi. Vipindi, alama, rekodi, majaribio na malengo yako yatabaki. Sawa?",
+  "s.resetDone": "Imewekwa upya.",
+  "s.export": "Hifadhi mipangilio kwenye faili",
+  "s.import": "Pakia mipangilio kutoka kwenye faili",
+  "s.importOk": "Mipangilio {n} imepakiwa.",
+  "s.importSkip": "Mipangilio {n} imepakiwa, {m} haikujulikana au ilikuwa nje ya kiwango — imerukwa.",
+  "s.importBad": "Faili haikuweza kusomwa: {err}",
+  "s.importWrong": "Hii si faili ya mipangilio ya Hifz Helper.",
+  "s.where": "Mipangilio inabaki kwenye simu hii. Ili kuihamishia simu au kompyuta nyingine, tumia “Hifadhi mipangilio kwenye faili”.",
+  "s.whenNext": "Inaanza kutumika kuanzia kipindi kijacho",
+  "s.whenReload": "Inaanza kutumika programu ikifunguliwa tena",
+  "s.reloadNow": "Fungua tena sasa",
+  "s.live": "Kurekodi kunaendelea — inaanza kutumika baada ya kusimamisha",
+  "s.invalid": "Thamani hii hairuhusiwi — ya zamani imebaki.",
+  "s.presetCustom": "Maalum",
+  "s.presetApplied": "Mpangilio-awali “{name}” umetumika.",
+  "s.undo": "Tendua",
+  "s.custom": "Maalum…",
+  "s.advWarn": "Hizi ni hesabu za ndani za programu. Thamani isiyo sahihi inaweza kuharibu ugunduzi wa makosa. Ukiwa na shaka, bonyeza “Weka upya sehemu hii”.",
+  "s.advSummary": "Hesabu za ndani — badilisha kwa uangalifu",
+  "s.contrast": "Utofautishaji mdogo: {r}:1 — huenda ikawa vigumu kusoma (4.5:1 au zaidi ni bora).",
+  "s.platOnly": "Simu pekee",
+  "r.listTip": "Tazama makosa yote ya kipindi hiki",
+  "r.listTitle": "Makosa ya kipindi hiki ({n})",
+  "r.ayahRef": "Aya {a}",
+  "r.kind.skipped": "Imerukwa",
+  "r.kind.changed": "Neno jingine limesomwa",
+  "r.kind.added": "Neno la ziada limesomwa",
+  "r.kind.peek": "Kuchungulia",
+  "r.listen": "Sikiliza",
+  "r.remove": "Puuza",
+  "r.removed": "Imepuuzwa.",
+  "r.removedTaught": "Imepuuzwa — kusoma hivi hapa hakutatiwa alama tena.",
+  "r.removedTitle": "Zilizopuuzwa ({n})",
+  "r.restore": "Rudisha",
+  "r.restored": "Imehesabiwa tena kuwa kosa.",
+  "r.removeAll": "Puuza yote",
+  "r.removeAllQ": "Puuza makosa yote ya kipindi hiki? Unaweza kuyarudisha kwa “Rudisha”.",
+  "r.empty": "Bado hakuna makosa.",
+  "r.hintTip": "Kidokezo: onyesha neno linalofuata (shikilia kwa sehemu iliyobaki ya aya)",
+  "r.blockBanner": "Soma neno jekundu kwa usahihi — kisha unaweza kuendelea.",
+  "r.lg.ok": "Sahihi",
+  "r.lg.bad": "Kosa/imerukwa",
+  "r.lg.peek": "Kidokezo/kuchungulia",
+  "r.lg.pend": "Inakagua",
+  "r.lg.next": "Neno la sasa",
+  "r.lg.weak": "Udhaifu wa awali",
+  "r.lg.given": "Kidokezo",
+  "r.menu.listen": "Sikiliza kuanzia hapa",
+  "r.menu.test": "Jaribu kuanzia hapa",
+  "h.times": "Imesomwa mara {t} kwa jumla, mara {e} kati yake zilikuwa na kosa",
+  "r.help.list": "Bonyeza kihesabu cha <b>Kosa/imerukwa</b> hapo juu kuona makosa yote ya kipindi hiki kwa pamoja; <b>Puuza</b> lisilokuwa kosa, <b>Rudisha</b> ikihitajika.",
+  "r.help.hint": "Shikilia kitufe cha kidokezo kufungua sehemu iliyobaki ya aya.",
+  "t.setupTitle": "Unataka kujaribu nini?",
+  "t.suggested": "Unapendekezewa",
+  "t.myRanges": "Masafa yangu",
+  "t.myMemorized": "Nilichohifadhi",
+  "t.newRange": "Tengeneza masafa mapya",
+  "t.noMemorized": "Bado hakuna kilichowekwa alama kama kimehifadhiwa",
+  "t.rename": "Badilisha jina",
+  "t.delete": "Futa",
+  "t.up": "Juu",
+  "t.down": "Chini",
+  "t.deleteQ": "Kufuta masafa “{name}”? (Matokeo ya majaribio ya zamani yanabaki)",
+  "t.rangeSummary": "Imechaguliwa: {name} · aya {n}",
+  "t.rules": "Maswali {q} · maneno {w} kila moja · kidokezo cha maneno {h}",
+  "t.changeRules": "Badilisha sheria",
+  "t.temporary": "Ya muda (hakuna kinachohifadhiwa)",
+  "t.start": "Anza jaribio",
+  "t.emptyRange": "Masafa hayana aya",
+  "t.modelWait": "Inaandaa modeli…",
+  "t.starterTitle": "Kuanza",
+  "t.starterBody": "Mwisho wa juzuu 30: sura {a} hadi sura {b}",
+  "t.markMemorized": "Weka alama kama imehifadhiwa",
+  "t.resumeQ": "Jaribio la mwisho halikukamilika (swali {i} / {n}). Kuendelea?",
+  "t.resume": "Endelea",
+  "t.seeResults": "Tazama matokeo",
+  "t.discard": "Tupa",
+  "t.introTitle": "Jaribio linavyofanya kazi",
+  "t.intro1": "Kila swali linaonyesha maneno ya mwanzo — soma yaliyobaki bila kuangalia.",
+  "t.intro2": "Maneno sahihi yanafunguka; mwishoni kadi inakuwa ya kijani (bila kosa) au nyekundu (kulikuwa na makosa).",
+  "t.intro3": "Ukikwama: “neno linalofuata” au “sehemu iliyobaki ya aya” — kuchungulia kunahesabiwa kuwa kosa.",
+  "t.intro4": "Telezesha kadi pembeni au bonyeza “Swali linalofuata” kuruka swali.",
+  "t.intro5": "Kila kitu kinafanya kazi kwenye simu, hakuna haja ya intaneti.",
+  "t.introOk": "Nimeelewa",
+  "t.go": "Twende!",
+  "t.ref": "Sura {n}. {english} · {span}",
+  "t.refHidden": "Sura na aya vimefichwa",
+  "t.eyeTip": "Onyesha / ficha namba ya sura na aya",
+  "t.listening": "Inasikiliza… soma kuanzia baada ya kidokezo",
+  "t.checking": "Inakagua…",
+  "t.peekWord": "Neno linalofuata",
+  "t.peekRest": "Sehemu iliyobaki ya aya",
+  "t.next": "Swali linalofuata",
+  "t.pass": "Bila kosa!",
+  "t.failN": "Makosa {m}",
+  "t.skipped": "Imerukwa",
+  "t.kind.stray": "Umehamia sura nyingine",
+  "t.timeUp": "Muda umeisha — maliza swali hili",
+  "t.qOfN": "Swali {i} / {n}",
+  "t.qTime": "Swali {i} · imebaki {mm:ss}",
+  "t.qOpen": "Swali {i}",
+  "t.mistakesN": "Makosa {m}",
+  "t.score": "Alama {p}%",
+  "t.streak": "Mfululizo {s}",
+  "t.paused": "Imesimama — jaribio limesitishwa. Bonyeza “Endelea” kusikiliza kuanzia swali lilelile.",
+  "t.continue": "Endelea",
+  "t.end": "Maliza",
+  "t.autoPaused": "Kimya kwa muda mrefu — jaribio limesitishwa.",
+  "t.resTitle": "Matokeo ya jaribio",
+  "t.tempLabel": "Jaribio la muda — hakuna kilichohifadhiwa",
+  "t.resScore": "{p}%",
+  "t.resCorrect": "Sahihi {c} / {n}",
+  "t.resBest": "Mfululizo mrefu zaidi: {s}",
+  "t.resTime": "Muda: {time}",
+  "t.resAll": "Makosa yote ({n})",
+  "t.resRemoved": "Makosa yaliyopuuzwa ({n})",
+  "t.resNone": "Hakuna makosa — mashaAllah!",
+  "t.keepGoing": "Soma zaidi",
+  "t.done": "Imekamilika",
+  "t.replay": "Jaribio lilelile tena",
+  "t.newTest": "Jaribio jipya",
+  "t.saveThis": "Weka masafa haya",
+  "t.sg.warmup.name": "Kupasha mwili",
+  "t.sg.warmup.sub": "Unachofanya vizuri zaidi",
+  "t.sg.weak.name": "Maeneo dhaifu",
+  "t.sg.weak.sub": "Unapokosea zaidi",
+  "t.sg.stale.name": "Haijasomwa kwa muda mrefu",
+  "t.sg.stale.sub": "Haijasomwa kwa kichwa kwa muda mrefu",
+  "t.sg.fresh.name": "Imehifadhiwa hivi karibuni",
+  "t.sg.fresh.sub": "Imeongezwa kwenye orodha ya zilizohifadhiwa ndani ya siku 14 zilizopita",
+  "t.sg.mixed.name": "Mchanganyiko",
+  "t.sg.mixed.sub": "Kutoka kwenye orodha yako yote ya zilizohifadhiwa",
+  "l.from": "Kuanzia aya",
+  "l.to": "Hadi aya",
+  "l.pick": "Chagua kwa juzuu au ukurasa",
+  "l.speedChip": "{x}×",
+  "l.ayahChip": "Aya ×{n}",
+  "l.rangeChip": "Sehemu ×{n}",
+  "l.rangeChipInf": "Sehemu ∞",
+  "l.gapChip": "Mapumziko {s} s",
+  "l.sleepChip": "Lala {m} dak",
+  "l.play": "Cheza",
+  "l.pause": "Sitisha",
+  "l.prev": "Aya iliyotangulia",
+  "l.next": "Aya inayofuata",
+  "l.idle": "Chagua cha kusikiliza kisha bonyeza ▶.",
+  "l.loading": "Inapakia sauti…",
+  "l.playing": "Aya {a} · mara {k} / {n}",
+  "l.round": "Raundi {r}",
+  "l.gap": "Mapumziko… {s}",
+  "l.pausedS": "Imesitishwa",
+  "l.ended": "Imekwisha.",
+  "l.again": "Cheza tena",
+  "l.error": "Sauti haikuweza kuchezwa — uko mtandaoni? Ili kusikiliza bila mtandao, pakua sura kwanza.",
+  "l.offline": "Inapatikana bila mtandao",
+  "l.online": "Inahitaji intaneti — ipakue",
+  "l.slept": "Kipima-muda cha kulala — kusikiliza kumesimama.",
+  "l.offTitle": "Sauti bila mtandao",
+  "l.offRow": "{n}. {english} — {size}",
+  "l.offGet": "Pakua",
+  "l.offGetting": "Inapakua {p}%",
+  "l.offHave": "Imepakuliwa",
+  "l.offTooBig": "Kubwa mno — intaneti pekee",
+  "l.offDel": "Futa",
+  "l.offDelQ": "Kufuta sauti ya sura {english} isiyohitaji mtandao? Unaweza kuipakua tena baadaye.",
+  "l.offTotal": "Nafasi yote: MB {mb}",
+  "l.offGetAll": "Pakua zote",
+  "l.offGetAllQ": "Sura {n}, takriban MB {mb} zitapakuliwa. Sawa?",
+  "pk.title": "Chagua masafa",
+  "pk.unit": "Sura · Juzuu · Hizbu · Ukurasa · Aya",
+  "pk.quarters": "Onyesha rubu (robo)",
+  "pk.pageNote": "Namba za kurasa zinafuata chapa ya Madina (kurasa 604)",
+  "pk.summary": "Imechaguliwa: aya {n} ({parts})",
+  "pk.clear": "Futa",
+  "pk.save": "Hifadhi kwa jina",
+  "pk.use": "Tumia hii",
+  "pk.namePh": "Weka jina (mf. Marudio ya sura Al-Mulk)",
+  "pk.saved": "“{name}” imehifadhiwa.",
+  "pk.full": "Haiwezekani kuhifadhi zaidi ya masafa 50 — futa ya zamani.",
+  "m.title": "Orodha ya zilizohifadhiwa",
+  "m.summary": "Aya {n} zimewekwa alama kuwa zimehifadhiwa kwa jumla (katika sura {s})",
+  "m.add": "Ongeza kilichohifadhiwa",
+  "m.edit": "Badilisha",
+  "m.remove": "Ondoa",
+  "m.removeQ": "Kuondoa sura {english} kwenye orodha ya zilizohifadhiwa? (Vipindi na alama vinabaki)",
+  "m.sgTitle": "Historia yako inaonyesha ulisoma hizi vizuri bila kuangalia:",
+  "m.sgAdd": "Ongeza",
+  "m.sgAddAll": "Ongeza zote",
+  "m.empty": "Bado hakuna kilichowekwa alama. Bonyeza “Ongeza kilichohifadhiwa” na uchague sura au aya.",
+  "g.title": "Malengo",
+  "g.new": "Lengo jipya",
+  "g.create": "Unda lengo",
+  "g.s1": "Lengo la aina gani?",
+  "g.s2": "Sehemu gani?",
+  "g.s3": "Ligawanywe vipi?",
+  "g.s4": "Siku zipi?",
+  "g.s5": "Nini kitokee mwishoni?",
+  "g.type.memorize": "Kuhifadhi upya (soma sehemu mpya bila kuangalia)",
+  "g.type.review": "Marudio (soma tena bila kuangalia sehemu iliyohifadhiwa)",
+  "g.type.recite": "Kisomo (usomaji wowote)",
+  "g.type.test": "Jaribio (idadi ya maswali)",
+  "g.order.normal": "Kwa mpangilio wa kawaida",
+  "g.order.reverse": "Kwa mpangilio wa kinyume (kuanzia sura ya mwisho)",
+  "g.strict": "Fuata mpangilio — sehemu inayofuata haihesabiwi hadi ya awali ikamilike",
+  "g.plan.daily": "Kiasi maalum kila siku",
+  "g.plan.bydate": "Maliza kufikia tarehe maalum",
+  "g.plan.flexible": "Kadiri niwezavyo — kilichobaki kinaongezwa siku inayofuata",
+  "g.unit.ayah": "aya",
+  "g.unit.page": "kurasa",
+  "g.unit.juz": "juzuu",
+  "g.unit.minute": "dakika",
+  "g.unit.word": "maneno",
+  "g.unit.question": "maswali",
+  "g.round.none": "Kama mgawanyo unavyokuja",
+  "g.round.up": "Kurasa nzima — juu",
+  "g.round.down": "Kurasa nzima — chini",
+  "g.round.nearest": "Kurasa nzima — karibu zaidi",
+  "g.sch.daily": "Kila siku",
+  "g.sch.days": "Siku fulani za wiki",
+  "g.sch.perWeek": "Siku {n} kwa wiki",
+  "g.cycle.auto": "Anza tena (khatma mpya) yenyewe",
+  "g.cycle.manual": "Nitaanza mwenyewe",
+  "g.cycle.off": "Simamisha",
+  "g.autoName": "{type}: {range}",
+  "g.tpl.manzil": "Khatma ya kila wiki (manzil 7)",
+  "g.tpl.page": "Ukurasa 1 mpya kuhifadhiwa kila siku",
+  "g.tpl.juz": "Juzuu 1 ya marudio kila siku",
+  "g.tpl.minutes": "Dakika 15 kwa siku",
+  "g.today": "Lengo la leo",
+  "g.todayLine": "{name}: {done} / {target} {unit}",
+  "g.progressLine": "Jumla {done} / {total} {unit} · tarehe ya mwisho {date}",
+  "g.restart": "Anza tena",
+  "g.completed": "Imekamilika — alhamdulillah!",
+  "g.pause": "Sitisha",
+  "g.resumeGoal": "Endelea",
+  "g.edit": "Badilisha",
+  "g.delete": "Futa",
+  "g.deleteQ": "Kufuta lengo “{name}”? (Vipindi vinabaki)",
+  "st.current": "Siku {n} mfululizo",
+  "st.best": "Ndefu zaidi: siku {n} mfululizo",
+  "st.keep": "Soma leo ili kudumisha mfululizo",
+  "st.cellTip": "{date}: dak {m}",
+  "bd.title": "Mafanikio",
+  "bd.new": "Mafanikio mapya: {name}",
+  "bd.locked": "Bado — {req}",
+  "x.add": "Ongeza kisomo kilichofanywa nje ya programu",
+  "x.title": "Ongeza kisomo kilichofanywa nje ya programu",
+  "x.date": "Tarehe",
+  "x.minutes": "Dakika ngapi",
+  "x.range": "Sehemu gani (si lazima)",
+  "x.note": "Maelezo",
+  "x.int.memorize": "Kuhifadhi upya kulikosomwa kwa mtu",
+  "x.int.review": "Marudio",
+  "x.int.recite": "Kimesomwa kutoka ukurasani",
+  "x.save": "Ongeza",
+  "x.delete": "Futa",
+  "x.deleteQ": "Kufuta kipindi hiki kilichoongezwa kwa mkono?",
+  "h.f.all": "Vyote",
+  "h.f.hifz": "Kichwani",
+  "h.f.look": "Ukurasa",
+  "h.f.test": "Jaribio",
+  "h.f.manual": "Nje",
+  "h.f.listen": "Kusikiliza",
+  "h.chip.test": "Jaribio",
+  "h.chip.manual": "Nje",
+  "h.chip.listen": "Kusikiliza",
+  "h.play": "Sikiliza",
+  "h.testRow": "{date} · {range} · {p}% · sahihi {c}/{n}",
+  "h.testEditNote": "Kupuuza kosa hapa kunabadilisha alama za jaribio hili pekee; kufuta alama za udhaifu, bonyeza neno jekundu.",
+  "h.seg": "Muhtasari · Malengo · Zilizohifadhiwa · Majaribio · Mafanikio",
+  "h.weekN": "Siku {n} zilizopita",
+  "help.1": "<b>Bonyeza kitufe cha maikrofoni</b> na anza kusoma; programu inatambua sura yenyewe (unaweza pia kuichagua hapo juu). Kubonyeza <b>■</b> kunamaliza kipindi na kukihifadhi.",
+  "help.2": "Maneno yanafunguka unaposoma: <span class=\"hz-ok\">kijani = sahihi</span>, <span class=\"hz-bad\">nyekundu = kosa/imerukwa</span> (kwa sauti ya onyo), <span class=\"hz-hint\">zambarau = kidokezo/kukwama</span>. Kisanduku cha buluu kinachomweka = neno unalopaswa kusoma sasa.",
+  "help.3": "Sitisha kwa kitufe cha <b>Sitisha</b>, tazama maneno mekundu na usikilize, kisha bonyeza kitufe kilekile kuendelea. Ukipenda, soma tena kuanzia aya ya awali kurekebisha kosa; programu itakufuata kutoka hapo.",
+  "help.4": "Unapomaliza sura moja na kuanza inayofuata (au nyingine yoyote), programu inahamia huko yenyewe — inakufuata mradi unasoma.",
+  "help.5": "<b>Kitufe cha jicho</b> kinabadilisha kati ya kusoma kutoka kwenye maandishi (maandishi yote yanaonekana) na kusoma kichwani (maandishi yamefichwa).",
+  "help.6": "Ukikwama bonyeza <b>Kidokezo</b>, au <b>nyamaza</b> (sekunde nyingi kama ilivyowekwa kwenye “Alafasy anaanza baada ya kimya cha” hapo juu, mwanzoni {wait}): Mishary Alafasy atasoma kuendelea na maneno yatafunguka kwa zambarau. Ukianza kusoma tena (au ukibonyeza Sitisha/Simamisha) anaacha na programu inakusikiliza. Shikilia kitufe cha kidokezo kufungua sehemu iliyobaki ya aya.",
+  "help.7": "<b>Gusa neno jekundu</b> kusikia ulichosoma na ulichopaswa kusoma — vyote pamoja na maneno yanayolizunguka. Ukisoma kwa usahihi bonyeza ✓.",
+  "help.8": "Maneno uliyokosea au kukwama katika vipindi vya awali yanabaki kuanzia <span class=\"hz-w1 hz-swatch\">wekundu hafifu</span> hadi <span class=\"hz-w3 hz-swatch\">wekundu mweusi</span>; ukiyasoma kwa usahihi kichwani mara {clear} mfululizo, alama inaondoka.",
+  "help.9": "Ukidhani alama si sahihi (wakati hurekodi, au kwenye kichupo cha <b>Maendeleo</b>) gusa kisanduku chekundu: sikiliza ulichosoma na ubonyeze <b>✓ Alama si sahihi — ondoa</b>. Alama inaondoka na kusoma hivyo hakutatiwa alama tena.",
+  "help.10": "Kwenye kichupo cha <b>Maendeleo</b> kila sura ina mstari wa rangi kwa kila aya — unaona kwa mtazamo mmoja aya zipi ni dhaifu zaidi (nyekundu iliyokolea). Gusa kisanduku kufungua aya hiyo chini.",
+  "help.11": "Kwenye simu: modeli (takriban MB 19) inapakuliwa mara ya kwanza, kisha inafanya kazi bila intaneti. Data zote zinabaki kwenye simu hii — unaweza kuzihifadhi nakala kwenye faili kupitia kichupo cha <b>Maendeleo</b>. Ukaguzi wa kiotomatiki unaweza kukosea; haubadilishi mwalimu.",
+  "a.autoSurah": "Kiotomatiki — inatambua sura kwa kusikiliza",
+  "a.lookOn": "Kichwani: ficha maandishi",
+  "a.lookOff": "Kusoma: onyesha maandishi yote",
+  "a.pauseResumeTip": "Endelea — kutoka ulipoishia",
+  "a.pauseTip": "Sitisha — inasimama hapa, unaweza kuendelea baadaye",
+  "a.stopTip": "Simamisha — inamaliza na kuhifadhi kipindi",
+  "a.recTip": "Anza kurekodi — anza kusoma",
+  "a.stop": "Simamisha",
+  "a.record": "Rekodi",
+  "a.micFail": "Maikrofoni haikuweza kuwashwa: {err}",
+  "a.maxRec": "Muda wa juu wa kurekodi umefikiwa — imesimamishwa.",
+  "a.listening": "Inasikiliza…",
+  "a.checking": "Inakagua…",
+  "a.tooShort": "Rekodi ni fupi mno.",
+  "a.noMatch": "Haikulingana na aya yoyote. Soma kwa muda kidogo zaidi, au chagua sura mwenyewe.",
+  "a.entry": "Sura {english}: maneno {words}, usahihi {acc}%, makosa {missed}, kukwama {stuck}",
+  "a.saved": "Kipindi kimehifadhiwa — {parts}. Tazama yote kwenye kichupo cha Maendeleo.",
+  "a.close": "Funga",
+  "a.closeAria": "Funga",
+  "a.listenMine": "Sikiliza usomaji wangu",
+  "a.shouldBe": "Ilipaswa kuwa",
+  "a.listenAlafasyTip": "Usomaji wa Mishary Alafasy (pamoja na maneno yanayozunguka)",
+  "a.listenAlafasy": "Usomaji wa Alafasy",
+  "a.iWasRight": "Nilisoma kwa usahihi",
+  "a.leftMain": "Isome kwa usahihi kichwani mara {n} zaidi na alama nyekundu inaondoka",
+  "a.leftStreak": "Hadi sasa vipindi {n} mfululizo vilikuwa sahihi.",
+  "a.leftSub": "Inahesabiwa mara moja kwa kila kipindi, na lazima iwe mfululizo — kosa au kukwama kunaanzisha hesabu upya; kusoma kutoka kwenye maandishi hakuhesabiwi.",
+  "a.wkMeta": "Katika vipindi vya awali hapa: {kind} — mara {count} kwa jumla, mara ya mwisho {last}",
+  "a.saidErr": "Ulichosoma (alichosikia modeli)",
+  "a.saidWk": "Ulichosoma wakati huo (alichosikia modeli)",
+  "a.heardNothing": "Hakuna kilichosikika — neno linaonekana kurukwa",
+  "a.noRecording": "Rekodi ya wakati huo haipatikani",
+  "a.mineErrTip": "Sikiliza usomaji wangu (pamoja na maneno mawili ya kabla)",
+  "a.mineWkTip": "Sikiliza usomaji wangu wa wakati huo",
+  "a.okErrTip": "Nilisoma kwa usahihi — modeli ilisikia vibaya",
+  "a.okWkTip": "Nilisoma kwa usahihi — ondoa alama, kusoma hivi hakutatiwa alama tena",
+  "a.okErrLbl": "Nilisoma kwa usahihi",
+  "a.okWkLbl": "Alama si sahihi — ondoa",
+  "a.markCleared": "Alama imeondolewa",
+  "a.markClearedTaught": "Alama imeondolewa — kusoma hivi hapa hakutatiwa alama tena.",
+  "a.forgetSurahQ": "Kuondoa alama zote nyekundu za sura hii? Mahali penye rekodi patakumbukwa kama pamesomwa kwa usahihi — kusoma vilevile baadaye hakutatiwa alama.",
+  "a.marksCleared": "Alama {n} zimeondolewa — kusoma sehemu hizi hivi hakutatiwa alama tena.",
+  "a.storage": "Imehifadhiwa kwenye simu: rekodi za vipindi {n}, rekodi za sauti {r} (MB {mb}).",
+  "a.pv.overview": "Muhtasari",
+  "a.pv.goals": "Malengo",
+  "a.pv.memorized": "Zilizohifadhiwa",
+  "a.pv.tests": "Majaribio",
+  "a.pv.badges": "Mafanikio",
+  "a.importQ": "Kuunganisha data ya faili na data ya sasa? (Sawa = unganisha, Ghairi = badilisha data yote ya sasa na ya faili)",
+  "a.importOk": "Data imerejeshwa — inafungua ukurasa upya…",
+  "a.importBad": "Faili haikuweza kusomwa: {err}",
+  "a.defaultMic": "Maikrofoni ya kifaa chenyewe",
+  "a.micN": "Maikrofoni {n}",
+  "a.modelBuilding": "Inaandaa modeli…",
+  "a.modelDownload": "Inapakua modeli (takriban MB 19, mara ya kwanza tu)…",
+  "a.modelFooter": "Modeli: quran-asr-tiny · {backend}, nyuzi {threads}. Baada ya mara ya kwanza inafanya kazi bila intaneti. Ukaguzi wa kiotomatiki unaweza kukosea; haubadilishi mwalimu.",
+  "a.modelFail": "Modeli haikuanza: {err}",
+  "a.ayahMenuTitle": "{english} · Aya {a}",
+  "a.startFail": "Haikuweza kuanza: {err}",
+  "p.sura": "Sura {n}. {english}",
+  "p.paused": "Imesitishwa — kusikiliza kunaanza tena ukiendelea.",
+  "p.waiting": "Inasikiliza… anza kusoma, <b>inatambua sura yenyewe</b> baada ya maneno machache.",
+  "p.autoDetected": "Imetambuliwa kiotomatiki",
+  "p.hCount": "Aya {a} / {n}",
+  "p.hOk": "Sahihi {n}",
+  "p.hBad": "Kosa/imerukwa {n}",
+  "p.hHint": "Vidokezo {n}",
+  "p.stray": "Kosa: hii inasikika kama aya {ayah} ya sura {english}. Ulikuwa unasoma sura {current}; soma tena kuanzia neno lililowekwa alama ya buluu.",
+  "p.pausedBanner": "Imesitishwa: gusa neno jekundu kuona na kusikiliza. Ukiendelea itasikiliza kuanzia hapa; unaweza pia kusoma tena kuanzia aya ya awali kurekebisha neno jekundu.",
+  "p.cellWeak": "{span}: maneno dhaifu {n}",
+  "p.cellOk": "vizuri",
+  "p.cellNone": "bado haijasomwa kichwani",
+  "p.empty": "Bado hakuna vipindi. Rekodi kwenye kichupo cha Soma; ukisimamisha (■) kipindi kinahifadhiwa hapa.",
+  "p.cSessions": "Vipindi vyote",
+  "p.cSurahs": "Sura zilizofanyiwa mazoezi",
+  "p.cMinutes": "Dakika zote",
+  "p.cWeek": "Wiki hii",
+  "p.cWeekN": "Siku {n} zilizopita",
+  "p.ayahCount": "aya {a}/{n}",
+  "p.weakCount": "maneno dhaifu {n}",
+  "p.th.surah": "Sura",
+  "p.th.state": "Hali",
+  "p.th.acc": "Usahihi wa hivi karibuni",
+  "p.th.read": "Kiasi kilichosomwa",
+  "p.th.weak": "Maeneo dhaifu",
+  "p.th.sessions": "Vipindi",
+  "p.th.last": "Mazoezi ya mwisho",
+  "p.th.when": "Lini",
+  "p.th.surahAyah": "Sura (aya)",
+  "p.th.mode": "Aina",
+  "p.th.words": "Maneno",
+  "p.th.acc2": "Usahihi",
+  "p.th.missed": "Makosa",
+  "p.th.stuck": "Kukwama",
+  "p.th.time": "Muda",
+  "p.mode.look": "Kusoma",
+  "p.mode.hifz": "Kichwani",
+  "p.mode.mixed": "Mchanganyiko",
+  "p.bySurah": "Hali ya kuhifadhi kwa kila sura",
+  "p.recent": "Vipindi vya hivi karibuni",
+  "p.stateNote": "Hali: wastani wa usahihi wa vipindi {w} vya mwisho vya kichwani — {good}% au zaidi = imehifadhiwa vizuri, {fair}–{good}% = wastani. Vipindi vilivyosomwa kutoka kwenye maandishi havihesabiwi.",
+  "p.weakNote": "Maeneo dhaifu: kila kisanduku ni aya moja, kuanzia aya 1 hadi mwisho — {k0}, {k1}, {k2}. Gusa kisanduku kuonyesha aya hiyo chini.",
+  "p.key0": "kijani = vizuri",
+  "p.key1": "nyekundu hafifu hadi iliyokolea = kadiri udhaifu unavyozidi, ndivyo inavyokolea",
+  "p.key2": "kijivu = bado haijasomwa kichwani",
+  "p.hotChipTip": "Gusa kuonyesha chini",
+  "p.hotLabel": "Maeneo dhaifu zaidi:",
+  "p.legend1": "vizuri",
+  "p.legend2": "nyekundu hafifu hadi iliyokolea = maneno dhaifu zaidi",
+  "p.legend3": "bado haijasomwa kichwani",
+  "p.mapTitle": "Ramani ya udhaifu kwa aya",
+  "p.mapSub": "Kila kisanduku ni aya moja — gusa kuruka hadi aya hiyo kwenye maandishi ya chini",
+  "p.weakHead": "Maneno dhaifu {n}. Nyekundu hafifu = wakati mwingine kosa/kukwama, nyekundu iliyokolea = mara kwa mara. Baada ya kusoma kwa usahihi kichwani vipindi {clear} mfululizo alama inaondoka. <b>Gusa neno jekundu</b> kusikia ulichosoma wakati huo; kama alama si sahihi unaweza kuiondoa.",
+  "p.noWeak": "Hakuna eneo dhaifu katika sura hii — mashaAllah!",
+  "s.col.ok": "Sahihi",
+  "s.col.bad": "Kosa",
+  "s.col.peek": "Kuchungulia",
+  "s.col.pend": "Inakagua",
+  "s.col.next": "Neno linalofuata",
+  "s.col.weak": "Udhaifu wa zamani",
+  "s.col.listen": "Taa ya kusikiliza",
+  "s.on": "Imewashwa",
+  "s.off": "Imezimwa",
+  "s.sum.alafasy": "Alafasy {v}",
+  "s.sum.added": "Gundua maneno ya ziada",
+  "s.sum.addedOff": "Maneno ya ziada hayagunduliwi",
+  "s.sum.peekMistake": "Kuchungulia = kosa",
+  "s.sum.peekOk": "Kuchungulia si kosa",
+  "s.sum.hint": "Kidokezo {v}",
+  "s.sum.speed": "Kasi {v}",
+  "s.sum.perAyah": "Kila aya ×{n}",
+  "s.sum.weekStart": "Wiki inaanza {v}",
+  "s.sum.countTests": "Majaribio pia yanahesabiwa",
+  "s.sum.noTests": "Majaribio hayahesabiwi",
+  "s.sum.good": "Imehifadhiwa vizuri {v}",
+  "s.sum.clear": "Alama inaondoka baada ya vipindi {n} mfululizo",
+  "s.sum.arabic": "Kiarabu {v}",
+  "s.sum.motion": "Mwendo {v}",
+  "s.sum.awake": "Skrini inabaki imewashwa",
+  "s.sum.awakeOff": "Skrini kama kawaida",
+  "bd.n.first": "Hatua ya kwanza",
+  "bd.r.first": "Hifadhi kipindi chako cha kwanza",
+  "bd.n.streak7": "Wiki mfululizo",
+  "bd.r.streak7": "Soma siku 7 mfululizo",
+  "bd.n.streak30": "Mwezi mfululizo",
+  "bd.r.streak30": "Soma siku 30 mfululizo",
+  "bd.n.sessions100": "Kipindi cha mia",
+  "bd.r.sessions100": "Vipindi 100 kwa jumla",
+  "bd.n.hours10": "Saa kumi",
+  "bd.r.hours10": "Saa 10 za kisomo kwa jumla",
+  "bd.n.good1": "Sura ya kwanza imara",
+  "bd.r.good1": "Fikisha sura moja kwenye “imehifadhiwa vizuri”",
+  "bd.n.good5": "Sura tano imara",
+  "bd.r.good5": "Sura 5 “zimehifadhiwa vizuri”",
+  "bd.n.test100": "Jaribio kamilifu",
+  "bd.r.test100": "100% katika jaribio lenye angalau maswali 10",
+  "bd.n.tests10": "Majaribio ya mara kwa mara",
+  "bd.r.tests10": "Kamilisha majaribio 10",
+  "bd.n.juz1": "Juzuu moja imehifadhiwa",
+  "bd.r.juz1": "Juzuu nzima kwenye orodha ya zilizohifadhiwa",
+  "bd.n.cleared50": "Bingwa wa kufuta alama",
+  "bd.r.cleared50": "Futa alama 50 za udhaifu kwa kusoma kwa usahihi kichwani",
+  "bd.n.goal1": "Lengo limefikiwa",
+  "bd.r.goal1": "Fikia lengo la siku kwa mara ya kwanza",
+  "app.title": "Hifz Helper",
+  "c.ok": "Sawa",
+  "c.no": "Hapana",
+  "fmt.ayah1": "Aya {a}",
+  "fmt.ayahN": "Aya {a}–{b}",
+  "fmt.durMS": "dak {m} s {s}",
+  "fmt.durS": "s {s}",
+  "u.s": "sekunde {n}",
+  "u.min": "dakika {n}",
+  "u.words": "maneno {n}",
+  "u.ayah": "aya {n}",
+  "u.sC": "{n} s",
+  "u.minC": "dak {n}",
+  "hk.missed": "Kosa/imerukwa",
+  "hk.hint": "Ulikwama (kidokezo)",
+  "hk.slip": "Kosa, lililorekebishwa kwa kusoma tena",
+  "gr.none": "Imesomwa kutoka kwenye maandishi tu",
+  "gr.good": "Imehifadhiwa vizuri",
+  "gr.fair": "Wastani",
+  "gr.weak": "Inahitaji mazoezi zaidi",
+  "d.0": "Jum",
+  "d.1": "Jtt",
+  "d.2": "Jnn",
+  "d.3": "Jtn",
+  "d.4": "Alh",
+  "d.5": "Iju",
+  "d.6": "Jmo",
+  "g.nParts": "Sehemu {n}",
+  "g.minutesNote": "dak {n} {note}",
+  "g.mode.look": "Kusoma",
+  "g.mode.hifz": "Kichwani",
+  "g.mode.mixed": "Mchanganyiko",
+  "pk.l.juz": "Juzuu {n}",
+  "pk.l.hizb": "Hizbu {n}",
+  "pk.l.rub": "Rubu {n}",
+  "pk.l.page": "Ukurasa {n}",
+  "pk.l.pages": "Kurasa {a}–{b}",
+  "pk.l.mem": "Sehemu zangu zilizohifadhiwa",
+  "pk.pageRange": "Ukurasa {from} hadi {to}",
+  "pk.u.surah": "Sura",
+  "pk.u.juz": "Juzuu",
+  "pk.u.hizb": "Hizbu",
+  "pk.u.page": "Ukurasa",
+  "pk.u.ayah": "Aya",
+  "t.ayahBadge": "aya {n}",
+  "l.artist": "Mishary Rashid Alafasy",
+  "m.sugRow": "Sura {n}. {english}: aya {a}–{b}",
+  "m.cover": "aya {c} / {n}",
+  "t.starterRange": "{n}. {english}",
+  "a.sub": "Inasikiliza usomaji wako kichwani na kugundua makosa mara moja · inakumbuka unapokwama mara kwa mara",
+  "a.themeAria": "Badilisha rangi",
+  "a.lblSurah": "Sura",
+  "a.lblWait": "Alafasy anaanza baada ya kimya cha",
+  "a.lblWaitSub": "Sekunde ngapi za kimya",
+  "a.howTo": "Jinsi ya kutumia",
+  "a.weakTitle": "Unapokwama mara kwa mara",
+  "a.pickSurahAria": "Chagua sura",
+  "a.clearAll": "Ondoa alama zote",
+  "a.clearAllTip": "Ondoa alama zote nyekundu za sura hii (inauliza kwanza)",
+  "a.export": "Hamishia data kwenye faili (nakala rudufu)",
+  "a.import": "Rudisha data kutoka kwenye faili",
+  "a.install": "Ongeza kama programu",
+  "a.timerAria": "Muda wa kisomo",
+  "a.pauseAria": "Sitisha",
+  "a.lookAria": "Kusoma / kichwani",
+  "a.hintAria": "Kidokezo"
+ },
+ "settings": {
+  "recite.waitS": {
+   "label": "Alafasy anaanza baada ya kimya cha",
+   "help": "Sekunde ngapi za kimya kabla msaada haujaanza; ‘Imezimwa’ = kamwe",
+   "sub": "Unapokwama",
+   "options": {
+    "0": "Imezimwa"
+   }
+  },
+  "recite.silenceHelp": {
+   "label": "Nini kinatokea unaponyamaza",
+   "help": "Kiasi cha msaada anachotoa programu unapokwama",
+   "sub": "Unapokwama",
+   "options": {
+    "surah": "Alafasy anasoma hadi mwisho wa sura",
+    "ayah": "Hadi mwisho wa aya",
+    "words3": "Maneno 3 yanayofuata",
+    "word": "Neno linalofuata pekee",
+    "show": "Onyesha neno linalofuata tu, bila sauti"
+   }
+  },
+  "recite.promptOnLook": {
+   "label": "Msaada pia unaposoma kutoka kwenye maandishi",
+   "help": "Msaada unakuja baada ya kimya hata kitufe cha jicho kikiwa kimewashwa",
+   "sub": "Unapokwama"
+  },
+  "detect.changed": {
+   "label": "Gundua maneno yasiyo sahihi",
+   "help": "Neno linakuwa jekundu unaposoma neno jingine mahali pake",
+   "sub": "Makosa gani yagunduliwe"
+  },
+  "detect.skipped": {
+   "label": "Gundua maneno yaliyorukwa",
+   "help": "Neno linakuwa jekundu unapoendelea bila kulisoma",
+   "sub": "Makosa gani yagunduliwe"
+  },
+  "detect.added": {
+   "label": "Gundua maneno ya ziada",
+   "help": "Neno linalofuata linakuwa jekundu unaposoma kitu cha ziada ndani ya aya; kuzima kunapunguza kazi ya simu",
+   "sub": "Makosa gani yagunduliwe"
+  },
+  "detect.stray": {
+   "label": "Onya unapohamia sura nyingine",
+   "help": "Bango jekundu na sauti ya onyo unapoteleza kwenye aya inayofanana ya sura nyingine",
+   "sub": "Makosa gani yagunduliwe"
+  },
+  "detect.confirmedWords": {
+   "label": "Maneno yaliyosomwa kwa usahihi kabla sura nyingine kuhesabiwa kuwa kosa",
+   "help": "Chini = inaonya mapema; juu = maonyo ya uongo machache unapoanza sura mpya",
+   "sub": "Makosa gani yagunduliwe"
+  },
+  "detect.similarRatio": {
+   "label": "Ukali wa kulinganisha maneno",
+   "help": "Juu = inagundua hata matamshi yanayokaribiana; chini = inavumilia zaidi",
+   "sub": "Makosa gani yagunduliwe"
+  },
+  "detect.noAdvance": {
+   "label": "Usiendelee hadi kosa lirekebishwe",
+   "help": "Neno likiwa jekundu, neno linalofuata halifunguki hadi usome kwa usahihi",
+   "sub": "Makosa gani yagunduliwe"
+  },
+  "detect.teachOnRemove": {
+   "label": "Kumbuka makosa yaliyopuuzwa",
+   "help": "Baada ya ‘Nilisoma kwa usahihi’ au ‘Puuza’ usomaji uleule hautatiwa alama tena",
+   "sub": "Makosa gani yagunduliwe"
+  },
+  "detect.errorTone": {
+   "label": "Sauti ya onyo",
+   "help": "Sauti neno linapogeuka jekundu au unapoingia sura nyingine (wakati wa kurekodi tu)",
+   "sub": "Sauti ya onyo",
+   "options": {
+    "off": "Imezimwa",
+    "soft": "Laini",
+    "normal": "Kawaida",
+    "loud": "Kubwa"
+   }
+  },
+  "detect.toneKind": {
+   "label": "Aina ya sauti ya onyo",
+   "sub": "Sauti ya onyo",
+   "options": {
+    "two": "Milio miwili",
+    "beep": "Mlio mmoja",
+    "double": "Milio miwili ya kupiga"
+   }
+  },
+  "detect.vibrate": {
+   "label": "Tetemeka kwa kosa",
+   "help": "Simu inatetemeka kidogo kwenye neno jekundu",
+   "sub": "Sauti ya onyo"
+  },
+  "recite.startAt": {
+   "label": "Sura gani mwanzoni",
+   "help": "Jinsi sura inavyochaguliwa programu inapofunguka",
+   "sub": "Kuanza",
+   "options": {
+    "auto": "Itambue kwa kusikiliza",
+    "last": "Sura na aya ya mara ya mwisho",
+    "continue": "Endelea baada ya ulipoishia mara ya mwisho"
+   }
+  },
+  "recite.autoAyahs": {
+   "label": "Aya ngapi mbele zionyeshwe",
+   "help": "Aya ngapi zinaongezwa kwa wakati mmoja unaposoma",
+   "sub": "Kuanza"
+  },
+  "recite.mistakeList": {
+   "label": "Onyesha orodha ya makosa",
+   "help": "Kugusa kihesabu cha ‘kosa/imerukwa’ hapo juu kunaonyesha makosa yote ya kipindi hiki kwa pamoja",
+   "sub": "Kuanza"
+  },
+  "recite.look": {
+   "label": "Soma kutoka kwenye maandishi (onyesha maandishi yote)",
+   "help": "Kama kitufe cha jicho; maneno yaliyosomwa kutoka kwenye maandishi hayahesabiwi kufuta alama",
+   "sub": "Maandishi yaliyofichwa"
+  },
+  "hide.style": {
+   "label": "Maneno yaliyofichwa yanavyoonekana",
+   "sub": "Maandishi yaliyofichwa",
+   "options": {
+    "bar": "Kisanduku chenye ukubwa wa neno",
+    "line": "Mstari wa chini tu",
+    "blank": "Tupu kabisa"
+   }
+  },
+  "hide.weakTint": {
+   "label": "Rangi ya udhaifu wa awali kwenye maneno yaliyofichwa",
+   "help": "Maneno yaliyokosewa katika vipindi vya awali yanaonyesha kisanduku cha nyekundu hafifu hadi iliyokolea",
+   "sub": "Maandishi yaliyofichwa"
+  },
+  "hide.ayahMarks": {
+   "label": "Ficha alama za aya",
+   "help": "Alama ya mwisho wa aya haionyeshwi hadi aya isomwe yote",
+   "sub": "Maandishi yaliyofichwa"
+  },
+  "hide.nextWord": {
+   "label": "Weka alama kwenye kisanduku cha neno linalofuata",
+   "help": "Pete kwenye kisanduku cha neno unalopaswa kusoma sasa",
+   "sub": "Maandishi yaliyofichwa"
+  },
+  "hide.head": {
+   "label": "Onyesha sura na namba ya aya juu",
+   "help": "Ikizimwa, aya uliyomo inabaki imefichwa",
+   "sub": "Maandishi yaliyofichwa"
+  },
+  "peek.countsAsMistake": {
+   "label": "Hesabu kuchungulia kuwa kosa",
+   "help": "Maneno yaliyofunguliwa kwa kidokezo au kuchungulia yanahesabiwa kuwa kosa katika alama za udhaifu na alama za jaribio",
+   "sub": "Kuchungulia"
+  },
+  "peek.longPressRest": {
+   "label": "Shikilia kidokezo kwa sehemu iliyobaki ya aya",
+   "help": "Kushikilia kitufe cha kidokezo kwa nusu sekunde (bofya-kulia kwenye kompyuta) kunafungua maneno yote yaliyobaki ya aya",
+   "sub": "Kuchungulia"
+  },
+  "peek.doubleTap": {
+   "label": "Gusa mara mbili kwenye maandishi kwa neno linalofuata",
+   "help": "Wakati wa kurekodi, kugusa mara mbili kisanduku cha neno (bofya mara mbili kwenye kompyuta) kunafungua neno linalofuata kama kidokezo",
+   "sub": "Kuchungulia"
+  },
+  "test.endBy": {
+   "label": "Jaribio linapoisha",
+   "sub": "Urefu",
+   "options": {
+    "count": "Kwa idadi ya maswali",
+    "time": "Kwa muda",
+    "open": "Nitakapolisimamisha"
+   }
+  },
+  "test.questions": {
+   "label": "Maswali mangapi",
+   "sub": "Urefu"
+  },
+  "test.minutes": {
+   "label": "Dakika ngapi",
+   "help": "Muda ukiisha swali la sasa linakamilishwa na matokeo yanaonyeshwa",
+   "sub": "Urefu"
+  },
+  "test.lengthUnit": {
+   "label": "Pima urefu wa swali",
+   "sub": "Maswali",
+   "options": {
+    "words": "Kwa maneno",
+    "ayahs": "Kwa aya"
+   }
+  },
+  "test.lengthWords": {
+   "label": "Maneno ya kusoma katika kila swali",
+   "help": "Maneno baada ya kidokezo",
+   "sub": "Maswali",
+   "options": {
+    "8": "Fupi 8",
+    "15": "Wastani 15",
+    "30": "Refu 30"
+   }
+  },
+  "test.lengthAyahs": {
+   "label": "Aya katika kila swali",
+   "sub": "Maswali"
+  },
+  "test.extendToAyahEnd": {
+   "label": "Endelea hadi mwisho wa aya",
+   "help": "Swali halisimami katikati ya aya bali linaimaliza",
+   "sub": "Maswali"
+  },
+  "test.hintWords": {
+   "label": "Maneno mangapi yaonyeshwe mwanzoni",
+   "help": "Unasoma yaliyobaki bila kuangalia; 0 = sura na namba ya aya tu",
+   "sub": "Maswali"
+  },
+  "test.start": {
+   "label": "Swali linaanzia wapi",
+   "sub": "Maswali",
+   "options": {
+    "ayah": "Kutoka mwanzo wa aya",
+    "random": "Kutoka popote kwenye aya"
+   }
+  },
+  "test.order": {
+   "label": "Mpangilio wa maswali",
+   "sub": "Maswali",
+   "options": {
+    "shuffle": "Yamechanganywa",
+    "seq": "Kwa mpangilio",
+    "weak": "Maeneo dhaifu kwanza"
+   }
+  },
+  "test.noRepeat": {
+   "label": "Hakuna swali linalorudiwa hadi masafa yote yakamilike",
+   "sub": "Maswali"
+  },
+  "test.showRef": {
+   "label": "Onyesha sura na namba ya aya",
+   "help": "Inaweza pia kubadilishwa kwa kitufe cha jicho kwenye kadi",
+   "sub": "Maswali"
+  },
+  "test.silence": {
+   "label": "Unaponyamaza",
+   "sub": "Unapokwama",
+   "options": {
+    "none": "Hakuna",
+    "show": "Onyesha neno linalofuata",
+    "alafasy": "Alafasy anasoma neno linalofuata"
+   }
+  },
+  "test.silenceS": {
+   "label": "Sekunde ngapi za kimya",
+   "sub": "Unapokwama"
+  },
+  "test.doubleTapPeek": {
+   "label": "Gusa mara mbili kwenye kadi kwa neno linalofuata",
+   "help": "Bofya mara mbili kwenye kompyuta",
+   "sub": "Unapokwama"
+  },
+  "test.skipCounts": {
+   "label": "Hesabu maswali yaliyorukwa kwenye alama",
+   "help": "Ikiwashwa, swali lililorukwa linahesabiwa kuwa ‘si sahihi’",
+   "sub": "Alama"
+  },
+  "test.streakAt": {
+   "label": "Alama ya mwali baada ya sahihi ngapi mfululizo",
+   "sub": "Alama"
+  },
+  "test.advance": {
+   "label": "Baada ya swali",
+   "sub": "Inavyoendelea",
+   "options": {
+    "auto": "Onyesha matokeo, kisha liende lenyewe kwa linalofuata",
+    "tap": "Nitakapobonyeza ‘Swali linalofuata’"
+   }
+  },
+  "test.holdS": {
+   "label": "Matokeo yaonyeshwe kwa muda gani",
+   "help": "Baada ya kadi kuwa ya kijani/nyekundu, kabla ya swali linalofuata",
+   "sub": "Inavyoendelea"
+  },
+  "test.countdown": {
+   "label": "Hesabu ya kushuka kabla ya kuanza",
+   "sub": "Inavyoendelea",
+   "options": {
+    "0": "Imezimwa",
+    "3": "Sekunde 3",
+    "5": "Sekunde 5"
+   }
+  },
+  "test.autoPauseS": {
+   "label": "Jisitishe lenyewe kukiwa kimya",
+   "help": "Jaribio linasimama ikiwa hakuna kinachosomwa kwa sekunde hizi",
+   "sub": "Inavyoendelea",
+   "options": {
+    "0": "Imezimwa",
+    "15": "15",
+    "30": "30",
+    "60": "60",
+    "120": "sekunde 120"
+   }
+  },
+  "test.sound": {
+   "label": "Sauti baada ya swali",
+   "help": "Mlio wa juu likiwa sahihi, wa chini likiwa kosa",
+   "sub": "Inavyoendelea"
+  },
+  "test.vibrate": {
+   "label": "Tetemeka baada ya swali",
+   "sub": "Inavyoendelea"
+  },
+  "test.temporary": {
+   "label": "Jaribio la muda",
+   "help": "Hakuna kinachohifadhiwa — si matokeo, makosa wala rekodi; inafaa kumjaribu mtu mwingine",
+   "sub": "Kuhifadhi"
+  },
+  "test.countInHistory": {
+   "label": "Ongeza makosa ya jaribio kwenye alama za udhaifu",
+   "help": "Ikizimwa, matokeo ya jaribio yanahifadhiwa lakini alama za udhaifu hazibadiliki",
+   "sub": "Kuhifadhi"
+  },
+  "test.checkAdded": {
+   "label": "Gundua maneno ya ziada kwenye jaribio",
+   "help": "Ikizimwa, ukaguzi baada ya swali ni wa haraka zaidi",
+   "sub": "Kuhifadhi"
+  },
+  "listen.reciter": {
+   "label": "Msomaji: Mishary Rashid Alafasy (mmoja tu kwa sasa)",
+   "sub": "Msomaji"
+  },
+  "listen.speed": {
+   "label": "Kasi",
+   "help": "Kusikiliza polepole kunarahisisha kuhifadhi",
+   "sub": "Kasi na marudio",
+   "options": {
+    "1": "1×",
+    "2": "2×",
+    "0.5": "0.5×",
+    "0.75": "0.75×",
+    "1.25": "1.25×",
+    "1.5": "1.5×"
+   }
+  },
+  "listen.repeatAyah": {
+   "label": "Mara ngapi kila aya",
+   "sub": "Kasi na marudio"
+  },
+  "listen.repeatRange": {
+   "label": "Mara ngapi sehemu nzima",
+   "sub": "Kasi na marudio",
+   "options": {
+    "0": "Bila kikomo"
+   }
+  },
+  "listen.gapRepeatS": {
+   "label": "Mapumziko kabla aya ileile kurudiwa",
+   "help": "Muda wa kuisema mwenyewe",
+   "sub": "Kasi na marudio"
+  },
+  "listen.gapAyahS": {
+   "label": "Mapumziko baada ya kila aya",
+   "help": "Kabla ya kwenda aya inayofuata",
+   "sub": "Kasi na marudio"
+  },
+  "listen.gapAuto": {
+   "label": "Mapumziko kwa urefu wa aya",
+   "help": "Ikiwashwa, baada ya kila aya inasubiri muda ambao aya inachukua kusomwa — ili uiseme mwenyewe baada ya kusikiliza",
+   "sub": "Kasi na marudio"
+  },
+  "listen.highlight": {
+   "label": "Onyesha kinachosomwa",
+   "sub": "Maandishi",
+   "options": {
+    "word": "Kwa neno",
+    "ayah": "Kwa aya",
+    "none": "Hakuna"
+   }
+  },
+  "listen.text": {
+   "label": "Maandishi",
+   "sub": "Maandishi",
+   "options": {
+    "show": "Onyesha yote",
+    "reveal": "Yanafunguka unaposikiliza",
+    "hide": "Yamefichwa"
+   }
+  },
+  "listen.autoScroll": {
+   "label": "Sogeza pamoja",
+   "sub": "Maandishi"
+  },
+  "listen.basmala": {
+   "label": "Bismillah mwanzoni mwa sura",
+   "help": "Unaposikiliza kuanzia aya 1 Bismillah inasomwa kwanza (isipokuwa sura Al-Fatiha na At-Tawba)",
+   "sub": "Maandishi"
+  },
+  "listen.nextSurah": {
+   "label": "Cheza sura inayofuata mwishoni",
+   "sub": "Maandishi"
+  },
+  "listen.sleepMin": {
+   "label": "Kipima-muda cha kulala",
+   "help": "Kusikiliza kunasimama baada ya dakika hizi",
+   "sub": "Maandishi",
+   "options": {
+    "0": "Imezimwa",
+    "10": "10",
+    "15": "15",
+    "30": "30",
+    "60": "dakika 60"
+   }
+  },
+  "listen.countAsSession": {
+   "label": "Weka kusikiliza kwenye historia",
+   "help": "Muda ulioisikiliza na sehemu gani vinahifadhiwa; kunahesabiwa kwa malengo au mfululizo tu ikiwashwa kwenye ‘Malengo na mfululizo’",
+   "sub": "Maandishi"
+  },
+  "audio.ctxBefore": {
+   "label": "Alafasy kwenye neno jekundu: maneno ya kabla",
+   "help": "Maneno mangapi kabla ya neno dirisha linasoma",
+   "sub": "Sauti ya maneno mekundu"
+  },
+  "audio.ctxAfter": {
+   "label": "Alafasy kwenye neno jekundu: maneno ya baada",
+   "sub": "Sauti ya maneno mekundu"
+  },
+  "audio.myCtxWords": {
+   "label": "Usomaji wangu: maneno ya kabla",
+   "help": "Rekodi yako mwenyewe inaanza maneno mangapi mapema kwenye dirisha",
+   "sub": "Sauti ya maneno mekundu"
+  },
+  "audio.popupSpeed": {
+   "label": "Kasi ya Alafasy kwenye dirisha",
+   "sub": "Sauti ya maneno mekundu"
+  },
+  "audio.offlineMaxMB": {
+   "label": "Ukubwa mkubwa zaidi wa kuhifadhi bila mtandao (kwa kila sura)",
+   "help": "Sura kubwa kuliko hii zinachezwa mtandaoni tu",
+   "sub": "Bila mtandao",
+   "options": {
+    "40": "40",
+    "80": "80",
+    "150": "150",
+    "250": "MB 250"
+   }
+  },
+  "goals.dayStart": {
+   "label": "Siku inaanza saa",
+   "help": "Ukisoma usiku sana inahesabiwa kwa siku iliyotangulia",
+   "options": {
+    "0": "Usiku wa manane",
+    "1": "Saa 7 usiku",
+    "2": "Saa 8 usiku",
+    "3": "Saa 9 usiku",
+    "4": "Saa 10 alfajiri",
+    "5": "Saa 11 alfajiri",
+    "6": "Saa 12 asubuhi"
+   }
+  },
+  "goals.weekStart": {
+   "label": "Wiki inaanza siku ya",
+   "options": {
+    "0": "Jumapili",
+    "1": "Jumatatu",
+    "6": "Jumamosi"
+   }
+  },
+  "goals.streakMin": {
+   "label": "Siku inahesabiwa kwa mfululizo kwa angalau",
+   "options": {
+    "any": "Kipindi chochote kimoja",
+    "m5": "Dakika 5",
+    "m10": "Dakika 10",
+    "m20": "Dakika 20",
+    "goals": "Malengo yote ya leo yamefikiwa"
+   }
+  },
+  "goals.countLook": {
+   "label": "Hesabu kusoma kutoka kwenye maandishi kwa malengo ya kuhifadhi na marudio"
+  },
+  "goals.countListen": {
+   "label": "Hesabu kusikiliza kwa malengo ya kisomo na mfululizo"
+  },
+  "goals.countTests": {
+   "label": "Hesabu majaribio pia kwa malengo"
+  },
+  "goals.countManual": {
+   "label": "Hesabu pia kusoma nje ya programu"
+  },
+  "goals.showToday": {
+   "label": "Onyesha lengo la leo kwenye ukurasa wa Soma",
+   "help": "Hakuna kinachoonyeshwa kama hakuna lengo"
+  },
+  "history.clearStreak": {
+   "label": "Vipindi mfululizo vya kufuta alama",
+   "help": "Alama nyekundu inaondoka baada ya kusoma kwa usahihi kichwani katika idadi hii ya vipindi tofauti mfululizo",
+   "sub": "Alama za udhaifu"
+  },
+  "history.lookClears": {
+   "label": "Hesabu kusoma kutoka kwenye maandishi kwa kufuta alama",
+   "sub": "Alama za udhaifu"
+  },
+  "history.good": {
+   "label": "‘Imehifadhiwa vizuri’ kuanzia asilimia ngapi",
+   "sub": "Viwango vya hali"
+  },
+  "history.fair": {
+   "label": "‘Wastani’ kuanzia asilimia ngapi",
+   "help": "Lazima iwe chini ya ‘Imehifadhiwa vizuri’",
+   "sub": "Viwango vya hali"
+  },
+  "history.gradeWindow": {
+   "label": "Vipindi vingapi vya mwisho vya kichwani vinaamua hali",
+   "sub": "Viwango vya hali"
+  },
+  "history.recent": {
+   "label": "Vipindi vingapi vya hivi karibuni vionyeshwe",
+   "sub": "Orodha",
+   "options": {
+    "0": "Vyote",
+    "10": "10",
+    "30": "30",
+    "100": "100"
+   }
+  },
+  "history.weekDays": {
+   "label": "Siku katika kadi ya ‘Wiki hii’",
+   "help": "Kwa thamani tofauti na 7 kadi inaitwa ‘Siku {n} zilizopita’",
+   "sub": "Orodha"
+  },
+  "history.minWords": {
+   "label": "Kipindi kidogo zaidi (kwa maneno) kinachohifadhiwa",
+   "sub": "Orodha"
+  },
+  "history.maxEvents": {
+   "label": "Makosa mangapi yakumbukwe kwa kila neno dhaifu",
+   "sub": "Orodha"
+  },
+  "history.hotZones": {
+   "label": "‘Maeneo dhaifu zaidi’ mangapi yaonyeshwe",
+   "sub": "Orodha"
+  },
+  "history.heatmap": {
+   "label": "Onyesha ramani ya joto",
+   "help": "Dakika ngapi unasoma kila siku — wiki 12 zilizopita",
+   "sub": "Orodha"
+  },
+  "history.popupTimes": {
+   "label": "Onyesha mara ngapi umeisoma kwenye dirisha la alama",
+   "sub": "Orodha"
+  },
+  "history.saveRecordings": {
+   "label": "Weka rekodi za vipindi",
+   "help": "Ikizimwa, rekodi mpya hazihifadhiwi, hivyo huwezi kusikiliza usomaji wako mwenyewe kwenye alama baadaye; za zamani zinabaki",
+   "sub": "Rekodi"
+  },
+  "view.lang": {
+   "label": "Lugha / Language",
+   "help": "Lugha ya maandishi ya programu; maandishi ya Qur’ani hayabadiliki",
+   "sub": "Lugha",
+   "options": {
+    "bn": "বাংলা",
+    "en": "English",
+    "ar": "العربية",
+    "ur": "اردو",
+    "hi": "हिन्दी",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "tr": "Türkçe",
+    "fa": "فارسی",
+    "fr": "Français",
+    "es": "Español",
+    "pt": "Português",
+    "de": "Deutsch",
+    "ru": "Русский",
+    "zh": "中文（简体）",
+    "sw": "Kiswahili"
+   }
+  },
+  "view.theme": {
+   "label": "Rangi za ukurasa",
+   "sub": "Rangi",
+   "options": {
+    "auto": "Kiotomatiki",
+    "paper": "Karatasi",
+    "night": "Msahafu wa usiku",
+    "sepia": "Karatasi ya zamani"
+   }
+  },
+  "view.wordSet": {
+   "label": "Seti ya rangi za maneno",
+   "sub": "Rangi",
+   "options": {
+    "default": "Kawaida",
+    "cb": "Rahisi kutofautisha",
+    "brown": "Kuchungulia kwa kahawia",
+    "custom": "Zangu mwenyewe"
+   }
+  },
+  "view.wordStyle": {
+   "label": "Jinsi rangi zinavyotumika",
+   "help": "Kung’arisha = maandishi yanabaki meusi na kisanduku chenye rangi nyuma yake",
+   "sub": "Rangi",
+   "options": {
+    "text": "Rangi ya maandishi",
+    "highlight": "Kung’arisha"
+   }
+  },
+  "view.customColors": {
+   "label": "Rangi zangu mwenyewe",
+   "help": "Chagua rangi kwa kila hali; inakumbukwa tofauti kwa kila rangi ya ukurasa",
+   "sub": "Rangi"
+  },
+  "view.arabicScale": {
+   "label": "Ukubwa wa maandishi ya Kiarabu",
+   "sub": "Maandishi"
+  },
+  "view.lineGap": {
+   "label": "Nafasi kati ya mistari",
+   "sub": "Maandishi"
+  },
+  "view.wordGap": {
+   "label": "Nafasi kati ya maneno",
+   "sub": "Maandishi"
+  },
+  "view.uiScale": {
+   "label": "Ukubwa wa maandishi ya kiolesura",
+   "sub": "Maandishi",
+   "options": {
+    "90": "Ndogo",
+    "100": "Kawaida",
+    "115": "Kubwa",
+    "130": "Kubwa zaidi"
+   }
+  },
+  "view.uiFont": {
+   "label": "Fonti ya kiolesura",
+   "sub": "Maandishi",
+   "options": {
+    "app": "Fonti ya programu",
+    "system": "Fonti ya kifaa chenyewe"
+   }
+  },
+  "view.motion": {
+   "label": "Mwendo (uhuishaji)",
+   "help": "Huzimwa kila wakati wa kurekodi",
+   "sub": "Mwendo",
+   "options": {
+    "auto": "Kiotomatiki",
+    "full": "Kamili",
+    "gentle": "Laini",
+    "off": "Imezimwa"
+   }
+  },
+  "view.intro": {
+   "label": "Uhuishaji wa kuanza (msahafu unafunguka)",
+   "help": "Unaonyeshwa programu inapofunguka; kugusa skrini kunauruka mara moja",
+   "sub": "Mwendo",
+   "options": {
+    "every": "Kila mara",
+    "daily": "Mara moja kwa siku",
+    "off": "Imezimwa"
+   }
+  },
+  "view.scroll": {
+   "label": "Mstari wa kusomea unabaki wapi",
+   "sub": "Mwendo",
+   "options": {
+    "second": "Kwenye mstari wa pili kutoka juu",
+    "middle": "Katikati",
+    "off": "Nitasogeza mwenyewe"
+   }
+  },
+  "view.timer": {
+   "label": "Onyesha muda",
+   "sub": "Taarifa juu"
+  },
+  "view.legend": {
+   "label": "Onyesha rangi zinamaanisha nini",
+   "help": "Maelezo mafupi juu ya maandishi",
+   "sub": "Taarifa juu"
+  },
+  "view.headStats": {
+   "label": "Onyesha idadi ya sahihi, makosa na vidokezo",
+   "sub": "Taarifa juu"
+  },
+  "view.bnDigits": {
+   "label": "Andika namba kwa tarakimu za Kibengali",
+   "help": "Ikizimwa: 0–9 (Kibengali pekee)",
+   "sub": "Taarifa juu"
+  },
+  "device.micId": {
+   "label": "Maikrofoni",
+   "options": {
+    "default": "Maikrofoni ya kifaa chenyewe"
+   }
+  },
+  "device.echoCancel": {
+   "label": "Punguza mwangwi",
+   "help": "Inapunguza sauti ya Alafasy kuingia kwenye maikrofoni; ikizimwa, msaada baada ya kimya unaweza kuharibika"
+  },
+  "device.noiseSuppress": {
+   "label": "Punguza kelele za mazingira",
+   "help": "Inafaa penye kelele, lakini sauti ndogo inaweza pia kukatwa"
+  },
+  "device.autoGain": {
+   "label": "Rekebisha kiwango cha maikrofoni yenyewe",
+   "options": {
+    "browser": "Kama kivinjari kinavyofanya",
+    "on": "Imewashwa",
+    "off": "Imezimwa"
+   }
+  },
+  "device.sensitivity": {
+   "label": "Unyeti wa maikrofoni",
+   "help": "Tumia ‘Juu’ unaposoma kwa sauti ndogo, ‘Chini’ penye kelele",
+   "options": {
+    "low": "Chini",
+    "normal": "Kawaida",
+    "high": "Juu"
+   }
+  },
+  "device.threads": {
+   "label": "Nyuzi za prosesa",
+   "help": "Zaidi = haraka zaidi, lakini simu inaweza kupata joto",
+   "options": {
+    "1": "1",
+    "2": "2",
+    "4": "4",
+    "auto": "Kiotomatiki"
+   }
+  },
+  "device.slowPhone": {
+   "label": "Rekebisha kwa simu ya polepole",
+   "help": "Kwenye simu ya polepole sauti kidogo zaidi inashughulikiwa kila mara ili isibaki nyuma"
+  },
+  "device.liveModel": {
+   "label": "Modeli ya moja kwa moja",
+   "help": "Modeli kubwa zaidi inasikia kwa usahihi zaidi lakini ni ya polepole",
+   "options": {
+    "tiny": "tiny",
+    "base": "base"
+   }
+  },
+  "device.checkModel": {
+   "label": "Modeli ya ukaguzi",
+   "help": "Inasikiliza tena kabla ya kutambua sura na kuweka alama nyekundu",
+   "options": {
+    "base": "base",
+    "tiny": "tiny"
+   }
+  },
+  "device.keepAwake": {
+   "label": "Weka skrini imewashwa wakati wa kurekodi na kusikiliza"
+  },
+  "device.shortcuts": {
+   "label": "Njia za mkato za kibodi",
+   "help": "Nafasi = sitisha, H = kidokezo, R = sehemu iliyobaki ya aya, E = jicho, M = orodha ya makosa, N = swali linalofuata, P = cheza/sitisha kusikiliza"
+  },
+  "device.maxRecMin": {
+   "label": "Rekodi ndefu zaidi",
+   "help": "Rekodi inasimama yenyewe baada ya muda huu",
+   "options": {
+    "0": "Bila kikomo",
+    "30": "30",
+    "60": "60",
+    "90": "90",
+    "120": "dakika 120"
+   }
+  },
+  "adv.windowS": {
+   "label": "Sekunde za sauti zinazoshughulikiwa kila mara"
+  },
+  "adv.updateEveryS": {
+   "label": "Sauti mpya inashughulikiwa mara ngapi",
+   "help": "Thamani ndogo = kazi zaidi kwa simu"
+  },
+  "adv.lookahead": {
+   "label": "Maneno mangapi mbele yanalinganishwa"
+  },
+  "adv.shortSkip": {
+   "label": "Maneno mangapi yanaweza kurukwa maneno mawili yakilingana"
+  },
+  "adv.longSkipRun": {
+   "label": "Maneno mfululizo yanayopaswa kulingana ili kuruka zaidi"
+  },
+  "adv.finalSkip": {
+   "label": "Maneno mengi zaidi yanayorukwa katika ukaguzi wa mwisho"
+  },
+  "adv.detectMinWords": {
+   "label": "Maneno machache zaidi ya kutambua sura"
+  },
+  "adv.detectMargin": {
+   "label": "Mara ngapi mbele ya sura inayofuata inayowezekana lazima iwe"
+  },
+  "adv.detectSureWords": {
+   "label": "Baada ya maneno haya inachagua hata ikiwa karibu"
+  },
+  "adv.lostS": {
+   "label": "Sekunde bila maendeleo kabla ya kutafuta mahali tena"
+  },
+  "adv.lostReds": {
+   "label": "Maneno mekundu miongoni mwa ya mwisho yanayosababisha kutafuta tena: mekundu"
+  },
+  "adv.lostOf": {
+   "label": "…miongoni mwa maneno mangapi ya mwisho"
+  },
+  "adv.rewindRun": {
+   "label": "Maneno mfululizo ya kutambua kusoma kinyume"
+  },
+  "adv.backWords": {
+   "label": "Maneno mengi zaidi ya kurudi nyuma yanayotambuliwa"
+  },
+  "adv.verifyWindowS": {
+   "label": "Sekunde za kusikiliza tena maneno yaliyorukwa"
+  },
+  "adv.verifyMaxS": {
+   "label": "…sekunde nyingi zaidi"
+  },
+  "adv.autoExtendAt": {
+   "label": "Aya zaidi zinaongezwa maneno haya yakibaki mbele"
+  },
+  "adv.sameAudio": {
+   "label": "Ulinganifu wa sauti wa kukumbuka ‘Nilisoma kwa usahihi’",
+   "help": "Chini = kali (lazima isomwe sawasawa kabisa)"
+  },
+  "adv.sameHeard": {
+   "label": "Ulinganifu wa maandishi yaliyosikika wa kukumbuka ‘Nilisoma kwa usahihi’",
+   "help": "Juu = kali"
+  },
+  "adv.maxClipS": {
+   "label": "Kipande kirefu zaidi cha rekodi yako ya neno jekundu, kwa sekunde"
+  },
+  "adv.stripCells": {
+   "label": "Visanduku vingi zaidi kwenye mstari wa maendeleo"
+  },
+  "adv.cellMid": {
+   "label": "Kisanduku kinakuwa nyekundu ya kati kuanzia jumla hii ya udhaifu"
+  },
+  "adv.cellDark": {
+   "label": "…nyekundu iliyokolea kuanzia"
+  }
+ },
+ "groups": {
+  "recite": {
+   "name": "Kisomo na makosa",
+   "help": "Programu inachogundua unaposoma, inachofanya unapokwama"
+  },
+  "hide": {
+   "name": "Kuficha na kuchungulia",
+   "help": "Maandishi yanavyofichwa unaposoma kichwani, kuchungulia kunafanya nini"
+  },
+  "test": {
+   "name": "Jaribio",
+   "help": "Urefu, vidokezo na alama za jaribio la kadi"
+  },
+  "listen": {
+   "name": "Kusikiliza na sauti",
+   "help": "Usomaji wa Alafasy — kasi, marudio, bila mtandao"
+  },
+  "goals": {
+   "name": "Malengo na mfululizo",
+   "help": "Hesabu ya kila siku, mfululizo, kusoma kipi kinahesabiwa kwa malengo"
+  },
+  "history": {
+   "name": "Maendeleo na historia",
+   "help": "Sheria za kufuta alama, viwango vya hali, rekodi"
+  },
+  "view": {
+   "name": "Mwonekano",
+   "help": "Rangi, ukubwa wa maandishi, mwendo"
+  },
+  "device": {
+   "name": "Maikrofoni na kifaa",
+   "help": "Maikrofoni, prosesa, skrini"
+  },
+  "adv": {
+   "name": "Ya hali ya juu",
+   "help": "Thamani za hesabu za ndani — badilisha kwa uangalifu"
+  }
+ },
+ "presets": {
+  "recite": {
+   "label": "Ukali wa kugundua makosa",
+   "items": {
+    "easy": {
+     "label": "Rahisi",
+     "help": "Kwa kuhifadhi upya: inasamehe tofauti ndogo za matamshi, maneno ya ziada hayagunduliwi"
+    },
+    "normal": {
+     "label": "Kawaida",
+     "help": "Marudio ya kila siku"
+    },
+    "strict": {
+     "label": "Kali",
+     "help": "Kabla ya kusoma kwa mwalimu: hata matamshi yanayokaribiana ni kosa, hakuna kuendelea bila kurekebisha"
+    }
+   }
+  },
+  "test": {
+   "label": "Aina ya jaribio",
+   "items": {
+    "quick": {
+     "label": "Mazoezi ya haraka"
+    },
+    "normal": {
+     "label": "Kawaida"
+    },
+    "hard": {
+     "label": "Gumu"
+    }
+   }
+  },
+  "listen": {
+   "label": "Aina ya kusikiliza",
+   "items": {
+    "only": {
+     "label": "Kusikiliza tu"
+    },
+    "memo": {
+     "label": "Kwa kuhifadhi"
+    },
+    "say": {
+     "label": "Sikiliza na useme"
+    },
+    "slow": {
+     "label": "Kujifunza polepole"
+    }
+   }
+  }
+ }
+}

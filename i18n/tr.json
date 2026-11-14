@@ -1,0 +1,1460 @@
+{
+ "strings": {
+  "intro.preparing": "Hazırlanıyor…",
+  "nav.tab.recite": "Okuma",
+  "nav.tab.test": "Sınav",
+  "nav.tab.listen": "Dinle",
+  "nav.tab.progress": "İlerleme",
+  "nav.tab.settings": "Ayarlar",
+  "nav.busy": "Kayıt açık — önce durdurun (■), sonra başka sayfaya geçin.",
+  "nav.themeTip": "Rengi değiştir: Kâğıt / Gece mushafı / Eski kâğıt (tüm ayarlar için basılı tutun)",
+  "s.title": "Ayarlar",
+  "s.search": "Ayarlarda ara…",
+  "s.searchEmpty": "Bu isimde bir ayar yok.",
+  "s.back": "Tüm ayarlar",
+  "s.changedN": "{n} değiştirildi",
+  "s.rowReset": "Varsayılana dön",
+  "s.sectionReset": "Bu bölümü sıfırla",
+  "s.sectionResetQ": "“{group}” içindeki tüm ayarlar varsayılana dönecek. Tamam mı?",
+  "s.allReset": "Tüm ayarları sıfırla",
+  "s.allResetQ": "Tüm ayarlar varsayılana dönecek. Oturumlarınız, işaretleriniz, kayıtlarınız, sınavlarınız ve hedefleriniz olduğu gibi kalır. Tamam mı?",
+  "s.resetDone": "Sıfırlandı.",
+  "s.export": "Ayarları dosyaya kaydet",
+  "s.import": "Ayarları dosyadan yükle",
+  "s.importOk": "{n} ayar yüklendi.",
+  "s.importSkip": "{n} ayar yüklendi, {m} tanınmıyor veya aralık dışı — atlandı.",
+  "s.importBad": "Dosya okunamadı: {err}",
+  "s.importWrong": "Bu bir Hıfz Yardımcısı ayar dosyası değil.",
+  "s.where": "Ayarlar bu telefonda kalır. Başka bir telefona veya bilgisayara taşımak için ‘Ayarları dosyaya kaydet’i kullanın.",
+  "s.whenNext": "Bir sonraki oturumdan itibaren geçerli olur",
+  "s.whenReload": "Uygulama yeniden açıldığında geçerli olur",
+  "s.reloadNow": "Şimdi yeniden aç",
+  "s.live": "Kayıt açık — durdurduktan sonra geçerli olur",
+  "s.invalid": "Bu değere izin verilmiyor — eski değer korundu.",
+  "s.presetCustom": "Özel",
+  "s.presetApplied": "“{name}” ön ayarı uygulandı.",
+  "s.undo": "Geri al",
+  "s.custom": "Özel…",
+  "s.advWarn": "Bunlar uygulamanın iç hesaplarıdır. Yanlış bir değer hata tespitini kötüleştirebilir. Emin değilseniz “Bu bölümü sıfırla”ya basın.",
+  "s.advSummary": "İç hesaplar — dikkatle değiştirin",
+  "s.contrast": "Düşük kontrast: {r}:1 — okuması zor olabilir (4,5:1 veya üzeri daha iyi).",
+  "s.platOnly": "Yalnızca telefon",
+  "r.listTip": "Bu oturumun tüm hatalarını gör",
+  "r.listTitle": "Bu oturumun hataları ({n})",
+  "r.ayahRef": "Ayet {a}",
+  "r.kind.skipped": "Atlandı",
+  "r.kind.changed": "Başka kelime okundu",
+  "r.kind.added": "Fazladan kelime okundu",
+  "r.kind.peek": "Göz atıldı",
+  "r.listen": "Dinle",
+  "r.remove": "Yok say",
+  "r.removed": "Yok sayıldı.",
+  "r.removedTaught": "Yok sayıldı — burada bu şekilde okumak bir daha işaretlenmeyecek.",
+  "r.removedTitle": "Yok sayılanlar ({n})",
+  "r.restore": "Geri getir",
+  "r.restored": "Yeniden hata sayıldı.",
+  "r.removeAll": "Hepsini yok say",
+  "r.removeAllQ": "Bu oturumun tüm hataları yok sayılsın mı? “Geri getir” ile geri alabilirsiniz.",
+  "r.empty": "Henüz hata yok.",
+  "r.hintTip": "İpucu: sonraki kelimeyi göster (ayetin kalanı için basılı tutun)",
+  "r.blockBanner": "Kırmızı kelimeyi doğru okuyun — sonra devam edebilirsiniz.",
+  "r.lg.ok": "Doğru",
+  "r.lg.bad": "Yanlış/atlandı",
+  "r.lg.peek": "İpucu/göz atma",
+  "r.lg.pend": "Kontrol ediliyor",
+  "r.lg.next": "Şu anki kelime",
+  "r.lg.weak": "Önceki zayıflık",
+  "r.lg.given": "İpucu",
+  "r.menu.listen": "Buradan dinle",
+  "r.menu.test": "Buradan sına",
+  "h.times": "Toplam {t} kez okundu, {e} tanesi yanlış",
+  "r.help.list": "Yukarıdaki <b>Yanlış/atlandı</b> sayacına basarak bu oturumun tüm hatalarını bir arada görün; hata olmayanı <b>Yok say</b>, gerekirse <b>Geri getir</b>.",
+  "r.help.hint": "Ayetin kalanını açmak için ipucu düğmesine basılı tutun.",
+  "t.setupTitle": "Neyi sınamak istiyorsunuz?",
+  "t.suggested": "Sizin için önerilen",
+  "t.myRanges": "Aralıklarım",
+  "t.myMemorized": "Ezberlediklerim",
+  "t.newRange": "Yeni aralık oluştur",
+  "t.noMemorized": "Henüz ezberlenmiş olarak işaretlenen bir şey yok",
+  "t.rename": "Yeniden adlandır",
+  "t.delete": "Sil",
+  "t.up": "Yukarı",
+  "t.down": "Aşağı",
+  "t.deleteQ": "“{name}” aralığı silinsin mi? (Eski sınav sonuçları kalır)",
+  "t.rangeSummary": "Seçilen: {name} · {n} ayet",
+  "t.rules": "{q} soru · her biri {w} kelime · ipucu {h} kelime",
+  "t.changeRules": "Kuralları değiştir",
+  "t.temporary": "Geçici (hiçbir şey kaydedilmez)",
+  "t.start": "Sınavı başlat",
+  "t.emptyRange": "Bu aralıkta ayet yok",
+  "t.modelWait": "Model hazırlanıyor…",
+  "t.starterTitle": "Başlamak için",
+  "t.starterBody": "30. cüzün sonu: {a}. sureden {b}. sureye",
+  "t.markMemorized": "Ezberlendi olarak işaretle",
+  "t.resumeQ": "Son sınav bitmedi ({i} / {n} soru). Devam edilsin mi?",
+  "t.resume": "Devam et",
+  "t.seeResults": "Sonuçları gör",
+  "t.discard": "Vazgeç",
+  "t.introTitle": "Sınav nasıl çalışır",
+  "t.intro1": "Her soruda ilk birkaç kelime gösterilir — kalanını bakmadan okuyun.",
+  "t.intro2": "Doğru kelimeler açılır; sonunda kart yeşil (kusursuz) veya kırmızı (hata var) olur.",
+  "t.intro3": "Takılırsanız: “sonraki kelime” veya “ayetin kalanı” — göz atmak hata sayılır.",
+  "t.intro4": "Soruyu geçmek için kartı yana kaydırın veya “Sonraki soru”ya basın.",
+  "t.intro5": "Her şey telefonda çalışır, internet gerekmez.",
+  "t.introOk": "Anladım",
+  "t.go": "Başla!",
+  "t.ref": "Sure {n}. {english} · {span}",
+  "t.refHidden": "Sure ve ayet gizli",
+  "t.eyeTip": "Sure ve ayet numarasını göster / gizle",
+  "t.listening": "Dinleniyor… ipucundan sonrasını okuyun",
+  "t.checking": "Kontrol ediliyor…",
+  "t.peekWord": "Sonraki kelime",
+  "t.peekRest": "Ayetin kalanı",
+  "t.next": "Sonraki soru",
+  "t.pass": "Kusursuz!",
+  "t.failN": "{m} hata",
+  "t.skipped": "Geçildi",
+  "t.kind.stray": "Başka bir sureye geçtiniz",
+  "t.timeUp": "Süre doldu — bu soruyu bitirin",
+  "t.qOfN": "Soru {i} / {n}",
+  "t.qTime": "Soru {i} · {mm:ss} kaldı",
+  "t.qOpen": "Soru {i}",
+  "t.mistakesN": "Hata {m}",
+  "t.score": "Puan %{p}",
+  "t.streak": "Seri {s}",
+  "t.paused": "Duraklatıldı — sınav beklemede. Aynı sorudan dinlemek için “Devam et”e basın.",
+  "t.continue": "Devam et",
+  "t.end": "Bitir",
+  "t.autoPaused": "Uzun süre sessiz kalındı — sınav duraklatıldı.",
+  "t.resTitle": "Sınav sonucu",
+  "t.tempLabel": "Geçici sınav — hiçbir şey kaydedilmedi",
+  "t.resScore": "%{p}",
+  "t.resCorrect": "Doğru {c} / {n}",
+  "t.resBest": "En uzun seri: {s}",
+  "t.resTime": "Süre: {time}",
+  "t.resAll": "Tüm hatalar ({n})",
+  "t.resRemoved": "Yok sayılan hatalar ({n})",
+  "t.resNone": "Hata yok — maşallah!",
+  "t.keepGoing": "Daha fazla oku",
+  "t.done": "Tamam",
+  "t.replay": "Aynı sınav tekrar",
+  "t.newTest": "Yeni sınav",
+  "t.saveThis": "Bu aralığı sakla",
+  "t.sg.warmup.name": "Isınma",
+  "t.sg.warmup.sub": "En iyi yaptığınız yerler",
+  "t.sg.weak.name": "Zayıf yerler",
+  "t.sg.weak.sub": "En çok hata yaptığınız yerler",
+  "t.sg.stale.name": "Uzun süredir okunmadı",
+  "t.sg.stale.sub": "Uzun süredir ezberden okunmadı",
+  "t.sg.fresh.name": "Yeni ezberlenen",
+  "t.sg.fresh.sub": "Son 14 günde ezber listesine eklendi",
+  "t.sg.mixed.name": "Karışık",
+  "t.sg.mixed.sub": "Tüm ezber listenizden",
+  "l.from": "Ayet başlangıcı",
+  "l.to": "Ayet sonu",
+  "l.pick": "Cüz veya sayfaya göre seç",
+  "l.speedChip": "{x}×",
+  "l.ayahChip": "Ayet ×{n}",
+  "l.rangeChip": "Bölüm ×{n}",
+  "l.rangeChipInf": "Bölüm ∞",
+  "l.gapChip": "Ara {s} sn",
+  "l.sleepChip": "Uyku {m} dk",
+  "l.play": "Oynat",
+  "l.pause": "Duraklat",
+  "l.prev": "Önceki ayet",
+  "l.next": "Sonraki ayet",
+  "l.idle": "Neyi dinleyeceğinizi seçin ve ▶’a basın.",
+  "l.loading": "Ses yükleniyor…",
+  "l.playing": "Ayet {a} · {k} / {n} kez",
+  "l.round": "Tur {r}",
+  "l.gap": "Ara… {s}",
+  "l.pausedS": "Duraklatıldı",
+  "l.ended": "Bitti.",
+  "l.again": "Tekrar oynat",
+  "l.error": "Ses çalınamadı — çevrimiçi misiniz? Çevrimdışı dinlemek için önce sureyi indirin.",
+  "l.offline": "Çevrimdışı kullanılabilir",
+  "l.online": "İnternet gerekir — indirin",
+  "l.slept": "Uyku zamanlayıcısı — dinleme durdu.",
+  "l.offTitle": "Çevrimdışı ses",
+  "l.offRow": "{n}. {english} — {size}",
+  "l.offGet": "İndir",
+  "l.offGetting": "İndiriliyor %{p}",
+  "l.offHave": "İndirildi",
+  "l.offTooBig": "Çok büyük — yalnızca internetle",
+  "l.offDel": "Sil",
+  "l.offDelQ": "{english} suresinin çevrimdışı sesi silinsin mi? Daha sonra tekrar indirebilirsiniz.",
+  "l.offTotal": "Toplam alan: {mb} MB",
+  "l.offGetAll": "Hepsini indir",
+  "l.offGetAllQ": "{n} sure, yaklaşık {mb} MB indirilecek. Tamam mı?",
+  "pk.title": "Aralık seç",
+  "pk.unit": "Sure · Cüz · Hizb · Sayfa · Ayet",
+  "pk.quarters": "Rub‘ (çeyrek) göster",
+  "pk.pageNote": "Sayfa numaraları Medine baskısına göredir (604 sayfa)",
+  "pk.summary": "Seçilen: {n} ayet ({parts})",
+  "pk.clear": "Temizle",
+  "pk.save": "Adla kaydet",
+  "pk.use": "Bunu kullan",
+  "pk.namePh": "Bir ad verin (örn. Mülk suresi tekrarı)",
+  "pk.saved": "“{name}” kaydedildi.",
+  "pk.full": "50’den fazla aralık saklanamaz — eskilerden birini silin.",
+  "m.title": "Ezber listesi",
+  "m.summary": "Toplam {n} ayet ezberlenmiş olarak işaretli ({s} surede)",
+  "m.add": "Ezber ekle",
+  "m.edit": "Değiştir",
+  "m.remove": "Çıkar",
+  "m.removeQ": "{english} suresi ezber listesinden çıkarılsın mı? (Oturumlar ve işaretler kalır)",
+  "m.sgTitle": "Geçmişiniz bunları bakmadan iyi okuduğunuzu gösteriyor:",
+  "m.sgAdd": "Ekle",
+  "m.sgAddAll": "Hepsini ekle",
+  "m.empty": "Henüz bir şey işaretlenmedi. “Ezber ekle”ye basıp bir sure veya ayetler seçin.",
+  "g.title": "Hedefler",
+  "g.new": "Yeni hedef",
+  "g.create": "Hedef oluştur",
+  "g.s1": "Ne tür bir hedef?",
+  "g.s2": "Hangi bölüm?",
+  "g.s3": "Nasıl bölünsün?",
+  "g.s4": "Hangi günlerde?",
+  "g.s5": "Sonunda ne olsun?",
+  "g.type.memorize": "Yeni ezber (yeni bir bölümü bakmadan okumak)",
+  "g.type.review": "Tekrar (ezberlenmiş bir bölümü yeniden bakmadan okumak)",
+  "g.type.recite": "Tilavet (her türlü okuma)",
+  "g.type.test": "Sınav (soru sayısı)",
+  "g.order.normal": "Normal sırayla",
+  "g.order.reverse": "Ters sırayla (son sureden başlayarak)",
+  "g.strict": "Sırayı koru — önceki bölüm bitmeden sonraki sayılmaz",
+  "g.plan.daily": "Her gün sabit miktar",
+  "g.plan.bydate": "Belirli bir tarihe kadar bitir",
+  "g.plan.flexible": "Elimden geldiğince — kalan ertesi güne eklenir",
+  "g.unit.ayah": "ayet",
+  "g.unit.page": "sayfa",
+  "g.unit.juz": "cüz",
+  "g.unit.minute": "dakika",
+  "g.unit.word": "kelime",
+  "g.unit.question": "soru",
+  "g.round.none": "Bölüm nasıl çıkarsa",
+  "g.round.up": "Tam sayfa — yukarı",
+  "g.round.down": "Tam sayfa — aşağı",
+  "g.round.nearest": "Tam sayfa — en yakın",
+  "g.sch.daily": "Her gün",
+  "g.sch.days": "Haftanın belirli günleri",
+  "g.sch.perWeek": "Haftada {n} gün",
+  "g.cycle.auto": "Kendiliğinden yeniden başla (yeni hatim)",
+  "g.cycle.manual": "Ben başlatırım",
+  "g.cycle.off": "Dur",
+  "g.autoName": "{type}: {range}",
+  "g.tpl.manzil": "Haftalık hatim (7 menzil)",
+  "g.tpl.page": "Her gün 1 yeni sayfa ezberle",
+  "g.tpl.juz": "Her gün 1 cüz tekrar",
+  "g.tpl.minutes": "Günde 15 dakika",
+  "g.today": "Bugünün hedefi",
+  "g.todayLine": "{name}: {done} / {target} {unit}",
+  "g.progressLine": "Toplam {done} / {total} {unit} · bitiş tarihi {date}",
+  "g.restart": "Yeniden başla",
+  "g.completed": "Tamamlandı — elhamdülillah!",
+  "g.pause": "Duraklat",
+  "g.resumeGoal": "Sürdür",
+  "g.edit": "Değiştir",
+  "g.delete": "Sil",
+  "g.deleteQ": "“{name}” hedefi silinsin mi? (Oturumlar olduğu gibi kalır)",
+  "st.current": "{n} gün üst üste",
+  "st.best": "En uzun: {n} gün üst üste",
+  "st.keep": "Seriyi korumak için bugün okuyun",
+  "st.cellTip": "{date}: {m} dk",
+  "bd.title": "Başarılar",
+  "bd.new": "Yeni başarı: {name}",
+  "bd.locked": "Henüz değil — {req}",
+  "x.add": "Uygulama dışında yapılan okumayı ekle",
+  "x.title": "Uygulama dışında yapılan okumayı ekle",
+  "x.date": "Tarih",
+  "x.minutes": "Kaç dakika",
+  "x.range": "Hangi bölüm (isteğe bağlı)",
+  "x.note": "Not",
+  "x.int.memorize": "Yeni ezberi birine okudum",
+  "x.int.review": "Tekrar",
+  "x.int.recite": "Mushaftan okudum",
+  "x.save": "Ekle",
+  "x.delete": "Sil",
+  "x.deleteQ": "Elle eklenen bu oturum silinsin mi?",
+  "h.f.all": "Tümü",
+  "h.f.hifz": "Ezberden",
+  "h.f.look": "Sayfa",
+  "h.f.test": "Sınav",
+  "h.f.manual": "Dışarıda",
+  "h.f.listen": "Dinleme",
+  "h.chip.test": "Sınav",
+  "h.chip.manual": "Dışarıda",
+  "h.chip.listen": "Dinleme",
+  "h.play": "Dinle",
+  "h.testRow": "{date} · {range} · %{p} · doğru {c}/{n}",
+  "h.testEditNote": "Burada bir hatayı yok saymak yalnızca bu sınavın puanını değiştirir; zayıflık işaretlerini silmek için kırmızı kelimeye basın.",
+  "h.seg": "Özet · Hedefler · Ezber · Sınavlar · Başarılar",
+  "h.weekN": "Son {n} gün",
+  "help.1": "<b>Mikrofon düğmesine basın</b> ve okumaya başlayın; uygulama sureyi kendisi bulur (yukarıdan siz de seçebilirsiniz). <b>■</b>’ya basmak oturumu bitirir ve kaydeder.",
+  "help.2": "Okudukça kelimeler açılır: <span class=\"hz-ok\">yeşil = doğru</span>, <span class=\"hz-bad\">kırmızı = yanlış/atlandı</span> (uyarı kelimesiyle), <span class=\"hz-hint\">mor = ipucu/takılma</span>. Yanıp sönen mavi kutu = şimdi okumanız gereken kelime.",
+  "help.3": "<b>Duraklat</b> düğmesiyle durun, kırmızı kelimelere bakıp dinleyin, sonra aynı düğmeyle devam edin. İsterseniz hatayı düzeltmek için önceki bir ayetten yeniden okuyun; uygulama oradan sizi takip eder.",
+  "help.4": "Bir sureyi bitirip sonrakini (veya başka bir sureyi) başlattığınızda uygulama kendisi oraya geçer — okuduğunuz sürece sizi takip eder.",
+  "help.5": "<b>Göz düğmesi</b> metinden okuma (tüm metin görünür) ile ezberden okuma (metin gizli) arasında geçiş yapar.",
+  "help.6": "Takılırsanız <b>İpucu</b>’na basın veya <b>susun</b> (yukarıdaki “Alafasy duraklamadan sonra başlasın” ayarındaki kadar saniye, başta {wait}): Mişari Alafasy oradan devam eder ve kelimeler mor renkte açılır. Yeniden okumaya başladığınızda (veya Duraklat/Durdur’a bastığınızda) o durur ve uygulama sizi dinler. Ayetin kalanını açmak için ipucu düğmesine basılı tutun.",
+  "help.7": "<b>Kırmızı kelimeye dokunun</b>; ne okuduğunuzu ve ne okumanız gerektiğini çevresindeki kelimelerle birlikte dinleyin. Doğru okuduysanız ✓’ya basın.",
+  "help.8": "Önceki oturumlarda hata yaptığınız veya takıldığınız kelimeler <span class=\"hz-w1 hz-swatch\">açık</span> ile <span class=\"hz-w3 hz-swatch\">koyu kırmızı</span> arasında kalır; ezberden üst üste {clear} kez doğru okuduktan sonra işaret kalkar.",
+  "help.9": "Bir işaretin yanlış olduğunu düşünüyorsanız (kayıt yokken veya <b>İlerleme</b> sekmesinde) kırmızı kutuya dokunun: okuduğunuzu dinleyin ve <b>✓ Yanlış işaret — kaldır</b>’a basın. İşaret kalkar ve bu şekilde okumak bir daha işaretlenmez.",
+  "help.10": "<b>İlerleme</b> sekmesinde her surenin ayet bazında renkli bir şeridi vardır — hangi ayetlerin en zayıf olduğunu (koyu kırmızı) bir bakışta görürsünüz. Bir kutuya dokunursanız o ayet aşağıda açılır.",
+  "help.11": "Telefonda: model (yaklaşık 19 MB) ilk seferde indirilir, sonra internetsiz çalışır. Tüm veriler bu telefonda kalır — <b>İlerleme</b> sekmesinden dosyaya yedekleyebilirsiniz. Otomatik kontrol yanılabilir; öğretmenin yerini tutmaz.",
+  "a.autoSurah": "Otomatik — dinleyerek sureyi bulur",
+  "a.lookOn": "Ezberden: metni gizle",
+  "a.lookOff": "Okuma: tüm metni göster",
+  "a.pauseResumeTip": "Devam et — kaldığınız yerden",
+  "a.pauseTip": "Duraklat — tam burada durur, sonra devam edebilirsiniz",
+  "a.stopTip": "Durdur — oturumu bitirir ve kaydeder",
+  "a.recTip": "Kaydı başlat — okumaya başlayın",
+  "a.stop": "Durdur",
+  "a.record": "Kaydet",
+  "a.micFail": "Mikrofon başlatılamadı: {err}",
+  "a.maxRec": "En uzun kayıt süresine ulaşıldı — durduruldu.",
+  "a.listening": "Dinleniyor…",
+  "a.checking": "Kontrol ediliyor…",
+  "a.tooShort": "Kayıt çok kısa.",
+  "a.noMatch": "Hiçbir ayetle eşleşmedi. Biraz daha uzun okuyun veya sureyi kendiniz seçin.",
+  "a.entry": "{english} suresi: {words} kelime, doğruluk %{acc}, hata {missed}, takılma {stuck}",
+  "a.saved": "Oturum kaydedildi — {parts}. Her şeyi İlerleme sekmesinde görün.",
+  "a.close": "Kapat",
+  "a.closeAria": "Kapat",
+  "a.listenMine": "Okumamı dinle",
+  "a.shouldBe": "Olması gereken",
+  "a.listenAlafasyTip": "Mişari Alafasy’nin okuyuşu (çevresindeki kelimelerle)",
+  "a.listenAlafasy": "Alafasy’nin okuyuşu",
+  "a.iWasRight": "Doğru okudum",
+  "a.leftMain": "Ezberden {n} kez daha doğru okuyun, kırmızı işaret kalksın",
+  "a.leftStreak": "Şimdiye kadar üst üste {n} oturum doğruydu. ",
+  "a.leftSub": "Oturum başına bir kez sayılır ve üst üste olmalıdır — hata veya takılma sayımı baştan başlatır; metinden okumak sayılmaz.",
+  "a.wkMeta": "Burada önceki oturumlarda: {kind} — toplam {count} kez, son seferinde {last}",
+  "a.saidErr": "Ne okudunuz (modelin duyduğu)",
+  "a.saidWk": "O zaman ne okudunuz (modelin duyduğu)",
+  "a.heardNothing": "Hiçbir şey duyulmadı — kelime atlanmış görünüyor",
+  "a.noRecording": "O zamanın kaydı mevcut değil",
+  "a.mineErrTip": "Okumamı dinle (önceki iki kelimeyle)",
+  "a.mineWkTip": "O zamanki okumamı dinle",
+  "a.okErrTip": "Doğru okudum — model yanlış duydu",
+  "a.okWkTip": "Gerçekten doğru okumuştum — işareti kaldır, bu şekilde okumak bir daha işaretlenmez",
+  "a.okErrLbl": "Doğru okudum",
+  "a.okWkLbl": "Yanlış işaret — kaldır",
+  "a.markCleared": "İşaret kaldırıldı",
+  "a.markClearedTaught": "İşaret kaldırıldı — burada bu şekilde okumak bir daha işaretlenmeyecek.",
+  "a.forgetSurahQ": "Bu surenin tüm kırmızı işaretleri kaldırılsın mı? Kaydı olan yerler doğru okunmuş olarak hatırlanacak — daha sonra aynı şekilde okumak işaretlenmeyecek.",
+  "a.marksCleared": "{n} işaret kaldırıldı — bu yerleri bu şekilde okumak bir daha işaretlenmeyecek.",
+  "a.storage": "Telefonda saklanan: {n} oturum girdisi, {r} kayıt ({mb} MB).",
+  "a.pv.overview": "Özet",
+  "a.pv.goals": "Hedefler",
+  "a.pv.memorized": "Ezber",
+  "a.pv.tests": "Sınavlar",
+  "a.pv.badges": "Başarılar",
+  "a.importQ": "Dosyadaki veriler mevcut verilerle birleştirilsin mi? (Tamam = birleştir, İptal = mevcut tüm verileri dosyadakilerle değiştir)",
+  "a.importOk": "Veriler geri yüklendi — sayfa yeniden açılıyor…",
+  "a.importBad": "Dosya okunamadı: {err}",
+  "a.defaultMic": "Cihazın kendi mikrofonu",
+  "a.micN": "Mikrofon {n}",
+  "a.modelBuilding": "Model hazırlanıyor…",
+  "a.modelDownload": "Model indiriliyor (yaklaşık 19 MB, yalnızca ilk seferde)…",
+  "a.modelFooter": "Model: quran-asr-tiny · {backend}, {threads} iş parçacığı. İlk seferden sonra internetsiz çalışır. Otomatik kontrol yanılabilir; öğretmenin yerini tutmaz.",
+  "a.modelFail": "Model başlamadı: {err}",
+  "a.ayahMenuTitle": "{english} · Ayet {a}",
+  "a.startFail": "Başlatılamadı: {err}",
+  "p.sura": "Sure {n}. {english}",
+  "p.paused": "Duraklatıldı — devam ettiğinizde dinleme yeniden başlar.",
+  "p.waiting": "Dinleniyor… okumaya başlayın, birkaç kelime sonra <b>sureyi kendisi bulur</b>.",
+  "p.autoDetected": "Otomatik algılandı",
+  "p.hCount": "Ayet {a} / {n}",
+  "p.hOk": "Doğru {n}",
+  "p.hBad": "Yanlış/atlandı {n}",
+  "p.hHint": "İpucu {n}",
+  "p.stray": "Hata: bu, {english} suresinin {ayah}. ayetine benziyor. {current}. sureyi okuyordunuz; mavi işaretli kelimeden yeniden okuyun.",
+  "p.pausedBanner": "Duraklatıldı: görmek ve dinlemek için kırmızı kelimeye dokunun. Devam ettiğinizde buradan dinler; kırmızı kelimeyi düzeltmek için önceki bir ayetten yeniden de okuyabilirsiniz.",
+  "p.cellWeak": "{span}: {n} zayıf kelime",
+  "p.cellOk": "iyi",
+  "p.cellNone": "henüz ezberden okunmadı",
+  "p.empty": "Henüz oturum yok. Okuma sekmesinde kaydedin; durdurduğunuzda (■) oturum burada saklanır.",
+  "p.cSessions": "Toplam oturum",
+  "p.cSurahs": "Çalışılan sureler",
+  "p.cMinutes": "Toplam dakika",
+  "p.cWeek": "Bu hafta",
+  "p.cWeekN": "Son {n} gün",
+  "p.ayahCount": "{a}/{n} ayet",
+  "p.weakCount": "{n} zayıf kelime",
+  "p.th.surah": "Sure",
+  "p.th.state": "Durum",
+  "p.th.acc": "Son doğruluk",
+  "p.th.read": "Ne kadar okundu",
+  "p.th.weak": "Zayıf yerler",
+  "p.th.sessions": "Oturum",
+  "p.th.last": "Son çalışma",
+  "p.th.when": "Ne zaman",
+  "p.th.surahAyah": "Sure (ayetler)",
+  "p.th.mode": "Tür",
+  "p.th.words": "Kelime",
+  "p.th.acc2": "Doğruluk",
+  "p.th.missed": "Hata",
+  "p.th.stuck": "Takılma",
+  "p.th.time": "Süre",
+  "p.mode.look": "Okuma",
+  "p.mode.hifz": "Ezber",
+  "p.mode.mixed": "Karışık",
+  "p.bySurah": "Surelere göre ezber durumu",
+  "p.recent": "Son oturumlar",
+  "p.stateNote": "Durum: son {w} ezber oturumunun ortalama doğruluğu — %{good} veya üzeri = iyi ezber, %{fair}–%{good} = orta. Metinden okunan oturumlar sayılmaz.",
+  "p.weakNote": "Zayıf yerler: her kutu bir ayettir, 1. ayetten sona kadar — {k0}, {k1}, {k2}. Bir kutuya dokunursanız o ayet aşağıda gösterilir.",
+  "p.key0": "yeşil = iyi",
+  "p.key1": "açıktan koyu kırmızıya = ne kadar zayıfsa o kadar koyu",
+  "p.key2": "gri = henüz ezberden okunmadı",
+  "p.hotChipTip": "Aşağıda göstermek için dokunun",
+  "p.hotLabel": "En zayıf yerler:",
+  "p.legend1": "iyi",
+  "p.legend2": "açıktan koyu kırmızıya = daha çok zayıf kelime",
+  "p.legend3": "henüz ezberden okunmadı",
+  "p.mapTitle": "Ayet bazında zayıflık haritası",
+  "p.mapSub": "Her kutu bir ayettir — aşağıdaki metinde o ayete gitmek için dokunun",
+  "p.weakHead": "{n} zayıf kelime. Açık kırmızı = ara sıra yanlış/takılma, koyu kırmızı = tekrar tekrar. Ezberden üst üste {clear} oturum doğru okuyunca işaret kalkar. <b>Kırmızı kelimeye dokunun</b>, o zaman ne okuduğunuzu dinleyin; işaret yanlışsa kaldırabilirsiniz.",
+  "p.noWeak": "Bu surede zayıf yer yok — maşallah!",
+  "s.col.ok": "Doğru",
+  "s.col.bad": "Yanlış",
+  "s.col.peek": "Göz atma",
+  "s.col.pend": "Kontrol ediliyor",
+  "s.col.next": "Sonraki kelime",
+  "s.col.weak": "Eski zayıflık",
+  "s.col.listen": "Dinleme vurgusu",
+  "s.on": "Açık",
+  "s.off": "Kapalı",
+  "s.sum.alafasy": "Alafasy {v}",
+  "s.sum.added": "Fazla kelimeleri yakala",
+  "s.sum.addedOff": "Fazla kelimeler yakalanmaz",
+  "s.sum.peekMistake": "Göz atma = hata",
+  "s.sum.peekOk": "Göz atma hata değil",
+  "s.sum.hint": "İpucu {v}",
+  "s.sum.speed": "Hız {v}",
+  "s.sum.perAyah": "Her ayet ×{n}",
+  "s.sum.weekStart": "Hafta {v} günü başlar",
+  "s.sum.countTests": "Sınavlar da sayılır",
+  "s.sum.noTests": "Sınavlar sayılmaz",
+  "s.sum.good": "İyi ezber {v}",
+  "s.sum.clear": "İşaret {n} oturum üst üste sonra kalkar",
+  "s.sum.arabic": "Arapça {v}",
+  "s.sum.motion": "Hareket {v}",
+  "s.sum.awake": "Ekran açık kalır",
+  "s.sum.awakeOff": "Ekran her zamanki gibi",
+  "bd.n.first": "İlk adım",
+  "bd.r.first": "İlk oturumunuzu kaydedin",
+  "bd.n.streak7": "Üst üste bir hafta",
+  "bd.r.streak7": "7 gün üst üste okuyun",
+  "bd.n.streak30": "Üst üste bir ay",
+  "bd.r.streak30": "30 gün üst üste okuyun",
+  "bd.n.sessions100": "Yüzüncü oturum",
+  "bd.r.sessions100": "Toplam 100 oturum",
+  "bd.n.good1": "İlk sağlam sure",
+  "bd.r.good1": "Bir sureyi ‘iyi ezber’e çıkarın",
+  "bd.n.hours10": "On saat",
+  "bd.r.hours10": "Toplam 10 saat okuma",
+  "bd.n.good5": "Beş sağlam sure",
+  "bd.r.good5": "5 sure ‘iyi ezber’",
+  "bd.n.test100": "Kusursuz sınav",
+  "bd.r.test100": "En az 10 soruluk bir sınavda %100",
+  "bd.n.tests10": "Düzenli sınav",
+  "bd.r.tests10": "10 sınavı bitirin",
+  "bd.n.juz1": "Bir cüz ezber",
+  "bd.r.juz1": "Ezber listesinde tam bir cüz",
+  "bd.n.cleared50": "İşaret silme ustası",
+  "bd.r.cleared50": "Ezberden doğru okuyarak 50 zayıflık işaretini kaldırın",
+  "bd.n.goal1": "Hedefe ulaşıldı",
+  "bd.r.goal1": "Bir günün hedefine ilk kez ulaşın",
+  "app.title": "Hıfz Yardımcısı",
+  "c.ok": "Tamam",
+  "c.no": "Hayır",
+  "fmt.ayah1": "Ayet {a}",
+  "fmt.ayahN": "Ayet {a}–{b}",
+  "fmt.durMS": "{m} dk {s} sn",
+  "fmt.durS": "{s} sn",
+  "u.s": "{n} saniye",
+  "u.min": "{n} dakika",
+  "u.words": "{n} kelime",
+  "u.ayah": "{n} ayet",
+  "u.sC": "{n} sn",
+  "u.minC": "{n} dk",
+  "hk.missed": "Yanlış/atlandı",
+  "hk.hint": "Takıldınız (ipucu)",
+  "hk.slip": "Hata, yeniden okuyarak düzeltildi",
+  "gr.none": "Yalnızca metinden okundu",
+  "gr.good": "İyi ezber",
+  "gr.fair": "Orta",
+  "gr.weak": "Daha çok çalışmalı",
+  "d.0": "Paz",
+  "d.1": "Pzt",
+  "d.2": "Sal",
+  "d.3": "Çar",
+  "d.4": "Per",
+  "d.5": "Cum",
+  "d.6": "Cmt",
+  "g.nParts": "{n} bölüm",
+  "g.minutesNote": "{n} dk {note}",
+  "g.mode.look": "Okuma",
+  "g.mode.hifz": "Ezber",
+  "g.mode.mixed": "Karışık",
+  "pk.l.juz": "Cüz {n}",
+  "pk.l.hizb": "Hizb {n}",
+  "pk.l.rub": "Rub‘ {n}",
+  "pk.l.page": "Sayfa {n}",
+  "pk.l.pages": "Sayfa {a}–{b}",
+  "pk.l.mem": "Ezberlediğim bölümler",
+  "pk.pageRange": "{from}. sayfadan {to}. sayfaya",
+  "pk.u.surah": "Sure",
+  "pk.u.juz": "Cüz",
+  "pk.u.hizb": "Hizb",
+  "pk.u.page": "Sayfa",
+  "pk.u.ayah": "Ayet",
+  "t.ayahBadge": "{n} ayet",
+  "l.artist": "Mişari Raşid Alafasy",
+  "m.sugRow": "Sure {n}. {english}: ayet {a}–{b}",
+  "m.cover": "{c} / {n} ayet",
+  "t.starterRange": "{n}. {english}",
+  "a.sub": "Ezberden okumanızı dinler ve hataları anında yakalar · nerede sık sık takıldığınızı hatırlar",
+  "a.themeAria": "Renkleri değiştir",
+  "a.lblSurah": "Sure",
+  "a.lblWait": "Alafasy şu kadar duraklamadan sonra başlasın",
+  "a.lblWaitSub": "Kaç saniye sessizlik",
+  "a.howTo": "Nasıl kullanılır",
+  "a.weakTitle": "Sık sık takıldığınız yerler",
+  "a.pickSurahAria": "Sure seç",
+  "a.clearAll": "Tüm işaretleri kaldır",
+  "a.clearAllTip": "Bu surenin tüm kırmızı işaretlerini kaldır (önce sorar)",
+  "a.export": "Verileri dosyaya aktar (yedek)",
+  "a.import": "Verileri dosyadan geri getir",
+  "a.install": "Uygulama olarak ekle",
+  "a.timerAria": "Okuma süresi",
+  "a.pauseAria": "Duraklat",
+  "a.lookAria": "Okuma / ezberden",
+  "a.hintAria": "İpucu"
+ },
+ "settings": {
+  "recite.waitS": {
+   "label": "Alafasy şu kadar duraklamadan sonra başlasın",
+   "help": "Yardım başlamadan önce kaç saniye sessizlik; ‘Kapalı’ = asla",
+   "sub": "Takıldığınızda",
+   "options": {
+    "0": "Kapalı"
+   }
+  },
+  "recite.silenceHelp": {
+   "label": "Sustuğunuzda ne olsun",
+   "help": "Takıldığınızda uygulama ne kadar yardım etsin",
+   "sub": "Takıldığınızda",
+   "options": {
+    "surah": "Alafasy sure sonuna kadar okur",
+    "ayah": "Ayet sonuna kadar",
+    "words3": "Sonraki 3 kelime",
+    "word": "Yalnızca sonraki kelime",
+    "show": "Yalnızca sonraki kelimeyi göster, ses yok"
+   }
+  },
+  "recite.promptOnLook": {
+   "label": "Metinden okurken de yardım",
+   "help": "Göz düğmesi açıkken bile sessizlikten sonra yardım gelir",
+   "sub": "Takıldığınızda"
+  },
+  "detect.changed": {
+   "label": "Yanlış kelimeleri yakala",
+   "help": "Bir kelimenin yerine başka kelime okuyunca o kelime kırmızı olur",
+   "sub": "Hangi hatalar yakalansın"
+  },
+  "detect.skipped": {
+   "label": "Atlanan kelimeleri yakala",
+   "help": "Bir kelimeyi okumadan ilerleyince o kelime kırmızı olur",
+   "sub": "Hangi hatalar yakalansın"
+  },
+  "detect.added": {
+   "label": "Fazla kelimeleri yakala",
+   "help": "Bir ayetin içinde fazladan bir şey okuyunca sonraki kelime kırmızı olur; kapatmak telefonun yükünü azaltır",
+   "sub": "Hangi hatalar yakalansın"
+  },
+  "detect.stray": {
+   "label": "Başka bir sureye geçince uyar",
+   "help": "Başka bir surenin benzer bir ayetine kayınca kırmızı bant ve uyarı sesi",
+   "sub": "Hangi hatalar yakalansın"
+  },
+  "detect.confirmedWords": {
+   "label": "Başka sureye geçiş hata sayılmadan önce doğru okunan kelime",
+   "help": "Düşük = daha erken uyarır; yüksek = yeni sure başlarken daha az yanlış uyarı",
+   "sub": "Hangi hatalar yakalansın"
+  },
+  "detect.similarRatio": {
+   "label": "Kelime eşleştirme sıkılığı",
+   "help": "Yüksek = yakın telaffuzları bile yakalar; düşük = daha hoşgörülü",
+   "sub": "Hangi hatalar yakalansın"
+  },
+  "detect.noAdvance": {
+   "label": "Hata düzelmeden ilerleme",
+   "help": "Bir kelime kırmızıyken, onu doğru okuyana kadar sonraki kelime açılmaz",
+   "sub": "Hangi hatalar yakalansın"
+  },
+  "detect.teachOnRemove": {
+   "label": "Yok sayılan hataları hatırla",
+   "help": "‘Doğru okudum’ veya ‘Yok say’dan sonra aynı okuyuş bir daha işaretlenmez",
+   "sub": "Hangi hatalar yakalansın"
+  },
+  "detect.errorTone": {
+   "label": "Uyarı sesi",
+   "help": "Bir kelime kırmızı olduğunda veya başka bir sureye girdiğinizde çıkan ses (yalnızca kayıt sırasında)",
+   "sub": "Uyarı sesi",
+   "options": {
+    "off": "Kapalı",
+    "soft": "Hafif",
+    "normal": "Normal",
+    "loud": "Yüksek"
+   }
+  },
+  "detect.toneKind": {
+   "label": "Uyarı sesi türü",
+   "sub": "Uyarı sesi",
+   "options": {
+    "two": "İki ton",
+    "beep": "Tek bip",
+    "double": "İki bip"
+   }
+  },
+  "detect.vibrate": {
+   "label": "Hatada titret",
+   "help": "Kırmızı kelimede telefon hafifçe titrer",
+   "sub": "Uyarı sesi"
+  },
+  "recite.startAt": {
+   "label": "Başlangıçta hangi sure",
+   "help": "Uygulama açıldığında sure seçimi nasıl olsun",
+   "sub": "Başlangıç",
+   "options": {
+    "auto": "Dinleyerek bul",
+    "last": "Geçen seferki sure ve ayet",
+    "continue": "Geçen sefer kaldığınız yerin devamı"
+   }
+  },
+  "recite.autoAyahs": {
+   "label": "Kaç ayet ilerisi gösterilsin",
+   "help": "Okurken bir seferde kaç ayet eklensin",
+   "sub": "Başlangıç"
+  },
+  "recite.mistakeList": {
+   "label": "Hata listesini göster",
+   "help": "Yukarıdaki ‘yanlış/atlandı’ sayısına dokunmak bu oturumun tüm hatalarını bir arada gösterir",
+   "sub": "Başlangıç"
+  },
+  "recite.look": {
+   "label": "Metinden oku (tüm metni göster)",
+   "help": "Göz düğmesi gibi; metinden okunan kelimeler işaret silmede sayılmaz",
+   "sub": "Gizli metin"
+  },
+  "hide.style": {
+   "label": "Gizli kelimeler nasıl görünsün",
+   "sub": "Gizli metin",
+   "options": {
+    "bar": "Kelime boyutunda kutu",
+    "line": "Yalnızca altında çizgi",
+    "blank": "Tamamen boş"
+   }
+  },
+  "hide.weakTint": {
+   "label": "Gizli kelimelerde önceki zayıflığın rengi",
+   "help": "Önceki oturumlarda yanlış olan kelimeler açıktan koyuya kırmızı kutuyla görünür",
+   "sub": "Gizli metin"
+  },
+  "hide.ayahMarks": {
+   "label": "Ayet işaretlerini gizle",
+   "help": "Ayet sonu işareti, ayet tam okunana kadar gösterilmez",
+   "sub": "Gizli metin"
+  },
+  "hide.nextWord": {
+   "label": "Sonraki kelimenin kutusunu işaretle",
+   "help": "Şimdi okumanız gereken kelimenin kutusunda bir halka",
+   "sub": "Gizli metin"
+  },
+  "hide.head": {
+   "label": "Üstte sure ve ayet numarasını göster",
+   "help": "Kapalıyken hangi ayette olduğunuz gizli kalır",
+   "sub": "Gizli metin"
+  },
+  "peek.countsAsMistake": {
+   "label": "Göz atmayı hata say",
+   "help": "İpucu veya göz atmayla açılan kelimeler zayıflık işaretlerinde ve sınav puanında hata sayılır",
+   "sub": "Göz atma"
+  },
+  "peek.longPressRest": {
+   "label": "Ayetin kalanı için ipucuna basılı tut",
+   "help": "İpucu düğmesine yarım saniye basılı tutmak (bilgisayarda sağ tık) ayetin kalan tüm kelimelerini açar",
+   "sub": "Göz atma"
+  },
+  "peek.doubleTap": {
+   "label": "Sonraki kelime için metne çift dokun",
+   "help": "Kayıt sırasında bir kelime kutusuna çift dokunmak (bilgisayarda çift tık) ipucu gibi sonraki kelimeyi açar",
+   "sub": "Göz atma"
+  },
+  "test.endBy": {
+   "label": "Sınav ne zaman bitsin",
+   "sub": "Uzunluk",
+   "options": {
+    "count": "Soru sayısına göre",
+    "time": "Süreye göre",
+    "open": "Ben durdurunca"
+   }
+  },
+  "test.questions": {
+   "label": "Kaç soru",
+   "sub": "Uzunluk"
+  },
+  "test.minutes": {
+   "label": "Kaç dakika",
+   "help": "Süre dolunca mevcut soru bitirilir ve sonuç gösterilir",
+   "sub": "Uzunluk"
+  },
+  "test.lengthUnit": {
+   "label": "Sorunun uzunluğunu ölç",
+   "sub": "Sorular",
+   "options": {
+    "words": "Kelime olarak",
+    "ayahs": "Ayet olarak"
+   }
+  },
+  "test.lengthWords": {
+   "label": "Her soruda okunacak kelime",
+   "help": "İpucundan sonraki kelimeler",
+   "sub": "Sorular",
+   "options": {
+    "8": "Kısa 8",
+    "15": "Orta 15",
+    "30": "Uzun 30"
+   }
+  },
+  "test.lengthAyahs": {
+   "label": "Her soruda ayet",
+   "sub": "Sorular"
+  },
+  "test.extendToAyahEnd": {
+   "label": "Ayet sonuna kadar devam et",
+   "help": "Soru bir ayetin ortasında bitmez, ayeti tamamlar",
+   "sub": "Sorular"
+  },
+  "test.hintWords": {
+   "label": "Başta kaç kelime gösterilsin",
+   "help": "Kalanını bakmadan okursunuz; 0 = yalnızca sure ve ayet numarası",
+   "sub": "Sorular"
+  },
+  "test.start": {
+   "label": "Soru nereden başlasın",
+   "sub": "Sorular",
+   "options": {
+    "ayah": "Ayetin başından",
+    "random": "Ayetin herhangi bir yerinden"
+   }
+  },
+  "test.order": {
+   "label": "Soruların sırası",
+   "sub": "Sorular",
+   "options": {
+    "shuffle": "Karışık",
+    "seq": "Sırayla",
+    "weak": "Önce zayıf yerler"
+   }
+  },
+  "test.noRepeat": {
+   "label": "Tüm aralık bitmeden hiçbir soru tekrarlanmasın",
+   "sub": "Sorular"
+  },
+  "test.showRef": {
+   "label": "Sure ve ayet numarasını göster",
+   "help": "Kartın üzerindeki göz düğmesiyle de değiştirilebilir",
+   "sub": "Sorular"
+  },
+  "test.silence": {
+   "label": "Sustuğunuzda",
+   "sub": "Takıldığınızda",
+   "options": {
+    "none": "Hiçbir şey",
+    "show": "Sonraki kelimeyi göster",
+    "alafasy": "Alafasy sonraki kelimeyi okur"
+   }
+  },
+  "test.silenceS": {
+   "label": "Kaç saniye sessizlik",
+   "sub": "Takıldığınızda"
+  },
+  "test.doubleTapPeek": {
+   "label": "Sonraki kelime için karta çift dokun",
+   "help": "Bilgisayarda çift tık",
+   "sub": "Takıldığınızda"
+  },
+  "test.skipCounts": {
+   "label": "Geçilen soruları puana say",
+   "help": "Açıkken geçilen soru ‘doğru değil’ sayılır",
+   "sub": "Puan"
+  },
+  "test.streakAt": {
+   "label": "Üst üste kaç doğruda alev işareti",
+   "sub": "Puan"
+  },
+  "test.advance": {
+   "label": "Bir sorudan sonra",
+   "sub": "Nasıl işler",
+   "options": {
+    "auto": "Sonucu göster, sonra sonraki kendiliğinden",
+    "tap": "‘Sonraki soru’ya bastığımda"
+   }
+  },
+  "test.holdS": {
+   "label": "Sonuç ne kadar gösterilsin",
+   "help": "Kart yeşil/kırmızı olduktan sonra, sonraki sorudan önce",
+   "sub": "Nasıl işler"
+  },
+  "test.countdown": {
+   "label": "Başlamadan önce geri sayım",
+   "sub": "Nasıl işler",
+   "options": {
+    "0": "Kapalı",
+    "3": "3 saniye",
+    "5": "5 saniye"
+   }
+  },
+  "test.autoPauseS": {
+   "label": "Sessizlikte kendiliğinden duraklat",
+   "help": "Bu kadar saniye hiçbir şey okunmazsa sınav duraklatılır",
+   "sub": "Nasıl işler",
+   "options": {
+    "0": "Kapalı",
+    "15": "15",
+    "30": "30",
+    "60": "60",
+    "120": "120 saniye"
+   }
+  },
+  "test.sound": {
+   "label": "Bir sorudan sonra ses",
+   "help": "Doğruysa yüksek, yanlışsa alçak bir ton",
+   "sub": "Nasıl işler"
+  },
+  "test.vibrate": {
+   "label": "Bir sorudan sonra titret",
+   "sub": "Nasıl işler"
+  },
+  "test.temporary": {
+   "label": "Geçici sınav",
+   "help": "Hiçbir şey kaydedilmez — sonuç, hata veya kayıt yok; başkasını sınamak için kullanışlı",
+   "sub": "Kaydetme"
+  },
+  "test.countInHistory": {
+   "label": "Sınav hatalarını zayıflık işaretlerine ekle",
+   "help": "Kapalıyken sınav sonucu saklanır ama zayıflık işaretleri değişmez",
+   "sub": "Kaydetme"
+  },
+  "test.checkAdded": {
+   "label": "Sınavda fazla kelimeleri yakala",
+   "help": "Kapalıyken soru sonrası kontrol daha hızlıdır",
+   "sub": "Kaydetme"
+  },
+  "listen.reciter": {
+   "label": "Kâri: Mişari Raşid Alafasy (şimdilik tek)",
+   "sub": "Kâri"
+  },
+  "listen.speed": {
+   "label": "Hız",
+   "help": "Yavaş dinlemek ezberlemeyi kolaylaştırır",
+   "sub": "Hız ve tekrar",
+   "options": {
+    "0.5": "0,5×",
+    "0.75": "0,75×",
+    "1": "1×",
+    "1.25": "1,25×",
+    "1.5": "1,5×",
+    "2": "2×"
+   }
+  },
+  "listen.repeatAyah": {
+   "label": "Her ayet kaç kez",
+   "sub": "Hız ve tekrar"
+  },
+  "listen.repeatRange": {
+   "label": "Tüm bölüm kaç kez",
+   "sub": "Hız ve tekrar",
+   "options": {
+    "0": "Sonsuz"
+   }
+  },
+  "listen.gapRepeatS": {
+   "label": "Aynı ayet tekrarlanmadan önce ara",
+   "help": "Kendiniz söylemeniz için süre",
+   "sub": "Hız ve tekrar"
+  },
+  "listen.gapAyahS": {
+   "label": "Her ayetten sonra ara",
+   "help": "Sonraki ayete geçmeden önce",
+   "sub": "Hız ve tekrar"
+  },
+  "listen.gapAuto": {
+   "label": "Ayet kadar ara",
+   "help": "Açıkken her ayetten sonra o ayetin okunma süresi kadar bekler — dinledikten sonra kendiniz söylemeniz için",
+   "sub": "Hız ve tekrar"
+  },
+  "listen.highlight": {
+   "label": "Okunanı göster",
+   "sub": "Metin",
+   "options": {
+    "word": "Kelime kelime",
+    "ayah": "Ayet ayet",
+    "none": "Hiçbir şey"
+   }
+  },
+  "listen.text": {
+   "label": "Metin",
+   "sub": "Metin",
+   "options": {
+    "show": "Hepsini göster",
+    "reveal": "Dinledikçe açılır",
+    "hide": "Gizli"
+   }
+  },
+  "listen.autoScroll": {
+   "label": "Birlikte kaydır",
+   "sub": "Metin"
+  },
+  "listen.basmala": {
+   "label": "Surenin başında Besmele",
+   "help": "1. ayetten dinlerken önce Besmele okunur (Fâtiha ve Tevbe suresi hariç)",
+   "sub": "Metin"
+  },
+  "listen.nextSurah": {
+   "label": "Sonunda sonraki sureyi çal",
+   "sub": "Metin"
+  },
+  "listen.sleepMin": {
+   "label": "Uyku zamanlayıcısı",
+   "help": "Dinleme bu kadar dakika sonra durur",
+   "sub": "Metin",
+   "options": {
+    "0": "Kapalı",
+    "10": "10",
+    "15": "15",
+    "30": "30",
+    "60": "60 dakika"
+   }
+  },
+  "listen.countAsSession": {
+   "label": "Dinlemeyi geçmişte tut",
+   "help": "Hangi bölümü ne kadar dinlediğiniz kaydedilir; hedeflere veya seriye ancak ‘Hedefler ve seri’de açılırsa sayılır",
+   "sub": "Metin"
+  },
+  "audio.ctxBefore": {
+   "label": "Kırmızı kelimede Alafasy: öncesindeki kelimeler",
+   "help": "Açılır pencerede kelimeden önce kaç kelime okunsun",
+   "sub": "Kırmızı kelimelerin sesi"
+  },
+  "audio.ctxAfter": {
+   "label": "Kırmızı kelimede Alafasy: sonrasındaki kelimeler",
+   "sub": "Kırmızı kelimelerin sesi"
+  },
+  "audio.myCtxWords": {
+   "label": "Okumam: öncesindeki kelimeler",
+   "help": "Kendi kaydınız açılır pencerede kaç kelime önceden başlasın",
+   "sub": "Kırmızı kelimelerin sesi"
+  },
+  "audio.popupSpeed": {
+   "label": "Açılır pencerede Alafasy’nin hızı",
+   "sub": "Kırmızı kelimelerin sesi"
+  },
+  "audio.offlineMaxMB": {
+   "label": "Çevrimdışı saklanacak en büyük boyut (sure başına)",
+   "help": "Bundan büyük sureler yalnızca çevrimiçi çalınır",
+   "sub": "Çevrimdışı",
+   "options": {
+    "40": "40",
+    "80": "80",
+    "150": "150",
+    "250": "250 MB"
+   }
+  },
+  "goals.dayStart": {
+   "label": "Gün saat kaçta başlasın",
+   "help": "Gece geç saatte okursanız bir önceki güne sayılır",
+   "options": {
+    "0": "Gece yarısı",
+    "1": "01.00",
+    "2": "02.00",
+    "3": "03.00",
+    "4": "04.00",
+    "5": "05.00",
+    "6": "06.00"
+   }
+  },
+  "goals.weekStart": {
+   "label": "Hafta hangi gün başlasın",
+   "options": {
+    "6": "Cumartesi",
+    "0": "Pazar",
+    "1": "Pazartesi"
+   }
+  },
+  "goals.streakMin": {
+   "label": "Bir günün seriye sayılması için en az",
+   "options": {
+    "any": "Herhangi bir oturum",
+    "m5": "5 dakika",
+    "m10": "10 dakika",
+    "m20": "20 dakika",
+    "goals": "Bugünün tüm hedefleri tamam"
+   }
+  },
+  "goals.countLook": {
+   "label": "Ezber ve tekrar hedeflerinde metinden okumayı say"
+  },
+  "goals.countListen": {
+   "label": "Tilavet hedeflerinde ve seride dinlemeyi say"
+  },
+  "goals.countTests": {
+   "label": "Hedeflerde sınavları da say"
+  },
+  "goals.countManual": {
+   "label": "Uygulama dışındaki okumayı da say"
+  },
+  "goals.showToday": {
+   "label": "Okuma sayfasında bugünün hedefini göster",
+   "help": "Hedef yoksa hiçbir şey gösterilmez"
+  },
+  "history.clearStreak": {
+   "label": "İşaret silmek için üst üste oturum",
+   "help": "Kırmızı işaret, ezberden bu kadar ayrı oturumda üst üste doğru okununca kalkar",
+   "sub": "Zayıflık işaretleri"
+  },
+  "history.lookClears": {
+   "label": "İşaret silmede metinden okumayı say",
+   "sub": "Zayıflık işaretleri"
+  },
+  "history.good": {
+   "label": "‘İyi ezber’ yüzde kaçtan",
+   "sub": "Durum eşikleri"
+  },
+  "history.fair": {
+   "label": "‘Orta’ yüzde kaçtan",
+   "help": "‘İyi ezber’den düşük olmalı",
+   "sub": "Durum eşikleri"
+  },
+  "history.gradeWindow": {
+   "label": "Durumu son kaç ezber oturumu belirlesin",
+   "sub": "Durum eşikleri"
+  },
+  "history.recent": {
+   "label": "Kaç son oturum gösterilsin",
+   "sub": "Listeler",
+   "options": {
+    "10": "10",
+    "30": "30",
+    "100": "100",
+    "0": "Hepsi"
+   }
+  },
+  "history.weekDays": {
+   "label": "‘Bu hafta’ kartındaki gün sayısı",
+   "help": "7’den farklı bir değerde kartın adı ‘Son {n} gün’ olur",
+   "sub": "Listeler"
+  },
+  "history.minWords": {
+   "label": "Kaydedilen en küçük oturum (kelime olarak)",
+   "sub": "Listeler"
+  },
+  "history.maxEvents": {
+   "label": "Zayıf kelime başına kaç hata hatırlansın",
+   "sub": "Listeler"
+  },
+  "history.hotZones": {
+   "label": "Kaç ‘en zayıf yer’ gösterilsin",
+   "sub": "Listeler"
+  },
+  "history.heatmap": {
+   "label": "Isı haritasını göster",
+   "help": "Her gün kaç dakika okuduğunuz — son 12 hafta",
+   "sub": "Listeler"
+  },
+  "history.popupTimes": {
+   "label": "İşaret penceresinde kaç kez okuduğunuzu göster",
+   "sub": "Listeler"
+  },
+  "history.saveRecordings": {
+   "label": "Oturum kayıtlarını sakla",
+   "help": "Kapalıyken yeni kayıtlar saklanmaz, böylece daha sonra bir işarette kendi okumanızı dinleyemezsiniz; eskiler kalır",
+   "sub": "Kayıtlar"
+  },
+  "view.lang": {
+   "label": "Dil / Language",
+   "help": "Uygulama metninin dili; Kur’an metni değişmez",
+   "sub": "Dil",
+   "options": {
+    "bn": "বাংলা",
+    "en": "English",
+    "ar": "العربية",
+    "ur": "اردو",
+    "hi": "हिन्दी",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "tr": "Türkçe",
+    "fa": "فارسی",
+    "fr": "Français",
+    "es": "Español",
+    "pt": "Português",
+    "de": "Deutsch",
+    "ru": "Русский",
+    "zh": "中文（简体）",
+    "sw": "Kiswahili"
+   }
+  },
+  "view.theme": {
+   "label": "Sayfa renkleri",
+   "sub": "Renkler",
+   "options": {
+    "auto": "Otomatik",
+    "paper": "Kâğıt",
+    "night": "Gece mushafı",
+    "sepia": "Eski kâğıt"
+   }
+  },
+  "view.wordSet": {
+   "label": "Kelimelerin renk seti",
+   "sub": "Renkler",
+   "options": {
+    "default": "Normal",
+    "cb": "Ayırt etmesi daha kolay",
+    "brown": "Kahverengi göz atma",
+    "custom": "Kendi renklerim"
+   }
+  },
+  "view.wordStyle": {
+   "label": "Renkler nasıl uygulansın",
+   "help": "Vurgu = metin siyah kalır, arkasında renkli bir kutu olur",
+   "sub": "Renkler",
+   "options": {
+    "text": "Metin rengi",
+    "highlight": "Vurgu"
+   }
+  },
+  "view.customColors": {
+   "label": "Kendi renklerim",
+   "help": "Her durum için bir renk seçin; her sayfa rengi için ayrı hatırlanır",
+   "sub": "Renkler"
+  },
+  "view.arabicScale": {
+   "label": "Arapça metnin boyutu",
+   "sub": "Metin"
+  },
+  "view.lineGap": {
+   "label": "Satırlar arası boşluk",
+   "sub": "Metin"
+  },
+  "view.wordGap": {
+   "label": "Kelimeler arası boşluk",
+   "sub": "Metin"
+  },
+  "view.uiScale": {
+   "label": "Arayüz metninin boyutu",
+   "sub": "Metin",
+   "options": {
+    "90": "Küçük",
+    "100": "Normal",
+    "115": "Büyük",
+    "130": "Daha büyük"
+   }
+  },
+  "view.uiFont": {
+   "label": "Arayüz yazı tipi",
+   "sub": "Metin",
+   "options": {
+    "app": "Uygulamanın yazı tipi",
+    "system": "Cihazın kendi yazı tipi"
+   }
+  },
+  "view.motion": {
+   "label": "Hareket (animasyon)",
+   "help": "Kayıt sırasında her zaman kapalı",
+   "sub": "Hareket",
+   "options": {
+    "auto": "Otomatik",
+    "full": "Tam",
+    "gentle": "Hafif",
+    "off": "Kapalı"
+   }
+  },
+  "view.intro": {
+   "label": "Açılış animasyonu (mushaf açılır)",
+   "help": "Uygulama açılırken gösterilir; ekrana dokunmak hemen geçer",
+   "sub": "Hareket",
+   "options": {
+    "every": "Her seferinde",
+    "daily": "Günde bir kez",
+    "off": "Kapalı"
+   }
+  },
+  "view.scroll": {
+   "label": "Okuma satırı nerede kalsın",
+   "sub": "Hareket",
+   "options": {
+    "second": "Üstten ikinci satırda",
+    "middle": "Ortada",
+    "off": "Kendim kaydırırım"
+   }
+  },
+  "view.timer": {
+   "label": "Süreyi göster",
+   "sub": "Üstteki bilgiler"
+  },
+  "view.legend": {
+   "label": "Renklerin anlamını göster",
+   "help": "Metnin üstünde küçük bir açıklama",
+   "sub": "Üstteki bilgiler"
+  },
+  "view.headStats": {
+   "label": "Doğru, yanlış ve ipucu sayısını göster",
+   "sub": "Üstteki bilgiler"
+  },
+  "view.bnDigits": {
+   "label": "Sayıları Bengal rakamlarıyla yaz",
+   "help": "Kapalıyken: 0–9 (yalnızca Bengalce için)",
+   "sub": "Üstteki bilgiler"
+  },
+  "device.micId": {
+   "label": "Mikrofon",
+   "options": {
+    "default": "Cihazın kendi mikrofonu"
+   }
+  },
+  "device.echoCancel": {
+   "label": "Yankıyı azalt",
+   "help": "Alafasy’nin sesinin mikrofona girmesini azaltır; kapalıyken sessizlik sonrası yardım düzgün çalışmayabilir"
+  },
+  "device.noiseSuppress": {
+   "label": "Çevre gürültüsünü azalt",
+   "help": "Gürültüde işe yarar, ama kısık ses de kesilebilir"
+  },
+  "device.autoGain": {
+   "label": "Mikrofon seviyesini kendiliğinden ayarla",
+   "options": {
+    "browser": "Tarayıcının yaptığı gibi",
+    "on": "Açık",
+    "off": "Kapalı"
+   }
+  },
+  "device.sensitivity": {
+   "label": "Mikrofon hassasiyeti",
+   "help": "Alçak sesle okurken ‘Yüksek’, gürültüde ‘Düşük’ kullanın",
+   "options": {
+    "low": "Düşük",
+    "normal": "Normal",
+    "high": "Yüksek"
+   }
+  },
+  "device.threads": {
+   "label": "İşlemci iş parçacıkları",
+   "help": "Daha fazla = daha hızlı, ama telefon ısınabilir",
+   "options": {
+    "auto": "Otomatik",
+    "1": "1",
+    "2": "2",
+    "4": "4"
+   }
+  },
+  "device.slowPhone": {
+   "label": "Yavaş telefona uyum sağla",
+   "help": "Yavaş telefonda geride kalmamak için her seferinde daha az ses işlenir"
+  },
+  "device.liveModel": {
+   "label": "Canlı model",
+   "help": "Daha büyük model daha doğru duyar ama yavaştır",
+   "options": {
+    "tiny": "tiny",
+    "base": "base"
+   }
+  },
+  "device.checkModel": {
+   "label": "Kontrol modeli",
+   "help": "Sureyi tanımadan ve kırmızı işaretlemeden önce yeniden dinler",
+   "options": {
+    "base": "base",
+    "tiny": "tiny"
+   }
+  },
+  "device.keepAwake": {
+   "label": "Kayıt ve dinleme sırasında ekranı açık tut"
+  },
+  "device.shortcuts": {
+   "label": "Klavye kısayolları",
+   "help": "Space = duraklat, H = ipucu, R = ayetin kalanı, E = göz, M = hata listesi, N = sonraki soru, P = dinlemeyi oynat/duraklat"
+  },
+  "device.maxRecMin": {
+   "label": "En uzun kayıt",
+   "help": "Kayıt bundan sonra kendiliğinden durur",
+   "options": {
+    "30": "30",
+    "60": "60",
+    "90": "90",
+    "120": "120 dakika",
+    "0": "Sınır yok"
+   }
+  },
+  "adv.windowS": {
+   "label": "Her seferinde işlenen ses saniyesi"
+  },
+  "adv.updateEveryS": {
+   "label": "Yeni sesin ne sıklıkla işleneceği",
+   "help": "Düşük değer = telefon için daha çok iş"
+  },
+  "adv.lookahead": {
+   "label": "İleride kaç kelime eşleştirilsin"
+  },
+  "adv.shortSkip": {
+   "label": "İki kelime eşleşince kaç kelime atlanabilir"
+  },
+  "adv.longSkipRun": {
+   "label": "Daha fazla atlamak için üst üste eşleşmesi gereken kelime"
+  },
+  "adv.finalSkip": {
+   "label": "Son kontrolde atlanabilecek en çok kelime"
+  },
+  "adv.detectMinWords": {
+   "label": "Sureyi tanımak için en az kelime"
+  },
+  "adv.detectMargin": {
+   "label": "Sıradaki olası sureden kaç kat önde olmalı"
+  },
+  "adv.detectSureWords": {
+   "label": "Bu kadar kelimeden sonra fark az olsa bile seçer"
+  },
+  "adv.lostS": {
+   "label": "Yeri yeniden aramadan önce ilerlemesiz geçen saniye"
+  },
+  "adv.lostReds": {
+   "label": "Son kelimeler arasında yeniden aramayı başlatan kırmızı sayısı: kırmızı"
+  },
+  "adv.lostOf": {
+   "label": "…son kaç kelime arasında"
+  },
+  "adv.rewindRun": {
+   "label": "Geriye okumayı tanımak için üst üste kelime"
+  },
+  "adv.backWords": {
+   "label": "Geri gidildiğinde tanınan en çok kelime"
+  },
+  "adv.verifyWindowS": {
+   "label": "Atlanan kelimeler için yeniden dinleme saniyesi"
+  },
+  "adv.verifyMaxS": {
+   "label": "…en çok saniye"
+  },
+  "adv.autoExtendAt": {
+   "label": "İlerde bu kadar kelime kalınca daha fazla ayet eklenir"
+  },
+  "adv.sameAudio": {
+   "label": "‘Doğru okudum’u hatırlamak için ses eşleşmesi",
+   "help": "Düşük = sıkı (tıpatıp aynı okunmalı)"
+  },
+  "adv.sameHeard": {
+   "label": "‘Doğru okudum’u hatırlamak için duyulan metin eşleşmesi",
+   "help": "Yüksek = sıkı"
+  },
+  "adv.maxClipS": {
+   "label": "Kırmızı kelimenin kendi okumanızdan en uzun klip, saniye"
+  },
+  "adv.stripCells": {
+   "label": "Bir ilerleme şeridindeki en çok kutu"
+  },
+  "adv.cellMid": {
+   "label": "Kutu bu zayıflık toplamından itibaren orta kırmızı olur"
+  },
+  "adv.cellDark": {
+   "label": "…koyu kırmızı olur"
+  }
+ },
+ "groups": {
+  "recite": {
+   "name": "Okuma ve hatalar",
+   "help": "Okurken uygulamanın neyi yakaladığı, takılınca ne yaptığı"
+  },
+  "hide": {
+   "name": "Gizleme ve göz atma",
+   "help": "Ezberden okurken metnin nasıl gizlendiği, göz atmanın ne yaptığı"
+  },
+  "test": {
+   "name": "Sınav",
+   "help": "Bilgi kartı sınavının uzunluğu, ipuçları ve puanı"
+  },
+  "listen": {
+   "name": "Dinleme ve ses",
+   "help": "Alafasy’nin okuyuşu — hız, tekrar, çevrimdışı"
+  },
+  "goals": {
+   "name": "Hedefler ve seri",
+   "help": "Günlük sayım, seri, hangi okumanın hedeflere sayılacağı"
+  },
+  "history": {
+   "name": "İlerleme ve geçmiş",
+   "help": "İşaret silme kuralları, durum eşikleri, kayıtlar"
+  },
+  "view": {
+   "name": "Görünüm",
+   "help": "Renkler, metin boyutu, hareket"
+  },
+  "device": {
+   "name": "Mikrofon ve cihaz",
+   "help": "Mikrofon, işlemci, ekran"
+  },
+  "adv": {
+   "name": "Gelişmiş",
+   "help": "İç hesap değerleri — dikkatle değiştirin"
+  }
+ },
+ "presets": {
+  "recite": {
+   "label": "Hata yakalama sıkılığı",
+   "items": {
+    "easy": {
+     "label": "Kolay",
+     "help": "Yeni ezber için: küçük telaffuz farklarını bağışlar, fazla kelimeler yakalanmaz"
+    },
+    "normal": {
+     "label": "Normal",
+     "help": "Günlük tekrar"
+    },
+    "strict": {
+     "label": "Sıkı",
+     "help": "Hocaya okumadan önce: yakın telaffuz bile hata, düzeltmeden ilerlenmez"
+    }
+   }
+  },
+  "test": {
+   "label": "Sınav türü",
+   "items": {
+    "quick": {
+     "label": "Hızlı alıştırma"
+    },
+    "normal": {
+     "label": "Normal"
+    },
+    "hard": {
+     "label": "Zor"
+    }
+   }
+  },
+  "listen": {
+   "label": "Dinleme türü",
+   "items": {
+    "only": {
+     "label": "Yalnızca dinle"
+    },
+    "memo": {
+     "label": "Ezber için"
+    },
+    "say": {
+     "label": "Dinle ve söyle"
+    },
+    "slow": {
+     "label": "Yavaş öğrenme"
+    }
+   }
+  }
+ }
+}

@@ -18,9 +18,9 @@ export function createMemorizedUi({ el, store, history, settings, onChange }) {
     const rows = [...sum.per].map(([s, c]) => {
       const info = quran.surahInfo(s);
       return `<div class="mm-row"><div class="mm-main"><b>${bn(s)}. ${esc(info.english)}</b> <span class="hp-ar">${esc(info.name)}</span><div class="hp-bar"><i style="width:${Math.round((100 * c) / info.ayahs)}%"></i></div>
-        <small>${bn(c)} / ${bn(info.ayahs)} আয়াত</small></div><button class="btn" data-mm="edit" data-s="${s}">${esc(t('m.edit'))}</button><button class="btn btn-red" data-mm="rm" data-s="${s}">${esc(t('m.remove'))}</button></div>`;
+        <small>${esc(t('m.cover', { c: bn(c), n: bn(info.ayahs) }))}</small></div><button class="btn" data-mm="edit" data-s="${s}">${esc(t('m.edit'))}</button><button class="btn btn-red" data-mm="rm" data-s="${s}">${esc(t('m.remove'))}</button></div>`;
     }).join('');
-    const sugRows = sug.map(([s, a, b], i) => `<div class="mm-row"><div class="mm-main">${esc(fill('সূরা {n}. {english}: আয়াত {a}–{b}', { n: bn(s), english: quran.surahInfo(s).english, a: bn(a), b: bn(b) }))}</div><button class="btn" data-mm="sg" data-i="${i}">${esc(t('m.sgAdd'))}</button></div>`).join('');
+    const sugRows = sug.map(([s, a, b], i) => `<div class="mm-row"><div class="mm-main">${esc(t('m.sugRow', { n: bn(s), english: quran.surahInfo(s).english, a: bn(a), b: bn(b) }))}</div><button class="btn" data-mm="sg" data-i="${i}">${esc(t('m.sgAdd'))}</button></div>`).join('');
     el.innerHTML = `<h3 class="hp-h">${esc(t('m.title'))}</h3>${m.ranges.length ? `<p class="hp-note">${esc(t('m.summary', { n: bn(sum.ayahs), s: bn(sum.surahs) }))}</p>${rows}` : `<p class="hp-empty">${esc(t('m.empty'))}</p>`}
       <div class="btn-row"><button class="btn btn-primary" data-mm="add">${esc(t('m.add'))}</button></div>
       ${sug.length ? `<h3 class="hp-h">${esc(t('m.sgTitle'))}</h3>${sugRows}<div class="btn-row"><button class="btn" data-mm="sgall">${esc(t('m.sgAddAll'))}</button></div>` : ''}`;

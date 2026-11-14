@@ -42,7 +42,7 @@ export function createGoalsUi({ S, onFilter }) {
     return `<div class="card gl-today" data-go="goals"><b>${esc(t('g.today'))}</b>${act.map(({ g, p }) => { const tg = G.targetOf(g, dd, p, cfg()); if (!tg) return ''; const done = p.byDay[dd] ?? 0; return `<div>${done >= tg ? '✓ ' : ''}${esc(t('g.todayLine', { name: goalName(g), done: num(Math.round(done * 10) / 10), target: num(Math.round(tg * 10) / 10), unit: t(`g.unit.${g.unit}`) }))}</div>`; }).join('')}</div>`;
   }
   const typeName = (g) => t(`g.type.${g.type}`).split(' (')[0];
-  const goalName = (g) => g.name || t('g.autoName', { type: typeName(g), range: (g.spec?.parts?.length ?? 0) > 2 ? `${bn(g.spec.parts.length)}টা অংশ` : specLabel(g.spec) });
+  const goalName = (g) => g.name || t('g.autoName', { type: typeName(g), range: (g.spec?.parts?.length ?? 0) > 2 ? t('g.nParts', { n: bn(g.spec.parts.length) }) : specLabel(g.spec) });
 
   // ---- goals screen
   function goalsHtml() {
@@ -85,7 +85,7 @@ export function createGoalsUi({ S, onFilter }) {
       if (step === 3) body = `${radio('plan', [['daily', t('g.plan.daily')], ['bydate', t('g.plan.bydate')], ['flexible', t('g.plan.flexible')]].concat(g.plan === 'manzil' ? [['manzil', t('g.tpl.manzil')]] : []), g.plan)}
         ${g.plan !== 'manzil' ? `<div class="pk-step"><select class="fld" data-f="unit">${['ayah', 'page', 'juz', 'minute', 'word', 'question'].map((u) => `<option value="${u}" ${g.unit === u ? 'selected' : ''}>${esc(t(`g.unit.${u}`))}</option>`).join('')}</select>${g.plan === 'bydate' ? `<input class="fld" type="date" data-f="deadline" value="${g.deadline ?? ''}" style="width:auto">` : `<input class="fld" type="number" min="0.5" step="0.5" data-f="amount" value="${g.amount}">`}</div>` : ''}
         ${['page', 'juz'].includes(g.unit) ? radio('rounding', ['none', 'up', 'down', 'nearest'].map((r) => [r, t(`g.round.${r}`)]), g.rounding) : ''}`;
-      if (step === 4) body = `${radio('sched', [['daily', t('g.sch.daily')], ['days', t('g.sch.days')], ['perWeek', t('g.sch.perWeek', { n: bn(g.perWeek ?? 3) })]], g.perWeek ? 'perWeek' : g.days ? 'days' : 'daily')}${g.days ? `<div class="chips">${['রবি', 'সোম', 'মঙ্গল', 'বুধ', 'বৃহস্পতি', 'শুক্র', 'শনি'].map((n, i) => `<button class="chip" aria-pressed="${g.days.includes(i)}" data-day="${i}">${n}</button>`).join('')}</div>` : ''}`;
+      if (step === 4) body = `${radio('sched', [['daily', t('g.sch.daily')], ['days', t('g.sch.days')], ['perWeek', t('g.sch.perWeek', { n: bn(g.perWeek ?? 3) })]], g.perWeek ? 'perWeek' : g.days ? 'days' : 'daily')}${g.days ? `<div class="chips">${[0, 1, 2, 3, 4, 5, 6].map((i) => [t(`d.${i}`), i]).map(([n, i]) => `<button class="chip" aria-pressed="${g.days.includes(i)}" data-day="${i}">${n}</button>`).join('')}</div>` : ''}`;
       if (step === 5) body = `${radio('cycle', ['auto', 'manual', 'off'].map((c) => [c, t(`g.cycle.${c}`)]), g.cycle)}<input class="fld" style="width:100%;margin-top:10px" data-f="name" value="${esc(g.name ?? '')}" placeholder="${esc(t('g.autoName', { type: typeName(g), range: specLabel(g.spec) || '…' }))}">`;
       root.innerHTML = `<h2>${esc(t(`g.s${step}`))}</h2>${body}${nav}`;
     }
@@ -125,11 +125,11 @@ export function createGoalsUi({ S, onFilter }) {
     if (cfgv) list = list.slice(0, cfgv);
     const rows = list.map((x) => {
       if (x.s) { const s = x.s; const info = quran.surahInfo(s.surah); const hasRec = s.recording && S.recNames.has(s.recording);
-        return `<tr class="hp-go" data-surah="${s.surah}"><td>${when(s.start)}</td><td>${esc(info.english)}</td><td><span class="hp-mode hp-m-${x.kind === 'test' ? 'test' : s.mode}">${esc(x.kind === 'test' ? t('h.chip.test') : { look: 'দেখে', hifz: 'মুখস্থ', mixed: 'মিশ্র' }[s.mode])}</span></td><td class="hp-n">${bn(s.words)}</td><td class="hp-n">${bn(s.accuracy)}%</td><td class="hp-n hp-red">${bn(s.missed)}</td><td>${duration(s.seconds)}</td><td>${hasRec ? `<button class="btn" data-hplay="${esc(s.recording)}">${esc(t('h.play'))}</button>` : ''}</td></tr>`; }
-      if (x.m) return `<tr><td>${when(x.at)}</td><td colspan="2"><span class="hp-mode hp-m-test">${esc(t('h.chip.manual'))}</span> ${esc(t(`x.int.${x.m.intent}`))}</td><td colspan="3">${bn(x.m.minutes)} মিনিট ${esc(x.m.note ?? '')}</td><td colspan="2"><button class="btn btn-red" data-xdel="${x.m.id}">${esc(t('x.delete'))}</button></td></tr>`;
+        return `<tr class="hp-go" data-surah="${s.surah}"><td>${when(s.start)}</td><td>${esc(info.english)}</td><td><span class="hp-mode hp-m-${x.kind === 'test' ? 'test' : s.mode}">${esc(x.kind === 'test' ? t('h.chip.test') : t(`g.mode.${s.mode}`))}</span></td><td class="hp-n">${bn(s.words)}</td><td class="hp-n">${bn(s.accuracy)}%</td><td class="hp-n hp-red">${bn(s.missed)}</td><td>${duration(s.seconds)}</td><td>${hasRec ? `<button class="btn" data-hplay="${esc(s.recording)}">${esc(t('h.play'))}</button>` : ''}</td></tr>`; }
+      if (x.m) return `<tr><td>${when(x.at)}</td><td colspan="2"><span class="hp-mode hp-m-test">${esc(t('h.chip.manual'))}</span> ${esc(t(`x.int.${x.m.intent}`))}</td><td colspan="3">${esc(t('g.minutesNote', { n: bn(x.m.minutes), note: x.m.note ?? '' }))}</td><td colspan="2"><button class="btn btn-red" data-xdel="${x.m.id}">${esc(t('x.delete'))}</button></td></tr>`;
       return `<tr><td>${when(x.at)}</td><td colspan="2"><span class="hp-mode hp-m-look">${esc(t('h.chip.listen'))}</span></td><td colspan="5">${duration(x.l.seconds)}</td></tr>`;
     }).join('');
-    return `<h3 class="hp-h">সাম্প্রতিক সেশন</h3><div class="chips" style="margin-bottom:8px">${['all', 'hifz', 'look', 'test', 'manual', 'listen'].map((f) => `<button class="chip" aria-pressed="${filter === f}" data-hf="${f}">${esc(t(`h.f.${f}`))}</button>`).join('')}</div>
+    return `<h3 class="hp-h">${esc(t('p.recent'))}</h3><div class="chips" style="margin-bottom:8px">${['all', 'hifz', 'look', 'test', 'manual', 'listen'].map((f) => `<button class="chip" aria-pressed="${filter === f}" data-hf="${f}">${esc(t(`h.f.${f}`))}</button>`).join('')}</div>
       <div class="hp-scroll"><table class="hp-table"><tbody>${rows}</tbody></table></div>`;
   }
   function manualSheet() {
@@ -159,7 +159,7 @@ export function createGoalsUi({ S, onFilter }) {
   }
   function badgesHtml() {
     const got = kv('badges', {});
-    return `<h3 class="hp-h">${esc(t('bd.title'))}</h3><div class="badges">${G.BADGES.map(([id, name, req]) => `<div class="badge ${got[id] ? 'on' : ''}"><b>${esc(name)}</b><small>${got[id] ? esc(dateOnly(got[id])) : esc(t('bd.locked', { req }))}</small></div>`).join('')}</div>`;
+    return `<h3 class="hp-h">${esc(t('bd.title'))}</h3><div class="badges">${G.BADGES.map(([id]) => [id, t(`bd.n.${id}`), t(`bd.r.${id}`)]).map(([id, name, req]) => `<div class="badge ${got[id] ? 'on' : ''}"><b>${esc(name)}</b><small>${got[id] ? esc(dateOnly(got[id])) : esc(t('bd.locked', { req }))}</small></div>`).join('')}</div>`;
   }
   async function afterSave() { // new badges after each save
     const d = data();
@@ -169,7 +169,7 @@ export function createGoalsUi({ S, onFilter }) {
     const ids = G.earnedBadges({ sessions: S.history.sessions(), tests: d.tests, weak: S.history.data.weak, memorized: mem(), streak: d.streak, goalDayDone, goodSurahs });
     const got = { ...kv('badges', {}) };
     let changed = false;
-    for (const id of ids) if (!got[id]) { got[id] = today(); changed = true; toast(t('bd.new', { name: G.BADGES.find((b) => b[0] === id)[1] })); }
+    for (const id of ids) if (!got[id]) { got[id] = today(); changed = true; toast(t('bd.new', { name: t(`bd.n.${id}`) })); }
     if (changed) await S.store.set('badges', got);
   }
   function refresh() { cache.key = ''; S.progressRefresh?.(); S.drawToday?.(); }

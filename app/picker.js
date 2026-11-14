@@ -18,12 +18,12 @@ export function rangeIcon(name) {
 const label = (p) => {
   if (p.k === 'surah') return `${bn(p.s)}. ${quran.surahInfo(p.s).english}`;
   if (p.k === 'ayahs') return `${quran.surahInfo(p.s).english} ${bn(p.from)}–${bn(p.to)}`;
-  if (p.k === 'juz') return `পারা ${bn(p.n)}`;
-  if (p.k === 'hizb') return `হিযব ${bn(p.n)}`;
-  if (p.k === 'rub') return `রুবু ${bn(p.n)}`;
-  if (p.k === 'page') return `পৃষ্ঠা ${bn(p.n)}`;
-  if (p.k === 'pages') return `পৃষ্ঠা ${bn(p.from)}–${bn(p.to)}`;
-  return 'আমার মুখস্থ';
+  if (p.k === 'juz') return t('pk.l.juz', { n: bn(p.n) });
+  if (p.k === 'hizb') return t('pk.l.hizb', { n: bn(p.n) });
+  if (p.k === 'rub') return t('pk.l.rub', { n: bn(p.n) });
+  if (p.k === 'page') return t('pk.l.page', { n: bn(p.n) });
+  if (p.k === 'pages') return t('pk.l.pages', { a: bn(p.from), b: bn(p.to) });
+  return t('pk.l.mem');
 };
 export const specLabel = (spec) => (spec?.parts ?? []).map(label).join(', ');
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
@@ -48,7 +48,7 @@ export function openPicker({ spec = null, memorized = null, onUse, onSave = null
         ? Array.from({ length: 240 }, (_, i) => chip({ k: 'rub', n: i + 1 }, bn(i + 1))).join('') : Array.from({ length: 60 }, (_, i) => chip({ k: 'hizb', n: i + 1 }, bn(i + 1))).join('')}</div>`;
     }
     if (unit === 'page') {
-      return `<p class="hp-note">${esc(t('pk.pageNote'))}</p><div class="pk-step">পৃষ্ঠা <input type="number" class="fld" min="1" max="604" data-pg="from" value="${page.from}"> থেকে <input type="number" class="fld" min="1" max="604" data-pg="to" value="${page.to}"> পর্যন্ত <button class="btn" data-addpages>+</button></div>`
+      return `<p class="hp-note">${esc(t('pk.pageNote'))}</p><div class="pk-step">${t('pk.pageRange', { from: `<input type="number" class="fld" min="1" max="604" data-pg="from" value="${page.from}">`, to: `<input type="number" class="fld" min="1" max="604" data-pg="to" value="${page.to}">` })} <button class="btn" data-addpages>+</button></div>`
         + `<div class="pk-grid pk-5">${Array.from({ length: 31 }, (_, i) => `<button class="chip" data-pgrange="${i * 20 + 1}">${bn(i * 20 + 1)}–${bn(Math.min(604, i * 20 + 20))}</button>`).join('')}</div>`;
     }
     return `<div class="pk-step"><select class="fld" data-ays>${Array.from({ length: 114 }, (_, i) => `<option value="${i + 1}"${ay.s === i + 1 ? ' selected' : ''}>${bn(i + 1)}. ${esc(quran.surahInfo(i + 1).english)}</option>`).join('')}</select>
@@ -57,7 +57,7 @@ export function openPicker({ spec = null, memorized = null, onUse, onSave = null
   function draw() {
     const runs = resolve({ parts }, memorized);
     const units = ['surah', 'juz', 'hizb', 'page', 'ayah'];
-    const names = { surah: 'সূরা', juz: 'পারা', hizb: 'হিযব', page: 'পৃষ্ঠা', ayah: 'আয়াত' };
+    const names = Object.fromEntries(units.map((u) => [u, t(`pk.u.${u}`)]));
     root.innerHTML = `<h2>${esc(t('pk.title'))}</h2><div class="seg" role="radiogroup">${units.map((u) => `<button role="radio" aria-checked="${u === unit}" data-u="${u}">${names[u]}</button>`).join('')}</div>
       <div class="pk-body">${body()}</div>
       <div class="pk-sum">${esc(t('pk.summary', { n: bn(countAyahs(runs)), parts: specLabel({ parts }) || '—' }))}</div>

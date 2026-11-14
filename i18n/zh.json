@@ -1,0 +1,1460 @@
+{
+ "strings": {
+  "intro.preparing": "准备中…",
+  "nav.tab.recite": "背诵",
+  "nav.tab.test": "测试",
+  "nav.tab.listen": "收听",
+  "nav.tab.progress": "进度",
+  "nav.tab.settings": "设置",
+  "nav.busy": "正在录音——请先停止（■），再切换页面。",
+  "nav.themeTip": "更换颜色：纸张 / 夜间古兰经 / 旧纸（长按进入全部设置）",
+  "s.title": "设置",
+  "s.search": "搜索设置…",
+  "s.searchEmpty": "没有这个名称的设置。",
+  "s.back": "全部设置",
+  "s.changedN": "已更改 {n} 项",
+  "s.rowReset": "恢复默认",
+  "s.sectionReset": "重置此分组",
+  "s.sectionResetQ": "“{group}”中的所有设置将恢复默认值。确定吗？",
+  "s.allReset": "重置全部设置",
+  "s.allResetQ": "所有设置将恢复默认值。你的练习记录、标记、录音、测试和目标都会保留。确定吗？",
+  "s.resetDone": "已重置。",
+  "s.export": "将设置保存到文件",
+  "s.import": "从文件加载设置",
+  "s.importOk": "已加载 {n} 项设置。",
+  "s.importSkip": "已加载 {n} 项设置，{m} 项未知或超出范围，已跳过。",
+  "s.importBad": "无法读取该文件：{err}",
+  "s.importWrong": "这不是 Hifz Helper 的设置文件。",
+  "s.where": "设置保存在这部手机上。若要转移到另一部手机或电脑，请使用“将设置保存到文件”。",
+  "s.whenNext": "从下一次练习起生效",
+  "s.whenReload": "重新打开应用后生效",
+  "s.reloadNow": "立即重新打开",
+  "s.live": "正在录音——停止后生效",
+  "s.invalid": "此值不允许——已保留原值。",
+  "s.presetCustom": "自定义",
+  "s.presetApplied": "已应用预设“{name}”。",
+  "s.undo": "撤销",
+  "s.custom": "自定义…",
+  "s.advWarn": "这些是应用的内部计算。错误的值可能降低错误检测的效果。如不确定，请按“重置此分组”。",
+  "s.advSummary": "内部计算——请谨慎修改",
+  "s.contrast": "对比度低：{r}:1——可能不易阅读（4.5:1 或更高更好）。",
+  "s.platOnly": "仅限手机",
+  "r.listTip": "查看本次练习的全部错误",
+  "r.listTitle": "本次练习的错误（{n}）",
+  "r.ayahRef": "第 {a} 节",
+  "r.kind.skipped": "漏读",
+  "r.kind.changed": "读成了别的词",
+  "r.kind.added": "多读了一个词",
+  "r.kind.peek": "偷看",
+  "r.listen": "收听",
+  "r.remove": "忽略",
+  "r.removed": "已忽略。",
+  "r.removedTaught": "已忽略——以后在此这样读不会再被标记。",
+  "r.removedTitle": "已忽略（{n}）",
+  "r.restore": "恢复",
+  "r.restored": "已重新计为错误。",
+  "r.removeAll": "全部忽略",
+  "r.removeAllQ": "忽略本次练习的所有错误吗？可以用“恢复”找回。",
+  "r.empty": "暂无错误。",
+  "r.hintTip": "提示：显示下一个词（长按显示本节其余部分）",
+  "r.blockBanner": "请把红色的词读对——然后才能继续。",
+  "r.lg.ok": "正确",
+  "r.lg.bad": "错误/漏读",
+  "r.lg.peek": "提示/偷看",
+  "r.lg.pend": "检查中",
+  "r.lg.next": "当前词",
+  "r.lg.weak": "以往的薄弱处",
+  "r.lg.given": "提示",
+  "r.menu.listen": "从这里收听",
+  "r.menu.test": "从这里测试",
+  "h.times": "共背诵 {t} 次，其中 {e} 次有误",
+  "r.help.list": "点按上方的<b>错误/漏读</b>计数，可一次查看本次练习的全部错误；<b>忽略</b>不算错误的项，需要时可<b>恢复</b>。",
+  "r.help.hint": "长按提示按钮可显示本节其余部分。",
+  "t.setupTitle": "你想测试什么？",
+  "t.suggested": "为你推荐",
+  "t.myRanges": "我的范围",
+  "t.myMemorized": "我已背会的",
+  "t.newRange": "新建范围",
+  "t.noMemorized": "还没有标记任何已背会的内容",
+  "t.rename": "重命名",
+  "t.delete": "删除",
+  "t.up": "上移",
+  "t.down": "下移",
+  "t.deleteQ": "删除范围“{name}”吗？（以往的测试结果会保留）",
+  "t.rangeSummary": "已选：{name} · {n} 节",
+  "t.rules": "{q} 道题 · 每题 {w} 个词 · 提示 {h} 个词",
+  "t.changeRules": "更改规则",
+  "t.temporary": "临时（不保存任何内容）",
+  "t.start": "开始测试",
+  "t.emptyRange": "该范围内没有节",
+  "t.modelWait": "正在准备模型…",
+  "t.starterTitle": "入门",
+  "t.starterBody": "第 30 卷末尾：第 {a} 章至第 {b} 章",
+  "t.markMemorized": "标记为已背会",
+  "t.resumeQ": "上一次测试尚未完成（{i} / {n} 题）。继续吗？",
+  "t.resume": "继续",
+  "t.seeResults": "查看结果",
+  "t.discard": "放弃",
+  "t.introTitle": "测试如何进行",
+  "t.intro1": "每道题会显示开头几个词——请不看经文背出其余部分。",
+  "t.intro2": "读对的词会显示出来；结束时卡片变绿（无错误）或变红（有错误）。",
+  "t.intro3": "如果卡住了：点“下一个词”或“本节其余部分”——偷看算作错误。",
+  "t.intro4": "将卡片向旁边滑开，或按“下一题”即可跳过本题。",
+  "t.intro5": "一切都在手机上完成，无需网络。",
+  "t.introOk": "知道了",
+  "t.go": "开始！",
+  "t.ref": "第 {n} 章 {english} · {span}",
+  "t.refHidden": "章与节已隐藏",
+  "t.eyeTip": "显示 / 隐藏章节编号",
+  "t.listening": "正在聆听…请从提示之后接着背",
+  "t.checking": "检查中…",
+  "t.peekWord": "下一个词",
+  "t.peekRest": "本节其余部分",
+  "t.next": "下一题",
+  "t.pass": "无错误！",
+  "t.failN": "{m} 处错误",
+  "t.skipped": "已跳过",
+  "t.kind.stray": "你转到了另一章",
+  "t.timeUp": "时间到——请完成本题",
+  "t.qOfN": "第 {i} / {n} 题",
+  "t.qTime": "第 {i} 题 · 剩余 {mm:ss}",
+  "t.qOpen": "第 {i} 题",
+  "t.mistakesN": "错误 {m}",
+  "t.score": "得分 {p}%",
+  "t.streak": "连续 {s}",
+  "t.paused": "已暂停——测试已搁置。按“继续”从同一题接着听。",
+  "t.continue": "继续",
+  "t.end": "结束",
+  "t.autoPaused": "长时间没有声音——测试已暂停。",
+  "t.resTitle": "测试结果",
+  "t.tempLabel": "临时测试——未保存任何内容",
+  "t.resScore": "{p}%",
+  "t.resCorrect": "正确 {c} / {n}",
+  "t.resBest": "最长连续：{s}",
+  "t.resTime": "用时：{time}",
+  "t.resAll": "全部错误（{n}）",
+  "t.resRemoved": "已忽略的错误（{n}）",
+  "t.resNone": "没有错误——马沙安拉！",
+  "t.keepGoing": "继续背诵",
+  "t.done": "完成",
+  "t.replay": "再测一次同样的内容",
+  "t.newTest": "新测试",
+  "t.saveThis": "保存此范围",
+  "t.sg.warmup.name": "热身",
+  "t.sg.warmup.sub": "你最擅长的部分",
+  "t.sg.weak.name": "薄弱处",
+  "t.sg.weak.sub": "你出错最多的地方",
+  "t.sg.stale.name": "很久没背了",
+  "t.sg.stale.sub": "很久没有凭记忆背诵",
+  "t.sg.fresh.name": "新近背会",
+  "t.sg.fresh.sub": "最近 14 天加入已背会列表",
+  "t.sg.mixed.name": "混合",
+  "t.sg.mixed.sub": "来自你的全部已背会列表",
+  "l.from": "起始节",
+  "l.to": "结束节",
+  "l.pick": "按卷或页选择",
+  "l.speedChip": "{x}×",
+  "l.ayahChip": "每节 ×{n}",
+  "l.rangeChip": "每段 ×{n}",
+  "l.rangeChipInf": "每段 ∞",
+  "l.gapChip": "间隔 {s} 秒",
+  "l.sleepChip": "睡眠 {m} 分钟",
+  "l.play": "播放",
+  "l.pause": "暂停",
+  "l.prev": "上一节",
+  "l.next": "下一节",
+  "l.idle": "选择要收听的内容，然后按 ▶。",
+  "l.loading": "正在加载音频…",
+  "l.playing": "第 {a} 节 · 第 {k} / {n} 遍",
+  "l.round": "第 {r} 轮",
+  "l.gap": "间隔… {s}",
+  "l.pausedS": "已暂停",
+  "l.ended": "已结束。",
+  "l.again": "再播放一次",
+  "l.error": "无法播放音频——你在线吗？若要离线收听，请先下载该章。",
+  "l.offline": "可离线使用",
+  "l.online": "需要网络——请下载",
+  "l.slept": "睡眠定时——收听已停止。",
+  "l.offTitle": "离线音频",
+  "l.offRow": "{n}. {english} — {size}",
+  "l.offGet": "下载",
+  "l.offGetting": "正在下载 {p}%",
+  "l.offHave": "已下载",
+  "l.offTooBig": "太大——仅限联网",
+  "l.offDel": "删除",
+  "l.offDelQ": "删除第 {english} 章的离线音频吗？以后可以重新下载。",
+  "l.offTotal": "总空间：{mb} MB",
+  "l.offGetAll": "全部下载",
+  "l.offGetAllQ": "将下载 {n} 章，约 {mb} MB。确定吗？",
+  "pk.title": "选择范围",
+  "pk.unit": "章 · 卷 · Hizb · 页 · 节",
+  "pk.quarters": "显示 Rub（四分之一）",
+  "pk.pageNote": "页码遵循麦地那印刷版（604 页）",
+  "pk.summary": "已选：{n} 节（{parts}）",
+  "pk.clear": "清除",
+  "pk.save": "命名保存",
+  "pk.use": "使用此范围",
+  "pk.namePh": "请起个名字（例如：穆勒克章复习）",
+  "pk.saved": "已保存“{name}”。",
+  "pk.full": "最多只能保存 50 个范围——请删除一个旧的。",
+  "m.title": "已背会列表",
+  "m.summary": "共标记 {n} 节为已背会（涉及 {s} 章）",
+  "m.add": "添加已背会",
+  "m.edit": "修改",
+  "m.remove": "移除",
+  "m.removeQ": "将第 {english} 章从已背会列表中移除吗？（练习记录和标记会保留）",
+  "m.sgTitle": "你的记录显示，你不看经文背得很好的有：",
+  "m.sgAdd": "添加",
+  "m.sgAddAll": "全部添加",
+  "m.empty": "还没有标记。按“添加已背会”，然后选择一章或若干节。",
+  "g.title": "目标",
+  "g.new": "新目标",
+  "g.create": "创建目标",
+  "g.s1": "什么类型的目标？",
+  "g.s2": "哪一部分？",
+  "g.s3": "如何划分？",
+  "g.s4": "在哪些天？",
+  "g.s5": "结束时怎么办？",
+  "g.type.memorize": "新背诵（不看经文背诵新的部分）",
+  "g.type.review": "复习（不看经文再次背诵已背会的部分）",
+  "g.type.recite": "诵读（任何形式的阅读）",
+  "g.type.test": "测试（题目数量）",
+  "g.order.normal": "按正常顺序",
+  "g.order.reverse": "按倒序（从最后一章开始）",
+  "g.strict": "保持顺序——前一部分未完成时，后一部分不计入",
+  "g.plan.daily": "每天固定的量",
+  "g.plan.bydate": "在设定日期前完成",
+  "g.plan.flexible": "尽力而为——剩余部分顺延到第二天",
+  "g.unit.ayah": "节",
+  "g.unit.page": "页",
+  "g.unit.juz": "卷",
+  "g.unit.minute": "分钟",
+  "g.unit.word": "个词",
+  "g.unit.question": "道题",
+  "g.round.none": "按划分结果",
+  "g.round.up": "整页——向上取整",
+  "g.round.down": "整页——向下取整",
+  "g.round.nearest": "整页——四舍五入",
+  "g.sch.daily": "每天",
+  "g.sch.days": "每周的某几天",
+  "g.sch.perWeek": "每周 {n} 天",
+  "g.cycle.auto": "自动重新开始（新的一轮通读）",
+  "g.cycle.manual": "由我自己开始",
+  "g.cycle.off": "停止",
+  "g.autoName": "{type}：{range}",
+  "g.tpl.manzil": "每周通读（7 个曼齐勒）",
+  "g.tpl.page": "每天背会新的 1 页",
+  "g.tpl.juz": "每天复习 1 卷",
+  "g.tpl.minutes": "每天 15 分钟",
+  "g.today": "今日目标",
+  "g.todayLine": "{name}：{done} / {target} {unit}",
+  "g.progressLine": "共 {done} / {total} {unit} · 截止日期 {date}",
+  "g.restart": "重新开始",
+  "g.completed": "已完成——赞美真主！",
+  "g.pause": "暂停",
+  "g.resumeGoal": "恢复",
+  "g.edit": "修改",
+  "g.delete": "删除",
+  "g.deleteQ": "删除目标“{name}”吗？（练习记录会保留）",
+  "st.current": "连续 {n} 天",
+  "st.best": "最长：连续 {n} 天",
+  "st.keep": "今天背诵一下，保持连续记录",
+  "st.cellTip": "{date}：{m} 分钟",
+  "bd.title": "成就",
+  "bd.new": "新成就：{name}",
+  "bd.locked": "尚未达成——{req}",
+  "x.add": "添加在应用之外完成的背诵",
+  "x.title": "添加在应用之外完成的背诵",
+  "x.date": "日期",
+  "x.minutes": "多少分钟",
+  "x.range": "哪一部分（可选）",
+  "x.note": "备注",
+  "x.int.memorize": "向他人背诵了新背的内容",
+  "x.int.review": "复习",
+  "x.int.recite": "对照页面背诵",
+  "x.save": "添加",
+  "x.delete": "删除",
+  "x.deleteQ": "删除这条手动添加的练习吗？",
+  "h.f.all": "全部",
+  "h.f.hifz": "凭记忆",
+  "h.f.look": "页面",
+  "h.f.test": "测试",
+  "h.f.manual": "应用外",
+  "h.f.listen": "收听",
+  "h.chip.test": "测试",
+  "h.chip.manual": "应用外",
+  "h.chip.listen": "收听",
+  "h.play": "收听",
+  "h.testRow": "{date} · {range} · {p}% · 正确 {c}/{n}",
+  "h.testEditNote": "在这里忽略错误只会改变本次测试的得分；要清除薄弱标记，请点按红色的词。",
+  "h.seg": "概览 · 目标 · 已背会 · 测试 · 成就",
+  "h.weekN": "最近 {n} 天",
+  "help.1": "<b>按下麦克风按钮</b>开始诵读；应用会自动识别章（你也可以在上方选择）。按<b>■</b>结束并保存本次练习。",
+  "help.2": "随着诵读，词会逐个显示：<span class=\"hz-ok\">绿色 = 正确</span>，<span class=\"hz-bad\">红色 = 错误/漏读</span>（带提示音），<span class=\"hz-hint\">紫色 = 提示/卡住</span>。闪烁的蓝色框 = 你现在该读的词。",
+  "help.3": "用<b>暂停</b>按钮暂停，查看并收听红色的词，再按同一个按钮继续。如果愿意，可从更早的一节重新读起来纠正错误；应用会从那里接着跟读。",
+  "help.4": "当你读完一章并开始下一章（或任何其他章）时，应用会自动跳转过去——只要你在读，它就会跟随。",
+  "help.5": "<b>眼睛按钮</b>可在看经文诵读（显示全部经文）与凭记忆诵读（隐藏经文）之间切换。",
+  "help.6": "如果卡住了，按<b>提示</b>，或<b>保持沉默</b>（时长为上方“停顿多久后阿法西开始”所设的秒数，起初为 {wait}）：米沙里·阿法西会接着诵读，词以紫色显示。当你重新开始读（或按暂停/停止）时，他会停下，应用转为聆听你。长按提示按钮可显示本节其余部分。",
+  "help.7": "<b>点按红色的词</b>，可听到你读的内容和应该读的内容——都带有前后的词。如果你读对了，请按 ✓。",
+  "help.8": "你在以往练习中读错或卡住的词会保持<span class=\"hz-w1 hz-swatch\">浅红</span>至<span class=\"hz-w3 hz-swatch\">深红</span>；凭记忆连续读对 {clear} 次后，标记就会消失。",
+  "help.9": "如果你认为某个标记有误（未录音时，或在<b>进度</b>标签页中），点按红色框：听听你读的内容，然后按<b>✓ 标记有误——移除</b>。标记会消失，以后这样读不会再被标记。",
+  "help.10": "在<b>进度</b>标签页中，每一章都有按节划分的彩色条——一眼就能看出哪些节最薄弱（深红）。点按一个框，即可在下方打开该节。",
+  "help.11": "在手机上：模型（约 19 MB）首次会下载，之后无需网络即可使用。所有数据都保存在这部手机上——你可以在<b>进度</b>标签页中把它们备份到文件。自动检查可能出错，它不能代替老师。",
+  "a.autoSurah": "自动——通过聆听识别章",
+  "a.lookOn": "凭记忆：隐藏经文",
+  "a.lookOff": "阅读：显示全部经文",
+  "a.pauseResumeTip": "继续——从你停下的地方",
+  "a.pauseTip": "暂停——就在此处停下，之后可继续",
+  "a.stopTip": "停止——结束并保存本次练习",
+  "a.recTip": "开始录音——开始诵读",
+  "a.stop": "停止",
+  "a.record": "录音",
+  "a.micFail": "无法启动麦克风：{err}",
+  "a.maxRec": "已达到最长录音时间——已停止。",
+  "a.listening": "正在聆听…",
+  "a.checking": "检查中…",
+  "a.tooShort": "录音太短。",
+  "a.noMatch": "没有匹配到任何节。请多读一会儿，或自己选择章。",
+  "a.entry": "第 {english} 章：{words} 个词，准确率 {acc}%，错误 {missed}，卡住 {stuck}",
+  "a.saved": "练习已保存——{parts}。请在进度标签页查看全部内容。",
+  "a.close": "关闭",
+  "a.closeAria": "关闭",
+  "a.listenMine": "听我的诵读",
+  "a.shouldBe": "应该是",
+  "a.listenAlafasyTip": "米沙里·阿法西的诵读（带前后的词）",
+  "a.listenAlafasy": "阿法西的诵读",
+  "a.iWasRight": "我读对了",
+  "a.leftMain": "再凭记忆读对 {n} 次，红色标记就会消失",
+  "a.leftStreak": "到目前为止已连续 {n} 次练习读对。",
+  "a.leftSub": "每次练习只计一次，且必须连续——出错或卡住会让计数重新开始；看经文读不计入。",
+  "a.wkMeta": "此处以往的练习：{kind}——共 {count} 次，最近一次 {last}",
+  "a.saidErr": "你读的内容（模型听到的内容）",
+  "a.saidWk": "你当时读的内容（模型听到的内容）",
+  "a.heardNothing": "什么也没听到——这个词似乎被漏读了",
+  "a.noRecording": "当时的录音不可用",
+  "a.mineErrTip": "听我的诵读（含前面两个词）",
+  "a.mineWkTip": "听我当时的诵读",
+  "a.okErrTip": "我读对了——模型听错了",
+  "a.okWkTip": "我确实读对了——移除标记，以后这样读不会再被标记",
+  "a.okErrLbl": "我读对了",
+  "a.okWkLbl": "标记有误——移除",
+  "a.markCleared": "标记已移除",
+  "a.markClearedTaught": "标记已移除——以后在此这样读不会再被标记。",
+  "a.forgetSurahQ": "移除这一章的所有红色标记吗？有录音的地方会被记为读对——以后同样读法不会再被标记。",
+  "a.marksCleared": "已移除 {n} 个标记——以后这样读这些地方不会再被标记。",
+  "a.storage": "存储在手机上：{n} 条练习记录，{r} 段录音（{mb} MB）。",
+  "a.pv.overview": "概览",
+  "a.pv.goals": "目标",
+  "a.pv.memorized": "已背会",
+  "a.pv.tests": "测试",
+  "a.pv.badges": "成就",
+  "a.importQ": "将文件中的数据与当前数据合并吗？（确定 = 合并，取消 = 用文件中的数据替换全部当前数据）",
+  "a.importOk": "数据已恢复——正在重新打开页面…",
+  "a.importBad": "无法读取文件：{err}",
+  "a.defaultMic": "设备自带麦克风",
+  "a.micN": "麦克风 {n}",
+  "a.modelBuilding": "正在准备模型…",
+  "a.modelDownload": "正在下载模型（约 19 MB，仅首次）…",
+  "a.modelFooter": "模型：quran-asr-tiny · {backend}，{threads} 个线程。首次之后无需网络即可使用。自动检查可能出错，它不能代替老师。",
+  "a.modelFail": "模型未能启动：{err}",
+  "a.ayahMenuTitle": "{english} · 第 {a} 节",
+  "a.startFail": "无法启动：{err}",
+  "p.sura": "第 {n} 章 {english}",
+  "p.paused": "已暂停——继续时会重新开始聆听。",
+  "p.waiting": "正在聆听…请开始诵读，读几个词后它会<b>自动识别章</b>。",
+  "p.autoDetected": "已自动识别",
+  "p.hCount": "第 {a} / {n} 节",
+  "p.hOk": "正确 {n}",
+  "p.hBad": "错误/漏读 {n}",
+  "p.hHint": "提示 {n}",
+  "p.stray": "错误：这听起来像第 {english} 章的第 {ayah} 节。你读的是第 {current} 章；请从标蓝的词重新读起。",
+  "p.pausedBanner": "已暂停：点按红色的词即可查看并收听。继续时会从这里开始聆听；你也可以从更早的一节重读，以纠正红色的词。",
+  "p.cellWeak": "{span}：{n} 个薄弱词",
+  "p.cellOk": "良好",
+  "p.cellNone": "尚未凭记忆读过",
+  "p.empty": "还没有练习记录。请在“背诵”标签页录音；停止（■）后，练习会保存在这里。",
+  "p.cSessions": "练习总数",
+  "p.cSurahs": "已练习的章数",
+  "p.cMinutes": "总分钟数",
+  "p.cWeek": "本周",
+  "p.cWeekN": "最近 {n} 天",
+  "p.ayahCount": "{a}/{n} 节",
+  "p.weakCount": "{n} 个薄弱词",
+  "p.th.surah": "章",
+  "p.th.state": "状态",
+  "p.th.acc": "近期准确率",
+  "p.th.read": "读了多少",
+  "p.th.weak": "薄弱处",
+  "p.th.sessions": "练习次数",
+  "p.th.last": "最近练习",
+  "p.th.when": "时间",
+  "p.th.surahAyah": "章（节）",
+  "p.th.mode": "类型",
+  "p.th.words": "词数",
+  "p.th.acc2": "准确率",
+  "p.th.missed": "错误",
+  "p.th.stuck": "卡住",
+  "p.th.time": "用时",
+  "p.mode.look": "阅读",
+  "p.mode.hifz": "凭记忆",
+  "p.mode.mixed": "混合",
+  "p.bySurah": "各章背诵状态",
+  "p.recent": "近期练习",
+  "p.stateNote": "状态：最近 {w} 次背诵练习的平均准确率——{good}% 及以上 = 背得好，{fair}–{good}% = 一般。看经文读的练习不计入。",
+  "p.weakNote": "薄弱处：每个框代表一节，从第 1 节到末尾——{k0}、{k1}、{k2}。点按一个框，即可在下方显示该节。",
+  "p.key0": "绿色 = 良好",
+  "p.key1": "浅红到深红 = 越薄弱，颜色越深",
+  "p.key2": "灰色 = 尚未凭记忆读过",
+  "p.hotChipTip": "点按以在下方显示",
+  "p.hotLabel": "最薄弱的地方：",
+  "p.legend1": "良好",
+  "p.legend2": "浅红到深红 = 薄弱词越多",
+  "p.legend3": "尚未凭记忆读过",
+  "p.mapTitle": "按节划分的薄弱图",
+  "p.mapSub": "每个框代表一节——点按即可跳到下方经文中的该节",
+  "p.weakHead": "{n} 个薄弱词。浅红 = 有时读错/卡住，深红 = 一再出错。凭记忆连续读对 {clear} 次练习后，标记就会消失。<b>点按红色的词</b>可听到你当时读的内容；如果标记有误，可以移除。",
+  "p.noWeak": "这一章没有薄弱处——马沙安拉！",
+  "s.col.ok": "正确",
+  "s.col.bad": "错误",
+  "s.col.peek": "偷看",
+  "s.col.pend": "检查中",
+  "s.col.next": "下一个词",
+  "s.col.weak": "旧的薄弱处",
+  "s.col.listen": "收听高亮",
+  "s.on": "开",
+  "s.off": "关",
+  "s.sum.alafasy": "阿法西 {v}",
+  "s.sum.added": "检测多读的词",
+  "s.sum.addedOff": "不检测多读的词",
+  "s.sum.peekMistake": "偷看 = 错误",
+  "s.sum.peekOk": "偷看不算错误",
+  "s.sum.hint": "提示 {v}",
+  "s.sum.speed": "速度 {v}",
+  "s.sum.perAyah": "每节 ×{n}",
+  "s.sum.weekStart": "每周从{v}开始",
+  "s.sum.countTests": "测试也计入",
+  "s.sum.noTests": "测试不计入",
+  "s.sum.good": "背得好 {v}",
+  "s.sum.clear": "连续 {n} 次练习后标记消失",
+  "s.sum.arabic": "阿拉伯语 {v}",
+  "s.sum.motion": "动效 {v}",
+  "s.sum.awake": "屏幕常亮",
+  "s.sum.awakeOff": "屏幕照常",
+  "bd.n.first": "第一步",
+  "bd.r.first": "保存你的第一次练习",
+  "bd.n.streak7": "连续一周",
+  "bd.r.streak7": "连续诵读 7 天",
+  "bd.n.streak30": "连续一个月",
+  "bd.r.streak30": "连续诵读 30 天",
+  "bd.n.sessions100": "第一百次练习",
+  "bd.r.sessions100": "累计 100 次练习",
+  "bd.n.hours10": "十小时",
+  "bd.r.hours10": "累计诵读 10 小时",
+  "bd.n.good1": "第一章扎实的章",
+  "bd.r.good1": "把一章练到“背得好”",
+  "bd.n.good5": "五章扎实的章",
+  "bd.r.good5": "5 章“背得好”",
+  "bd.n.test100": "完美测试",
+  "bd.r.test100": "在至少 10 题的测试中得 100%",
+  "bd.n.tests10": "定期测试",
+  "bd.r.tests10": "完成 10 次测试",
+  "bd.n.juz1": "背会一卷",
+  "bd.r.juz1": "已背会列表中有完整的一卷",
+  "bd.n.cleared50": "清除标记高手",
+  "bd.r.cleared50": "凭记忆读对，清除 50 个薄弱标记",
+  "bd.n.goal1": "目标达成",
+  "bd.r.goal1": "第一次完成某一天的目标",
+  "app.title": "Hifz Helper",
+  "c.ok": "确定",
+  "c.no": "否",
+  "fmt.ayah1": "第 {a} 节",
+  "fmt.ayahN": "第 {a}–{b} 节",
+  "fmt.durMS": "{m} 分 {s} 秒",
+  "fmt.durS": "{s} 秒",
+  "u.s": "{n} 秒",
+  "u.min": "{n} 分钟",
+  "u.words": "{n} 个词",
+  "u.ayah": "{n} 节",
+  "u.sC": "{n} s",
+  "u.minC": "{n} 分钟",
+  "hk.missed": "错误/漏读",
+  "hk.hint": "你卡住了（提示）",
+  "hk.slip": "读错了，重读后已纠正",
+  "gr.none": "仅看经文读",
+  "gr.good": "背得好",
+  "gr.fair": "一般",
+  "gr.weak": "需要多练",
+  "d.0": "周日",
+  "d.1": "周一",
+  "d.2": "周二",
+  "d.3": "周三",
+  "d.4": "周四",
+  "d.5": "周五",
+  "d.6": "周六",
+  "g.nParts": "{n} 部分",
+  "g.minutesNote": "{n} 分钟 {note}",
+  "g.mode.look": "阅读",
+  "g.mode.hifz": "凭记忆",
+  "g.mode.mixed": "混合",
+  "pk.l.juz": "第 {n} 卷",
+  "pk.l.hizb": "第 {n} Hizb",
+  "pk.l.rub": "第 {n} Rub",
+  "pk.l.page": "第 {n} 页",
+  "pk.l.pages": "第 {a}–{b} 页",
+  "pk.l.mem": "我已背会的部分",
+  "pk.pageRange": "第 {from} 页至第 {to} 页",
+  "pk.u.surah": "章",
+  "pk.u.juz": "卷",
+  "pk.u.hizb": "Hizb",
+  "pk.u.page": "页",
+  "pk.u.ayah": "节",
+  "t.ayahBadge": "{n} 节",
+  "l.artist": "米沙里·拉希德·阿法西",
+  "m.sugRow": "第 {n} 章 {english}：第 {a}–{b} 节",
+  "m.cover": "{c} / {n} 节",
+  "t.starterRange": "{n}. {english}",
+  "a.sub": "聆听你凭记忆的背诵并立即发现错误 · 记住你总是卡住的地方",
+  "a.themeAria": "更换颜色",
+  "a.lblSurah": "章",
+  "a.lblWait": "停顿多久后阿法西开始",
+  "a.lblWaitSub": "沉默多少秒",
+  "a.howTo": "使用方法",
+  "a.weakTitle": "你总是卡住的地方",
+  "a.pickSurahAria": "选择章",
+  "a.clearAll": "移除全部标记",
+  "a.clearAllTip": "移除这一章的所有红色标记（会先询问）",
+  "a.export": "将数据导出到文件（备份）",
+  "a.import": "从文件恢复数据",
+  "a.install": "添加为应用",
+  "a.timerAria": "背诵时间",
+  "a.pauseAria": "暂停",
+  "a.lookAria": "阅读 / 凭记忆",
+  "a.hintAria": "提示"
+ },
+ "settings": {
+  "recite.waitS": {
+   "label": "停顿多久后阿法西开始",
+   "help": "沉默多少秒后开始帮助；“关”= 从不",
+   "sub": "当你卡住时",
+   "options": {
+    "0": "关"
+   }
+  },
+  "recite.silenceHelp": {
+   "label": "沉默时会发生什么",
+   "help": "你卡住时应用提供多少帮助",
+   "sub": "当你卡住时",
+   "options": {
+    "surah": "阿法西诵读到本章结束",
+    "ayah": "到本节结束",
+    "words3": "接下来 3 个词",
+    "word": "只读下一个词",
+    "show": "只显示下一个词，不播放音频"
+   }
+  },
+  "recite.promptOnLook": {
+   "label": "看经文读时也提供帮助",
+   "help": "即使眼睛按钮已开启，沉默后也会给出帮助",
+   "sub": "当你卡住时"
+  },
+  "detect.changed": {
+   "label": "检测读错的词",
+   "help": "当你读了别的词来代替某个词时，该词变红",
+   "sub": "检测哪些错误"
+  },
+  "detect.skipped": {
+   "label": "检测漏读的词",
+   "help": "当你没读某个词就往下读时，该词变红",
+   "sub": "检测哪些错误"
+  },
+  "detect.added": {
+   "label": "检测多读的词",
+   "help": "当你在一节中多读了内容时，下一个词变红；关闭可减轻手机负担",
+   "sub": "检测哪些错误"
+  },
+  "detect.stray": {
+   "label": "转入另一章时提醒",
+   "help": "当你滑入另一章中相似的节时，显示红色横幅并发出提示音",
+   "sub": "检测哪些错误"
+  },
+  "detect.confirmedWords": {
+   "label": "读对多少个词之后，转入另一章才算错误",
+   "help": "低 = 更早提醒；高 = 开始新章时误报更少",
+   "sub": "检测哪些错误"
+  },
+  "detect.similarRatio": {
+   "label": "词语匹配的严格程度",
+   "help": "高 = 连相近的发音也能检测到；低 = 更宽松",
+   "sub": "检测哪些错误"
+  },
+  "detect.noAdvance": {
+   "label": "错误未纠正前不继续",
+   "help": "当某个词为红色时，必须读对后才会显示下一个词",
+   "sub": "检测哪些错误"
+  },
+  "detect.teachOnRemove": {
+   "label": "记住已忽略的错误",
+   "help": "点“我读对了”或“忽略”后，同样的读法不会再被标记",
+   "sub": "检测哪些错误"
+  },
+  "detect.errorTone": {
+   "label": "提示音",
+   "help": "当词变红或你转入另一章时发出声音（仅录音时）",
+   "sub": "提示音",
+   "options": {
+    "off": "关",
+    "soft": "轻",
+    "normal": "正常",
+    "loud": "响"
+   }
+  },
+  "detect.toneKind": {
+   "label": "提示音类型",
+   "sub": "提示音",
+   "options": {
+    "two": "两个音调",
+    "beep": "一声哔",
+    "double": "两声哔"
+   }
+  },
+  "detect.vibrate": {
+   "label": "出错时振动",
+   "help": "遇到红色的词时手机轻微振动",
+   "sub": "提示音"
+  },
+  "recite.startAt": {
+   "label": "开始时用哪一章",
+   "help": "应用打开时如何选择章",
+   "sub": "开始",
+   "options": {
+    "auto": "通过聆听识别",
+    "last": "上次的章和节",
+    "continue": "从上次停下的地方之后继续"
+   }
+  },
+  "recite.autoAyahs": {
+   "label": "向前显示多少节",
+   "help": "诵读时一次添加多少节",
+   "sub": "开始"
+  },
+  "recite.mistakeList": {
+   "label": "显示错误列表",
+   "help": "点按上方“错误/漏读”计数，可一并显示本次练习的全部错误",
+   "sub": "开始"
+  },
+  "recite.look": {
+   "label": "看经文读（显示全部经文）",
+   "help": "与眼睛按钮相同；看经文读的词不计入清除标记",
+   "sub": "隐藏的经文"
+  },
+  "hide.style": {
+   "label": "隐藏的词的外观",
+   "sub": "隐藏的经文",
+   "options": {
+    "bar": "与词一样大小的框",
+    "line": "仅下方一条线",
+    "blank": "完全空白"
+   }
+  },
+  "hide.weakTint": {
+   "label": "隐藏的词上以往薄弱处的颜色",
+   "help": "在以往练习中读错的词会显示浅红到深红的框",
+   "sub": "隐藏的经文"
+  },
+  "hide.ayahMarks": {
+   "label": "隐藏节号",
+   "help": "节末的标记要等该节全部读完后才显示",
+   "sub": "隐藏的经文"
+  },
+  "hide.nextWord": {
+   "label": "标出下一个词的框",
+   "help": "在你现在该读的词的框上显示一圈",
+   "sub": "隐藏的经文"
+  },
+  "hide.head": {
+   "label": "在顶部显示章和节编号",
+   "help": "关闭时，你所在的节保持隐藏",
+   "sub": "隐藏的经文"
+  },
+  "peek.countsAsMistake": {
+   "label": "把偷看算作错误",
+   "help": "通过提示或偷看显示的词，在薄弱标记和测试得分中都算作错误",
+   "sub": "偷看"
+  },
+  "peek.longPressRest": {
+   "label": "长按提示显示本节其余部分",
+   "help": "按住提示按钮半秒（电脑上右键点击）会显示本节所有剩余的词",
+   "sub": "偷看"
+  },
+  "peek.doubleTap": {
+   "label": "双击经文显示下一个词",
+   "help": "录音时，双击某个词框（电脑上双击鼠标）会像提示一样显示下一个词",
+   "sub": "偷看"
+  },
+  "test.endBy": {
+   "label": "测试何时结束",
+   "sub": "长度",
+   "options": {
+    "count": "按题目数量",
+    "time": "按时间",
+    "open": "由我自己停止"
+   }
+  },
+  "test.questions": {
+   "label": "多少道题",
+   "sub": "长度"
+  },
+  "test.minutes": {
+   "label": "多少分钟",
+   "help": "时间到后，会完成当前这题并显示结果",
+   "sub": "长度"
+  },
+  "test.lengthUnit": {
+   "label": "如何计算一题的长度",
+   "sub": "题目",
+   "options": {
+    "words": "按词数",
+    "ayahs": "按节数"
+   }
+  },
+  "test.lengthWords": {
+   "label": "每题要读的词数",
+   "help": "提示之后的词",
+   "sub": "题目",
+   "options": {
+    "8": "短 8",
+    "15": "中 15",
+    "30": "长 30"
+   }
+  },
+  "test.lengthAyahs": {
+   "label": "每题的节数",
+   "sub": "题目"
+  },
+  "test.extendToAyahEnd": {
+   "label": "读到本节结束",
+   "help": "一道题不会停在一节中间，而是读完该节",
+   "sub": "题目"
+  },
+  "test.hintWords": {
+   "label": "开头显示多少个词",
+   "help": "其余部分不看经文背出；0 = 只显示章和节编号",
+   "sub": "题目"
+  },
+  "test.start": {
+   "label": "一道题从哪里开始",
+   "sub": "题目",
+   "options": {
+    "ayah": "从一节的开头",
+    "random": "从一节中的任意位置"
+   }
+  },
+  "test.order": {
+   "label": "题目顺序",
+   "sub": "题目",
+   "options": {
+    "shuffle": "随机",
+    "seq": "按顺序",
+    "weak": "薄弱处优先"
+   }
+  },
+  "test.noRepeat": {
+   "label": "整个范围完成之前，不重复任何题目",
+   "sub": "题目"
+  },
+  "test.showRef": {
+   "label": "显示章和节编号",
+   "help": "也可以用卡片上的眼睛按钮切换",
+   "sub": "题目"
+  },
+  "test.silence": {
+   "label": "当你沉默时",
+   "sub": "当你卡住时",
+   "options": {
+    "none": "不做任何事",
+    "show": "显示下一个词",
+    "alafasy": "阿法西诵读下一个词"
+   }
+  },
+  "test.silenceS": {
+   "label": "沉默多少秒",
+   "sub": "当你卡住时"
+  },
+  "test.doubleTapPeek": {
+   "label": "双击卡片显示下一个词",
+   "help": "电脑上双击鼠标",
+   "sub": "当你卡住时"
+  },
+  "test.skipCounts": {
+   "label": "把跳过的题计入得分",
+   "help": "开启时，跳过的题算“不正确”",
+   "sub": "得分"
+  },
+  "test.streakAt": {
+   "label": "连续答对多少题后显示火焰标记",
+   "sub": "得分"
+  },
+  "test.advance": {
+   "label": "一题之后",
+   "sub": "进行方式",
+   "options": {
+    "auto": "显示结果，然后自动进入下一题",
+    "tap": "当我按“下一题”时"
+   }
+  },
+  "test.holdS": {
+   "label": "结果显示多久",
+   "help": "卡片变绿/变红之后，下一题之前",
+   "sub": "进行方式"
+  },
+  "test.countdown": {
+   "label": "开始前的倒计时",
+   "sub": "进行方式",
+   "options": {
+    "0": "关",
+    "3": "3 秒",
+    "5": "5 秒"
+   }
+  },
+  "test.autoPauseS": {
+   "label": "沉默时自动暂停",
+   "help": "如果这么多秒内没有读任何内容，测试会暂停",
+   "sub": "进行方式",
+   "options": {
+    "0": "关",
+    "15": "15",
+    "30": "30",
+    "60": "60",
+    "120": "120 秒"
+   }
+  },
+  "test.sound": {
+   "label": "一题之后的声音",
+   "help": "答对时发出高音，答错时发出低音",
+   "sub": "进行方式"
+  },
+  "test.vibrate": {
+   "label": "一题之后振动",
+   "sub": "进行方式"
+  },
+  "test.temporary": {
+   "label": "临时测试",
+   "help": "不保存任何内容——没有结果、错误或录音；适合测试别人",
+   "sub": "保存"
+  },
+  "test.countInHistory": {
+   "label": "把测试中的错误加入薄弱标记",
+   "help": "关闭时，测试结果会保留，但薄弱标记不变",
+   "sub": "保存"
+  },
+  "test.checkAdded": {
+   "label": "在测试中检测多读的词",
+   "help": "关闭时，一题之后的检查更快",
+   "sub": "保存"
+  },
+  "listen.reciter": {
+   "label": "诵读者：米沙里·拉希德·阿法西（目前只有一位）",
+   "sub": "诵读者"
+  },
+  "listen.speed": {
+   "label": "速度",
+   "help": "慢速收听更便于背诵",
+   "sub": "速度与重复",
+   "options": {
+    "1": "1×",
+    "2": "2×",
+    "0.5": "0.5×",
+    "0.75": "0.75×",
+    "1.25": "1.25×",
+    "1.5": "1.5×"
+   }
+  },
+  "listen.repeatAyah": {
+   "label": "每节重复多少遍",
+   "sub": "速度与重复"
+  },
+  "listen.repeatRange": {
+   "label": "整个部分重复多少遍",
+   "sub": "速度与重复",
+   "options": {
+    "0": "无限"
+   }
+  },
+  "listen.gapRepeatS": {
+   "label": "同一节重复前的停顿",
+   "help": "留给你自己背诵的时间",
+   "sub": "速度与重复"
+  },
+  "listen.gapAyahS": {
+   "label": "每节之后的停顿",
+   "help": "进入下一节之前",
+   "sub": "速度与重复"
+  },
+  "listen.gapAuto": {
+   "label": "停顿与该节一样长",
+   "help": "开启时，每节之后会等待读完该节所需的时间——以便你听完后自己背诵",
+   "sub": "速度与重复"
+  },
+  "listen.highlight": {
+   "label": "显示正在诵读的内容",
+   "sub": "经文",
+   "options": {
+    "word": "按词",
+    "ayah": "按节",
+    "none": "不显示"
+   }
+  },
+  "listen.text": {
+   "label": "经文",
+   "sub": "经文",
+   "options": {
+    "show": "全部显示",
+    "reveal": "随收听逐步显示",
+    "hide": "隐藏"
+   }
+  },
+  "listen.autoScroll": {
+   "label": "随之滚动",
+   "sub": "经文"
+  },
+  "listen.basmala": {
+   "label": "章首的“奉至仁至慈的真主之名”",
+   "help": "从第 1 节开始收听时，会先诵读“奉至仁至慈的真主之名”（法提哈章和讨白章除外）",
+   "sub": "经文"
+  },
+  "listen.nextSurah": {
+   "label": "结束后播放下一章",
+   "sub": "经文"
+  },
+  "listen.sleepMin": {
+   "label": "睡眠定时",
+   "help": "这么多分钟后停止收听",
+   "sub": "经文",
+   "options": {
+    "0": "关",
+    "10": "10",
+    "15": "15",
+    "30": "30",
+    "60": "60 分钟"
+   }
+  },
+  "listen.countAsSession": {
+   "label": "在历史中保留收听记录",
+   "help": "会保存你听了多久、听了哪一部分；只有在“目标与连续”中开启后，才会计入目标或连续记录",
+   "sub": "经文"
+  },
+  "audio.ctxBefore": {
+   "label": "红色词上的阿法西：前面的词数",
+   "help": "弹窗在该词之前诵读多少个词",
+   "sub": "红色词的音频"
+  },
+  "audio.ctxAfter": {
+   "label": "红色词上的阿法西：后面的词数",
+   "sub": "红色词的音频"
+  },
+  "audio.myCtxWords": {
+   "label": "我的诵读：前面的词数",
+   "help": "弹窗中你自己的录音从多少个词之前开始",
+   "sub": "红色词的音频"
+  },
+  "audio.popupSpeed": {
+   "label": "弹窗中阿法西的速度",
+   "sub": "红色词的音频"
+  },
+  "audio.offlineMaxMB": {
+   "label": "离线保存的最大大小（每章）",
+   "help": "超过此大小的章只能在线播放",
+   "sub": "离线",
+   "options": {
+    "40": "40",
+    "80": "80",
+    "150": "150",
+    "250": "250 MB"
+   }
+  },
+  "goals.dayStart": {
+   "label": "一天从几点开始",
+   "help": "如果你深夜诵读，会计入前一天",
+   "options": {
+    "0": "午夜",
+    "1": "凌晨 1 点",
+    "2": "凌晨 2 点",
+    "3": "凌晨 3 点",
+    "4": "凌晨 4 点",
+    "5": "凌晨 5 点",
+    "6": "早上 6 点"
+   }
+  },
+  "goals.weekStart": {
+   "label": "每周从哪天开始",
+   "options": {
+    "0": "星期日",
+    "1": "星期一",
+    "6": "星期六"
+   }
+  },
+  "goals.streakMin": {
+   "label": "一天要计入连续记录，至少需要",
+   "options": {
+    "any": "任意一次练习",
+    "m5": "5 分钟",
+    "m10": "10 分钟",
+    "m20": "20 分钟",
+    "goals": "今天的所有目标都已完成"
+   }
+  },
+  "goals.countLook": {
+   "label": "把看经文读计入背诵和复习目标"
+  },
+  "goals.countListen": {
+   "label": "把收听计入诵读目标和连续记录"
+  },
+  "goals.countTests": {
+   "label": "测试也计入目标"
+  },
+  "goals.countManual": {
+   "label": "应用之外的诵读也计入"
+  },
+  "goals.showToday": {
+   "label": "在“背诵”页面显示今日目标",
+   "help": "没有目标时不显示任何内容"
+  },
+  "history.clearStreak": {
+   "label": "连续多少次练习后清除标记",
+   "help": "凭记忆连续在这么多次不同的练习中读对后，红色标记就会消失",
+   "sub": "薄弱标记"
+  },
+  "history.lookClears": {
+   "label": "把看经文读计入清除标记",
+   "sub": "薄弱标记"
+  },
+  "history.good": {
+   "label": "“背得好”从百分之多少起",
+   "sub": "状态阈值"
+  },
+  "history.fair": {
+   "label": "“一般”从百分之多少起",
+   "help": "必须低于“背得好”",
+   "sub": "状态阈值"
+  },
+  "history.gradeWindow": {
+   "label": "由最近多少次背诵练习决定状态",
+   "sub": "状态阈值"
+  },
+  "history.recent": {
+   "label": "显示多少次近期练习",
+   "sub": "列表",
+   "options": {
+    "0": "全部",
+    "10": "10",
+    "30": "30",
+    "100": "100"
+   }
+  },
+  "history.weekDays": {
+   "label": "“本周”卡片包含的天数",
+   "help": "取值不是 7 时，该卡片称为“最近 {n} 天”",
+   "sub": "列表"
+  },
+  "history.minWords": {
+   "label": "会被保存的最短练习（按词数）",
+   "sub": "列表"
+  },
+  "history.maxEvents": {
+   "label": "每个薄弱词记住多少次错误",
+   "sub": "列表"
+  },
+  "history.hotZones": {
+   "label": "显示多少个“最薄弱的地方”",
+   "sub": "列表"
+  },
+  "history.heatmap": {
+   "label": "显示热力图",
+   "help": "你每天读了多少分钟——最近 12 周",
+   "sub": "列表"
+  },
+  "history.popupTimes": {
+   "label": "在标记弹窗中显示你读过多少次",
+   "sub": "列表"
+  },
+  "history.saveRecordings": {
+   "label": "保留练习的录音",
+   "help": "关闭时，新录音不会保存，所以以后无法在标记处听自己的诵读；旧录音保留",
+   "sub": "录音"
+  },
+  "view.lang": {
+   "label": "语言 / Language",
+   "help": "应用文字的语言；古兰经经文不变",
+   "sub": "语言",
+   "options": {
+    "bn": "বাংলা",
+    "en": "English",
+    "ar": "العربية",
+    "ur": "اردو",
+    "hi": "हिन्दी",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "tr": "Türkçe",
+    "fa": "فارسی",
+    "fr": "Français",
+    "es": "Español",
+    "pt": "Português",
+    "de": "Deutsch",
+    "ru": "Русский",
+    "zh": "中文（简体）",
+    "sw": "Kiswahili"
+   }
+  },
+  "view.theme": {
+   "label": "页面颜色",
+   "sub": "颜色",
+   "options": {
+    "auto": "自动",
+    "paper": "纸张",
+    "night": "夜间古兰经",
+    "sepia": "旧纸"
+   }
+  },
+  "view.wordSet": {
+   "label": "词语配色方案",
+   "sub": "颜色",
+   "options": {
+    "default": "普通",
+    "cb": "更易区分",
+    "brown": "棕色偷看",
+    "custom": "我自己的"
+   }
+  },
+  "view.wordStyle": {
+   "label": "颜色如何应用",
+   "help": "高亮 = 文字保持黑色，背后有彩色框",
+   "sub": "颜色",
+   "options": {
+    "text": "文字颜色",
+    "highlight": "高亮"
+   }
+  },
+  "view.customColors": {
+   "label": "我自己的颜色",
+   "help": "为每种状态选一种颜色；每种页面颜色分别记住",
+   "sub": "颜色"
+  },
+  "view.arabicScale": {
+   "label": "阿拉伯文字大小",
+   "sub": "文字"
+  },
+  "view.lineGap": {
+   "label": "行间距",
+   "sub": "文字"
+  },
+  "view.wordGap": {
+   "label": "词间距",
+   "sub": "文字"
+  },
+  "view.uiScale": {
+   "label": "界面文字大小",
+   "sub": "文字",
+   "options": {
+    "90": "小",
+    "100": "正常",
+    "115": "大",
+    "130": "更大"
+   }
+  },
+  "view.uiFont": {
+   "label": "界面字体",
+   "sub": "文字",
+   "options": {
+    "app": "应用自带字体",
+    "system": "设备自带字体"
+   }
+  },
+  "view.motion": {
+   "label": "动效（动画）",
+   "help": "录音时始终关闭",
+   "sub": "动效",
+   "options": {
+    "auto": "自动",
+    "full": "完整",
+    "gentle": "柔和",
+    "off": "关"
+   }
+  },
+  "view.intro": {
+   "label": "启动动画（古兰经展开）",
+   "help": "应用打开时显示；点按屏幕可立即跳过",
+   "sub": "动效",
+   "options": {
+    "every": "每次",
+    "daily": "每天一次",
+    "off": "关"
+   }
+  },
+  "view.scroll": {
+   "label": "阅读行停在哪里",
+   "sub": "动效",
+   "options": {
+    "second": "从上数第二行",
+    "middle": "中间",
+    "off": "我自己滚动"
+   }
+  },
+  "view.timer": {
+   "label": "显示时间",
+   "sub": "顶部信息"
+  },
+  "view.legend": {
+   "label": "显示颜色的含义",
+   "help": "文字上方的小图例",
+   "sub": "顶部信息"
+  },
+  "view.headStats": {
+   "label": "显示正确、错误和提示的数量",
+   "sub": "顶部信息"
+  },
+  "view.bnDigits": {
+   "label": "用孟加拉数字书写数字",
+   "help": "关闭时：0–9（仅孟加拉语）",
+   "sub": "顶部信息"
+  },
+  "device.micId": {
+   "label": "麦克风",
+   "options": {
+    "default": "设备自带麦克风"
+   }
+  },
+  "device.echoCancel": {
+   "label": "减少回声",
+   "help": "减少阿法西的声音进入麦克风；关闭时，沉默后的帮助可能出现异常"
+  },
+  "device.noiseSuppress": {
+   "label": "降低环境噪音",
+   "help": "在嘈杂环境中有用，但轻声也可能被削掉"
+  },
+  "device.autoGain": {
+   "label": "自动调整麦克风音量",
+   "options": {
+    "browser": "按浏览器的方式",
+    "on": "开",
+    "off": "关"
+   }
+  },
+  "device.sensitivity": {
+   "label": "麦克风灵敏度",
+   "help": "轻声诵读时用“高”，嘈杂时用“低”",
+   "options": {
+    "low": "低",
+    "normal": "正常",
+    "high": "高"
+   }
+  },
+  "device.threads": {
+   "label": "处理器线程数",
+   "help": "越多越快，但手机可能发热",
+   "options": {
+    "1": "1",
+    "2": "2",
+    "4": "4",
+    "auto": "自动"
+   }
+  },
+  "device.slowPhone": {
+   "label": "适应较慢的手机",
+   "help": "在较慢的手机上，每次处理的音频更少，以免跟不上"
+  },
+  "device.liveModel": {
+   "label": "实时模型",
+   "help": "更大的模型听得更准，但更慢",
+   "options": {
+    "tiny": "tiny",
+    "base": "base"
+   }
+  },
+  "device.checkModel": {
+   "label": "检查模型",
+   "help": "在识别章并标红之前再听一遍",
+   "options": {
+    "base": "base",
+    "tiny": "tiny"
+   }
+  },
+  "device.keepAwake": {
+   "label": "录音和收听时保持屏幕常亮"
+  },
+  "device.shortcuts": {
+   "label": "键盘快捷键",
+   "help": "空格 = 暂停，H = 提示，R = 本节其余部分，E = 眼睛，M = 错误列表，N = 下一题，P = 播放/暂停收听"
+  },
+  "device.maxRecMin": {
+   "label": "最长录音时间",
+   "help": "超过此时间后录音会自动停止",
+   "options": {
+    "0": "无限制",
+    "30": "30",
+    "60": "60",
+    "90": "90",
+    "120": "120 分钟"
+   }
+  },
+  "adv.windowS": {
+   "label": "每次处理的音频秒数"
+  },
+  "adv.updateEveryS": {
+   "label": "多久处理一次新音频",
+   "help": "值越小 = 手机负担越重"
+  },
+  "adv.lookahead": {
+   "label": "向前匹配多少个词"
+  },
+  "adv.shortSkip": {
+   "label": "两个词匹配时最多可跳过多少个词"
+  },
+  "adv.longSkipRun": {
+   "label": "要跳过更多词，必须连续匹配的词数"
+  },
+  "adv.finalSkip": {
+   "label": "最终检查中最多可跳过的词数"
+  },
+  "adv.detectMinWords": {
+   "label": "识别一章所需的最少词数"
+  },
+  "adv.detectMargin": {
+   "label": "必须领先下一个可能的章多少倍"
+  },
+  "adv.detectSureWords": {
+   "label": "读到这么多个词后，即使差距很小也会做出选择"
+  },
+  "adv.lostS": {
+   "label": "没有进展多少秒后重新查找位置"
+  },
+  "adv.lostReds": {
+   "label": "在最近的词中，出现多少个红色词时重新查找：红色词数"
+  },
+  "adv.lostOf": {
+   "label": "…在最近的多少个词中"
+  },
+  "adv.rewindRun": {
+   "label": "识别倒读所需的连续词数"
+  },
+  "adv.backWords": {
+   "label": "可识别的最大回退词数"
+  },
+  "adv.verifyWindowS": {
+   "label": "为漏读的词重新聆听的秒数"
+  },
+  "adv.verifyMaxS": {
+   "label": "…最多秒数"
+  },
+  "adv.autoExtendAt": {
+   "label": "前方剩余这么多个词时，会添加更多节"
+  },
+  "adv.sameAudio": {
+   "label": "记住“我读对了”的音频匹配度",
+   "help": "低 = 严格（必须读得完全一样）"
+  },
+  "adv.sameHeard": {
+   "label": "记住“我读对了”的听写文本匹配度",
+   "help": "高 = 严格"
+  },
+  "adv.maxClipS": {
+   "label": "红色词自己录音片段的最大长度（秒）"
+  },
+  "adv.stripCells": {
+   "label": "进度条中最多的框数"
+  },
+  "adv.cellMid": {
+   "label": "薄弱度总和达到此值时，框变为中红"
+  },
+  "adv.cellDark": {
+   "label": "…深红的起点"
+  }
+ },
+ "groups": {
+  "recite": {
+   "name": "背诵与错误",
+   "help": "你诵读时应用检测什么、你卡住时应用做什么"
+  },
+  "hide": {
+   "name": "隐藏与偷看",
+   "help": "凭记忆诵读时如何隐藏经文、偷看会怎样"
+  },
+  "test": {
+   "name": "测试",
+   "help": "卡片测试的长度、提示和得分"
+  },
+  "listen": {
+   "name": "收听与音频",
+   "help": "阿法西的诵读——速度、重复、离线"
+  },
+  "goals": {
+   "name": "目标与连续",
+   "help": "每日计数、连续记录、哪些诵读计入目标"
+  },
+  "history": {
+   "name": "进度与历史",
+   "help": "清除标记的规则、状态阈值、录音"
+  },
+  "view": {
+   "name": "外观",
+   "help": "颜色、文字大小、动效"
+  },
+  "device": {
+   "name": "麦克风与设备",
+   "help": "麦克风、处理器、屏幕"
+  },
+  "adv": {
+   "name": "高级",
+   "help": "内部计算值——请谨慎修改"
+  }
+ },
+ "presets": {
+  "recite": {
+   "label": "错误检测的严格程度",
+   "items": {
+    "easy": {
+     "label": "宽松",
+     "help": "用于新背诵：容忍细微的发音差异，不检测多读的词"
+    },
+    "normal": {
+     "label": "正常",
+     "help": "日常复习"
+    },
+    "strict": {
+     "label": "严格",
+     "help": "向老师背诵之前：连相近的发音也算错误，不纠正就不能继续"
+    }
+   }
+  },
+  "test": {
+   "label": "测试类型",
+   "items": {
+    "quick": {
+     "label": "快速练习"
+    },
+    "normal": {
+     "label": "正常"
+    },
+    "hard": {
+     "label": "困难"
+    }
+   }
+  },
+  "listen": {
+   "label": "收听类型",
+   "items": {
+    "only": {
+     "label": "仅收听"
+    },
+    "memo": {
+     "label": "用于背诵"
+    },
+    "say": {
+     "label": "听后复述"
+    },
+    "slow": {
+     "label": "慢速学习"
+    }
+   }
+  }
+ }
+}

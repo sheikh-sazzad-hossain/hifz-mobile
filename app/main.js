@@ -22,8 +22,9 @@ import * as media from './media.js';
 import { createSettings } from '../core/settings.js';
 import { applyView, isViewId, resolveTheme } from './view.js';
 import { createSettingsUi } from './settings-ui.js';
+import { applyLanguage } from './lang.js';
 import { setStrings, t, toast, confirmDlg, sheet, $ } from './ui.js';
-import { num } from '../core/fmt.js';
+import { num, withUnit } from '../core/fmt.js';
 import { setDivisions } from '../core/ranges.js';
 import { createMemorizedUi } from './memorized-ui.js';
 import { createTestUi } from './test-ui.js';
@@ -38,27 +39,12 @@ window.hifz = S;
 
 
 // ---------------------------------------------------------------- static parts
-const HELP = [
-  '<b>মাইক বাটন</b> চাপো আর পড়া শুরু করো; কোন সূরা তা নিজে চিনে নেবে (চাইলে ওপরে বেছেও দিতে পারো)। <b>■</b> চাপলে সেশন শেষ ও জমা হবে।',
-  'পড়তে পড়তে শব্দ খুলবে: <span class="hz-ok">সবুজ = সঠিক</span>, <span class="hz-bad">লাল = ভুল/বাদ</span> (সাথে সতর্ক-শব্দ), <span class="hz-hint">বেগুনি = ইঙ্গিত/আটকে যাওয়া</span>। নীল ঝলকানো ঘর = এখন যে শব্দ পড়ার কথা।',
-  '<b>বিরতি</b> বাটনে থামাও, লাল শব্দ দেখে শোনো, তারপর একই বাটনে আবার চালু করো। চাইলে আগের আয়াত থেকে আবার পড়ে ভুলটা ঠিক করো, অ্যাপ সেখান থেকেই অনুসরণ করবে।',
-  'এক সূরা শেষ করে পরের সূরা (বা অন্য যেকোনো সূরা) শুরু করলে অ্যাপ নিজেই সেখানে চলে যাবে — যতক্ষণ পড়বে ততক্ষণ অনুসরণ করবে।',
-  '<b>চোখ বাটন</b> = দেখে পড়া (পুরো লেখা দেখা যায়) আর মুখস্থ (লেখা লুকানো)-র মধ্যে বদল।',
-  'আটকে গেলে <b>ইঙ্গিত</b> চাপো, বা <b>চুপ থাকো</b> (ওপরের "থামলে আলাফাসি" সেটিংয়ে যত সেকেন্ড, শুরুতে ২): মিশারি আলাফাসি সেখান থেকে একটানা পড়ে যাবেন, শব্দগুলো বেগুনি হয়ে খুলবে। তুমি আবার পড়া শুরু করলে (বা বিরতি/থামাও চাপলে) উনি থেমে যাবেন, আর অ্যাপ তোমার পড়া শুনবে। ইঙ্গিত-বাটন চেপে ধরলে আয়াতের বাকিটা খুলবে।',
-  '<b>লাল শব্দে ক্লিক</b> করলে তুমি কী পড়েছ আর কী পড়া উচিত — দুটোই আশেপাশের শব্দসহ শুনতে পারবে। ঠিক পড়ে থাকলে ✓ চাপো।',
-  'আগের সেশনে যেখানে ভুল/আটকে গিয়েছিলে সেই শব্দের ঘর <span class="hz-w1 hz-swatch">হালকা</span> থেকে <span class="hz-w3 hz-swatch">গাঢ় লাল</span> হয়ে থাকে; পরপর ৩ বার না দেখে ঠিক পড়লে দাগ চলে যায়।',
-  'দাগটা ভুল মনে হলে (রেকর্ডিং না চলার সময়, বা <b>অগ্রগতি</b> ট্যাবে) লাল ঘরে ক্লিক করো: তখন কী পড়েছিলে শুনে <b>✓ ভুল দাগ — মুছে দাও</b> চাপো। দাগ মুছে যাবে, আর সেখানে ওভাবে পড়লে পরে আর ভুল ধরবে না।',
-  '<b>অগ্রগতি</b> ট্যাবে প্রতিটা সূরার পাশে আয়াত ধরে একটা রঙিন পট্টি আছে — কোন আয়াতে দুর্বলতা বেশি (গাঢ় লাল), এক নজরে দেখা যায়। ঘরে ক্লিক করলে নিচে সেই আয়াত খুলবে।',
-  'ফোনে: প্রথমবার মডেল (প্রায় ১৯ MB) নামবে, তারপর ইন্টারনেট ছাড়াই চলবে। সব ডেটা এই ফোনেই থাকে — <b>অগ্রগতি</b> ট্যাব থেকে ফাইলে ব্যাকআপ নিতে পারো। স্বয়ংক্রিয় যাচাই ভুল করতে পারে; এটা শিক্ষকের বিকল্প নয়।',
-];
-
-// the help bullets quote current values (wait seconds, rounds to clear a mark): spec C3 §2.5
-const HELP_EXTRA = 'ওপরের <b>ভুল/বাদ</b> গোনায় চাপলে এই সেশনের সব ভুল একসাথে দেখা যায়; ভুল না হলে <b>বাদ দাও</b>, দরকার হলে <b>ফেরাও</b>।';
+// the help bullets are strings help.1 .. help.11 (+ r.help.list), quoting current values (wait seconds, rounds to clear a mark): spec C3 §2.5
 function renderHelp() {
   const wait = S.settings ? S.settings.get('recite.waitS') : 2;
   const clear = S.settings ? S.settings.get('history.clearStreak') : 3;
-  const list = HELP.map((h, i) => (i === 5 ? h.replace('শুরুতে ২', `শুরুতে ${num(wait)}`) : i === 7 ? h.replace('পরপর ৩ বার', `পরপর ${num(clear)} বার`).replace('পরপর ৩ সেশন', `পরপর ${num(clear)} সেশন`) : h));
-  list.push(HELP_EXTRA);
+  const list = Array.from({ length: 11 }, (_, i) => t(`help.${i + 1}`, { wait: num(wait), clear: num(clear) }));
+  list.push(t('r.help.list'));
   $('help').innerHTML = list.map((h) => `<li>${h}</li>`).join('');
 }
 
@@ -71,8 +57,10 @@ function buildStatic() {
   $('hz-t-look').innerHTML = ICONS.eye + ICONS.eyeOff;
   $('hz-t-hint').innerHTML = ICONS.bulb;
   const surah = $('s-surah');
-  surah.innerHTML = '<option value="0">স্বয়ংক্রিয় — তিলাওয়াত শুনে নিজে খুঁজে নেবে</option>'
+  const keep = surah.value;
+  surah.innerHTML = `<option value="0">${esc(t('a.autoSurah'))}</option>`
     + Array.from({ length: 114 }, (_, i) => { const n = quran.surahInfo(i + 1); return `<option value="${i + 1}">${n.number}. ${esc(n.english)} — ${esc(n.name)}</option>`; }).join('');
+  surah.value = keep || '0';
   fillWait();
 }
 
@@ -81,8 +69,8 @@ function fillWait() { // the "wait" select on the recite page is the same settin
   const d = S.settings?.def('recite.waitS');
   if (!d) return;
   const cur = S.settings.get('recite.waitS');
-  const opts = d.options.map((o) => [o.label ?? `${num(o.v)} সেকেন্ড`, o.v]);
-  if (!d.options.some((o) => o.v === cur)) opts.push([`${num(cur)} সেকেন্ড`, cur]);
+  const opts = d.options.map((o) => [o.label ?? withUnit(o.v, 's'), o.v]);
+  if (!d.options.some((o) => o.v === cur)) opts.push([withUnit(cur, 's'), cur]);
   $('s-wait').innerHTML = opts.map(([l, v]) => `<option value="${v}">${l}</option>`).join('');
   $('s-wait').value = String(cur);
 }
@@ -91,7 +79,7 @@ function applyLook() {
   const on = S.settings.get('recite.look');
   S.look = on;
   document.body.classList.toggle('hz-look', on);
-  $('hz-t-look').dataset.tip = on ? 'মুখস্থ: লেখা লুকাও' : 'দেখে পড়া: পুরো লেখা দেখাও';
+  $('hz-t-look').dataset.tip = t(on ? 'a.lookOn' : 'a.lookOff');
   if (S.fol) S.fol.look = on;
 }
 function renderLegend() { // view.legend: what each colour means, above the text
@@ -109,8 +97,25 @@ function onSettingsChange(ids) {
   if (ids.includes('recite.look')) applyLook();
   if (ids.includes('history.clearStreak') || ids.includes('recite.waitS')) renderHelp();
   if (ids.includes('recite.waitS')) { fillWait(); if (S.fol) S.fol.waitS = S.settings.get('recite.waitS'); }
+  if (ids.includes('view.lang')) changeLanguage();
   if (ids.includes('view.theme')) S.settingsUi?.refresh();
   if (ids.some((id) => id.startsWith('view.') || id.startsWith('hide.'))) S.fol && render(true);
+}
+async function changeLanguage() { // the UI is redrawn at once, no reload
+  await applyLanguage(S.settings.get('view.lang'), S.settings.schema);
+  applyView(S.settings.get); // digits of the new language
+  document.querySelectorAll('#tabs .tab').forEach((b) => { b.querySelector('span').textContent = tabLabel(b.id.slice(4)); });
+  buildStatic();
+  S.history && (S.fol ? render(true) : null);
+  fillWait(); renderHelp(); renderLegend(); applyLook(); setRecButton(S.running);
+  $('hz-t-hint').dataset.tip = t('r.hintTip');
+  if (S.history) { drawToday(); buildProgressSeg(); refreshProgress(); }
+  if (S.tab === 'test' && !S.testUi?.active()) S.testUi.show();
+  if (S.tab === 'listen') S.listenUi?.show();
+  S.settingsUi?.refresh();
+  if (!$('modelcard').hidden) $('modeltext').textContent = t('a.modelBuilding');
+  if (S.ready && S.asr) $('footer').textContent = t('a.modelFooter', { backend: S.asr.info.backend, threads: S.asr.info.threads });
+  globalThis.HifzIntro?.label(t('intro.preparing'));
 }
 function cycleTheme() { // tap on the header button: paper -> night -> sepia
   const order = ['paper', 'night', 'sepia'];
@@ -227,14 +232,14 @@ function syncUi(v) {
   const pause = $('hz-t-pause');
   pause.disabled = !(v.paused || live);
   pause.classList.toggle('is-paused', !!v.paused);
-  pause.dataset.tip = v.paused ? 'চালিয়ে যাও — যেখানে থেমেছিলে সেখান থেকে' : 'বিরতি — যেখানে আছ সেখানেই থামবে, পরে আবার চালু করা যাবে';
+  pause.dataset.tip = t(v.paused ? 'a.pauseResumeTip' : 'a.pauseTip');
 }
 
 // ---------------------------------------------------------------- recording
 function setRecButton(on) {
   $('rec').classList.toggle('is-on', on);
-  $('rec').dataset.tip = on ? 'থামাও — সেশন শেষ ও জমা হবে' : 'রেকর্ড শুরু — পড়া শুরু করো';
-  $('rec').setAttribute('aria-label', on ? 'থামাও' : 'রেকর্ড');
+  $('rec').dataset.tip = t(on ? 'a.stopTip' : 'a.recTip');
+  $('rec').setAttribute('aria-label', t(on ? 'a.stop' : 'a.record'));
   for (const id of ['s-surah', 's-first', 's-last']) $(id).disabled = on;
 }
 
@@ -271,7 +276,7 @@ async function start() {
     });
   } catch (e) {
     timer.stop(); timerLoop(); $('hz-timer').hidden = true;
-    toast(`মাইক চালু হয়নি: ${e.message || e}`, 6000);
+    toast(t('a.micFail', { err: e.message || e }), 6000);
     return;
   }
   S.running = true;
@@ -279,11 +284,11 @@ async function start() {
   wakeLock(true);
   clearTimeout(S.maxTimer);
   const maxMin = S.settings.get('device.maxRecMin');
-  if (maxMin) S.maxTimer = setTimeout(() => { if (S.running) { toast('সর্বোচ্চ রেকর্ডিং সময় পার — থামালাম।'); stop(); } }, maxMin * 60000);
+  if (maxMin) S.maxTimer = setTimeout(() => { if (S.running) { toast(t('a.maxRec')); stop(); } }, maxMin * 60000);
   setRecButton(true);
   fol.start(S.asr);
   render(true);
-  $('hz-status').textContent = 'শুনছি…';
+  $('hz-status').textContent = t('a.listening');
 }
 
 async function stop() {
@@ -299,16 +304,16 @@ async function stop() {
   S.mic = null;
   setRecButton(false);
   media.stopCurrent();
-  $('hz-status').textContent = 'যাচাই করা হচ্ছে…';
+  $('hz-status').textContent = t('a.checking');
   $('rec').disabled = true;
   try {
     await fol.finish(S.asr);
   } finally { $('rec').disabled = false; }
   $('hz-status').textContent = '';
   render(true);
-  if (fol.len < SAMPLE_RATE) { $('hz-final').innerHTML = '<div class="hz-banner hz-paused">রেকর্ডিং খুব ছোট।</div>'; return; }
+  if (fol.len < SAMPLE_RATE) { $('hz-final').innerHTML = `<div class="hz-banner hz-paused">${esc(t('a.tooShort'))}</div>`; return; }
   if (fol.surah === null) {
-    $('hz-final').innerHTML = '<div class="hz-banner hz-stray">কোনো আয়াতের সঙ্গে মেলেনি। আরেকটু লম্বা করে পড়ো, অথবা সূরা নিজে বেছে দাও।</div>';
+    $('hz-final').innerHTML = `<div class="hz-banner hz-stray">${esc(t('a.noMatch'))}</div>`;
     return;
   }
   const name = `${isoLocal(new Date()).replace(/[-:]/g, '').replace('T', '_')}.wav`;
@@ -320,8 +325,8 @@ async function stop() {
     const e0 = entries[0];
     S.ui = { ...S.ui, lastRecite: { s: e0.surah, a1: e0.ayahs[0], a2: e0.ayahs.at(-1), lastAyah: e0.ayahs.at(-1) } };
     S.store.set('ui', S.ui);
-    const parts = entries.map((e) => `সূরা ${esc(quran.surahInfo(e.surah).english)}: ${bn(e.words)} শব্দ, নির্ভুলতা ${bn(e.accuracy)}%, ভুল ${bn(e.missed)}, আটকে যাওয়া ${bn(e.stuck)}`).join('; ');
-    $('hz-final').innerHTML = `<div class="hz-done">সেশন জমা হয়েছে — ${parts}। অগ্রগতি ট্যাবে সব দেখতে পাবে।</div>`;
+    const parts = entries.map((e) => t('a.entry', { english: quran.surahInfo(e.surah).english, words: bn(e.words), acc: bn(e.accuracy), missed: bn(e.missed), stuck: bn(e.stuck) })).join('; ');
+    $('hz-final').innerHTML = `<div class="hz-done">${esc(t('a.saved', { parts }))}</div>`;
   }
   refreshProgress();
 }
@@ -351,13 +356,13 @@ function popup() {
   pop.className = 'hz-pop';
   pop.hidden = true;
   pop.innerHTML = `<div class="hz-card"><div class="hz-card-top"></div>
-    <button class="hz-x hz-tip-left" data-tip="বন্ধ করো" aria-label="বন্ধ">${ICONS.x}</button>
+    <button class="hz-x hz-tip-left" data-tip="${esc(t('a.close'))}" aria-label="${esc(t('a.closeAria'))}">${ICONS.x}</button>
     <div class="hz-card-body"><div class="hz-meta"></div><div class="hz-left" hidden></div>
       <div class="hz-row"><div class="hz-row-main"><div class="hz-lbl hz-said-lbl"></div><div class="hz-ar hz-said"></div></div>
-        <button class="hz-round hz-mine" aria-label="আমার পড়া শুনি">${ICONS.headphones}</button></div>
-      <div class="hz-row"><div class="hz-row-main"><div class="hz-lbl">যা পড়া উচিত</div><div class="hz-ar hz-should"></div></div>
-        <button class="hz-round hz-right" data-tip="মিশারি আলাফাসির তিলাওয়াত (আশেপাশের শব্দসহ)" aria-label="আলাফাসির তিলাওয়াত">${ICONS.speaker}</button></div>
-      <div class="hz-row hz-ok-row"><button class="hz-round hz-okbtn" aria-label="ঠিক পড়েছি">${ICONS.check}</button><div class="hz-ok-lbl"></div></div>
+        <button class="hz-round hz-mine" aria-label="${esc(t('a.listenMine'))}">${ICONS.headphones}</button></div>
+      <div class="hz-row"><div class="hz-row-main"><div class="hz-lbl">${esc(t('a.shouldBe'))}</div><div class="hz-ar hz-should"></div></div>
+        <button class="hz-round hz-right" data-tip="${esc(t('a.listenAlafasyTip'))}" aria-label="${esc(t('a.listenAlafasy'))}">${ICONS.speaker}</button></div>
+      <div class="hz-row hz-ok-row"><button class="hz-round hz-okbtn" aria-label="${esc(t('a.iWasRight'))}">${ICONS.check}</button><div class="hz-ok-lbl"></div></div>
     </div></div>`;
   document.body.appendChild(pop);
   pop.addEventListener('click', (e) => { if (e.target === pop || e.target.closest('.hz-x')) closePopup(); });
@@ -396,18 +401,17 @@ function openPopup(c) { // c: { mode: 'err' | 'wk', word, pre, post, heard, hear
   left.hidden = !(c.mode === 'wk' && c.left > 0);
   left.replaceChildren();
   if (!left.hidden) {
-    left.append(part('hz-left-main', `আর ${bn(c.left)} বার না দেখে সঠিক পড়লে লাল দাগ চলে যাবে`));
-    left.append(part('hz-left-sub', (Number(c.streak) > 0 ? `এ পর্যন্ত পরপর ${bn(c.streak)} সেশন ঠিক হয়েছে। ` : '') +
-      'প্রতি সেশনে একবার গোনা হয়, পরপর হতে হবে — মাঝে ভুল বা আটকালে গোনা আবার শুরু থেকে; দেখে পড়লে গোনা হয় না।'));
+    left.append(part('hz-left-main', t('a.leftMain', { n: bn(c.left) })));
+    left.append(part('hz-left-sub', (Number(c.streak) > 0 ? t('a.leftStreak', { n: bn(c.streak) }) : '') + t('a.leftSub')));
   }
-  meta.textContent = c.mode === 'wk' ? `আগের সেশনে এখানে ${c.kind} — মোট ${bn(c.count)} বার, শেষবার ${c.last}${S.settings.get('history.popupTimes') && c.times ? ` · ${t('h.times', { t: bn(c.times), e: bn(c.count) })}` : ''}` : '';
-  pop.querySelector('.hz-said-lbl').textContent = c.mode === 'err' ? 'তুমি যা পড়েছ (মডেল যা শুনেছে)' : 'তখন তুমি যা পড়েছিলে (মডেল যা শুনেছিল)';
+  meta.textContent = c.mode === 'wk' ? `${t('a.wkMeta', { kind: c.kind, count: bn(c.count), last: c.last })}${S.settings.get('history.popupTimes') && c.times ? ` · ${t('h.times', { t: bn(c.times), e: bn(c.count) })}` : ''}` : '';
+  pop.querySelector('.hz-said-lbl').textContent = t(c.mode === 'err' ? 'a.saidErr' : 'a.saidWk');
   const said = pop.querySelector('.hz-said');
   said.replaceChildren();
   if (c.heard || c.heardpre) {
     if (c.heardpre) said.append(part('hz-ctx', `${c.heardpre} `));
     said.append(part('hz-target', c.heard || '—'));
-  } else said.textContent = c.mode === 'err' ? 'কিছু শোনা যায়নি — শব্দটা বাদ পড়েছে বলে মনে হচ্ছে' : 'তখনকার রেকর্ডিং পাওয়া যায়নি';
+  } else said.textContent = t(c.mode === 'err' ? 'a.heardNothing' : 'a.noRecording');
   said.classList.toggle('hz-none', !c.heard && !c.heardpre);
   const should = pop.querySelector('.hz-should');
   should.replaceChildren();
@@ -416,11 +420,11 @@ function openPopup(c) { // c: { mode: 'err' | 'wk', word, pre, post, heard, hear
   if (c.post) should.append(part('hz-ctx', ` ${c.post}`));
   const mine = pop.querySelector('.hz-mine');
   mine.disabled = c.mode === 'err' ? !c.clip : !c.rec;
-  mine.dataset.tip = c.mode === 'err' ? 'আমার পড়া শুনি (আগের দুই শব্দসহ)' : 'তখনকার আমার পড়া শুনি';
+  mine.dataset.tip = t(c.mode === 'err' ? 'a.mineErrTip' : 'a.mineWkTip');
   pop.querySelector('.hz-right').disabled = !c.src;
   const ok = pop.querySelector('.hz-okbtn');
-  ok.dataset.tip = c.mode === 'err' ? 'আমি সঠিকই পড়েছি — মডেল ভুল শুনেছে' : 'ঠিকই পড়েছিলাম — দাগ মুছে দাও, এভাবে পড়লে আর ভুল ধরবে না';
-  pop.querySelector('.hz-ok-lbl').textContent = c.mode === 'err' ? 'আমি সঠিকই পড়েছি' : 'ভুল দাগ — মুছে দাও';
+  ok.dataset.tip = t(c.mode === 'err' ? 'a.okErrTip' : 'a.okWkTip');
+  pop.querySelector('.hz-ok-lbl').textContent = t(c.mode === 'err' ? 'a.okErrLbl' : 'a.okWkLbl');
   pop.hidden = false;
 }
 
@@ -459,7 +463,7 @@ async function forgetMark(key) {
   const taught = await S.review.clear(S.asr, s, a, k);
   S.fol?.forgetMark(s, a, k);
   await persistAll();
-  toast(`দাগ মুছে দিলাম${taught ? ' — এখানে এভাবে পড়লে আর ভুল ধরবে না।' : '।'}`);
+  toast(t(taught ? 'a.markClearedTaught' : 'a.markCleared'));
   refreshProgress();
   render(true);
 }
@@ -467,12 +471,12 @@ async function forgetMark(key) {
 async function forgetSurah() {
   const s = S.weakSurah;
   if (!s) return;
-  if (!confirm('এই সূরার সব লাল দাগ মুছে দেব? যেসব জায়গার রেকর্ডিং আছে, সেগুলো ঠিক পড়া হিসেবে মনে রাখা হবে — পরে একইভাবে পড়লে আর ভুল ধরবে না।')) return;
+  if (!confirm(t('a.forgetSurahQ'))) return;
   const marked = S.history.weakRecords(s);
   await preloadRecordingsOf(marked.map((m) => m[2]), s);
   for (const [a, k] of marked) { await S.review.clear(S.asr, s, a, k); S.fol?.forgetMark(s, a, k); }
   await persistAll();
-  toast(`${bn(marked.length)}টা দাগ মুছে দিলাম — এসব জায়গায় এভাবে পড়লে আর ভুল ধরবে না।`);
+  toast(t('a.marksCleared', { n: bn(marked.length) }));
   refreshProgress();
   render(true);
 }
@@ -553,7 +557,7 @@ function refreshProgress() {
   renderWeak();
   S.store.blobNames('recordings').then(async (names) => {
     const bytes = await S.store.blobBytes('recordings');
-    $('storage-info').textContent = `ফোনে জমা: ${bn(S.history.data.sessions.length)}টা সেশন-এন্ট্রি, ${bn(names.length)}টা রেকর্ডিং (${bn((bytes / 1048576).toFixed(1))} MB)।`;
+    $('storage-info').textContent = t('a.storage', { n: bn(S.history.data.sessions.length), r: bn(names.length), mb: bn((bytes / 1048576).toFixed(1)) });
   });
 }
 
@@ -612,7 +616,7 @@ function showProgressView(id) {
   if (id === 'memorized') S.memUi.draw();
 }
 function buildProgressSeg() {
-  const names = { overview: 'সারাংশ', goals: 'লক্ষ্য', memorized: 'মুখস্থ', tests: 'টেস্ট', badges: 'অর্জন' };
+  const names = Object.fromEntries(['overview', 'goals', 'memorized', 'tests', 'badges'].map((k) => [k, t(`a.pv.${k}`)]));
   const list = S.progressViews.map(([id]) => id);
   $('hp-seg').innerHTML = list.map((id) => `<button role="radio" aria-checked="${id === S.pview}" data-v="${id}">${names[id]}</button>`).join('');
 }
@@ -659,11 +663,11 @@ async function exportData() {
 async function importData(file) {
   try {
     const obj = JSON.parse(await file.text());
-    const merge = confirm('ফাইলের ডেটা এখনকার ডেটার সাথে মেলাবে? (OK = মেলাও, Cancel = এখনকার সব ডেটা ফাইলের ডেটা দিয়ে বদলে দাও)');
+    const merge = confirm(t('a.importQ'));
     await S.store.importAll(obj, { merge });
-    toast('ডেটা ফেরত এসেছে — পাতা আবার খুলছে…');
+    toast(t('a.importOk'));
     setTimeout(() => location.reload(), 900);
-  } catch (e) { toast(`ফাইল পড়া যায়নি: ${e.message || e}`, 6000); }
+  } catch (e) { toast(t('a.importBad', { err: e.message || e }), 6000); }
 }
 
 // ---------------------------------------------------------------- boot
@@ -673,15 +677,17 @@ async function boot() {
   const sw = await registerServiceWorker();
   if (sw.reloading) return;
   quran.setData(await loadJson('quran.json'));
+  setStrings(await loadJson('ui-strings.json'));
   buildStatic();
   alafasy.setData(await loadJson('alafasy_words.json'));
   indopak.setData(await loadJson('indopak_words.json'));
 
   S.store = await openStore(params.get('memstore') === '1' ? memoryBackend() : idbBackend());
   const schema = await loadJson('settings-schema.json');
-  setStrings(await loadJson('ui-strings.json'));
+  globalThis.HifzIntro?.label(t('intro.preparing'));
   S.settings = createSettings({ store: S.store, schema, platform: 'M' });
   S.settings.onChange(onSettingsChange);
+  await applyLanguage(S.settings.get('view.lang'), schema);
   applyView(S.settings.get);
   buildTabs();
   setDivisions(await loadJson('divisions.json'));
@@ -691,15 +697,17 @@ async function boot() {
   S.settingsUi = createSettingsUi({ root: $('st'), settings: S.settings, ctx: {
     t, toast, confirmDlg, isLive: () => S.running, reload: () => location.reload(),
     previewWords: () => (indopak.ayahWords(1, 2) ?? []).concat(indopak.ayahWords(1, 3) ?? []).concat(indopak.ayahWords(1, 5) ?? []),
-    mics: () => S.mics ?? [{ v: 'default', label: 'যন্ত্রের নিজের মাইক' }],
+    mics: () => S.mics ?? [{ v: 'default', label: t('a.defaultMic') }],
     openOffline: () => S.listenUi.openOffline(),
   } });
   document.getElementById('app').dataset.ready = '1';
   navigator.mediaDevices?.enumerateDevices?.().then((l) => {
     const ins = l.filter((d) => d.kind === 'audioinput' && d.deviceId && d.deviceId !== 'default');
-    S.mics = [{ v: 'default', label: 'যন্ত্রের নিজের মাইক' }, ...ins.map((d, i) => ({ v: d.deviceId, label: d.label || `মাইক ${num(i + 1)}` }))];
+    S.mics = [{ v: 'default', label: t('a.defaultMic') }, ...ins.map((d, i) => ({ v: d.deviceId, label: d.label || t('a.micN', { n: num(i + 1) }) }))];
   }).catch(() => {});
-  setTimeout(() => document.documentElement.classList.remove('st-boot'), 900);
+  if (globalThis.HifzIntro?.heldBoot) { // the opening beat of the app (frame rules, title) starts once the intro book has gone
+    globalThis.HifzIntro.gone.then(() => { const hh = document.documentElement; hh.classList.add('st-boot'); setTimeout(() => hh.classList.remove('st-boot'), 900); });
+  } else setTimeout(() => document.documentElement.classList.remove('st-boot'), 900);
   const data = { sessions: S.store.get('sessions', []), weak: S.store.get('weak', {}), index: S.store.get('index', {}) };
   for (const n of await S.store.blobNames('recordings')) S.recNames.add(n);
   for (const n of await S.store.blobNames('clips')) S.clips.set(n, await S.store.getBlob('clips', n));
@@ -732,6 +740,7 @@ async function boot() {
   $('hp-seg').addEventListener('click', (e) => { const b = e.target.closest('button[data-v]'); if (b) showProgressView(b.dataset.v); });
   applyLook();
   S.ui = S.store.get('ui', {});
+  { const day = localStorage.getItem('hifz-introday'); if (day && S.ui.introDay !== day) { S.ui = { ...S.ui, introDay: day }; S.store.set('ui', S.ui); } } // last day the intro was shown (also kept in the localStorage mirror the intro reads)
   applyStartAt();
   makeFollower();
   render(true);
@@ -745,20 +754,23 @@ async function boot() {
   // the model: download (first visit only), then ready
   const card = $('modelcard');
   const cached = await modelReady();
-  $('modeltext').textContent = cached ? 'মডেল তৈরি হচ্ছে…' : 'মডেল নামছে (প্রায় ১৯ MB, শুধু প্রথমবার)…';
+  if (!cached) globalThis.HifzIntro?.ready(); // first visit: the 19 MB download has its own progress card; do not hold the book for it
+  $('modeltext').textContent = t(cached ? 'a.modelBuilding' : 'a.modelDownload');
   try {
     const th = S.settings.get('device.threads');
     S.asr = await createRecognizer({ threads: th === 'auto' ? undefined : th, onProgress: ({ loaded, total }) => {
       $('modelbar').style.width = `${Math.min(100, (loaded / total) * 100)}%`;
-      if (loaded >= total * 0.98) $('modeltext').textContent = 'মডেল তৈরি হচ্ছে…';
+      if (loaded >= total * 0.98) $('modeltext').textContent = t('a.modelBuilding');
     } });
     $('modelbar').style.width = '100%';
     S.ready = true;
     card.hidden = true;
     $('rec').disabled = false;
-    $('footer').textContent = `মডেল: quran-asr-tiny · ${S.asr.info.backend}, ${S.asr.info.threads} থ্রেড। প্রথমবারের পর ইন্টারনেট ছাড়াই চলবে। স্বয়ংক্রিয় যাচাই ভুল করতে পারে; এটা শিক্ষকের বিকল্প নয়।`;
+    globalThis.HifzIntro?.ready();
+    $('footer').textContent = t('a.modelFooter', { backend: S.asr.info.backend, threads: S.asr.info.threads });
   } catch (e) {
-    $('modeltext').textContent = `মডেল চালু হয়নি: ${e.message || e}`;
+    $('modeltext').textContent = t('a.modelFail', { err: e.message || e });
+    globalThis.HifzIntro?.ready();
     console.error(e);
   }
 }
@@ -848,7 +860,7 @@ document.addEventListener('keydown', (e) => {
     const s = Number(m.dataset.es);
     const a = Number(m.dataset.ea);
     const last = quran.surahInfo(s).ayahs;
-    const sh = sheet(`<h2>${esc(quran.surahInfo(s).english)} · আয়াত ${bn(a)}</h2><div class="btn-row"><button class="btn" data-g="listen">${esc(t('r.menu.listen'))}</button><button class="btn" data-g="test">${esc(t('r.menu.test'))}</button></div>`);
+    const sh = sheet(`<h2>${esc(quran.surahInfo(s).english)} · ${esc(t('fmt.ayah1', { a: bn(a) }))}</h2><div class="btn-row"><button class="btn" data-g="listen">${esc(t('r.menu.listen'))}</button><button class="btn" data-g="test">${esc(t('r.menu.test'))}</button></div>`);
     sh.el.addEventListener('click', (e) => {
       const g = e.target.closest('[data-g]')?.dataset.g;
       if (!g) return;
@@ -876,6 +888,7 @@ window.hifzTest = {
     });
   },
   kv: { get: (k, d) => S.store.get(k, d), set: (k, v) => S.store.set(k, v) },
+  openStoredTest: (rec) => S.testUi.showStored(rec), // shows the results sheet of a made-up stored test record
   listenState: () => S.listenUi?.state(),
   testRange: null, testState: () => S.testUi?.state(),
   state: () => ({ mode: S.tab, running: S.running, paused: !!S.fol?.paused, view: S.view?.head ?? null, test: window.hifzTest.testState?.() ?? null, listen: window.hifzTest.listenState?.() ?? null }),
@@ -889,4 +902,4 @@ function routeFromHash() {
 }
 S.routeFromHash = routeFromHash;
 S.start = start; S.stop = stop; S.togglePause = togglePause; S.render = render; S.selectTab = selectTab; S.refreshProgress = refreshProgress;
-boot().catch((e) => { console.error(e); toast(`শুরু করা যায়নি: ${e.message || e}`, 8000); });
+boot().catch((e) => { console.error(e); toast(t('a.startFail', { err: e.message || e }), 8000); });

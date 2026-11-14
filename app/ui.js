@@ -1,9 +1,8 @@
 // Small shared UI helpers: strings (data/ui-strings.json), toast with an optional action, confirm dialog, bottom sheet.
-import { fill } from '../core/fmt.js';
+import { t, setBase } from '../core/i18n.js';
 
-let STR = {};
-export const setStrings = (json) => { STR = json; };
-export const t = (id, vars) => { const s = STR[id]; return s === undefined ? id : (vars ? fill(s, vars) : s); };
+export const setStrings = setBase; // the Bengali source table; the selected language pack is set with core/i18n.js setPack
+export { t };
 export const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 export const $ = (id) => document.getElementById(id);
 
@@ -22,8 +21,8 @@ export function toast(msg, opt = 3500) {
   toast.timer = setTimeout(() => { el.hidden = true; }, o.action ? 6000 : (o.ms ?? 3500));
 }
 
-// confirmDlg('question', { ok: 'ঠিক আছে', cancel: 'না' }) -> Promise<boolean>
-export function confirmDlg(text, { ok = 'ঠিক আছে', cancel = 'না', danger = false } = {}) {
+// confirmDlg('question', { ok: 'OK label', cancel: 'No label' }) -> Promise<boolean>; the labels default to the language's OK / No
+export function confirmDlg(text, { ok = t('c.ok'), cancel = t('c.no'), danger = false } = {}) {
   return new Promise((resolve) => {
     const d = document.createElement('dialog');
     d.className = 'dlg';

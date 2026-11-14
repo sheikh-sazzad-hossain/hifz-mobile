@@ -1,0 +1,1460 @@
+{
+ "strings": {
+  "intro.preparing": "Sedang bersiap…",
+  "nav.tab.recite": "Setoran",
+  "nav.tab.test": "Ujian",
+  "nav.tab.listen": "Dengar",
+  "nav.tab.progress": "Kemajuan",
+  "nav.tab.settings": "Tetapan",
+  "nav.busy": "Rakaman sedang berjalan — hentikan dahulu (■), kemudian pergi ke halaman lain.",
+  "nav.themeTip": "Tukar warna: Kertas / Mushaf malam / Kertas lama (tekan lama untuk semua tetapan)",
+  "s.title": "Tetapan",
+  "s.search": "Cari tetapan…",
+  "s.searchEmpty": "Tiada tetapan dengan nama ini.",
+  "s.back": "Semua tetapan",
+  "s.changedN": "{n} diubah",
+  "s.rowReset": "Kembali kepada lalai",
+  "s.sectionReset": "Set semula bahagian ini",
+  "s.sectionResetQ": "Semua tetapan dalam “{group}” akan kembali kepada lalai. Teruskan?",
+  "s.allReset": "Set semula semua tetapan",
+  "s.allResetQ": "Semua tetapan akan kembali kepada lalai. Sesi, tanda, rakaman, ujian dan sasaran anda kekal. Teruskan?",
+  "s.resetDone": "Set semula selesai.",
+  "s.export": "Simpan tetapan ke fail",
+  "s.import": "Muat tetapan daripada fail",
+  "s.importOk": "{n} tetapan dimuatkan.",
+  "s.importSkip": "{n} tetapan dimuatkan, {m} tidak dikenali atau di luar julat — dilangkau.",
+  "s.importBad": "Fail tidak dapat dibaca: {err}",
+  "s.importWrong": "Ini bukan fail tetapan Pembantu Hafazan.",
+  "s.where": "Tetapan kekal pada telefon ini. Untuk memindahkannya ke telefon atau komputer lain gunakan ‘Simpan tetapan ke fail’.",
+  "s.whenNext": "Berkuat kuasa mulai sesi seterusnya",
+  "s.whenReload": "Berkuat kuasa apabila aplikasi dibuka semula",
+  "s.reloadNow": "Buka semula sekarang",
+  "s.live": "Rakaman sedang berjalan — berkuat kuasa selepas dihentikan",
+  "s.invalid": "Nilai ini tidak dibenarkan — nilai lama dikekalkan.",
+  "s.presetCustom": "Suai",
+  "s.presetApplied": "Pratetap “{name}” digunakan.",
+  "s.undo": "Buat asal",
+  "s.custom": "Suai…",
+  "s.advWarn": "Ini ialah pengiraan dalaman aplikasi. Nilai yang salah boleh melemahkan pengesanan kesilapan. Jika ragu, tekan “Set semula bahagian ini”.",
+  "s.advSummary": "Pengiraan dalaman — ubah dengan berhati-hati",
+  "s.contrast": "Kontras rendah: {r}:1 — mungkin sukar dibaca (4.5:1 atau lebih adalah lebih baik).",
+  "s.platOnly": "Telefon sahaja",
+  "r.listTip": "Lihat semua kesilapan sesi ini",
+  "r.listTitle": "Kesilapan sesi ini ({n})",
+  "r.ayahRef": "Ayat {a}",
+  "r.kind.skipped": "Tertinggal",
+  "r.kind.changed": "Membaca perkataan lain",
+  "r.kind.added": "Membaca perkataan tambahan",
+  "r.kind.peek": "Mengintai",
+  "r.listen": "Dengar",
+  "r.remove": "Abaikan",
+  "r.removed": "Diabaikan.",
+  "r.removedTaught": "Diabaikan — bacaan sebegini di sini tidak akan ditanda lagi.",
+  "r.removedTitle": "Diabaikan ({n})",
+  "r.restore": "Pulihkan",
+  "r.restored": "Dikira sebagai kesilapan semula.",
+  "r.removeAll": "Abaikan semua",
+  "r.removeAllQ": "Abaikan semua kesilapan sesi ini? Anda boleh memulihkannya dengan “Pulihkan”.",
+  "r.empty": "Belum ada kesilapan.",
+  "r.hintTip": "Petunjuk: papar perkataan seterusnya (tekan lama untuk baki ayat)",
+  "r.blockBanner": "Bacalah perkataan merah dengan betul — kemudian anda boleh teruskan.",
+  "r.lg.ok": "Betul",
+  "r.lg.bad": "Salah/tertinggal",
+  "r.lg.peek": "Petunjuk/intai",
+  "r.lg.pend": "Menyemak",
+  "r.lg.next": "Perkataan semasa",
+  "r.lg.weak": "Kelemahan lalu",
+  "r.lg.given": "Petunjuk",
+  "r.menu.listen": "Dengar dari sini",
+  "r.menu.test": "Uji dari sini",
+  "h.times": "Disetor {t} kali, {e} daripadanya salah",
+  "r.help.list": "Tekan pembilang <b>Salah/tertinggal</b> di atas untuk melihat semua kesilapan sesi ini serentak; <b>Abaikan</b> yang bukan kesilapan, <b>Pulihkan</b> jika perlu.",
+  "r.help.hint": "Tekan lama butang petunjuk untuk membuka baki ayat.",
+  "t.setupTitle": "Apa yang anda mahu uji?",
+  "t.suggested": "Dicadangkan untuk anda",
+  "t.myRanges": "Julat saya",
+  "t.myMemorized": "Hafazan saya",
+  "t.newRange": "Buat julat baharu",
+  "t.noMemorized": "Belum ada apa-apa yang ditanda sebagai hafazan",
+  "t.rename": "Namakan semula",
+  "t.delete": "Padam",
+  "t.up": "Naik",
+  "t.down": "Turun",
+  "t.deleteQ": "Padam julat “{name}”? (Keputusan ujian lama kekal)",
+  "t.rangeSummary": "Dipilih: {name} · {n} ayat",
+  "t.rules": "{q} soalan · setiap satu {w} perkataan · petunjuk {h} perkataan",
+  "t.changeRules": "Ubah peraturan",
+  "t.temporary": "Sementara (tiada apa disimpan)",
+  "t.start": "Mula ujian",
+  "t.emptyRange": "Julat ini tiada ayat",
+  "t.modelWait": "Menyediakan model…",
+  "t.starterTitle": "Untuk bermula",
+  "t.starterBody": "Hujung juz 30: surah {a} hingga surah {b}",
+  "t.markMemorized": "Tanda sebagai dihafal",
+  "t.resumeQ": "Ujian terakhir belum selesai ({i} / {n} soalan). Teruskan?",
+  "t.resume": "Teruskan",
+  "t.seeResults": "Lihat keputusan",
+  "t.discard": "Buang",
+  "t.introTitle": "Cara ujian berfungsi",
+  "t.intro1": "Setiap soalan memaparkan beberapa perkataan pertama — sambung bacaan tanpa melihat.",
+  "t.intro2": "Perkataan yang betul terbuka; pada akhirnya kad menjadi hijau (sempurna) atau merah (ada kesilapan).",
+  "t.intro3": "Jika tersekat: “perkataan seterusnya” atau “baki ayat” — mengintai dikira sebagai kesilapan.",
+  "t.intro4": "Leret kad ke tepi atau tekan “Soalan seterusnya” untuk melangkau soalan.",
+  "t.intro5": "Semuanya berjalan pada telefon, tanpa internet.",
+  "t.introOk": "Faham",
+  "t.go": "Mari!",
+  "t.ref": "Surah {n}. {english} · {span}",
+  "t.refHidden": "Surah dan ayat disembunyikan",
+  "t.eyeTip": "Papar / sembunyi nombor surah dan ayat",
+  "t.listening": "Mendengar… sambung selepas petunjuk",
+  "t.checking": "Menyemak…",
+  "t.peekWord": "Perkataan seterusnya",
+  "t.peekRest": "Baki ayat",
+  "t.next": "Soalan seterusnya",
+  "t.pass": "Sempurna!",
+  "t.failN": "{m} kesilapan",
+  "t.skipped": "Dilangkau",
+  "t.kind.stray": "Anda beralih ke surah lain",
+  "t.timeUp": "Masa tamat — selesaikan soalan ini",
+  "t.qOfN": "Soalan {i} / {n}",
+  "t.qTime": "Soalan {i} · baki {mm:ss}",
+  "t.qOpen": "Soalan {i}",
+  "t.mistakesN": "Kesilapan {m}",
+  "t.score": "Skor {p}%",
+  "t.streak": "Berturut {s}",
+  "t.paused": "Jeda — ujian dihentikan seketika. Tekan “Teruskan” untuk mendengar dari soalan yang sama.",
+  "t.continue": "Teruskan",
+  "t.end": "Tamat",
+  "t.autoPaused": "Senyap terlalu lama — ujian dijedakan.",
+  "t.resTitle": "Keputusan ujian",
+  "t.tempLabel": "Ujian sementara — tiada apa disimpan",
+  "t.resScore": "{p}%",
+  "t.resCorrect": "Betul {c} / {n}",
+  "t.resBest": "Rentetan terpanjang: {s}",
+  "t.resTime": "Masa: {time}",
+  "t.resAll": "Semua kesilapan ({n})",
+  "t.resRemoved": "Kesilapan yang diabaikan ({n})",
+  "t.resNone": "Tiada kesilapan — masyaAllah!",
+  "t.keepGoing": "Setor lagi",
+  "t.done": "Selesai",
+  "t.replay": "Ujian yang sama lagi",
+  "t.newTest": "Ujian baharu",
+  "t.saveThis": "Simpan julat ini",
+  "t.sg.warmup.name": "Pemanasan",
+  "t.sg.warmup.sub": "Yang paling anda kuasai",
+  "t.sg.weak.name": "Bahagian lemah",
+  "t.sg.weak.sub": "Tempat anda paling banyak membuat kesilapan",
+  "t.sg.stale.name": "Lama tidak disetor",
+  "t.sg.stale.sub": "Lama tidak dibaca dari hafazan",
+  "t.sg.fresh.name": "Hafazan baharu",
+  "t.sg.fresh.sub": "Ditambah ke senarai hafazan dalam 14 hari lepas",
+  "t.sg.mixed.name": "Campuran",
+  "t.sg.mixed.sub": "Daripada seluruh senarai hafazan anda",
+  "l.from": "Dari ayat",
+  "l.to": "Hingga ayat",
+  "l.pick": "Pilih mengikut juz atau halaman",
+  "l.speedChip": "{x}×",
+  "l.ayahChip": "Ayat ×{n}",
+  "l.rangeChip": "Bahagian ×{n}",
+  "l.rangeChipInf": "Bahagian ∞",
+  "l.gapChip": "Sela {s} s",
+  "l.sleepChip": "Tidur {m} min",
+  "l.play": "Main",
+  "l.pause": "Jeda",
+  "l.prev": "Ayat sebelumnya",
+  "l.next": "Ayat seterusnya",
+  "l.idle": "Pilih apa yang hendak didengar dan tekan ▶.",
+  "l.loading": "Memuatkan audio…",
+  "l.playing": "Ayat {a} · {k} / {n} kali",
+  "l.round": "Pusingan {r}",
+  "l.gap": "Sela… {s}",
+  "l.pausedS": "Dijeda",
+  "l.ended": "Tamat.",
+  "l.again": "Main semula",
+  "l.error": "Audio tidak dapat dimainkan — adakah anda dalam talian? Untuk mendengar tanpa internet, muat turun surah dahulu.",
+  "l.offline": "Tersedia luar talian",
+  "l.online": "Perlukan internet — muat turun",
+  "l.slept": "Pemasa tidur — pendengaran dihentikan.",
+  "l.offTitle": "Audio luar talian",
+  "l.offRow": "{n}. {english} — {size}",
+  "l.offGet": "Muat turun",
+  "l.offGetting": "Memuat turun {p}%",
+  "l.offHave": "Sudah dimuat turun",
+  "l.offTooBig": "Terlalu besar — internet sahaja",
+  "l.offDel": "Padam",
+  "l.offDelQ": "Padam audio luar talian surah {english}? Anda boleh memuat turunnya semula kemudian.",
+  "l.offTotal": "Jumlah ruang: {mb} MB",
+  "l.offGetAll": "Muat turun semua",
+  "l.offGetAllQ": "{n} surah, kira-kira {mb} MB akan dimuat turun. Teruskan?",
+  "pk.title": "Pilih julat",
+  "pk.unit": "Surah · Juz · Hizb · Halaman · Ayat",
+  "pk.quarters": "Papar rubu‘ (suku)",
+  "pk.pageNote": "Nombor halaman mengikut cetakan Madinah (604 halaman)",
+  "pk.summary": "Dipilih: {n} ayat ({parts})",
+  "pk.clear": "Kosongkan",
+  "pk.save": "Simpan dengan nama",
+  "pk.use": "Guna ini",
+  "pk.namePh": "Beri nama (cth. Ulang kaji Surah Al-Mulk)",
+  "pk.saved": "“{name}” disimpan.",
+  "pk.full": "Tidak boleh menyimpan lebih 50 julat — padam yang lama.",
+  "m.title": "Senarai hafazan",
+  "m.summary": "Jumlah {n} ayat ditanda sebagai dihafal (dalam {s} surah)",
+  "m.add": "Tambah hafazan",
+  "m.edit": "Ubah",
+  "m.remove": "Keluarkan",
+  "m.removeQ": "Keluarkan surah {english} daripada senarai hafazan? (Sesi dan tanda kekal)",
+  "m.sgTitle": "Sejarah anda menunjukkan bahagian ini disetor dengan baik tanpa melihat:",
+  "m.sgAdd": "Tambah",
+  "m.sgAddAll": "Tambah semua",
+  "m.empty": "Belum ada yang ditanda. Tekan “Tambah hafazan” dan pilih surah atau ayat.",
+  "g.title": "Sasaran",
+  "g.new": "Sasaran baharu",
+  "g.create": "Cipta sasaran",
+  "g.s1": "Jenis sasaran apa?",
+  "g.s2": "Bahagian mana?",
+  "g.s3": "Bagaimana hendak dibahagi?",
+  "g.s4": "Pada hari apa?",
+  "g.s5": "Apa berlaku di penghujung?",
+  "g.type.memorize": "Hafazan baharu (menyetor bahagian baharu tanpa melihat)",
+  "g.type.review": "Ulang kaji (menyetor semula bahagian yang dihafal tanpa melihat)",
+  "g.type.recite": "Tilawah (sebarang bacaan)",
+  "g.type.test": "Ujian (bilangan soalan)",
+  "g.order.normal": "Mengikut susunan biasa",
+  "g.order.reverse": "Mengikut susunan terbalik (dari surah terakhir)",
+  "g.strict": "Kekalkan susunan — bahagian seterusnya tidak dikira sebelum yang terdahulu selesai",
+  "g.plan.daily": "Jumlah tetap setiap hari",
+  "g.plan.bydate": "Selesai menjelang tarikh tertentu",
+  "g.plan.flexible": "Sebanyak yang mampu — bakinya ditambah ke hari berikutnya",
+  "g.unit.ayah": "ayat",
+  "g.unit.page": "halaman",
+  "g.unit.juz": "juz",
+  "g.unit.minute": "minit",
+  "g.unit.word": "perkataan",
+  "g.unit.question": "soalan",
+  "g.round.none": "Mengikut hasil pembahagian",
+  "g.round.up": "Halaman penuh — ke atas",
+  "g.round.down": "Halaman penuh — ke bawah",
+  "g.round.nearest": "Halaman penuh — terdekat",
+  "g.sch.daily": "Setiap hari",
+  "g.sch.days": "Hari-hari tertentu dalam seminggu",
+  "g.sch.perWeek": "{n} hari seminggu",
+  "g.cycle.auto": "Mula semula (khatam baharu) secara automatik",
+  "g.cycle.manual": "Saya akan memulakannya",
+  "g.cycle.off": "Berhenti",
+  "g.autoName": "{type}: {range}",
+  "g.tpl.manzil": "Khatam mingguan (7 manzil)",
+  "g.tpl.page": "Hafaz 1 halaman baharu setiap hari",
+  "g.tpl.juz": "Ulang kaji 1 juz setiap hari",
+  "g.tpl.minutes": "15 minit sehari",
+  "g.today": "Sasaran hari ini",
+  "g.todayLine": "{name}: {done} / {target} {unit}",
+  "g.progressLine": "Jumlah {done} / {total} {unit} · tarikh tamat {date}",
+  "g.restart": "Mula semula",
+  "g.completed": "Selesai — alhamdulillah!",
+  "g.pause": "Jeda",
+  "g.resumeGoal": "Sambung",
+  "g.edit": "Ubah",
+  "g.delete": "Padam",
+  "g.deleteQ": "Padam sasaran “{name}”? (Sesi kekal seperti sedia ada)",
+  "st.current": "{n} hari berturut-turut",
+  "st.best": "Terpanjang: {n} hari berturut-turut",
+  "st.keep": "Setor hari ini untuk mengekalkan rentetan",
+  "st.cellTip": "{date}: {m} min",
+  "bd.title": "Pencapaian",
+  "bd.new": "Pencapaian baharu: {name}",
+  "bd.locked": "Belum — {req}",
+  "x.add": "Tambah bacaan yang dibuat di luar aplikasi",
+  "x.title": "Tambah bacaan yang dibuat di luar aplikasi",
+  "x.date": "Tarikh",
+  "x.minutes": "Berapa minit",
+  "x.range": "Bahagian mana (pilihan)",
+  "x.note": "Catatan",
+  "x.int.memorize": "Menyetor hafazan baharu kepada seseorang",
+  "x.int.review": "Ulang kaji",
+  "x.int.recite": "Membaca dari mushaf",
+  "x.save": "Tambah",
+  "x.delete": "Padam",
+  "x.deleteQ": "Padam sesi yang ditambah secara manual ini?",
+  "h.f.all": "Semua",
+  "h.f.hifz": "Hafazan",
+  "h.f.look": "Halaman",
+  "h.f.test": "Ujian",
+  "h.f.manual": "Luar",
+  "h.f.listen": "Pendengaran",
+  "h.chip.test": "Ujian",
+  "h.chip.manual": "Luar",
+  "h.chip.listen": "Pendengaran",
+  "h.play": "Dengar",
+  "h.testRow": "{date} · {range} · {p}% · betul {c}/{n}",
+  "h.testEditNote": "Mengabaikan kesilapan di sini hanya mengubah skor ujian ini; untuk memadam tanda lemah, tekan perkataan merahnya.",
+  "h.seg": "Ringkasan · Sasaran · Hafazan · Ujian · Pencapaian",
+  "h.weekN": "{n} hari lepas",
+  "help.1": "<b>Tekan butang mikrofon</b> dan mula membaca; aplikasi mengenali suratnya sendiri (anda juga boleh memilihnya di atas). Menekan <b>■</b> menamatkan sesi dan menyimpannya.",
+  "help.2": "Perkataan terbuka semasa anda membaca: <span class=\"hz-ok\">hijau = betul</span>, <span class=\"hz-bad\">merah = salah/tertinggal</span> (dengan perkataan amaran), <span class=\"hz-hint\">ungu = petunjuk/tersekat</span>. Kotak biru berkelip = perkataan yang perlu anda baca sekarang.",
+  "help.3": "Jeda dengan butang <b>Jeda</b>, lihat dan dengar perkataan merah, kemudian tekan butang yang sama untuk menyambung. Jika mahu, baca semula dari ayat terdahulu untuk membetulkan kesilapan; aplikasi akan mengikut dari situ.",
+  "help.4": "Apabila anda menghabiskan satu surah dan memulakan yang seterusnya (atau mana-mana surah lain), aplikasi beralih sendiri ke sana — ia mengikut selagi anda membaca.",
+  "help.5": "<b>Butang mata</b> bertukar antara membaca dari teks (semua teks dipaparkan) dan dari hafazan (teks disembunyikan).",
+  "help.6": "Jika tersekat tekan <b>Petunjuk</b>, atau <b>diam</b> (selama saat yang ditetapkan pada “Alafasy bermula selepas jeda” di atas, pada mulanya {wait}): Mishary Alafasy akan menyambung bacaan dari situ dan perkataan terbuka dalam warna ungu. Apabila anda mula membaca semula (atau menekan Jeda/Berhenti) beliau berhenti dan aplikasi mendengar anda. Tekan lama butang petunjuk untuk membuka baki ayat.",
+  "help.7": "<b>Ketik perkataan merah</b> untuk mendengar apa yang anda baca dan apa yang sepatutnya dibaca — kedua-duanya bersama perkataan di sekelilingnya. Jika anda membacanya dengan betul tekan ✓.",
+  "help.8": "Perkataan yang anda silap atau tersekat pada sesi lalu kekal berwarna <span class=\"hz-w1 hz-swatch\">cerah</span> hingga <span class=\"hz-w3 hz-swatch\">merah tua</span>; selepas dibaca betul dari hafazan {clear} kali berturut-turut, tandanya hilang.",
+  "help.9": "Jika anda rasa sesuatu tanda silap (semasa tidak merakam, atau dalam tab <b>Kemajuan</b>) ketik kotak merahnya: dengar bacaan anda dan tekan <b>✓ Tanda silap — buang</b>. Tanda hilang dan bacaan sebegitu tidak akan ditanda lagi.",
+  "help.10": "Dalam tab <b>Kemajuan</b> setiap surah mempunyai jalur berwarna mengikut ayat — sekali pandang nampak ayat mana yang paling lemah (merah tua). Ketik kotak untuk membuka ayat itu di bawah.",
+  "help.11": "Pada telefon: model (kira-kira 19 MB) dimuat turun kali pertama, kemudian berfungsi tanpa internet. Semua data kekal pada telefon ini — anda boleh membuat sandaran ke fail dari tab <b>Kemajuan</b>. Semakan automatik boleh tersilap; ia bukan pengganti guru.",
+  "a.autoSurah": "Automatik — mengenali surah dengan mendengar",
+  "a.lookOn": "Dari hafazan: sembunyi teks",
+  "a.lookOff": "Membaca: papar teks penuh",
+  "a.pauseResumeTip": "Teruskan — dari tempat anda berhenti",
+  "a.pauseTip": "Jeda — berhenti di sini, boleh disambung kemudian",
+  "a.stopTip": "Berhenti — menamatkan dan menyimpan sesi",
+  "a.recTip": "Mula merakam — mula membaca",
+  "a.stop": "Berhenti",
+  "a.record": "Rakam",
+  "a.micFail": "Mikrofon tidak dapat dihidupkan: {err}",
+  "a.maxRec": "Masa rakaman maksimum dicapai — dihentikan.",
+  "a.listening": "Mendengar…",
+  "a.checking": "Menyemak…",
+  "a.tooShort": "Rakaman terlalu pendek.",
+  "a.noMatch": "Tidak sepadan dengan mana-mana ayat. Baca sedikit lebih lama, atau pilih surah sendiri.",
+  "a.entry": "Surah {english}: {words} perkataan, ketepatan {acc}%, kesilapan {missed}, tersekat {stuck}",
+  "a.saved": "Sesi disimpan — {parts}. Lihat semuanya dalam tab Kemajuan.",
+  "a.close": "Tutup",
+  "a.closeAria": "Tutup",
+  "a.listenMine": "Dengar bacaan saya",
+  "a.shouldBe": "Yang sepatutnya",
+  "a.listenAlafasyTip": "Bacaan Mishary Alafasy (bersama perkataan di sekelilingnya)",
+  "a.listenAlafasy": "Bacaan Alafasy",
+  "a.iWasRight": "Saya membacanya dengan betul",
+  "a.leftMain": "Baca dengan betul dari hafazan {n} kali lagi dan tanda merah hilang",
+  "a.leftStreak": "Setakat ini {n} sesi berturut-turut betul. ",
+  "a.leftSub": "Dikira sekali setiap sesi dan mesti berturut-turut — kesilapan atau tersekat memulakan semula kiraan; membaca dari teks tidak dikira.",
+  "a.wkMeta": "Pada sesi terdahulu di sini: {kind} — jumlah {count} kali, kali terakhir {last}",
+  "a.saidErr": "Apa yang anda baca (apa yang model dengar)",
+  "a.saidWk": "Apa yang anda baca ketika itu (apa yang model dengar)",
+  "a.heardNothing": "Tiada apa didengar — perkataan itu nampaknya tertinggal",
+  "a.noRecording": "Rakaman ketika itu tidak tersedia",
+  "a.mineErrTip": "Dengar bacaan saya (dengan dua perkataan sebelumnya)",
+  "a.mineWkTip": "Dengar bacaan saya ketika itu",
+  "a.okErrTip": "Saya membacanya dengan betul — model tersalah dengar",
+  "a.okWkTip": "Saya memang membacanya dengan betul — buang tanda, bacaan sebegini tidak akan ditanda lagi",
+  "a.okErrLbl": "Saya membacanya dengan betul",
+  "a.okWkLbl": "Tanda silap — buang",
+  "a.markCleared": "Tanda dibuang",
+  "a.markClearedTaught": "Tanda dibuang — bacaan sebegini di sini tidak akan ditanda lagi.",
+  "a.forgetSurahQ": "Buang semua tanda merah surah ini? Tempat yang ada rakaman akan diingat sebagai dibaca betul — membacanya dengan cara sama kemudian tidak akan ditanda lagi.",
+  "a.marksCleared": "{n} tanda dibuang — membaca tempat-tempat ini sebegini tidak akan ditanda lagi.",
+  "a.storage": "Disimpan pada telefon: {n} entri sesi, {r} rakaman ({mb} MB).",
+  "a.pv.overview": "Ringkasan",
+  "a.pv.goals": "Sasaran",
+  "a.pv.memorized": "Hafazan",
+  "a.pv.tests": "Ujian",
+  "a.pv.badges": "Pencapaian",
+  "a.importQ": "Gabungkan data dalam fail dengan data semasa? (OK = gabung, Batal = gantikan semua data semasa dengan data dalam fail)",
+  "a.importOk": "Data dipulihkan — membuka semula halaman…",
+  "a.importBad": "Tidak dapat membaca fail: {err}",
+  "a.defaultMic": "Mikrofon bawaan peranti",
+  "a.micN": "Mikrofon {n}",
+  "a.modelBuilding": "Menyediakan model…",
+  "a.modelDownload": "Memuat turun model (kira-kira 19 MB, kali pertama sahaja)…",
+  "a.modelFooter": "Model: quran-asr-tiny · {backend}, {threads} thread. Selepas kali pertama ia berfungsi tanpa internet. Semakan automatik boleh tersilap; ia bukan pengganti guru.",
+  "a.modelFail": "Model tidak bermula: {err}",
+  "a.ayahMenuTitle": "{english} · Ayat {a}",
+  "a.startFail": "Tidak dapat bermula: {err}",
+  "p.sura": "Surah {n}. {english}",
+  "p.paused": "Dijeda — pendengaran bermula semula apabila anda menyambung.",
+  "p.waiting": "Mendengar… mula membaca, selepas beberapa perkataan ia <b>mengenali suratnya sendiri</b>.",
+  "p.autoDetected": "Dikesan secara automatik",
+  "p.hCount": "Ayat {a} / {n}",
+  "p.hOk": "Betul {n}",
+  "p.hBad": "Salah/tertinggal {n}",
+  "p.hHint": "Petunjuk {n}",
+  "p.stray": "Kesilapan: ini kedengaran seperti ayat {ayah} Surah {english}. Anda sedang membaca Surah {current}; baca semula dari perkataan yang ditanda biru.",
+  "p.pausedBanner": "Dijeda: ketik perkataan merah untuk melihat dan mendengar. Apabila disambung ia mendengar dari sini; anda juga boleh membaca semula dari ayat terdahulu untuk membetulkan perkataan merah.",
+  "p.cellWeak": "{span}: {n} perkataan lemah",
+  "p.cellOk": "baik",
+  "p.cellNone": "belum dibaca dari hafazan",
+  "p.empty": "Belum ada sesi. Rakam dalam tab Setoran; apabila anda berhenti (■) sesi disimpan di sini.",
+  "p.cSessions": "Jumlah sesi",
+  "p.cSurahs": "Surah yang dilatih",
+  "p.cMinutes": "Jumlah minit",
+  "p.cWeek": "Minggu ini",
+  "p.cWeekN": "{n} hari lepas",
+  "p.ayahCount": "{a}/{n} ayat",
+  "p.weakCount": "{n} perkataan lemah",
+  "p.th.surah": "Surah",
+  "p.th.state": "Keadaan",
+  "p.th.acc": "Ketepatan terkini",
+  "p.th.read": "Sebanyak mana dibaca",
+  "p.th.weak": "Bahagian lemah",
+  "p.th.sessions": "Sesi",
+  "p.th.last": "Latihan terakhir",
+  "p.th.when": "Bila",
+  "p.th.surahAyah": "Surah (ayat)",
+  "p.th.mode": "Jenis",
+  "p.th.words": "Perkataan",
+  "p.th.acc2": "Ketepatan",
+  "p.th.missed": "Kesilapan",
+  "p.th.stuck": "Tersekat",
+  "p.th.time": "Masa",
+  "p.mode.look": "Membaca",
+  "p.mode.hifz": "Hafazan",
+  "p.mode.mixed": "Campuran",
+  "p.bySurah": "Keadaan hafazan mengikut surah",
+  "p.recent": "Sesi terkini",
+  "p.stateNote": "Keadaan: purata ketepatan {w} sesi hafazan terakhir — {good}% atau lebih = hafaz baik, {fair}–{good}% = sederhana. Sesi yang dibaca dari teks tidak dikira.",
+  "p.weakNote": "Bahagian lemah: setiap kotak ialah satu ayat, dari ayat 1 hingga akhir — {k0}, {k1}, {k2}. Ketik kotak untuk memaparkan ayat itu di bawah.",
+  "p.key0": "hijau = baik",
+  "p.key1": "merah muda ke tua = semakin lemah, semakin tua",
+  "p.key2": "kelabu = belum dibaca dari hafazan",
+  "p.hotChipTip": "Ketik untuk memaparkan di bawah",
+  "p.hotLabel": "Tempat paling lemah:",
+  "p.legend1": "baik",
+  "p.legend2": "merah muda ke tua = lebih banyak perkataan lemah",
+  "p.legend3": "belum dibaca dari hafazan",
+  "p.mapTitle": "Peta kelemahan mengikut ayat",
+  "p.mapSub": "Setiap kotak ialah satu ayat — ketik untuk melompat ke ayat itu dalam teks di bawah",
+  "p.weakHead": "{n} perkataan lemah. Merah muda = kadangkala salah/tersekat, merah tua = berulang kali. Selepas dibaca betul dari hafazan dalam {clear} sesi berturut-turut, tandanya hilang. <b>Ketik perkataan merah</b> untuk mendengar bacaan anda ketika itu; jika tanda itu silap anda boleh membuangnya.",
+  "p.noWeak": "Tiada bahagian lemah dalam surah ini — masyaAllah!",
+  "s.col.ok": "Betul",
+  "s.col.bad": "Salah",
+  "s.col.peek": "Intai",
+  "s.col.pend": "Menyemak",
+  "s.col.next": "Perkataan seterusnya",
+  "s.col.weak": "Kelemahan lama",
+  "s.col.listen": "Sorotan mendengar",
+  "s.on": "Hidup",
+  "s.off": "Mati",
+  "s.sum.alafasy": "Alafasy {v}",
+  "s.sum.added": "Tangkap perkataan tambahan",
+  "s.sum.addedOff": "Perkataan tambahan tidak ditangkap",
+  "s.sum.peekMistake": "Intai = kesilapan",
+  "s.sum.peekOk": "Intai bukan kesilapan",
+  "s.sum.hint": "Petunjuk {v}",
+  "s.sum.speed": "Kelajuan {v}",
+  "s.sum.perAyah": "Setiap ayat ×{n}",
+  "s.sum.weekStart": "Minggu bermula {v}",
+  "s.sum.countTests": "Ujian turut dikira",
+  "s.sum.noTests": "Ujian tidak dikira",
+  "s.sum.good": "Hafaz baik {v}",
+  "s.sum.clear": "Tanda hilang selepas {n} sesi berturut-turut",
+  "s.sum.arabic": "Arab {v}",
+  "s.sum.motion": "Gerakan {v}",
+  "s.sum.awake": "Skrin kekal menyala",
+  "s.sum.awakeOff": "Skrin seperti biasa",
+  "bd.n.first": "Langkah pertama",
+  "bd.r.first": "Simpan sesi pertama anda",
+  "bd.n.streak7": "Seminggu berturut-turut",
+  "bd.r.streak7": "Membaca 7 hari berturut-turut",
+  "bd.n.streak30": "Sebulan berturut-turut",
+  "bd.r.streak30": "Membaca 30 hari berturut-turut",
+  "bd.n.sessions100": "Sesi keseratus",
+  "bd.r.sessions100": "Jumlah 100 sesi",
+  "bd.n.hours10": "Sepuluh jam",
+  "bd.r.hours10": "Jumlah 10 jam bacaan",
+  "bd.n.good1": "Surah mantap pertama",
+  "bd.r.good1": "Bawa satu surah ke ‘hafaz baik’",
+  "bd.n.good5": "Lima surah mantap",
+  "bd.r.good5": "5 surah ‘hafaz baik’",
+  "bd.n.test100": "Ujian sempurna",
+  "bd.r.test100": "100% dalam ujian sekurang-kurangnya 10 soalan",
+  "bd.n.tests10": "Ujian berkala",
+  "bd.r.tests10": "Selesaikan 10 ujian",
+  "bd.n.juz1": "Satu juz dihafal",
+  "bd.r.juz1": "Satu juz penuh dalam senarai hafazan",
+  "bd.n.cleared50": "Mahir membuang tanda",
+  "bd.r.cleared50": "Buang 50 tanda lemah dengan membaca betul dari hafazan",
+  "bd.n.goal1": "Sasaran tercapai",
+  "bd.r.goal1": "Capai sasaran harian buat kali pertama",
+  "app.title": "Pembantu Hafazan",
+  "c.ok": "OK",
+  "c.no": "Tidak",
+  "fmt.ayah1": "Ayat {a}",
+  "fmt.ayahN": "Ayat {a}–{b}",
+  "fmt.durMS": "{m} min {s} s",
+  "fmt.durS": "{s} s",
+  "u.s": "{n} saat",
+  "u.min": "{n} minit",
+  "u.words": "{n} perkataan",
+  "u.ayah": "{n} ayat",
+  "u.sC": "{n} s",
+  "u.minC": "{n} min",
+  "hk.missed": "Salah/tertinggal",
+  "hk.hint": "Anda tersekat (petunjuk)",
+  "hk.slip": "Silap, dibetulkan dengan membaca semula",
+  "gr.none": "Dibaca dari teks sahaja",
+  "gr.good": "Hafaz baik",
+  "gr.fair": "Sederhana",
+  "gr.weak": "Perlu lebih latihan",
+  "d.0": "Ahd",
+  "d.1": "Isn",
+  "d.2": "Sel",
+  "d.3": "Rab",
+  "d.4": "Kha",
+  "d.5": "Jum",
+  "d.6": "Sab",
+  "g.nParts": "{n} bahagian",
+  "g.minutesNote": "{n} min {note}",
+  "g.mode.look": "Membaca",
+  "g.mode.hifz": "Hafazan",
+  "g.mode.mixed": "Campuran",
+  "pk.l.juz": "Juz {n}",
+  "pk.l.hizb": "Hizb {n}",
+  "pk.l.rub": "Rubu‘ {n}",
+  "pk.l.page": "Halaman {n}",
+  "pk.l.pages": "Halaman {a}–{b}",
+  "pk.l.mem": "Bahagian hafazan saya",
+  "pk.pageRange": "Halaman {from} hingga {to}",
+  "pk.u.surah": "Surah",
+  "pk.u.juz": "Juz",
+  "pk.u.hizb": "Hizb",
+  "pk.u.page": "Halaman",
+  "pk.u.ayah": "Ayat",
+  "t.ayahBadge": "{n} ayat",
+  "l.artist": "Mishary Rashid Alafasy",
+  "m.sugRow": "Surah {n}. {english}: ayat {a}–{b}",
+  "m.cover": "{c} / {n} ayat",
+  "t.starterRange": "{n}. {english}",
+  "a.sub": "Mendengar setoran hafazan anda dan menangkap kesilapan serta-merta · mengingati tempat anda kerap tersekat",
+  "a.themeAria": "Tukar warna",
+  "a.lblSurah": "Surah",
+  "a.lblWait": "Alafasy bermula selepas jeda selama",
+  "a.lblWaitSub": "Berapa saat senyap",
+  "a.howTo": "Cara menggunakan",
+  "a.weakTitle": "Tempat anda kerap tersekat",
+  "a.pickSurahAria": "Pilih surah",
+  "a.clearAll": "Buang semua tanda",
+  "a.clearAllTip": "Buang semua tanda merah surah ini (bertanya dahulu)",
+  "a.export": "Pindahkan data ke fail (sandaran)",
+  "a.import": "Pulihkan data daripada fail",
+  "a.install": "Tambah sebagai aplikasi",
+  "a.timerAria": "Masa setoran",
+  "a.pauseAria": "Jeda",
+  "a.lookAria": "Membaca / dari hafazan",
+  "a.hintAria": "Petunjuk"
+ },
+ "settings": {
+  "recite.waitS": {
+   "label": "Alafasy bermula selepas jeda selama",
+   "help": "Berapa saat senyap sebelum bantuan bermula; ‘Mati’ = tidak pernah",
+   "sub": "Apabila anda tersekat",
+   "options": {
+    "0": "Mati"
+   }
+  },
+  "recite.silenceHelp": {
+   "label": "Apa berlaku apabila anda diam",
+   "help": "Sebanyak mana bantuan yang diberi aplikasi apabila anda tersekat",
+   "sub": "Apabila anda tersekat",
+   "options": {
+    "surah": "Alafasy membaca hingga akhir surah",
+    "ayah": "Hingga akhir ayat",
+    "words3": "3 perkataan seterusnya",
+    "word": "Perkataan seterusnya sahaja",
+    "show": "Papar perkataan seterusnya sahaja, tanpa bunyi"
+   }
+  },
+  "recite.promptOnLook": {
+   "label": "Bantuan juga semasa membaca dari teks",
+   "help": "Bantuan datang selepas senyap walaupun butang mata dihidupkan",
+   "sub": "Apabila anda tersekat"
+  },
+  "detect.changed": {
+   "label": "Tangkap perkataan yang salah",
+   "help": "Perkataan menjadi merah apabila anda membaca perkataan lain sebagai gantinya",
+   "sub": "Kesilapan apa yang ditangkap"
+  },
+  "detect.skipped": {
+   "label": "Tangkap perkataan yang tertinggal",
+   "help": "Perkataan menjadi merah apabila anda terus tanpa membacanya",
+   "sub": "Kesilapan apa yang ditangkap"
+  },
+  "detect.added": {
+   "label": "Tangkap perkataan tambahan",
+   "help": "Perkataan seterusnya menjadi merah apabila anda membaca sesuatu yang berlebihan dalam ayat; mematikannya mengurangkan beban telefon",
+   "sub": "Kesilapan apa yang ditangkap"
+  },
+  "detect.stray": {
+   "label": "Beri amaran apabila beralih ke surah lain",
+   "help": "Sepanduk merah dan bunyi amaran apabila anda tergelincir ke ayat serupa dalam surah lain",
+   "sub": "Kesilapan apa yang ditangkap"
+  },
+  "detect.confirmedWords": {
+   "label": "Perkataan dibaca betul sebelum peralihan surah dikira salah",
+   "help": "Rendah = amaran lebih awal; tinggi = kurang amaran palsu semasa memulakan surah baharu",
+   "sub": "Kesilapan apa yang ditangkap"
+  },
+  "detect.similarRatio": {
+   "label": "Ketatnya pemadanan perkataan",
+   "help": "Tinggi = menangkap walaupun sebutan yang hampir; rendah = lebih longgar",
+   "sub": "Kesilapan apa yang ditangkap"
+  },
+  "detect.noAdvance": {
+   "label": "Jangan teruskan sebelum kesilapan dibetulkan",
+   "help": "Apabila sesuatu perkataan merah, perkataan seterusnya tidak terbuka sehingga anda membacanya dengan betul",
+   "sub": "Kesilapan apa yang ditangkap"
+  },
+  "detect.teachOnRemove": {
+   "label": "Ingat kesilapan yang diabaikan",
+   "help": "Selepas ‘Saya membacanya dengan betul’ atau ‘Abaikan’, bacaan yang sama tidak akan ditanda lagi",
+   "sub": "Kesilapan apa yang ditangkap"
+  },
+  "detect.errorTone": {
+   "label": "Bunyi amaran",
+   "help": "Bunyi apabila perkataan menjadi merah atau anda memasuki surah lain (semasa merakam sahaja)",
+   "sub": "Bunyi amaran",
+   "options": {
+    "off": "Mati",
+    "soft": "Perlahan",
+    "normal": "Biasa",
+    "loud": "Kuat"
+   }
+  },
+  "detect.toneKind": {
+   "label": "Jenis bunyi amaran",
+   "sub": "Bunyi amaran",
+   "options": {
+    "two": "Dua nada",
+    "beep": "Satu bip",
+    "double": "Dua bip"
+   }
+  },
+  "detect.vibrate": {
+   "label": "Getar apabila silap",
+   "help": "Telefon bergetar sedikit pada perkataan merah",
+   "sub": "Bunyi amaran"
+  },
+  "recite.startAt": {
+   "label": "Surah mana pada permulaan",
+   "help": "Bagaimana pilihan surah semasa aplikasi dibuka",
+   "sub": "Permulaan",
+   "options": {
+    "auto": "Kenali dengan mendengar",
+    "last": "Surah dan ayat kali lepas",
+    "continue": "Sambung selepas tempat anda berhenti kali lepas"
+   }
+  },
+  "recite.autoAyahs": {
+   "label": "Berapa ayat ke hadapan dipaparkan",
+   "help": "Berapa ayat ditambah sekali gus semasa anda membaca",
+   "sub": "Permulaan"
+  },
+  "recite.mistakeList": {
+   "label": "Papar senarai kesilapan",
+   "help": "Mengetik kiraan ‘salah/tertinggal’ di atas memaparkan semua kesilapan sesi ini bersama-sama",
+   "sub": "Permulaan"
+  },
+  "recite.look": {
+   "label": "Baca dari teks (papar semua teks)",
+   "help": "Seperti butang mata; perkataan yang dibaca dari teks tidak dikira untuk membuang tanda",
+   "sub": "Teks tersembunyi"
+  },
+  "hide.style": {
+   "label": "Rupa perkataan tersembunyi",
+   "sub": "Teks tersembunyi",
+   "options": {
+    "bar": "Kotak sebesar perkataan",
+    "line": "Hanya garisan di bawah",
+    "blank": "Kosong sepenuhnya"
+   }
+  },
+  "hide.weakTint": {
+   "label": "Warna kelemahan lalu pada perkataan tersembunyi",
+   "help": "Perkataan yang salah pada sesi lalu dipaparkan dengan kotak merah muda hingga tua",
+   "sub": "Teks tersembunyi"
+  },
+  "hide.ayahMarks": {
+   "label": "Sembunyi tanda ayat",
+   "help": "Tanda di hujung ayat tidak dipaparkan sehingga ayat dibaca sepenuhnya",
+   "sub": "Teks tersembunyi"
+  },
+  "hide.nextWord": {
+   "label": "Tanda kotak perkataan seterusnya",
+   "help": "Gelang pada kotak perkataan yang perlu anda baca sekarang",
+   "sub": "Teks tersembunyi"
+  },
+  "hide.head": {
+   "label": "Papar nombor surah dan ayat di atas",
+   "help": "Apabila mati, ayat mana yang sedang anda baca kekal tersembunyi",
+   "sub": "Teks tersembunyi"
+  },
+  "peek.countsAsMistake": {
+   "label": "Kira mengintai sebagai kesilapan",
+   "help": "Perkataan yang dibuka oleh petunjuk atau intaian dikira sebagai kesilapan dalam tanda lemah dan skor ujian",
+   "sub": "Mengintai"
+  },
+  "peek.longPressRest": {
+   "label": "Tekan lama petunjuk untuk baki ayat",
+   "help": "Menekan butang petunjuk setengah saat (klik kanan pada komputer) membuka semua perkataan ayat yang tinggal",
+   "sub": "Mengintai"
+  },
+  "peek.doubleTap": {
+   "label": "Ketik dua kali pada teks untuk perkataan seterusnya",
+   "help": "Semasa merakam, ketik dua kali pada kotak perkataan (klik dua kali pada komputer) membuka perkataan seterusnya seperti petunjuk",
+   "sub": "Mengintai"
+  },
+  "test.endBy": {
+   "label": "Bila ujian tamat",
+   "sub": "Tempoh",
+   "options": {
+    "count": "Mengikut bilangan soalan",
+    "time": "Mengikut masa",
+    "open": "Apabila saya menghentikannya"
+   }
+  },
+  "test.questions": {
+   "label": "Berapa soalan",
+   "sub": "Tempoh"
+  },
+  "test.minutes": {
+   "label": "Berapa minit",
+   "help": "Apabila masa tamat, soalan semasa diselesaikan dan keputusan dipaparkan",
+   "sub": "Tempoh"
+  },
+  "test.lengthUnit": {
+   "label": "Ukuran panjang soalan",
+   "sub": "Soalan",
+   "options": {
+    "words": "Dalam perkataan",
+    "ayahs": "Dalam ayat"
+   }
+  },
+  "test.lengthWords": {
+   "label": "Perkataan untuk dibaca dalam setiap soalan",
+   "help": "Perkataan selepas petunjuk",
+   "sub": "Soalan",
+   "options": {
+    "8": "Pendek 8",
+    "15": "Sederhana 15",
+    "30": "Panjang 30"
+   }
+  },
+  "test.lengthAyahs": {
+   "label": "Ayat dalam setiap soalan",
+   "sub": "Soalan"
+  },
+  "test.extendToAyahEnd": {
+   "label": "Teruskan hingga akhir ayat",
+   "help": "Soalan tidak berhenti di tengah ayat tetapi menyelesaikannya",
+   "sub": "Soalan"
+  },
+  "test.hintWords": {
+   "label": "Berapa perkataan dipaparkan pada permulaan",
+   "help": "Selebihnya anda baca tanpa melihat; 0 = nombor surah dan ayat sahaja",
+   "sub": "Soalan"
+  },
+  "test.start": {
+   "label": "Dari mana soalan bermula",
+   "sub": "Soalan",
+   "options": {
+    "ayah": "Dari permulaan ayat",
+    "random": "Dari mana-mana dalam ayat"
+   }
+  },
+  "test.order": {
+   "label": "Susunan soalan",
+   "sub": "Soalan",
+   "options": {
+    "shuffle": "Dikocok",
+    "seq": "Berturutan",
+    "weak": "Bahagian lemah dahulu"
+   }
+  },
+  "test.noRepeat": {
+   "label": "Tiada soalan berulang sehingga seluruh julat selesai",
+   "sub": "Soalan"
+  },
+  "test.showRef": {
+   "label": "Papar nombor surah dan ayat",
+   "help": "Boleh juga ditukar dengan butang mata pada kad",
+   "sub": "Soalan"
+  },
+  "test.silence": {
+   "label": "Apabila anda diam",
+   "sub": "Apabila anda tersekat",
+   "options": {
+    "none": "Tiada apa-apa",
+    "show": "Papar perkataan seterusnya",
+    "alafasy": "Alafasy membaca perkataan seterusnya"
+   }
+  },
+  "test.silenceS": {
+   "label": "Berapa saat senyap",
+   "sub": "Apabila anda tersekat"
+  },
+  "test.doubleTapPeek": {
+   "label": "Ketik dua kali pada kad untuk perkataan seterusnya",
+   "help": "Klik dua kali pada komputer",
+   "sub": "Apabila anda tersekat"
+  },
+  "test.skipCounts": {
+   "label": "Kira soalan yang dilangkau dalam skor",
+   "help": "Apabila dihidupkan, soalan yang dilangkau dikira ‘tidak betul’",
+   "sub": "Skor"
+  },
+  "test.streakAt": {
+   "label": "Tanda api selepas berapa betul berturut-turut",
+   "sub": "Skor"
+  },
+  "test.advance": {
+   "label": "Selepas satu soalan",
+   "sub": "Cara berjalan",
+   "options": {
+    "auto": "Papar keputusan, kemudian soalan seterusnya secara automatik",
+    "tap": "Apabila saya menekan ‘Soalan seterusnya’"
+   }
+  },
+  "test.holdS": {
+   "label": "Berapa lama keputusan dipaparkan",
+   "help": "Selepas kad menjadi hijau/merah, sebelum soalan seterusnya",
+   "sub": "Cara berjalan"
+  },
+  "test.countdown": {
+   "label": "Kiraan detik sebelum bermula",
+   "sub": "Cara berjalan",
+   "options": {
+    "0": "Mati",
+    "3": "3 saat",
+    "5": "5 saat"
+   }
+  },
+  "test.autoPauseS": {
+   "label": "Jeda sendiri apabila senyap",
+   "help": "Ujian dijedakan apabila tiada apa dibaca selama beberapa saat ini",
+   "sub": "Cara berjalan",
+   "options": {
+    "0": "Mati",
+    "15": "15",
+    "30": "30",
+    "60": "60",
+    "120": "120 saat"
+   }
+  },
+  "test.sound": {
+   "label": "Bunyi selepas satu soalan",
+   "help": "Nada tinggi apabila betul, nada rendah apabila salah",
+   "sub": "Cara berjalan"
+  },
+  "test.vibrate": {
+   "label": "Getar selepas satu soalan",
+   "sub": "Cara berjalan"
+  },
+  "test.temporary": {
+   "label": "Ujian sementara",
+   "help": "Tiada apa disimpan — tiada keputusan, kesilapan atau rakaman; berguna untuk menguji orang lain",
+   "sub": "Penyimpanan"
+  },
+  "test.countInHistory": {
+   "label": "Tambah kesilapan ujian ke tanda lemah",
+   "help": "Apabila mati, keputusan ujian disimpan tetapi tanda lemah tidak berubah",
+   "sub": "Penyimpanan"
+  },
+  "test.checkAdded": {
+   "label": "Tangkap perkataan tambahan dalam ujian",
+   "help": "Apabila mati, semakan selepas soalan lebih pantas",
+   "sub": "Penyimpanan"
+  },
+  "listen.reciter": {
+   "label": "Qari: Mishary Rashid Alafasy (satu-satunya buat masa ini)",
+   "sub": "Qari"
+  },
+  "listen.speed": {
+   "label": "Kelajuan",
+   "help": "Mendengar dengan perlahan memudahkan menghafal",
+   "sub": "Kelajuan dan ulangan",
+   "options": {
+    "0.5": "0.5×",
+    "0.75": "0.75×",
+    "1": "1×",
+    "1.25": "1.25×",
+    "1.5": "1.5×",
+    "2": "2×"
+   }
+  },
+  "listen.repeatAyah": {
+   "label": "Berapa kali setiap ayat",
+   "sub": "Kelajuan dan ulangan"
+  },
+  "listen.repeatRange": {
+   "label": "Berapa kali seluruh bahagian",
+   "sub": "Kelajuan dan ulangan",
+   "options": {
+    "0": "Tanpa penghujung"
+   }
+  },
+  "listen.gapRepeatS": {
+   "label": "Jeda sebelum ayat yang sama diulang",
+   "help": "Masa untuk menyebutnya sendiri",
+   "sub": "Kelajuan dan ulangan"
+  },
+  "listen.gapAyahS": {
+   "label": "Jeda selepas setiap ayat",
+   "help": "Sebelum beralih ke ayat seterusnya",
+   "sub": "Kelajuan dan ulangan"
+  },
+  "listen.gapAuto": {
+   "label": "Jeda sepanjang ayat",
+   "help": "Apabila dihidupkan, selepas setiap ayat ia menunggu selama masa membaca ayat itu — untuk menyebutnya sendiri selepas mendengar",
+   "sub": "Kelajuan dan ulangan"
+  },
+  "listen.highlight": {
+   "label": "Papar apa yang sedang dibaca",
+   "sub": "Teks",
+   "options": {
+    "word": "Mengikut perkataan",
+    "ayah": "Mengikut ayat",
+    "none": "Tiada apa-apa"
+   }
+  },
+  "listen.text": {
+   "label": "Teks",
+   "sub": "Teks",
+   "options": {
+    "show": "Papar semua",
+    "reveal": "Terbuka semasa mendengar",
+    "hide": "Disembunyikan"
+   }
+  },
+  "listen.autoScroll": {
+   "label": "Tatal mengikut",
+   "sub": "Teks"
+  },
+  "listen.basmala": {
+   "label": "Basmalah pada permulaan surah",
+   "help": "Apabila mendengar dari ayat 1, basmalah dibaca dahulu (kecuali Surah Al-Fatihah dan At-Taubah)",
+   "sub": "Teks"
+  },
+  "listen.nextSurah": {
+   "label": "Main surah seterusnya pada akhir",
+   "sub": "Teks"
+  },
+  "listen.sleepMin": {
+   "label": "Pemasa tidur",
+   "help": "Pendengaran berhenti selepas beberapa minit ini",
+   "sub": "Teks",
+   "options": {
+    "0": "Mati",
+    "10": "10",
+    "15": "15",
+    "30": "30",
+    "60": "60 minit"
+   }
+  },
+  "listen.countAsSession": {
+   "label": "Simpan pendengaran dalam sejarah",
+   "help": "Disimpan berapa lama anda mendengar bahagian mana; hanya dikira untuk sasaran atau rentetan jika dihidupkan dalam ‘Sasaran dan rentetan’",
+   "sub": "Teks"
+  },
+  "audio.ctxBefore": {
+   "label": "Alafasy pada perkataan merah: perkataan sebelumnya",
+   "help": "Berapa perkataan sebelum perkataan itu dibaca dalam tetingkap",
+   "sub": "Audio perkataan merah"
+  },
+  "audio.ctxAfter": {
+   "label": "Alafasy pada perkataan merah: perkataan selepasnya",
+   "sub": "Audio perkataan merah"
+  },
+  "audio.myCtxWords": {
+   "label": "Bacaan saya: perkataan sebelumnya",
+   "help": "Berapa perkataan lebih awal rakaman anda sendiri bermula dalam tetingkap",
+   "sub": "Audio perkataan merah"
+  },
+  "audio.popupSpeed": {
+   "label": "Kelajuan Alafasy dalam tetingkap",
+   "sub": "Audio perkataan merah"
+  },
+  "audio.offlineMaxMB": {
+   "label": "Saiz terbesar disimpan luar talian (setiap surah)",
+   "help": "Surah yang lebih besar daripada ini hanya dimainkan dalam talian",
+   "sub": "Luar talian",
+   "options": {
+    "40": "40",
+    "80": "80",
+    "150": "150",
+    "250": "250 MB"
+   }
+  },
+  "goals.dayStart": {
+   "label": "Hari bermula pada pukul",
+   "help": "Jika anda membaca lewat malam, ia dikira untuk hari sebelumnya",
+   "options": {
+    "0": "Tengah malam",
+    "1": "1 pagi",
+    "2": "2 pagi",
+    "3": "3 pagi",
+    "4": "4 pagi",
+    "5": "5 pagi",
+    "6": "6 pagi"
+   }
+  },
+  "goals.weekStart": {
+   "label": "Minggu bermula pada hari",
+   "options": {
+    "6": "Sabtu",
+    "0": "Ahad",
+    "1": "Isnin"
+   }
+  },
+  "goals.streakMin": {
+   "label": "Sehari dikira untuk rentetan dengan sekurang-kurangnya",
+   "options": {
+    "any": "Mana-mana satu sesi",
+    "m5": "5 minit",
+    "m10": "10 minit",
+    "m20": "20 minit",
+    "goals": "Semua sasaran hari ini selesai"
+   }
+  },
+  "goals.countLook": {
+   "label": "Kira bacaan dari teks untuk sasaran hafazan dan ulang kaji"
+  },
+  "goals.countListen": {
+   "label": "Kira pendengaran untuk sasaran tilawah dan rentetan"
+  },
+  "goals.countTests": {
+   "label": "Kira ujian untuk sasaran juga"
+  },
+  "goals.countManual": {
+   "label": "Kira bacaan di luar aplikasi juga"
+  },
+  "goals.showToday": {
+   "label": "Papar sasaran hari ini pada halaman Setoran",
+   "help": "Tiada apa dipaparkan jika tiada sasaran"
+  },
+  "history.clearStreak": {
+   "label": "Sesi berturut-turut untuk membuang tanda",
+   "help": "Tanda merah hilang selepas dibaca betul dari hafazan dalam sebanyak sesi berasingan berturut-turut ini",
+   "sub": "Tanda lemah"
+  },
+  "history.lookClears": {
+   "label": "Kira bacaan dari teks untuk membuang tanda",
+   "sub": "Tanda lemah"
+  },
+  "history.good": {
+   "label": "‘Hafaz baik’ bermula daripada berapa %",
+   "sub": "Ambang keadaan"
+  },
+  "history.fair": {
+   "label": "‘Sederhana’ bermula daripada berapa %",
+   "help": "Mesti lebih rendah daripada ‘Hafaz baik’",
+   "sub": "Ambang keadaan"
+  },
+  "history.gradeWindow": {
+   "label": "Berapa sesi hafazan terakhir menentukan keadaan",
+   "sub": "Ambang keadaan"
+  },
+  "history.recent": {
+   "label": "Berapa sesi terkini dipaparkan",
+   "sub": "Senarai",
+   "options": {
+    "10": "10",
+    "30": "30",
+    "100": "100",
+    "0": "Semua"
+   }
+  },
+  "history.weekDays": {
+   "label": "Bilangan hari dalam kad ‘Minggu ini’",
+   "help": "Dengan nilai selain 7, kad dinamakan ‘{n} hari lepas’",
+   "sub": "Senarai"
+  },
+  "history.minWords": {
+   "label": "Sesi terkecil (dalam perkataan) yang disimpan",
+   "sub": "Senarai"
+  },
+  "history.maxEvents": {
+   "label": "Berapa kesilapan diingat bagi setiap perkataan lemah",
+   "sub": "Senarai"
+  },
+  "history.hotZones": {
+   "label": "Berapa ‘tempat paling lemah’ dipaparkan",
+   "sub": "Senarai"
+  },
+  "history.heatmap": {
+   "label": "Papar peta haba",
+   "help": "Berapa minit anda membaca setiap hari — 12 minggu lepas",
+   "sub": "Senarai"
+  },
+  "history.popupTimes": {
+   "label": "Papar berapa kali anda membacanya dalam tetingkap tanda",
+   "sub": "Senarai"
+  },
+  "history.saveRecordings": {
+   "label": "Simpan rakaman sesi",
+   "help": "Apabila mati, rakaman baharu tidak disimpan, jadi anda tidak dapat mendengar bacaan sendiri pada tanda kemudian; yang lama kekal",
+   "sub": "Rakaman"
+  },
+  "view.lang": {
+   "label": "Bahasa / Language",
+   "help": "Bahasa teks aplikasi; teks Al-Quran tidak berubah",
+   "sub": "Bahasa",
+   "options": {
+    "bn": "বাংলা",
+    "en": "English",
+    "ar": "العربية",
+    "ur": "اردو",
+    "hi": "हिन्दी",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "tr": "Türkçe",
+    "fa": "فارسی",
+    "fr": "Français",
+    "es": "Español",
+    "pt": "Português",
+    "de": "Deutsch",
+    "ru": "Русский",
+    "zh": "中文（简体）",
+    "sw": "Kiswahili"
+   }
+  },
+  "view.theme": {
+   "label": "Warna halaman",
+   "sub": "Warna",
+   "options": {
+    "auto": "Automatik",
+    "paper": "Kertas",
+    "night": "Mushaf malam",
+    "sepia": "Kertas lama"
+   }
+  },
+  "view.wordSet": {
+   "label": "Set warna perkataan",
+   "sub": "Warna",
+   "options": {
+    "default": "Biasa",
+    "cb": "Lebih mudah dibezakan",
+    "brown": "Intai perang",
+    "custom": "Milik saya"
+   }
+  },
+  "view.wordStyle": {
+   "label": "Cara warna digunakan",
+   "help": "Sorot = teks kekal hitam dengan kotak berwarna di belakangnya",
+   "sub": "Warna",
+   "options": {
+    "text": "Warna teks",
+    "highlight": "Sorot"
+   }
+  },
+  "view.customColors": {
+   "label": "Warna saya sendiri",
+   "help": "Pilih warna untuk setiap keadaan; diingat berasingan bagi setiap warna halaman",
+   "sub": "Warna"
+  },
+  "view.arabicScale": {
+   "label": "Saiz teks Arab",
+   "sub": "Teks"
+  },
+  "view.lineGap": {
+   "label": "Jarak antara baris",
+   "sub": "Teks"
+  },
+  "view.wordGap": {
+   "label": "Jarak antara perkataan",
+   "sub": "Teks"
+  },
+  "view.uiScale": {
+   "label": "Saiz teks antara muka",
+   "sub": "Teks",
+   "options": {
+    "90": "Kecil",
+    "100": "Biasa",
+    "115": "Besar",
+    "130": "Lebih besar"
+   }
+  },
+  "view.uiFont": {
+   "label": "Fon antara muka",
+   "sub": "Teks",
+   "options": {
+    "app": "Fon aplikasi",
+    "system": "Fon bawaan peranti"
+   }
+  },
+  "view.motion": {
+   "label": "Gerakan (animasi)",
+   "help": "Sentiasa mati semasa merakam",
+   "sub": "Gerakan",
+   "options": {
+    "auto": "Automatik",
+    "full": "Penuh",
+    "gentle": "Lembut",
+    "off": "Mati"
+   }
+  },
+  "view.intro": {
+   "label": "Animasi permulaan (mushaf terbuka)",
+   "help": "Dipaparkan semasa aplikasi dibuka; mengetik skrin melangkaunya serta-merta",
+   "sub": "Gerakan",
+   "options": {
+    "every": "Setiap kali",
+    "daily": "Sekali sehari",
+    "off": "Mati"
+   }
+  },
+  "view.scroll": {
+   "label": "Di mana baris bacaan berada",
+   "sub": "Gerakan",
+   "options": {
+    "second": "Pada baris kedua dari atas",
+    "middle": "Di tengah",
+    "off": "Saya tatal sendiri"
+   }
+  },
+  "view.timer": {
+   "label": "Papar masa",
+   "sub": "Maklumat di atas"
+  },
+  "view.legend": {
+   "label": "Papar maksud warna",
+   "help": "Petunjuk kecil di atas teks",
+   "sub": "Maklumat di atas"
+  },
+  "view.headStats": {
+   "label": "Papar kiraan betul, salah dan petunjuk",
+   "sub": "Maklumat di atas"
+  },
+  "view.bnDigits": {
+   "label": "Tulis nombor dengan angka Bengali",
+   "help": "Apabila mati: 0–9 (khusus bahasa Bengali)",
+   "sub": "Maklumat di atas"
+  },
+  "device.micId": {
+   "label": "Mikrofon",
+   "options": {
+    "default": "Mikrofon bawaan peranti"
+   }
+  },
+  "device.echoCancel": {
+   "label": "Kurangkan gema",
+   "help": "Mengurangkan bunyi Alafasy memasuki mikrofon; apabila mati, bantuan selepas senyap mungkin tidak berfungsi dengan baik"
+  },
+  "device.noiseSuppress": {
+   "label": "Kurangkan bunyi bising sekeliling",
+   "help": "Berguna di tempat bising, tetapi suara perlahan mungkin turut terpotong"
+  },
+  "device.autoGain": {
+   "label": "Laras aras mikrofon secara automatik",
+   "options": {
+    "browser": "Seperti yang dilakukan pelayar",
+    "on": "Hidup",
+    "off": "Mati"
+   }
+  },
+  "device.sensitivity": {
+   "label": "Kepekaan mikrofon",
+   "help": "Gunakan ‘Tinggi’ apabila membaca perlahan, ‘Rendah’ di tempat bising",
+   "options": {
+    "low": "Rendah",
+    "normal": "Biasa",
+    "high": "Tinggi"
+   }
+  },
+  "device.threads": {
+   "label": "Thread pemproses",
+   "help": "Lebih banyak = lebih pantas, tetapi telefon mungkin menjadi panas",
+   "options": {
+    "auto": "Automatik",
+    "1": "1",
+    "2": "2",
+    "4": "4"
+   }
+  },
+  "device.slowPhone": {
+   "label": "Sesuaikan untuk telefon perlahan",
+   "help": "Pada telefon perlahan, kurang audio diproses setiap kali supaya tidak ketinggalan"
+  },
+  "device.liveModel": {
+   "label": "Model langsung",
+   "help": "Model lebih besar mendengar dengan lebih tepat tetapi lebih perlahan",
+   "options": {
+    "tiny": "tiny",
+    "base": "base"
+   }
+  },
+  "device.checkModel": {
+   "label": "Model semakan",
+   "help": "Mendengar sekali lagi sebelum mengenali surah dan menanda merah",
+   "options": {
+    "base": "base",
+    "tiny": "tiny"
+   }
+  },
+  "device.keepAwake": {
+   "label": "Biarkan skrin menyala semasa merakam dan mendengar"
+  },
+  "device.shortcuts": {
+   "label": "Pintasan papan kekunci",
+   "help": "Space = jeda, H = petunjuk, R = baki ayat, E = mata, M = senarai kesilapan, N = soalan seterusnya, P = main/jeda pendengaran"
+  },
+  "device.maxRecMin": {
+   "label": "Rakaman terpanjang",
+   "help": "Rakaman berhenti sendiri selepas ini",
+   "options": {
+    "30": "30",
+    "60": "60",
+    "90": "90",
+    "120": "120 minit",
+    "0": "Tiada had"
+   }
+  },
+  "adv.windowS": {
+   "label": "Saat audio yang diproses setiap kali"
+  },
+  "adv.updateEveryS": {
+   "label": "Kekerapan audio baharu diproses",
+   "help": "Nilai lebih rendah = lebih banyak kerja untuk telefon"
+  },
+  "adv.lookahead": {
+   "label": "Berapa perkataan ke hadapan dipadankan"
+  },
+  "adv.shortSkip": {
+   "label": "Berapa perkataan boleh dilangkau apabila dua perkataan sepadan"
+  },
+  "adv.longSkipRun": {
+   "label": "Perkataan berturut-turut yang mesti sepadan untuk melangkau lebih banyak"
+  },
+  "adv.finalSkip": {
+   "label": "Perkataan paling banyak dilangkau dalam semakan akhir"
+  },
+  "adv.detectMinWords": {
+   "label": "Perkataan paling sedikit untuk mengenali surah"
+  },
+  "adv.detectMargin": {
+   "label": "Berapa kali ganda ia mesti mendahului surah berkemungkinan seterusnya"
+  },
+  "adv.detectSureWords": {
+   "label": "Selepas bilangan perkataan ini ia memilih walaupun keputusan hampir sama"
+  },
+  "adv.lostS": {
+   "label": "Saat tanpa kemajuan sebelum mencari tempat itu semula"
+  },
+  "adv.lostReds": {
+   "label": "Bilangan merah dalam perkataan terakhir yang mencetuskan carian semula: merah"
+  },
+  "adv.lostOf": {
+   "label": "…dalam berapa perkataan terakhir"
+  },
+  "adv.rewindRun": {
+   "label": "Perkataan berturut-turut untuk mengenali bacaan ke belakang"
+  },
+  "adv.backWords": {
+   "label": "Perkataan ke belakang paling banyak yang dikenali"
+  },
+  "adv.verifyWindowS": {
+   "label": "Saat mendengar semula untuk perkataan yang tertinggal"
+  },
+  "adv.verifyMaxS": {
+   "label": "…saat paling banyak"
+  },
+  "adv.autoExtendAt": {
+   "label": "Ayat lagi ditambah apabila tinggal sebanyak ini perkataan di hadapan"
+  },
+  "adv.sameAudio": {
+   "label": "Padanan audio untuk mengingat ‘Saya membacanya dengan betul’",
+   "help": "Rendah = ketat (mesti dibaca sama persis)"
+  },
+  "adv.sameHeard": {
+   "label": "Padanan teks yang didengar untuk mengingat ‘Saya membacanya dengan betul’",
+   "help": "Tinggi = ketat"
+  },
+  "adv.maxClipS": {
+   "label": "Klip bacaan sendiri terpanjang bagi perkataan merah, dalam saat"
+  },
+  "adv.stripCells": {
+   "label": "Kotak paling banyak dalam satu jalur kemajuan"
+  },
+  "adv.cellMid": {
+   "label": "Kotak menjadi merah sederhana daripada jumlah kelemahan ini"
+  },
+  "adv.cellDark": {
+   "label": "…merah tua daripada"
+  }
+ },
+ "groups": {
+  "recite": {
+   "name": "Setoran dan kesilapan",
+   "help": "Apa yang ditangkap aplikasi semasa anda membaca, apa yang dilakukannya apabila anda tersekat"
+  },
+  "hide": {
+   "name": "Menyembunyi dan mengintai",
+   "help": "Bagaimana teks disembunyikan semasa membaca dari hafazan, apa yang dilakukan mengintai"
+  },
+  "test": {
+   "name": "Ujian",
+   "help": "Tempoh, petunjuk dan skor ujian kad kilat"
+  },
+  "listen": {
+   "name": "Mendengar dan audio",
+   "help": "Bacaan Alafasy — kelajuan, ulangan, luar talian"
+  },
+  "goals": {
+   "name": "Sasaran dan rentetan",
+   "help": "Pengiraan harian, rentetan, bacaan mana dikira untuk sasaran"
+  },
+  "history": {
+   "name": "Kemajuan dan sejarah",
+   "help": "Peraturan membuang tanda, ambang keadaan, rakaman"
+  },
+  "view": {
+   "name": "Paparan",
+   "help": "Warna, saiz teks, gerakan"
+  },
+  "device": {
+   "name": "Mikrofon dan peranti",
+   "help": "Mikrofon, pemproses, skrin"
+  },
+  "adv": {
+   "name": "Lanjutan",
+   "help": "Nilai pengiraan dalaman — ubah dengan berhati-hati"
+  }
+ },
+ "presets": {
+  "recite": {
+   "label": "Ketatnya penangkapan kesilapan",
+   "items": {
+    "easy": {
+     "label": "Mudah",
+     "help": "Untuk hafazan baharu: memaafkan perbezaan kecil sebutan, perkataan tambahan tidak ditangkap"
+    },
+    "normal": {
+     "label": "Biasa",
+     "help": "Ulang kaji harian"
+    },
+    "strict": {
+     "label": "Ketat",
+     "help": "Sebelum menyetor kepada guru: sebutan yang hampir pun dikira salah, tidak boleh teruskan tanpa membetulkan"
+    }
+   }
+  },
+  "test": {
+   "label": "Jenis ujian",
+   "items": {
+    "quick": {
+     "label": "Latihan pantas"
+    },
+    "normal": {
+     "label": "Biasa"
+    },
+    "hard": {
+     "label": "Sukar"
+    }
+   }
+  },
+  "listen": {
+   "label": "Jenis pendengaran",
+   "items": {
+    "only": {
+     "label": "Dengar sahaja"
+    },
+    "memo": {
+     "label": "Untuk menghafal"
+    },
+    "say": {
+     "label": "Dengar dan sebut"
+    },
+    "slow": {
+     "label": "Belajar perlahan"
+    }
+   }
+  }
+ }
+}

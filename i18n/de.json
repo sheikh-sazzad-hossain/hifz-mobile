@@ -1,0 +1,1460 @@
+{
+ "strings": {
+  "intro.preparing": "Wird vorbereitet…",
+  "nav.tab.recite": "Rezitieren",
+  "nav.tab.test": "Test",
+  "nav.tab.listen": "Hören",
+  "nav.tab.progress": "Fortschritt",
+  "nav.tab.settings": "Einstellungen",
+  "nav.busy": "Die Aufnahme läuft — erst beenden (■), dann die Seite wechseln.",
+  "nav.themeTip": "Farbe ändern: Papier / Nacht-Mushaf / Altpapier (gedrückt halten für alle Einstellungen)",
+  "s.title": "Einstellungen",
+  "s.search": "Einstellungen suchen…",
+  "s.searchEmpty": "Keine Einstellung hat diesen Namen.",
+  "s.back": "Alle Einstellungen",
+  "s.changedN": "{n} geändert",
+  "s.rowReset": "Auf Standard zurück",
+  "s.sectionReset": "Diesen Bereich zurücksetzen",
+  "s.sectionResetQ": "Alle Einstellungen in „{group}“ werden auf den Standard zurückgesetzt. OK?",
+  "s.allReset": "Alle Einstellungen zurücksetzen",
+  "s.allResetQ": "Alle Einstellungen werden auf den Standard zurückgesetzt. Deine Sitzungen, Markierungen, Aufnahmen, Tests und Ziele bleiben erhalten. OK?",
+  "s.resetDone": "Zurückgesetzt.",
+  "s.export": "Einstellungen in eine Datei speichern",
+  "s.import": "Einstellungen aus einer Datei laden",
+  "s.importOk": "{n} Einstellungen geladen.",
+  "s.importSkip": "{n} Einstellungen geladen, {m} unbekannt oder außerhalb des Bereichs — übersprungen.",
+  "s.importBad": "Die Datei konnte nicht gelesen werden: {err}",
+  "s.importWrong": "Das ist keine Einstellungsdatei von Hifz Helper.",
+  "s.where": "Die Einstellungen bleiben auf diesem Handy. Zum Übertragen auf ein anderes Handy oder einen Computer nutze „Einstellungen in eine Datei speichern“.",
+  "s.whenNext": "Gilt ab der nächsten Sitzung",
+  "s.whenReload": "Gilt nach dem erneuten Öffnen der App",
+  "s.reloadNow": "Jetzt neu öffnen",
+  "s.live": "Die Aufnahme läuft — gilt nach dem Beenden",
+  "s.invalid": "Dieser Wert ist nicht erlaubt — der alte bleibt.",
+  "s.presetCustom": "Benutzerdefiniert",
+  "s.presetApplied": "Voreinstellung „{name}“ angewendet.",
+  "s.undo": "Rückgängig",
+  "s.custom": "Benutzerdefiniert…",
+  "s.advWarn": "Das sind die internen Berechnungen der App. Ein falscher Wert kann die Fehlererkennung verschlechtern. Im Zweifel „Diesen Bereich zurücksetzen“ drücken.",
+  "s.advSummary": "Interne Berechnungen — mit Vorsicht ändern",
+  "s.contrast": "Geringer Kontrast: {r}:1 — evtl. schwer lesbar (4,5:1 oder mehr ist besser).",
+  "s.platOnly": "Nur am Handy",
+  "r.listTip": "Alle Fehler dieser Sitzung ansehen",
+  "r.listTitle": "Fehler dieser Sitzung ({n})",
+  "r.ayahRef": "Vers {a}",
+  "r.kind.skipped": "Übersprungen",
+  "r.kind.changed": "Anderes Wort gelesen",
+  "r.kind.added": "Zusätzliches Wort gelesen",
+  "r.kind.peek": "Spicken",
+  "r.listen": "Hören",
+  "r.remove": "Verwerfen",
+  "r.removed": "Verworfen.",
+  "r.removedTaught": "Verworfen — so gelesen wird es hier nicht mehr markiert.",
+  "r.removedTitle": "Verworfen ({n})",
+  "r.restore": "Wiederherstellen",
+  "r.restored": "Wieder als Fehler gezählt.",
+  "r.removeAll": "Alle verwerfen",
+  "r.removeAllQ": "Alle Fehler dieser Sitzung verwerfen? Mit „Wiederherstellen“ kannst du sie zurückholen.",
+  "r.empty": "Noch keine Fehler.",
+  "r.hintTip": "Hinweis: nächstes Wort zeigen (gedrückt halten für den Rest des Verses)",
+  "r.blockBanner": "Lies das rote Wort richtig — dann kannst du weitermachen.",
+  "r.lg.ok": "Richtig",
+  "r.lg.bad": "Falsch/übersprungen",
+  "r.lg.peek": "Hinweis/Spicken",
+  "r.lg.pend": "Prüfung",
+  "r.lg.next": "Aktuelles Wort",
+  "r.lg.weak": "Frühere Schwäche",
+  "r.lg.given": "Hinweis",
+  "r.menu.listen": "Ab hier hören",
+  "r.menu.test": "Ab hier testen",
+  "h.times": "Insgesamt {t}-mal rezitiert, davon {e}-mal falsch",
+  "r.help.list": "Tippe oben auf den Zähler <b>Falsch/übersprungen</b>, um alle Fehler dieser Sitzung auf einmal zu sehen; <b>Verwerfen</b>, was kein Fehler war, bei Bedarf <b>Wiederherstellen</b>.",
+  "r.help.hint": "Halte die Hinweistaste gedrückt, um den Rest des Verses zu öffnen.",
+  "t.setupTitle": "Was möchtest du testen?",
+  "t.suggested": "Für dich vorgeschlagen",
+  "t.myRanges": "Meine Bereiche",
+  "t.myMemorized": "Mein Auswendiggelerntes",
+  "t.newRange": "Neuen Bereich erstellen",
+  "t.noMemorized": "Noch nichts als auswendig gelernt markiert",
+  "t.rename": "Umbenennen",
+  "t.delete": "Löschen",
+  "t.up": "Nach oben",
+  "t.down": "Nach unten",
+  "t.deleteQ": "Den Bereich „{name}“ löschen? (Alte Testergebnisse bleiben)",
+  "t.rangeSummary": "Ausgewählt: {name} · {n} Verse",
+  "t.rules": "{q} Fragen · je {w} Wörter · Hinweis {h} Wörter",
+  "t.changeRules": "Regeln ändern",
+  "t.temporary": "Temporär (nichts wird gespeichert)",
+  "t.start": "Test starten",
+  "t.emptyRange": "Der Bereich hat keine Verse",
+  "t.modelWait": "Modell wird vorbereitet…",
+  "t.starterTitle": "Zum Einstieg",
+  "t.starterBody": "Ende von Juz 30: Sure {a} bis Sure {b}",
+  "t.markMemorized": "Als auswendig gelernt markieren",
+  "t.resumeQ": "Der letzte Test wurde nicht beendet ({i} / {n} Fragen). Fortsetzen?",
+  "t.resume": "Fortsetzen",
+  "t.seeResults": "Ergebnisse ansehen",
+  "t.discard": "Verwerfen",
+  "t.introTitle": "So funktioniert der Test",
+  "t.intro1": "Jede Frage zeigt die ersten Wörter — rezitiere den Rest, ohne hinzusehen.",
+  "t.intro2": "Richtige Wörter öffnen sich; am Ende wird die Karte grün (fehlerfrei) oder rot (mit Fehlern).",
+  "t.intro3": "Wenn du hängst: „nächstes Wort“ oder „Rest des Verses“ — Spicken zählt als Fehler.",
+  "t.intro4": "Wische die Karte zur Seite oder drücke „Nächste Frage“, um die Frage zu überspringen.",
+  "t.intro5": "Alles läuft auf dem Handy, kein Internet nötig.",
+  "t.introOk": "Verstanden",
+  "t.go": "Los!",
+  "t.ref": "Sure {n}. {english} · {span}",
+  "t.refHidden": "Sure und Vers verborgen",
+  "t.eyeTip": "Sure- und Versnummer zeigen / verbergen",
+  "t.listening": "Ich höre zu… rezitiere ab dem Hinweis",
+  "t.checking": "Prüfung…",
+  "t.peekWord": "Nächstes Wort",
+  "t.peekRest": "Rest des Verses",
+  "t.next": "Nächste Frage",
+  "t.pass": "Fehlerfrei!",
+  "t.failN": "{m} Fehler",
+  "t.skipped": "Übersprungen",
+  "t.kind.stray": "Du bist zu einer anderen Sure gewechselt",
+  "t.timeUp": "Zeit abgelaufen — beende diese Frage",
+  "t.qOfN": "Frage {i} / {n}",
+  "t.qTime": "Frage {i} · noch {mm:ss}",
+  "t.qOpen": "Frage {i}",
+  "t.mistakesN": "Fehler {m}",
+  "t.score": "Ergebnis {p} %",
+  "t.streak": "Serie {s}",
+  "t.paused": "Pausiert — der Test ist angehalten. Drücke „Fortsetzen“, um ab derselben Frage zu hören.",
+  "t.continue": "Fortsetzen",
+  "t.end": "Beenden",
+  "t.autoPaused": "Lange still — der Test wurde pausiert.",
+  "t.resTitle": "Testergebnis",
+  "t.tempLabel": "Temporärer Test — nichts wurde gespeichert",
+  "t.resScore": "{p} %",
+  "t.resCorrect": "Richtig {c} / {n}",
+  "t.resBest": "Längste Serie: {s}",
+  "t.resTime": "Zeit: {time}",
+  "t.resAll": "Alle Fehler ({n})",
+  "t.resRemoved": "Verworfene Fehler ({n})",
+  "t.resNone": "Keine Fehler — mashaAllah!",
+  "t.keepGoing": "Mehr rezitieren",
+  "t.done": "Fertig",
+  "t.replay": "Gleicher Test nochmal",
+  "t.newTest": "Neuer Test",
+  "t.saveThis": "Diesen Bereich behalten",
+  "t.sg.warmup.name": "Aufwärmen",
+  "t.sg.warmup.sub": "Was du am besten kannst",
+  "t.sg.weak.name": "Schwache Stellen",
+  "t.sg.weak.sub": "Wo du die meisten Fehler machst",
+  "t.sg.stale.name": "Lange nicht rezitiert",
+  "t.sg.stale.sub": "Lange nicht auswendig rezitiert",
+  "t.sg.fresh.name": "Neu gelernt",
+  "t.sg.fresh.sub": "In den letzten 14 Tagen zur Auswendig-Liste hinzugefügt",
+  "t.sg.mixed.name": "Gemischt",
+  "t.sg.mixed.sub": "Aus deiner gesamten Auswendig-Liste",
+  "l.from": "Ab Vers",
+  "l.to": "Bis Vers",
+  "l.pick": "Nach Juz oder Seite wählen",
+  "l.speedChip": "{x}×",
+  "l.ayahChip": "Vers ×{n}",
+  "l.rangeChip": "Abschnitt ×{n}",
+  "l.rangeChipInf": "Abschnitt ∞",
+  "l.gapChip": "Pause {s} s",
+  "l.sleepChip": "Schlaf {m} Min.",
+  "l.play": "Abspielen",
+  "l.pause": "Pause",
+  "l.prev": "Vorheriger Vers",
+  "l.next": "Nächster Vers",
+  "l.idle": "Wähle, was du hören willst, und drücke ▶.",
+  "l.loading": "Audio wird geladen…",
+  "l.playing": "Vers {a} · {k} / {n}-mal",
+  "l.round": "Runde {r}",
+  "l.gap": "Pause… {s}",
+  "l.pausedS": "Pausiert",
+  "l.ended": "Beendet.",
+  "l.again": "Nochmal abspielen",
+  "l.error": "Das Audio konnte nicht abgespielt werden — bist du online? Zum Offline-Hören lade die Sure zuerst herunter.",
+  "l.offline": "Offline verfügbar",
+  "l.online": "Braucht Internet — herunterladen",
+  "l.slept": "Schlaf-Timer — das Hören wurde beendet.",
+  "l.offTitle": "Offline-Audio",
+  "l.offRow": "{n}. {english} — {size}",
+  "l.offGet": "Herunterladen",
+  "l.offGetting": "Lädt herunter {p} %",
+  "l.offHave": "Heruntergeladen",
+  "l.offTooBig": "Zu groß — nur mit Internet",
+  "l.offDel": "Löschen",
+  "l.offDelQ": "Das Offline-Audio der Sure {english} löschen? Du kannst es später wieder herunterladen.",
+  "l.offTotal": "Gesamter Speicher: {mb} MB",
+  "l.offGetAll": "Alle herunterladen",
+  "l.offGetAllQ": "{n} Suren, etwa {mb} MB werden heruntergeladen. OK?",
+  "pk.title": "Bereich wählen",
+  "pk.unit": "Sure · Juz · Hizb · Seite · Vers",
+  "pk.quarters": "Rub (Viertel) zeigen",
+  "pk.pageNote": "Die Seitenzahlen folgen dem Medina-Druck (604 Seiten)",
+  "pk.summary": "Ausgewählt: {n} Verse ({parts})",
+  "pk.clear": "Leeren",
+  "pk.save": "Mit Namen speichern",
+  "pk.use": "Diesen verwenden",
+  "pk.namePh": "Gib einen Namen ein (z. B. Wiederholung Sure Al-Mulk)",
+  "pk.saved": "„{name}“ gespeichert.",
+  "pk.full": "Es können höchstens 50 Bereiche gespeichert werden — lösche einen alten.",
+  "m.title": "Auswendig-Liste",
+  "m.summary": "Insgesamt {n} Verse als auswendig gelernt markiert (in {s} Suren)",
+  "m.add": "Auswendig Gelerntes hinzufügen",
+  "m.edit": "Ändern",
+  "m.remove": "Entfernen",
+  "m.removeQ": "Sure {english} aus der Auswendig-Liste entfernen? (Sitzungen und Markierungen bleiben)",
+  "m.sgTitle": "Dein Verlauf zeigt, dass du diese ohne Hinsehen gut rezitiert hast:",
+  "m.sgAdd": "Hinzufügen",
+  "m.sgAddAll": "Alle hinzufügen",
+  "m.empty": "Noch nichts markiert. Drücke „Auswendig Gelerntes hinzufügen“ und wähle eine Sure oder Verse.",
+  "g.title": "Ziele",
+  "g.new": "Neues Ziel",
+  "g.create": "Ziel erstellen",
+  "g.s1": "Was für ein Ziel?",
+  "g.s2": "Welcher Teil?",
+  "g.s3": "Wie aufteilen?",
+  "g.s4": "An welchen Tagen?",
+  "g.s5": "Was passiert am Ende?",
+  "g.type.memorize": "Neu auswendig lernen (einen neuen Teil ohne Hinsehen rezitieren)",
+  "g.type.review": "Wiederholung (einen gelernten Teil erneut ohne Hinsehen rezitieren)",
+  "g.type.recite": "Rezitation (jedes Lesen)",
+  "g.type.test": "Test (Anzahl der Fragen)",
+  "g.order.normal": "In normaler Reihenfolge",
+  "g.order.reverse": "In umgekehrter Reihenfolge (ab der letzten Sure)",
+  "g.strict": "Reihenfolge einhalten — der nächste Teil zählt erst, wenn der vorherige erledigt ist",
+  "g.plan.daily": "Jeden Tag eine feste Menge",
+  "g.plan.bydate": "Bis zu einem festen Datum fertig",
+  "g.plan.flexible": "So viel ich kann — der Rest kommt zum nächsten Tag",
+  "g.unit.ayah": "Verse",
+  "g.unit.page": "Seiten",
+  "g.unit.juz": "Juz",
+  "g.unit.minute": "Minuten",
+  "g.unit.word": "Wörter",
+  "g.unit.question": "Fragen",
+  "g.round.none": "Wie die Aufteilung fällt",
+  "g.round.up": "Ganze Seiten — aufrunden",
+  "g.round.down": "Ganze Seiten — abrunden",
+  "g.round.nearest": "Ganze Seiten — nächste",
+  "g.sch.daily": "Jeden Tag",
+  "g.sch.days": "Bestimmte Wochentage",
+  "g.sch.perWeek": "{n} Tage pro Woche",
+  "g.cycle.auto": "Von selbst neu starten (neuer Khatm)",
+  "g.cycle.manual": "Ich starte es selbst",
+  "g.cycle.off": "Stoppen",
+  "g.autoName": "{type}: {range}",
+  "g.tpl.manzil": "Wöchentlicher Khatm (7 Manzil)",
+  "g.tpl.page": "1 neue Seite pro Tag auswendig lernen",
+  "g.tpl.juz": "1 Juz Wiederholung pro Tag",
+  "g.tpl.minutes": "15 Minuten pro Tag",
+  "g.today": "Heutiges Ziel",
+  "g.todayLine": "{name}: {done} / {target} {unit}",
+  "g.progressLine": "Gesamt {done} / {total} {unit} · Enddatum {date}",
+  "g.restart": "Neu starten",
+  "g.completed": "Abgeschlossen — alhamdulillah!",
+  "g.pause": "Pausieren",
+  "g.resumeGoal": "Fortsetzen",
+  "g.edit": "Ändern",
+  "g.delete": "Löschen",
+  "g.deleteQ": "Das Ziel „{name}“ löschen? (Sitzungen bleiben)",
+  "st.current": "{n} Tage in Folge",
+  "st.best": "Längste: {n} Tage in Folge",
+  "st.keep": "Rezitiere heute, um die Serie zu halten",
+  "st.cellTip": "{date}: {m} Min.",
+  "bd.title": "Erfolge",
+  "bd.new": "Neuer Erfolg: {name}",
+  "bd.locked": "Noch nicht — {req}",
+  "x.add": "Außerhalb der App rezitiert hinzufügen",
+  "x.title": "Außerhalb der App rezitiert hinzufügen",
+  "x.date": "Datum",
+  "x.minutes": "Wie viele Minuten",
+  "x.range": "Welcher Teil (optional)",
+  "x.note": "Notiz",
+  "x.int.memorize": "Neu Gelerntes jemandem vorgetragen",
+  "x.int.review": "Wiederholung",
+  "x.int.recite": "Von der Seite rezitiert",
+  "x.save": "Hinzufügen",
+  "x.delete": "Löschen",
+  "x.deleteQ": "Diese von Hand hinzugefügte Sitzung löschen?",
+  "h.f.all": "Alle",
+  "h.f.hifz": "Auswendig",
+  "h.f.look": "Seite",
+  "h.f.test": "Test",
+  "h.f.manual": "Außerhalb",
+  "h.f.listen": "Hören",
+  "h.chip.test": "Test",
+  "h.chip.manual": "Außerhalb",
+  "h.chip.listen": "Hören",
+  "h.play": "Hören",
+  "h.testRow": "{date} · {range} · {p} % · richtig {c}/{n}",
+  "h.testEditNote": "Einen Fehler hier zu verwerfen ändert nur das Ergebnis dieses Tests; um Schwäche-Markierungen zu löschen, tippe auf das rote Wort.",
+  "h.seg": "Übersicht · Ziele · Auswendig · Tests · Erfolge",
+  "h.weekN": "Letzte {n} Tage",
+  "help.1": "<b>Drücke die Mikrofontaste</b> und fang an zu lesen; die App findet die Sure selbst (du kannst sie auch oben wählen). Mit <b>■</b> endet die Sitzung und wird gespeichert.",
+  "help.2": "Beim Lesen öffnen sich die Wörter: <span class=\"hz-ok\">grün = richtig</span>, <span class=\"hz-bad\">rot = falsch/übersprungen</span> (mit Warnton), <span class=\"hz-hint\">lila = Hinweis/hängen</span>. Das blinkende blaue Kästchen = das Wort, das du jetzt lesen sollst.",
+  "help.3": "Pausiere mit der Taste <b>Pause</b>, sieh dir die roten Wörter an und hör sie dir an, dann drücke dieselbe Taste zum Fortsetzen. Wenn du magst, lies ab einem früheren Vers erneut, um den Fehler zu korrigieren; die App folgt von dort.",
+  "help.4": "Wenn du eine Sure beendest und die nächste (oder eine andere) beginnst, wechselt die App von selbst dorthin — sie folgt, solange du liest.",
+  "help.5": "Die <b>Augentaste</b> wechselt zwischen Lesen vom Text (aller Text sichtbar) und Lesen aus dem Gedächtnis (Text verborgen).",
+  "help.6": "Wenn du hängst, drücke <b>Hinweis</b> oder <b>schweige</b> (so viele Sekunden, wie oben unter „Alafasy beginnt nach einer Pause von“ eingestellt, anfangs {wait}): Mishary Alafasy rezitiert dann weiter und die Wörter öffnen sich in Lila. Sobald du wieder liest (oder Pause/Stopp drückst), hört er auf und die App hört dir zu. Halte die Hinweistaste gedrückt, um den Rest des Verses zu öffnen.",
+  "help.7": "<b>Tippe auf ein rotes Wort</b>, um zu hören, was du gelesen hast und was du hättest lesen sollen — beides mit den Wörtern drumherum. Wenn du es richtig gelesen hast, drücke ✓.",
+  "help.8": "Wörter, bei denen du in früheren Sitzungen einen Fehler gemacht hast oder hängengeblieben bist, bleiben <span class=\"hz-w1 hz-swatch\">hell</span> bis <span class=\"hz-w3 hz-swatch\">dunkelrot</span>; nachdem du sie {clear}-mal in Folge richtig aus dem Gedächtnis gelesen hast, verschwindet die Markierung.",
+  "help.9": "Wenn du eine Markierung für falsch hältst (ohne Aufnahme oder im Tab <b>Fortschritt</b>), tippe auf das rote Kästchen: hör dir an, was du gelesen hast, und drücke <b>✓ Falsche Markierung — entfernen</b>. Die Markierung verschwindet und so gelesen wird es nicht mehr markiert.",
+  "help.10": "Im Tab <b>Fortschritt</b> hat jede Sure einen farbigen Streifen pro Vers — du siehst auf einen Blick, welche Verse am schwächsten sind (dunkelrot). Tippe auf ein Kästchen, um diesen Vers unten zu öffnen.",
+  "help.11": "Auf dem Handy: Das Modell (etwa 19 MB) wird beim ersten Mal heruntergeladen und funktioniert danach ohne Internet. Alle Daten bleiben auf diesem Handy — im Tab <b>Fortschritt</b> kannst du sie in einer Datei sichern. Die automatische Prüfung kann falsch liegen; sie ersetzt keinen Lehrer.",
+  "a.autoSurah": "Automatisch — erkennt die Sure durch Zuhören",
+  "a.lookOn": "Auswendig: Text verbergen",
+  "a.lookOff": "Lesen: ganzen Text zeigen",
+  "a.pauseResumeTip": "Fortsetzen — wo du aufgehört hast",
+  "a.pauseTip": "Pause — hält hier an, du kannst später weitermachen",
+  "a.stopTip": "Stopp — beendet und speichert die Sitzung",
+  "a.recTip": "Aufnahme starten — fang an zu lesen",
+  "a.stop": "Stopp",
+  "a.record": "Aufnehmen",
+  "a.micFail": "Das Mikrofon konnte nicht gestartet werden: {err}",
+  "a.maxRec": "Maximale Aufnahmedauer erreicht — gestoppt.",
+  "a.listening": "Ich höre zu…",
+  "a.checking": "Prüfung…",
+  "a.tooShort": "Die Aufnahme ist zu kurz.",
+  "a.noMatch": "Es passte zu keinem Vers. Lies etwas länger oder wähle die Sure selbst.",
+  "a.entry": "Sure {english}: {words} Wörter, Genauigkeit {acc} %, Fehler {missed}, Hänger {stuck}",
+  "a.saved": "Sitzung gespeichert — {parts}. Alles siehst du im Tab Fortschritt.",
+  "a.close": "Schließen",
+  "a.closeAria": "Schließen",
+  "a.listenMine": "Mein Lesen anhören",
+  "a.shouldBe": "Wie es sein sollte",
+  "a.listenAlafasyTip": "Rezitation von Mishary Alafasy (mit den Wörtern drumherum)",
+  "a.listenAlafasy": "Rezitation von Alafasy",
+  "a.iWasRight": "Ich habe es richtig gelesen",
+  "a.leftMain": "Lies es noch {n}-mal richtig aus dem Gedächtnis und die rote Markierung verschwindet",
+  "a.leftStreak": "Bisher waren {n} Sitzungen in Folge richtig.",
+  "a.leftSub": "Zählt einmal pro Sitzung und muss in Folge sein — ein Fehler oder Hängen setzt die Zählung zurück; Lesen vom Text zählt nicht.",
+  "a.wkMeta": "In früheren Sitzungen hier: {kind} — insgesamt {count}-mal, zuletzt {last}",
+  "a.saidErr": "Was du gelesen hast (was das Modell gehört hat)",
+  "a.saidWk": "Was du damals gelesen hast (was das Modell gehört hat)",
+  "a.heardNothing": "Nichts war zu hören — das Wort scheint übersprungen worden zu sein",
+  "a.noRecording": "Die Aufnahme von damals ist nicht verfügbar",
+  "a.mineErrTip": "Mein Lesen anhören (mit den zwei Wörtern davor)",
+  "a.mineWkTip": "Mein Lesen von damals anhören",
+  "a.okErrTip": "Ich habe es richtig gelesen — das Modell hat falsch gehört",
+  "a.okWkTip": "Ich habe es richtig gelesen — Markierung entfernen, so gelesen wird es nicht mehr markiert",
+  "a.okErrLbl": "Ich habe es richtig gelesen",
+  "a.okWkLbl": "Falsche Markierung — entfernen",
+  "a.markCleared": "Markierung entfernt",
+  "a.markClearedTaught": "Markierung entfernt — so gelesen wird es hier nicht mehr markiert.",
+  "a.forgetSurahQ": "Alle roten Markierungen dieser Sure entfernen? Stellen mit Aufnahme werden als richtig gelesen gemerkt — später genauso gelesen werden sie nicht mehr markiert.",
+  "a.marksCleared": "{n} Markierungen entfernt — diese Stellen so gelesen werden nicht mehr markiert.",
+  "a.storage": "Auf dem Handy gespeichert: {n} Sitzungseinträge, {r} Aufnahmen ({mb} MB).",
+  "a.pv.overview": "Übersicht",
+  "a.pv.goals": "Ziele",
+  "a.pv.memorized": "Auswendig",
+  "a.pv.tests": "Tests",
+  "a.pv.badges": "Erfolge",
+  "a.importQ": "Die Daten aus der Datei mit den aktuellen Daten zusammenführen? (OK = zusammenführen, Abbrechen = alle aktuellen Daten durch die der Datei ersetzen)",
+  "a.importOk": "Daten wiederhergestellt — Seite wird neu geöffnet…",
+  "a.importBad": "Die Datei konnte nicht gelesen werden: {err}",
+  "a.defaultMic": "Das eingebaute Mikrofon des Geräts",
+  "a.micN": "Mikrofon {n}",
+  "a.modelBuilding": "Modell wird vorbereitet…",
+  "a.modelDownload": "Modell wird heruntergeladen (etwa 19 MB, nur beim ersten Mal)…",
+  "a.modelFooter": "Modell: quran-asr-tiny · {backend}, {threads} Threads. Nach dem ersten Mal funktioniert es ohne Internet. Die automatische Prüfung kann falsch liegen; sie ersetzt keinen Lehrer.",
+  "a.modelFail": "Das Modell ist nicht gestartet: {err}",
+  "a.ayahMenuTitle": "{english} · Vers {a}",
+  "a.startFail": "Start nicht möglich: {err}",
+  "p.sura": "Sure {n}. {english}",
+  "p.paused": "Pausiert — das Zuhören beginnt wieder, wenn du fortsetzt.",
+  "p.waiting": "Ich höre zu… fang an zu lesen, nach ein paar Wörtern <b>findet sie die Sure selbst</b>.",
+  "p.autoDetected": "Automatisch erkannt",
+  "p.hCount": "Vers {a} / {n}",
+  "p.hOk": "Richtig {n}",
+  "p.hBad": "Falsch/übersprungen {n}",
+  "p.hHint": "Hinweise {n}",
+  "p.stray": "Fehler: Das klingt wie Vers {ayah} der Sure {english}. Du hast Sure {current} gelesen; lies erneut ab dem blau markierten Wort.",
+  "p.pausedBanner": "Pausiert: tippe auf ein rotes Wort zum Ansehen und Hören. Beim Fortsetzen hört die App ab hier zu; du kannst auch ab einem früheren Vers erneut lesen, um ein rotes Wort zu korrigieren.",
+  "p.cellWeak": "{span}: {n} schwache Wörter",
+  "p.cellOk": "gut",
+  "p.cellNone": "noch nicht auswendig gelesen",
+  "p.empty": "Noch keine Sitzungen. Nimm im Tab Rezitieren auf; wenn du stoppst (■), wird die Sitzung hier gespeichert.",
+  "p.cSessions": "Sitzungen insgesamt",
+  "p.cSurahs": "Geübte Suren",
+  "p.cMinutes": "Minuten insgesamt",
+  "p.cWeek": "Diese Woche",
+  "p.cWeekN": "Letzte {n} Tage",
+  "p.ayahCount": "{a}/{n} Verse",
+  "p.weakCount": "{n} schwache Wörter",
+  "p.th.surah": "Sure",
+  "p.th.state": "Stand",
+  "p.th.acc": "Letzte Genauigkeit",
+  "p.th.read": "Wie viel gelesen",
+  "p.th.weak": "Schwache Stellen",
+  "p.th.sessions": "Sitzungen",
+  "p.th.last": "Letzte Übung",
+  "p.th.when": "Wann",
+  "p.th.surahAyah": "Sure (Verse)",
+  "p.th.mode": "Art",
+  "p.th.words": "Wörter",
+  "p.th.acc2": "Genauigkeit",
+  "p.th.missed": "Fehler",
+  "p.th.stuck": "Hänger",
+  "p.th.time": "Zeit",
+  "p.mode.look": "Lesen",
+  "p.mode.hifz": "Auswendig",
+  "p.mode.mixed": "Gemischt",
+  "p.bySurah": "Auswendig-Stand nach Sure",
+  "p.recent": "Letzte Sitzungen",
+  "p.stateNote": "Stand: durchschnittliche Genauigkeit der letzten {w} Auswendig-Sitzungen — {good} % oder mehr = gut gelernt, {fair}–{good} % = mittel. Vom Text gelesene Sitzungen zählen nicht.",
+  "p.weakNote": "Schwache Stellen: Jedes Kästchen ist ein Vers, von Vers 1 bis zum Ende — {k0}, {k1}, {k2}. Tippe auf ein Kästchen, um diesen Vers unten zu zeigen.",
+  "p.key0": "grün = gut",
+  "p.key1": "hell- bis dunkelrot = je schwächer, desto dunkler",
+  "p.key2": "grau = noch nicht auswendig gelesen",
+  "p.hotChipTip": "Tippen, um unten zu zeigen",
+  "p.hotLabel": "Schwächste Stellen:",
+  "p.legend1": "gut",
+  "p.legend2": "hell- bis dunkelrot = mehr schwache Wörter",
+  "p.legend3": "noch nicht auswendig gelesen",
+  "p.mapTitle": "Schwächekarte nach Vers",
+  "p.mapSub": "Jedes Kästchen ist ein Vers — tippen, um im Text unten zu diesem Vers zu springen",
+  "p.weakHead": "{n} schwache Wörter. Hellrot = manchmal falsch/hängen, dunkelrot = immer wieder. Nach {clear} Sitzungen in Folge richtig aus dem Gedächtnis verschwindet die Markierung. <b>Tippe auf ein rotes Wort</b>, um zu hören, was du damals gelesen hast; wenn die Markierung falsch ist, kannst du sie entfernen.",
+  "p.noWeak": "Keine schwache Stelle in dieser Sure — mashaAllah!",
+  "s.col.ok": "Richtig",
+  "s.col.bad": "Falsch",
+  "s.col.peek": "Spicken",
+  "s.col.pend": "Prüfung",
+  "s.col.next": "Nächstes Wort",
+  "s.col.weak": "Alte Schwäche",
+  "s.col.listen": "Hör-Licht",
+  "s.on": "An",
+  "s.off": "Aus",
+  "s.sum.alafasy": "Alafasy {v}",
+  "s.sum.added": "Zusätzliche Wörter erkennen",
+  "s.sum.addedOff": "Zusätzliche Wörter nicht erkannt",
+  "s.sum.peekMistake": "Spicken = Fehler",
+  "s.sum.peekOk": "Spicken ist kein Fehler",
+  "s.sum.hint": "Hinweis {v}",
+  "s.sum.speed": "Tempo {v}",
+  "s.sum.perAyah": "Jeder Vers ×{n}",
+  "s.sum.weekStart": "Woche beginnt {v}",
+  "s.sum.countTests": "Tests zählen auch",
+  "s.sum.noTests": "Tests zählen nicht",
+  "s.sum.good": "Gut gelernt {v}",
+  "s.sum.clear": "Markierung weg nach {n} Sitzungen in Folge",
+  "s.sum.arabic": "Arabisch {v}",
+  "s.sum.motion": "Bewegung {v}",
+  "s.sum.awake": "Bildschirm bleibt an",
+  "s.sum.awakeOff": "Bildschirm wie üblich",
+  "bd.n.first": "Erster Schritt",
+  "bd.r.first": "Speichere deine erste Sitzung",
+  "bd.n.streak7": "Eine Woche in Folge",
+  "bd.r.streak7": "Lies 7 Tage in Folge",
+  "bd.n.streak30": "Ein Monat in Folge",
+  "bd.r.streak30": "Lies 30 Tage in Folge",
+  "bd.n.sessions100": "Hundertste Sitzung",
+  "bd.r.sessions100": "Insgesamt 100 Sitzungen",
+  "bd.n.hours10": "Zehn Stunden",
+  "bd.r.hours10": "Insgesamt 10 Stunden Rezitation",
+  "bd.n.good1": "Erste feste Sure",
+  "bd.r.good1": "Bringe eine Sure auf „gut gelernt“",
+  "bd.n.good5": "Fünf feste Suren",
+  "bd.r.good5": "5 Suren „gut gelernt“",
+  "bd.n.test100": "Perfekter Test",
+  "bd.r.test100": "100 % in einem Test mit mindestens 10 Fragen",
+  "bd.n.tests10": "Regelmäßig testen",
+  "bd.r.tests10": "Beende 10 Tests",
+  "bd.n.juz1": "Ein Juz gelernt",
+  "bd.r.juz1": "Ein ganzes Juz in der Auswendig-Liste",
+  "bd.n.cleared50": "Meister im Markierungen-Löschen",
+  "bd.r.cleared50": "Lösche 50 Schwäche-Markierungen durch richtiges Lesen aus dem Gedächtnis",
+  "bd.n.goal1": "Ziel erreicht",
+  "bd.r.goal1": "Erreiche das Tagesziel zum ersten Mal",
+  "app.title": "Hifz Helper",
+  "c.ok": "OK",
+  "c.no": "Nein",
+  "fmt.ayah1": "Vers {a}",
+  "fmt.ayahN": "Verse {a}–{b}",
+  "fmt.durMS": "{m} Min. {s} s",
+  "fmt.durS": "{s} s",
+  "u.s": "{n} Sekunden",
+  "u.min": "{n} Minuten",
+  "u.words": "{n} Wörter",
+  "u.ayah": "{n} Verse",
+  "u.sC": "{n} s",
+  "u.minC": "{n} Min.",
+  "hk.missed": "Falsch/übersprungen",
+  "hk.hint": "Du hingst (Hinweis)",
+  "hk.slip": "Ein Fehler, durch erneutes Lesen korrigiert",
+  "gr.none": "Nur vom Text gelesen",
+  "gr.good": "Gut gelernt",
+  "gr.fair": "Mittel",
+  "gr.weak": "Braucht mehr Übung",
+  "d.0": "So",
+  "d.1": "Mo",
+  "d.2": "Di",
+  "d.3": "Mi",
+  "d.4": "Do",
+  "d.5": "Fr",
+  "d.6": "Sa",
+  "g.nParts": "{n} Teile",
+  "g.minutesNote": "{n} Min. {note}",
+  "g.mode.look": "Lesen",
+  "g.mode.hifz": "Auswendig",
+  "g.mode.mixed": "Gemischt",
+  "pk.l.juz": "Juz {n}",
+  "pk.l.hizb": "Hizb {n}",
+  "pk.l.rub": "Rub {n}",
+  "pk.l.page": "Seite {n}",
+  "pk.l.pages": "Seiten {a}–{b}",
+  "pk.l.mem": "Meine gelernten Teile",
+  "pk.pageRange": "Seite {from} bis {to}",
+  "pk.u.surah": "Sure",
+  "pk.u.juz": "Juz",
+  "pk.u.hizb": "Hizb",
+  "pk.u.page": "Seite",
+  "pk.u.ayah": "Vers",
+  "t.ayahBadge": "{n} Verse",
+  "l.artist": "Mishary Rashid Alafasy",
+  "m.sugRow": "Sure {n}. {english}: Vers {a}–{b}",
+  "m.cover": "{c} / {n} Verse",
+  "t.starterRange": "{n}. {english}",
+  "a.sub": "Hört deine Rezitation aus dem Gedächtnis und erkennt Fehler sofort · merkt sich, wo du immer hängst",
+  "a.themeAria": "Farben ändern",
+  "a.lblSurah": "Sure",
+  "a.lblWait": "Alafasy beginnt nach einer Pause von",
+  "a.lblWaitSub": "Wie viele Sekunden Stille",
+  "a.howTo": "So geht’s",
+  "a.weakTitle": "Wo du immer hängst",
+  "a.pickSurahAria": "Sure wählen",
+  "a.clearAll": "Alle Markierungen entfernen",
+  "a.clearAllTip": "Alle roten Markierungen dieser Sure entfernen (fragt vorher)",
+  "a.export": "Daten in eine Datei übertragen (Sicherung)",
+  "a.import": "Daten aus einer Datei zurückholen",
+  "a.install": "Als App hinzufügen",
+  "a.timerAria": "Rezitationszeit",
+  "a.pauseAria": "Pause",
+  "a.lookAria": "Lesen / auswendig",
+  "a.hintAria": "Hinweis"
+ },
+ "settings": {
+  "recite.waitS": {
+   "label": "Alafasy beginnt nach einer Pause von",
+   "help": "Wie viele Sekunden Stille, bevor die Hilfe beginnt; „Aus“ = nie",
+   "sub": "Wenn du hängst",
+   "options": {
+    "0": "Aus"
+   }
+  },
+  "recite.silenceHelp": {
+   "label": "Was passiert, wenn du schweigst",
+   "help": "Wie viel Hilfe die App gibt, wenn du hängst",
+   "sub": "Wenn du hängst",
+   "options": {
+    "surah": "Alafasy rezitiert bis zum Ende der Sure",
+    "ayah": "Bis zum Ende des Verses",
+    "words3": "Die nächsten 3 Wörter",
+    "word": "Nur das nächste Wort",
+    "show": "Nur das nächste Wort zeigen, ohne Audio"
+   }
+  },
+  "recite.promptOnLook": {
+   "label": "Hilfe auch beim Lesen vom Text",
+   "help": "Die Hilfe kommt nach Stille auch bei eingeschalteter Augentaste",
+   "sub": "Wenn du hängst"
+  },
+  "detect.changed": {
+   "label": "Falsche Wörter erkennen",
+   "help": "Ein Wort wird rot, wenn du an seiner Stelle ein anderes liest",
+   "sub": "Welche Fehler erkannt werden"
+  },
+  "detect.skipped": {
+   "label": "Übersprungene Wörter erkennen",
+   "help": "Ein Wort wird rot, wenn du weitermachst, ohne es zu lesen",
+   "sub": "Welche Fehler erkannt werden"
+  },
+  "detect.added": {
+   "label": "Zusätzliche Wörter erkennen",
+   "help": "Das nächste Wort wird rot, wenn du in einem Vers etwas Zusätzliches liest; Ausschalten entlastet das Handy",
+   "sub": "Welche Fehler erkannt werden"
+  },
+  "detect.stray": {
+   "label": "Warnen beim Wechsel in eine andere Sure",
+   "help": "Rotes Banner und Warnton, wenn du in einen ähnlichen Vers einer anderen Sure rutschst",
+   "sub": "Welche Fehler erkannt werden"
+  },
+  "detect.confirmedWords": {
+   "label": "Richtig gelesene Wörter, bevor eine andere Sure als Fehler zählt",
+   "help": "Niedrig = warnt früher; hoch = weniger Fehlwarnungen beim Beginn einer neuen Sure",
+   "sub": "Welche Fehler erkannt werden"
+  },
+  "detect.similarRatio": {
+   "label": "Strenge des Wortabgleichs",
+   "help": "Hoch = erkennt auch ähnliche Aussprachen; niedrig = nachsichtiger",
+   "sub": "Welche Fehler erkannt werden"
+  },
+  "detect.noAdvance": {
+   "label": "Nicht weitermachen, bis ein Fehler behoben ist",
+   "help": "Wenn ein Wort rot ist, öffnet sich das nächste erst, wenn du es richtig liest",
+   "sub": "Welche Fehler erkannt werden"
+  },
+  "detect.teachOnRemove": {
+   "label": "Verworfene Fehler merken",
+   "help": "Nach „Ich habe es richtig gelesen“ oder „Verwerfen“ wird dieselbe Lesart nicht mehr markiert",
+   "sub": "Welche Fehler erkannt werden"
+  },
+  "detect.errorTone": {
+   "label": "Warnton",
+   "help": "Ein Ton, wenn ein Wort rot wird oder du in eine andere Sure gerätst (nur bei Aufnahme)",
+   "sub": "Warnton",
+   "options": {
+    "off": "Aus",
+    "soft": "Leise",
+    "normal": "Normal",
+    "loud": "Laut"
+   }
+  },
+  "detect.toneKind": {
+   "label": "Art des Warntons",
+   "sub": "Warnton",
+   "options": {
+    "two": "Zwei Töne",
+    "beep": "Ein Piepton",
+    "double": "Zwei Pieptöne"
+   }
+  },
+  "detect.vibrate": {
+   "label": "Bei Fehler vibrieren",
+   "help": "Das Handy vibriert kurz bei einem roten Wort",
+   "sub": "Warnton"
+  },
+  "recite.startAt": {
+   "label": "Welche Sure zu Beginn",
+   "help": "Wie die Sure beim Öffnen der App gewählt wird",
+   "sub": "Start",
+   "options": {
+    "auto": "Durch Zuhören finden",
+    "last": "Sure und Vers vom letzten Mal",
+    "continue": "Dort weitermachen, wo du zuletzt aufgehört hast"
+   }
+  },
+  "recite.autoAyahs": {
+   "label": "Wie viele Verse im Voraus zeigen",
+   "help": "Wie viele Verse beim Lesen auf einmal hinzukommen",
+   "sub": "Start"
+  },
+  "recite.mistakeList": {
+   "label": "Fehlerliste zeigen",
+   "help": "Ein Tipp auf den Zähler „falsch/übersprungen“ oben zeigt alle Fehler dieser Sitzung zusammen",
+   "sub": "Start"
+  },
+  "recite.look": {
+   "label": "Vom Text lesen (ganzen Text zeigen)",
+   "help": "Wie die Augentaste; vom Text gelesene Wörter zählen nicht für das Löschen von Markierungen",
+   "sub": "Verborgener Text"
+  },
+  "hide.style": {
+   "label": "Wie verborgene Wörter aussehen",
+   "sub": "Verborgener Text",
+   "options": {
+    "bar": "Ein Kästchen in Wortgröße",
+    "line": "Nur eine Linie darunter",
+    "blank": "Ganz leer"
+   }
+  },
+  "hide.weakTint": {
+   "label": "Farbe früherer Schwäche bei verborgenen Wörtern",
+   "help": "Wörter, die in früheren Sitzungen falsch waren, zeigen ein hell- bis dunkelrotes Kästchen",
+   "sub": "Verborgener Text"
+  },
+  "hide.ayahMarks": {
+   "label": "Versmarken verbergen",
+   "help": "Die Marke am Versende wird erst gezeigt, wenn der Vers ganz gelesen ist",
+   "sub": "Verborgener Text"
+  },
+  "hide.nextWord": {
+   "label": "Kästchen des nächsten Wortes markieren",
+   "help": "Ein Ring um das Kästchen des Wortes, das du jetzt lesen sollst",
+   "sub": "Verborgener Text"
+  },
+  "hide.head": {
+   "label": "Sure und Versnummer oben zeigen",
+   "help": "Aus: in welchem Vers du bist, bleibt verborgen",
+   "sub": "Verborgener Text"
+  },
+  "peek.countsAsMistake": {
+   "label": "Spicken als Fehler zählen",
+   "help": "Durch Hinweis oder Spicken geöffnete Wörter zählen bei Schwäche-Markierungen und Testergebnis als Fehler",
+   "sub": "Spicken"
+  },
+  "peek.longPressRest": {
+   "label": "Hinweis gedrückt halten für den Rest des Verses",
+   "help": "Die Hinweistaste eine halbe Sekunde halten (Rechtsklick am Computer) öffnet alle restlichen Wörter des Verses",
+   "sub": "Spicken"
+  },
+  "peek.doubleTap": {
+   "label": "Doppeltipp auf den Text für das nächste Wort",
+   "help": "Bei Aufnahme öffnet ein Doppeltipp auf ein Wortkästchen (Doppelklick am Computer) das nächste Wort wie ein Hinweis",
+   "sub": "Spicken"
+  },
+  "test.endBy": {
+   "label": "Wann der Test endet",
+   "sub": "Länge",
+   "options": {
+    "count": "Nach Anzahl der Fragen",
+    "time": "Nach Zeit",
+    "open": "Wenn ich ihn stoppe"
+   }
+  },
+  "test.questions": {
+   "label": "Wie viele Fragen",
+   "sub": "Länge"
+  },
+  "test.minutes": {
+   "label": "Wie viele Minuten",
+   "help": "Ist die Zeit um, wird die aktuelle Frage beendet und das Ergebnis gezeigt",
+   "sub": "Länge"
+  },
+  "test.lengthUnit": {
+   "label": "Länge einer Frage messen",
+   "sub": "Fragen",
+   "options": {
+    "words": "In Wörtern",
+    "ayahs": "In Versen"
+   }
+  },
+  "test.lengthWords": {
+   "label": "Zu lesende Wörter pro Frage",
+   "help": "Die Wörter nach dem Hinweis",
+   "sub": "Fragen",
+   "options": {
+    "8": "Kurz 8",
+    "15": "Mittel 15",
+    "30": "Lang 30"
+   }
+  },
+  "test.lengthAyahs": {
+   "label": "Verse pro Frage",
+   "sub": "Fragen"
+  },
+  "test.extendToAyahEnd": {
+   "label": "Bis zum Ende des Verses weitermachen",
+   "help": "Eine Frage hört nicht mitten im Vers auf, sondern beendet ihn",
+   "sub": "Fragen"
+  },
+  "test.hintWords": {
+   "label": "Wie viele Wörter am Anfang zeigen",
+   "help": "Den Rest liest du ohne Hinsehen; 0 = nur Sure und Versnummer",
+   "sub": "Fragen"
+  },
+  "test.start": {
+   "label": "Wo eine Frage beginnt",
+   "sub": "Fragen",
+   "options": {
+    "ayah": "Am Anfang eines Verses",
+    "random": "Irgendwo im Vers"
+   }
+  },
+  "test.order": {
+   "label": "Reihenfolge der Fragen",
+   "sub": "Fragen",
+   "options": {
+    "shuffle": "Gemischt",
+    "seq": "In Reihenfolge",
+    "weak": "Schwache Stellen zuerst"
+   }
+  },
+  "test.noRepeat": {
+   "label": "Keine Frage wiederholt sich, bevor der ganze Bereich durch ist",
+   "sub": "Fragen"
+  },
+  "test.showRef": {
+   "label": "Sure und Versnummer zeigen",
+   "help": "Lässt sich auch mit der Augentaste auf der Karte umschalten",
+   "sub": "Fragen"
+  },
+  "test.silence": {
+   "label": "Wenn du schweigst",
+   "sub": "Wenn du hängst",
+   "options": {
+    "none": "Nichts",
+    "show": "Das nächste Wort zeigen",
+    "alafasy": "Alafasy rezitiert das nächste Wort"
+   }
+  },
+  "test.silenceS": {
+   "label": "Wie viele Sekunden Stille",
+   "sub": "Wenn du hängst"
+  },
+  "test.doubleTapPeek": {
+   "label": "Doppeltipp auf die Karte für das nächste Wort",
+   "help": "Doppelklick am Computer",
+   "sub": "Wenn du hängst"
+  },
+  "test.skipCounts": {
+   "label": "Übersprungene Fragen im Ergebnis zählen",
+   "help": "An: Eine übersprungene Frage zählt als „nicht richtig“",
+   "sub": "Ergebnis"
+  },
+  "test.streakAt": {
+   "label": "Flamme nach wie vielen richtigen in Folge",
+   "sub": "Ergebnis"
+  },
+  "test.advance": {
+   "label": "Nach einer Frage",
+   "sub": "Ablauf",
+   "options": {
+    "auto": "Ergebnis zeigen, dann von selbst zur nächsten",
+    "tap": "Wenn ich „Nächste Frage“ drücke"
+   }
+  },
+  "test.holdS": {
+   "label": "Wie lange das Ergebnis gezeigt wird",
+   "help": "Nachdem die Karte grün/rot wird, vor der nächsten Frage",
+   "sub": "Ablauf"
+  },
+  "test.countdown": {
+   "label": "Countdown vor dem Start",
+   "sub": "Ablauf",
+   "options": {
+    "0": "Aus",
+    "3": "3 Sekunden",
+    "5": "5 Sekunden"
+   }
+  },
+  "test.autoPauseS": {
+   "label": "Bei Stille von selbst pausieren",
+   "help": "Der Test pausiert, wenn so viele Sekunden nichts gelesen wird",
+   "sub": "Ablauf",
+   "options": {
+    "0": "Aus",
+    "15": "15",
+    "30": "30",
+    "60": "60",
+    "120": "120 Sekunden"
+   }
+  },
+  "test.sound": {
+   "label": "Ton nach einer Frage",
+   "help": "Ein hoher Ton bei richtig, ein tiefer bei falsch",
+   "sub": "Ablauf"
+  },
+  "test.vibrate": {
+   "label": "Nach einer Frage vibrieren",
+   "sub": "Ablauf"
+  },
+  "test.temporary": {
+   "label": "Temporärer Test",
+   "help": "Nichts wird gespeichert — kein Ergebnis, keine Fehler, keine Aufnahmen; nützlich, um jemand anderen zu testen",
+   "sub": "Speichern"
+  },
+  "test.countInHistory": {
+   "label": "Testfehler zu den Schwäche-Markierungen hinzufügen",
+   "help": "Aus: Das Testergebnis bleibt, aber die Schwäche-Markierungen ändern sich nicht",
+   "sub": "Speichern"
+  },
+  "test.checkAdded": {
+   "label": "Zusätzliche Wörter im Test erkennen",
+   "help": "Aus: Die Prüfung nach einer Frage ist schneller",
+   "sub": "Speichern"
+  },
+  "listen.reciter": {
+   "label": "Rezitator: Mishary Rashid Alafasy (vorerst nur einer)",
+   "sub": "Rezitator"
+  },
+  "listen.speed": {
+   "label": "Tempo",
+   "help": "Langsam hören erleichtert das Auswendiglernen",
+   "sub": "Tempo und Wiederholungen",
+   "options": {
+    "1": "1×",
+    "2": "2×",
+    "0.5": "0.5×",
+    "0.75": "0.75×",
+    "1.25": "1.25×",
+    "1.5": "1.5×"
+   }
+  },
+  "listen.repeatAyah": {
+   "label": "Wie oft jeder Vers",
+   "sub": "Tempo und Wiederholungen"
+  },
+  "listen.repeatRange": {
+   "label": "Wie oft der ganze Abschnitt",
+   "sub": "Tempo und Wiederholungen",
+   "options": {
+    "0": "Endlos"
+   }
+  },
+  "listen.gapRepeatS": {
+   "label": "Pause, bevor derselbe Vers wiederholt wird",
+   "help": "Zeit, ihn selbst zu sagen",
+   "sub": "Tempo und Wiederholungen"
+  },
+  "listen.gapAyahS": {
+   "label": "Pause nach jedem Vers",
+   "help": "Bevor es zum nächsten Vers geht",
+   "sub": "Tempo und Wiederholungen"
+  },
+  "listen.gapAuto": {
+   "label": "Pause so lang wie der Vers",
+   "help": "An: Nach jedem Vers wartet sie so lange, wie das Lesen des Verses dauert — um ihn nach dem Hören selbst zu sagen",
+   "sub": "Tempo und Wiederholungen"
+  },
+  "listen.highlight": {
+   "label": "Zeigen, was rezitiert wird",
+   "sub": "Text",
+   "options": {
+    "word": "Nach Wort",
+    "ayah": "Nach Vers",
+    "none": "Nichts"
+   }
+  },
+  "listen.text": {
+   "label": "Text",
+   "sub": "Text",
+   "options": {
+    "show": "Alles zeigen",
+    "reveal": "Öffnet sich beim Hören",
+    "hide": "Verborgen"
+   }
+  },
+  "listen.autoScroll": {
+   "label": "Mitscrollen",
+   "sub": "Text"
+  },
+  "listen.basmala": {
+   "label": "Basmala am Anfang einer Sure",
+   "help": "Beim Hören ab Vers 1 wird zuerst die Basmala rezitiert (außer bei Al-Fatiha und At-Tauba)",
+   "sub": "Text"
+  },
+  "listen.nextSurah": {
+   "label": "Am Ende die nächste Sure abspielen",
+   "sub": "Text"
+  },
+  "listen.sleepMin": {
+   "label": "Schlaf-Timer",
+   "help": "Das Hören stoppt nach dieser Zahl Minuten",
+   "sub": "Text",
+   "options": {
+    "0": "Aus",
+    "10": "10",
+    "15": "15",
+    "30": "30",
+    "60": "60 Minuten"
+   }
+  },
+  "listen.countAsSession": {
+   "label": "Hören im Verlauf behalten",
+   "help": "Gespeichert wird, wie lange du welchen Teil gehört hast; es zählt für Ziele oder Serie nur, wenn unter „Ziele und Serie“ aktiviert",
+   "sub": "Text"
+  },
+  "audio.ctxBefore": {
+   "label": "Alafasy bei einem roten Wort: Wörter davor",
+   "help": "Wie viele Wörter vor dem Wort das Fenster rezitiert",
+   "sub": "Audio roter Wörter"
+  },
+  "audio.ctxAfter": {
+   "label": "Alafasy bei einem roten Wort: Wörter danach",
+   "sub": "Audio roter Wörter"
+  },
+  "audio.myCtxWords": {
+   "label": "Mein Lesen: Wörter davor",
+   "help": "Wie viele Wörter früher deine eigene Aufnahme im Fenster beginnt",
+   "sub": "Audio roter Wörter"
+  },
+  "audio.popupSpeed": {
+   "label": "Alafasys Tempo im Fenster",
+   "sub": "Audio roter Wörter"
+  },
+  "audio.offlineMaxMB": {
+   "label": "Größte Größe für Offline-Speicherung (pro Sure)",
+   "help": "Größere Suren werden nur online abgespielt",
+   "sub": "Offline",
+   "options": {
+    "40": "40",
+    "80": "80",
+    "150": "150",
+    "250": "250 MB"
+   }
+  },
+  "goals.dayStart": {
+   "label": "Der Tag beginnt um",
+   "help": "Wenn du spät nachts liest, zählt es für den Vortag",
+   "options": {
+    "0": "Mitternacht",
+    "1": "1 Uhr",
+    "2": "2 Uhr",
+    "3": "3 Uhr",
+    "4": "4 Uhr",
+    "5": "5 Uhr",
+    "6": "6 Uhr"
+   }
+  },
+  "goals.weekStart": {
+   "label": "Die Woche beginnt am",
+   "options": {
+    "0": "Sonntag",
+    "1": "Montag",
+    "6": "Samstag"
+   }
+  },
+  "goals.streakMin": {
+   "label": "Ein Tag zählt für die Serie mit mindestens",
+   "options": {
+    "any": "Irgendeiner Sitzung",
+    "m5": "5 Minuten",
+    "m10": "10 Minuten",
+    "m20": "20 Minuten",
+    "goals": "Alle heutigen Ziele erledigt"
+   }
+  },
+  "goals.countLook": {
+   "label": "Lesen vom Text für Auswendig- und Wiederholungsziele zählen"
+  },
+  "goals.countListen": {
+   "label": "Hören für Rezitationsziele und die Serie zählen"
+  },
+  "goals.countTests": {
+   "label": "Tests auch für Ziele zählen"
+  },
+  "goals.countManual": {
+   "label": "Lesen außerhalb der App auch zählen"
+  },
+  "goals.showToday": {
+   "label": "Heutiges Ziel auf der Seite Rezitieren zeigen",
+   "help": "Ohne Ziel wird nichts gezeigt"
+  },
+  "history.clearStreak": {
+   "label": "Sitzungen in Folge zum Löschen einer Markierung",
+   "help": "Eine rote Markierung verschwindet, nachdem du in so vielen getrennten Sitzungen in Folge richtig aus dem Gedächtnis gelesen hast",
+   "sub": "Schwäche-Markierungen"
+  },
+  "history.lookClears": {
+   "label": "Lesen vom Text für das Löschen von Markierungen zählen",
+   "sub": "Schwäche-Markierungen"
+  },
+  "history.good": {
+   "label": "„Gut gelernt“ ab wie viel %",
+   "sub": "Stand-Schwellen"
+  },
+  "history.fair": {
+   "label": "„Mittel“ ab wie viel %",
+   "help": "Muss niedriger sein als „Gut gelernt“",
+   "sub": "Stand-Schwellen"
+  },
+  "history.gradeWindow": {
+   "label": "Wie viele letzte Auswendig-Sitzungen den Stand bestimmen",
+   "sub": "Stand-Schwellen"
+  },
+  "history.recent": {
+   "label": "Wie viele letzte Sitzungen zeigen",
+   "sub": "Listen",
+   "options": {
+    "0": "Alle",
+    "10": "10",
+    "30": "30",
+    "100": "100"
+   }
+  },
+  "history.weekDays": {
+   "label": "Tage in der Karte „Diese Woche“",
+   "help": "Bei einem anderen Wert als 7 heißt die Karte „Letzte {n} Tage“",
+   "sub": "Listen"
+  },
+  "history.minWords": {
+   "label": "Kleinste Sitzung (in Wörtern), die gespeichert wird",
+   "sub": "Listen"
+  },
+  "history.maxEvents": {
+   "label": "Wie viele Fehler pro schwachem Wort gemerkt werden",
+   "sub": "Listen"
+  },
+  "history.hotZones": {
+   "label": "Wie viele „schwächste Stellen“ zeigen",
+   "sub": "Listen"
+  },
+  "history.heatmap": {
+   "label": "Heatmap zeigen",
+   "help": "Wie viele Minuten du jeden Tag liest — die letzten 12 Wochen",
+   "sub": "Listen"
+  },
+  "history.popupTimes": {
+   "label": "Im Markierungs-Fenster zeigen, wie oft du es gelesen hast",
+   "sub": "Listen"
+  },
+  "history.saveRecordings": {
+   "label": "Aufnahmen der Sitzungen behalten",
+   "help": "Aus: Neue Aufnahmen werden nicht gespeichert, du kannst dein eigenes Lesen an einer Markierung später also nicht hören; alte bleiben",
+   "sub": "Aufnahmen"
+  },
+  "view.lang": {
+   "label": "Sprache / Language",
+   "help": "Sprache des App-Textes; der Koran-Text ändert sich nicht",
+   "sub": "Sprache",
+   "options": {
+    "bn": "বাংলা",
+    "en": "English",
+    "ar": "العربية",
+    "ur": "اردو",
+    "hi": "हिन्दी",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "tr": "Türkçe",
+    "fa": "فارسی",
+    "fr": "Français",
+    "es": "Español",
+    "pt": "Português",
+    "de": "Deutsch",
+    "ru": "Русский",
+    "zh": "中文（简体）",
+    "sw": "Kiswahili"
+   }
+  },
+  "view.theme": {
+   "label": "Seitenfarben",
+   "sub": "Farben",
+   "options": {
+    "auto": "Automatisch",
+    "paper": "Papier",
+    "night": "Nacht-Mushaf",
+    "sepia": "Altpapier"
+   }
+  },
+  "view.wordSet": {
+   "label": "Farbset der Wörter",
+   "sub": "Farben",
+   "options": {
+    "default": "Normal",
+    "cb": "Besser unterscheidbar",
+    "brown": "Braunes Spicken",
+    "custom": "Eigene"
+   }
+  },
+  "view.wordStyle": {
+   "label": "Wie Farben angewendet werden",
+   "help": "Hervorheben = Text bleibt schwarz mit farbigem Kästchen dahinter",
+   "sub": "Farben",
+   "options": {
+    "text": "Textfarbe",
+    "highlight": "Hervorheben"
+   }
+  },
+  "view.customColors": {
+   "label": "Meine eigenen Farben",
+   "help": "Wähle für jeden Zustand eine Farbe; sie wird für jede Seitenfarbe getrennt gemerkt",
+   "sub": "Farben"
+  },
+  "view.arabicScale": {
+   "label": "Größe des arabischen Textes",
+   "sub": "Text"
+  },
+  "view.lineGap": {
+   "label": "Abstand zwischen Zeilen",
+   "sub": "Text"
+  },
+  "view.wordGap": {
+   "label": "Abstand zwischen Wörtern",
+   "sub": "Text"
+  },
+  "view.uiScale": {
+   "label": "Größe des Oberflächentextes",
+   "sub": "Text",
+   "options": {
+    "90": "Klein",
+    "100": "Normal",
+    "115": "Groß",
+    "130": "Größer"
+   }
+  },
+  "view.uiFont": {
+   "label": "Schrift der Oberfläche",
+   "sub": "Text",
+   "options": {
+    "app": "Die Schrift der App",
+    "system": "Die Schrift des Geräts"
+   }
+  },
+  "view.motion": {
+   "label": "Bewegung (Animation)",
+   "help": "Bei Aufnahme immer aus",
+   "sub": "Bewegung",
+   "options": {
+    "auto": "Automatisch",
+    "full": "Voll",
+    "gentle": "Dezent",
+    "off": "Aus"
+   }
+  },
+  "view.intro": {
+   "label": "Startanimation (der Mushaf öffnet sich)",
+   "help": "Wird beim Öffnen der App gezeigt; ein Tipp auf den Bildschirm überspringt sie sofort",
+   "sub": "Bewegung",
+   "options": {
+    "every": "Jedes Mal",
+    "daily": "Einmal am Tag",
+    "off": "Aus"
+   }
+  },
+  "view.scroll": {
+   "label": "Wo die Leselinie bleibt",
+   "sub": "Bewegung",
+   "options": {
+    "second": "In der zweiten Zeile von oben",
+    "middle": "In der Mitte",
+    "off": "Ich scrolle selbst"
+   }
+  },
+  "view.timer": {
+   "label": "Zeit anzeigen",
+   "sub": "Infos oben"
+  },
+  "view.legend": {
+   "label": "Zeigen, was die Farben bedeuten",
+   "help": "Eine kleine Legende über dem Text",
+   "sub": "Infos oben"
+  },
+  "view.headStats": {
+   "label": "Anzahl von richtig, falsch und Hinweisen zeigen",
+   "sub": "Infos oben"
+  },
+  "view.bnDigits": {
+   "label": "Zahlen in bengalischen Ziffern schreiben",
+   "help": "Aus: 0–9 (nur Bengalisch)",
+   "sub": "Infos oben"
+  },
+  "device.micId": {
+   "label": "Mikrofon",
+   "options": {
+    "default": "Das eingebaute Mikrofon des Geräts"
+   }
+  },
+  "device.echoCancel": {
+   "label": "Echo verringern",
+   "help": "Verringert Alafasys Ton im Mikrofon; aus kann die Hilfe nach Stille stören"
+  },
+  "device.noiseSuppress": {
+   "label": "Umgebungsgeräusche verringern",
+   "help": "Nützlich bei Lärm, aber eine leise Stimme kann ebenfalls abgeschnitten werden"
+  },
+  "device.autoGain": {
+   "label": "Mikrofonpegel automatisch anpassen",
+   "options": {
+    "browser": "Wie der Browser es macht",
+    "on": "An",
+    "off": "Aus"
+   }
+  },
+  "device.sensitivity": {
+   "label": "Mikrofonempfindlichkeit",
+   "help": "„Hoch“ bei leisem Lesen, „Niedrig“ bei Lärm",
+   "options": {
+    "low": "Niedrig",
+    "normal": "Normal",
+    "high": "Hoch"
+   }
+  },
+  "device.threads": {
+   "label": "Prozessor-Threads",
+   "help": "Mehr = schneller, aber das Handy kann heiß werden",
+   "options": {
+    "1": "1",
+    "2": "2",
+    "4": "4",
+    "auto": "Automatisch"
+   }
+  },
+  "device.slowPhone": {
+   "label": "An ein langsames Handy anpassen",
+   "help": "Bei einem langsamen Handy wird jedes Mal weniger Audio verarbeitet, damit es nicht hinterherhinkt"
+  },
+  "device.liveModel": {
+   "label": "Live-Modell",
+   "help": "Ein größeres Modell hört genauer, ist aber langsamer",
+   "options": {
+    "tiny": "tiny",
+    "base": "base"
+   }
+  },
+  "device.checkModel": {
+   "label": "Prüfmodell",
+   "help": "Hört nochmal zu, bevor es die Sure erkennt und rot markiert",
+   "options": {
+    "base": "base",
+    "tiny": "tiny"
+   }
+  },
+  "device.keepAwake": {
+   "label": "Bildschirm bei Aufnahme und Hören anlassen"
+  },
+  "device.shortcuts": {
+   "label": "Tastenkürzel",
+   "help": "Leertaste = Pause, H = Hinweis, R = Rest des Verses, E = Auge, M = Fehlerliste, N = nächste Frage, P = Hören abspielen/pausieren"
+  },
+  "device.maxRecMin": {
+   "label": "Längste Aufnahme",
+   "help": "Die Aufnahme stoppt danach von selbst",
+   "options": {
+    "0": "Keine Grenze",
+    "30": "30",
+    "60": "60",
+    "90": "90",
+    "120": "120 Minuten"
+   }
+  },
+  "adv.windowS": {
+   "label": "Pro Durchgang verarbeitete Audio-Sekunden"
+  },
+  "adv.updateEveryS": {
+   "label": "Wie oft neues Audio verarbeitet wird",
+   "help": "Ein niedrigerer Wert = mehr Arbeit fürs Handy"
+  },
+  "adv.lookahead": {
+   "label": "Wie viele Wörter voraus abgeglichen werden"
+  },
+  "adv.shortSkip": {
+   "label": "Wie viele Wörter übersprungen werden dürfen, wenn zwei Wörter passen"
+  },
+  "adv.longSkipRun": {
+   "label": "Wörter in Folge, die passen müssen, um mehr zu überspringen"
+  },
+  "adv.finalSkip": {
+   "label": "Höchstzahl übersprungener Wörter bei der Schlussprüfung"
+  },
+  "adv.detectMinWords": {
+   "label": "Mindestzahl Wörter, um eine Sure zu erkennen"
+  },
+  "adv.detectMargin": {
+   "label": "Um das Wievielfache vor der nächstwahrscheinlichen Sure sie liegen muss"
+  },
+  "adv.detectSureWords": {
+   "label": "Nach so vielen Wörtern wählt sie auch bei knappem Abstand"
+  },
+  "adv.lostS": {
+   "label": "Sekunden ohne Fortschritt, bevor die Stelle neu gesucht wird"
+  },
+  "adv.lostReds": {
+   "label": "Rote unter den letzten Wörtern, die eine Neusuche auslösen: Rote"
+  },
+  "adv.lostOf": {
+   "label": "…unter den letzten wie vielen Wörtern"
+  },
+  "adv.rewindRun": {
+   "label": "Wörter in Folge, um Rückwärtslesen zu erkennen"
+  },
+  "adv.backWords": {
+   "label": "Höchstzahl erkannter Wörter zurück"
+  },
+  "adv.verifyWindowS": {
+   "label": "Sekunden, um übersprungene Wörter erneut zu hören"
+  },
+  "adv.verifyMaxS": {
+   "label": "…höchstens Sekunden"
+  },
+  "adv.autoExtendAt": {
+   "label": "Weitere Verse kommen hinzu, wenn so viele Wörter voraus übrig sind"
+  },
+  "adv.sameAudio": {
+   "label": "Audio-Übereinstimmung, um „Ich habe es richtig gelesen“ zu merken",
+   "help": "Niedrig = streng (muss genau gleich gelesen werden)"
+  },
+  "adv.sameHeard": {
+   "label": "Übereinstimmung des gehörten Textes, um „Ich habe es richtig gelesen“ zu merken",
+   "help": "Hoch = streng"
+  },
+  "adv.maxClipS": {
+   "label": "Längster eigener Clip eines roten Wortes, in Sekunden"
+  },
+  "adv.stripCells": {
+   "label": "Höchstzahl Kästchen in einem Fortschrittsstreifen"
+  },
+  "adv.cellMid": {
+   "label": "Ein Kästchen wird ab dieser Schwäche-Summe mittelrot"
+  },
+  "adv.cellDark": {
+   "label": "…dunkelrot ab"
+  }
+ },
+ "groups": {
+  "recite": {
+   "name": "Rezitation und Fehler",
+   "help": "Was die App beim Lesen erkennt, was sie tut, wenn du hängst"
+  },
+  "hide": {
+   "name": "Verbergen und Spicken",
+   "help": "Wie der Text beim Lesen aus dem Gedächtnis verborgen wird, was Spicken bewirkt"
+  },
+  "test": {
+   "name": "Test",
+   "help": "Länge, Hinweise und Ergebnis des Karteikarten-Tests"
+  },
+  "listen": {
+   "name": "Hören und Audio",
+   "help": "Alafasys Rezitation — Tempo, Wiederholungen, offline"
+  },
+  "goals": {
+   "name": "Ziele und Serie",
+   "help": "Tageszählung, Serie, welches Lesen für Ziele zählt"
+  },
+  "history": {
+   "name": "Fortschritt und Verlauf",
+   "help": "Regeln zum Löschen von Markierungen, Stand-Schwellen, Aufnahmen"
+  },
+  "view": {
+   "name": "Darstellung",
+   "help": "Farben, Textgröße, Bewegung"
+  },
+  "device": {
+   "name": "Mikrofon und Gerät",
+   "help": "Mikrofon, Prozessor, Bildschirm"
+  },
+  "adv": {
+   "name": "Erweitert",
+   "help": "Interne Rechenwerte — mit Vorsicht ändern"
+  }
+ },
+ "presets": {
+  "recite": {
+   "label": "Strenge der Fehlererkennung",
+   "items": {
+    "easy": {
+     "label": "Leicht",
+     "help": "Fürs neue Auswendiglernen: verzeiht kleine Aussprachefehler, zusätzliche Wörter werden nicht erkannt"
+    },
+    "normal": {
+     "label": "Normal",
+     "help": "Tägliche Wiederholung"
+    },
+    "strict": {
+     "label": "Streng",
+     "help": "Vor dem Vortrag bei einem Lehrer: auch ähnliche Aussprache ist ein Fehler, kein Weiter ohne Korrektur"
+    }
+   }
+  },
+  "test": {
+   "label": "Testart",
+   "items": {
+    "quick": {
+     "label": "Schnelle Übung"
+    },
+    "normal": {
+     "label": "Normal"
+    },
+    "hard": {
+     "label": "Schwer"
+    }
+   }
+  },
+  "listen": {
+   "label": "Art des Hörens",
+   "items": {
+    "only": {
+     "label": "Nur hören"
+    },
+    "memo": {
+     "label": "Zum Auswendiglernen"
+    },
+    "say": {
+     "label": "Hören und nachsprechen"
+    },
+    "slow": {
+     "label": "Langsames Lernen"
+    }
+   }
+  }
+ }
+}

@@ -1,0 +1,1460 @@
+{
+ "strings": {
+  "intro.preparing": "Preparando…",
+  "nav.tab.recite": "Recitar",
+  "nav.tab.test": "Prueba",
+  "nav.tab.listen": "Escuchar",
+  "nav.tab.progress": "Progreso",
+  "nav.tab.settings": "Ajustes",
+  "nav.busy": "La grabación está activa — deténla primero (■) y luego cambia de página.",
+  "nav.themeTip": "Cambiar color: Papel / Mushaf nocturno / Papel antiguo (mantén pulsado para todos los ajustes)",
+  "s.title": "Ajustes",
+  "s.search": "Buscar ajustes…",
+  "s.searchEmpty": "Ningún ajuste tiene ese nombre.",
+  "s.back": "Todos los ajustes",
+  "s.changedN": "{n} cambiados",
+  "s.rowReset": "Restablecer valor",
+  "s.sectionReset": "Restablecer esta sección",
+  "s.sectionResetQ": "Todos los ajustes de «{group}» volverán a sus valores por defecto. ¿Aceptar?",
+  "s.allReset": "Restablecer todos los ajustes",
+  "s.allResetQ": "Todos los ajustes volverán a sus valores por defecto. Tus sesiones, marcas, grabaciones, pruebas y metas se conservan. ¿Aceptar?",
+  "s.resetDone": "Restablecido.",
+  "s.export": "Guardar los ajustes en un archivo",
+  "s.import": "Cargar los ajustes desde un archivo",
+  "s.importOk": "{n} ajustes cargados.",
+  "s.importSkip": "{n} ajustes cargados, {m} eran desconocidos o fuera de rango — omitidos.",
+  "s.importBad": "No se pudo leer el archivo: {err}",
+  "s.importWrong": "Este no es un archivo de ajustes de Hifz Helper.",
+  "s.where": "Los ajustes se quedan en este teléfono. Para pasarlos a otro teléfono u ordenador usa «Guardar los ajustes en un archivo».",
+  "s.whenNext": "Se aplica desde la próxima sesión",
+  "s.whenReload": "Se aplica al volver a abrir la app",
+  "s.reloadNow": "Abrir de nuevo ahora",
+  "s.live": "La grabación está activa — se aplica al detenerla",
+  "s.invalid": "Este valor no está permitido — se mantuvo el anterior.",
+  "s.presetCustom": "Personalizado",
+  "s.presetApplied": "Preajuste «{name}» aplicado.",
+  "s.undo": "Deshacer",
+  "s.custom": "Personalizado…",
+  "s.advWarn": "Estos son los cálculos internos de la app. Un valor incorrecto puede empeorar la detección de errores. Si dudas, pulsa «Restablecer esta sección».",
+  "s.advSummary": "Cálculos internos — cambiar con cuidado",
+  "s.contrast": "Contraste bajo: {r}:1 — puede ser difícil de leer (mejor 4,5:1 o más).",
+  "s.platOnly": "Solo en teléfono",
+  "r.listTip": "Ver todos los errores de esta sesión",
+  "r.listTitle": "Errores de esta sesión ({n})",
+  "r.ayahRef": "Aleya {a}",
+  "r.kind.skipped": "Omitida",
+  "r.kind.changed": "Leyó otra palabra",
+  "r.kind.added": "Leyó una palabra de más",
+  "r.kind.peek": "Vistazo",
+  "r.listen": "Escuchar",
+  "r.remove": "Descartar",
+  "r.removed": "Descartado.",
+  "r.removedTaught": "Descartado — leerlo así aquí no se volverá a marcar.",
+  "r.removedTitle": "Descartados ({n})",
+  "r.restore": "Restaurar",
+  "r.restored": "Se cuenta de nuevo como error.",
+  "r.removeAll": "Descartar todos",
+  "r.removeAllQ": "¿Descartar todos los errores de esta sesión? Puedes recuperarlos con «Restaurar».",
+  "r.empty": "Aún no hay errores.",
+  "r.hintTip": "Pista: mostrar la palabra siguiente (mantén pulsado para el resto de la aleya)",
+  "r.blockBanner": "Lee bien la palabra roja — después podrás continuar.",
+  "r.lg.ok": "Correcto",
+  "r.lg.bad": "Mal/omitido",
+  "r.lg.peek": "Pista/vistazo",
+  "r.lg.pend": "Comprobando",
+  "r.lg.next": "Palabra actual",
+  "r.lg.weak": "Debilidad anterior",
+  "r.lg.given": "Pista",
+  "r.menu.listen": "Escuchar desde aquí",
+  "r.menu.test": "Probar desde aquí",
+  "h.times": "Recitada {t} veces en total, {e} con error",
+  "r.help.list": "Pulsa el contador <b>Mal/omitido</b> de arriba para ver todos los errores de esta sesión a la vez; <b>Descartar</b> el que no fue un error, <b>Restaurar</b> si hace falta.",
+  "r.help.hint": "Mantén pulsado el botón de pista para abrir el resto de la aleya.",
+  "t.setupTitle": "¿Qué quieres probar?",
+  "t.suggested": "Sugerido para ti",
+  "t.myRanges": "Mis rangos",
+  "t.myMemorized": "Lo que memoricé",
+  "t.newRange": "Crear un rango nuevo",
+  "t.noMemorized": "Aún no hay nada marcado como memorizado",
+  "t.rename": "Renombrar",
+  "t.delete": "Eliminar",
+  "t.up": "Subir",
+  "t.down": "Bajar",
+  "t.deleteQ": "¿Eliminar el rango «{name}»? (Los resultados anteriores se conservan)",
+  "t.rangeSummary": "Seleccionado: {name} · {n} aleyas",
+  "t.rules": "{q} preguntas · {w} palabras cada una · pista de {h} palabras",
+  "t.changeRules": "Cambiar reglas",
+  "t.temporary": "Temporal (no se guarda nada)",
+  "t.start": "Empezar la prueba",
+  "t.emptyRange": "El rango no tiene aleyas",
+  "t.modelWait": "Preparando el modelo…",
+  "t.starterTitle": "Para empezar",
+  "t.starterBody": "Final del yuz 30: de la sura {a} a la sura {b}",
+  "t.markMemorized": "Marcar como memorizado",
+  "t.resumeQ": "La última prueba no terminó ({i} / {n} preguntas). ¿Continuar?",
+  "t.resume": "Continuar",
+  "t.seeResults": "Ver resultados",
+  "t.discard": "Descartar",
+  "t.introTitle": "Cómo funciona la prueba",
+  "t.intro1": "Cada pregunta muestra las primeras palabras — recita el resto sin mirar.",
+  "t.intro2": "Las palabras correctas se abren; al final la tarjeta se pone verde (sin fallos) o roja (con errores).",
+  "t.intro3": "Si te atascas: «palabra siguiente» o «resto de la aleya» — mirar cuenta como error.",
+  "t.intro4": "Desliza la tarjeta a un lado o pulsa «Pregunta siguiente» para saltar la pregunta.",
+  "t.intro5": "Todo funciona en el teléfono, sin internet.",
+  "t.introOk": "Entendido",
+  "t.go": "¡Vamos!",
+  "t.ref": "Sura {n}. {english} · {span}",
+  "t.refHidden": "Sura y aleya ocultas",
+  "t.eyeTip": "Mostrar / ocultar el número de sura y aleya",
+  "t.listening": "Escuchando… recita a partir de la pista",
+  "t.checking": "Comprobando…",
+  "t.peekWord": "Palabra siguiente",
+  "t.peekRest": "Resto de la aleya",
+  "t.next": "Pregunta siguiente",
+  "t.pass": "¡Sin fallos!",
+  "t.failN": "{m} errores",
+  "t.skipped": "Omitida",
+  "t.kind.stray": "Pasaste a otra sura",
+  "t.timeUp": "Se acabó el tiempo — termina esta pregunta",
+  "t.qOfN": "Pregunta {i} / {n}",
+  "t.qTime": "Pregunta {i} · quedan {mm:ss}",
+  "t.qOpen": "Pregunta {i}",
+  "t.mistakesN": "Errores {m}",
+  "t.score": "Puntuación {p} %",
+  "t.streak": "Racha {s}",
+  "t.paused": "En pausa — la prueba está detenida. Pulsa «Continuar» para escuchar desde la misma pregunta.",
+  "t.continue": "Continuar",
+  "t.end": "Terminar",
+  "t.autoPaused": "Silencio prolongado — la prueba se pausó.",
+  "t.resTitle": "Resultado de la prueba",
+  "t.tempLabel": "Prueba temporal — no se guardó nada",
+  "t.resScore": "{p} %",
+  "t.resCorrect": "Correctas {c} / {n}",
+  "t.resBest": "Racha más larga: {s}",
+  "t.resTime": "Tiempo: {time}",
+  "t.resAll": "Todos los errores ({n})",
+  "t.resRemoved": "Errores descartados ({n})",
+  "t.resNone": "Sin errores — ¡mashaAllah!",
+  "t.keepGoing": "Recitar más",
+  "t.done": "Hecho",
+  "t.replay": "La misma prueba otra vez",
+  "t.newTest": "Prueba nueva",
+  "t.saveThis": "Guardar este rango",
+  "t.sg.warmup.name": "Calentamiento",
+  "t.sg.warmup.sub": "Lo que mejor haces",
+  "t.sg.weak.name": "Puntos débiles",
+  "t.sg.weak.sub": "Donde más fallas",
+  "t.sg.stale.name": "Sin recitar hace tiempo",
+  "t.sg.stale.sub": "Sin recitar de memoria desde hace tiempo",
+  "t.sg.fresh.name": "Recién memorizado",
+  "t.sg.fresh.sub": "Añadido a la lista de memorizados en los últimos 14 días",
+  "t.sg.mixed.name": "Mezcla",
+  "t.sg.mixed.sub": "De toda tu lista de memorizados",
+  "l.from": "Desde la aleya",
+  "l.to": "Hasta la aleya",
+  "l.pick": "Elegir por yuz o página",
+  "l.speedChip": "{x}×",
+  "l.ayahChip": "Aleya ×{n}",
+  "l.rangeChip": "Parte ×{n}",
+  "l.rangeChipInf": "Parte ∞",
+  "l.gapChip": "Pausa {s} s",
+  "l.sleepChip": "Dormir {m} min",
+  "l.play": "Reproducir",
+  "l.pause": "Pausa",
+  "l.prev": "Aleya anterior",
+  "l.next": "Aleya siguiente",
+  "l.idle": "Elige qué escuchar y pulsa ▶.",
+  "l.loading": "Cargando audio…",
+  "l.playing": "Aleya {a} · {k} / {n} veces",
+  "l.round": "Ronda {r}",
+  "l.gap": "Pausa… {s}",
+  "l.pausedS": "En pausa",
+  "l.ended": "Terminado.",
+  "l.again": "Reproducir otra vez",
+  "l.error": "No se pudo reproducir el audio — ¿tienes conexión? Para escuchar sin conexión, descarga primero la sura.",
+  "l.offline": "Disponible sin conexión",
+  "l.online": "Necesita internet — descárgala",
+  "l.slept": "Temporizador de sueño — la escucha se detuvo.",
+  "l.offTitle": "Audio sin conexión",
+  "l.offRow": "{n}. {english} — {size}",
+  "l.offGet": "Descargar",
+  "l.offGetting": "Descargando {p} %",
+  "l.offHave": "Descargado",
+  "l.offTooBig": "Demasiado grande — solo con internet",
+  "l.offDel": "Eliminar",
+  "l.offDelQ": "¿Eliminar el audio sin conexión de la sura {english}? Podrás descargarlo de nuevo más tarde.",
+  "l.offTotal": "Espacio total: {mb} MB",
+  "l.offGetAll": "Descargar todo",
+  "l.offGetAllQ": "Se descargarán {n} suras, unos {mb} MB. ¿Aceptar?",
+  "pk.title": "Elegir un rango",
+  "pk.unit": "Sura · Yuz · Hizb · Página · Aleya",
+  "pk.quarters": "Mostrar rub (cuartos)",
+  "pk.pageNote": "Los números de página siguen la edición de Medina (604 páginas)",
+  "pk.summary": "Seleccionado: {n} aleyas ({parts})",
+  "pk.clear": "Borrar",
+  "pk.save": "Guardar con nombre",
+  "pk.use": "Usar este",
+  "pk.namePh": "Ponle un nombre (p. ej. repaso de la sura Al-Mulk)",
+  "pk.saved": "«{name}» guardado.",
+  "pk.full": "No se pueden guardar más de 50 rangos — elimina uno antiguo.",
+  "m.title": "Lista de memorizados",
+  "m.summary": "{n} aleyas marcadas como memorizadas en total (en {s} suras)",
+  "m.add": "Añadir memorizado",
+  "m.edit": "Cambiar",
+  "m.remove": "Quitar",
+  "m.removeQ": "¿Quitar la sura {english} de la lista de memorizados? (Las sesiones y marcas se conservan)",
+  "m.sgTitle": "Tu historial indica que recitaste esto bien sin mirar:",
+  "m.sgAdd": "Añadir",
+  "m.sgAddAll": "Añadir todo",
+  "m.empty": "Aún no hay nada marcado. Pulsa «Añadir memorizado» y elige una sura o aleyas.",
+  "g.title": "Metas",
+  "g.new": "Meta nueva",
+  "g.create": "Crear meta",
+  "g.s1": "¿Qué tipo de meta?",
+  "g.s2": "¿Qué parte?",
+  "g.s3": "¿Cómo dividirla?",
+  "g.s4": "¿Qué días?",
+  "g.s5": "¿Qué pasa al final?",
+  "g.type.memorize": "Memorización nueva (recitar una parte nueva sin mirar)",
+  "g.type.review": "Repaso (recitar de nuevo sin mirar una parte memorizada)",
+  "g.type.recite": "Recitación (cualquier lectura)",
+  "g.type.test": "Prueba (número de preguntas)",
+  "g.order.normal": "En orden normal",
+  "g.order.reverse": "En orden inverso (desde la última sura)",
+  "g.strict": "Mantener el orden — la parte siguiente no cuenta hasta terminar la anterior",
+  "g.plan.daily": "Una cantidad fija cada día",
+  "g.plan.bydate": "Terminar en una fecha fijada",
+  "g.plan.flexible": "Todo lo que pueda — el resto pasa al día siguiente",
+  "g.unit.ayah": "aleyas",
+  "g.unit.page": "páginas",
+  "g.unit.juz": "yuz",
+  "g.unit.minute": "minutos",
+  "g.unit.word": "palabras",
+  "g.unit.question": "preguntas",
+  "g.round.none": "Según salga la división",
+  "g.round.up": "Páginas enteras — hacia arriba",
+  "g.round.down": "Páginas enteras — hacia abajo",
+  "g.round.nearest": "Páginas enteras — la más cercana",
+  "g.sch.daily": "Todos los días",
+  "g.sch.days": "Ciertos días de la semana",
+  "g.sch.perWeek": "{n} días a la semana",
+  "g.cycle.auto": "Empezar de nuevo (nuevo jatm) automáticamente",
+  "g.cycle.manual": "Lo empezaré yo",
+  "g.cycle.off": "Detener",
+  "g.autoName": "{type}: {range}",
+  "g.tpl.manzil": "Jatm semanal (7 manzil)",
+  "g.tpl.page": "1 página nueva memorizada cada día",
+  "g.tpl.juz": "1 yuz de repaso cada día",
+  "g.tpl.minutes": "15 minutos al día",
+  "g.today": "Meta de hoy",
+  "g.todayLine": "{name}: {done} / {target} {unit}",
+  "g.progressLine": "Total {done} / {total} {unit} · fecha final {date}",
+  "g.restart": "Empezar de nuevo",
+  "g.completed": "Completada — ¡alhamdulillah!",
+  "g.pause": "Pausar",
+  "g.resumeGoal": "Reanudar",
+  "g.edit": "Cambiar",
+  "g.delete": "Eliminar",
+  "g.deleteQ": "¿Eliminar la meta «{name}»? (Las sesiones se conservan)",
+  "st.current": "{n} días seguidos",
+  "st.best": "Más larga: {n} días seguidos",
+  "st.keep": "Recita hoy para mantener la racha",
+  "st.cellTip": "{date}: {m} min",
+  "bd.title": "Logros",
+  "bd.new": "Logro nuevo: {name}",
+  "bd.locked": "Aún no — {req}",
+  "x.add": "Añadir recitación hecha fuera de la app",
+  "x.title": "Añadir recitación hecha fuera de la app",
+  "x.date": "Fecha",
+  "x.minutes": "Cuántos minutos",
+  "x.range": "Qué parte (opcional)",
+  "x.note": "Nota",
+  "x.int.memorize": "Memorización nueva recitada a alguien",
+  "x.int.review": "Repaso",
+  "x.int.recite": "Recitado desde la página",
+  "x.save": "Añadir",
+  "x.delete": "Eliminar",
+  "x.deleteQ": "¿Eliminar esta sesión añadida a mano?",
+  "h.f.all": "Todo",
+  "h.f.hifz": "Memoria",
+  "h.f.look": "Página",
+  "h.f.test": "Prueba",
+  "h.f.manual": "Fuera",
+  "h.f.listen": "Escucha",
+  "h.chip.test": "Prueba",
+  "h.chip.manual": "Fuera",
+  "h.chip.listen": "Escucha",
+  "h.play": "Escuchar",
+  "h.testRow": "{date} · {range} · {p} % · correctas {c}/{n}",
+  "h.testEditNote": "Descartar un error aquí solo cambia la puntuación de esta prueba; para borrar marcas de debilidad, pulsa la palabra roja.",
+  "h.seg": "Resumen · Metas · Memorizado · Pruebas · Logros",
+  "h.weekN": "Últimos {n} días",
+  "help.1": "<b>Pulsa el botón del micrófono</b> y empieza a leer; la app encuentra la sura sola (también puedes elegirla arriba). Pulsar <b>■</b> termina la sesión y la guarda.",
+  "help.2": "Las palabras se abren al leer: <span class=\"hz-ok\">verde = correcto</span>, <span class=\"hz-bad\">rojo = mal/omitido</span> (con un aviso), <span class=\"hz-hint\">morado = pista/atasco</span>. El recuadro azul parpadeante = la palabra que debes leer ahora.",
+  "help.3": "Haz una pausa con el botón <b>Pausa</b>, mira las palabras rojas y escucha, y pulsa el mismo botón para continuar. Si quieres, vuelve a leer desde una aleya anterior para corregir el error; la app seguirá desde ahí.",
+  "help.4": "Cuando terminas una sura y empiezas la siguiente (o cualquier otra), la app se mueve sola — te sigue mientras leas.",
+  "help.5": "El <b>botón del ojo</b> alterna entre leer del texto (todo el texto visible) y leer de memoria (texto oculto).",
+  "help.6": "Si te atascas pulsa <b>Pista</b>, o <b>guarda silencio</b> (los segundos fijados en «Alafasy empieza tras una pausa de» arriba, {wait} al principio): Mishary Alafasy recitará desde ahí y las palabras se abrirán en morado. Cuando vuelvas a leer (o pulses Pausa/Detener) él se detiene y la app te escucha. Mantén pulsado el botón de pista para abrir el resto de la aleya.",
+  "help.7": "<b>Toca una palabra roja</b> para oír lo que leíste y lo que debías leer — ambos con las palabras de alrededor. Si lo leíste bien, pulsa ✓.",
+  "help.8": "Las palabras donde fallaste o te atascaste en sesiones anteriores quedan de <span class=\"hz-w1 hz-swatch\">rojo claro</span> a <span class=\"hz-w3 hz-swatch\">rojo oscuro</span>; tras leerlas bien de memoria {clear} veces seguidas, la marca desaparece.",
+  "help.9": "Si crees que una marca es errónea (sin grabar, o en la pestaña <b>Progreso</b>) toca el recuadro rojo: escucha lo que leíste y pulsa <b>✓ Marca errónea — quitar</b>. La marca desaparece y leerlo así no se volverá a marcar.",
+  "help.10": "En la pestaña <b>Progreso</b> cada sura tiene una franja de color por aleya — ves de un vistazo qué aleyas son más débiles (rojo oscuro). Toca un recuadro para abrir esa aleya abajo.",
+  "help.11": "En el teléfono: el modelo (unos 19 MB) se descarga la primera vez y luego funciona sin internet. Todos los datos se quedan en este teléfono — puedes guardarlos en un archivo desde la pestaña <b>Progreso</b>. La comprobación automática puede equivocarse; no sustituye a un maestro.",
+  "a.autoSurah": "Automático — encuentra la sura escuchando",
+  "a.lookOn": "De memoria: ocultar el texto",
+  "a.lookOff": "Lectura: mostrar todo el texto",
+  "a.pauseResumeTip": "Continuar — desde donde paraste",
+  "a.pauseTip": "Pausa — se detiene aquí, puedes continuar luego",
+  "a.stopTip": "Detener — termina y guarda la sesión",
+  "a.recTip": "Iniciar grabación — empieza a leer",
+  "a.stop": "Detener",
+  "a.record": "Grabar",
+  "a.micFail": "No se pudo iniciar el micrófono: {err}",
+  "a.maxRec": "Se alcanzó el tiempo máximo de grabación — detenida.",
+  "a.listening": "Escuchando…",
+  "a.checking": "Comprobando…",
+  "a.tooShort": "La grabación es demasiado corta.",
+  "a.noMatch": "No coincidió con ninguna aleya. Lee un poco más, o elige la sura tú mismo.",
+  "a.entry": "Sura {english}: {words} palabras, precisión {acc} %, errores {missed}, atascos {stuck}",
+  "a.saved": "Sesión guardada — {parts}. Míralo todo en la pestaña Progreso.",
+  "a.close": "Cerrar",
+  "a.closeAria": "Cerrar",
+  "a.listenMine": "Escuchar mi lectura",
+  "a.shouldBe": "Lo que debía ser",
+  "a.listenAlafasyTip": "Recitación de Mishary Alafasy (con las palabras de alrededor)",
+  "a.listenAlafasy": "Recitación de Alafasy",
+  "a.iWasRight": "Lo leí bien",
+  "a.leftMain": "Léela bien de memoria {n} veces más y la marca roja desaparece",
+  "a.leftStreak": "Hasta ahora {n} sesiones seguidas fueron correctas.",
+  "a.leftSub": "Cuenta una vez por sesión y deben ser seguidas — un error o un atasco reinicia la cuenta; leer del texto no cuenta.",
+  "a.wkMeta": "En sesiones anteriores aquí: {kind} — {count} veces en total, la última {last}",
+  "a.saidErr": "Lo que leíste (lo que oyó el modelo)",
+  "a.saidWk": "Lo que leíste entonces (lo que oyó el modelo)",
+  "a.heardNothing": "No se oyó nada — parece que la palabra se omitió",
+  "a.noRecording": "La grabación de entonces no está disponible",
+  "a.mineErrTip": "Escuchar mi lectura (con las dos palabras anteriores)",
+  "a.mineWkTip": "Escuchar mi lectura de entonces",
+  "a.okErrTip": "Lo leí bien — el modelo oyó mal",
+  "a.okWkTip": "Sí lo leí bien — quitar la marca, leerlo así no se volverá a marcar",
+  "a.okErrLbl": "Lo leí bien",
+  "a.okWkLbl": "Marca errónea — quitar",
+  "a.markCleared": "Marca quitada",
+  "a.markClearedTaught": "Marca quitada — leerlo así aquí no se volverá a marcar.",
+  "a.forgetSurahQ": "¿Quitar todas las marcas rojas de esta sura? Los lugares con grabación se recordarán como bien leídos — leerlos igual más adelante no se marcará.",
+  "a.marksCleared": "{n} marcas quitadas — leer estos lugares así no se volverá a marcar.",
+  "a.storage": "Guardado en el teléfono: {n} entradas de sesión, {r} grabaciones ({mb} MB).",
+  "a.pv.overview": "Resumen",
+  "a.pv.goals": "Metas",
+  "a.pv.memorized": "Memorizado",
+  "a.pv.tests": "Pruebas",
+  "a.pv.badges": "Logros",
+  "a.importQ": "¿Combinar los datos del archivo con los actuales? (Aceptar = combinar, Cancelar = reemplazar todos los datos actuales por los del archivo)",
+  "a.importOk": "Datos restaurados — reabriendo la página…",
+  "a.importBad": "No se pudo leer el archivo: {err}",
+  "a.defaultMic": "El micrófono del propio dispositivo",
+  "a.micN": "Micrófono {n}",
+  "a.modelBuilding": "Preparando el modelo…",
+  "a.modelDownload": "Descargando el modelo (unos 19 MB, solo la primera vez)…",
+  "a.modelFooter": "Modelo: quran-asr-tiny · {backend}, {threads} hilos. Tras la primera vez funciona sin internet. La comprobación automática puede equivocarse; no sustituye a un maestro.",
+  "a.modelFail": "El modelo no arrancó: {err}",
+  "a.ayahMenuTitle": "{english} · Aleya {a}",
+  "a.startFail": "No se pudo iniciar: {err}",
+  "p.sura": "Sura {n}. {english}",
+  "p.paused": "En pausa — la escucha se reanuda cuando continúes.",
+  "p.waiting": "Escuchando… empieza a leer, <b>encuentra la sura sola</b> tras unas palabras.",
+  "p.autoDetected": "Detectada automáticamente",
+  "p.hCount": "Aleya {a} / {n}",
+  "p.hOk": "Correctas {n}",
+  "p.hBad": "Mal/omitidas {n}",
+  "p.hHint": "Pistas {n}",
+  "p.stray": "Error: esto suena como la aleya {ayah} de la sura {english}. Leías la sura {current}; vuelve a leer desde la palabra marcada en azul.",
+  "p.pausedBanner": "En pausa: toca una palabra roja para ver y escuchar. Al continuar escucha desde aquí; también puedes volver a leer desde una aleya anterior para corregir una palabra roja.",
+  "p.cellWeak": "{span}: {n} palabras débiles",
+  "p.cellOk": "bien",
+  "p.cellNone": "aún no leída de memoria",
+  "p.empty": "Aún no hay sesiones. Graba en la pestaña Recitar; al detener (■) la sesión se guarda aquí.",
+  "p.cSessions": "Sesiones en total",
+  "p.cSurahs": "Suras practicadas",
+  "p.cMinutes": "Minutos en total",
+  "p.cWeek": "Esta semana",
+  "p.cWeekN": "Últimos {n} días",
+  "p.ayahCount": "{a}/{n} aleyas",
+  "p.weakCount": "{n} palabras débiles",
+  "p.th.surah": "Sura",
+  "p.th.state": "Estado",
+  "p.th.acc": "Precisión reciente",
+  "p.th.read": "Cuánto se leyó",
+  "p.th.weak": "Puntos débiles",
+  "p.th.sessions": "Sesiones",
+  "p.th.last": "Última práctica",
+  "p.th.when": "Cuándo",
+  "p.th.surahAyah": "Sura (aleyas)",
+  "p.th.mode": "Tipo",
+  "p.th.words": "Palabras",
+  "p.th.acc2": "Precisión",
+  "p.th.missed": "Errores",
+  "p.th.stuck": "Atascos",
+  "p.th.time": "Tiempo",
+  "p.mode.look": "Lectura",
+  "p.mode.hifz": "Memorizado",
+  "p.mode.mixed": "Mixto",
+  "p.bySurah": "Estado de memorización por sura",
+  "p.recent": "Sesiones recientes",
+  "p.stateNote": "Estado: precisión media de las últimas {w} sesiones de memoria — {good} % o más = bien memorizada, {fair}–{good} % = regular. Las sesiones leídas del texto no cuentan.",
+  "p.weakNote": "Puntos débiles: cada recuadro es una aleya, de la aleya 1 hasta el final — {k0}, {k1}, {k2}. Toca un recuadro para mostrar esa aleya abajo.",
+  "p.key0": "verde = bien",
+  "p.key1": "rojo claro a oscuro = cuanto más débil, más oscuro",
+  "p.key2": "gris = aún no leída de memoria",
+  "p.hotChipTip": "Toca para mostrar abajo",
+  "p.hotLabel": "Lugares más débiles:",
+  "p.legend1": "bien",
+  "p.legend2": "rojo claro a oscuro = más palabras débiles",
+  "p.legend3": "aún no leída de memoria",
+  "p.mapTitle": "Mapa de debilidades por aleya",
+  "p.mapSub": "Cada recuadro es una aleya — toca para ir a esa aleya en el texto de abajo",
+  "p.weakHead": "{n} palabras débiles. Rojo claro = a veces mal/atasco, rojo oscuro = una y otra vez. Tras leer bien de memoria {clear} sesiones seguidas la marca desaparece. <b>Toca una palabra roja</b> para oír lo que leíste entonces; si la marca es errónea puedes quitarla.",
+  "p.noWeak": "Ningún punto débil en esta sura — ¡mashaAllah!",
+  "s.col.ok": "Correcto",
+  "s.col.bad": "Mal",
+  "s.col.peek": "Vistazo",
+  "s.col.pend": "Comprobando",
+  "s.col.next": "Palabra siguiente",
+  "s.col.weak": "Debilidad antigua",
+  "s.col.listen": "Luz de escucha",
+  "s.on": "Sí",
+  "s.off": "No",
+  "s.sum.alafasy": "Alafasy {v}",
+  "s.sum.added": "Detectar palabras de más",
+  "s.sum.addedOff": "Palabras de más sin detectar",
+  "s.sum.peekMistake": "Vistazo = error",
+  "s.sum.peekOk": "Vistazo no es error",
+  "s.sum.hint": "Pista {v}",
+  "s.sum.speed": "Velocidad {v}",
+  "s.sum.perAyah": "Cada aleya ×{n}",
+  "s.sum.weekStart": "La semana empieza {v}",
+  "s.sum.countTests": "También cuentan las pruebas",
+  "s.sum.noTests": "Las pruebas no cuentan",
+  "s.sum.good": "Bien memorizada {v}",
+  "s.sum.clear": "La marca se borra tras {n} sesiones seguidas",
+  "s.sum.arabic": "Árabe {v}",
+  "s.sum.motion": "Movimiento {v}",
+  "s.sum.awake": "La pantalla sigue encendida",
+  "s.sum.awakeOff": "Pantalla normal",
+  "bd.n.first": "Primer paso",
+  "bd.r.first": "Guarda tu primera sesión",
+  "bd.n.streak7": "Una semana seguida",
+  "bd.r.streak7": "Lee 7 días seguidos",
+  "bd.n.streak30": "Un mes seguido",
+  "bd.r.streak30": "Lee 30 días seguidos",
+  "bd.n.sessions100": "Sesión número cien",
+  "bd.r.sessions100": "100 sesiones en total",
+  "bd.n.hours10": "Diez horas",
+  "bd.r.hours10": "10 horas de recitación en total",
+  "bd.n.good1": "Primera sura sólida",
+  "bd.r.good1": "Lleva una sura a «bien memorizada»",
+  "bd.n.good5": "Cinco suras sólidas",
+  "bd.r.good5": "5 suras «bien memorizadas»",
+  "bd.n.test100": "Prueba perfecta",
+  "bd.r.test100": "100 % en una prueba de al menos 10 preguntas",
+  "bd.n.tests10": "Pruebas regulares",
+  "bd.r.tests10": "Termina 10 pruebas",
+  "bd.n.juz1": "Un yuz memorizado",
+  "bd.r.juz1": "Un yuz entero en la lista de memorizados",
+  "bd.n.cleared50": "Maestro de borrar marcas",
+  "bd.r.cleared50": "Borra 50 marcas de debilidad leyendo bien de memoria",
+  "bd.n.goal1": "Meta cumplida",
+  "bd.r.goal1": "Cumple la meta de un día por primera vez",
+  "app.title": "Hifz Helper",
+  "c.ok": "Aceptar",
+  "c.no": "No",
+  "fmt.ayah1": "Aleya {a}",
+  "fmt.ayahN": "Aleyas {a}–{b}",
+  "fmt.durMS": "{m} min {s} s",
+  "fmt.durS": "{s} s",
+  "u.s": "{n} segundos",
+  "u.min": "{n} minutos",
+  "u.words": "{n} palabras",
+  "u.ayah": "{n} aleyas",
+  "u.sC": "{n} s",
+  "u.minC": "{n} min",
+  "hk.missed": "Mal/omitido",
+  "hk.hint": "Te atascaste (pista)",
+  "hk.slip": "Un error, corregido al leer de nuevo",
+  "gr.none": "Solo leído del texto",
+  "gr.good": "Bien memorizada",
+  "gr.fair": "Regular",
+  "gr.weak": "Necesita más práctica",
+  "d.0": "Dom",
+  "d.1": "Lun",
+  "d.2": "Mar",
+  "d.3": "Mié",
+  "d.4": "Jue",
+  "d.5": "Vie",
+  "d.6": "Sáb",
+  "g.nParts": "{n} partes",
+  "g.minutesNote": "{n} min {note}",
+  "g.mode.look": "Lectura",
+  "g.mode.hifz": "Memorizado",
+  "g.mode.mixed": "Mixto",
+  "pk.l.juz": "Yuz {n}",
+  "pk.l.hizb": "Hizb {n}",
+  "pk.l.rub": "Rub {n}",
+  "pk.l.page": "Página {n}",
+  "pk.l.pages": "Páginas {a}–{b}",
+  "pk.l.mem": "Mis partes memorizadas",
+  "pk.pageRange": "Página {from} a {to}",
+  "pk.u.surah": "Sura",
+  "pk.u.juz": "Yuz",
+  "pk.u.hizb": "Hizb",
+  "pk.u.page": "Página",
+  "pk.u.ayah": "Aleya",
+  "t.ayahBadge": "{n} aleyas",
+  "l.artist": "Mishary Rashid Alafasy",
+  "m.sugRow": "Sura {n}. {english}: aleya {a}–{b}",
+  "m.cover": "{c} / {n} aleyas",
+  "t.starterRange": "{n}. {english}",
+  "a.sub": "Escucha tu recitación de memoria y detecta los errores al instante · recuerda dónde te atascas siempre",
+  "a.themeAria": "Cambiar colores",
+  "a.lblSurah": "Sura",
+  "a.lblWait": "Alafasy empieza tras una pausa de",
+  "a.lblWaitSub": "Cuántos segundos de silencio",
+  "a.howTo": "Cómo usarlo",
+  "a.weakTitle": "Dónde te atascas siempre",
+  "a.pickSurahAria": "Elegir una sura",
+  "a.clearAll": "Quitar todas las marcas",
+  "a.clearAllTip": "Quitar todas las marcas rojas de esta sura (pregunta antes)",
+  "a.export": "Pasar los datos a un archivo (copia)",
+  "a.import": "Recuperar los datos desde un archivo",
+  "a.install": "Añadir como app",
+  "a.timerAria": "Tiempo de recitación",
+  "a.pauseAria": "Pausa",
+  "a.lookAria": "Lectura / de memoria",
+  "a.hintAria": "Pista"
+ },
+ "settings": {
+  "recite.waitS": {
+   "label": "Alafasy empieza tras una pausa de",
+   "help": "Cuántos segundos de silencio antes de empezar la ayuda; «No» = nunca",
+   "sub": "Cuando te atascas",
+   "options": {
+    "0": "No"
+   }
+  },
+  "recite.silenceHelp": {
+   "label": "Qué pasa cuando te quedas en silencio",
+   "help": "Cuánta ayuda da la app cuando te atascas",
+   "sub": "Cuando te atascas",
+   "options": {
+    "surah": "Alafasy recita hasta el final de la sura",
+    "ayah": "Hasta el final de la aleya",
+    "words3": "Las 3 palabras siguientes",
+    "word": "Solo la palabra siguiente",
+    "show": "Solo mostrar la palabra siguiente, sin audio"
+   }
+  },
+  "recite.promptOnLook": {
+   "label": "Ayuda también al leer del texto",
+   "help": "La ayuda llega tras el silencio incluso con el botón del ojo activado",
+   "sub": "Cuando te atascas"
+  },
+  "detect.changed": {
+   "label": "Detectar palabras equivocadas",
+   "help": "Una palabra se pone roja cuando lees otra en su lugar",
+   "sub": "Qué errores detectar"
+  },
+  "detect.skipped": {
+   "label": "Detectar palabras omitidas",
+   "help": "Una palabra se pone roja cuando sigues sin leerla",
+   "sub": "Qué errores detectar"
+  },
+  "detect.added": {
+   "label": "Detectar palabras de más",
+   "help": "La palabra siguiente se pone roja cuando lees algo extra dentro de una aleya; desactivarlo ahorra trabajo al teléfono",
+   "sub": "Qué errores detectar"
+  },
+  "detect.stray": {
+   "label": "Avisar al pasar a otra sura",
+   "help": "Banner rojo y aviso sonoro cuando te deslizas a una aleya parecida de otra sura",
+   "sub": "Qué errores detectar"
+  },
+  "detect.confirmedWords": {
+   "label": "Palabras leídas bien antes de que otra sura cuente como error",
+   "help": "Bajo = avisa antes; alto = menos falsos avisos al empezar una sura nueva",
+   "sub": "Qué errores detectar"
+  },
+  "detect.similarRatio": {
+   "label": "Rigor al comparar palabras",
+   "help": "Alto = detecta incluso pronunciaciones cercanas; bajo = más indulgente",
+   "sub": "Qué errores detectar"
+  },
+  "detect.noAdvance": {
+   "label": "No avanzar hasta corregir un error",
+   "help": "Cuando una palabra está roja, la siguiente no se abre hasta que la leas bien",
+   "sub": "Qué errores detectar"
+  },
+  "detect.teachOnRemove": {
+   "label": "Recordar los errores descartados",
+   "help": "Tras «Lo leí bien» o «Descartar», la misma lectura no se volverá a marcar",
+   "sub": "Qué errores detectar"
+  },
+  "detect.errorTone": {
+   "label": "Aviso sonoro",
+   "help": "Un sonido cuando una palabra se pone roja o entras en otra sura (solo al grabar)",
+   "sub": "Aviso sonoro",
+   "options": {
+    "off": "No",
+    "soft": "Suave",
+    "normal": "Normal",
+    "loud": "Fuerte"
+   }
+  },
+  "detect.toneKind": {
+   "label": "Tipo de aviso sonoro",
+   "sub": "Aviso sonoro",
+   "options": {
+    "two": "Dos tonos",
+    "beep": "Un pitido",
+    "double": "Dos pitidos"
+   }
+  },
+  "detect.vibrate": {
+   "label": "Vibrar al fallar",
+   "help": "El teléfono vibra un poco con una palabra roja",
+   "sub": "Aviso sonoro"
+  },
+  "recite.startAt": {
+   "label": "Qué sura al empezar",
+   "help": "Cómo se elige la sura al abrir la app",
+   "sub": "Inicio",
+   "options": {
+    "auto": "Encontrarla escuchando",
+    "last": "Sura y aleya de la última vez",
+    "continue": "Continuar donde paraste la última vez"
+   }
+  },
+  "recite.autoAyahs": {
+   "label": "Cuántas aleyas mostrar por delante",
+   "help": "Cuántas aleyas se añaden de una vez mientras lees",
+   "sub": "Inicio"
+  },
+  "recite.mistakeList": {
+   "label": "Mostrar la lista de errores",
+   "help": "Tocar el contador «mal/omitido» de arriba muestra todos los errores de esta sesión juntos",
+   "sub": "Inicio"
+  },
+  "recite.look": {
+   "label": "Leer del texto (mostrar todo el texto)",
+   "help": "Como el botón del ojo; las palabras leídas del texto no cuentan para borrar marcas",
+   "sub": "Texto oculto"
+  },
+  "hide.style": {
+   "label": "Aspecto de las palabras ocultas",
+   "sub": "Texto oculto",
+   "options": {
+    "bar": "Un recuadro del tamaño de la palabra",
+    "line": "Solo una línea debajo",
+    "blank": "Completamente en blanco"
+   }
+  },
+  "hide.weakTint": {
+   "label": "Color de la debilidad anterior en palabras ocultas",
+   "help": "Las palabras que fallaste en sesiones anteriores muestran un recuadro de rojo claro a oscuro",
+   "sub": "Texto oculto"
+  },
+  "hide.ayahMarks": {
+   "label": "Ocultar marcas de aleya",
+   "help": "La marca al final de una aleya no se muestra hasta leerla entera",
+   "sub": "Texto oculto"
+  },
+  "hide.nextWord": {
+   "label": "Marcar el recuadro de la palabra siguiente",
+   "help": "Un anillo en el recuadro de la palabra que debes leer ahora",
+   "sub": "Texto oculto"
+  },
+  "hide.head": {
+   "label": "Mostrar sura y número de aleya arriba",
+   "help": "Desactivado, no se ve en qué aleya estás",
+   "sub": "Texto oculto"
+  },
+  "peek.countsAsMistake": {
+   "label": "Contar el vistazo como error",
+   "help": "Las palabras abiertas por una pista o vistazo cuentan como error en las marcas de debilidad y la puntuación de la prueba",
+   "sub": "Vistazo"
+  },
+  "peek.longPressRest": {
+   "label": "Mantener pulsada la pista para el resto de la aleya",
+   "help": "Mantener el botón de pista medio segundo (clic derecho en ordenador) abre todas las palabras restantes de la aleya",
+   "sub": "Vistazo"
+  },
+  "peek.doubleTap": {
+   "label": "Doble toque en el texto para la palabra siguiente",
+   "help": "Al grabar, un doble toque en el recuadro de una palabra (doble clic en ordenador) abre la palabra siguiente como una pista",
+   "sub": "Vistazo"
+  },
+  "test.endBy": {
+   "label": "Cuándo termina la prueba",
+   "sub": "Duración",
+   "options": {
+    "count": "Por número de preguntas",
+    "time": "Por tiempo",
+    "open": "Cuando yo la detenga"
+   }
+  },
+  "test.questions": {
+   "label": "Cuántas preguntas",
+   "sub": "Duración"
+  },
+  "test.minutes": {
+   "label": "Cuántos minutos",
+   "help": "Al acabarse el tiempo se termina la pregunta actual y se muestra el resultado",
+   "sub": "Duración"
+  },
+  "test.lengthUnit": {
+   "label": "Medir la longitud de una pregunta",
+   "sub": "Preguntas",
+   "options": {
+    "words": "En palabras",
+    "ayahs": "En aleyas"
+   }
+  },
+  "test.lengthWords": {
+   "label": "Palabras por leer en cada pregunta",
+   "help": "Las palabras tras la pista",
+   "sub": "Preguntas",
+   "options": {
+    "8": "Corta 8",
+    "15": "Media 15",
+    "30": "Larga 30"
+   }
+  },
+  "test.lengthAyahs": {
+   "label": "Aleyas en cada pregunta",
+   "sub": "Preguntas"
+  },
+  "test.extendToAyahEnd": {
+   "label": "Seguir hasta el final de la aleya",
+   "help": "Una pregunta no se detiene a mitad de aleya, sino que la termina",
+   "sub": "Preguntas"
+  },
+  "test.hintWords": {
+   "label": "Cuántas palabras mostrar al inicio",
+   "help": "Lees el resto sin mirar; 0 = solo sura y número de aleya",
+   "sub": "Preguntas"
+  },
+  "test.start": {
+   "label": "Dónde empieza una pregunta",
+   "sub": "Preguntas",
+   "options": {
+    "ayah": "Desde el inicio de una aleya",
+    "random": "Desde cualquier punto de la aleya"
+   }
+  },
+  "test.order": {
+   "label": "Orden de las preguntas",
+   "sub": "Preguntas",
+   "options": {
+    "shuffle": "Al azar",
+    "seq": "En orden",
+    "weak": "Puntos débiles primero"
+   }
+  },
+  "test.noRepeat": {
+   "label": "Ninguna pregunta se repite hasta terminar todo el rango",
+   "sub": "Preguntas"
+  },
+  "test.showRef": {
+   "label": "Mostrar sura y número de aleya",
+   "help": "También se puede cambiar con el botón del ojo de la tarjeta",
+   "sub": "Preguntas"
+  },
+  "test.silence": {
+   "label": "Cuando guardas silencio",
+   "sub": "Cuando te atascas",
+   "options": {
+    "none": "Nada",
+    "show": "Mostrar la palabra siguiente",
+    "alafasy": "Alafasy recita la palabra siguiente"
+   }
+  },
+  "test.silenceS": {
+   "label": "Cuántos segundos de silencio",
+   "sub": "Cuando te atascas"
+  },
+  "test.doubleTapPeek": {
+   "label": "Doble toque en la tarjeta para la palabra siguiente",
+   "help": "Doble clic en ordenador",
+   "sub": "Cuando te atascas"
+  },
+  "test.skipCounts": {
+   "label": "Contar las preguntas saltadas en la puntuación",
+   "help": "Activado, una pregunta saltada cuenta como «no correcta»",
+   "sub": "Puntuación"
+  },
+  "test.streakAt": {
+   "label": "Llama tras cuántas correctas seguidas",
+   "sub": "Puntuación"
+  },
+  "test.advance": {
+   "label": "Tras una pregunta",
+   "sub": "Cómo avanza",
+   "options": {
+    "auto": "Mostrar el resultado y pasar sola a la siguiente",
+    "tap": "Cuando pulse «Pregunta siguiente»"
+   }
+  },
+  "test.holdS": {
+   "label": "Cuánto mostrar el resultado",
+   "help": "Después de que la tarjeta se ponga verde/roja, antes de la pregunta siguiente",
+   "sub": "Cómo avanza"
+  },
+  "test.countdown": {
+   "label": "Cuenta atrás antes de empezar",
+   "sub": "Cómo avanza",
+   "options": {
+    "0": "No",
+    "3": "3 segundos",
+    "5": "5 segundos"
+   }
+  },
+  "test.autoPauseS": {
+   "label": "Pausar sola con silencio",
+   "help": "La prueba se pausa si no se lee nada durante estos segundos",
+   "sub": "Cómo avanza",
+   "options": {
+    "0": "No",
+    "15": "15",
+    "30": "30",
+    "60": "60",
+    "120": "120 segundos"
+   }
+  },
+  "test.sound": {
+   "label": "Sonido tras una pregunta",
+   "help": "Un tono agudo si es correcta, grave si es errónea",
+   "sub": "Cómo avanza"
+  },
+  "test.vibrate": {
+   "label": "Vibrar tras una pregunta",
+   "sub": "Cómo avanza"
+  },
+  "test.temporary": {
+   "label": "Prueba temporal",
+   "help": "No se guarda nada — ni resultado, ni errores ni grabaciones; útil para probar a otra persona",
+   "sub": "Guardado"
+  },
+  "test.countInHistory": {
+   "label": "Añadir errores de la prueba a las marcas de debilidad",
+   "help": "Desactivado, se guarda el resultado de la prueba pero las marcas de debilidad no cambian",
+   "sub": "Guardado"
+  },
+  "test.checkAdded": {
+   "label": "Detectar palabras de más en la prueba",
+   "help": "Desactivado, la comprobación tras una pregunta es más rápida",
+   "sub": "Guardado"
+  },
+  "listen.reciter": {
+   "label": "Recitador: Mishary Rashid Alafasy (solo uno por ahora)",
+   "sub": "Recitador"
+  },
+  "listen.speed": {
+   "label": "Velocidad",
+   "help": "Escuchar despacio facilita memorizar",
+   "sub": "Velocidad y repeticiones",
+   "options": {
+    "1": "1×",
+    "2": "2×",
+    "0.5": "0.5×",
+    "0.75": "0.75×",
+    "1.25": "1.25×",
+    "1.5": "1.5×"
+   }
+  },
+  "listen.repeatAyah": {
+   "label": "Cuántas veces cada aleya",
+   "sub": "Velocidad y repeticiones"
+  },
+  "listen.repeatRange": {
+   "label": "Cuántas veces toda la parte",
+   "sub": "Velocidad y repeticiones",
+   "options": {
+    "0": "Sin fin"
+   }
+  },
+  "listen.gapRepeatS": {
+   "label": "Pausa antes de repetir la misma aleya",
+   "help": "Tiempo para decirla tú",
+   "sub": "Velocidad y repeticiones"
+  },
+  "listen.gapAyahS": {
+   "label": "Pausa tras cada aleya",
+   "help": "Antes de pasar a la aleya siguiente",
+   "sub": "Velocidad y repeticiones"
+  },
+  "listen.gapAuto": {
+   "label": "Pausa tan larga como la aleya",
+   "help": "Activado, tras cada aleya espera lo que se tarda en leerla — para decirla tú tras escuchar",
+   "sub": "Velocidad y repeticiones"
+  },
+  "listen.highlight": {
+   "label": "Mostrar lo que se recita",
+   "sub": "Texto",
+   "options": {
+    "word": "Por palabra",
+    "ayah": "Por aleya",
+    "none": "Nada"
+   }
+  },
+  "listen.text": {
+   "label": "Texto",
+   "sub": "Texto",
+   "options": {
+    "show": "Mostrar todo",
+    "reveal": "Se abre mientras escuchas",
+    "hide": "Oculto"
+   }
+  },
+  "listen.autoScroll": {
+   "label": "Desplazar automáticamente",
+   "sub": "Texto"
+  },
+  "listen.basmala": {
+   "label": "Basmala al inicio de una sura",
+   "help": "Al escuchar desde la aleya 1 se recita primero la Basmala (salvo las suras Al-Fatiha y At-Tawba)",
+   "sub": "Texto"
+  },
+  "listen.nextSurah": {
+   "label": "Reproducir la sura siguiente al terminar",
+   "sub": "Texto"
+  },
+  "listen.sleepMin": {
+   "label": "Temporizador de sueño",
+   "help": "La escucha se detiene tras estos minutos",
+   "sub": "Texto",
+   "options": {
+    "0": "No",
+    "10": "10",
+    "15": "15",
+    "30": "30",
+    "60": "60 minutos"
+   }
+  },
+  "listen.countAsSession": {
+   "label": "Guardar la escucha en el historial",
+   "help": "Se guarda cuánto escuchaste y qué parte; cuenta para metas o racha solo si se activa en «Metas y racha»",
+   "sub": "Texto"
+  },
+  "audio.ctxBefore": {
+   "label": "Alafasy en una palabra roja: palabras antes",
+   "help": "Cuántas palabras antes de la palabra recita la ventana",
+   "sub": "Audio de palabras rojas"
+  },
+  "audio.ctxAfter": {
+   "label": "Alafasy en una palabra roja: palabras después",
+   "sub": "Audio de palabras rojas"
+  },
+  "audio.myCtxWords": {
+   "label": "Mi lectura: palabras antes",
+   "help": "Cuántas palabras antes empieza tu propia grabación en la ventana",
+   "sub": "Audio de palabras rojas"
+  },
+  "audio.popupSpeed": {
+   "label": "Velocidad de Alafasy en la ventana",
+   "sub": "Audio de palabras rojas"
+  },
+  "audio.offlineMaxMB": {
+   "label": "Tamaño máximo para guardar sin conexión (por sura)",
+   "help": "Las suras más grandes solo se reproducen con internet",
+   "sub": "Sin conexión",
+   "options": {
+    "40": "40",
+    "80": "80",
+    "150": "150",
+    "250": "250 MB"
+   }
+  },
+  "goals.dayStart": {
+   "label": "El día empieza a las",
+   "help": "Si lees muy tarde por la noche, cuenta para el día anterior",
+   "options": {
+    "0": "Medianoche",
+    "1": "1 h",
+    "2": "2 h",
+    "3": "3 h",
+    "4": "4 h",
+    "5": "5 h",
+    "6": "6 h"
+   }
+  },
+  "goals.weekStart": {
+   "label": "La semana empieza el",
+   "options": {
+    "0": "Domingo",
+    "1": "Lunes",
+    "6": "Sábado"
+   }
+  },
+  "goals.streakMin": {
+   "label": "Un día cuenta para la racha con al menos",
+   "options": {
+    "any": "Cualquier sesión",
+    "m5": "5 minutos",
+    "m10": "10 minutos",
+    "m20": "20 minutos",
+    "goals": "Todas las metas de hoy cumplidas"
+   }
+  },
+  "goals.countLook": {
+   "label": "Contar la lectura del texto para metas de memorización y repaso"
+  },
+  "goals.countListen": {
+   "label": "Contar la escucha para metas de recitación y la racha"
+  },
+  "goals.countTests": {
+   "label": "Contar también las pruebas para las metas"
+  },
+  "goals.countManual": {
+   "label": "Contar también la lectura fuera de la app"
+  },
+  "goals.showToday": {
+   "label": "Mostrar la meta de hoy en la página Recitar",
+   "help": "No se muestra nada si no hay meta"
+  },
+  "history.clearStreak": {
+   "label": "Sesiones seguidas para borrar una marca",
+   "help": "Una marca roja desaparece tras leer bien de memoria en este número de sesiones distintas seguidas",
+   "sub": "Marcas de debilidad"
+  },
+  "history.lookClears": {
+   "label": "Contar la lectura del texto para borrar marcas",
+   "sub": "Marcas de debilidad"
+  },
+  "history.good": {
+   "label": "«Bien memorizada» desde qué %",
+   "sub": "Umbrales de estado"
+  },
+  "history.fair": {
+   "label": "«Regular» desde qué %",
+   "help": "Debe ser menor que «Bien memorizada»",
+   "sub": "Umbrales de estado"
+  },
+  "history.gradeWindow": {
+   "label": "Cuántas últimas sesiones de memoria deciden el estado",
+   "sub": "Umbrales de estado"
+  },
+  "history.recent": {
+   "label": "Cuántas sesiones recientes mostrar",
+   "sub": "Listas",
+   "options": {
+    "0": "Todas",
+    "10": "10",
+    "30": "30",
+    "100": "100"
+   }
+  },
+  "history.weekDays": {
+   "label": "Días en la tarjeta «Esta semana»",
+   "help": "Con un valor distinto de 7 la tarjeta se llama «Últimos {n} días»",
+   "sub": "Listas"
+  },
+  "history.minWords": {
+   "label": "Sesión mínima (en palabras) que se guarda",
+   "sub": "Listas"
+  },
+  "history.maxEvents": {
+   "label": "Cuántos errores recordar por palabra débil",
+   "sub": "Listas"
+  },
+  "history.hotZones": {
+   "label": "Cuántos «lugares más débiles» mostrar",
+   "sub": "Listas"
+  },
+  "history.heatmap": {
+   "label": "Mostrar el mapa de calor",
+   "help": "Cuántos minutos lees cada día — las últimas 12 semanas",
+   "sub": "Listas"
+  },
+  "history.popupTimes": {
+   "label": "Mostrar cuántas veces la leíste en la ventana de la marca",
+   "sub": "Listas"
+  },
+  "history.saveRecordings": {
+   "label": "Guardar las grabaciones de las sesiones",
+   "help": "Desactivado, las grabaciones nuevas no se guardan, así que luego no podrás oír tu lectura en una marca; las antiguas se conservan",
+   "sub": "Grabaciones"
+  },
+  "view.lang": {
+   "label": "Idioma / Language",
+   "help": "Idioma del texto de la app; el texto del Corán no cambia",
+   "sub": "Idioma",
+   "options": {
+    "bn": "বাংলা",
+    "en": "English",
+    "ar": "العربية",
+    "ur": "اردو",
+    "hi": "हिन्दी",
+    "id": "Bahasa Indonesia",
+    "ms": "Bahasa Melayu",
+    "tr": "Türkçe",
+    "fa": "فارسی",
+    "fr": "Français",
+    "es": "Español",
+    "pt": "Português",
+    "de": "Deutsch",
+    "ru": "Русский",
+    "zh": "中文（简体）",
+    "sw": "Kiswahili"
+   }
+  },
+  "view.theme": {
+   "label": "Colores de la página",
+   "sub": "Colores",
+   "options": {
+    "auto": "Automático",
+    "paper": "Papel",
+    "night": "Mushaf nocturno",
+    "sepia": "Papel antiguo"
+   }
+  },
+  "view.wordSet": {
+   "label": "Juego de colores de las palabras",
+   "sub": "Colores",
+   "options": {
+    "default": "Normal",
+    "cb": "Más fácil de distinguir",
+    "brown": "Vistazo marrón",
+    "custom": "Los míos"
+   }
+  },
+  "view.wordStyle": {
+   "label": "Cómo se aplican los colores",
+   "help": "Resaltado = el texto sigue negro con un recuadro de color detrás",
+   "sub": "Colores",
+   "options": {
+    "text": "Color del texto",
+    "highlight": "Resaltado"
+   }
+  },
+  "view.customColors": {
+   "label": "Mis propios colores",
+   "help": "Elige un color para cada estado; se recuerda por separado para cada color de página",
+   "sub": "Colores"
+  },
+  "view.arabicScale": {
+   "label": "Tamaño del texto árabe",
+   "sub": "Texto"
+  },
+  "view.lineGap": {
+   "label": "Espacio entre líneas",
+   "sub": "Texto"
+  },
+  "view.wordGap": {
+   "label": "Espacio entre palabras",
+   "sub": "Texto"
+  },
+  "view.uiScale": {
+   "label": "Tamaño del texto de la interfaz",
+   "sub": "Texto",
+   "options": {
+    "90": "Pequeño",
+    "100": "Normal",
+    "115": "Grande",
+    "130": "Más grande"
+   }
+  },
+  "view.uiFont": {
+   "label": "Fuente de la interfaz",
+   "sub": "Texto",
+   "options": {
+    "app": "La fuente de la app",
+    "system": "La fuente del dispositivo"
+   }
+  },
+  "view.motion": {
+   "label": "Movimiento (animación)",
+   "help": "Siempre desactivado al grabar",
+   "sub": "Movimiento",
+   "options": {
+    "auto": "Automático",
+    "full": "Completo",
+    "gentle": "Suave",
+    "off": "No"
+   }
+  },
+  "view.intro": {
+   "label": "Animación de inicio (se abre el mushaf)",
+   "help": "Se muestra al abrir la app; tocar la pantalla la salta al instante",
+   "sub": "Movimiento",
+   "options": {
+    "every": "Cada vez",
+    "daily": "Una vez al día",
+    "off": "No"
+   }
+  },
+  "view.scroll": {
+   "label": "Dónde se queda la línea de lectura",
+   "sub": "Movimiento",
+   "options": {
+    "second": "En la segunda línea desde arriba",
+    "middle": "En el centro",
+    "off": "Me desplazo yo"
+   }
+  },
+  "view.timer": {
+   "label": "Mostrar el tiempo",
+   "sub": "Información arriba"
+  },
+  "view.legend": {
+   "label": "Mostrar qué significan los colores",
+   "help": "Una pequeña leyenda sobre el texto",
+   "sub": "Información arriba"
+  },
+  "view.headStats": {
+   "label": "Mostrar el recuento de correctas, erróneas y pistas",
+   "sub": "Información arriba"
+  },
+  "view.bnDigits": {
+   "label": "Escribir los números con dígitos bengalíes",
+   "help": "Desactivado: 0–9 (solo bengalí)",
+   "sub": "Información arriba"
+  },
+  "device.micId": {
+   "label": "Micrófono",
+   "options": {
+    "default": "El micrófono del propio dispositivo"
+   }
+  },
+  "device.echoCancel": {
+   "label": "Reducir el eco",
+   "help": "Reduce el sonido de Alafasy que entra al micrófono; desactivado, la ayuda tras el silencio puede fallar"
+  },
+  "device.noiseSuppress": {
+   "label": "Reducir el ruido ambiente",
+   "help": "Útil con ruido, pero también puede cortar una voz baja"
+  },
+  "device.autoGain": {
+   "label": "Ajustar solo el nivel del micrófono",
+   "options": {
+    "browser": "Como lo hace el navegador",
+    "on": "Sí",
+    "off": "No"
+   }
+  },
+  "device.sensitivity": {
+   "label": "Sensibilidad del micrófono",
+   "help": "Usa «Alta» al leer en voz baja, «Baja» con ruido",
+   "options": {
+    "low": "Baja",
+    "normal": "Normal",
+    "high": "Alta"
+   }
+  },
+  "device.threads": {
+   "label": "Hilos del procesador",
+   "help": "Más = más rápido, pero el teléfono puede calentarse",
+   "options": {
+    "1": "1",
+    "2": "2",
+    "4": "4",
+    "auto": "Automático"
+   }
+  },
+  "device.slowPhone": {
+   "label": "Adaptar a un teléfono lento",
+   "help": "En un teléfono lento se procesa menos audio cada vez para no quedarse atrás"
+  },
+  "device.liveModel": {
+   "label": "Modelo en vivo",
+   "help": "Un modelo mayor oye con más precisión pero es más lento",
+   "options": {
+    "tiny": "tiny",
+    "base": "base"
+   }
+  },
+  "device.checkModel": {
+   "label": "Modelo de comprobación",
+   "help": "Vuelve a escuchar antes de reconocer la sura y marcar en rojo",
+   "options": {
+    "base": "base",
+    "tiny": "tiny"
+   }
+  },
+  "device.keepAwake": {
+   "label": "Mantener la pantalla encendida al grabar y escuchar"
+  },
+  "device.shortcuts": {
+   "label": "Atajos de teclado",
+   "help": "Espacio = pausa, H = pista, R = resto de la aleya, E = ojo, M = lista de errores, N = pregunta siguiente, P = reproducir/pausar la escucha"
+  },
+  "device.maxRecMin": {
+   "label": "Grabación más larga",
+   "help": "La grabación se detiene sola tras este tiempo",
+   "options": {
+    "0": "Sin límite",
+    "30": "30",
+    "60": "60",
+    "90": "90",
+    "120": "120 minutos"
+   }
+  },
+  "adv.windowS": {
+   "label": "Segundos de audio procesados cada vez"
+  },
+  "adv.updateEveryS": {
+   "label": "Cada cuánto se procesa audio nuevo",
+   "help": "Un valor menor = más trabajo para el teléfono"
+  },
+  "adv.lookahead": {
+   "label": "Cuántas palabras por delante se comparan"
+  },
+  "adv.shortSkip": {
+   "label": "Cuántas palabras pueden omitirse cuando coinciden dos palabras"
+  },
+  "adv.longSkipRun": {
+   "label": "Palabras seguidas que deben coincidir para omitir más"
+  },
+  "adv.finalSkip": {
+   "label": "Máximo de palabras omitidas en la comprobación final"
+  },
+  "adv.detectMinWords": {
+   "label": "Mínimo de palabras para reconocer una sura"
+  },
+  "adv.detectMargin": {
+   "label": "Cuántas veces por delante de la siguiente sura probable debe estar"
+  },
+  "adv.detectSureWords": {
+   "label": "Tras estas palabras elige aunque esté reñido"
+  },
+  "adv.lostS": {
+   "label": "Segundos sin avance antes de buscar de nuevo el lugar"
+  },
+  "adv.lostReds": {
+   "label": "Rojas entre las últimas palabras que hacen buscar de nuevo: rojas"
+  },
+  "adv.lostOf": {
+   "label": "…entre las últimas cuántas palabras"
+  },
+  "adv.rewindRun": {
+   "label": "Palabras seguidas para reconocer lectura hacia atrás"
+  },
+  "adv.backWords": {
+   "label": "Máximo de palabras hacia atrás que se reconocen"
+  },
+  "adv.verifyWindowS": {
+   "label": "Segundos para volver a escuchar palabras omitidas"
+  },
+  "adv.verifyMaxS": {
+   "label": "…como máximo segundos"
+  },
+  "adv.autoExtendAt": {
+   "label": "Se añaden más aleyas cuando quedan estas palabras por delante"
+  },
+  "adv.sameAudio": {
+   "label": "Coincidencia de audio para recordar «Lo leí bien»",
+   "help": "Bajo = estricto (debe leerse exactamente igual)"
+  },
+  "adv.sameHeard": {
+   "label": "Coincidencia del texto oído para recordar «Lo leí bien»",
+   "help": "Alto = estricto"
+  },
+  "adv.maxClipS": {
+   "label": "Clip propio más largo de una palabra roja, en segundos"
+  },
+  "adv.stripCells": {
+   "label": "Máximo de recuadros en una franja de progreso"
+  },
+  "adv.cellMid": {
+   "label": "Un recuadro se pone rojo medio desde este total de debilidad"
+  },
+  "adv.cellDark": {
+   "label": "…rojo oscuro desde"
+  }
+ },
+ "groups": {
+  "recite": {
+   "name": "Recitación y errores",
+   "help": "Qué detecta la app mientras lees, qué hace cuando te atascas"
+  },
+  "hide": {
+   "name": "Ocultar y mirar",
+   "help": "Cómo se oculta el texto al leer de memoria, qué hace el vistazo"
+  },
+  "test": {
+   "name": "Prueba",
+   "help": "Duración, pistas y puntuación de la prueba con tarjetas"
+  },
+  "listen": {
+   "name": "Escucha y audio",
+   "help": "Recitación de Alafasy — velocidad, repeticiones, sin conexión"
+  },
+  "goals": {
+   "name": "Metas y racha",
+   "help": "Recuento diario, racha, qué lectura cuenta para las metas"
+  },
+  "history": {
+   "name": "Progreso e historial",
+   "help": "Reglas para borrar marcas, umbrales de estado, grabaciones"
+  },
+  "view": {
+   "name": "Apariencia",
+   "help": "Colores, tamaño del texto, movimiento"
+  },
+  "device": {
+   "name": "Micrófono y dispositivo",
+   "help": "Micrófono, procesador, pantalla"
+  },
+  "adv": {
+   "name": "Avanzado",
+   "help": "Valores de cálculo internos — cambiar con cuidado"
+  }
+ },
+ "presets": {
+  "recite": {
+   "label": "Rigor al detectar errores",
+   "items": {
+    "easy": {
+     "label": "Fácil",
+     "help": "Para memorización nueva: perdona pequeñas diferencias de pronunciación, no detecta palabras de más"
+    },
+    "normal": {
+     "label": "Normal",
+     "help": "Repaso diario"
+    },
+    "strict": {
+     "label": "Estricto",
+     "help": "Antes de recitar a un maestro: hasta una pronunciación cercana es un error, no se avanza sin corregir"
+    }
+   }
+  },
+  "test": {
+   "label": "Tipo de prueba",
+   "items": {
+    "quick": {
+     "label": "Práctica rápida"
+    },
+    "normal": {
+     "label": "Normal"
+    },
+    "hard": {
+     "label": "Difícil"
+    }
+   }
+  },
+  "listen": {
+   "label": "Tipo de escucha",
+   "items": {
+    "only": {
+     "label": "Solo escuchar"
+    },
+    "memo": {
+     "label": "Para memorizar"
+    },
+    "say": {
+     "label": "Escuchar y decir"
+    },
+    "slow": {
+     "label": "Aprendizaje lento"
+    }
+   }
+  }
+ }
+}

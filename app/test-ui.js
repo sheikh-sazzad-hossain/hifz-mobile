@@ -8,8 +8,9 @@ import { followerOptsFrom } from './engine-cfg.js';
 import { openPicker, rangeIcon, specLabel } from './picker.js';
 import { createTimer, formatTime } from '../core/timer.js';
 import { bn, isoLocal, when } from '../core/bn.js';
-import { fill, num } from '../core/fmt.js';
+import { fill, num, span } from '../core/fmt.js';
 import { ICONS } from './icons.js';
+import { slipStack, countUp, staggerSlips, rosette } from './beats.js';
 import { addRange, removeRange, moveRange, renameRange } from '../core/ranges.js';
 
 export function createTestUi(ctx) {
@@ -40,8 +41,8 @@ export function createTestUi(ctx) {
     const nothing = !m.ranges.length && !ranges.length;
     el.innerHTML = `<div class="tq-setup"><h2 class="hp-h">${esc(t('t.setupTitle'))}</h2>
       ${p ? `<div class="hz-banner hz-paused">${esc(t('t.resumeQ', { i: bn(p.cards.length), n: bn(p.settings.endBy === 'count' ? p.settings.questions : p.cards.length) }))}<div class="btn-row"><button class="btn btn-primary" data-ta="resume">${esc(t('t.resume'))}</button><button class="btn" data-ta="results">${esc(t('t.seeResults'))}</button><button class="btn btn-red" data-ta="discard">${esc(t('t.discard'))}</button></div></div>` : ''}
-      ${nothing ? `<div class="card"><b>${esc(t('t.starterTitle'))}</b><p class="hp-note">${esc(t('t.starterBody', { a: '৯৯. Az-Zalzala', b: '১১৪. An-Naas' }))}</p><div class="btn-row"><button class="btn btn-primary" data-ta="starter">${esc(t('t.start'))}</button><button class="btn" data-ta="markmem">${esc(t('t.markMemorized'))}</button></div></div>` : ''}
-      ${sg.length ? `<h3 class="hp-h">${esc(t('t.suggested'))}</h3><div class="tq-sg">${sg.map((x, i) => `<button class="tq-sgcard" data-ta="sg" data-i="${i}"><b>${esc(t(`t.sg.${x.id}.name`))}</b><small>${esc(t(`t.sg.${x.id}.sub`))}</small><span class="st-badge">${bn(countAyahs(x.runs))} আয়াত</span></button>`).join('')}</div>` : ''}
+      ${nothing ? `<div class="card"><b>${esc(t('t.starterTitle'))}</b><p class="hp-note">${esc(t('t.starterBody', { a: t('t.starterRange', { n: bn(99), english: 'Az-Zalzala' }), b: t('t.starterRange', { n: bn(114), english: 'An-Naas' }) }))}</p><div class="btn-row"><button class="btn btn-primary" data-ta="starter">${esc(t('t.start'))}</button><button class="btn" data-ta="markmem">${esc(t('t.markMemorized'))}</button></div></div>` : ''}
+      ${sg.length ? `<h3 class="hp-h">${esc(t('t.suggested'))}</h3><div class="tq-sg">${sg.map((x, i) => `<button class="tq-sgcard" data-ta="sg" data-i="${i}"><b>${esc(t(`t.sg.${x.id}.name`))}</b><small>${esc(t(`t.sg.${x.id}.sub`))}</small><span class="st-badge">${esc(t('t.ayahBadge', { n: bn(countAyahs(x.runs)) }))}</span></button>`).join('')}</div>` : ''}
       <h3 class="hp-h">${esc(t('t.myRanges'))}</h3><div class="chips">
         <button class="chip" ${m.ranges.length ? '' : 'disabled'} aria-pressed="${sel.spec?.parts?.[0]?.k === 'memorized'}" data-ta="mem" ${m.ranges.length ? '' : `data-tip="${esc(t('t.noMemorized'))}"`}>${esc(t('t.myMemorized'))}</button>
         ${ranges.map((r) => `<button class="chip" aria-pressed="${sel.saved === r.id}" data-ta="saved" data-id="${r.id}">${rangeIcon(r.icon)} ${esc(r.name)}</button>`).join('')}
@@ -93,13 +94,12 @@ export function createTestUi(ctx) {
   async function countdown() {
     T.phase = 'countdown';
     drawRun();
-    try { T.mic = await ctx.openMicSource((x) => { if (!T.gate && T.cur && !T.paused) T.cur.fol.addAudio(x); }, () => { if (T?.phase === 'card') end(); }); } catch (e) { toast(`মাইক চালু হয়নি: ${e.message || e}`, 6000); T = null; drawSetup(); return; }
+    try { T.mic = await ctx.openMicSource((x) => { if (!T.gate && T.cur && !T.paused) T.cur.fol.addAudio(x); }, () => { if (T?.phase === 'card') end(); }); } catch (e) { toast(t('a.micFail', { err: e.message || e }), 6000); T = null; drawSetup(); return; }
     const n = get('test.countdown');
-    const box = document.createElement('div');
-    box.className = 'tq-count'; el.append(box);
-    for (let i = n; i >= 1; i--) { box.textContent = bn(i); await new Promise((r) => setTimeout(r, 1000)); if (!T) { box.remove(); return; } }
-    if (n) { box.textContent = t('t.go'); await new Promise((r) => setTimeout(r, 400)); }
-    box.remove();
+    const stack = slipStack(el); // beat 5: three paper slips rise, ৩ · ২ · ১ on the top one
+    for (let i = n; i >= 1; i--) { stack.setNumber(bn(i)); await new Promise((r) => setTimeout(r, 1000)); if (!T) { stack.remove(); return; } }
+    if (n) { stack.go(t('t.go')); await new Promise((r) => setTimeout(r, 400)); }
+    stack.remove();
     T.gate = false;
     T.phase = 'card';
     T.timeStart = Date.now();
@@ -218,7 +218,7 @@ export function createTestUi(ctx) {
 
   // ---------------------------------------------------------------- results
   let resSheet = null;
-  function showResults(run, stored = false) {
+  function showResults(run, stored = false, redraw = false) { // redraw: the sheet is rebuilt after a remove / restore, so no entry motion again
     const live = !stored;
     const cards = run.cards;
     const sc = tally(cards, get('test.skipCounts'));
@@ -229,7 +229,7 @@ export function createTestUi(ctx) {
     cards.forEach((c, ci) => (c.mistakes ?? []).forEach((m, mi) => (m.removed ? gone : all).push({ ...m, ci, mi })));
     const slips = cards.map((c, i) => `<button class="slip ${c.result}" data-slip="${i}" aria-label="${bn(i + 1)}"></button>`).join('');
     const html = `<h2>${esc(t('t.resTitle'))}${run.temporary || T?.temporary ? ` <small class="hp-note">${esc(t('t.tempLabel'))}</small>` : ''}</h2>
-      ${live ? '' : `<p class="hp-note">${esc(t('h.testRow', { date: when(run.start), range: run.rangeName, p: sc.score === null ? '—' : bn(sc.score), c: bn(sc.pass), n: bn(sc.answered) }))}</p>`}<div class="tq-score">${esc(t('t.resScore', { p: sc.score === null ? '—' : bn(sc.score) }))}</div>
+      ${live ? '' : `<p class="hp-note">${esc(t('h.testRow', { date: when(run.start), range: run.rangeName, p: sc.score === null ? '—' : bn(sc.score), c: bn(sc.pass), n: bn(sc.answered) }))}</p>`}<div class="tq-score" data-score="${sc.score ?? ''}">${esc(t('t.resScore', { p: sc.score === null ? '—' : bn(sc.score) }))}</div>
       <div class="tq-line">${esc(t('t.resCorrect', { c: bn(sc.pass), n: bn(sc.answered) }))} · ${esc(t('t.resBest', { s: bn(sc.bestStreak) }))} · ${esc(t('t.resTime', { time: formatTime(secs * 1000) }))}</div>
       <div class="slips">${slips}</div>
       <h3 class="hp-h">${esc(all.length ? t('t.resAll', { n: bn(all.length) }) : t('t.resNone'))}</h3>${mrows(all, false)}
@@ -237,7 +237,14 @@ export function createTestUi(ctx) {
       ${live ? '' : `<p class="hp-note">${esc(t('h.testEditNote'))}</p>`}<div class="btn-row">${live && run.early ? `<button class="btn" data-ra="keep">${esc(t('t.keepGoing'))}</button>` : ''}${live && !run.early ? `<button class="btn" data-ra="replay">${esc(t('t.replay'))}</button><button class="btn" data-ra="new">${esc(t('t.newTest'))}</button>` : ''}${live && !sel.saved && !run.temporary ? `<button class="btn" data-ra="save">${esc(t('t.saveThis'))}</button>` : ''}<button class="btn btn-primary" data-ra="done">${esc(t('t.done'))}</button></div>`;
     const sh = sheet(html, { cls: 'tq-res' });
     resSheet = sh;
-    if (sc.score === 100 && sc.answered >= 5) sh.el.querySelector('.tq-score').classList.add('seal');
+    const scoreEl = sh.el.querySelector('.tq-score');
+    const sealed = sc.score === 100 && sc.answered >= 1;
+    if (sealed) scoreEl.classList.add('seal');
+    if (!redraw && sc.score !== null) { // beat 7: the number counts up, mini-slips follow with a 30 ms stagger, a 100 % result draws its seal
+      const fmt = (v) => t('t.resScore', { p: bn(v) });
+      countUp(scoreEl, sc.score, fmt).then(() => { if (sealed && scoreEl.isConnected) rosette(scoreEl); });
+      staggerSlips(sh.el.querySelector('.slips'));
+    } else if (sealed) rosette(scoreEl);
     sh.el.addEventListener('click', async (e) => {
       const rm = e.target.closest('[data-rm]');
       const sl = e.target.closest('[data-slip]');
@@ -246,7 +253,7 @@ export function createTestUi(ctx) {
         const [ci, mi] = rm.dataset.rm.split(':').map(Number);
         const nxt = toggleRemoved(run, ci, mi, get('test.skipCounts'));
         await S.store.set('tests', (S.store.get('tests', []) ?? []).map((x) => (x.id === nxt.id ? nxt : x)));
-        showResults(nxt, true);
+        showResults(nxt, true, true);
         ctx.refreshTests?.();
         return;
       }
@@ -257,7 +264,7 @@ export function createTestUi(ctx) {
         const cur = { fol: c.fol };
         if (m.removed) c.fol.restore(m.k); else c.fol.remove(m.k);
         collect({ card: c, fol: c.fol, skipped: c.result === 'skipped' });
-        showResults(run);
+        showResults(run, false, true);
         return;
       }
       const b = e.target.closest('[data-ra]');
@@ -278,8 +285,8 @@ export function createTestUi(ctx) {
     const cls = { given: 'hz-given', bad: 'hz-bad', fixed: 'hz-ok', ok: 'hz-ok', plain: '' };
     const text = cardWords(c).map((w) => `<span class="${cls[w.status]}">${esc(w.text)}</span>${w.end ? ` <span class="hz-end">${esc(ctx.endMark(c.s, w.a))}</span> ` : ' '}`).join('');
     const ml = (c.mistakes ?? []).map((m) => `<div class="ml-row"><div class="hz-ar ml-w"><b>${esc(m.word)}</b></div><div class="ml-m">${esc(t('r.ayahRef', { a: bn(m.a) }))} · ${esc(t(`r.kind.${m.kind}`))}${m.removed ? ' · ✓' : ''}</div></div>`).join('');
-    const span = c.a1 === c.a2 ? `আয়াত ${bn(c.a1)}` : `আয়াত ${bn(c.a1)}–${bn(c.a2)}`;
-    const sh = sheet(`<div class="tq-card ${c.result ?? ''}" style="margin:0 0 12px"><div class="tq-head"><span class="tq-ref">${esc(t('t.ref', { n: bn(c.s), english: quran.surahInfo(c.s).english, span }))}</span></div><div class="hz-text">${text}</div></div>${ml}<div class="btn-row"><button class="btn btn-primary" data-ok>${esc(t('t.done'))}</button></div>`, { cls: 'tq-res' });
+    const sp = span(c.a1, c.a2);
+    const sh = sheet(`<div class="tq-card ${c.result ?? ''}" style="margin:0 0 12px"><div class="tq-head"><span class="tq-ref">${esc(t('t.ref', { n: bn(c.s), english: quran.surahInfo(c.s).english, span: sp }))}</span></div><div class="hz-text">${text}</div></div>${ml}<div class="btn-row"><button class="btn btn-primary" data-ok>${esc(t('t.done'))}</button></div>`, { cls: 'tq-res' });
     sh.el.querySelector('[data-ok]').addEventListener('click', () => sh.close());
   }
   async function reopen() { toast(t('t.continue')); T.phase = 'card'; T.gate = false; ctx.setLive(true); T.mic = await ctx.openMicSource((x) => { if (!T.gate && T.cur && !T.paused) T.cur.fol.addAudio(x); }, () => {}); timer.resume(); nextCard(); tick = setInterval(onTick, 150); }
@@ -329,7 +336,7 @@ export function createTestUi(ctx) {
       const v = sh.fol.view();
       const st = sh.card.result && sh.status !== 'listening' ? sh.card.result : '';
       const first = sh.fol.words[0];
-      const ref = T.showRef ? t('t.ref', { n: bn(first.surah), english: quran.surahInfo(first.surah).english, span: sh.card.a1 === sh.card.a2 ? `আয়াত ${bn(sh.card.a1)}` : `আয়াত ${bn(sh.card.a1)}–${bn(sh.card.a2)}` }) : t('t.refHidden');
+      const ref = T.showRef ? t('t.ref', { n: bn(first.surah), english: quran.surahInfo(first.surah).english, span: span(sh.card.a1, sh.card.a2) }) : t('t.refHidden');
       const stamp = st === 'pass' ? '<span class="stamp ok">✓</span>' : st === 'fail' ? '<span class="stamp bad">✗</span>' : '';
       const status = sh.status === 'checking' ? t('t.checking') : sh.status === 'skipped' ? t('t.skipped') : st === 'pass' ? t('t.pass') : st === 'fail' ? t('t.failN', { m: bn(cardMistakes(sh.card)) }) : T.opts.endBy === 'time' && over() ? t('t.timeUp') : t('t.listening');
       body = `<div class="tq-card ${st} ${sh.status === 'listening' ? 'listening' : ''}">${stamp}<div class="tq-head"><span class="tq-ref">${esc(ref)}</span></div><div class="hz-text" data-live="${T.paused ? 0 : 1}">${cardSpans(v)}</div>
@@ -379,6 +386,7 @@ export function createTestUi(ctx) {
     startFromHook(spec) { sel = { spec: spec ?? { parts: [{ k: 'surah', s: 93 }] }, name: '', saved: false }; return startRun(); },
     state: () => (T ? { phase: T.phase, cards: T.cards.map((c) => ({ result: c.result, mistakes: cardMistakes(c), a1: c.a1, a2: c.a2 })), paused: T.paused, temporary: T.temporary, ...tally(T.cards, true) } : { phase: 'setup' }),
     pending,
+    showStored(rec) { showResults(rec, true); },
     openStored(id) { const r = (S.store.get('tests', []) ?? []).find((x) => x.id === id); if (r) showResults(r, true); },
   };
 }

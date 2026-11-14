@@ -333,7 +333,7 @@ dialog.dlg p { margin: 0 0 16px; line-height: 1.6; } dialog.dlg .btn-row { justi
 .st-bar h1 { flex: 1; margin: 0; font-family: var(--font-display); font-weight: 400; font-size: var(--fs-xl); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .st-body { max-width: 720px; margin: 0 auto; padding: 12px 12px 60px; }
 .st-body.st-enter { animation: stPush calc(320ms * var(--m-time)) var(--e-page) both; } .st-body.st-back { animation: stBack calc(260ms * var(--m-time)) var(--e-page) both; }
-@keyframes stPush { from { opacity: calc(1 - var(--m-time)); transform: translateX(calc(100% * var(--m-move))); } } @keyframes stBack { from { opacity: calc(1 - var(--m-time)); transform: translateX(calc(-30% * var(--m-move))); } }
+@keyframes stPush { from { opacity: calc(1 - var(--m-time)); transform: translateX(calc(100% * var(--m-move) * var(--dx, 1))); } } @keyframes stBack { from { opacity: calc(1 - var(--m-time)); transform: translateX(calc(-30% * var(--m-move) * var(--dx, 1))); } }
 .st-search { width: 100%; min-height: 44px; margin: 0 0 12px; padding: 0 14px; border-radius: var(--r-md); border: 1px solid var(--line-strong); background: var(--surface); }
 .st-preset { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 14px; margin-bottom: 12px; box-shadow: var(--sh-1); }
 .st-preset h3 { margin: 0 0 8px; font-family: var(--font-display); font-weight: 400; font-size: var(--fs-lg); } .st-preset p { margin: 8px 0 0; color: var(--ink-2); font-size: var(--fs-sm); }
@@ -391,8 +391,14 @@ body[data-tab="test"] #hz-t-next { display: grid; } #hz-t-next[hidden] { display
 .tq-card.skipped { border: 2px dashed var(--line-strong); }
 .tq-head { color: var(--ink-2); font-size: var(--fs-sm); } .tq-status { color: var(--ink-2); margin: 6px 0; } .tq-foot { display: flex; flex-wrap: wrap; gap: 8px; }
 .stamp { position: absolute; top: 8px; inset-inline-start: 8px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; } .stamp.ok { background: var(--w-ok); } .stamp.bad { background: var(--w-bad); }
-.tq-count { position: fixed; inset: 0; z-index: var(--z-scrim); display: grid; place-items: center; background: var(--scrim); color: var(--bg); font-family: var(--font-display); font-size: var(--fs-count); }
-.tq-score { font-family: var(--font-display); font-size: var(--fs-score); color: var(--accent); line-height: 1.1; } .tq-score.seal::after { content: " ✺"; color: var(--gold); }
+.tq-count { position: fixed; inset: 0; z-index: var(--z-scrim); display: grid; place-items: center; background: var(--scrim); color: var(--ink); font-family: var(--font-display); font-size: var(--fs-count); }
+.tq-stack { position: relative; width: min(300px, 78vw); height: min(190px, 28vh); }
+.tq-slip { position: absolute; inset: 0; display: grid; place-items: center; background: var(--surface); border-radius: var(--r-slip); box-shadow: var(--sh-slip); border-top: 2px solid var(--accent); will-change: transform, opacity; }
+.tq-slip.s1 { transform: translateY(6px) rotate(-.6deg); background: var(--surface-2); border-top-color: var(--line-strong); }
+.tq-slip.s2 { transform: translateY(12px) rotate(.8deg); background: var(--surface-2); border-top-color: var(--line-strong); }
+.tq-num { display: block; will-change: transform, opacity; line-height: 1; }
+.tq-seal { display: inline-block; vertical-align: middle; color: var(--gold); margin-inline-start: 8px; will-change: transform, opacity; }
+.tq-score { font-family: var(--font-display); font-size: var(--fs-score); color: var(--accent); line-height: 1.1; }
 .tq-line { color: var(--ink-2); } .tq-sg { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; } .tq-sgcard { text-align: start; border: 1px solid var(--line); background: var(--surface); border-radius: var(--r-md); padding: 10px 12px; display: flex; flex-direction: column; gap: 4px; }
 .tq-sgcard small { color: var(--ink-2); } .help-list { padding-inline-start: 20px; line-height: 1.7; }
 
@@ -420,8 +426,7 @@ a { color: var(--accent); }
 .tq-run { padding-bottom: calc(var(--bar-h) + 60px + env(safe-area-inset-bottom)); }
 body.st-open::before { content: ""; position: fixed; inset: 0; z-index: calc(var(--z-settings) - 1); background: var(--scrim); }
 @media (max-width: 899px) { body.st-open::before { display: none; } }
-html[data-motion="full"] .tq-card.swap { animation: hzIn var(--d-live-swap) linear both; }
-html[data-live="1"][data-motion="full"] #app .tq-card.swap { animation: hzIn var(--d-live-swap) linear both !important; }
+html[data-motion="full"]:not([data-live="1"]) .tq-card.swap { animation: hzIn var(--d-live-swap) linear both; }
 .hp-cell { min-width: 44px; height: 44px; }
 
 /* fix round 2: remaining tap targets, pinned pause banner, no leftover animation */
@@ -432,8 +437,6 @@ html[data-live="1"][data-motion="full"] #app .tq-card.swap { animation: hzIn var
 .sw::before { content: ""; position: absolute; inset: -8px 0; }
 .pl-chips .chip { min-width: 44px; }
 .tq-run .hz-paused { position: fixed; left: 12px; right: 12px; bottom: calc(var(--bar-h) + 8px + env(safe-area-inset-bottom)); z-index: calc(var(--z-bar) - 1); margin: 0; box-shadow: var(--sh-2); background: var(--surface); }
-html[data-motion="full"] .tq-card.swap { animation: hzIn var(--d-live-swap) linear; }
-html[data-live="1"][data-motion="full"] #app .tq-card.swap { animation: hzIn var(--d-live-swap) linear !important; }
 .tq-top > button { min-height: 44px; }
 
 /* C8: tappable stored-test rows, 44 px slip hit area */
@@ -441,3 +444,25 @@ button.mm-row { width: 100%; background: none; border: 0; border-bottom: 1px sol
 button.slip { position: relative; padding: 0; font: inherit; cursor: pointer; } button.slip::before { content: ""; position: absolute; inset: -15px -5px; }
 .slips:has(button.slip) { gap: 10px 8px; }
 .pk-grid { user-select: none; -webkit-user-select: none; }
+
+/* ---------- app language: fonts and right-to-left (spec C §4, §6) ---------- */
+/* Bengali keeps Hind Siliguri / Tiro Bangla; every other language uses the system font stack (no font downloads, CJK included) */
+html[data-lang]:not([data-lang="bn"]) { --font-bn: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif; --font-display: Georgia, "Noto Serif", "Times New Roman", serif; }
+html[data-lang="ar"], html[data-lang="ur"], html[data-lang="fa"] { --font-bn: system-ui, "Segoe UI", "Noto Naskh Arabic", "Noto Sans Arabic", Tahoma, Arial, sans-serif; --font-display: var(--font-bn); }
+html[data-lang="zh"] { --font-bn: system-ui, "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", sans-serif; --font-display: var(--font-bn); }
+html[data-lang="hi"] { --font-bn: system-ui, "Nirmala UI", "Noto Sans Devanagari", "Segoe UI", sans-serif; --font-display: var(--font-bn); }
+/* long words (German) and long lines never clip: text wraps inside its box */
+body { overflow-wrap: break-word; hyphens: auto; }
+.tab span, .btn, .chip, .seg button { overflow-wrap: normal; hyphens: manual; }
+.tab { min-width: 0; } .tab span { overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.seg button, .chip { white-space: normal; text-align: center; }
+/* right-to-left (ar, ur, fa): the Quran text is always RTL already; the interface mirrors */
+html[dir="rtl"] { --dx: -1; }
+html[dir="rtl"] #st { transform: translateX(-100%); } html[dir="rtl"] #st.open { transform: none; }
+html[dir="rtl"] .sw::after { left: auto; right: 3px; } html[dir="rtl"] .sw[aria-checked="true"]::after { transform: translateX(-20px); }
+html[dir="rtl"] .st-bar [data-act="back"] svg, html[dir="rtl"] .st-bar [data-act="close"] svg, html[dir="rtl"] .st-chev svg, html[dir="rtl"] #hz-t-next svg, html[dir="rtl"] [data-pb] svg { transform: scaleX(-1); }
+html[dir="rtl"] .hz-sura-bn, html[dir="rtl"] .hz-none { direction: rtl; }
+html[dir="rtl"] .hz-modelcard, html[dir="rtl"] .hp-note, html[dir="rtl"] .st-help { text-align: start; }
+
+/* C16: no motion while live; digits in Latin languages use the UI face (Georgia oldstyle 0 reads like O) */
+html[data-lang]:not([data-lang="bn"]) :is(.tq-score, .hp-num, .tq-count) { font-family: var(--font-bn); font-variant-numeric: lining-nums tabular-nums; }

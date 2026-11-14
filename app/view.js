@@ -7,7 +7,7 @@ const MIRROR = 'hifz-view';
 const BG = { paper: '#F6F1E6', night: '#11151B', sepia: '#EADFC6' };
 const SURFACE = { paper: '#FFFCF5', night: '#181D25', sepia: '#F4EAD3' };
 const VIEW_IDS = ['view.theme', 'view.wordSet', 'view.wordStyle', 'view.customColors', 'view.arabicScale', 'view.lineGap', 'view.wordGap', 'view.uiScale', 'view.uiFont',
-  'view.motion', 'view.timer', 'view.headStats', 'view.bnDigits', 'hide.style', 'hide.weakTint', 'hide.nextWord', 'hide.head', 'hide.ayahMarks', 'view.legend'];
+  'view.motion', 'view.intro', 'view.lang', 'view.timer', 'view.headStats', 'view.bnDigits', 'hide.style', 'hide.weakTint', 'hide.nextWord', 'hide.head', 'hide.ayahMarks', 'view.legend'];
 export const COLOR_KEYS = ['ok', 'bad', 'peek', 'pend', 'next', 'weak', 'listen'];
 
 export function resolveTheme(v) {
