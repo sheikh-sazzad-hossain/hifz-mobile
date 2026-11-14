@@ -1,27 +1,48 @@
 <!doctype html>
-<html lang="bn">
+<html lang="bn" data-theme="paper">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0d9488">
+<meta name="theme-color" content="#F6F1E6">
 <title>হিফজ সহায়ক</title>
+<script>
+/* before first paint: theme and the look settings from the localStorage mirror, so a dark phone never flashes light */
+(function () {
+  var h = document.documentElement;
+  try {
+    var v = JSON.parse(localStorage.getItem('hifz-view') || '{}');
+    var t = v['view.theme'] || 'auto';
+    if (t === 'auto') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'paper';
+    var m = v['view.motion'] || 'auto';
+    if (m === 'auto') m = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'gentle' : 'full';
+    h.dataset.theme = t; h.dataset.words = v['view.wordSet'] || 'default'; h.dataset.wordstyle = v['view.wordStyle'] || 'text'; h.dataset.motion = m;
+    h.dataset.uifont = v['view.uiFont'] || 'app'; h.dataset.hidestyle = v['hide.style'] || 'bar';
+    if (t === 'night') h.classList.add('dark');
+    if (v['view.arabicScale']) h.style.setProperty('--ar-scale', v['view.arabicScale'] / 100);
+    if (v['view.lineGap']) h.style.setProperty('--lh-scale', v['view.lineGap'] / 100);
+    if (v['view.uiScale']) h.style.setProperty('--ui-scale', v['view.uiScale'] / 100);
+    if (m !== 'off') h.classList.add('st-boot');
+  } catch (e) { h.classList.add('st-boot'); }
+})();
+</script>
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="app/icon-192.png">
 <link rel="apple-touch-icon" href="app/icon-192.png">
+<link rel="preload" href="fonts/hind-siliguri-400-bn.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="app/style.css">
 </head>
-<body>
+<body data-tab="recite">
 <div id="app">
-  <div class="hz-hero">
-    <div class="hz-hero-ico" id="hero-ico"></div>
-    <div><div class="hz-hero-title">হিফজ সহায়ক</div>
-    <div class="hz-hero-sub">মুখস্থ তিলাওয়াত শুনে সাথে সাথে ভুল ধরিয়ে দেয় · কোথায় বারবার আটকাও তা মনে রাখে</div></div>
-    <div class="hz-hero-tools"><button class="hz-mini" id="theme-btn" aria-label="রং বদলাও" data-tip="দিন / রাতের রং"></button></div>
-  </div>
-  <div class="tabs" role="tablist">
-    <button class="tab" role="tab" id="tab-recite" aria-selected="true" aria-controls="panel-recite"></button>
-    <button class="tab" role="tab" id="tab-progress" aria-selected="false" aria-controls="panel-progress"></button>
-  </div>
+  <header class="hz-head-bar">
+    <div class="hz-logo" id="hero-ico"></div>
+    <div><div class="hz-title">হিফজ সহায়ক</div>
+    <div class="hz-sub">মুখস্থ তিলাওয়াত শুনে সাথে সাথে ভুল ধরিয়ে দেয় · কোথায় বারবার আটকাও তা মনে রাখে</div></div>
+    <div class="hz-hero-tools">
+      <button class="hz-mini" id="theme-btn" aria-label="রং বদলাও" data-tip="রং বদলাও: কাগজ / রাতের মুসহাফ / পুরোনো কাগজ (চেপে ধরলে সব সেটিং)"></button>
+      <button class="hz-mini" id="gear-btn" aria-label="সেটিংস" data-tip="সেটিংস"></button>
+    </div>
+  </header>
+  <nav class="tabs" role="tablist" id="tabs"><i class="tab-ribbon" id="ribbon"></i></nav>
 
   <section class="panel" id="panel-recite" role="tabpanel">
     <div class="hz-modelcard" id="modelcard"><div id="modeltext">মডেল তৈরি হচ্ছে…</div><div class="hz-progressbar"><i id="modelbar"></i></div></div>
@@ -32,13 +53,26 @@
       <label>থামলে আলাফাসি পড়া শুরু করবেন<select id="s-wait"></select><small>কত সেকেন্ড চুপ থাকলে</small></label>
     </div>
     <details class="help"><summary>কীভাবে ব্যবহার করবে</summary><ul id="help"></ul></details>
+    <div id="hz-legend" class="hz-legend" hidden></div>
+    <div id="hz-today"></div>
     <div id="hz-live" class="card"></div>
     <div class="hz-final" id="hz-final"></div>
     <div class="hz-footer" id="footer"></div>
   </section>
 
+  <section class="panel" id="panel-test" role="tabpanel" hidden></section>
+  <section class="panel" id="panel-listen" role="tabpanel" hidden></section>
+
   <section class="panel" id="panel-progress" role="tabpanel" hidden>
-    <div id="hp-overview" class="card"></div>
+    <div class="seg hp-seg" id="hp-seg" role="radiogroup"></div>
+    <div id="pg-memorized" class="card" hidden></div>
+    <div id="pg-goals" hidden></div>
+    <div id="pg-tests" class="card" hidden></div>
+    <div id="pg-badges" class="card" hidden></div>
+    <div id="pg-overview">
+    <div id="hp-extra" class="card"></div>
+    <div id="hp-overview" class="card" style="margin-top:12px"></div>
+    <div id="hp-recent" class="card" style="margin-top:12px"></div>
     <div id="hp-weak-box" class="card" style="margin-top:12px">
       <h3>কোথায় বারবার আটকে যাও</h3>
       <div class="hp-row"><select id="hp-surah" aria-label="সূরা বেছে নাও"></select><button class="btn btn-red" id="hp-clear-all" data-tip="এই সূরার সব লাল দাগ মুছে দাও (আগে জিজ্ঞেস করবে)">সব দাগ মুছে দাও</button></div>
@@ -51,20 +85,24 @@
       <input type="file" id="file-import" accept="application/json,.json" hidden>
     </div>
     <div class="hz-footer" id="storage-info"></div>
+    </div>
   </section>
 </div>
 
+<div id="st" role="dialog" aria-label="সেটিংস"></div>
 <div id="hz-timer" role="timer" aria-live="off" aria-label="তিলাওয়াতের সময়" hidden>00:00</div>
 <div id="hz-bar" role="toolbar">
   <button class="hz-rec" id="rec" disabled aria-label="রেকর্ড" data-tip="রেকর্ড শুরু — পড়া শুরু করো"></button>
   <div class="hz-tools">
     <button class="hz-tool hz-t-pause" id="hz-t-pause" disabled data-tip="বিরতি — যেখানে আছ সেখানেই থামবে, পরে আবার চালু করা যাবে" aria-label="বিরতি"></button>
     <button class="hz-tool hz-t-look" id="hz-t-look" data-tip="দেখে পড়া: পুরো লেখা দেখাও" aria-label="দেখে পড়া / মুখস্থ"></button>
+    <button class="hz-tool hz-t-next" id="hz-t-next" hidden data-tip="পরের প্রশ্ন" aria-label="পরের প্রশ্ন"></button>
     <button class="hz-tool hz-t-hint" id="hz-t-hint" data-tip="ইঙ্গিত: পরের শব্দটা দেখাও" aria-label="ইঙ্গিত"></button>
   </div>
-  <div id="hz-status"></div>
+  <div id="hz-status" role="status" aria-live="polite"></div>
 </div>
-<div class="hz-toast" id="toast" hidden></div>
+<div id="hz-player" role="toolbar" aria-label="শোনা" hidden></div>
+<div class="hz-toast" id="toast" role="status" aria-live="polite" hidden></div>
 <script type="module" src="app/main.js"></script>
 </body>
 </html>

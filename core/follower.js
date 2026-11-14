@@ -24,11 +24,20 @@ export const C = {
   AUDIT_AGAIN_S: 1.5, ADDED_TRIES: 3, ADDED_NEAR: 3, ADDED_GAP: 3, REPEAT_AHEAD: 12, REPEAT_FAR_BACK: 400,
   ADDED_CLIP_S: 12.0, CHECK_EVERY_S: 4.0, MIN_WINDOW_S: 3.0, TARGET_PASS_S: 0.5, FINAL_AUDITS: 2, MAX_CLIP_S: 6.0, CLIP_CONTEXT_WORDS: 2,
 };
+export const DEFAULT_C = Object.freeze({ ...C });
+export const DEFAULT_OPTS = Object.freeze({ slow: true, changed: true, skipped: true, added: true, stray: true, noAdvance: false, silenceHelp: 'surah', promptOnLook: false, teach: true,
+  ctxBefore: 2, ctxAfter: 1, myCtx: 2, fixed: false });
+// Engine values from the settings (spec C3 §2.5): back to the defaults, then the overrides. Called only while nothing runs.
+export function applyTuning(over = {}) {
+  Object.assign(C, DEFAULT_C, over);
+  LIKE_CACHE.clear();
+  quran.setSimilarRatio(over.SIMILAR_RATIO ?? quran.SIMILAR_RATIO);
+}
 const FRAME = SAMPLE_RATE / 20; // 50 ms
 const JOINED_PARTICLES = new Set(['يا', 'ويا', 'فيا', 'ها']); // vocative/"ha" the model joins to the next word
 const OPENER_WORDS = new Set([...quran.words(quran.ISTIADHA), ...quran.words(quran.BASMALA)].map(quran.normalize));
 const INVENTED = new Set(['والمومنين']);
-const UNIT_ORDER = ['missed', 'pending', 'hint']; // a joined word shows the worst of its parts
+const UNIT_ORDER = ['missed', 'pending', 'hint', 'given']; // a joined word shows the worst of its parts
 
 const LIKE_CACHE = new Map();
 // a, b normalized: the same word as the model hears it (quran.alike alone takes short words of the same letter
@@ -172,6 +181,7 @@ export class Follower {
   //         indopak: { ayahWords(surah, ayah) → [shown words] | null }, sleep(ms), newId() }
   constructor(surah = null, first = 1, last = null, deps = {}) {
     this.deps = { ...defaultDeps(), ...deps };
+    this.opts = { ...DEFAULT_OPTS, ...(deps.opts ?? {}) };
     this.sleep = deps.sleep ?? sleepReal;
     this._newId = deps.newId ?? (() => Math.random().toString(16).slice(2, 14).padEnd(12, '0'));
     this._running = false;
@@ -210,6 +220,7 @@ export class Follower {
     this._lastCheckAt = 0;
     this._passRate = 0; // measured model seconds per audio second of live passes (0: not measured yet)
     this.paused = false;
+    this._block = null; // detect.noAdvance: index of the red word the reciter must fix before going on
     this.stray = null; // {id, surah, ayah}: reciting another surah's ayah right now
     this._strays = 0;
     this._audited = new Set(); // "surah:ayah" re-heard for added words
@@ -259,6 +270,7 @@ export class Follower {
 
   // Keep text ahead of the reciter on screen: the next ayahs and, after a surah's last ayah, the next surah.
   _extend() {
+    if (this.opts.fixed) return; // a test card is exactly its words
     const margin = this.auto || this.pos >= this._rangeEnd ? C.AUTO_EXTEND_AT : 1;
     while (this.words.length && this.words.length - this.pos < margin) {
       const last = this.words.at(-1);
@@ -286,7 +298,27 @@ export class Follower {
     return i;
   }
 
-  _atNewSurah() { // a surah was recited to its end and the next one has not been begun
+  trim(a1, wi1, a2, wi2) { // test card: keep the words from (a1, wi1) to (a2, wi2) of what is loaded
+    const i = this.words.findIndex((w) => w.ayah === a1 && w.wi === wi1);
+    let j = -1;
+    this.words.forEach((w, k) => { if (w.ayah === a2 && w.wi === wi2) j = k; });
+    if (i < 0 || j < i) return false;
+    this.words = this.words.slice(i, j + 1);
+    this._rangeEnd = this.words.length;
+    this.pos = 0;
+    this._shown = new Set();
+    this.version++;
+    return true;
+  }
+
+  give(n) { // the first n words are given as the card's hint
+    for (let k = 0; k < Math.min(n, this.words.length); k++) { this.words[k].status = 'given'; this.words[k].looked = true; }
+    this.pos = Math.min(n, this.words.length);
+    this.version++;
+  }
+
+  _atNewSurah() {
+    if (this.opts.fixed) return false; // a surah was recited to its end and the next one has not been begun
     return this.pos > 0 && this.pos < this.words.length && this.pos === this._partStart(this.pos);
   }
 
@@ -407,14 +439,22 @@ export class Follower {
   // word, and goes on into the next surah, until the reciter's own voice is heard again (or pause/stop).
   maybePrompt() {
     if (this.playing) { this._followAlafasy(); return; }
-    if (!this.waitS || this.surah === null || this.done() || this.look || this.len < this._nextPromptAt || this._atNewSurah()
-      || !this.words.slice(0, this.pos).some((w) => w.status === 'correct') || !this.quietFor(this.waitS)) return;
+    if (!this.waitS || this.surah === null || this.done() || (this.look && !this.opts.promptOnLook) || this.len < this._nextPromptAt || this._atNewSurah()
+      || !this.words.slice(0, this.pos).some((w) => w.status === 'correct' || w.status === 'given') || !this.quietFor(this.waitS)) return;
+    if (this.opts.silenceHelp === 'show') { // no audio: the next word is shown once, then waiting starts again
+      this.hint();
+      this._nextPromptAt = this.len + Math.floor(this.waitS * SAMPLE_RATE);
+      return;
+    }
     this._playFrom(this.pos, this._voice());
   }
 
   _playFrom(k, voice) { // Alafasy recites from word k to the end of its surah. voice: the reciter's own level
     const w = this.words[k];
-    const found = this.deps.alafasy.spanAudio(w.surah, w.ayah, w.wi, true);
+    const kind = this.opts.silenceHelp;
+    const left = this.words.filter((x) => x.surah === w.surah && x.ayah === w.ayah).length;
+    const last = kind === 'word' ? w.wi : kind === 'words3' ? Math.min(w.wi + 2, left - 1) : null;
+    const found = this.deps.alafasy.spanAudio(w.surah, w.ayah, w.wi, kind === 'surah', last);
     if (!found) { this._nextPromptAt = this.len + Math.floor(this.waitS * SAMPLE_RATE); return; }
     this._prompts++;
     this.prompt = { id: `${this._id}-${this._prompts}`, src: found[0], from: found[1].toFixed(2), to: found[2].toFixed(2) };
@@ -441,6 +481,7 @@ export class Follower {
     if (this._reciterBack()) this._stopAlafasy(this.len - C.BACK_FRAMES * FRAME);
     else if (t >= p.end) {
       this.playing = null;
+      if (this.opts.silenceHelp !== 'surah') { this._stopAlafasy(this.len, p); return; } // ayah / 3 words / 1 word: back to waiting
       if (this.pos < this.words.length) this._playFrom(this.pos, p.voice);
       if (this.playing === null) this._stopAlafasy(this.len, p); // the Quran's end, or no audio for the next surah
     }
@@ -480,7 +521,7 @@ export class Follower {
 
   // The live window: WINDOW_S, or shorter when the phone is slow (a pass then takes about TARGET_PASS_S), never under MIN_WINDOW_S.
   _windowS() {
-    if (!this._passRate) return C.WINDOW_S;
+    if (!this._passRate || !this.opts.slow) return C.WINDOW_S; // device.slowPhone off: always the full window
     return Math.max(C.MIN_WINDOW_S, Math.min(C.WINDOW_S, C.TARGET_PASS_S / this._passRate));
   }
 
@@ -570,6 +611,12 @@ export class Follower {
     if (s === here.surah && first - 1 <= here.ayah && here.ayah <= last + 1) return null; // right place; the reciter is struggling
     const part = this._partStart(Math.min(this.pos, this.words.length - 1));
     const heard = heardT.map((h) => quran.normalize(h[0]));
+    if (this.opts.fixed) { // test card: never moves to another surah; only rewinds inside the card, or warns
+      if (s !== here.surah) {
+        if (this.stray === null || this.stray.surah !== s) { this._strays++; this.stray = { id: `${this._id}-s${this._strays}`, surah: s, ayah: first }; this.version++; }
+      } else { const back = this._wentBack(heard, this.pos); if (back !== null) this._rewind(back, audioLen); }
+      return null;
+    }
     if (s === here.surah && last < here.ayah) {
       // went back further than follow() looks; even before what is shown: show those too
       const shownFrom = this.words[part].ayah;
@@ -602,6 +649,7 @@ export class Follower {
     }
     if (this.pos > part && this._confirmed()) {
       // recited on into another surah by mistake: show that, don't follow it there
+      if (!this.opts.stray) return null;
       if (this.stray === null || this.stray.surah !== s) {
         this._strays++;
         this.stray = { id: `${this._id}-s${this._strays}`, surah: s, ayah: first };
@@ -629,7 +677,7 @@ export class Follower {
   // Surah found, but the reciter keeps reciting without the text moving on, or most recent words are red.
   lost() {
     if (this.surah === null || this.done() || this.len - this._relockAt < C.RELOCK_EVERY_S * SAMPLE_RATE) return false;
-    const settled = this.words.slice(0, this.pos).map((w) => w.status).filter((s) => s !== 'hint').slice(-C.LOST_OF);
+    const settled = this.words.slice(0, this.pos).map((w) => w.status).filter((s) => s !== 'hint' && s !== 'given').slice(-C.LOST_OF);
     if (settled.filter((s) => s === 'missed').length >= C.LOST_REDS) return true;
     const stalled = this.len - Math.max(this.advancedAt, this._nextPromptAt - Math.floor(this.waitS * SAMPLE_RATE));
     return stalled >= C.LOST_S * SAMPLE_RATE && !this.quietFor(C.STUCK_S) && this._voicedS(stalled / SAMPLE_RATE) >= C.LOST_S / 2;
@@ -637,6 +685,7 @@ export class Follower {
 
   // Enough of the surah being recited was recited right that it can't be a wrong detection.
   _confirmed() {
+    if (this.opts.fixed) return true;
     const part = this._partStart(Math.min(this.pos, this.words.length - 1));
     const s = this.words[part].surah;
     return this.words.slice(part).filter((w) => w.surah === s && w.status === 'correct').length >= C.CONFIRMED_WORDS;
@@ -706,10 +755,11 @@ export class Follower {
   // The first recently finished ayah not yet re-heard for added words, as [lo, hi]: all its words judged and the
   // reciter AUDIT_AFTER words past it. final: the recording has stopped; one of the last FINAL_AUDITS ayahs.
   auditDue(final = false) {
+    if (!this.opts.added) return null; // detect.added off: no added-word audit (saves the phone's time too)
     const due = (lo, hi) => {
       const w = this.words[lo];
       if (this._audited.has(`${w.surah}:${w.ayah}`)) return false;
-      for (let k = lo; k < hi; k++) if (!['correct', 'missed', 'hint'].includes(this.words[k].status)) return false;
+      for (let k = lo; k < hi; k++) if (!['correct', 'missed', 'hint', 'given'].includes(this.words[k].status)) return false;
       return true;
     };
     if (final) {
@@ -805,6 +855,7 @@ export class Follower {
       if (!this.deps.feedback.sameAsAccepted(w.surah, w.ayah, w.wi, w.heard, w.clip)) {
         w.status = 'missed';
         w.added = true;
+        this._maybeBlock(k);
       }
     }
     this.version++;
@@ -854,8 +905,20 @@ export class Follower {
     const heard = w.heard.split(/\s+/).filter(Boolean).map(quran.normalize);
     const ok = heard.some((h) => similar(w.norm, h)) || quran.within(w.norm, heard) // one word heard split in two
       || JOINED_PARTICLES.has(w.norm) // يَا أَيُّهَا is usually written as one word by the model
+      || (heard.length ? !this.opts.changed : !this.opts.skipped) // detect.changed / detect.skipped off: not red
       || this.deps.feedback.sameAsAccepted(w.surah, w.ayah, w.wi, w.heard, w.clip);
     w.status = ok ? 'correct' : 'missed';
+    if (!ok) this._maybeBlock(i);
+  }
+
+  // detect.noAdvance (spec C3 §6.5): a word before the reciter's place turned red: the words after it go back to hidden and
+  // following waits for that word to be recited again.
+  _maybeBlock(k) {
+    if (!this.opts.noAdvance || this._block !== null || !this._running || k >= this.pos) return;
+    this._block = k;
+    for (let i = k + 1; i < this.pos; i++) { const st = this.words[i].status; if (st === 'correct' || st === 'pending') this.words[i].status = null; }
+    this.pos = k;
+    this.version++;
   }
 
   // For a word that turned red: what the model heard in its place, and clips of that part of the recording.
@@ -932,6 +995,12 @@ export class Follower {
         if (w.tFirst === undefined) w.tFirst = heardT[hj][1]; // ...first (audit)
       }
     }
+    if (this._block !== null) { // blocked on a red word: it must be recited again before anything else moves
+      if (!matched.has(this._block)) return;
+      const b = this.words[this._block];
+      b.slip = true; b.added = false; b.status = 'pending';
+      this._block = null;
+    }
     // Runs of matched words: one starting at the next word is always taken. One further on (skipping words) needs 2-3
     // in a row, so a stray common word or a ta'awwudh/basmala echo can't jump ahead.
     let newPos = this.pos;
@@ -1000,7 +1069,7 @@ export class Follower {
   // Follow on from the passage at word k that the reciter went back to.
   _rewind(k, audioLen) {
     for (const w of this.words.slice(k, this.pos)) if (w.status === 'missed' || w.status === 'hint') w.slip = true;
-    for (let i = k; i < k + C.REWIND_RUN; i++) if (!this.words[i].added) this.words[i].status = 'correct';
+    for (let i = k; i < k + C.REWIND_RUN; i++) if (!this.words[i].added && this.words[i].status !== 'given') this.words[i].status = 'correct';
     this.pos = k + C.REWIND_RUN;
     this.advancedAt = audioLen;
     this.stray = null;
@@ -1008,17 +1077,50 @@ export class Follower {
   }
 
   // The reciter says red word i was recited right: show it as said, and remember the mishearing. false if i isn't red.
-  accept(i) {
+  accept(i) { return this.remove(i); }
+
+  // Spec C3 §6.1: the reciter removes a red word (restorable). detect.teachOnRemove: the reading is remembered too.
+  remove(i) {
     if (!(i >= 0 && i < this.words.length) || this.words[i].status !== 'missed') return false;
     const w = this.words[i];
-    this.deps.feedback.add(w.surah, w.ayah, w.wi, w.word, w.heard ?? '', w.clip ?? null);
+    const taught = this.opts.teach;
+    if (taught) this.deps.feedback.add(w.surah, w.ayah, w.wi, w.word, w.heard ?? '', w.clip ?? null);
+    w.removed = { added: !!w.added, slip: !!w.slip, taught, heard: w.heard ?? '' };
     w.status = 'correct';
     w.slip = false;
+    w.added = false;
+    if (this._block === i) { this._block = null; this.pos = i + 1; }
     this.version++;
     return true;
   }
 
+  restore(i) { // puts a removed mistake back (and takes back what was taught)
+    const w = this.words[i];
+    if (!w?.removed) return false;
+    if (w.removed.taught) this.deps.feedback.undo?.(w.surah, w.ayah, w.wi, w.removed.heard);
+    w.status = 'missed';
+    w.added = w.removed.added;
+    w.slip = w.removed.slip;
+    delete w.removed;
+    this.version++;
+    return true;
+  }
+
+  peekRest() { // the rest of the ayah (from the next word) as hints
+    if (this.surah === null || this.done()) return;
+    const w0 = this.words[this._block ?? this.pos];
+    while (!this.done() && this.words[this._block ?? this.pos].surah === w0.surah && this.words[this._block ?? this.pos].ayah === w0.ayah) this.hint();
+  }
+
   hint() { // reveal the next word without reciting it
+    if (this._block !== null) { // at a block the hint shows the red word itself and ends the block
+      const w = this.words[this._block];
+      w.status = 'hint'; w.added = false;
+      this.pos = this._block + 1;
+      this._block = null;
+      this.version++;
+      return;
+    }
     if (this.surah !== null && !this.done()) {
       if (this.words[this.pos].status === null) {
         this.words[this.pos].status = 'hint';
@@ -1083,7 +1185,7 @@ export class Follower {
           const w = this.words[k];
           const [pre, post] = this._neighbours(u, units, 2, 1);
           item.error = { k, word: item.text, pre, post, heard: w.heard ?? '', heardPre: w.heardPre ?? '', clip: w.clipCtx ?? w.clip ?? null,
-            added: !!w.added, alafasy: this.deps.alafasy.contextAudio(w.surah, w.ayah, w.wi, 2, 1) };
+            added: !!w.added, alafasy: this.deps.alafasy.contextAudio(w.surah, w.ayah, w.wi, this.opts.ctxBefore, this.opts.ctxAfter) };
         }
       }
       const nxt = this.words[unit.at(-1) + 1];
@@ -1093,11 +1195,12 @@ export class Follower {
     this._shown = shown;
     const now = this.words[Math.min(this.pos, this.words.length - 1)];
     const info = quran.surahInfo(now.surah);
+    if (this._block !== null) out.forEach((it) => { if (it.unit.includes(this._block)) it.block = true; });
     const count = (st) => this.words.filter((w) => w.status === st).length;
     return {
       waiting: false, items: out, pos: this.pos, running: this._running, paused: this.paused, auto: this.auto, version: this.version,
       head: { surah: now.surah, english: info.english, arabic: info.name, ayah: now.ayah, ayahs: info.ayahs, said: count('correct'), missed: count('missed'), hints: count('hint') },
-      errors: count('missed'), prompt: this.prompt, playing: !!this.playing,
+      errors: count('missed'), block: this._block !== null, prompt: this.prompt, playing: !!this.playing,
       stray: this.stray ? { id: this.stray.id, surah: this.stray.surah, english: quran.surahInfo(this.stray.surah).english, ayah: this.stray.ayah, current: info.english } : null,
     };
   }

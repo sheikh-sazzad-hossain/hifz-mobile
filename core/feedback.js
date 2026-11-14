@@ -18,13 +18,13 @@ function skeletonOf(text) {
   return text.split(/\s+/).filter((w) => w && quran.normalize(w)).map((w) => quran.skeleton(quran.normalize(w))).join(' ');
 }
 
-export function sameHeard(a0, b0) {
+export function sameHeard(a0, b0, limit = SAME_HEARD) {
   const a = skeletonOf(a0);
   const b = skeletonOf(b0);
-  return a === b || !!(a && b && new SequenceMatcher(a, b).ratio() >= SAME_HEARD);
+  return a === b || !!(a && b && new SequenceMatcher(a, b).ratio() >= limit);
 }
 
-export function createFeedback({ data = {}, getClip = () => undefined, putClip = () => {}, persist = () => {}, now = () => new Date() } = {}) {
+export function createFeedback({ data = {}, getClip = () => undefined, putClip = () => {}, persist = () => {}, now = () => new Date(), opts = () => ({}) } = {}) {
   data.places ??= {};
   data.log ??= [];
   return {
@@ -42,15 +42,27 @@ export function createFeedback({ data = {}, getClip = () => undefined, putClip =
       data.log.push({ time: isoLocal(d).replace('T', ' '), place: key, word, heard });
       persist('accepted');
     },
+    // Take back the last accepted reading of this place (the reciter restored a mistake they had removed).
+    undo(surah, ayah, wi, heard) {
+      const key = place(surah, ayah, wi);
+      const list = data.places[key] ?? [];
+      const i = list.map((x) => x.heard).lastIndexOf(heard);
+      if (i < 0) return false;
+      list.splice(i, 1);
+      if (!list.length) delete data.places[key];
+      for (let j = data.log.length - 1; j >= 0; j--) if (data.log[j].place === key && data.log[j].heard === heard) { data.log.splice(j, 1); break; }
+      persist('accepted');
+      return true;
+    },
     // This word at this place, heard as `heard`, sounding like `clip`, matches a time the reciter said it was right.
     sameAsAccepted(surah, ayah, wi, heard, clip) {
       const accepted = data.places[place(surah, ayah, wi)];
       if (!accepted || !clip || !clip.length) return false;
       for (const a of accepted) {
-        if (!a.clip || !sameHeard(heard, a.heard)) continue;
+        if (!a.clip || !sameHeard(heard, a.heard, opts().sameHeard ?? SAME_HEARD)) continue;
         const old = getClip(a.clip);
         if (!old) continue;
-        if (Math.min(clip.length, old.length) > 400 && audioDistance(clip, old) <= SAME_AUDIO) return true;
+        if (Math.min(clip.length, old.length) > 400 && audioDistance(clip, old) <= (opts().sameAudio ?? SAME_AUDIO)) return true;
       }
       return false;
     },

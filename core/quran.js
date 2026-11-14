@@ -63,7 +63,9 @@ export function sameWord(a, b) {
   return indels === 0 || (indels === 1 && Math.min(x.length, y.length) >= 2);
 }
 
-export const SIMILAR_RATIO = 0.7;
+export const SIMILAR_RATIO = 0.7; // default; detect.similarRatio changes it through setSimilarRatio
+let similarRatio = SIMILAR_RATIO;
+export const setSimilarRatio = (r) => { similarRatio = r; };
 
 // Without a leading و/ف/ل/ب/ك and the article.
 function stem(w0) {
@@ -75,7 +77,7 @@ function stem(w0) {
 }
 
 export function alike(a, b) {
-  return sameWord(a, b) || new SequenceMatcher(skeleton(a), skeleton(b)).ratio() >= SIMILAR_RATIO;
+  return sameWord(a, b) || new SequenceMatcher(skeleton(a), skeleton(b)).ratio() >= similarRatio;
 }
 
 export function similar(expected, heard) {

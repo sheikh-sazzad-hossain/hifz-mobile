@@ -10,7 +10,7 @@ let player = null;
 let current = null; // { stop() }
 const blobUrls = new Map();
 
-async function srcFor(url) {
+export async function srcFor(url) {
   if (blobUrls.has(url)) return blobUrls.get(url);
   if ('caches' in self) {
     const hit = await (await caches.open(CACHE)).match(url);
@@ -22,12 +22,12 @@ async function srcFor(url) {
 export async function isCached(url) { return 'caches' in self && !!(await (await caches.open(CACHE)).match(url)); }
 
 // Keep a surah's mp3 for offline use (returns false when it is too big or the download fails).
-export async function cacheSurah(url, onProgress) {
+export async function cacheSurah(url, onProgress, maxBytes = MAX_OFFLINE_BYTES) {
   try {
     if (await isCached(url)) return true;
     const head = await fetch(url, { method: 'HEAD' });
     const size = Number(head.headers.get('content-length') || 0);
-    if (size > MAX_OFFLINE_BYTES) return false;
+    if (size > maxBytes) return false;
     const res = await fetch(url);
     if (!res.ok) return false;
     const copy = res.clone();
@@ -40,7 +40,7 @@ export async function cacheSurah(url, onProgress) {
 }
 
 // A handle { done: Promise, stop() } like audio-out's. Muted: nothing is played but the time passes.
-export function playSpan(url, from, to) {
+export function playSpan(url, from, to, { rate = 1 } = {}) {
   stopCurrent();
   const duration = Math.max(0, to - from);
   let finish;
@@ -54,6 +54,7 @@ export function playSpan(url, from, to) {
     player.pause();
     player.src = await srcFor(url);
     player.addEventListener('loadedmetadata', () => {
+      player.playbackRate = rate;
       player.currentTime = from;
       player.play().catch(() => h.stop());
       const watch = () => { if (current !== h) return; if (player.currentTime >= to) h.stop(); else requestAnimationFrame(watch); };
@@ -72,3 +73,6 @@ export function playClip(samples, { from = 0, to = null } = {}) {
 }
 
 export function stopCurrent() { current?.stop(); current = null; player?.pause(); }
+
+export async function uncacheSurah(url) { blobUrls.delete(url); return 'caches' in self ? (await caches.open(CACHE)).delete(url) : false; }
+export async function surahSize(url) { try { return Number((await fetch(url, { method: 'HEAD' })).headers.get('content-length') || 0); } catch { return 0; } }

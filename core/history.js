@@ -17,11 +17,15 @@ export const HOT_ZONES = 3; // the weak view names this many of a surah's weakes
 export const KINDS = { missed: 'ভুল/বাদ', hint: 'আটকে গিয়েছিলে (ইঙ্গিত)', slip: 'ভুল, পরে আবার পড়ে ঠিক করেছিলে' };
 
 // 'error' (red, or had to be prompted/hinted, or red before the reciter went back and fixed it), 'right', or null
-function outcome(w) {
-  if (w.status === 'missed' || w.status === 'hint' || w.slip) return 'error';
+function outcome(w, peekCounts = true) {
+  if (w.status === 'hint') return peekCounts ? 'error' : null; // peek.countsAsMistake off: a hint neither breaks nor builds a streak
+  if (w.status === 'missed' || w.slip) return 'error';
   if (w.status === 'correct') return 'right';
   return null;
 }
+
+export const DEFAULT_OPTS = Object.freeze({ clearStreak: CLEAR_STREAK, lookClears: false, good: GOOD, fair: FAIR, gradeWindow: 3, recent: 30, weekDays: 7, minWords: MIN_WORDS,
+  maxEvents: MAX_EVENTS, ctxBefore: 2, ctxAfter: 1, hotZones: HOT_ZONES, stripCells: STRIP_CELLS, cellMid: CELL_LEVELS[0], cellDark: CELL_LEVELS[1], peekCounts: true });
 
 export function level(r) {
   // How red a word is: 0 none .. 3 dark. More mistakes → darker; each right session in a row lightens it a step.
@@ -31,14 +35,16 @@ export function level(r) {
 
 // How many more right-from-memory sessions (in a row, each one a separate session) clear this word's red mark: the rule in
 // record() clears it when streak reaches CLEAR_STREAK; a mistake resets streak to 0. 0 = not red now.
-export function remainingToClear(r) {
+export function remainingToClear(r, clear = CLEAR_STREAK) {
   if (!r || !r.err) return 0;
-  return Math.max(1, CLEAR_STREAK - (r.streak || 0));
+  return Math.max(1, clear - (r.streak || 0));
 }
 
-const cellLevel = (score) => (!score ? 0 : score < CELL_LEVELS[0] ? 1 : score < CELL_LEVELS[1] ? 2 : 3);
+const cellLevelOf = (mid, dark) => (score) => (!score ? 0 : score < mid ? 1 : score < dark ? 2 : 3);
+const cellLevel = cellLevelOf(CELL_LEVELS[0], CELL_LEVELS[1]);
 
-export function createHistory({ data = {}, persist = () => {}, now = () => new Date(), hasRecording = () => false, alafasy = null } = {}) {
+export function createHistory({ data = {}, persist = () => {}, now = () => new Date(), hasRecording = () => false, alafasy = null, opts = () => ({}) } = {}) {
+  const O = () => ({ ...DEFAULT_OPTS, ...opts() });
   data.sessions ??= [];
   data.weak ??= {};
   data.index ??= {};
@@ -76,14 +82,15 @@ export function createHistory({ data = {}, persist = () => {}, now = () => new D
     data,
 
     // Store a finished session: one entry per surah recited in it. Returns the entries; none if too little was recited.
-    record(follower, started, seconds, recording = null) {
-      const done = follower.words.map((w) => [w, outcome(w)]).filter(([, o]) => o);
+    record(follower, started, seconds, recording = null, extra = {}) {
+      const cfg = O();
+      const done = follower.words.map((w) => [w, outcome(w, cfg.peekCounts)]).filter(([, o]) => o);
       const bySurah = new Map();
       for (const [w, o] of done) { if (!bySurah.has(w.surah)) bySurah.set(w.surah, []); bySurah.get(w.surah).push([w, o]); }
       const entries = [];
       const end = isoLocal(now());
       for (const [surah, part] of bySurah) {
-        if (part.length < MIN_WORDS) continue;
+        if (part.length < cfg.minWords) continue;
         const errors = part.filter(([, o]) => o === 'error').length;
         const looked = part.filter(([w]) => w.looked).length;
         const timed = part.filter(([w]) => w.t).map(([w]) => w.t);
@@ -98,10 +105,12 @@ export function createHistory({ data = {}, persist = () => {}, now = () => new D
           accuracy: pyRound((100 * (part.length - errors)) / part.length, 1),
           mode: looked === part.length ? 'look' : !looked ? 'hifz' : 'mixed',
           recording: recording ?? null,
+          ...(extra.kind ? { kind: extra.kind } : {}),
         });
       }
       if (!entries.length) return [];
       data.sessions.push(...entries);
+      if (extra.weak === false) { persist('sessions'); return entries; } // test.countInHistory off: the result is kept, the weak marks stay
       for (const [w, o] of done) {
         if (!entries.some((e) => e.surah === w.surah)) continue;
         const key = `${w.surah}:${w.ayah}:${w.wi}`;
@@ -112,11 +121,12 @@ export function createHistory({ data = {}, persist = () => {}, now = () => new D
           r.last_err = entries[0].start;
           const kind = w.status === 'missed' || w.status === 'hint' ? w.status : 'slip';
           const event = { time: entries[0].start, kind, heard: w.heard ?? '' };
-          if (recording && w.span) Object.assign(event, { rec: recording, span: w.span, ctx: w.ctxSpan ?? w.span });
-          r.events = [...(r.events ?? []), event].slice(-MAX_EVENTS);
-        } else if (!w.looked) { // reading it off the screen proves nothing
+          const rec = w.recName ?? recording;
+          if (rec && w.span) Object.assign(event, { rec, span: w.span, ctx: w.ctxSpan ?? w.span });
+          r.events = [...(r.events ?? []), event].slice(-cfg.maxEvents);
+        } else if (!w.looked || cfg.lookClears) { // reading it off the screen proves nothing (history.lookClears: it does)
           r.streak++;
-          if (r.streak >= CLEAR_STREAK) r.err = 0;
+          if (r.streak >= cfg.clearStreak) r.err = 0;
         }
         if (r.total) data.weak[key] = r; // words never wrong aren't stored
       }
@@ -125,7 +135,14 @@ export function createHistory({ data = {}, persist = () => {}, now = () => new D
       return entries;
     },
 
-    level,
+    // A finished test (spec C3 §7.10): the words of all its cards as one session per surah, kind 'test'.
+    // cards: [{ words: [word dicts], rec: recording name | null }]
+    recordTest(cards, started, seconds, { countInHistory = true } = {}) {
+      const words = [];
+      for (const c of cards) for (const w of c.words) { if (c.rec) w.recName = c.rec; words.push(w); }
+      return h.record({ words, _strays: 0 }, started, seconds, null, { kind: 'test', weak: countInHistory });
+    },
+    level, options: O,
     levels: (surah) => weakRecords(surah).map(([a, k, r]) => [a, k, level(r)]),
     sessions: () => data.sessions,
     weakRecords,
@@ -168,13 +185,13 @@ export function createHistory({ data = {}, persist = () => {}, now = () => new D
     weakAttrs(surah) {
       return weakRecords(surah).map(([a, k, r]) => {
         const events = r.events ?? [];
-        const d = { wk: `${surah}:${a}:${k}`, count: r.total, last: r.last_err ?? '', kind: KINDS[events.length ? events.at(-1).kind : 'missed'], left: remainingToClear(r), streak: r.streak || 0 };
+        const d = { wk: `${surah}:${a}:${k}`, count: r.total, last: r.last_err ?? '', times: r.times ?? 0, kind: KINDS[events.length ? events.at(-1).kind : 'missed'], left: remainingToClear(r, O().clearStreak), streak: r.streak || 0 };
         const place = h.placeOf(surah, a, k, r);
         if (place) {
           const span = place.ctx || place.span;
           Object.assign(d, { heard: place.heard ?? '', rfrom: span[0].toFixed(2), rto: span[1].toFixed(2), rec: place.rec });
         }
-        const found = alafasy?.contextAudio(surah, a, k, 2, 1);
+        const found = alafasy?.contextAudio(surah, a, k, O().ctxBefore, O().ctxAfter);
         if (found) Object.assign(d, { src: found[0], from: found[1].toFixed(2), to: found[2].toFixed(2) });
         return [a, k, d];
       });
@@ -192,8 +209,9 @@ export function createHistory({ data = {}, persist = () => {}, now = () => new D
         words.set(a, (words.get(a) ?? 0) + 1);
       }
       const cells = [];
+      const lvl = cellLevelOf(O().cellMid, O().cellDark);
       for (let a = 1; a <= quran.surahInfo(surah).ayahs; a++) {
-        cells.push({ ayah: a, words: words.get(a) ?? 0, score: score.get(a) ?? 0, level: cellLevel(score.get(a) ?? 0), recited: rec.has(a) });
+        cells.push({ ayah: a, words: words.get(a) ?? 0, score: score.get(a) ?? 0, level: lvl(score.get(a) ?? 0), recited: rec.has(a) });
       }
       return cells;
     },
@@ -209,7 +227,7 @@ export function createHistory({ data = {}, persist = () => {}, now = () => new D
       const out = [];
       for (const [surah, ss] of by) {
         const memory = ss.filter((s) => s.mode !== 'look');
-        const recent = memory.slice(-3);
+        const recent = memory.slice(-O().gradeWindow);
         const acc = recent.length ? pyRound(recent.reduce((a, s) => a + s.accuracy, 0) / recent.length) : null;
         out.push({ surah, sessions: ss.length, last: ss.at(-1).start, accuracy: acc,
           best: memory.length ? Math.max(...memory.map((s) => s.accuracy)) : null,
@@ -226,12 +244,13 @@ export function createHistory({ data = {}, persist = () => {}, now = () => new D
       const stats = h.surahStats();
       const starts = new Set(ss.map((s) => s.start)); // a session that went from surah to surah has one entry per surah
       const t = now().getTime();
-      const week = [...starts].filter((s) => Math.floor((t - parseLocal(s).getTime()) / 86400000) < 7).length;
+      const week = [...starts].filter((s) => Math.floor((t - parseLocal(s).getTime()) / 86400000) < O().weekDays).length;
       return {
         empty: false,
-        cards: { sessions: starts.size, surahs: stats.length, minutes: pyRound(ss.reduce((a, s) => a + s.seconds, 0) / 60), week },
-        rows: stats.map((st) => ({ ...st, grade: grade(st.accuracy), pct: pyRound((100 * st.covered) / st.ayahs), strip: strip(st.cells) })),
-        recent: [...ss.slice(-30)].reverse(),
+        cards: { sessions: starts.size, surahs: stats.length, minutes: pyRound(ss.reduce((a, s) => a + s.seconds, 0) / 60), week, weekDays: O().weekDays },
+        good: O().good, fair: O().fair, window: O().gradeWindow,
+        rows: stats.map((st) => ({ ...st, grade: grade(st.accuracy, O().good, O().fair), pct: pyRound((100 * st.covered) / st.ayahs), strip: strip(st.cells, O().stripCells) })),
+        recent: [...(O().recent ? ss.slice(-O().recent) : ss)].reverse(),
       };
     },
 
@@ -262,7 +281,7 @@ export function createHistory({ data = {}, persist = () => {}, now = () => new D
         }
       });
       const cells = h.ayahCells(surah);
-      return { surah, cells, zones: hotZones(cells), units, count: marks.size };
+      return { surah, cells, zones: hotZones(cells, O().hotZones), units, count: marks.size, clear: O().clearStreak };
     },
   };
   return h;
@@ -287,8 +306,8 @@ export function hotZones(cells, count = HOT_ZONES) {
 }
 
 // A surah's row of cells in the overview, one per ayah (a long surah's ayahs grouped).
-export function strip(cells) {
-  const size = Math.ceil(cells.length / STRIP_CELLS);
+export function strip(cells, max = STRIP_CELLS) {
+  const size = Math.ceil(cells.length / max);
   const out = [];
   for (let i = 0; i < cells.length; i += size) {
     const g = cells.slice(i, i + size);
@@ -297,10 +316,10 @@ export function strip(cells) {
   return out;
 }
 
-export function grade(acc) {
+export function grade(acc, good = GOOD, fair = FAIR) {
   if (acc === null) return { cls: 'hp-none', label: 'শুধু দেখে পড়া' };
-  if (acc >= GOOD) return { cls: 'hp-good', label: 'ভালো মুখস্থ' };
-  if (acc >= FAIR) return { cls: 'hp-fair', label: 'মোটামুটি' };
+  if (acc >= good) return { cls: 'hp-good', label: 'ভালো মুখস্থ' };
+  if (acc >= fair) return { cls: 'hp-fair', label: 'মোটামুটি' };
   return { cls: 'hp-weak', label: 'আরও অনুশীলন দরকার' };
 }
 

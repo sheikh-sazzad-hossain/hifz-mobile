@@ -2,7 +2,9 @@
 const DIGITS = '০১২৩৪৫৬৭৮৯';
 const MONTHS = ['জানু', 'ফেব্রু', 'মার্চ', 'এপ্রিল', 'মে', 'জুন', 'জুলাই', 'আগস্ট', 'সেপ্টে', 'অক্টো', 'নভে', 'ডিসে'];
 
-export const bn = (x) => String(x).replace(/[0-9]/g, (d) => DIGITS[Number(d)]);
+let digitsOn = true; // view.bnDigits: off gives plain 0-9
+export const setDigits = (on) => { digitsOn = !!on; };
+export const bn = (x) => (digitsOn ? String(x).replace(/[0-9]/g, (d) => DIGITS[Number(d)]) : String(x));
 
 const pad = (n) => String(n).padStart(2, '0');
 
@@ -37,4 +39,9 @@ export function pyRound(x, digits = 0) {
     return x < 0 ? -Number(out) : Number(out);
   }
   return Number(x.toFixed(digits));
+}
+
+export function dateOnly(iso) { // "১৪ নভে"
+  const d = parseLocal(iso);
+  return bn(`${d.getDate()} ${MONTHS[d.getMonth()]}`);
 }

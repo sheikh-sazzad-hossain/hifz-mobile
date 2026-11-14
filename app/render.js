@@ -2,12 +2,13 @@
 // Events are attached by main.js through data attributes: data-err (red word index), data-mk (marked word: index
 // into the view's items), data-i (the next word, kept in view), data-goto / data-to (ayahs), data-surah (progress rows).
 import * as quran from '../core/quran.js';
+import { t } from './ui.js';
 import * as indopak from '../core/indopak.js';
 import { bn, when, duration } from '../core/bn.js';
-import { GOOD, FAIR, CLEAR_STREAK } from '../core/history.js';
+import { GOOD, FAIR, CLEAR_STREAK } from '../core/history.js'; // defaults; the history data carries the current values
 
 export const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const STATUS_CLASS = { correct: 'hz-ok', missed: 'hz-bad', hint: 'hz-hint', pending: 'hz-pend' };
+const STATUS_CLASS = { correct: 'hz-ok', missed: 'hz-bad', hint: 'hz-hint', pending: 'hz-pend', given: 'hz-given' };
 
 function surahTitle(surah, ayah) {
   const info = quran.surahInfo(surah);
@@ -40,20 +41,22 @@ export function liveHtml(v) {
       classes.push(STATUS_CLASS[it.status]);
       if (it.fresh !== undefined) { classes.push('hz-fresh'); css = ` style="animation-delay:${(it.fresh * 0.08).toFixed(2)}s"`; }
       if (it.status === 'missed') { classes.push('hz-err'); data += ` data-err="${idx}"`; }
+      if (it.block) classes.push('hz-block-word');
       if (it.here) { classes.push('hz-here'); data += ` data-i="${v.pos}"`; }
     }
     out.push(`<span class="${classes.join(' ')}"${css}${data}>${esc(it.text)}</span>`);
-    out.push(it.ayahEnd ? ` ${ayahEndHtml(it.ayahEnd.surah, it.ayahEnd.ayah)}` : ' ');
+    out.push(it.ayahEnd ? ` ${ayahEndHtml(it.ayahEnd.surah, it.ayahEnd.ayah, ` data-es="${it.ayahEnd.surah}" data-ea="${it.ayahEnd.ayah}"`)}` : ' ');
   });
   const h = v.head;
   const live = v.running ? 1 : 0;
   let head = `<div class="hz-head"><span class="hz-surah">${bn(h.surah)}. ${esc(h.english)} <span class="hz-surah-ar">${esc(h.arabic)}</span></span>`
     + (v.auto ? '<span class="hz-auto">স্বয়ংক্রিয়ভাবে চেনা</span>' : '')
     + `<span class="hz-count">আয়াত ${bn(h.ayah)} / ${bn(h.ayahs)}</span><span class="hz-stat hz-ok">সঠিক ${bn(h.said)}</span>`
-    + `<span class="hz-stat hz-bad">ভুল/বাদ ${bn(h.missed)}</span><span class="hz-stat hz-hint">ইঙ্গিত ${bn(h.hints)}</span></div>`;
+    + `${v.mistakeList ? `<button class="hz-stat hz-bad" data-act="mlist" data-tip="${esc(t('r.listTip'))}">ভুল/বাদ ${bn(h.missed)}</button>` : `<span class="hz-stat hz-bad">ভুল/বাদ ${bn(h.missed)}</span>`}<span class="hz-stat hz-hint">ইঙ্গিত ${bn(h.hints)}</span></div>`;
   if (v.stray) {
     head += `<div class="hz-banner hz-stray">ভুল: এটা সূরা ${esc(v.stray.english)}-এর আয়াত ${bn(v.stray.ayah)}-এর মতো শোনাচ্ছে। তুমি সূরা ${esc(v.stray.current)} পড়ছিলে, নীল চিহ্ন দেওয়া শব্দ থেকে আবার পড়ো।</div>`;
   }
+  if (v.block) head += `<div class="hz-banner hz-block">${esc(t('r.blockBanner'))}</div>`;
   if (v.paused) {
     head += '<div class="hz-banner hz-paused">বিরতি: লাল শব্দে ক্লিক করে দেখো ও শোনো। আবার চালু করলে এখান থেকেই শুনবে; চাইলে আগের আয়াত থেকে আবার পড়ে লাল শব্দ ঠিক করতে পারো।</div>';
   }
@@ -68,7 +71,7 @@ const cellTip = (a, b, words, recited) => (words ? `${spanBn(a, b)}: ${bn(words)
 
 export function overviewHtml(o) {
   if (o.empty) return '<div class="hp-empty">এখনো কোনো সেশন নেই। তিলাওয়াত ট্যাবে রেকর্ড করে পড়ো, থামালে (■) সেশনটা এখানে জমা হবে।</div>';
-  const cards = [['hp-c1', o.cards.sessions, 'মোট সেশন'], ['hp-c2', o.cards.surahs, 'সূরা অনুশীলন'], ['hp-c3', o.cards.minutes, 'মোট মিনিট'], ['hp-c4', o.cards.week, 'এই সপ্তাহে']]
+  const cards = [['hp-c1', o.cards.sessions, 'মোট সেশন'], ['hp-c2', o.cards.surahs, 'সূরা অনুশীলন'], ['hp-c3', o.cards.minutes, 'মোট মিনিট'], ['hp-c4', o.cards.week, o.cards.weekDays === 7 ? 'এই সপ্তাহে' : `শেষ ${bn(o.cards.weekDays)} দিনে`]]
     .map(([c, v, l]) => `<div class="hp-card ${c}"><div class="hp-num">${bn(v)}</div><div class="hp-lbl">${l}</div></div>`).join('');
   const rows = o.rows.map((st) => {
     const info = quran.surahInfo(st.surah);
@@ -93,11 +96,11 @@ export function overviewHtml(o) {
   const sessions = '<div class="hp-scroll"><table class="hp-table"><thead><tr><th>কখন</th><th>সূরা (আয়াত)</th><th>ধরন</th><th>শব্দ</th><th>নির্ভুলতা</th><th>ভুল</th><th>আটকে যাওয়া</th><th>সময়</th></tr></thead>'
     + `<tbody>${recent}</tbody></table></div>`;
   return `<div class="hp-cards">${cards}</div><h3 class="hp-h">সূরা অনুযায়ী মুখস্থের অবস্থা</h3>${table}`
-    + `<p class="hp-note">অবস্থা: শেষ ৩টা মুখস্থ-সেশনের গড় নির্ভুলতা — ${bn(GOOD)}% বা বেশি = ভালো মুখস্থ, ${bn(FAIR)}–${bn(GOOD)}% = মোটামুটি। দেখে পড়া সেশন এই হিসাবে ধরা হয় না।<br>`
+    + `<p class="hp-note">অবস্থা: শেষ ${bn(o.window ?? 3)}টা মুখস্থ-সেশনের গড় নির্ভুলতা — ${bn(o.good ?? GOOD)}% বা বেশি = ভালো মুখস্থ, ${bn(o.fair ?? FAIR)}–${bn(o.good ?? GOOD)}% = মোটামুটি। দেখে পড়া সেশন এই হিসাবে ধরা হয় না।<br>`
     + 'কোথায় দুর্বল: প্রতিটা ঘর একটা আয়াত, বাঁ থেকে ডানে আয়াত ১ থেকে শেষ পর্যন্ত — <span class="hp-key"><i class="hp-ay0"></i>সবুজ = ঠিক আছে</span>, '
     + '<span class="hp-key"><i class="hp-ay1"></i><i class="hp-ay2"></i><i class="hp-ay3"></i>হালকা থেকে গাঢ় লাল = যত বেশি দুর্বল</span>, '
     + '<span class="hp-key"><i class="hp-ayn"></i>ধূসর = এখনো না দেখে পড়া হয়নি</span>। ঘরে ক্লিক করলে নিচে সেই আয়াতটা দেখাবে।</p>'
-    + `<h3 class="hp-h">সাম্প্রতিক সেশন</h3>${sessions}`;
+    + (o.noRecent ? '' : `<h3 class="hp-h">সাম্প্রতিক সেশন</h3>${sessions}`);
 }
 
 export function weakHtml(w) {
@@ -114,7 +117,7 @@ export function weakHtml(w) {
     if (u.end) out.push(ayahEndHtml(w.surah, u.ayah, ` data-a="${u.ayah}"`));
   });
   const head = w.count
-    ? `<p class="hp-note">${bn(w.count)}টা দুর্বল শব্দ। হালকা লাল = মাঝেমধ্যে ভুল/আটকে যাও, গাঢ় লাল = বারবার। পরপর ${bn(CLEAR_STREAK)} সেশন না দেখে ঠিক পড়লে দাগ চলে যায়। <b>লাল শব্দে ক্লিক করলে</b> তখন কী পড়েছিলে শুনতে পারবে; দাগটা ভুল হলে মুছে দিতে পারবে।</p>`
+    ? `<p class="hp-note">${bn(w.count)}টা দুর্বল শব্দ। হালকা লাল = মাঝেমধ্যে ভুল/আটকে যাও, গাঢ় লাল = বারবার। পরপর ${bn(w.clear ?? CLEAR_STREAK)} সেশন না দেখে ঠিক পড়লে দাগ চলে যায়। <b>লাল শব্দে ক্লিক করলে</b> তখন কী পড়েছিলে শুনতে পারবে; দাগটা ভুল হলে মুছে দিতে পারবে।</p>`
     : '<p class="hp-note">এই সূরায় কোনো দুর্বল জায়গা নেই — মাশাআল্লাহ!</p>';
   return `${map}${head}<div class="hz-text hp-weak-text" data-surah="${w.surah}">${out.join('')}</div>`;
 }

@@ -7,7 +7,7 @@ import { resample, wavTo16k } from './audio-util.js';
 
 const PIECE = 1600; // 100 ms at 16 kHz
 
-export async function openMic({ onAudio, fake, onEnd } = {}) {
+export async function openMic({ onAudio, fake, onEnd, echoCancel = true, noiseSuppress = false, autoGain = 'browser', deviceId = 'default' } = {}) {
   let paused = false;
   const emit = (x) => { if (!paused) onAudio(x); };
 
@@ -40,7 +40,10 @@ export async function openMic({ onAudio, fake, onEnd } = {}) {
     };
   }
 
-  const stream = await navigator.mediaDevices.getUserMedia({ audio: { channelCount: 1, echoCancellation: true, noiseSuppression: false } });
+  const audioC = { channelCount: 1, echoCancellation: echoCancel, noiseSuppression: noiseSuppress };
+  if (autoGain !== 'browser') audioC.autoGainControl = autoGain === 'on';
+  if (deviceId && deviceId !== 'default') audioC.deviceId = { exact: deviceId };
+  const stream = await navigator.mediaDevices.getUserMedia({ audio: audioC });
   let ctx;
   try { ctx = new AudioContext({ sampleRate: 16000 }); } catch { ctx = new AudioContext(); }
   await ctx.audioWorklet.addModule(new URL('./mic-worklet.js', import.meta.url));

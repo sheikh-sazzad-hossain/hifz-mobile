@@ -1,0 +1,2711 @@
+{
+ "version": 2,
+ "groups": [
+  {
+   "id": "recite",
+   "name": "তিলাওয়াত ও ভুল ধরা",
+   "help": "পড়ার সময় অ্যাপ কী ধরবে, আটকে গেলে কী করবে",
+   "icon": "book"
+  },
+  {
+   "id": "hide",
+   "name": "লুকানো ও উঁকি",
+   "help": "মুখস্থ পড়ার সময় লেখা কীভাবে লুকাবে, উঁকি দিলে কী হবে",
+   "icon": "eyeOff"
+  },
+  {
+   "id": "test",
+   "name": "টেস্ট",
+   "help": "ফ্ল্যাশ-কার্ড টেস্টের দৈর্ঘ্য, হিন্ট, স্কোর",
+   "icon": "card"
+  },
+  {
+   "id": "listen",
+   "name": "শোনা ও অডিও",
+   "help": "আলাফাসির তিলাওয়াত — গতি, পুনরাবৃত্তি, অফলাইন",
+   "icon": "speaker"
+  },
+  {
+   "id": "goals",
+   "name": "লক্ষ্য ও স্ট্রিক",
+   "help": "দিনের হিসাব, স্ট্রিক, কোন পড়া লক্ষ্যে গোনা হবে",
+   "icon": "flag"
+  },
+  {
+   "id": "history",
+   "name": "অগ্রগতি ও ইতিহাস",
+   "help": "দাগ মোছার নিয়ম, অবস্থার মাপকাঠি, রেকর্ডিং",
+   "icon": "chart"
+  },
+  {
+   "id": "view",
+   "name": "দেখতে কেমন",
+   "help": "রং, লেখার আকার, নড়াচড়া",
+   "icon": "palette"
+  },
+  {
+   "id": "device",
+   "name": "মাইক ও যন্ত্র",
+   "help": "মাইক, প্রসেসর, স্ক্রিন",
+   "icon": "mic"
+  },
+  {
+   "id": "adv",
+   "name": "উন্নত",
+   "help": "ভেতরের হিসাবের মান — সাবধানে বদলাও",
+   "icon": "sliders"
+  }
+ ],
+ "presets": {
+  "recite": {
+   "label": "ভুল ধরার কড়াকড়ি",
+   "items": [
+    {
+     "id": "easy",
+     "label": "সহজ",
+     "help": "নতুন মুখস্থে: ছোটখাটো উচ্চারণে ছাড়, বাড়তি শব্দ ধরা বন্ধ",
+     "values": {
+      "detect.similarRatio": 0.6,
+      "detect.added": false,
+      "detect.confirmedWords": 25,
+      "detect.noAdvance": false,
+      "detect.changed": true,
+      "detect.skipped": true,
+      "detect.stray": true,
+      "adv.sameAudio": 0.68
+     }
+    },
+    {
+     "id": "normal",
+     "label": "স্বাভাবিক",
+     "help": "রোজকার রিভিশন",
+     "values": {
+      "detect.similarRatio": 0.7,
+      "detect.added": true,
+      "detect.confirmedWords": 15,
+      "detect.noAdvance": false,
+      "detect.changed": true,
+      "detect.skipped": true,
+      "detect.stray": true,
+      "adv.sameAudio": 0.6
+     }
+    },
+    {
+     "id": "strict",
+     "label": "কড়া",
+     "help": "শিক্ষককে শোনানোর আগে: কাছাকাছি উচ্চারণও ভুল, ভুল ঠিক না করে এগোবে না",
+     "values": {
+      "detect.similarRatio": 0.8,
+      "detect.added": true,
+      "detect.confirmedWords": 10,
+      "detect.noAdvance": true,
+      "detect.changed": true,
+      "detect.skipped": true,
+      "detect.stray": true,
+      "adv.sameAudio": 0.52
+     }
+    }
+   ]
+  },
+  "test": {
+   "label": "টেস্টের ধরন",
+   "items": [
+    {
+     "id": "quick",
+     "label": "দ্রুত অনুশীলন",
+     "help": "",
+     "values": {
+      "test.endBy": "count",
+      "test.questions": 5,
+      "test.lengthUnit": "words",
+      "test.lengthWords": 8,
+      "test.hintWords": 3,
+      "test.start": "ayah",
+      "test.showRef": true,
+      "test.countdown": 0,
+      "test.skipCounts": false
+     }
+    },
+    {
+     "id": "normal",
+     "label": "স্বাভাবিক",
+     "help": "",
+     "values": {
+      "test.endBy": "count",
+      "test.questions": 10,
+      "test.lengthUnit": "words",
+      "test.lengthWords": 15,
+      "test.hintWords": 3,
+      "test.start": "ayah",
+      "test.showRef": true,
+      "test.countdown": 3,
+      "test.skipCounts": true
+     }
+    },
+    {
+     "id": "hard",
+     "label": "কঠিন",
+     "help": "",
+     "values": {
+      "test.endBy": "count",
+      "test.questions": 20,
+      "test.lengthUnit": "words",
+      "test.lengthWords": 30,
+      "test.hintWords": 2,
+      "test.start": "random",
+      "test.showRef": false,
+      "test.countdown": 3,
+      "test.skipCounts": true
+     }
+    }
+   ]
+  },
+  "listen": {
+   "label": "শোনার ধরন",
+   "items": [
+    {
+     "id": "only",
+     "label": "শুধু শোনা",
+     "help": "",
+     "values": {
+      "listen.speed": 1,
+      "listen.repeatAyah": 1,
+      "listen.gapRepeatS": 0,
+      "listen.gapAyahS": 0,
+      "listen.gapAuto": false,
+      "listen.text": "show",
+      "listen.highlight": "word"
+     }
+    },
+    {
+     "id": "memo",
+     "label": "মুখস্থের জন্য",
+     "help": "",
+     "values": {
+      "listen.speed": 1,
+      "listen.repeatAyah": 3,
+      "listen.gapRepeatS": 2,
+      "listen.gapAyahS": 2,
+      "listen.gapAuto": false,
+      "listen.text": "show",
+      "listen.highlight": "word"
+     }
+    },
+    {
+     "id": "say",
+     "label": "শুনে বলো",
+     "help": "",
+     "values": {
+      "listen.speed": 1,
+      "listen.repeatAyah": 1,
+      "listen.gapRepeatS": 0,
+      "listen.gapAyahS": 0,
+      "listen.gapAuto": true,
+      "listen.text": "reveal",
+      "listen.highlight": "word"
+     }
+    },
+    {
+     "id": "slow",
+     "label": "ধীরে শেখা",
+     "help": "",
+     "values": {
+      "listen.speed": 0.75,
+      "listen.repeatAyah": 5,
+      "listen.gapRepeatS": 3,
+      "listen.gapAyahS": 2,
+      "listen.gapAuto": false,
+      "listen.text": "show",
+      "listen.highlight": "word"
+     }
+    }
+   ]
+  }
+ },
+ "settings": [
+  {
+   "id": "recite.waitS",
+   "group": "recite",
+   "sub": "আটকে গেলে",
+   "label": "থামলে আলাফাসি পড়া শুরু করবেন",
+   "control": "chips",
+   "default": 2,
+   "plat": "both",
+   "when": "now",
+   "help": "কত সেকেন্ড চুপ থাকলে সাহায্য শুরু হবে; ‘বন্ধ’ = কখনো না",
+   "options": [
+    {
+     "v": 0,
+     "label": "বন্ধ"
+    },
+    {
+     "v": 1
+    },
+    {
+     "v": 1.5
+    },
+    {
+     "v": 2
+    },
+    {
+     "v": 2.5
+    },
+    {
+     "v": 3
+    },
+    {
+     "v": 4
+    },
+    {
+     "v": 5
+    },
+    {
+     "v": 7
+    },
+    {
+     "v": 10
+    }
+   ],
+   "custom": {
+    "min": 0.5,
+    "max": 20,
+    "step": 0.5
+   },
+   "unit": "s"
+  },
+  {
+   "id": "recite.silenceHelp",
+   "group": "recite",
+   "sub": "আটকে গেলে",
+   "label": "চুপ থাকলে কী হবে",
+   "control": "chips",
+   "default": "surah",
+   "plat": "both",
+   "when": "now",
+   "help": "আটকে গেলে অ্যাপ কতটুকু সাহায্য করবে",
+   "options": [
+    {
+     "v": "surah",
+     "label": "সূরার শেষ পর্যন্ত আলাফাসি পড়বেন"
+    },
+    {
+     "v": "ayah",
+     "label": "আয়াতের শেষ পর্যন্ত"
+    },
+    {
+     "v": "words3",
+     "label": "পরের ৩টা শব্দ"
+    },
+    {
+     "v": "word",
+     "label": "শুধু পরের শব্দ"
+    },
+    {
+     "v": "show",
+     "label": "না শুনিয়ে শুধু পরের শব্দ দেখাও"
+    }
+   ],
+   "custom": null
+  },
+  {
+   "id": "recite.promptOnLook",
+   "group": "recite",
+   "sub": "আটকে গেলে",
+   "label": "দেখে পড়ার সময়ও সাহায্য করো",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now",
+   "help": "চোখ-বাটন চালু থাকলেও চুপ থাকলে সাহায্য আসবে"
+  },
+  {
+   "id": "detect.changed",
+   "group": "recite",
+   "sub": "কোন ভুল ধরবে",
+   "label": "ভুল শব্দ ধরো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "next",
+   "help": "একটা শব্দের জায়গায় অন্য শব্দ পড়লে লাল হবে"
+  },
+  {
+   "id": "detect.skipped",
+   "group": "recite",
+   "sub": "কোন ভুল ধরবে",
+   "label": "বাদ পড়া শব্দ ধরো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "next",
+   "help": "কোনো শব্দ না পড়ে এগিয়ে গেলে লাল হবে"
+  },
+  {
+   "id": "detect.added",
+   "group": "recite",
+   "sub": "কোন ভুল ধরবে",
+   "label": "বাড়তি শব্দ ধরো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "next",
+   "help": "আয়াতের মাঝে বাড়তি কিছু পড়লে পরের শব্দ লাল হবে; বন্ধ রাখলে ফোনের কাজ কমে"
+  },
+  {
+   "id": "detect.stray",
+   "group": "recite",
+   "sub": "কোন ভুল ধরবে",
+   "label": "অন্য সূরায় চলে গেলে সতর্ক করো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "next",
+   "help": "মিল আছে এমন অন্য সূরার আয়াতে ঢুকে পড়লে লাল ব্যানার আর সতর্ক-শব্দ"
+  },
+  {
+   "id": "detect.confirmedWords",
+   "group": "recite",
+   "sub": "কোন ভুল ধরবে",
+   "label": "কত শব্দ ঠিক পড়ার পর অন্য সূরা ভুল",
+   "control": "sld",
+   "default": 15,
+   "plat": "both",
+   "when": "next",
+   "help": "কম = তাড়াতাড়ি সতর্ক; বেশি = নতুন সূরা শুরু করলে ভুল সতর্ক কম",
+   "range": {
+    "min": 5,
+    "max": 40,
+    "step": 1
+   },
+   "unit": "words"
+  },
+  {
+   "id": "detect.similarRatio",
+   "group": "recite",
+   "sub": "কোন ভুল ধরবে",
+   "label": "শব্দ মেলানোর কড়াকড়ি",
+   "control": "sld",
+   "default": 0.7,
+   "plat": "both",
+   "when": "next",
+   "help": "বেশি = কাছাকাছি উচ্চারণও ভুল ধরবে; কম = ছাড় বেশি",
+   "range": {
+    "min": 0.5,
+    "max": 0.9,
+    "step": 0.05
+   },
+   "unit": "pct",
+   "scale": 100
+  },
+  {
+   "id": "detect.noAdvance",
+   "group": "recite",
+   "sub": "কোন ভুল ধরবে",
+   "label": "ভুল ঠিক না করে এগোবে না",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "next",
+   "help": "কোনো শব্দ লাল হলে সেটা ঠিক করে না পড়া পর্যন্ত পরের শব্দ খুলবে না"
+  },
+  {
+   "id": "detect.teachOnRemove",
+   "group": "recite",
+   "sub": "কোন ভুল ধরবে",
+   "label": "ভুল বাদ দিলে মনে রাখো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "‘আমি সঠিকই পড়েছি’ বা ‘বাদ দাও’ চাপলে পরে একইভাবে পড়লে আর ভুল ধরবে না"
+  },
+  {
+   "id": "detect.errorTone",
+   "group": "recite",
+   "sub": "সতর্ক-শব্দ",
+   "label": "সতর্ক-শব্দ",
+   "control": "seg",
+   "default": "normal",
+   "plat": "both",
+   "when": "now",
+   "help": "লাল শব্দ বা অন্য সূরায় ঢুকলে শব্দ হবে (শুধু রেকর্ডিংয়ের সময়)",
+   "options": [
+    {
+     "v": "off",
+     "label": "বন্ধ"
+    },
+    {
+     "v": "soft",
+     "label": "নরম"
+    },
+    {
+     "v": "normal",
+     "label": "স্বাভাবিক"
+    },
+    {
+     "v": "loud",
+     "label": "জোরে"
+    }
+   ]
+  },
+  {
+   "id": "detect.toneKind",
+   "group": "recite",
+   "sub": "সতর্ক-শব্দ",
+   "label": "সতর্ক-শব্দের ধরন",
+   "control": "seg",
+   "default": "two",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "two",
+     "label": "দুই সুর"
+    },
+    {
+     "v": "beep",
+     "label": "একটা বিপ"
+    },
+    {
+     "v": "double",
+     "label": "দুটো বিপ"
+    }
+   ]
+  },
+  {
+   "id": "detect.vibrate",
+   "group": "recite",
+   "sub": "সতর্ক-শব্দ",
+   "label": "ভুলে কাঁপুনি",
+   "control": "tog",
+   "default": false,
+   "plat": "M",
+   "when": "now",
+   "help": "লাল শব্দে ফোন একটু কাঁপবে"
+  },
+  {
+   "id": "recite.startAt",
+   "group": "recite",
+   "sub": "শুরু",
+   "label": "শুরুতে কোন সূরা",
+   "control": "seg",
+   "default": "auto",
+   "plat": "both",
+   "when": "reload",
+   "help": "অ্যাপ খুললে সূরা বাছাই কেমন থাকবে",
+   "options": [
+    {
+     "v": "auto",
+     "label": "শুনে নিজে চিনবে"
+    },
+    {
+     "v": "last",
+     "label": "আগের বারের সূরা ও আয়াত"
+    },
+    {
+     "v": "continue",
+     "label": "আগের বার যেখানে থেমেছিলে তার পর থেকে"
+    }
+   ]
+  },
+  {
+   "id": "recite.autoAyahs",
+   "group": "recite",
+   "sub": "শুরু",
+   "label": "সামনে কত আয়াত দেখাবে",
+   "control": "sld",
+   "default": 10,
+   "plat": "both",
+   "when": "next",
+   "help": "পড়তে পড়তে একবারে কত আয়াত যোগ হবে",
+   "range": {
+    "min": 3,
+    "max": 30,
+    "step": 1
+   },
+   "unit": "ayah"
+  },
+  {
+   "id": "recite.mistakeList",
+   "group": "recite",
+   "sub": "শুরু",
+   "label": "ভুলের তালিকা দেখাও",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "ওপরের ‘ভুল/বাদ’ গোনায় চাপলে এই সেশনের সব ভুল একসাথে"
+  },
+  {
+   "id": "recite.look",
+   "group": "hide",
+   "sub": "লুকানো লেখা",
+   "label": "দেখে পড়া (পুরো লেখা দেখাও)",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now",
+   "help": "চোখ-বাটনের মতো; দেখে পড়া শব্দ দাগ মোছায় গোনা হয় না"
+  },
+  {
+   "id": "hide.style",
+   "group": "hide",
+   "sub": "লুকানো লেখা",
+   "label": "লুকানো শব্দ কেমন দেখাবে",
+   "control": "seg",
+   "default": "bar",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "bar",
+     "label": "শব্দের মাপে ঘর"
+    },
+    {
+     "v": "line",
+     "label": "শুধু নিচে দাগ"
+    },
+    {
+     "v": "blank",
+     "label": "একদম ফাঁকা"
+    }
+   ]
+  },
+  {
+   "id": "hide.weakTint",
+   "group": "hide",
+   "sub": "লুকানো লেখা",
+   "label": "লুকানো শব্দে আগের দুর্বলতার রং",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "আগের সেশনে ভুল হওয়া শব্দের ঘর হালকা থেকে গাঢ় লাল দেখাবে"
+  },
+  {
+   "id": "hide.ayahMarks",
+   "group": "hide",
+   "sub": "লুকানো লেখা",
+   "label": "আয়াত-চিহ্ন লুকাও",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now",
+   "help": "যে আয়াত এখনো পুরো পড়া হয়নি তার শেষের চিহ্ন দেখাবে না"
+  },
+  {
+   "id": "hide.nextWord",
+   "group": "hide",
+   "sub": "লুকানো লেখা",
+   "label": "পরের শব্দের ঘর চিহ্নিত করো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "এখন যে শব্দ পড়ার কথা তার ঘরে রিং"
+  },
+  {
+   "id": "hide.head",
+   "group": "hide",
+   "sub": "লুকানো লেখা",
+   "label": "ওপরে সূরা ও আয়াত নম্বর দেখাও",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "বন্ধ করলে কোন আয়াতে আছ তা লুকানো থাকবে"
+  },
+  {
+   "id": "peek.countsAsMistake",
+   "group": "hide",
+   "sub": "উঁকি",
+   "label": "উঁকি দেওয়া ভুল হিসেবে ধরো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "next",
+   "help": "ইঙ্গিত বা উঁকিতে খোলা শব্দ দুর্বল দাগে আর টেস্টের স্কোরে ভুল গোনা হবে"
+  },
+  {
+   "id": "peek.longPressRest",
+   "group": "hide",
+   "sub": "উঁকি",
+   "label": "ইঙ্গিত চেপে ধরলে আয়াতের বাকিটা",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "ইঙ্গিত-বাটন আধা সেকেন্ড চেপে ধরলে (কম্পিউটারে ডান-ক্লিক) আয়াতের বাকি সব শব্দ খুলবে"
+  },
+  {
+   "id": "peek.doubleTap",
+   "group": "hide",
+   "sub": "উঁকি",
+   "label": "লেখায় দুবার ছুঁলে পরের শব্দ",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now",
+   "help": "রেকর্ডিংয়ের সময় লেখার ঘরে দুবার ছুঁলে (কম্পিউটারে ডাবল-ক্লিক) ইঙ্গিতের মতো পরের শব্দ খুলবে"
+  },
+  {
+   "id": "test.endBy",
+   "group": "test",
+   "sub": "দৈর্ঘ্য",
+   "label": "টেস্ট কখন শেষ হবে",
+   "control": "seg",
+   "default": "count",
+   "plat": "both",
+   "when": "next",
+   "options": [
+    {
+     "v": "count",
+     "label": "প্রশ্ন গুনে"
+    },
+    {
+     "v": "time",
+     "label": "সময় ধরে"
+    },
+    {
+     "v": "open",
+     "label": "নিজে থামালে"
+    }
+   ]
+  },
+  {
+   "id": "test.questions",
+   "group": "test",
+   "sub": "দৈর্ঘ্য",
+   "label": "কতটা প্রশ্ন",
+   "control": "chips",
+   "default": 10,
+   "plat": "both",
+   "when": "next",
+   "options": [
+    {
+     "v": 10
+    },
+    {
+     "v": 15
+    },
+    {
+     "v": 20
+    }
+   ],
+   "custom": {
+    "min": 1,
+    "max": 99,
+    "step": 1
+   },
+   "showIf": {
+    "id": "test.endBy",
+    "eq": "count"
+   },
+   "unit": "n"
+  },
+  {
+   "id": "test.minutes",
+   "group": "test",
+   "sub": "দৈর্ঘ্য",
+   "label": "কত মিনিট",
+   "control": "chips",
+   "default": 10,
+   "plat": "both",
+   "when": "next",
+   "help": "সময় শেষ হলে চলতি প্রশ্নটা শেষ করে ফল দেখাবে",
+   "options": [
+    {
+     "v": 5
+    },
+    {
+     "v": 10
+    },
+    {
+     "v": 15
+    }
+   ],
+   "custom": {
+    "min": 1,
+    "max": 60,
+    "step": 1
+   },
+   "showIf": {
+    "id": "test.endBy",
+    "eq": "time"
+   },
+   "unit": "min"
+  },
+  {
+   "id": "test.lengthUnit",
+   "group": "test",
+   "sub": "প্রশ্ন",
+   "label": "প্রশ্নের দৈর্ঘ্য মাপো",
+   "control": "seg",
+   "default": "words",
+   "plat": "both",
+   "when": "next",
+   "options": [
+    {
+     "v": "words",
+     "label": "শব্দে"
+    },
+    {
+     "v": "ayahs",
+     "label": "আয়াতে"
+    }
+   ]
+  },
+  {
+   "id": "test.lengthWords",
+   "group": "test",
+   "sub": "প্রশ্ন",
+   "label": "প্রতি প্রশ্নে কত শব্দ পড়তে হবে",
+   "control": "chips",
+   "default": 15,
+   "plat": "both",
+   "when": "next",
+   "help": "হিন্টের পরের শব্দ",
+   "options": [
+    {
+     "v": 8,
+     "label": "ছোট ৮"
+    },
+    {
+     "v": 15,
+     "label": "মাঝারি ১৫"
+    },
+    {
+     "v": 30,
+     "label": "লম্বা ৩০"
+    }
+   ],
+   "custom": {
+    "min": 3,
+    "max": 80,
+    "step": 1
+   },
+   "showIf": {
+    "id": "test.lengthUnit",
+    "eq": "words"
+   },
+   "unit": "words"
+  },
+  {
+   "id": "test.lengthAyahs",
+   "group": "test",
+   "sub": "প্রশ্ন",
+   "label": "প্রতি প্রশ্নে কত আয়াত",
+   "control": "sld",
+   "default": 1,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 1,
+    "max": 10,
+    "step": 1
+   },
+   "unit": "ayah",
+   "showIf": {
+    "id": "test.lengthUnit",
+    "eq": "ayahs"
+   }
+  },
+  {
+   "id": "test.extendToAyahEnd",
+   "group": "test",
+   "sub": "প্রশ্ন",
+   "label": "আয়াতের শেষ পর্যন্ত টানো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "next",
+   "help": "প্রশ্ন আয়াতের মাঝে না থেমে আয়াত শেষ করে থামবে",
+   "showIf": {
+    "id": "test.lengthUnit",
+    "eq": "words"
+   }
+  },
+  {
+   "id": "test.hintWords",
+   "group": "test",
+   "sub": "প্রশ্ন",
+   "label": "শুরুতে কত শব্দ দেখাবে",
+   "control": "sld",
+   "default": 3,
+   "plat": "both",
+   "when": "next",
+   "help": "এগুলো দেখে বাকিটা না দেখে পড়বে; ০ = শুধু সূরা ও আয়াত নম্বর",
+   "range": {
+    "min": 0,
+    "max": 10,
+    "step": 1
+   },
+   "unit": "words"
+  },
+  {
+   "id": "test.start",
+   "group": "test",
+   "sub": "প্রশ্ন",
+   "label": "প্রশ্ন কোথা থেকে শুরু",
+   "control": "seg",
+   "default": "ayah",
+   "plat": "both",
+   "when": "next",
+   "options": [
+    {
+     "v": "ayah",
+     "label": "আয়াতের শুরু থেকে"
+    },
+    {
+     "v": "random",
+     "label": "আয়াতের যেকোনো জায়গা থেকে"
+    }
+   ]
+  },
+  {
+   "id": "test.order",
+   "group": "test",
+   "sub": "প্রশ্ন",
+   "label": "প্রশ্নের ক্রম",
+   "control": "seg",
+   "default": "shuffle",
+   "plat": "both",
+   "when": "next",
+   "options": [
+    {
+     "v": "shuffle",
+     "label": "এলোমেলো"
+    },
+    {
+     "v": "seq",
+     "label": "ক্রমানুসারে"
+    },
+    {
+     "v": "weak",
+     "label": "দুর্বল জায়গা আগে"
+    }
+   ]
+  },
+  {
+   "id": "test.noRepeat",
+   "group": "test",
+   "sub": "প্রশ্ন",
+   "label": "পুরো পরিসর শেষ না হলে প্রশ্ন আবার আসবে না",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "next"
+  },
+  {
+   "id": "test.showRef",
+   "group": "test",
+   "sub": "প্রশ্ন",
+   "label": "সূরা ও আয়াত নম্বর দেখাও",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "কার্ডের চোখ-বাটনেও বদলানো যায়"
+  },
+  {
+   "id": "test.silence",
+   "group": "test",
+   "sub": "আটকে গেলে",
+   "label": "চুপ থাকলে",
+   "control": "seg",
+   "default": "none",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "none",
+     "label": "কিছু না"
+    },
+    {
+     "v": "show",
+     "label": "পরের শব্দ দেখাও"
+    },
+    {
+     "v": "alafasy",
+     "label": "আলাফাসি পরের শব্দ শোনাবেন"
+    }
+   ]
+  },
+  {
+   "id": "test.silenceS",
+   "group": "test",
+   "sub": "আটকে গেলে",
+   "label": "কত সেকেন্ড চুপ থাকলে",
+   "control": "sld",
+   "default": 4,
+   "plat": "both",
+   "when": "now",
+   "range": {
+    "min": 2,
+    "max": 15,
+    "step": 0.5
+   },
+   "unit": "s",
+   "showIf": {
+    "id": "test.silence",
+    "ne": "none"
+   }
+  },
+  {
+   "id": "test.doubleTapPeek",
+   "group": "test",
+   "sub": "আটকে গেলে",
+   "label": "কার্ডে দুবার ছুঁলে পরের শব্দ",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "কম্পিউটারে ডাবল-ক্লিক"
+  },
+  {
+   "id": "test.skipCounts",
+   "group": "test",
+   "sub": "স্কোর",
+   "label": "ছেড়ে যাওয়া প্রশ্ন স্কোরে ধরো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "ধরলে ছেড়ে যাওয়া প্রশ্ন ‘ঠিক হয়নি’ গোনা হবে"
+  },
+  {
+   "id": "test.streakAt",
+   "group": "test",
+   "sub": "স্কোর",
+   "label": "টানা কতটা ঠিক হলে আগুন-চিহ্ন",
+   "control": "sld",
+   "default": 3,
+   "plat": "both",
+   "when": "now",
+   "range": {
+    "min": 2,
+    "max": 10,
+    "step": 1
+   },
+   "unit": "n"
+  },
+  {
+   "id": "test.advance",
+   "group": "test",
+   "sub": "চলার ধরন",
+   "label": "প্রশ্ন শেষে",
+   "control": "seg",
+   "default": "auto",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "auto",
+     "label": "ফল দেখিয়ে নিজে পরেরটা"
+    },
+    {
+     "v": "tap",
+     "label": "‘পরের প্রশ্ন’ চাপলে"
+    }
+   ]
+  },
+  {
+   "id": "test.holdS",
+   "group": "test",
+   "sub": "চলার ধরন",
+   "label": "ফল কতক্ষণ দেখাবে",
+   "control": "sld",
+   "default": 1.2,
+   "plat": "both",
+   "when": "now",
+   "help": "কার্ড সবুজ/লাল হওয়ার পর পরের প্রশ্নের আগে",
+   "range": {
+    "min": 0.5,
+    "max": 3,
+    "step": 0.1
+   },
+   "unit": "s",
+   "showIf": {
+    "id": "test.advance",
+    "eq": "auto"
+   }
+  },
+  {
+   "id": "test.countdown",
+   "group": "test",
+   "sub": "চলার ধরন",
+   "label": "শুরুর আগে গোনা",
+   "control": "seg",
+   "default": 3,
+   "plat": "both",
+   "when": "next",
+   "options": [
+    {
+     "v": 0,
+     "label": "বন্ধ"
+    },
+    {
+     "v": 3,
+     "label": "৩ সেকেন্ড"
+    },
+    {
+     "v": 5,
+     "label": "৫ সেকেন্ড"
+    }
+   ]
+  },
+  {
+   "id": "test.autoPauseS",
+   "group": "test",
+   "sub": "চলার ধরন",
+   "label": "চুপ থাকলে নিজে বিরতি",
+   "control": "seg",
+   "default": 30,
+   "plat": "both",
+   "when": "now",
+   "help": "এত সেকেন্ড কিছু না পড়লে টেস্ট বিরতিতে যাবে",
+   "options": [
+    {
+     "v": 0,
+     "label": "বন্ধ"
+    },
+    {
+     "v": 15,
+     "label": "১৫"
+    },
+    {
+     "v": 30,
+     "label": "৩০"
+    },
+    {
+     "v": 60,
+     "label": "৬০"
+    },
+    {
+     "v": 120,
+     "label": "১২০ সেকেন্ড"
+    }
+   ]
+  },
+  {
+   "id": "test.sound",
+   "group": "test",
+   "sub": "চলার ধরন",
+   "label": "প্রশ্ন শেষে শব্দ",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "ঠিক হলে উঁচু সুর, ভুল হলে নিচু সুর"
+  },
+  {
+   "id": "test.vibrate",
+   "group": "test",
+   "sub": "চলার ধরন",
+   "label": "প্রশ্ন শেষে কাঁপুনি",
+   "control": "tog",
+   "default": true,
+   "plat": "M",
+   "when": "now"
+  },
+  {
+   "id": "test.temporary",
+   "group": "test",
+   "sub": "জমা",
+   "label": "অস্থায়ী টেস্ট",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "next",
+   "help": "কিছুই জমা হবে না — ফল, ভুল, রেকর্ডিং কিছুই না; অন্যকে শোনাতে কাজে লাগে"
+  },
+  {
+   "id": "test.countInHistory",
+   "group": "test",
+   "sub": "জমা",
+   "label": "টেস্টের ভুল দুর্বল দাগে যোগ করো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "next",
+   "help": "বন্ধ করলে টেস্টের ফল জমা থাকবে, কিন্তু দুর্বল দাগ বদলাবে না"
+  },
+  {
+   "id": "test.checkAdded",
+   "group": "test",
+   "sub": "জমা",
+   "label": "টেস্টে বাড়তি শব্দ ধরো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "next",
+   "help": "বন্ধ রাখলে প্রশ্ন শেষে যাচাই দ্রুত হয়"
+  },
+  {
+   "id": "listen.reciter",
+   "group": "listen",
+   "sub": "ক্বারি",
+   "label": "ক্বারি: মিশারি রাশিদ আলাফাসি (এখন একজনই আছেন)",
+   "control": "info",
+   "default": null,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "listen.speed",
+   "group": "listen",
+   "sub": "গতি ও পুনরাবৃত্তি",
+   "label": "গতি",
+   "control": "chips",
+   "default": 1,
+   "plat": "both",
+   "when": "now",
+   "help": "ধীরে শুনলে মুখস্থ সহজ",
+   "options": [
+    {
+     "v": 0.5,
+     "label": "০.৫×"
+    },
+    {
+     "v": 0.75,
+     "label": "০.৭৫×"
+    },
+    {
+     "v": 1,
+     "label": "১×"
+    },
+    {
+     "v": 1.25,
+     "label": "১.২৫×"
+    },
+    {
+     "v": 1.5,
+     "label": "১.৫×"
+    },
+    {
+     "v": 2,
+     "label": "২×"
+    }
+   ],
+   "custom": {
+    "min": 0.5,
+    "max": 2,
+    "step": 0.05
+   },
+   "unit": "x"
+  },
+  {
+   "id": "listen.repeatAyah",
+   "group": "listen",
+   "sub": "গতি ও পুনরাবৃত্তি",
+   "label": "প্রতিটা আয়াত কতবার",
+   "control": "chips",
+   "default": 1,
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": 1
+    },
+    {
+     "v": 3
+    },
+    {
+     "v": 5
+    },
+    {
+     "v": 10
+    }
+   ],
+   "custom": {
+    "min": 1,
+    "max": 50,
+    "step": 1
+   },
+   "unit": "n"
+  },
+  {
+   "id": "listen.repeatRange",
+   "group": "listen",
+   "sub": "গতি ও পুনরাবৃত্তি",
+   "label": "পুরো অংশ কতবার",
+   "control": "chips",
+   "default": 1,
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": 1
+    },
+    {
+     "v": 2
+    },
+    {
+     "v": 3
+    },
+    {
+     "v": 5
+    },
+    {
+     "v": 0,
+     "label": "অবিরাম"
+    }
+   ],
+   "custom": {
+    "min": 1,
+    "max": 50,
+    "step": 1
+   },
+   "unit": "n"
+  },
+  {
+   "id": "listen.gapRepeatS",
+   "group": "listen",
+   "sub": "গতি ও পুনরাবৃত্তি",
+   "label": "একই আয়াত আবার শুরুর আগে বিরতি",
+   "control": "sld",
+   "default": 0,
+   "plat": "both",
+   "when": "now",
+   "help": "নিজে বলে দেখার সময়",
+   "range": {
+    "min": 0,
+    "max": 15,
+    "step": 0.5
+   },
+   "unit": "s"
+  },
+  {
+   "id": "listen.gapAyahS",
+   "group": "listen",
+   "sub": "গতি ও পুনরাবৃত্তি",
+   "label": "প্রতি আয়াতের পরে বিরতি",
+   "control": "sld",
+   "default": 0,
+   "plat": "both",
+   "when": "now",
+   "help": "পরের আয়াতে যাওয়ার আগে",
+   "range": {
+    "min": 0,
+    "max": 15,
+    "step": 0.5
+   },
+   "unit": "s"
+  },
+  {
+   "id": "listen.gapAuto",
+   "group": "listen",
+   "sub": "গতি ও পুনরাবৃত্তি",
+   "label": "বিরতি আয়াতের দৈর্ঘ্যের সমান",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now",
+   "help": "চালু করলে প্রতি আয়াতের পরে ততক্ষণ থামবে যতক্ষণ আয়াতটা পড়তে লাগে — শুনে নিজে বলার জন্য"
+  },
+  {
+   "id": "listen.highlight",
+   "group": "listen",
+   "sub": "লেখা",
+   "label": "কোনটা পড়া হচ্ছে দেখাও",
+   "control": "seg",
+   "default": "word",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "word",
+     "label": "শব্দ ধরে"
+    },
+    {
+     "v": "ayah",
+     "label": "আয়াত ধরে"
+    },
+    {
+     "v": "none",
+     "label": "কিছু না"
+    }
+   ]
+  },
+  {
+   "id": "listen.text",
+   "group": "listen",
+   "sub": "লেখা",
+   "label": "লেখা",
+   "control": "seg",
+   "default": "show",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "show",
+     "label": "সব দেখাও"
+    },
+    {
+     "v": "reveal",
+     "label": "শুনতে শুনতে খুলবে"
+    },
+    {
+     "v": "hide",
+     "label": "লুকানো"
+    }
+   ]
+  },
+  {
+   "id": "listen.autoScroll",
+   "group": "listen",
+   "sub": "লেখা",
+   "label": "সাথে সাথে স্ক্রল",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "listen.basmala",
+   "group": "listen",
+   "sub": "লেখা",
+   "label": "সূরার শুরুতে বিসমিল্লাহ",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "আয়াত ১ থেকে শুনলে আগে বিসমিল্লাহ শোনাবে (সূরা ফাতিহা ও তাওবা ছাড়া)"
+  },
+  {
+   "id": "listen.nextSurah",
+   "group": "listen",
+   "sub": "লেখা",
+   "label": "সূরা শেষে পরের সূরা চালাও",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "listen.sleepMin",
+   "group": "listen",
+   "sub": "লেখা",
+   "label": "ঘুমের টাইমার",
+   "control": "seg",
+   "default": 0,
+   "plat": "both",
+   "when": "now",
+   "help": "এত মিনিট পরে শোনা থামবে",
+   "options": [
+    {
+     "v": 0,
+     "label": "বন্ধ"
+    },
+    {
+     "v": 10,
+     "label": "১০"
+    },
+    {
+     "v": 15,
+     "label": "১৫"
+    },
+    {
+     "v": 30,
+     "label": "৩০"
+    },
+    {
+     "v": 60,
+     "label": "৬০ মিনিট"
+    }
+   ]
+  },
+  {
+   "id": "listen.countAsSession",
+   "group": "listen",
+   "sub": "লেখা",
+   "label": "শোনা ইতিহাসে রাখো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "কতক্ষণ কোন অংশ শুনেছ জমা হবে; লক্ষ্য বা স্ট্রিকে গোনা হবে শুধু ‘লক্ষ্য ও স্ট্রিক’ অংশে চালু করলে"
+  },
+  {
+   "id": "audio.ctxBefore",
+   "group": "listen",
+   "sub": "লাল শব্দের অডিও",
+   "label": "লাল শব্দে আলাফাসি: আগে কত শব্দ",
+   "control": "sld",
+   "default": 2,
+   "plat": "both",
+   "when": "now",
+   "help": "পপআপে সঠিক তিলাওয়াত শব্দটার আগে কত শব্দসহ শোনাবে",
+   "range": {
+    "min": 0,
+    "max": 5,
+    "step": 1
+   },
+   "unit": "words"
+  },
+  {
+   "id": "audio.ctxAfter",
+   "group": "listen",
+   "sub": "লাল শব্দের অডিও",
+   "label": "লাল শব্দে আলাফাসি: পরে কত শব্দ",
+   "control": "sld",
+   "default": 1,
+   "plat": "both",
+   "when": "now",
+   "range": {
+    "min": 0,
+    "max": 5,
+    "step": 1
+   },
+   "unit": "words"
+  },
+  {
+   "id": "audio.myCtxWords",
+   "group": "listen",
+   "sub": "লাল শব্দের অডিও",
+   "label": "আমার পড়া: আগে কত শব্দ",
+   "control": "sld",
+   "default": 2,
+   "plat": "both",
+   "when": "next",
+   "help": "পপআপে নিজের রেকর্ডিং কত শব্দ আগে থেকে শোনাবে",
+   "range": {
+    "min": 0,
+    "max": 5,
+    "step": 1
+   },
+   "unit": "words"
+  },
+  {
+   "id": "audio.popupSpeed",
+   "group": "listen",
+   "sub": "লাল শব্দের অডিও",
+   "label": "পপআপে আলাফাসির গতি",
+   "control": "sld",
+   "default": 1,
+   "plat": "both",
+   "when": "now",
+   "range": {
+    "min": 0.5,
+    "max": 1.5,
+    "step": 0.05
+   },
+   "unit": "x"
+  },
+  {
+   "id": "audio.offlineMaxMB",
+   "group": "listen",
+   "sub": "অফলাইন",
+   "label": "অফলাইনে রাখার সর্বোচ্চ আকার (প্রতি সূরা)",
+   "control": "seg",
+   "default": 40,
+   "plat": "M",
+   "when": "now",
+   "help": "এর চেয়ে বড় সূরা শুধু ইন্টারনেটে বাজবে",
+   "options": [
+    {
+     "v": 40,
+     "label": "৪০"
+    },
+    {
+     "v": 80,
+     "label": "৮০"
+    },
+    {
+     "v": 150,
+     "label": "১৫০"
+    },
+    {
+     "v": 250,
+     "label": "২৫০ MB"
+    }
+   ]
+  },
+  {
+   "id": "goals.dayStart",
+   "group": "goals",
+   "label": "দিন শুরু ধরা হবে",
+   "control": "sel",
+   "default": 0,
+   "plat": "both",
+   "when": "now",
+   "help": "রাত জেগে পড়লে আগের দিনেই গোনা হবে",
+   "options": [
+    {
+     "v": 0,
+     "label": "রাত ১২টা"
+    },
+    {
+     "v": 1,
+     "label": "রাত ১টা"
+    },
+    {
+     "v": 2,
+     "label": "রাত ২টা"
+    },
+    {
+     "v": 3,
+     "label": "রাত ৩টা"
+    },
+    {
+     "v": 4,
+     "label": "রাত ৪টা"
+    },
+    {
+     "v": 5,
+     "label": "রাত ৫টা"
+    },
+    {
+     "v": 6,
+     "label": "ভোর ৬টা"
+    }
+   ]
+  },
+  {
+   "id": "goals.weekStart",
+   "group": "goals",
+   "label": "সপ্তাহ শুরু",
+   "control": "seg",
+   "default": 6,
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": 6,
+     "label": "শনিবার"
+    },
+    {
+     "v": 0,
+     "label": "রবিবার"
+    },
+    {
+     "v": 1,
+     "label": "সোমবার"
+    }
+   ]
+  },
+  {
+   "id": "goals.streakMin",
+   "group": "goals",
+   "label": "স্ট্রিকে দিন গোনার জন্য অন্তত",
+   "control": "chips",
+   "default": "any",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "any",
+     "label": "যেকোনো একটা সেশন"
+    },
+    {
+     "v": "m5",
+     "label": "৫ মিনিট"
+    },
+    {
+     "v": "m10",
+     "label": "১০ মিনিট"
+    },
+    {
+     "v": "m20",
+     "label": "২০ মিনিট"
+    },
+    {
+     "v": "goals",
+     "label": "আজকের সব লক্ষ্য পূরণ"
+    }
+   ],
+   "custom": null
+  },
+  {
+   "id": "goals.countLook",
+   "group": "goals",
+   "label": "দেখে পড়াও মুখস্থ ও রিভিশন লক্ষ্যে গোনো",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "goals.countListen",
+   "group": "goals",
+   "label": "শোনাও তিলাওয়াত-লক্ষ্য আর স্ট্রিকে গোনো",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "goals.countTests",
+   "group": "goals",
+   "label": "টেস্টও লক্ষ্যে গোনো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "goals.countManual",
+   "group": "goals",
+   "label": "অ্যাপের বাইরের পড়াও গোনো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "goals.showToday",
+   "group": "goals",
+   "label": "তিলাওয়াত পাতায় আজকের লক্ষ্য দেখাও",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "কোনো লক্ষ্য না থাকলে কিছুই দেখাবে না"
+  },
+  {
+   "id": "history.clearStreak",
+   "group": "history",
+   "sub": "দুর্বল দাগ",
+   "label": "দাগ মুছতে পরপর কত সেশন ঠিক",
+   "control": "sld",
+   "default": 3,
+   "plat": "both",
+   "when": "next",
+   "help": "না দেখে এতগুলো আলাদা সেশনে পরপর ঠিক পড়লে লাল দাগ চলে যাবে",
+   "range": {
+    "min": 1,
+    "max": 10,
+    "step": 1
+   },
+   "unit": "n"
+  },
+  {
+   "id": "history.lookClears",
+   "group": "history",
+   "sub": "দুর্বল দাগ",
+   "label": "দেখে পড়াও দাগ মোছায় গোনো",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "next"
+  },
+  {
+   "id": "history.good",
+   "group": "history",
+   "sub": "অবস্থার মাপকাঠি",
+   "label": "‘ভালো মুখস্থ’ কত % থেকে",
+   "control": "sld",
+   "default": 95,
+   "plat": "both",
+   "when": "now",
+   "range": {
+    "min": 80,
+    "max": 100,
+    "step": 1
+   },
+   "unit": "pct"
+  },
+  {
+   "id": "history.fair",
+   "group": "history",
+   "sub": "অবস্থার মাপকাঠি",
+   "label": "‘মোটামুটি’ কত % থেকে",
+   "control": "sld",
+   "default": 85,
+   "plat": "both",
+   "when": "now",
+   "help": "‘ভালো মুখস্থ’-এর চেয়ে কম হতে হবে",
+   "range": {
+    "min": 50,
+    "max": 99,
+    "step": 1
+   },
+   "unit": "pct"
+  },
+  {
+   "id": "history.gradeWindow",
+   "group": "history",
+   "sub": "অবস্থার মাপকাঠি",
+   "label": "অবস্থা মাপতে শেষ কয়টা মুখস্থ-সেশন",
+   "control": "sld",
+   "default": 3,
+   "plat": "both",
+   "when": "now",
+   "range": {
+    "min": 1,
+    "max": 10,
+    "step": 1
+   },
+   "unit": "n"
+  },
+  {
+   "id": "history.recent",
+   "group": "history",
+   "sub": "তালিকা",
+   "label": "সাম্প্রতিক সেশন কয়টা দেখাবে",
+   "control": "seg",
+   "default": 30,
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": 10,
+     "label": "১০"
+    },
+    {
+     "v": 30,
+     "label": "৩০"
+    },
+    {
+     "v": 100,
+     "label": "১০০"
+    },
+    {
+     "v": 0,
+     "label": "সব"
+    }
+   ]
+  },
+  {
+   "id": "history.weekDays",
+   "group": "history",
+   "sub": "তালিকা",
+   "label": "‘এই সপ্তাহে’ কার্ডে কত দিন",
+   "control": "seg",
+   "default": 7,
+   "plat": "both",
+   "when": "now",
+   "help": "৭ ছাড়া অন্য মান হলে কার্ডের নাম হবে ‘শেষ {n} দিনে’",
+   "options": [
+    {
+     "v": 7
+    },
+    {
+     "v": 14
+    },
+    {
+     "v": 30
+    }
+   ]
+  },
+  {
+   "id": "history.minWords",
+   "group": "history",
+   "sub": "তালিকা",
+   "label": "সবচেয়ে ছোট কত শব্দের সেশন জমা হবে",
+   "control": "sld",
+   "default": 3,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 1,
+    "max": 20,
+    "step": 1
+   },
+   "unit": "words"
+  },
+  {
+   "id": "history.maxEvents",
+   "group": "history",
+   "sub": "তালিকা",
+   "label": "প্রতিটা দুর্বল শব্দের কয়টা ভুল মনে রাখবে",
+   "control": "sld",
+   "default": 5,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 1,
+    "max": 20,
+    "step": 1
+   },
+   "unit": "n"
+  },
+  {
+   "id": "history.hotZones",
+   "group": "history",
+   "sub": "তালিকা",
+   "label": "‘সবচেয়ে দুর্বল জায়গা’ কয়টা দেখাবে",
+   "control": "sld",
+   "default": 3,
+   "plat": "both",
+   "when": "now",
+   "range": {
+    "min": 1,
+    "max": 8,
+    "step": 1
+   },
+   "unit": "n"
+  },
+  {
+   "id": "history.heatmap",
+   "group": "history",
+   "sub": "তালিকা",
+   "label": "তাপচিত্র দেখাও",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "কোন দিন কত মিনিট পড়েছ — শেষ ১২ সপ্তাহ"
+  },
+  {
+   "id": "history.popupTimes",
+   "group": "history",
+   "sub": "তালিকা",
+   "label": "দাগের পপআপে মোট কতবার পড়েছ দেখাও",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "history.saveRecordings",
+   "group": "history",
+   "sub": "রেকর্ডিং",
+   "label": "সেশনের রেকর্ডিং রাখো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "next",
+   "help": "বন্ধ করলে নতুন রেকর্ডিং জমা হবে না, তাই পরে দাগের জায়গায় নিজের পড়া শোনা যাবে না; পুরোনোগুলো থাকবে"
+  },
+  {
+   "id": "view.theme",
+   "group": "view",
+   "sub": "রং",
+   "label": "পাতার রং",
+   "control": "seg",
+   "default": "auto",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "auto",
+     "label": "স্বয়ংক্রিয়"
+    },
+    {
+     "v": "paper",
+     "label": "কাগজ"
+    },
+    {
+     "v": "night",
+     "label": "রাতের মুসহাফ"
+    },
+    {
+     "v": "sepia",
+     "label": "পুরোনো কাগজ"
+    }
+   ]
+  },
+  {
+   "id": "view.wordSet",
+   "group": "view",
+   "sub": "রং",
+   "label": "শব্দের রঙের সেট",
+   "control": "seg",
+   "default": "default",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "default",
+     "label": "স্বাভাবিক"
+    },
+    {
+     "v": "cb",
+     "label": "রং চিনতে সুবিধা"
+    },
+    {
+     "v": "brown",
+     "label": "বাদামি উঁকি"
+    },
+    {
+     "v": "custom",
+     "label": "নিজের মতো"
+    }
+   ]
+  },
+  {
+   "id": "view.wordStyle",
+   "group": "view",
+   "sub": "রং",
+   "label": "রং কীভাবে বসবে",
+   "control": "seg",
+   "default": "text",
+   "plat": "both",
+   "when": "now",
+   "help": "হাইলাইট = লেখা কালো থাকে, পেছনে রঙিন ঘর",
+   "options": [
+    {
+     "v": "text",
+     "label": "লেখার রং"
+    },
+    {
+     "v": "highlight",
+     "label": "হাইলাইট"
+    }
+   ]
+  },
+  {
+   "id": "view.customColors",
+   "group": "view",
+   "sub": "রং",
+   "label": "নিজের রং",
+   "control": "col",
+   "default": {},
+   "plat": "both",
+   "when": "now",
+   "help": "প্রতিটা অবস্থার রং বেছে নাও; প্রতিটা পাতার রঙের জন্য আলাদা মনে রাখে"
+  },
+  {
+   "id": "view.arabicScale",
+   "group": "view",
+   "sub": "লেখা",
+   "label": "আরবি লেখার আকার",
+   "control": "sld",
+   "default": 100,
+   "plat": "both",
+   "when": "now",
+   "range": {
+    "min": 65,
+    "max": 150,
+    "step": 5
+   },
+   "unit": "pct"
+  },
+  {
+   "id": "view.lineGap",
+   "group": "view",
+   "sub": "লেখা",
+   "label": "লাইনের মাঝে ফাঁক",
+   "control": "sld",
+   "default": 100,
+   "plat": "both",
+   "when": "now",
+   "range": {
+    "min": 80,
+    "max": 140,
+    "step": 5
+   },
+   "unit": "pct"
+  },
+  {
+   "id": "view.wordGap",
+   "group": "view",
+   "sub": "লেখা",
+   "label": "শব্দের মাঝে ফাঁক",
+   "control": "sld",
+   "default": 8,
+   "plat": "both",
+   "when": "now",
+   "range": {
+    "min": 0,
+    "max": 40,
+    "step": 2
+   },
+   "unit": "pct",
+   "scale": 12.5
+  },
+  {
+   "id": "view.uiScale",
+   "group": "view",
+   "sub": "লেখা",
+   "label": "বাংলা লেখার আকার",
+   "control": "seg",
+   "default": 100,
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": 90,
+     "label": "ছোট"
+    },
+    {
+     "v": 100,
+     "label": "স্বাভাবিক"
+    },
+    {
+     "v": 115,
+     "label": "বড়"
+    },
+    {
+     "v": 130,
+     "label": "আরও বড়"
+    }
+   ]
+  },
+  {
+   "id": "view.uiFont",
+   "group": "view",
+   "sub": "লেখা",
+   "label": "বাংলা ফন্ট",
+   "control": "seg",
+   "default": "app",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "app",
+     "label": "হিন্দ শিলিগুড়ি"
+    },
+    {
+     "v": "system",
+     "label": "যন্ত্রের নিজের ফন্ট"
+    }
+   ]
+  },
+  {
+   "id": "view.motion",
+   "group": "view",
+   "sub": "নড়াচড়া",
+   "label": "নড়াচড়া (অ্যানিমেশন)",
+   "control": "seg",
+   "default": "auto",
+   "plat": "both",
+   "when": "now",
+   "help": "রেকর্ডিং চলার সময় সবসময় বন্ধ থাকে",
+   "options": [
+    {
+     "v": "auto",
+     "label": "স্বয়ংক্রিয়"
+    },
+    {
+     "v": "full",
+     "label": "পুরো"
+    },
+    {
+     "v": "gentle",
+     "label": "হালকা"
+    },
+    {
+     "v": "off",
+     "label": "বন্ধ"
+    }
+   ]
+  },
+  {
+   "id": "view.scroll",
+   "group": "view",
+   "sub": "নড়াচড়া",
+   "label": "পড়ার লাইন কোথায় থাকবে",
+   "control": "seg",
+   "default": "second",
+   "plat": "both",
+   "when": "now",
+   "options": [
+    {
+     "v": "second",
+     "label": "ওপর থেকে দ্বিতীয় লাইনে"
+    },
+    {
+     "v": "middle",
+     "label": "মাঝখানে"
+    },
+    {
+     "v": "off",
+     "label": "নিজে স্ক্রল করব"
+    }
+   ]
+  },
+  {
+   "id": "view.timer",
+   "group": "view",
+   "sub": "ওপরের তথ্য",
+   "label": "সময় দেখাও",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "view.legend",
+   "group": "view",
+   "sub": "ওপরের তথ্য",
+   "label": "রঙের মানে দেখাও",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now",
+   "help": "লেখার ওপরে ছোট করে কোন রঙের কী মানে"
+  },
+  {
+   "id": "view.headStats",
+   "group": "view",
+   "sub": "ওপরের তথ্য",
+   "label": "সঠিক, ভুল আর ইঙ্গিতের গোনা দেখাও",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "view.bnDigits",
+   "group": "view",
+   "sub": "ওপরের তথ্য",
+   "label": "সংখ্যা বাংলায় লেখো",
+   "control": "tog",
+   "default": true,
+   "plat": "both",
+   "when": "now",
+   "help": "বন্ধ করলে 0–9"
+  },
+  {
+   "id": "device.micId",
+   "group": "device",
+   "label": "মাইক্রোফোন",
+   "control": "sel",
+   "default": "default",
+   "plat": "M",
+   "when": "next",
+   "options": [
+    {
+     "v": "default",
+     "label": "যন্ত্রের নিজের মাইক"
+    }
+   ]
+  },
+  {
+   "id": "device.echoCancel",
+   "group": "device",
+   "label": "প্রতিধ্বনি কমাও",
+   "control": "tog",
+   "default": true,
+   "plat": "M",
+   "when": "next",
+   "help": "আলাফাসির আওয়াজ মাইকে ঢোকা কমায়; বন্ধ করলে চুপ থাকার সাহায্য গোলমাল করতে পারে"
+  },
+  {
+   "id": "device.noiseSuppress",
+   "group": "device",
+   "label": "আশপাশের শব্দ কমাও",
+   "control": "tog",
+   "default": false,
+   "plat": "M",
+   "when": "next",
+   "help": "কোলাহলে কাজে লাগে, তবে নিচু গলার শব্দও কেটে যেতে পারে"
+  },
+  {
+   "id": "device.autoGain",
+   "group": "device",
+   "label": "মাইকের জোর নিজে ঠিক করো",
+   "control": "seg",
+   "default": "browser",
+   "plat": "M",
+   "when": "next",
+   "options": [
+    {
+     "v": "browser",
+     "label": "ব্রাউজারের মতো"
+    },
+    {
+     "v": "on",
+     "label": "চালু"
+    },
+    {
+     "v": "off",
+     "label": "বন্ধ"
+    }
+   ]
+  },
+  {
+   "id": "device.sensitivity",
+   "group": "device",
+   "label": "মাইকের সংবেদনশীলতা",
+   "control": "seg",
+   "default": "normal",
+   "plat": "both",
+   "when": "next",
+   "help": "আস্তে পড়লে ‘বেশি’, কোলাহলে ‘কম’",
+   "options": [
+    {
+     "v": "low",
+     "label": "কম"
+    },
+    {
+     "v": "normal",
+     "label": "স্বাভাবিক"
+    },
+    {
+     "v": "high",
+     "label": "বেশি"
+    }
+   ]
+  },
+  {
+   "id": "device.threads",
+   "group": "device",
+   "label": "প্রসেসর থ্রেড",
+   "control": "seg",
+   "default": "auto",
+   "plat": "M",
+   "when": "reload",
+   "help": "বেশি = দ্রুত, তবে ফোন গরম হতে পারে",
+   "options": [
+    {
+     "v": "auto",
+     "label": "স্বয়ংক্রিয়"
+    },
+    {
+     "v": 1,
+     "label": "১"
+    },
+    {
+     "v": 2,
+     "label": "২"
+    },
+    {
+     "v": 4,
+     "label": "৪"
+    }
+   ]
+  },
+  {
+   "id": "device.slowPhone",
+   "group": "device",
+   "label": "ধীর ফোনে মানিয়ে নাও",
+   "control": "tog",
+   "default": true,
+   "plat": "M",
+   "when": "next",
+   "help": "ফোন ধীর হলে প্রতিবার কম অডিও শোনে, যাতে পিছিয়ে না পড়ে"
+  },
+  {
+   "id": "device.liveModel",
+   "group": "device",
+   "label": "লাইভ মডেল",
+   "control": "seg",
+   "default": "tiny",
+   "plat": "L",
+   "when": "next",
+   "help": "বড় মডেল বেশি ঠিক শোনে, কিন্তু ধীর",
+   "options": [
+    {
+     "v": "tiny",
+     "label": "tiny"
+    },
+    {
+     "v": "base",
+     "label": "base"
+    }
+   ]
+  },
+  {
+   "id": "device.checkModel",
+   "group": "device",
+   "label": "যাচাই মডেল",
+   "control": "seg",
+   "default": "base",
+   "plat": "L",
+   "when": "next",
+   "help": "সূরা চেনা ও লাল করার আগে আবার শোনা",
+   "options": [
+    {
+     "v": "base",
+     "label": "base"
+    },
+    {
+     "v": "tiny",
+     "label": "tiny"
+    }
+   ]
+  },
+  {
+   "id": "device.keepAwake",
+   "group": "device",
+   "label": "রেকর্ডিং ও শোনার সময় স্ক্রিন জ্বালিয়ে রাখো",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now"
+  },
+  {
+   "id": "device.shortcuts",
+   "group": "device",
+   "label": "কীবোর্ড শর্টকাট",
+   "control": "tog",
+   "default": false,
+   "plat": "both",
+   "when": "now",
+   "help": "Space = বিরতি, H = ইঙ্গিত, R = আয়াতের বাকিটা, E = চোখ, M = ভুলের তালিকা, N = পরের প্রশ্ন, P = শোনা চালাও/থামাও"
+  },
+  {
+   "id": "device.maxRecMin",
+   "group": "device",
+   "label": "সর্বোচ্চ রেকর্ডিং সময়",
+   "control": "seg",
+   "default": 0,
+   "plat": "both",
+   "when": "next",
+   "help": "এর পরে রেকর্ডিং নিজে থামবে",
+   "options": [
+    {
+     "v": 30,
+     "label": "৩০"
+    },
+    {
+     "v": 60,
+     "label": "৬০"
+    },
+    {
+     "v": 90,
+     "label": "৯০"
+    },
+    {
+     "v": 120,
+     "label": "১২০ মিনিট"
+    },
+    {
+     "v": 0,
+     "label": "সীমা নেই"
+    }
+   ]
+  },
+  {
+   "id": "adv.windowS",
+   "group": "adv",
+   "label": "প্রতিবার কত সেকেন্ডের অডিও শোনা হয়",
+   "control": "sld",
+   "default": 6,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 3,
+    "max": 12,
+    "step": 0.5
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.updateEveryS",
+   "group": "adv",
+   "label": "কত ঘনঘন নতুন অডিও শোনা হয়",
+   "control": "sld",
+   "default": 0.25,
+   "plat": "both",
+   "when": "next",
+   "help": "কম মান = ফোনে বেশি কাজ",
+   "range": {
+    "min": 0.15,
+    "max": 1,
+    "step": 0.05
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.lookahead",
+   "group": "adv",
+   "label": "সামনে কত শব্দ পর্যন্ত মেলানো হয়",
+   "control": "sld",
+   "default": 12,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 4,
+    "max": 30,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.shortSkip",
+   "group": "adv",
+   "label": "দুটো শব্দ মিললে কয়টা শব্দ টপকানো চলে",
+   "control": "sld",
+   "default": 3,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 1,
+    "max": 6,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.longSkipRun",
+   "group": "adv",
+   "label": "বেশি টপকাতে কয়টা শব্দ পরপর মিলতে হবে",
+   "control": "sld",
+   "default": 3,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 2,
+    "max": 6,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.finalSkip",
+   "group": "adv",
+   "label": "শেষ যাচাইয়ে সর্বোচ্চ টপকানো",
+   "control": "sld",
+   "default": 8,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 3,
+    "max": 15,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.detectMinWords",
+   "group": "adv",
+   "label": "সূরা চিনতে অন্তত কত শব্দ",
+   "control": "sld",
+   "default": 4,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 2,
+    "max": 10,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.detectMargin",
+   "group": "adv",
+   "label": "পরের সম্ভাব্য সূরার চেয়ে কতগুণ এগিয়ে থাকতে হবে",
+   "control": "sld",
+   "default": 1.4,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 1.1,
+    "max": 2.5,
+    "step": 0.1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.detectSureWords",
+   "group": "adv",
+   "label": "এত শব্দ শোনার পর কাছাকাছি হলেও বেছে নেবে",
+   "control": "sld",
+   "default": 20,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 8,
+    "max": 40,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.lostS",
+   "group": "adv",
+   "label": "কত সেকেন্ড না এগোলে জায়গা আবার খুঁজবে",
+   "control": "sld",
+   "default": 8,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 4,
+    "max": 20,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.lostReds",
+   "group": "adv",
+   "label": "শেষ কয়টার মধ্যে কতটা লাল হলে আবার খুঁজবে: লাল",
+   "control": "sld",
+   "default": 5,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 2,
+    "max": 8,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.lostOf",
+   "group": "adv",
+   "label": "…শেষ কয়টা শব্দের মধ্যে",
+   "control": "sld",
+   "default": 8,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 4,
+    "max": 15,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.rewindRun",
+   "group": "adv",
+   "label": "পেছনে ফিরে পড়া চিনতে কয়টা শব্দ পরপর",
+   "control": "sld",
+   "default": 3,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 2,
+    "max": 6,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.backWords",
+   "group": "adv",
+   "label": "সর্বোচ্চ কত শব্দ পেছনে ফেরা চেনা হবে",
+   "control": "sld",
+   "default": 80,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 20,
+    "max": 200,
+    "step": 10
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.verifyWindowS",
+   "group": "adv",
+   "label": "বাদ পড়া শব্দ আবার শুনতে কত সেকেন্ড",
+   "control": "sld",
+   "default": 7,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 3,
+    "max": 15,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.verifyMaxS",
+   "group": "adv",
+   "label": "…সর্বোচ্চ কত সেকেন্ড",
+   "control": "sld",
+   "default": 20,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 10,
+    "max": 40,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.autoExtendAt",
+   "group": "adv",
+   "label": "সামনে কয়টা শব্দ বাকি থাকলে আরও আয়াত যোগ হবে",
+   "control": "sld",
+   "default": 15,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 5,
+    "max": 30,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.sameAudio",
+   "group": "adv",
+   "label": "‘ঠিক পড়েছি’ মনে রাখার অডিও-মিল",
+   "control": "sld",
+   "default": 0.6,
+   "plat": "both",
+   "when": "next",
+   "help": "কম = কড়া (একদম একইভাবে পড়তে হবে)",
+   "range": {
+    "min": 0.4,
+    "max": 0.8,
+    "step": 0.02
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.sameHeard",
+   "group": "adv",
+   "label": "‘ঠিক পড়েছি’ মনে রাখার শোনা-মিল",
+   "control": "sld",
+   "default": 0.75,
+   "plat": "both",
+   "when": "next",
+   "help": "বেশি = কড়া",
+   "range": {
+    "min": 0.6,
+    "max": 0.95,
+    "step": 0.05
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.maxClipS",
+   "group": "adv",
+   "label": "লাল শব্দের নিজের ক্লিপ সর্বোচ্চ কত সেকেন্ড",
+   "control": "sld",
+   "default": 6,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 3,
+    "max": 12,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.stripCells",
+   "group": "adv",
+   "label": "অগ্রগতির পট্টিতে সর্বোচ্চ ঘর",
+   "control": "sld",
+   "default": 40,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 20,
+    "max": 80,
+    "step": 5
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.cellMid",
+   "group": "adv",
+   "label": "আয়াতের ঘর মাঝারি লাল হবে দুর্বলতা-যোগফল কত থেকে",
+   "control": "sld",
+   "default": 3,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 1,
+    "max": 10,
+    "step": 1
+   },
+   "advanced": true
+  },
+  {
+   "id": "adv.cellDark",
+   "group": "adv",
+   "label": "…গাঢ় লাল হবে কত থেকে",
+   "control": "sld",
+   "default": 6,
+   "plat": "both",
+   "when": "next",
+   "range": {
+    "min": 2,
+    "max": 20,
+    "step": 1
+   },
+   "advanced": true
+  }
+ ]
+}

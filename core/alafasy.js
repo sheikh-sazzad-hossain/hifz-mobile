@@ -59,4 +59,25 @@ export function wordStart(surah, ayah, index) {
 
 // The follower's `deps.alafasy`
 // (the follower asks for "from this word to the end of the surah": spanAudio(surah, ayah, wi, toEnd))
-export const follower = { spanAudio: (surah, ayah, wi, toEnd = false) => spanAudio(surah, ayah, wi, null, toEnd), wordStart, contextAudio };
+export const follower = { spanAudio: (surah, ayah, wi, toEnd = false, last = null) => spanAudio(surah, ayah, wi, last, toEnd), wordStart, contextAudio };
+
+// For the listen mode (spec C3 §8): the surah's mp3, an ayah's span, the basmala before ayah 1, our words' times in an ayah.
+export const surahUrl = (surah) => data[String(surah)]?.url ?? null;
+export function ayahSpan(surah, ayah) {
+  const a = data[String(surah)]?.ayahs[String(ayah)];
+  return a ? [a.from / 1000, a.to / 1000] : null;
+}
+// [from, to, surah of the mp3]: the Quran.com surah mp3s start with ayah 1 (no basmala), so the basmala is surah 1 ayah 1 from the surah-1 file;
+// a file that has audio before ayah 1 keeps using it.
+export function basmalaSpan(surah) {
+  const a = data[String(surah)]?.ayahs['1'];
+  if (a && a.from > 600) return [0, a.from / 1000, surah];
+  const f = ayahSpan(1, 1);
+  return f ? [f[0], f[1], 1] : null;
+}
+export function wordTimes(surah, ayah) { // [[from, to]] seconds for each of our words, or null (whole-ayah highlight)
+  const a = data[String(surah)]?.ayahs[String(ayah)];
+  if (!a || quran.qdcPositions(surah, ayah, a.words.length) === null) return null;
+  const n = ourCount(surah, ayah);
+  return Array.from({ length: n }, (_, i) => { const w = wordSpan(surah, ayah, i); return [w[0] / 1000, w[1] / 1000]; });
+}

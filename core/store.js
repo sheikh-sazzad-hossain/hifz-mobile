@@ -73,7 +73,7 @@ const fromB64 = (b64) => {
   return Float32Array.from(pcm, (v) => v / 32767);
 };
 
-const KV_KEYS = ['sessions', 'weak', 'accepted', 'index', 'settings'];
+const KV_KEYS = ['sessions', 'weak', 'accepted', 'index', 'settings', 'tests', 'ranges', 'memorized', 'goals', 'manual', 'listens', 'badges', 'ui'];
 const KINDS = ['recordings', 'clips', 'marks'];
 
 export async function openStore(backend = memoryBackend()) {
