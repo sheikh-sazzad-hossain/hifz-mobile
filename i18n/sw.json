@@ -7,7 +7,7 @@
   "nav.tab.progress": "Maendeleo",
   "nav.tab.settings": "Mipangilio",
   "nav.busy": "Kurekodi kunaendelea — kisimamishe kwanza (■), kisha nenda ukurasa mwingine.",
-  "nav.themeTip": "Badili rangi: Karatasi / Msahafu wa usiku / Karatasi ya zamani (shikilia kwa mipangilio yote)",
+  "nav.themeTip": "Badili rangi: Noor angavu / Noor giza (shikilia kwa mipangilio yote)",
   "s.title": "Mipangilio",
   "s.search": "Tafuta mipangilio…",
   "s.searchEmpty": "Hakuna mpangilio wenye jina hili.",
@@ -24,7 +24,7 @@
   "s.importOk": "Mipangilio {n} imepakiwa.",
   "s.importSkip": "Mipangilio {n} imepakiwa, {m} haikujulikana au ilikuwa nje ya kiwango — imerukwa.",
   "s.importBad": "Faili haikuweza kusomwa: {err}",
-  "s.importWrong": "Hii si faili ya mipangilio ya Hifz Helper.",
+  "s.importWrong": "Hii si faili ya mipangilio ya Hifzun Noor.",
   "s.where": "Mipangilio inabaki kwenye simu hii. Ili kuihamishia simu au kompyuta nyingine, tumia “Hifadhi mipangilio kwenye faili”.",
   "s.whenNext": "Inaanza kutumika kuanzia kipindi kijacho",
   "s.whenReload": "Inaanza kutumika programu ikifunguliwa tena",
@@ -464,7 +464,7 @@
   "bd.r.cleared50": "Futa alama 50 za udhaifu kwa kusoma kwa usahihi kichwani",
   "bd.n.goal1": "Lengo limefikiwa",
   "bd.r.goal1": "Fikia lengo la siku kwa mara ya kwanza",
-  "app.title": "Hifz Helper",
+  "app.title": "Hifzun Noor",
   "c.ok": "Sawa",
   "c.no": "Hapana",
   "fmt.ayah1": "Aya {a}",
@@ -1110,9 +1110,8 @@
    "sub": "Rangi",
    "options": {
     "auto": "Kiotomatiki",
-    "paper": "Karatasi",
-    "night": "Msahafu wa usiku",
-    "sepia": "Karatasi ya zamani"
+    "light": "Noor angavu",
+    "dark": "Noor giza"
    }
   },
   "view.wordSet": {

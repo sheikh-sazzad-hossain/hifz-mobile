@@ -21,34 +21,34 @@ function surahTitle(surah, ayah) {
 
 export const ayahEndHtml = (surah, ayah, attrs = '') => `<span class="hz-end"${attrs}>${esc(indopak.endMark(surah, ayah))}</span> `;
 
-export function liveHtml(v) {
-  if (v.waiting) {
-    const paused = v.paused ? `<div class="hz-banner hz-paused">${esc(t('p.paused'))}</div>` : '';
-    return `${paused}<div class="hz-wait">${t('p.waiting')}</div>`;
+// One word of the live text: its classes, inline style and data attributes (the span itself is drawn by liveHtml;
+// main.js patches only the spans whose word changed, so a pass does not rebuild the whole text).
+export function liveWord(it, idx, v) {
+  const classes = [];
+  let css = '';
+  const data = [];
+  if (it.weak) classes.push(`hz-w${it.weak}`);
+  if (it.weak && it.status !== 'missed') { classes.push('hz-wk'); data.push(['data-mk', String(idx)]); }
+  if (it.status === null) {
+    classes.push('hz-hid');
+    if (it.here) { classes.push('hz-next'); data.push(['data-i', String(v.pos)]); }
+  } else {
+    classes.push(STATUS_CLASS[it.status]);
+    if (it.fresh !== undefined) { classes.push('hz-fresh'); css = `animation-delay:${(it.fresh * 0.08).toFixed(2)}s`; }
+    if (it.status === 'missed') { classes.push('hz-err'); data.push(['data-err', String(idx)]); }
+    if (it.block) classes.push('hz-block-word');
+    if (it.here) { classes.push('hz-here'); data.push(['data-i', String(v.pos)]); }
   }
-  const out = [];
-  v.items.forEach((it, idx) => {
-    if (it.title) out.push(surahTitle(it.title.surah, it.title.ayah));
-    const classes = [];
-    let css = '';
-    let data = '';
-    if (it.weak) classes.push(`hz-w${it.weak}`);
-    if (it.weak && it.status !== 'missed') { classes.push('hz-wk'); data += ` data-mk="${idx}"`; }
-    if (it.status === null) {
-      classes.push('hz-hid');
-      if (it.here) { classes.push('hz-next'); data += ` data-i="${v.pos}"`; }
-    } else {
-      classes.push(STATUS_CLASS[it.status]);
-      if (it.fresh !== undefined) { classes.push('hz-fresh'); css = ` style="animation-delay:${(it.fresh * 0.08).toFixed(2)}s"`; }
-      if (it.status === 'missed') { classes.push('hz-err'); data += ` data-err="${idx}"`; }
-      if (it.block) classes.push('hz-block-word');
-      if (it.here) { classes.push('hz-here'); data += ` data-i="${v.pos}"`; }
-    }
-    out.push(`<span class="${classes.join(' ')}"${css}${data}>${esc(it.text)}</span>`);
-    out.push(it.ayahEnd ? ` ${ayahEndHtml(it.ayahEnd.surah, it.ayahEnd.ayah, ` data-es="${it.ayahEnd.surah}" data-ea="${it.ayahEnd.ayah}"`)}` : ' ');
-  });
+  return { cls: classes.join(' '), css, data };
+}
+export const LIVE_DATA = ['data-mk', 'data-i', 'data-err']; // the word attributes liveWord may set
+export const liveWordSig = (w) => `${w.cls}|${w.css}|${w.data.map((d) => d.join('=')).join(' ')}`;
+
+// What makes the text's layout: titles, words and ayah ends. Same key = same spans in the same places.
+export const liveKey = (v) => (v.waiting ? 'wait' : v.items.map((it) => `${it.title ? `T${it.title.surah}:${it.title.ayah}` : ''}${it.text}${it.ayahEnd ? '|' : ''}`).join('\u0001'));
+
+export function liveHead(v) {
   const h = v.head;
-  const live = v.running ? 1 : 0;
   let head = `<div class="hz-head"><span class="hz-surah">${bn(h.surah)}. ${esc(h.english)} <span class="hz-surah-ar">${esc(h.arabic)}</span></span>`
     + (v.auto ? `<span class="hz-auto">${esc(t('p.autoDetected'))}</span>` : '')
     + `<span class="hz-count">${esc(t('p.hCount', { a: bn(h.ayah), n: bn(h.ayahs) }))}</span><span class="hz-stat hz-ok">${esc(t('p.hOk', { n: bn(h.said) }))}</span>`
@@ -60,7 +60,27 @@ export function liveHtml(v) {
   if (v.paused) {
     head += `<div class="hz-banner hz-paused">${esc(t('p.pausedBanner'))}</div>`;
   }
-  return `${head}<div class="hz-text" data-errors="${v.errors}" data-live="${live}" data-paused="${v.paused ? 1 : 0}">${out.join('')}</div>`;
+  return head;
+}
+export const liveTextAttrs = (v) => ({ 'data-errors': String(v.errors), 'data-live': v.running ? '1' : '0', 'data-paused': v.paused ? '1' : '0' });
+
+// words: liveWord() of every item (main.js passes the ones it already made)
+export function liveHtml(v, words = null) {
+  if (v.waiting) {
+    const paused = v.paused ? `<div class="hz-banner hz-paused">${esc(t('p.paused'))}</div>` : '';
+    return `${paused}<div class="hz-wait">${t('p.waiting')}</div>`;
+  }
+  const out = [];
+  v.items.forEach((it, idx) => {
+    if (it.title) out.push(surahTitle(it.title.surah, it.title.ayah));
+    const w = words ? words[idx] : liveWord(it, idx, v);
+    const css = w.css ? ` style="${w.css}"` : '';
+    const data = w.data.map(([k, x]) => ` ${k}="${x}"`).join('');
+    out.push(`<span class="${w.cls}"${css}${data}>${esc(it.text)}</span>`);
+    out.push(it.ayahEnd ? ` ${ayahEndHtml(it.ayahEnd.surah, it.ayahEnd.ayah, ` data-es="${it.ayahEnd.surah}" data-ea="${it.ayahEnd.ayah}"`)}` : ' ');
+  });
+  const a = liveTextAttrs(v);
+  return `${liveHead(v)}<div class="hz-text" data-errors="${a['data-errors']}" data-live="${a['data-live']}" data-paused="${a['data-paused']}">${out.join('')}</div>`;
 }
 
 // --- progress tab ---

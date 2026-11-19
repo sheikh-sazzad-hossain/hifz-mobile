@@ -7,7 +7,7 @@
   "nav.tab.progress": "Kemajuan",
   "nav.tab.settings": "Pengaturan",
   "nav.busy": "Perekaman sedang berjalan — hentikan dulu (■), lalu pindah ke halaman lain.",
-  "nav.themeTip": "Ganti warna: Kertas / Mushaf malam / Kertas tua (tahan untuk semua pengaturan)",
+  "nav.themeTip": "Ganti warna: Noor terang / Noor gelap (tahan untuk semua pengaturan)",
   "s.title": "Pengaturan",
   "s.search": "Cari pengaturan…",
   "s.searchEmpty": "Tidak ada pengaturan dengan nama ini.",
@@ -24,7 +24,7 @@
   "s.importOk": "{n} pengaturan dimuat.",
   "s.importSkip": "{n} pengaturan dimuat, {m} tidak dikenal atau di luar batas — dilewati.",
   "s.importBad": "Berkas tidak dapat dibaca: {err}",
-  "s.importWrong": "Ini bukan berkas pengaturan Pembantu Hafalan.",
+  "s.importWrong": "Ini bukan berkas pengaturan Hifzun Noor.",
   "s.where": "Pengaturan tersimpan di ponsel ini. Untuk memindahkannya ke ponsel atau komputer lain, gunakan ‘Simpan pengaturan ke berkas’.",
   "s.whenNext": "Berlaku mulai sesi berikutnya",
   "s.whenReload": "Berlaku saat aplikasi dibuka kembali",
@@ -464,7 +464,7 @@
   "bd.r.cleared50": "Hapus 50 tanda lemah dengan membaca benar dari hafalan",
   "bd.n.goal1": "Target tercapai",
   "bd.r.goal1": "Capai target harian untuk pertama kalinya",
-  "app.title": "Pembantu Hafalan",
+  "app.title": "Hifzun Noor",
   "c.ok": "OK",
   "c.no": "Tidak",
   "fmt.ayah1": "Ayat {a}",
@@ -1110,9 +1110,8 @@
    "sub": "Warna",
    "options": {
     "auto": "Otomatis",
-    "paper": "Kertas",
-    "night": "Mushaf malam",
-    "sepia": "Kertas tua"
+    "light": "Noor terang",
+    "dark": "Noor gelap"
    }
   },
   "view.wordSet": {

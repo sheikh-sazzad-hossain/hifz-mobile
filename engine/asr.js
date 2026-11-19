@@ -62,7 +62,8 @@ class Remote {
     return new Promise((resolve, reject) => {
       const id = this.nextId++;
       this.calls.set(id, { resolve, reject });
-      this.worker.postMessage({ type: 'hear', id, samples: samples.slice(), priority });
+      const copy = samples.slice(); // the caller keeps its own buffer; the copy's memory moves to the worker (no second copy)
+      this.worker.postMessage({ type: 'hear', id, samples: copy, priority }, [copy.buffer]);
     });
   }
 }
@@ -100,11 +101,24 @@ export async function createRecognizer({ onProgress, threads, slow } = {}) {
   if (!forced) localStorage.setItem(STORE, JSON.stringify({ cores, threads: best.ready.threads, calib }));
   const { remote, ready } = best;
 
+  // C18: a second session in its own worker for the check work (priority 0: verify, audit, relock, final passes).
+  // With one session a live pass waited behind a check pass of up to 8-20 s of audio (seconds on a phone), so the
+  // words stood still and then came in a burst. Same model and same audio per pass, so the same words; only live
+  // passes no longer wait. Needs threads (cross-origin isolation) and at least 6 cores; ?checkworker=0 turns it off.
+  let check = null;
+  const want = params.get('checkworker') ?? (isolated && cores >= 6 ? '1' : '0');
+  if (want !== '0') { // started in the background: the app is ready without it, check passes use the main session until then
+    const r = new Remote();
+    r.init({ model: model.slice(0), tokens: tokenText, spelling, threads: Math.max(1, Math.min(2, ready.threads)), slow, calib: false })
+      .then(() => { check = r; }, () => r.worker.terminate());
+  }
+
   return {
-    // One call = one pass of the single model session (the worker repeats it `slow` times to imitate a slower phone).
+    // One call = one model pass (the worker repeats it `slow` times to imitate a slower phone). Live passes
+    // (priority >= 1) go to the main session, check passes to the check session when there is one.
     async hear(samples, { priority = 0 } = {}) {
-      return remote.hear(samples, priority);
+      return (check && priority < 1 ? check : remote).hear(samples, priority);
     },
-    info: { backend: `onnxruntime-web ${ready.ort}`, threads: ready.threads, cores, isolated, calibMs: ready.calibMs, calib, slow },
+    info: { backend: `onnxruntime-web ${ready.ort}`, threads: ready.threads, cores, isolated, calibMs: ready.calibMs, calib, slow, get checkWorker() { return !!check; } },
   };
 }

@@ -5,7 +5,7 @@ import { createCore, parseTokens, spellingTable } from './asr-core.js';
 let ort;
 let core;
 
-async function init({ model, tokens, spelling, threads, slow }) {
+async function init({ model, tokens, spelling, threads, slow, calib = true }) {
   const t0 = performance.now();
   ort = await import('../vendor/ort.wasm.min.mjs');
   ort.env.wasm.wasmPaths = new URL('../vendor/', import.meta.url).href;
@@ -30,11 +30,11 @@ async function init({ model, tokens, spelling, threads, slow }) {
     noise[i] = (seed / 4294967296 - 0.5) * 0.1;
   }
   const times = [];
-  for (let i = 0; i < 4; i++) times.push((await core.hear(noise)).ms);
+  for (let i = 0; i < (calib ? 4 : 1); i++) times.push((await core.hear(noise)).ms); // calib false (check session): one warm-up pass only
   const rest = times.slice(1).sort((a, b) => a - b);
   core = createCore({ run, tokens: parseTokens(tokens), spelling: spelling ? spellingTable(spelling) : null, slow });
   return { type: 'ready', threads: self.crossOriginIsolated ? threads : 1, importMs: t1 - t0, createMs: t2 - t1,
-    warmMs: times[0], calibMs: rest[1], ort: ort.env.versions?.web };
+    warmMs: times[0], calibMs: rest[1] ?? times[0], ort: ort.env.versions?.web };
 }
 
 let chain = Promise.resolve();

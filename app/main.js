@@ -9,6 +9,7 @@ import * as quran from '../core/quran.js';
 import * as alafasy from '../core/alafasy.js';
 import * as indopak from '../core/indopak.js';
 import { Follower, SAMPLE_RATE, applyTuning } from '../core/follower.js';
+import { warmDetect } from '../core/detect.js';
 import { tuningFrom, historyOptsFrom, feedbackOptsFrom, followerOptsFrom, micOptsFrom } from './engine-cfg.js';
 import { createTimer, formatTime } from '../core/timer.js';
 import { createHistory } from '../core/history.js';
@@ -17,7 +18,7 @@ import { createReview } from '../core/review.js';
 import { openStore, idbBackend, memoryBackend } from '../core/store.js';
 import { bn, isoLocal, when } from '../core/bn.js';
 import { ICONS } from './icons.js';
-import { liveHtml, overviewHtml, weakHtml, esc } from './render.js';
+import { liveHtml, liveWord, liveWordSig, liveKey, liveHead, liveTextAttrs, LIVE_DATA, overviewHtml, weakHtml, esc } from './render.js';
 import * as media from './media.js';
 import { createSettings } from '../core/settings.js';
 import { applyView, isViewId, resolveTheme } from './view.js';
@@ -117,10 +118,8 @@ async function changeLanguage() { // the UI is redrawn at once, no reload
   if (S.ready && S.asr) $('footer').textContent = t('a.modelFooter', { backend: S.asr.info.backend, threads: S.asr.info.threads });
   globalThis.HifzIntro?.label(t('intro.preparing'));
 }
-function cycleTheme() { // tap on the header button: paper -> night -> sepia
-  const order = ['paper', 'night', 'sepia'];
-  const cur = resolveTheme(S.settings.get('view.theme'));
-  S.settings.set('view.theme', order[(order.indexOf(cur) + 1) % 3]);
+function cycleTheme() { // tap on the header button: নূর লাইট <-> নূর ডার্ক (C17)
+  S.settings.set('view.theme', resolveTheme(S.settings.get('view.theme')) === 'dark' ? 'light' : 'dark');
 }
 
 // ---------------------------------------------------------------- the follower
@@ -188,7 +187,7 @@ function render(force = false) {
   const v = fol.view();
   v.mistakeList = S.settings.get('recite.mistakeList');
   S.view = v;
-  $('hz-live').innerHTML = liveHtml(v);
+  paintLive(v, force);
   syncUi(v);
   if (v.waiting) return;
   // current line second from the top (the fixed bar covers the lower screen)
@@ -206,6 +205,46 @@ function render(force = false) {
       if (mode !== 'off' && Math.abs(off) > pitch / 2) window.scrollBy({ top: off, behavior: smooth ? 'smooth' : 'auto' });
     }
   }
+}
+
+// The live text: built whole only when its layout changes (another range, an ayah added, a forced render after a
+// setting or language change); otherwise a pass only patches the word spans whose state changed, the head and the
+// text's data attributes. A full rebuild re-shapes all the Arabic text, which is what made the phone stutter.
+function paintLive(v, full) {
+  const box = $('hz-live');
+  const P = S.livePaint;
+  const key = v.waiting ? null : liveKey(v);
+  if (full || v.waiting || !P || P.key !== key || !P.text.isConnected || P.text.parentNode !== box) {
+    const words = v.waiting ? null : v.items.map((it, i) => liveWord(it, i, v));
+    box.innerHTML = liveHtml(v, words);
+    S.livePaint = null;
+    if (v.waiting) return;
+    const text = box.querySelector('.hz-text');
+    const spans = [...text.children].filter((e) => e.tagName === 'SPAN' && !e.classList.contains('hz-end'));
+    if (spans.length !== words.length) return; // unexpected markup: next render builds it whole again
+    S.livePaint = { key, text, spans, sigs: words.map(liveWordSig), head: liveHead(v), attrs: liveTextAttrs(v) };
+    return;
+  }
+  const head = liveHead(v);
+  if (head !== P.head) {
+    while (box.firstChild && box.firstChild !== P.text) box.firstChild.remove();
+    P.text.insertAdjacentHTML('beforebegin', head);
+    P.head = head;
+  }
+  const attrs = liveTextAttrs(v);
+  for (const k in attrs) if (attrs[k] !== P.attrs[k]) P.text.setAttribute(k, attrs[k]);
+  P.attrs = attrs;
+  v.items.forEach((it, i) => {
+    const w = liveWord(it, i, v);
+    const sig = liveWordSig(w);
+    if (sig === P.sigs[i]) return;
+    P.sigs[i] = sig;
+    const el = P.spans[i];
+    el.className = w.cls;
+    if (w.css) el.setAttribute('style', w.css); else el.removeAttribute('style');
+    for (const a of LIVE_DATA) el.removeAttribute(a);
+    for (const [a, x] of w.data) el.setAttribute(a, x);
+  });
 }
 
 function errorTone() {
@@ -764,6 +803,7 @@ async function boot() {
     } });
     $('modelbar').style.width = '100%';
     S.ready = true;
+    warmDetect(() => new Promise((r) => (window.requestIdleCallback ? requestIdleCallback(() => r(), { timeout: 1000 }) : setTimeout(r, 16)))); // C18: surah finding's index, built in idle time, not as a long task at the first detect
     card.hidden = true;
     $('rec').disabled = false;
     globalThis.HifzIntro?.ready();

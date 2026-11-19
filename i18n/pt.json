@@ -7,7 +7,7 @@
   "nav.tab.progress": "Progresso",
   "nav.tab.settings": "Configurações",
   "nav.busy": "A gravação está ativa — pare-a primeiro (■) e depois vá para outra página.",
-  "nav.themeTip": "Mudar cor: Papel / Mushaf noturno / Papel antigo (segure para todas as configurações)",
+  "nav.themeTip": "Mudar cor: Noor claro / Noor escuro (segure para todas as configurações)",
   "s.title": "Configurações",
   "s.search": "Buscar configurações…",
   "s.searchEmpty": "Nenhuma configuração tem esse nome.",
@@ -24,7 +24,7 @@
   "s.importOk": "{n} configurações carregadas.",
   "s.importSkip": "{n} configurações carregadas, {m} desconhecidas ou fora do intervalo — ignoradas.",
   "s.importBad": "Não foi possível ler o arquivo: {err}",
-  "s.importWrong": "Este não é um arquivo de configurações do Hifz Helper.",
+  "s.importWrong": "Este não é um arquivo de configurações do Hifzun Noor.",
   "s.where": "As configurações ficam neste celular. Para levá-las a outro celular ou computador, use “Salvar configurações em um arquivo”.",
   "s.whenNext": "Vale a partir da próxima sessão",
   "s.whenReload": "Vale quando o app for aberto de novo",
@@ -464,7 +464,7 @@
   "bd.r.cleared50": "Limpe 50 marcas de fraqueza lendo certo de memória",
   "bd.n.goal1": "Meta alcançada",
   "bd.r.goal1": "Alcance a meta de um dia pela primeira vez",
-  "app.title": "Hifz Helper",
+  "app.title": "Hifzun Noor",
   "c.ok": "OK",
   "c.no": "Não",
   "fmt.ayah1": "Versículo {a}",
@@ -1110,9 +1110,8 @@
    "sub": "Cores",
    "options": {
     "auto": "Automático",
-    "paper": "Papel",
-    "night": "Mushaf noturno",
-    "sepia": "Papel antigo"
+    "light": "Noor claro",
+    "dark": "Noor escuro"
    }
   },
   "view.wordSet": {

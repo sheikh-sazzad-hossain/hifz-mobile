@@ -11,9 +11,33 @@ const CROSS = [
 ];
 const sameValue = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
+// C17 (হিফজুন নূর): the Rehal page colours paper / sepia / night became নূর লাইট (light) and নূর ডার্ক (dark).
+// An old saved or imported value is moved to the new one, so nobody lands on a theme that is gone.
+export const THEMES = ['light', 'dark'];
+const THEME_ALIAS = { paper: 'light', sepia: 'light', night: 'dark' };
+export const migrateTheme = (v) => THEME_ALIAS[v] ?? v;
+export function migrateColors(m) { // view.customColors { paper|sepia|night|light|dark: {...} } -> { light, dark }
+  if (!m || typeof m !== 'object') return m;
+  const out = {};
+  for (const k of ['sepia', 'paper', 'night', 'light', 'dark']) { // later keys win: paper over sepia, a new key over an old one
+    if (!m[k] || typeof m[k] !== 'object') continue;
+    const to = migrateTheme(k);
+    out[to] = { ...(out[to] ?? {}), ...m[k] };
+  }
+  for (const k of Object.keys(m)) if (!(k in THEME_ALIAS) && !THEMES.includes(k)) out[k] = m[k]; // unknown keys stay, so validation can refuse them
+  return out;
+}
+export function migrateValues(v) { // only the values that changed shape; everything else is passed through
+  if (!v || typeof v !== 'object') return v;
+  const out = { ...v };
+  if ('view.theme' in out) out['view.theme'] = migrateTheme(out['view.theme']);
+  if ('view.customColors' in out) out['view.customColors'] = migrateColors(out['view.customColors']);
+  return out;
+}
+
 export function migrate(raw) {
-  const out = { ...(raw ?? {}) };
-  if ('theme' in out) { out['view.theme'] = out.theme === 'dark' ? 'night' : out.theme === 'light' ? 'paper' : undefined; delete out.theme; }
+  const out = migrateValues({ ...(raw ?? {}) });
+  if ('theme' in out) { out['view.theme'] = out.theme === 'dark' ? 'dark' : out.theme === 'light' ? 'light' : undefined; delete out.theme; }
   if ('waitS' in out) { out['recite.waitS'] = out.waitS; delete out.waitS; }
   if ('look' in out) { out['recite.look'] = out.look; delete out.look; }
   if ('wait_s' in out) { out['recite.waitS'] = out.wait_s; delete out.wait_s; }
@@ -40,7 +64,7 @@ export function createSettings({ store, schema, platform = 'M' }) {
       if (!v || typeof v !== 'object') return undefined;
       const out = {};
       for (const [theme, m] of Object.entries(v)) {
-        if (!['paper', 'night', 'sepia'].includes(theme) || !m || typeof m !== 'object') return undefined;
+        if (!THEMES.includes(theme) || !m || typeof m !== 'object') return undefined;
         out[theme] = {};
         for (const [k, c] of Object.entries(m)) { if (!/^#[0-9a-fA-F]{6}$/.test(c)) return undefined; out[theme][k] = c.toUpperCase(); }
       }
@@ -77,6 +101,7 @@ export function createSettings({ store, schema, platform = 'M' }) {
   function put(id, v, strict = false) { // no persist / notify
     const d = def(id);
     if (!d) return { ok: false, reason: 'unknown' };
+    if (id === 'view.theme' || id === 'view.customColors') v = migrateValues({ [id]: v })[id]; // an old theme name still works
     const c = clean(d, v, strict);
     if (c === undefined) return { ok: false, reason: 'invalid' };
     if (!crossOk(id, c)) return { ok: false, reason: 'cross' };
@@ -144,7 +169,7 @@ export function createSettings({ store, schema, platform = 'M' }) {
       if (!obj || obj.app !== 'hifz-settings' || typeof obj.values !== 'object') return { ok: false, wrong: true, applied: 0, skipped: 0 };
       let applied = 0;
       let skipped = 0;
-      for (const [id, v] of Object.entries(obj.values)) { if (api.setMany({ [id]: v }, true).applied.length) applied++; else skipped++; }
+      for (const [id, v] of Object.entries(migrateValues(obj.values))) { if (api.setMany({ [id]: v }, true).applied.length) applied++; else skipped++; }
       return { ok: true, applied, skipped };
     },
     migrate,

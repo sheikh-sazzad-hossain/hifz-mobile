@@ -121,6 +121,19 @@ export function vocabulary() {
   return vocab;
 }
 
+// The same set, built ahead in small steps (C18: the page calls this in idle time, so the first live pass does not
+// build it as one long task). One `await wait()` per 8 surahs.
+export async function warmVocabulary(wait) {
+  if (vocab) return;
+  const v = new Set();
+  const all = surahs();
+  for (let i = 0; i < all.length; i++) {
+    if (i % 8 === 0) { await wait(); if (vocab || data !== all) return; }
+    for (const t of all[i].a) for (const w of words(t)) v.add(normalize(w));
+  }
+  vocab ??= v;
+}
+
 export function surahInfo(surah) {
   const s = surahs()[surah - 1];
   return { number: surah, name: s.name, english: s.en, ayahs: s.a.length };

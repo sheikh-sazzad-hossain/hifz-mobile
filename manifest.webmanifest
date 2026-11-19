@@ -1,13 +1,13 @@
 {
-  "name": "হিফজ সহায়ক",
-  "short_name": "হিফজ",
+  "name": "হিফজুন নূর",
+  "short_name": "হিফজুন নূর",
   "description": "মুখস্থ তিলাওয়াত শুনে ভুল ধরে — ফোনেই চলে, কোনো সার্ভার ছাড়া।",
   "lang": "bn",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#F6F1E6",
-  "theme_color": "#0d9488",
+  "background_color": "#F5F7FB",
+  "theme_color": "#13295B",
   "icons": [
     {
       "src": "app/icon-192.png",

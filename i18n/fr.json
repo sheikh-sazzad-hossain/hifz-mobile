@@ -7,7 +7,7 @@
   "nav.tab.progress": "Progrès",
   "nav.tab.settings": "Réglages",
   "nav.busy": "L’enregistrement est en cours — arrêtez-le d’abord (■), puis changez de page.",
-  "nav.themeTip": "Changer la couleur : Papier / Mushaf de nuit / Vieux papier (appui long : tous les réglages)",
+  "nav.themeTip": "Changer la couleur : Noor clair / Noor sombre (appui long : tous les réglages)",
   "s.title": "Réglages",
   "s.search": "Rechercher un réglage…",
   "s.searchEmpty": "Aucun réglage ne porte ce nom.",
@@ -24,7 +24,7 @@
   "s.importOk": "{n} réglages chargés.",
   "s.importSkip": "{n} réglages chargés, {m} inconnus ou hors limites — ignorés.",
   "s.importBad": "Le fichier n’a pas pu être lu : {err}",
-  "s.importWrong": "Ce n’est pas un fichier de réglages de Hifz Helper.",
+  "s.importWrong": "Ce n’est pas un fichier de réglages de Hifzun Noor.",
   "s.where": "Les réglages restent sur ce téléphone. Pour les transférer vers un autre téléphone ou ordinateur, utilisez « Enregistrer les réglages dans un fichier ».",
   "s.whenNext": "Pris en compte dès la prochaine séance",
   "s.whenReload": "Pris en compte à la réouverture de l’app",
@@ -464,7 +464,7 @@
   "bd.r.cleared50": "Effacez 50 marques de faiblesse en lisant correctement de mémoire",
   "bd.n.goal1": "Objectif atteint",
   "bd.r.goal1": "Atteignez l’objectif d’un jour pour la première fois",
-  "app.title": "Hifz Helper",
+  "app.title": "Hifzun Noor",
   "c.ok": "OK",
   "c.no": "Non",
   "fmt.ayah1": "Verset {a}",
@@ -1110,9 +1110,8 @@
    "sub": "Couleurs",
    "options": {
     "auto": "Automatique",
-    "paper": "Papier",
-    "night": "Mushaf de nuit",
-    "sepia": "Vieux papier"
+    "light": "Noor clair",
+    "dark": "Noor sombre"
    }
   },
   "view.wordSet": {

@@ -7,7 +7,7 @@
   "nav.tab.progress": "进度",
   "nav.tab.settings": "设置",
   "nav.busy": "正在录音——请先停止（■），再切换页面。",
-  "nav.themeTip": "更换颜色：纸张 / 夜间古兰经 / 旧纸（长按进入全部设置）",
+  "nav.themeTip": "更换颜色：Noor 浅色 / Noor 深色（长按进入全部设置）",
   "s.title": "设置",
   "s.search": "搜索设置…",
   "s.searchEmpty": "没有这个名称的设置。",
@@ -24,7 +24,7 @@
   "s.importOk": "已加载 {n} 项设置。",
   "s.importSkip": "已加载 {n} 项设置，{m} 项未知或超出范围，已跳过。",
   "s.importBad": "无法读取该文件：{err}",
-  "s.importWrong": "这不是 Hifz Helper 的设置文件。",
+  "s.importWrong": "这不是 হিফজুন নূর 的设置文件。",
   "s.where": "设置保存在这部手机上。若要转移到另一部手机或电脑，请使用“将设置保存到文件”。",
   "s.whenNext": "从下一次练习起生效",
   "s.whenReload": "重新打开应用后生效",
@@ -464,7 +464,7 @@
   "bd.r.cleared50": "凭记忆读对，清除 50 个薄弱标记",
   "bd.n.goal1": "目标达成",
   "bd.r.goal1": "第一次完成某一天的目标",
-  "app.title": "Hifz Helper",
+  "app.title": "হিফজুন নূর",
   "c.ok": "确定",
   "c.no": "否",
   "fmt.ayah1": "第 {a} 节",
@@ -1110,9 +1110,8 @@
    "sub": "颜色",
    "options": {
     "auto": "自动",
-    "paper": "纸张",
-    "night": "夜间古兰经",
-    "sepia": "旧纸"
+    "light": "Noor 浅色",
+    "dark": "Noor 深色"
    }
   },
   "view.wordSet": {

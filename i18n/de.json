@@ -7,7 +7,7 @@
   "nav.tab.progress": "Fortschritt",
   "nav.tab.settings": "Einstellungen",
   "nav.busy": "Die Aufnahme läuft — erst beenden (■), dann die Seite wechseln.",
-  "nav.themeTip": "Farbe ändern: Papier / Nacht-Mushaf / Altpapier (gedrückt halten für alle Einstellungen)",
+  "nav.themeTip": "Farbe ändern: Noor hell / Noor dunkel (gedrückt halten für alle Einstellungen)",
   "s.title": "Einstellungen",
   "s.search": "Einstellungen suchen…",
   "s.searchEmpty": "Keine Einstellung hat diesen Namen.",
@@ -24,7 +24,7 @@
   "s.importOk": "{n} Einstellungen geladen.",
   "s.importSkip": "{n} Einstellungen geladen, {m} unbekannt oder außerhalb des Bereichs — übersprungen.",
   "s.importBad": "Die Datei konnte nicht gelesen werden: {err}",
-  "s.importWrong": "Das ist keine Einstellungsdatei von Hifz Helper.",
+  "s.importWrong": "Das ist keine Einstellungsdatei von Hifzun Noor.",
   "s.where": "Die Einstellungen bleiben auf diesem Handy. Zum Übertragen auf ein anderes Handy oder einen Computer nutze „Einstellungen in eine Datei speichern“.",
   "s.whenNext": "Gilt ab der nächsten Sitzung",
   "s.whenReload": "Gilt nach dem erneuten Öffnen der App",
@@ -464,7 +464,7 @@
   "bd.r.cleared50": "Lösche 50 Schwäche-Markierungen durch richtiges Lesen aus dem Gedächtnis",
   "bd.n.goal1": "Ziel erreicht",
   "bd.r.goal1": "Erreiche das Tagesziel zum ersten Mal",
-  "app.title": "Hifz Helper",
+  "app.title": "Hifzun Noor",
   "c.ok": "OK",
   "c.no": "Nein",
   "fmt.ayah1": "Vers {a}",
@@ -1110,9 +1110,8 @@
    "sub": "Farben",
    "options": {
     "auto": "Automatisch",
-    "paper": "Papier",
-    "night": "Nacht-Mushaf",
-    "sepia": "Altpapier"
+    "light": "Noor hell",
+    "dark": "Noor dunkel"
    }
   },
   "view.wordSet": {

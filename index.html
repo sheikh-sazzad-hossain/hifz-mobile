@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="bn" data-theme="paper">
+<html lang="bn" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#F6F1E6">
-<title>হিফজ সহায়ক</title>
+<meta name="theme-color" content="#F5F7FB">
+<title>হিফজুন নূর</title>
 <script>
 /* before first paint: theme and the look settings from the localStorage mirror, so a dark phone never flashes light */
 (function () {
@@ -12,13 +12,14 @@
   try {
     var v = JSON.parse(localStorage.getItem('hifz-view') || '{}');
     var t = v['view.theme'] || 'auto';
-    if (t === 'auto') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'paper';
+    t = { paper: 'light', sepia: 'light', night: 'dark' }[t] || t; /* C17: the old Rehal names */
+    if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     var m = v['view.motion'] || 'auto';
     if (m === 'auto') m = matchMedia('(prefers-reduced-motion: reduce)').matches ? 'gentle' : 'full';
     var L = v['view.lang'] || 'bn'; h.lang = L; h.dir = (L === 'ar' || L === 'ur' || L === 'fa') ? 'rtl' : 'ltr'; h.dataset.lang = L;
     h.dataset.theme = t; h.dataset.words = v['view.wordSet'] || 'default'; h.dataset.wordstyle = v['view.wordStyle'] || 'text'; h.dataset.motion = m;
     h.dataset.uifont = v['view.uiFont'] || 'app'; h.dataset.hidestyle = v['hide.style'] || 'bar';
-    if (t === 'night') h.classList.add('dark');
+    if (t === 'dark') h.classList.add('dark');
     if (v['view.arabicScale']) h.style.setProperty('--ar-scale', v['view.arabicScale'] / 100);
     if (v['view.lineGap']) h.style.setProperty('--lh-scale', v['view.lineGap'] / 100);
     if (v['view.uiScale']) h.style.setProperty('--ui-scale', v['view.uiScale'] / 100);
@@ -31,16 +32,17 @@
 <link rel="icon" type="image/png" href="app/icon-192.png">
 <link rel="apple-touch-icon" href="app/apple-touch-icon.png">
 <link rel="preload" href="fonts/hind-siliguri-400-bn.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/hind-siliguri-600-bn.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="app/style.css">
 </head>
 <body data-tab="recite">
 <div id="app">
   <header class="hz-head-bar">
     <div class="hz-logo" id="hero-ico"></div>
-    <div><div class="hz-title" data-t="app.title">হিফজ সহায়ক</div>
+    <div><div class="hz-title" data-t="app.title">হিফজুন নূর</div>
     <div class="hz-sub" data-t="a.sub">মুখস্থ তিলাওয়াত শুনে সাথে সাথে ভুল ধরিয়ে দেয় · কোথায় বারবার আটকাও তা মনে রাখে</div></div>
     <div class="hz-hero-tools">
-      <button class="hz-mini" id="theme-btn" aria-label="রং বদলাও" data-tip="রং বদলাও: কাগজ / রাতের মুসহাফ / পুরোনো কাগজ (চেপে ধরলে সব সেটিং)" data-t-aria="a.themeAria" data-t-tip="nav.themeTip"></button>
+      <button class="hz-mini" id="theme-btn" aria-label="রং বদলাও" data-tip="রং বদলাও: নূর লাইট / নূর ডার্ক (চেপে ধরলে সব সেটিং)" data-t-aria="a.themeAria" data-t-tip="nav.themeTip"></button>
       <button class="hz-mini" id="gear-btn" aria-label="সেটিংস" data-tip="সেটিংস" data-t-aria="nav.tab.settings" data-t-tip="nav.tab.settings"></button>
     </div>
   </header>

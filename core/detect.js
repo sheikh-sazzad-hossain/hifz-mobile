@@ -16,18 +16,22 @@ function features(norm) {
 let index = null;
 const keyOf = (s, n) => s * 1000 + n;
 
-function buildIndex() {
+// The index is built in steps (a generator), so the page can build it ahead in idle time (warmDetect) without one
+// long task; detect() runs the same steps at once if it is needed before that. Same steps, same index.
+function* indexSteps() {
   const ayahFeats = new Map();
   const df = new Map();
+  let k = 0;
   for (let s = 1; s <= 114; s++) {
     for (const [n, w] of quran.ayahs(s)) {
       const f = features(w.map(quran.normalize));
       ayahFeats.set(keyOf(s, n), f);
       for (const x of f) df.set(x, (df.get(x) ?? 0) + 1);
+      if (++k % 100 === 0) yield; // about 20 ms on a 6x slower phone
     }
   }
   const idf = new Map();
-  for (const [x, d] of df) idf.set(x, Math.log(ayahFeats.size / d));
+  for (const [x, d] of df) { idf.set(x, Math.log(ayahFeats.size / d)); if (++k % 20000 === 0) yield; }
   const inverted = new Map();
   const totals = new Map();
   for (const [key, f] of ayahFeats) {
@@ -38,8 +42,31 @@ function buildIndex() {
       t += idf.get(x);
     }
     totals.set(key, t);
+    if (++k % 400 === 0) yield;
   }
   return { inverted, idf, totals };
+}
+
+function buildIndex() {
+  const steps = indexSteps();
+  for (;;) { const r = steps.next(); if (r.done) return r.value; }
+}
+
+// Build the index ahead, one step per `wait()` (the page passes an idle callback). Safe to call more than once.
+let warming = null;
+export function warmDetect(wait = () => new Promise((r) => setTimeout(r, 0))) {
+  if (index) return Promise.resolve();
+  warming ??= (async () => {
+    const steps = indexSteps();
+    for (;;) {
+      await wait();
+      if (index) break; // detect() needed it first and built it at once
+      const r = steps.next();
+      if (r.done) { index = r.value; break; }
+    }
+    await quran.warmVocabulary(wait); // the word list similar() needs at the first live pass
+  })();
+  return warming;
 }
 
 // Drop a leading ta'awwudh/basmala if most of its words were heard. A phrase still being recited counts too.
@@ -161,3 +188,5 @@ export function detect(heardText) {
   return { surah, first, last, confidence: round2(confidence), words: hyp.length,
     margin: runnerUp ? round2(top / runnerUp) : Infinity };
 }
+
+export const __index = { build: buildIndex, current: () => index }; // tests: the warmed index equals a fresh build

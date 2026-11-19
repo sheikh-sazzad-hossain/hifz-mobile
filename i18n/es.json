@@ -7,7 +7,7 @@
   "nav.tab.progress": "Progreso",
   "nav.tab.settings": "Ajustes",
   "nav.busy": "La grabación está activa — deténla primero (■) y luego cambia de página.",
-  "nav.themeTip": "Cambiar color: Papel / Mushaf nocturno / Papel antiguo (mantén pulsado para todos los ajustes)",
+  "nav.themeTip": "Cambiar color: Noor claro / Noor oscuro (mantén pulsado para todos los ajustes)",
   "s.title": "Ajustes",
   "s.search": "Buscar ajustes…",
   "s.searchEmpty": "Ningún ajuste tiene ese nombre.",
@@ -24,7 +24,7 @@
   "s.importOk": "{n} ajustes cargados.",
   "s.importSkip": "{n} ajustes cargados, {m} eran desconocidos o fuera de rango — omitidos.",
   "s.importBad": "No se pudo leer el archivo: {err}",
-  "s.importWrong": "Este no es un archivo de ajustes de Hifz Helper.",
+  "s.importWrong": "Este no es un archivo de ajustes de Hifzun Noor.",
   "s.where": "Los ajustes se quedan en este teléfono. Para pasarlos a otro teléfono u ordenador usa «Guardar los ajustes en un archivo».",
   "s.whenNext": "Se aplica desde la próxima sesión",
   "s.whenReload": "Se aplica al volver a abrir la app",
@@ -464,7 +464,7 @@
   "bd.r.cleared50": "Borra 50 marcas de debilidad leyendo bien de memoria",
   "bd.n.goal1": "Meta cumplida",
   "bd.r.goal1": "Cumple la meta de un día por primera vez",
-  "app.title": "Hifz Helper",
+  "app.title": "Hifzun Noor",
   "c.ok": "Aceptar",
   "c.no": "No",
   "fmt.ayah1": "Aleya {a}",
@@ -1110,9 +1110,8 @@
    "sub": "Colores",
    "options": {
     "auto": "Automático",
-    "paper": "Papel",
-    "night": "Mushaf nocturno",
-    "sepia": "Papel antiguo"
+    "light": "Noor claro",
+    "dark": "Noor oscuro"
    }
   },
   "view.wordSet": {

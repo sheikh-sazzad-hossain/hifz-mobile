@@ -7,7 +7,7 @@
   "nav.tab.progress": "İlerleme",
   "nav.tab.settings": "Ayarlar",
   "nav.busy": "Kayıt açık — önce durdurun (■), sonra başka sayfaya geçin.",
-  "nav.themeTip": "Rengi değiştir: Kâğıt / Gece mushafı / Eski kâğıt (tüm ayarlar için basılı tutun)",
+  "nav.themeTip": "Rengi değiştir: Noor açık / Noor koyu (tüm ayarlar için basılı tutun)",
   "s.title": "Ayarlar",
   "s.search": "Ayarlarda ara…",
   "s.searchEmpty": "Bu isimde bir ayar yok.",
@@ -24,7 +24,7 @@
   "s.importOk": "{n} ayar yüklendi.",
   "s.importSkip": "{n} ayar yüklendi, {m} tanınmıyor veya aralık dışı — atlandı.",
   "s.importBad": "Dosya okunamadı: {err}",
-  "s.importWrong": "Bu bir Hıfz Yardımcısı ayar dosyası değil.",
+  "s.importWrong": "Bu bir Hifzun Noor ayar dosyası değil.",
   "s.where": "Ayarlar bu telefonda kalır. Başka bir telefona veya bilgisayara taşımak için ‘Ayarları dosyaya kaydet’i kullanın.",
   "s.whenNext": "Bir sonraki oturumdan itibaren geçerli olur",
   "s.whenReload": "Uygulama yeniden açıldığında geçerli olur",
@@ -464,7 +464,7 @@
   "bd.r.cleared50": "Ezberden doğru okuyarak 50 zayıflık işaretini kaldırın",
   "bd.n.goal1": "Hedefe ulaşıldı",
   "bd.r.goal1": "Bir günün hedefine ilk kez ulaşın",
-  "app.title": "Hıfz Yardımcısı",
+  "app.title": "Hifzun Noor",
   "c.ok": "Tamam",
   "c.no": "Hayır",
   "fmt.ayah1": "Ayet {a}",
@@ -1110,9 +1110,8 @@
    "sub": "Renkler",
    "options": {
     "auto": "Otomatik",
-    "paper": "Kâğıt",
-    "night": "Gece mushafı",
-    "sepia": "Eski kâğıt"
+    "light": "Noor açık",
+    "dark": "Noor koyu"
    }
   },
   "view.wordSet": {

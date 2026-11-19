@@ -2,17 +2,20 @@
 // script in index.html reads the same mirror (localStorage 'hifz-view') so there is no flash of the wrong theme.
 import { setDigits } from '../core/bn.js';
 import { mix } from '../core/contrast.js';
+import { migrateTheme } from '../core/settings.js';
 
 const MIRROR = 'hifz-view';
-const BG = { paper: '#F6F1E6', night: '#11151B', sepia: '#EADFC6' };
-const SURFACE = { paper: '#FFFCF5', night: '#181D25', sepia: '#F4EAD3' };
+// C17 হিফজুন নূর: নূর লাইট (light) and নূর ডার্ক (dark); the old paper / sepia / night names are mapped by migrateTheme
+export const BG = { light: '#F5F7FB', dark: '#0B1426' };
+const SURFACE = { light: '#FFFFFF', dark: '#14213D' };
 const VIEW_IDS = ['view.theme', 'view.wordSet', 'view.wordStyle', 'view.customColors', 'view.arabicScale', 'view.lineGap', 'view.wordGap', 'view.uiScale', 'view.uiFont',
   'view.motion', 'view.intro', 'view.lang', 'view.timer', 'view.headStats', 'view.bnDigits', 'hide.style', 'hide.weakTint', 'hide.nextWord', 'hide.head', 'hide.ayahMarks', 'view.legend'];
 export const COLOR_KEYS = ['ok', 'bad', 'peek', 'pend', 'next', 'weak', 'listen'];
 
 export function resolveTheme(v) {
-  if (v === 'auto') return matchMedia('(prefers-color-scheme: dark)').matches ? 'night' : 'paper';
-  return v;
+  if (v === 'auto' || !v) return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  v = migrateTheme(v);
+  return v in BG ? v : 'light';
 }
 export function resolveMotion(v) {
   if (v === 'auto') return matchMedia('(prefers-reduced-motion: reduce)').matches ? 'gentle' : 'full';
@@ -52,7 +55,7 @@ export function applyView(get) {
   set('hideMarks', get('hide.ayahMarks') ? 1 : 0);
   set('headstats', get('view.headStats') ? 1 : 0);
   set('timer', get('view.timer') ? 1 : 0);
-  h.classList.toggle('dark', theme === 'night');
+  h.classList.toggle('dark', theme === 'dark');
   const st = h.style;
   st.setProperty('--ar-scale', get('view.arabicScale') / 100);
   st.setProperty('--lh-scale', get('view.lineGap') / 100);

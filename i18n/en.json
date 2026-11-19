@@ -7,7 +7,7 @@
   "nav.tab.progress": "Progress",
   "nav.tab.settings": "Settings",
   "nav.busy": "Recording is on — stop it first (■), then go to another page.",
-  "nav.themeTip": "Change colour: Paper / Night mushaf / Old paper (hold for all settings)",
+  "nav.themeTip": "Change colour: Noor Light / Noor Dark (hold for all settings)",
   "s.title": "Settings",
   "s.search": "Search settings…",
   "s.searchEmpty": "No setting has this name.",
@@ -24,7 +24,7 @@
   "s.importOk": "{n} settings loaded.",
   "s.importSkip": "{n} settings loaded, {m} were unknown or out of range — skipped.",
   "s.importBad": "The file could not be read: {err}",
-  "s.importWrong": "This is not a Hifz Helper settings file.",
+  "s.importWrong": "This is not a Hifzun Noor settings file.",
   "s.where": "Settings stay on this phone. To move them to another phone or computer use ‘Save settings to a file’.",
   "s.whenNext": "Takes effect from the next session",
   "s.whenReload": "Takes effect when the app is reopened",
@@ -464,7 +464,7 @@
   "bd.r.cleared50": "Clear 50 weak marks by reading correctly from memory",
   "bd.n.goal1": "Goal reached",
   "bd.r.goal1": "Reach the goal of a day for the first time",
-  "app.title": "Hifz Helper",
+  "app.title": "Hifzun Noor",
   "c.ok": "OK",
   "c.no": "No",
   "fmt.ayah1": "Ayah {a}",
@@ -1110,9 +1110,8 @@
    "sub": "Colours",
    "options": {
     "auto": "Automatic",
-    "paper": "Paper",
-    "night": "Night mushaf",
-    "sepia": "Old paper"
+    "light": "Noor Light",
+    "dark": "Noor Dark"
    }
   },
   "view.wordSet": {
