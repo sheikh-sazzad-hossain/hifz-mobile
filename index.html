@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#F5F7FB">
+<meta name="theme-color" content="#F6F9F5">
 <title>হিফজুন নূর</title>
 <script>
 /* before first paint: theme and the look settings from the localStorage mirror, so a dark phone never flashes light */
@@ -35,12 +35,12 @@
 <link rel="preload" href="fonts/hind-siliguri-600-bn.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="app/style.css">
 </head>
-<body data-tab="recite">
+<body data-tab="home">
 <div id="app">
   <header class="hz-head-bar">
     <div class="hz-logo" id="hero-ico"></div>
-    <div><div class="hz-title" data-t="app.title">হিফজুন নূর</div>
-    <div class="hz-sub" data-t="a.sub">মুখস্থ তিলাওয়াত শুনে সাথে সাথে ভুল ধরিয়ে দেয় · কোথায় বারবার আটকাও তা মনে রাখে</div></div>
+    <div class="hz-brand"><div class="hz-title" data-t="app.title">হিফজুন নূর</div>
+    <div class="hz-latin" lang="en" dir="ltr">Hifzun Noor</div></div>
     <div class="hz-hero-tools">
       <button class="hz-mini" id="theme-btn" aria-label="রং বদলাও" data-tip="রং বদলাও: নূর লাইট / নূর ডার্ক (চেপে ধরলে সব সেটিং)" data-t-aria="a.themeAria" data-t-tip="nav.themeTip"></button>
       <button class="hz-mini" id="gear-btn" aria-label="সেটিংস" data-tip="সেটিংস" data-t-aria="nav.tab.settings" data-t-tip="nav.tab.settings"></button>
@@ -48,7 +48,13 @@
   </header>
   <nav class="tabs" role="tablist" id="tabs"><i class="tab-ribbon" id="ribbon"></i></nav>
 
-  <section class="panel" id="panel-recite" role="tabpanel">
+  <section class="panel" id="panel-home" role="tabpanel">
+    <div class="hm-greet"><h1 id="hm-hello" data-t="hm.helloNo">আসসালামু আলাইকুম</h1><div class="hm-date" id="hm-date"></div></div>
+    <div id="hm-body" aria-busy="true"><div class="card hm-skel"><i class="sk sk-c"></i><div><i class="sk"></i><i class="sk"></i><i class="sk sk-s"></i></div></div>
+      <div class="card hm-ayah hm-skel-ayah" id="hm-ayah"><div class="hm-label" data-t="hm.ayahTitle">আজকের আয়াত</div><i class="sk sk-dot"></i><i class="sk"></i><i class="sk"></i><i class="sk sk-s"></i></div></div>
+  </section>
+
+  <section class="panel" id="panel-recite" role="tabpanel" hidden>
     <div class="hz-modelcard" id="modelcard"><div id="modeltext" data-t="a.modelBuilding">মডেল তৈরি হচ্ছে…</div><div class="hz-progressbar"><i id="modelbar"></i></div></div>
     <div id="hz-settings">
       <label><span data-t="a.lblSurah">সূরা</span><select id="s-surah"></select></label>

@@ -41,7 +41,7 @@ export function createTestUi(ctx) {
     const nothing = !m.ranges.length && !ranges.length;
     el.innerHTML = `<div class="tq-setup"><h2 class="hp-h">${esc(t('t.setupTitle'))}</h2>
       ${p ? `<div class="hz-banner hz-paused">${esc(t('t.resumeQ', { i: bn(p.cards.length), n: bn(p.settings.endBy === 'count' ? p.settings.questions : p.cards.length) }))}<div class="btn-row"><button class="btn btn-primary" data-ta="resume">${esc(t('t.resume'))}</button><button class="btn" data-ta="results">${esc(t('t.seeResults'))}</button><button class="btn btn-red" data-ta="discard">${esc(t('t.discard'))}</button></div></div>` : ''}
-      ${nothing ? `<div class="card"><b>${esc(t('t.starterTitle'))}</b><p class="hp-note">${esc(t('t.starterBody', { a: t('t.starterRange', { n: bn(99), english: 'Az-Zalzala' }), b: t('t.starterRange', { n: bn(114), english: 'An-Naas' }) }))}</p><div class="btn-row"><button class="btn btn-primary" data-ta="starter">${esc(t('t.start'))}</button><button class="btn" data-ta="markmem">${esc(t('t.markMemorized'))}</button></div></div>` : ''}
+      ${nothing ? `<div class="card"><b>${esc(t('t.starterTitle'))}</b><p class="hp-note">${esc(t('t.starterBody', { a: t('t.starterRange', { n: bn(99), english: quran.surahLabel(99) }), b: t('t.starterRange', { n: bn(114), english: quran.surahLabel(114) }) }))}</p><div class="btn-row"><button class="btn btn-primary" data-ta="starter">${esc(t('t.start'))}</button><button class="btn" data-ta="markmem">${esc(t('t.markMemorized'))}</button></div></div>` : ''}
       ${sg.length ? `<h3 class="hp-h">${esc(t('t.suggested'))}</h3><div class="tq-sg">${sg.map((x, i) => `<button class="tq-sgcard" data-ta="sg" data-i="${i}"><b>${esc(t(`t.sg.${x.id}.name`))}</b><small>${esc(t(`t.sg.${x.id}.sub`))}</small><span class="st-badge">${esc(t('t.ayahBadge', { n: bn(countAyahs(x.runs)) }))}</span></button>`).join('')}</div>` : ''}
       <h3 class="hp-h">${esc(t('t.myRanges'))}</h3><div class="chips">
         <button class="chip" ${m.ranges.length ? '' : 'disabled'} aria-pressed="${sel.spec?.parts?.[0]?.k === 'memorized'}" data-ta="mem" ${m.ranges.length ? '' : `data-tip="${esc(t('t.noMemorized'))}"`}>${esc(t('t.myMemorized'))}</button>
@@ -286,7 +286,7 @@ export function createTestUi(ctx) {
     const text = cardWords(c).map((w) => `<span class="${cls[w.status]}">${esc(w.text)}</span>${w.end ? ` <span class="hz-end">${esc(ctx.endMark(c.s, w.a))}</span> ` : ' '}`).join('');
     const ml = (c.mistakes ?? []).map((m) => `<div class="ml-row"><div class="hz-ar ml-w"><b>${esc(m.word)}</b></div><div class="ml-m">${esc(t('r.ayahRef', { a: bn(m.a) }))} · ${esc(t(`r.kind.${m.kind}`))}${m.removed ? ' · ✓' : ''}</div></div>`).join('');
     const sp = span(c.a1, c.a2);
-    const sh = sheet(`<div class="tq-card ${c.result ?? ''}" style="margin:0 0 12px"><div class="tq-head"><span class="tq-ref">${esc(t('t.ref', { n: bn(c.s), english: quran.surahInfo(c.s).english, span: sp }))}</span></div><div class="hz-text">${text}</div></div>${ml}<div class="btn-row"><button class="btn btn-primary" data-ok>${esc(t('t.done'))}</button></div>`, { cls: 'tq-res' });
+    const sh = sheet(`<div class="tq-card ${c.result ?? ''}" style="margin:0 0 12px"><div class="tq-head"><span class="tq-ref">${esc(t('t.ref', { n: bn(c.s), english: quran.surahLabel(c.s), span: sp }))}</span></div><div class="hz-text">${text}</div></div>${ml}<div class="btn-row"><button class="btn btn-primary" data-ok>${esc(t('t.done'))}</button></div>`, { cls: 'tq-res' });
     sh.el.querySelector('[data-ok]').addEventListener('click', () => sh.close());
   }
   async function reopen() { toast(t('t.continue')); T.phase = 'card'; T.gate = false; ctx.setLive(true); T.mic = await ctx.openMicSource((x) => { if (!T.gate && T.cur && !T.paused) T.cur.fol.addAudio(x); }, () => {}); timer.resume(); nextCard(); tick = setInterval(onTick, 150); }
@@ -336,7 +336,7 @@ export function createTestUi(ctx) {
       const v = sh.fol.view();
       const st = sh.card.result && sh.status !== 'listening' ? sh.card.result : '';
       const first = sh.fol.words[0];
-      const ref = T.showRef ? t('t.ref', { n: bn(first.surah), english: quran.surahInfo(first.surah).english, span: span(sh.card.a1, sh.card.a2) }) : t('t.refHidden');
+      const ref = T.showRef ? t('t.ref', { n: bn(first.surah), english: quran.surahLabel(first.surah), span: span(sh.card.a1, sh.card.a2) }) : t('t.refHidden');
       const stamp = st === 'pass' ? '<span class="stamp ok">✓</span>' : st === 'fail' ? '<span class="stamp bad">✗</span>' : '';
       const status = sh.status === 'checking' ? t('t.checking') : sh.status === 'skipped' ? t('t.skipped') : st === 'pass' ? t('t.pass') : st === 'fail' ? t('t.failN', { m: bn(cardMistakes(sh.card)) }) : T.opts.endBy === 'time' && over() ? t('t.timeUp') : t('t.listening');
       body = `<div class="tq-card ${st} ${sh.status === 'listening' ? 'listening' : ''}">${stamp}<div class="tq-head"><span class="tq-ref">${esc(ref)}</span></div><div class="hz-text" data-live="${T.paused ? 0 : 1}">${cardSpans(v)}</div>

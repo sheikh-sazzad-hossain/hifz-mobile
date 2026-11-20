@@ -1,7 +1,7 @@
 {
  "strings": {
   "intro.preparing": "Preparando…",
-  "nav.tab.recite": "Recitar",
+  "nav.tab.recite": "Memorizar",
   "nav.tab.test": "Prueba",
   "nav.tab.listen": "Escuchar",
   "nav.tab.progress": "Progreso",
@@ -529,7 +529,43 @@
   "a.timerAria": "Tiempo de recitación",
   "a.pauseAria": "Pausa",
   "a.lookAria": "Lectura / de memoria",
-  "a.hintAria": "Pista"
+  "a.hintAria": "Pista",
+  "nav.tab.home": "Inicio",
+  "hm.hello": "Assalamu alaikum, {name}",
+  "hm.helloNo": "Assalamu alaikum",
+  "hm.progress": "Progreso del hifz",
+  "hm.juz": "Yuz completos: {n} / {t}",
+  "hm.ayahs": "Aleyas memorizadas: {n}",
+  "hm.ringEmpty": "Marca lo que has memorizado para ver aquí tu progreso",
+  "hm.infoAria": "Cómo se cuenta",
+  "hm.ringInfo": "Viene de Progreso → Memorizado: las aleyas que tú mismo marcaste como memorizadas. Muestra qué parte de las {total} aleyas del Corán es y cuántos yuz están marcados por completo. La app nunca marca nada como memorizado por sí sola.",
+  "hm.openList": "Abrir la lista memorizada",
+  "hm.streak": "Días seguidos",
+  "hm.days": "{n} días",
+  "hm.today": "Hoy",
+  "hm.yesterday": "Ayer",
+  "hm.activity": "{m} min, {a} aleyas",
+  "hm.ayahTitle": "Aleya del día",
+  "hm.ayahRef": "Sura {name}, aleya {a}",
+  "hm.trans": "Traducción:",
+  "hm.sabqi": "Repaso sabqi",
+  "hm.manzil": "Repaso manzil",
+  "hm.listen": "Escuchar y repetir",
+  "hm.selfTest": "Autoprueba (de memoria)",
+  "hm.resume": "Continuar el sabaq de hoy",
+  "hm.place": "Sura {name}  |  aleyas {a} – {b}",
+  "hm.start": "Empezar el primer sabaq",
+  "hm.emptyTitle": "Aún no hay nada que repasar",
+  "hm.emptyBody": "Primero empieza un sabaq (lección nueva) y memoriza sus aleyas; luego tus repasos \"sabqi\" y \"manzil\" aparecerán aquí.",
+  "hm.doneTitle": "¡Alhamdulillah!",
+  "hm.doneBody": "El sabaq de hoy está hecho.",
+  "hm.next": "¿Y ahora qué?",
+  "hm.sabqiRow": "Repasar (sabqi)",
+  "hm.listenRow": "Escuchar y comparar",
+  "hm.testRow": "Hacer una autoprueba",
+  "hm.testSub": "Recita las aleyas de memoria",
+  "hm.pickSub": "Elegir una parte",
+  "s.aboutTr": "Traducción bengalí de la \"Aleya del día\" en Inicio: Muhiuddin Khan, del Tanzil Project (tanzil.net/trans); solo para uso no comercial."
  },
  "settings": {
   "recite.waitS": {
@@ -1366,6 +1402,11 @@
   },
   "adv.cellDark": {
    "label": "…rojo oscuro desde"
+  },
+  "view.name": {
+   "label": "Tu nombre",
+   "sub": "Nombre",
+   "help": "Se muestra en el saludo de Inicio; déjalo vacío para un saludo sin nombre"
   }
  },
  "groups": {

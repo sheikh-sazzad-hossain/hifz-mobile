@@ -60,6 +60,10 @@ export function createSettings({ store, schema, platform = 'M' }) {
   function clean(d, v, strict = false) {
     if (d.control === 'tog') return typeof v === 'boolean' ? v : undefined;
     if (d.control === 'info') return undefined;
+    if (d.control === 'txt') { // C20: free text (view.name): control characters and markup brackets dropped, trimmed, cut to max
+      if (typeof v !== 'string') return undefined;
+      return v.replace(/[\u0000-\u001F\u007F<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, d.max ?? 40);
+    }
     if (d.control === 'col') {
       if (!v || typeof v !== 'object') return undefined;
       const out = {};

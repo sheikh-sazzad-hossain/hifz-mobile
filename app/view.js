@@ -5,9 +5,9 @@ import { mix } from '../core/contrast.js';
 import { migrateTheme } from '../core/settings.js';
 
 const MIRROR = 'hifz-view';
-// C17 হিফজুন নূর: নূর লাইট (light) and নূর ডার্ক (dark); the old paper / sepia / night names are mapped by migrateTheme
-export const BG = { light: '#F5F7FB', dark: '#0B1426' };
-const SURFACE = { light: '#FFFFFF', dark: '#14213D' };
+// C17 হিফজুন নূর: নূর লাইট (light) and নূর ডার্ক (dark); the old paper / sepia / night names are mapped by migrateTheme. C20: green palette
+export const BG = { light: '#F6F9F5', dark: '#173F22' };
+const SURFACE = { light: '#FFFFFF', dark: '#1F4D2B' };
 const VIEW_IDS = ['view.theme', 'view.wordSet', 'view.wordStyle', 'view.customColors', 'view.arabicScale', 'view.lineGap', 'view.wordGap', 'view.uiScale', 'view.uiFont',
   'view.motion', 'view.intro', 'view.lang', 'view.timer', 'view.headStats', 'view.bnDigits', 'hide.style', 'hide.weakTint', 'hide.nextWord', 'hide.head', 'hide.ayahMarks', 'view.legend'];
 export const COLOR_KEYS = ['ok', 'bad', 'peek', 'pend', 'next', 'weak', 'listen'];

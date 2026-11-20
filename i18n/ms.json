@@ -1,7 +1,7 @@
 {
  "strings": {
   "intro.preparing": "Sedang bersiap…",
-  "nav.tab.recite": "Setoran",
+  "nav.tab.recite": "Hafazan",
   "nav.tab.test": "Ujian",
   "nav.tab.listen": "Dengar",
   "nav.tab.progress": "Kemajuan",
@@ -529,7 +529,43 @@
   "a.timerAria": "Masa setoran",
   "a.pauseAria": "Jeda",
   "a.lookAria": "Membaca / dari hafazan",
-  "a.hintAria": "Petunjuk"
+  "a.hintAria": "Petunjuk",
+  "nav.tab.home": "Utama",
+  "hm.hello": "Assalamualaikum, {name}",
+  "hm.helloNo": "Assalamualaikum",
+  "hm.progress": "Kemajuan hafazan",
+  "hm.juz": "Juzuk selesai: {n} / {t}",
+  "hm.ayahs": "Jumlah ayat dihafaz: {n}",
+  "hm.ringEmpty": "Tandakan yang sudah dihafaz supaya kemajuan dipapar di sini",
+  "hm.infoAria": "Cara ia dikira",
+  "hm.ringInfo": "Ini datang daripada Kemajuan → Hafazan: ayat yang anda tandakan sendiri sebagai hafaz. Ia menunjukkan berapa bahagian daripada {total} ayat al-Quran dan berapa juzuk yang ditanda penuh. Aplikasi tidak pernah menandakan hafazan sendiri.",
+  "hm.openList": "Buka senarai hafazan",
+  "hm.streak": "Hari berturut-turut",
+  "hm.days": "{n} hari",
+  "hm.today": "Hari ini",
+  "hm.yesterday": "Semalam",
+  "hm.activity": "{m} minit, {a} ayat",
+  "hm.ayahTitle": "Ayat hari ini",
+  "hm.ayahRef": "Surah {name}, ayat {a}",
+  "hm.trans": "Terjemahan:",
+  "hm.sabqi": "Ulang kaji sabqi",
+  "hm.manzil": "Ulang kaji manzil",
+  "hm.listen": "Dengar dan ulang",
+  "hm.selfTest": "Uji diri (daripada hafazan)",
+  "hm.resume": "Teruskan sabak hari ini",
+  "hm.place": "Surah {name}  |  ayat {a} – {b}",
+  "hm.start": "Mulakan sabak pertama",
+  "hm.emptyTitle": "Belum ada yang perlu diulang kaji",
+  "hm.emptyBody": "Mulakan dahulu satu sabak (pelajaran baharu) dan hafaz ayatnya; kemudian ulang kaji \"sabqi\" dan \"manzil\" anda dipapar di sini.",
+  "hm.doneTitle": "Alhamdulillah!",
+  "hm.doneBody": "Sabak hari ini selesai.",
+  "hm.next": "Apa seterusnya?",
+  "hm.sabqiRow": "Ulang kaji (sabqi)",
+  "hm.listenRow": "Dengar dan semak",
+  "hm.testRow": "Ambil uji diri",
+  "hm.testSub": "Baca ayat daripada hafazan",
+  "hm.pickSub": "Pilih bahagian",
+  "s.aboutTr": "Terjemahan Bengali \"Ayat hari ini\" di Utama: Muhiuddin Khan, daripada Tanzil Project (tanzil.net/trans); untuk kegunaan bukan komersial sahaja."
  },
  "settings": {
   "recite.waitS": {
@@ -861,12 +897,12 @@
    "help": "Mendengar dengan perlahan memudahkan menghafal",
    "sub": "Kelajuan dan ulangan",
    "options": {
+    "1": "1×",
+    "2": "2×",
     "0.5": "0.5×",
     "0.75": "0.75×",
-    "1": "1×",
     "1.25": "1.25×",
-    "1.5": "1.5×",
-    "2": "2×"
+    "1.5": "1.5×"
    }
   },
   "listen.repeatAyah": {
@@ -988,9 +1024,9 @@
   "goals.weekStart": {
    "label": "Minggu bermula pada hari",
    "options": {
-    "6": "Sabtu",
     "0": "Ahad",
-    "1": "Isnin"
+    "1": "Isnin",
+    "6": "Sabtu"
    }
   },
   "goals.streakMin": {
@@ -1045,10 +1081,10 @@
    "label": "Berapa sesi terkini dipaparkan",
    "sub": "Senarai",
    "options": {
+    "0": "Semua",
     "10": "10",
     "30": "30",
-    "100": "100",
-    "0": "Semua"
+    "100": "100"
    }
   },
   "history.weekDays": {
@@ -1251,10 +1287,10 @@
    "label": "Thread pemproses",
    "help": "Lebih banyak = lebih pantas, tetapi telefon mungkin menjadi panas",
    "options": {
-    "auto": "Automatik",
     "1": "1",
     "2": "2",
-    "4": "4"
+    "4": "4",
+    "auto": "Automatik"
    }
   },
   "device.slowPhone": {
@@ -1288,11 +1324,11 @@
    "label": "Rakaman terpanjang",
    "help": "Rakaman berhenti sendiri selepas ini",
    "options": {
+    "0": "Tiada had",
     "30": "30",
     "60": "60",
     "90": "90",
-    "120": "120 minit",
-    "0": "Tiada had"
+    "120": "120 minit"
    }
   },
   "adv.windowS": {
@@ -1366,6 +1402,11 @@
   },
   "adv.cellDark": {
    "label": "…merah tua daripada"
+  },
+  "view.name": {
+   "label": "Nama anda",
+   "sub": "Nama",
+   "help": "Dipapar dalam salam di Utama; biarkan kosong untuk salam tanpa nama"
   }
  },
  "groups": {

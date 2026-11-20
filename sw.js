@@ -4,7 +4,7 @@
    come from the cache first. Cross-origin requests (Quran.com audio and text) pass through untouched except
    that they may be kept for offline replay by the page itself (Cache Storage 'hifz-media-v1'). */
 const APP = 'hifz-app-v1';
-const IMMUTABLE = /\/(models|vendor|fonts)\//;
+const IMMUTABLE = /\/(models|vendor|fonts|data\/tr-[a-z]+-[a-z]+-v\d+)\//; // C20: data/tr-<lang>-<name>-vN/ (a translation, one file per surah) is cache-first too: a changed copy gets a new folder name
 
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', (e) => e.waitUntil(self.clients.claim()));

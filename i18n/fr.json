@@ -1,7 +1,7 @@
 {
  "strings": {
   "intro.preparing": "Préparation…",
-  "nav.tab.recite": "Réciter",
+  "nav.tab.recite": "Mémoriser",
   "nav.tab.test": "Test",
   "nav.tab.listen": "Écouter",
   "nav.tab.progress": "Progrès",
@@ -529,7 +529,43 @@
   "a.timerAria": "Durée de récitation",
   "a.pauseAria": "Pause",
   "a.lookAria": "Lecture / de mémoire",
-  "a.hintAria": "Indice"
+  "a.hintAria": "Indice",
+  "nav.tab.home": "Accueil",
+  "hm.hello": "Assalamou alaykoum, {name}",
+  "hm.helloNo": "Assalamou alaykoum",
+  "hm.progress": "Progrès du hifz",
+  "hm.juz": "Juz terminés : {n} / {t}",
+  "hm.ayahs": "Versets mémorisés : {n}",
+  "hm.ringEmpty": "Marquez ce que vous avez mémorisé pour voir votre progrès ici",
+  "hm.infoAria": "Comment c'est compté",
+  "hm.ringInfo": "Cela vient de Progrès → Mémorisé : les versets que vous avez vous-même marqués comme mémorisés. On voit quelle part des {total} versets du Coran cela représente, et combien de juz sont entièrement marqués. L'appli ne marque jamais rien comme mémorisé d'elle-même.",
+  "hm.openList": "Ouvrir la liste mémorisée",
+  "hm.streak": "Jours d'affilée",
+  "hm.days": "{n} jours",
+  "hm.today": "Aujourd'hui",
+  "hm.yesterday": "Hier",
+  "hm.activity": "{m} min, {a} versets",
+  "hm.ayahTitle": "Verset du jour",
+  "hm.ayahRef": "Sourate {name}, verset {a}",
+  "hm.trans": "Traduction :",
+  "hm.sabqi": "Révision sabqi",
+  "hm.manzil": "Révision manzil",
+  "hm.listen": "Écouter et répéter",
+  "hm.selfTest": "Auto-test (de mémoire)",
+  "hm.resume": "Continuer le sabaq du jour",
+  "hm.place": "Sourate {name}  |  versets {a} – {b}",
+  "hm.start": "Commencer le premier sabaq",
+  "hm.emptyTitle": "Rien à réviser pour l'instant",
+  "hm.emptyBody": "Commencez d'abord un sabaq (nouvelle leçon) et mémorisez ses versets ; vos révisions « sabqi » et « manzil » apparaîtront ici.",
+  "hm.doneTitle": "Al-hamdoulillah !",
+  "hm.doneBody": "Le sabaq du jour est fait.",
+  "hm.next": "Et maintenant ?",
+  "hm.sabqiRow": "Réviser (sabqi)",
+  "hm.listenRow": "Écouter et comparer",
+  "hm.testRow": "Faire un auto-test",
+  "hm.testSub": "Réciter les versets de mémoire",
+  "hm.pickSub": "Choisir une partie",
+  "s.aboutTr": "Traduction bengalie du « Verset du jour » de l'accueil : Muhiuddin Khan, du Tanzil Project (tanzil.net/trans) ; pour un usage non commercial uniquement."
  },
  "settings": {
   "recite.waitS": {
@@ -1366,6 +1402,11 @@
   },
   "adv.cellDark": {
    "label": "…rouge foncé à partir de"
+  },
+  "view.name": {
+   "label": "Votre nom",
+   "sub": "Nom",
+   "help": "Affiché dans la salutation de l'accueil ; laissez vide pour une salutation sans nom"
   }
  },
  "groups": {

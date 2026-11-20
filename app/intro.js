@@ -1,6 +1,6 @@
 /* Start-up animation "মুসহাফ খোলা" (C17, হিফজুন নূর look): a closed mushaf (the app icon's cover) opens from the RIGHT, then the
    pages turn ONE BY ONE and slowly (about 1.2 s each) and keep turning while the app is still loading. When the app is ready, the page
-   that is turning finishes, and the visible right-hand page morphs into the Quran-text area (.hz-text) of the তিলাওয়াত tab; then the
+   that is turning finishes, and the visible right-hand page morphs into the Home tab's “আজকের আয়াত” card (C20; on the মুখস্থ tab: its Quran-text area .hz-text); then the
    overlay is gone. Every page is blank (no Quran text). A CLASSIC script (not a module) loaded in <head>, so the overlay is on screen
    before the first paint of the app. All its CSS is injected from here. Transform / opacity only (plus the page colour of the morph).
    Public: globalThis.HifzIntro = { decide, nextStep, morphRect, localDay, resolveMotion, start, ready, label, gone, skip, freeze, resume }.
@@ -63,8 +63,8 @@
 
   /* the হিফজুন নূর palette: white / very light navy pages with green lines (light), navy pages (dark); the cover stays the icon's */
   var TH = {
-    light: { bg: '#F5F7FB', page: '#FFFFFF', page2: '#EEF2F9', edge: '#E1E7F0', line: '#A9E5A1', lineO: '.9', ink: '#4B5873', shade: 'rgba(19,41,91,.10)', drop: 'rgba(19,41,91,.18)', surface: '#FFFFFF' },
-    dark: { bg: '#0B1426', page: '#1C2C50', page2: '#14213D', edge: '#23335A', line: '#A9E5A1', lineO: '.45', ink: '#A8B5CC', shade: 'rgba(0,0,0,.22)', drop: 'rgba(0,0,0,.45)', surface: '#14213D' }
+    light: { bg: '#F6F9F5', page: '#FFFFFF', page2: '#EEF5EC', edge: '#DEE8DB', line: '#A8D5A2', lineO: '.9', ink: '#4A5E50', shade: 'rgba(20,60,30,.10)', drop: 'rgba(20,60,30,.18)', surface: '#E8F2FB' },
+    dark: { bg: '#173F22', page: '#285A34', page2: '#1F4D2B', edge: '#2F6239', line: '#93EEAC', lineO: '.45', ink: '#BFD5C3', shade: 'rgba(0,0,0,.22)', drop: 'rgba(0,0,0,.40)', surface: '#285A34' }
   };
   var CSS =
     '#hz-intro{position:fixed;inset:0;z-index:99999;overflow:hidden;display:grid;place-items:center;touch-action:none;cursor:pointer;contain:strict}' +
@@ -176,9 +176,9 @@
     }
     function morph() { // the visible right-hand page becomes the Quran-text area of the তিলাওয়াত tab
       if (state !== 'run') return;
-      // the Quran text (.hz-text) when a surah is on screen; before that (surah "auto", nothing recited yet) its card #hz-live
-      var tgtEl = document.querySelector('#panel-recite:not([hidden]) #hz-live .hz-text') || document.querySelector('#panel-recite:not([hidden]) #hz-live');
-      var rad = tgtEl && tgtEl.id === 'hz-live' ? '20px' : '16px';
+      // C20: the Home tab's "আজকের আয়াত" card; on the মুখস্থ tab (a #recite link) the Quran text (.hz-text), else its card #hz-live
+      var tgtEl = document.querySelector('#panel-home:not([hidden]) #hm-ayah') || document.querySelector('#panel-recite:not([hidden]) #hz-live .hz-text') || document.querySelector('#panel-recite:not([hidden]) #hz-live');
+      var rad = tgtEl && (tgtEl.id === 'hz-live' || tgtEl.id === 'hm-ayah') ? '20px' : '16px';
       var src = rectOf(rbase.style.visibility === 'visible' ? rbase : o.querySelector('.hi-inside'));
       var m = tgtEl && morphRect(src, rectOf(tgtEl), innerWidth, innerHeight);
       if (!m) { fade(300); return; }

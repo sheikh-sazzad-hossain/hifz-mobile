@@ -1,7 +1,7 @@
 {
  "strings": {
   "intro.preparing": "Preparando…",
-  "nav.tab.recite": "Recitar",
+  "nav.tab.recite": "Memorizar",
   "nav.tab.test": "Teste",
   "nav.tab.listen": "Ouvir",
   "nav.tab.progress": "Progresso",
@@ -529,7 +529,43 @@
   "a.timerAria": "Tempo de recitação",
   "a.pauseAria": "Pausar",
   "a.lookAria": "Leitura / de memória",
-  "a.hintAria": "Dica"
+  "a.hintAria": "Dica",
+  "nav.tab.home": "Início",
+  "hm.hello": "Assalamu alaikum, {name}",
+  "hm.helloNo": "Assalamu alaikum",
+  "hm.progress": "Progresso do hifz",
+  "hm.juz": "Juz concluídos: {n} / {t}",
+  "hm.ayahs": "Versículos memorizados: {n}",
+  "hm.ringEmpty": "Marque o que já memorizou para ver o progresso aqui",
+  "hm.infoAria": "Como é contado",
+  "hm.ringInfo": "Vem de Progresso → Memorizado: os versículos que você mesmo marcou como memorizados. Mostra que parte dos {total} versículos do Alcorão isso é, e quantos juz estão marcados por inteiro. O app nunca marca nada como memorizado por conta própria.",
+  "hm.openList": "Abrir a lista memorizada",
+  "hm.streak": "Dias seguidos",
+  "hm.days": "{n} dias",
+  "hm.today": "Hoje",
+  "hm.yesterday": "Ontem",
+  "hm.activity": "{m} min, {a} versículos",
+  "hm.ayahTitle": "Versículo do dia",
+  "hm.ayahRef": "Surata {name}, versículo {a}",
+  "hm.trans": "Tradução:",
+  "hm.sabqi": "Revisão sabqi",
+  "hm.manzil": "Revisão manzil",
+  "hm.listen": "Ouvir e repetir",
+  "hm.selfTest": "Autoteste (de memória)",
+  "hm.resume": "Continuar o sabaq de hoje",
+  "hm.place": "Surata {name}  |  versículos {a} – {b}",
+  "hm.start": "Começar o primeiro sabaq",
+  "hm.emptyTitle": "Ainda não há nada para revisar",
+  "hm.emptyBody": "Comece primeiro um sabaq (lição nova) e memorize os versículos; depois as suas revisões \"sabqi\" e \"manzil\" aparecerão aqui.",
+  "hm.doneTitle": "Alhamdulillah!",
+  "hm.doneBody": "O sabaq de hoje está feito.",
+  "hm.next": "E agora?",
+  "hm.sabqiRow": "Revisar (sabqi)",
+  "hm.listenRow": "Ouvir e comparar",
+  "hm.testRow": "Fazer um autoteste",
+  "hm.testSub": "Recite os versículos de memória",
+  "hm.pickSub": "Escolher uma parte",
+  "s.aboutTr": "Tradução bengali do \"Versículo do dia\" no Início: Muhiuddin Khan, do Tanzil Project (tanzil.net/trans); apenas para uso não comercial."
  },
  "settings": {
   "recite.waitS": {
@@ -1366,6 +1402,11 @@
   },
   "adv.cellDark": {
    "label": "…vermelho escuro a partir de"
+  },
+  "view.name": {
+   "label": "O seu nome",
+   "sub": "Nome",
+   "help": "Aparece na saudação do Início; deixe vazio para uma saudação sem nome"
   }
  },
  "groups": {

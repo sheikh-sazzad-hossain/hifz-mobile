@@ -1,6 +1,6 @@
 // Number and unit formats of the settings pages and the new modes (spec C3 §11.2). Digits go through bn().
 import { bn } from './bn.js';
-import { t, fill } from './i18n.js';
+import { t, fill, lang, intlLocale } from './i18n.js';
 
 export const num = (v) => bn(String(Math.round(v * 100) / 100)); // ১.৫  ০.৭৫  (at most 2 decimals)
 const UNIT_IDS = { s: 'u.s', min: 'u.min', words: 'u.words', ayah: 'u.ayah' }; // '{n} সেকেন্ড' ...
@@ -23,3 +23,12 @@ export { fill };
 export const easeOut = (k) => 1 - (1 - Math.min(1, Math.max(0, k))) ** 3;
 export const countAt = (target, k) => Math.round(target * easeOut(k)); // integer shown at progress k (0..1)
 export const COUNT_MS = 700;
+
+// C22: "53%" in the UI language: Intl percent sign + digits of the locale (ar "٥٣٪", fa "۵۳٪", bn "৫৩%" via bn()), direction marks removed so
+// the caller can put it in <bdi dir="ltr"> and it never reads "%٥٣" inside an RTL page. Bengali digits obey view.bnDigits.
+export function pctText(n, code = lang()) {
+  let out;
+  try { out = new Intl.NumberFormat(intlLocale(code), { style: 'percent' }).format(n / 100); } catch { out = `${n}%`; }
+  out = out.replace(/[‎‏؜‪-‮⁦-⁩]/g, '').replace(/ /g, '');
+  return code === 'bn' ? bn(out) : out;
+}

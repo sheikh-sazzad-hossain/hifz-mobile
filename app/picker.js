@@ -16,8 +16,8 @@ export function rangeIcon(name) {
 }
 
 const label = (p) => {
-  if (p.k === 'surah') return `${bn(p.s)}. ${quran.surahInfo(p.s).english}`;
-  if (p.k === 'ayahs') return `${quran.surahInfo(p.s).english} ${bn(p.from)}–${bn(p.to)}`;
+  if (p.k === 'surah') return `${bn(p.s)}. ${quran.surahLabel(p.s)}`;
+  if (p.k === 'ayahs') return `${quran.surahLabel(p.s)} ${bn(p.from)}–${bn(p.to)}`;
   if (p.k === 'juz') return t('pk.l.juz', { n: bn(p.n) });
   if (p.k === 'hizb') return t('pk.l.hizb', { n: bn(p.n) });
   if (p.k === 'rub') return t('pk.l.rub', { n: bn(p.n) });
@@ -41,7 +41,7 @@ export function openPicker({ spec = null, memorized = null, onUse, onSave = null
   const chip = (p, text) => `<button class="chip" aria-pressed="${has(p)}" data-p='${esc(JSON.stringify(p))}'>${esc(text)}</button>`;
 
   function body() {
-    if (unit === 'surah') return `<div class="pk-grid">${Array.from({ length: 114 }, (_, i) => chip({ k: 'surah', s: i + 1 }, `${bn(i + 1)}. ${quran.surahInfo(i + 1).english}`)).join('')}</div>`;
+    if (unit === 'surah') return `<div class="pk-grid">${Array.from({ length: 114 }, (_, i) => chip({ k: 'surah', s: i + 1 }, `${bn(i + 1)}. ${quran.surahLabel(i + 1)}`)).join('')}</div>`;
     if (unit === 'juz') return `<div class="pk-grid pk-5">${Array.from({ length: 30 }, (_, i) => chip({ k: 'juz', n: i + 1 }, bn(i + 1))).join('')}</div>`;
     if (unit === 'hizb') {
       return `<label class="pk-q"><input type="checkbox" data-q ${quarters ? 'checked' : ''}> ${esc(t('pk.quarters'))}</label><div class="pk-grid pk-5">${quarters
@@ -51,7 +51,7 @@ export function openPicker({ spec = null, memorized = null, onUse, onSave = null
       return `<p class="hp-note">${esc(t('pk.pageNote'))}</p><div class="pk-step">${t('pk.pageRange', { from: `<input type="number" class="fld" min="1" max="604" data-pg="from" value="${page.from}">`, to: `<input type="number" class="fld" min="1" max="604" data-pg="to" value="${page.to}">` })} <button class="btn" data-addpages>+</button></div>`
         + `<div class="pk-grid pk-5">${Array.from({ length: 31 }, (_, i) => `<button class="chip" data-pgrange="${i * 20 + 1}">${bn(i * 20 + 1)}–${bn(Math.min(604, i * 20 + 20))}</button>`).join('')}</div>`;
     }
-    return `<div class="pk-step"><select class="fld" data-ays>${Array.from({ length: 114 }, (_, i) => `<option value="${i + 1}"${ay.s === i + 1 ? ' selected' : ''}>${bn(i + 1)}. ${esc(quran.surahInfo(i + 1).english)}</option>`).join('')}</select>
+    return `<div class="pk-step"><select class="fld" data-ays>${Array.from({ length: 114 }, (_, i) => `<option value="${i + 1}"${ay.s === i + 1 ? ' selected' : ''}>${bn(i + 1)}. ${esc(quran.surahLabel(i + 1))}</option>`).join('')}</select>
       <input type="number" class="fld" min="1" data-ay="from" value="${ay.from}"> – <input type="number" class="fld" min="1" data-ay="to" value="${ay.to}"> <button class="btn" data-addays>+</button></div>`;
   }
   function draw() {

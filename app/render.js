@@ -12,7 +12,7 @@ const STATUS_CLASS = { correct: 'hz-ok', missed: 'hz-bad', hint: 'hz-hint', pend
 
 function surahTitle(surah, ayah) {
   const info = quran.surahInfo(surah);
-  let out = `<div class="hz-sura"><span class="hz-sura-ar">${esc(info.name)}</span><span class="hz-sura-bn">${esc(t('p.sura', { n: bn(surah), english: info.english }))}</span></div>`;
+  let out = `<div class="hz-sura"><span class="hz-sura-ar">${esc(info.name)}</span><span class="hz-sura-bn">${esc(t('p.sura', { n: bn(surah), english: quran.surahLabel(info.number) }))}</span></div>`;
   if (ayah === 1 && surah !== 1 && surah !== 9) {
     out += `<div class="hz-basmala">${esc((indopak.ayahWords(1, 1) ?? [quran.BASMALA]).join(' '))}</div>`;
   }
@@ -49,12 +49,12 @@ export const liveKey = (v) => (v.waiting ? 'wait' : v.items.map((it) => `${it.ti
 
 export function liveHead(v) {
   const h = v.head;
-  let head = `<div class="hz-head"><span class="hz-surah">${bn(h.surah)}. ${esc(h.english)} <span class="hz-surah-ar">${esc(h.arabic)}</span></span>`
+  let head = `<div class="hz-head"><span class="hz-surah">${bn(h.surah)}. ${esc(quran.surahLabel(h.surah))} <span class="hz-surah-ar">${esc(h.arabic)}</span></span>`
     + (v.auto ? `<span class="hz-auto">${esc(t('p.autoDetected'))}</span>` : '')
     + `<span class="hz-count">${esc(t('p.hCount', { a: bn(h.ayah), n: bn(h.ayahs) }))}</span><span class="hz-stat hz-ok">${esc(t('p.hOk', { n: bn(h.said) }))}</span>`
     + `${v.mistakeList ? `<button class="hz-stat hz-bad" data-act="mlist" data-tip="${esc(t('r.listTip'))}">${esc(t('p.hBad', { n: bn(h.missed) }))}</button>` : `<span class="hz-stat hz-bad">${esc(t('p.hBad', { n: bn(h.missed) }))}</span>`}<span class="hz-stat hz-hint">${esc(t('p.hHint', { n: bn(h.hints) }))}</span></div>`;
   if (v.stray) {
-    head += `<div class="hz-banner hz-stray">${esc(t('p.stray', { english: v.stray.english, ayah: bn(v.stray.ayah), current: v.stray.current }))}</div>`;
+    head += `<div class="hz-banner hz-stray">${esc(t('p.stray', { english: quran.surahLabel(v.stray.surah), ayah: bn(v.stray.ayah), current: v.stray.current }))}</div>`;
   }
   if (v.block) head += `<div class="hz-banner hz-block">${esc(t('r.blockBanner'))}</div>`;
   if (v.paused) {
@@ -97,7 +97,7 @@ export function overviewHtml(o) {
     const info = quran.surahInfo(st.surah);
     const acc = st.accuracy !== null ? `${bn(st.accuracy)}%` : '—';
     const strip = st.strip.map((c) => `<i class="${cellClass(c.level, c.recited)}" data-ayah="${c.first}" data-to="${c.last}" title="${esc(cellTip(c.first, c.last, c.words, c.recited))}"></i>`).join('');
-    return `<tr class="hp-go" data-surah="${st.surah}"><td><b>${bn(st.surah)}. ${esc(info.english)}</b> <span class="hp-ar">${esc(info.name)}</span></td>`
+    return `<tr class="hp-go" data-surah="${st.surah}"><td><b>${bn(st.surah)}. ${esc(quran.surahLabel(info.number))}</b> <span class="hp-ar">${esc(info.name)}</span></td>`
       + `<td><span class="hp-chip ${st.grade.cls}">${st.grade.label}</span></td><td class="hp-n">${acc}</td>`
       + `<td><div class="hp-bar"><i style="width:${st.pct}%"></i></div><small>${esc(t('p.ayahCount', { a: bn(st.covered), n: bn(st.ayahs) }))}</small></td>`
       + `<td><div class="hp-strip">${strip}</div><small>${esc(t('p.weakCount', { n: bn(st.weak) }))}</small></td><td class="hp-n">${bn(st.sessions)}</td><td>${when(st.last)}</td></tr>`;
@@ -110,7 +110,7 @@ export function overviewHtml(o) {
     const info = quran.surahInfo(s.surah);
     const a = s.ayahs;
     const span = a.length === 1 ? bn(a[0]) : bn(`${a[0]}–${a.at(-1)}`);
-    return `<tr class="hp-go" data-surah="${s.surah}"><td>${when(s.start)}</td><td>${esc(info.english)} <small>(${span})</small></td>`
+    return `<tr class="hp-go" data-surah="${s.surah}"><td>${when(s.start)}</td><td>${esc(quran.surahLabel(info.number))} <small>(${span})</small></td>`
       + `<td><span class="hp-mode hp-m-${s.mode}">${modes[s.mode]}</span></td><td class="hp-n">${bn(s.words)}</td><td class="hp-n">${bn(s.accuracy)}%</td>`
       + `<td class="hp-n hp-red">${bn(s.missed)}</td><td class="hp-n hp-violet">${bn(s.stuck)}</td><td>${duration(s.seconds)}</td></tr>`;
   }).join('');

@@ -56,6 +56,7 @@ export function createSettingsUi({ root, settings, ctx }) {
       return `<select class="st-select" data-act="sel" data-id="${id}">${opts.map((o) => `<option value='${esc(JSON.stringify(o.v))}'${JSON.stringify(o.v) === JSON.stringify(v) ? ' selected' : ''}>${esc(o.label ?? o.v)}</option>`).join('')}</select>`;
     }
     if (d.control === 'col') return colorEditor();
+    if (d.control === 'txt') return `<input class="fld st-txt" type="text" data-act="txt" data-id="${id}" maxlength="${d.max ?? 40}" value="${esc(v ?? '')}" aria-label="${esc(d.label)}" autocomplete="off">`;
     return '';
   }
   function sliderHtml(d, v) {
@@ -167,7 +168,7 @@ export function createSettingsUi({ root, settings, ctx }) {
     return `${bar(t('s.title'))}<div class="st-body"><input class="st-search" type="search" placeholder="${esc(t('s.search'))}" data-act="search" aria-label="${esc(t('s.search'))}">`
       + `<div id="st-results" hidden></div><div id="st-main">${presetCard('recite', schema.presets.recite.label)}<div class="st-toc">${rows}</div>`
       + `<div class="st-foot"><button class="btn" data-act="export">${esc(t('s.export'))}</button><button class="btn" data-act="import">${esc(t('s.import'))}</button><button class="btn btn-red" data-act="resetall">${esc(t('s.allReset'))}</button></div>`
-      + `<div class="st-where">${esc(t('s.where'))}</div></div><input type="file" accept="application/json,.json" id="st-file" hidden></div>`;
+      + `<div class="st-where">${esc(t('s.where'))}</div><div class="st-where st-credit">${esc(t('s.aboutTr'))}</div></div><input type="file" accept="application/json,.json" id="st-file" hidden></div>`;
   }
 
   function sectionHtml(gid) {
@@ -285,6 +286,7 @@ export function createSettingsUi({ root, settings, ctx }) {
     const el = e.target;
     if (el.dataset?.act === 'sld') { afterChange(); }
     else if (el.dataset?.act === 'sel') { if (change(el.dataset.id, parse(el.value))) afterChange(); }
+    else if (el.dataset?.act === 'txt') { if (change(el.dataset.id, el.value)) afterChange(); }
     else if (el.dataset?.act === 'col') rerenderRows();
     else if (el.id === 'st-file' && el.files[0]) {
       try {

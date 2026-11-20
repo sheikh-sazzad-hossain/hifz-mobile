@@ -1,7 +1,7 @@
 {
  "strings": {
   "intro.preparing": "Hazırlanıyor…",
-  "nav.tab.recite": "Okuma",
+  "nav.tab.recite": "Ezber",
   "nav.tab.test": "Sınav",
   "nav.tab.listen": "Dinle",
   "nav.tab.progress": "İlerleme",
@@ -529,7 +529,43 @@
   "a.timerAria": "Okuma süresi",
   "a.pauseAria": "Duraklat",
   "a.lookAria": "Okuma / ezberden",
-  "a.hintAria": "İpucu"
+  "a.hintAria": "İpucu",
+  "nav.tab.home": "Ana sayfa",
+  "hm.hello": "Esselâmü aleyküm, {name}",
+  "hm.helloNo": "Esselâmü aleyküm",
+  "hm.progress": "Hıfz ilerlemesi",
+  "hm.juz": "Tamamlanan cüz: {n} / {t}",
+  "hm.ayahs": "Ezberlenen ayet: {n}",
+  "hm.ringEmpty": "Ezberlediklerinizi işaretleyin, ilerleme burada görünsün",
+  "hm.infoAria": "Nasıl sayılıyor",
+  "hm.ringInfo": "Bu, İlerleme → Ezber listesinden gelir: kendinizin ezberlendi diye işaretlediği ayetler. Kur'an'ın {total} ayetinin ne kadarı olduğunu ve kaç cüzün tamamen işaretli olduğunu gösterir. Uygulama kendi başına hiçbir şeyi ezberlendi diye işaretlemez.",
+  "hm.openList": "Ezber listesini aç",
+  "hm.streak": "Seri gün",
+  "hm.days": "{n} gün",
+  "hm.today": "Bugün",
+  "hm.yesterday": "Dün",
+  "hm.activity": "{m} dk, {a} ayet",
+  "hm.ayahTitle": "Günün ayeti",
+  "hm.ayahRef": "{name} suresi, {a}. ayet",
+  "hm.trans": "Meal:",
+  "hm.sabqi": "Sabki tekrarı",
+  "hm.manzil": "Menzil tekrarı",
+  "hm.listen": "Dinle ve tekrarla",
+  "hm.selfTest": "Kendini sına (ezberden)",
+  "hm.resume": "Bugünkü sebaka devam et",
+  "hm.place": "{name} suresi  |  ayet {a} – {b}",
+  "hm.start": "İlk sebakı başlat",
+  "hm.emptyTitle": "Henüz tekrar edilecek bir şey yok",
+  "hm.emptyBody": "Önce bir sebak (yeni ders) başlatın ve ayetlerini ezberleyin; sonra \"sabki\" ve \"menzil\" tekrarlarınız burada görünür.",
+  "hm.doneTitle": "Elhamdülillah!",
+  "hm.doneBody": "Bugünkü sebak tamamlandı.",
+  "hm.next": "Şimdi ne yapalım?",
+  "hm.sabqiRow": "Tekrar et (sabki)",
+  "hm.listenRow": "Dinle ve karşılaştır",
+  "hm.testRow": "Kendini sına",
+  "hm.testSub": "Ayetleri ezberden oku",
+  "hm.pickSub": "Bir bölüm seç",
+  "s.aboutTr": "Ana sayfadaki \"Günün ayeti\"nin Bengalce meali: Muhiuddin Khan, Tanzil Project'ten (tanzil.net/trans); yalnızca ticari olmayan kullanım için."
  },
  "settings": {
   "recite.waitS": {
@@ -861,12 +897,12 @@
    "help": "Yavaş dinlemek ezberlemeyi kolaylaştırır",
    "sub": "Hız ve tekrar",
    "options": {
+    "1": "1×",
+    "2": "2×",
     "0.5": "0,5×",
     "0.75": "0,75×",
-    "1": "1×",
     "1.25": "1,25×",
-    "1.5": "1,5×",
-    "2": "2×"
+    "1.5": "1,5×"
    }
   },
   "listen.repeatAyah": {
@@ -988,9 +1024,9 @@
   "goals.weekStart": {
    "label": "Hafta hangi gün başlasın",
    "options": {
-    "6": "Cumartesi",
     "0": "Pazar",
-    "1": "Pazartesi"
+    "1": "Pazartesi",
+    "6": "Cumartesi"
    }
   },
   "goals.streakMin": {
@@ -1045,10 +1081,10 @@
    "label": "Kaç son oturum gösterilsin",
    "sub": "Listeler",
    "options": {
+    "0": "Hepsi",
     "10": "10",
     "30": "30",
-    "100": "100",
-    "0": "Hepsi"
+    "100": "100"
    }
   },
   "history.weekDays": {
@@ -1251,10 +1287,10 @@
    "label": "İşlemci iş parçacıkları",
    "help": "Daha fazla = daha hızlı, ama telefon ısınabilir",
    "options": {
-    "auto": "Otomatik",
     "1": "1",
     "2": "2",
-    "4": "4"
+    "4": "4",
+    "auto": "Otomatik"
    }
   },
   "device.slowPhone": {
@@ -1288,11 +1324,11 @@
    "label": "En uzun kayıt",
    "help": "Kayıt bundan sonra kendiliğinden durur",
    "options": {
+    "0": "Sınır yok",
     "30": "30",
     "60": "60",
     "90": "90",
-    "120": "120 dakika",
-    "0": "Sınır yok"
+    "120": "120 dakika"
    }
   },
   "adv.windowS": {
@@ -1366,6 +1402,11 @@
   },
   "adv.cellDark": {
    "label": "…koyu kırmızı olur"
+  },
+  "view.name": {
+   "label": "Adınız",
+   "sub": "Ad",
+   "help": "Ana sayfadaki selamda görünür; boş bırakırsanız selam adsız olur"
   }
  },
  "groups": {

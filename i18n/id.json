@@ -1,7 +1,7 @@
 {
  "strings": {
   "intro.preparing": "Menyiapkan…",
-  "nav.tab.recite": "Setoran",
+  "nav.tab.recite": "Hafalan",
   "nav.tab.test": "Tes",
   "nav.tab.listen": "Dengar",
   "nav.tab.progress": "Kemajuan",
@@ -529,7 +529,43 @@
   "a.timerAria": "Waktu setoran",
   "a.pauseAria": "Jeda",
   "a.lookAria": "Membaca / dari hafalan",
-  "a.hintAria": "Petunjuk"
+  "a.hintAria": "Petunjuk",
+  "nav.tab.home": "Beranda",
+  "hm.hello": "Assalamu'alaikum, {name}",
+  "hm.helloNo": "Assalamu'alaikum",
+  "hm.progress": "Kemajuan hafalan",
+  "hm.juz": "Juz selesai: {n} / {t}",
+  "hm.ayahs": "Total ayat dihafal: {n}",
+  "hm.ringEmpty": "Tandai yang sudah dihafal agar kemajuan tampil di sini",
+  "hm.infoAria": "Cara menghitungnya",
+  "hm.ringInfo": "Ini berasal dari Kemajuan → Hafalan: ayat yang Anda tandai sendiri sebagai hafal. Ditunjukkan berapa bagian dari {total} ayat Al-Qur'an dan berapa juz yang ditandai penuh. Aplikasi tidak pernah menandai hafalan sendiri.",
+  "hm.openList": "Buka daftar hafalan",
+  "hm.streak": "Hari berturut-turut",
+  "hm.days": "{n} hari",
+  "hm.today": "Hari ini",
+  "hm.yesterday": "Kemarin",
+  "hm.activity": "{m} menit, {a} ayat",
+  "hm.ayahTitle": "Ayat hari ini",
+  "hm.ayahRef": "Surah {name}, ayat {a}",
+  "hm.trans": "Terjemahan:",
+  "hm.sabqi": "Murajaah sabqi",
+  "hm.manzil": "Murajaah manzil",
+  "hm.listen": "Dengar dan ulangi",
+  "hm.selfTest": "Uji diri (dari hafalan)",
+  "hm.resume": "Lanjutkan sabak hari ini",
+  "hm.place": "Surah {name}  |  ayat {a} – {b}",
+  "hm.start": "Mulai sabak pertama",
+  "hm.emptyTitle": "Belum ada yang perlu dimurajaah",
+  "hm.emptyBody": "Mulailah dulu sebuah sabak (pelajaran baru) dan hafalkan ayatnya; setelah itu murajaah \"sabqi\" dan \"manzil\" Anda tampil di sini.",
+  "hm.doneTitle": "Alhamdulillah!",
+  "hm.doneBody": "Sabak hari ini selesai.",
+  "hm.next": "Apa selanjutnya?",
+  "hm.sabqiRow": "Murajaah (sabqi)",
+  "hm.listenRow": "Dengar dan cocokkan",
+  "hm.testRow": "Ikuti uji diri",
+  "hm.testSub": "Bacakan ayat dari hafalan",
+  "hm.pickSub": "Pilih bagian",
+  "s.aboutTr": "Terjemahan Bengali \"Ayat hari ini\" di Beranda: Muhiuddin Khan, dari Tanzil Project (tanzil.net/trans); hanya untuk penggunaan nonkomersial."
  },
  "settings": {
   "recite.waitS": {
@@ -861,12 +897,12 @@
    "help": "Mendengar dengan lambat memudahkan menghafal",
    "sub": "Kecepatan dan pengulangan",
    "options": {
+    "1": "1×",
+    "2": "2×",
     "0.5": "0,5×",
     "0.75": "0,75×",
-    "1": "1×",
     "1.25": "1,25×",
-    "1.5": "1,5×",
-    "2": "2×"
+    "1.5": "1,5×"
    }
   },
   "listen.repeatAyah": {
@@ -988,9 +1024,9 @@
   "goals.weekStart": {
    "label": "Minggu dimulai pada hari",
    "options": {
-    "6": "Sabtu",
     "0": "Minggu",
-    "1": "Senin"
+    "1": "Senin",
+    "6": "Sabtu"
    }
   },
   "goals.streakMin": {
@@ -1045,10 +1081,10 @@
    "label": "Berapa sesi terbaru ditampilkan",
    "sub": "Daftar",
    "options": {
+    "0": "Semua",
     "10": "10",
     "30": "30",
-    "100": "100",
-    "0": "Semua"
+    "100": "100"
    }
   },
   "history.weekDays": {
@@ -1251,10 +1287,10 @@
    "label": "Thread prosesor",
    "help": "Lebih banyak = lebih cepat, tetapi ponsel bisa panas",
    "options": {
-    "auto": "Otomatis",
     "1": "1",
     "2": "2",
-    "4": "4"
+    "4": "4",
+    "auto": "Otomatis"
    }
   },
   "device.slowPhone": {
@@ -1288,11 +1324,11 @@
    "label": "Rekaman terpanjang",
    "help": "Rekaman berhenti sendiri setelah waktu ini",
    "options": {
+    "0": "Tanpa batas",
     "30": "30",
     "60": "60",
     "90": "90",
-    "120": "120 menit",
-    "0": "Tanpa batas"
+    "120": "120 menit"
    }
   },
   "adv.windowS": {
@@ -1366,6 +1402,11 @@
   },
   "adv.cellDark": {
    "label": "…merah tua dari"
+  },
+  "view.name": {
+   "label": "Nama Anda",
+   "sub": "Nama",
+   "help": "Tampil di salam pada Beranda; kosongkan untuk salam tanpa nama"
   }
  },
  "groups": {

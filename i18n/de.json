@@ -1,7 +1,7 @@
 {
  "strings": {
   "intro.preparing": "Wird vorbereitet…",
-  "nav.tab.recite": "Rezitieren",
+  "nav.tab.recite": "Auswendig",
   "nav.tab.test": "Test",
   "nav.tab.listen": "Hören",
   "nav.tab.progress": "Fortschritt",
@@ -529,7 +529,43 @@
   "a.timerAria": "Rezitationszeit",
   "a.pauseAria": "Pause",
   "a.lookAria": "Lesen / auswendig",
-  "a.hintAria": "Hinweis"
+  "a.hintAria": "Hinweis",
+  "nav.tab.home": "Start",
+  "hm.hello": "Assalamu alaikum, {name}",
+  "hm.helloNo": "Assalamu alaikum",
+  "hm.progress": "Hifz-Fortschritt",
+  "hm.juz": "Fertige Dschuz: {n} / {t}",
+  "hm.ayahs": "Auswendig gelernte Verse: {n}",
+  "hm.ringEmpty": "Markiere, was du auswendig kannst, dann siehst du hier den Fortschritt",
+  "hm.infoAria": "Wie das gezählt wird",
+  "hm.ringInfo": "Das kommt aus Fortschritt → Auswendig: die Verse, die du selbst als auswendig gelernt markiert hast. Es zeigt, welcher Anteil der {total} Verse des Korans das ist und wie viele Dschuz ganz markiert sind. Die App markiert nie von selbst etwas als auswendig.",
+  "hm.openList": "Auswendig-Liste öffnen",
+  "hm.streak": "Tage in Folge",
+  "hm.days": "{n} Tage",
+  "hm.today": "Heute",
+  "hm.yesterday": "Gestern",
+  "hm.activity": "{m} Min., {a} Verse",
+  "hm.ayahTitle": "Vers des Tages",
+  "hm.ayahRef": "Sure {name}, Vers {a}",
+  "hm.trans": "Übersetzung:",
+  "hm.sabqi": "Sabqi-Wiederholung",
+  "hm.manzil": "Manzil-Wiederholung",
+  "hm.listen": "Hören und wiederholen",
+  "hm.selfTest": "Selbsttest (auswendig)",
+  "hm.resume": "Heutigen Sabaq fortsetzen",
+  "hm.place": "Sure {name}  |  Verse {a} – {b}",
+  "hm.start": "Ersten Sabaq beginnen",
+  "hm.emptyTitle": "Noch nichts zu wiederholen",
+  "hm.emptyBody": "Beginne zuerst einen Sabaq (neue Lektion) und lerne seine Verse auswendig; dann erscheinen hier deine „Sabqi“- und „Manzil“-Wiederholungen.",
+  "hm.doneTitle": "Alhamdulillah!",
+  "hm.doneBody": "Der heutige Sabaq ist geschafft.",
+  "hm.next": "Was jetzt?",
+  "hm.sabqiRow": "Wiederholen (Sabqi)",
+  "hm.listenRow": "Hören und vergleichen",
+  "hm.testRow": "Selbsttest machen",
+  "hm.testSub": "Die Verse auswendig vortragen",
+  "hm.pickSub": "Teil wählen",
+  "s.aboutTr": "Bengalische Übersetzung des „Vers des Tages“ auf Start: Muhiuddin Khan, vom Tanzil Project (tanzil.net/trans); nur für nichtkommerzielle Nutzung."
  },
  "settings": {
   "recite.waitS": {
@@ -1366,6 +1402,11 @@
   },
   "adv.cellDark": {
    "label": "…dunkelrot ab"
+  },
+  "view.name": {
+   "label": "Dein Name",
+   "sub": "Name",
+   "help": "Erscheint im Gruß auf Start; leer lassen für einen Gruß ohne Namen"
   }
  },
  "groups": {

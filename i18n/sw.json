@@ -1,7 +1,7 @@
 {
  "strings": {
   "intro.preparing": "Inaandaa…",
-  "nav.tab.recite": "Soma",
+  "nav.tab.recite": "Hifdhi",
   "nav.tab.test": "Jaribio",
   "nav.tab.listen": "Sikiliza",
   "nav.tab.progress": "Maendeleo",
@@ -529,7 +529,43 @@
   "a.timerAria": "Muda wa kisomo",
   "a.pauseAria": "Sitisha",
   "a.lookAria": "Kusoma / kichwani",
-  "a.hintAria": "Kidokezo"
+  "a.hintAria": "Kidokezo",
+  "nav.tab.home": "Nyumbani",
+  "hm.hello": "Assalamu alaikum, {name}",
+  "hm.helloNo": "Assalamu alaikum",
+  "hm.progress": "Maendeleo ya hifdhi",
+  "hm.juz": "Juzuu zilizokamilika: {n} / {t}",
+  "hm.ayahs": "Aya zilizohifadhiwa: {n}",
+  "hm.ringEmpty": "Weka alama ulichohifadhi ili maendeleo yaonekane hapa",
+  "hm.infoAria": "Inavyohesabiwa",
+  "hm.ringInfo": "Hii inatoka Maendeleo → Zilizohifadhiwa: aya ulizoziwekea alama mwenyewe kuwa umezihifadhi. Inaonyesha ni sehemu gani ya aya {total} za Qur'ani, na juzuu ngapi zimewekewa alama kamili. Programu haiweki alama ya kuhifadhi yenyewe.",
+  "hm.openList": "Fungua orodha ya hifdhi",
+  "hm.streak": "Siku mfululizo",
+  "hm.days": "Siku {n}",
+  "hm.today": "Leo",
+  "hm.yesterday": "Jana",
+  "hm.activity": "Dak {m}, aya {a}",
+  "hm.ayahTitle": "Aya ya leo",
+  "hm.ayahRef": "Sura {name}, aya {a}",
+  "hm.trans": "Tafsiri:",
+  "hm.sabqi": "Marudio ya sabqi",
+  "hm.manzil": "Marudio ya manzil",
+  "hm.listen": "Sikiliza na urudie",
+  "hm.selfTest": "Jipime (kwa kuhifadhi)",
+  "hm.resume": "Endelea na sabaq ya leo",
+  "hm.place": "Sura {name}  |  aya {a} – {b}",
+  "hm.start": "Anza sabaq ya kwanza",
+  "hm.emptyTitle": "Bado hakuna cha kurudia",
+  "hm.emptyBody": "Kwanza anza sabaq (somo jipya) na uhifadhi aya zake; kisha marudio yako ya \"sabqi\" na \"manzil\" yataonekana hapa.",
+  "hm.doneTitle": "Alhamdulillah!",
+  "hm.doneBody": "Sabaq ya leo imekamilika.",
+  "hm.next": "Nini sasa?",
+  "hm.sabqiRow": "Rudia (sabqi)",
+  "hm.listenRow": "Sikiliza na ulinganishe",
+  "hm.testRow": "Jipime",
+  "hm.testSub": "Soma aya kwa kuhifadhi",
+  "hm.pickSub": "Chagua sehemu",
+  "s.aboutTr": "Tafsiri ya Kibengali ya \"Aya ya leo\" kwenye Nyumbani: Muhiuddin Khan, kutoka Tanzil Project (tanzil.net/trans); kwa matumizi yasiyo ya kibiashara tu."
  },
  "settings": {
   "recite.waitS": {
@@ -1366,6 +1402,11 @@
   },
   "adv.cellDark": {
    "label": "…nyekundu iliyokolea kuanzia"
+  },
+  "view.name": {
+   "label": "Jina lako",
+   "sub": "Jina",
+   "help": "Linaonyeshwa kwenye salamu ya Nyumbani; acha wazi kwa salamu bila jina"
   }
  },
  "groups": {

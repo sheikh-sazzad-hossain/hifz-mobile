@@ -31,11 +31,12 @@ import { createMemorizedUi } from './memorized-ui.js';
 import { createTestUi } from './test-ui.js';
 import { createListenUi } from './listen.js';
 import { createGoalsUi } from './goals-ui.js';
+import { createHomeUi } from './home-ui.js';
 
 const params = new URLSearchParams(location.search);
 const S = { asr: null, store: null, history: null, feedback: null, review: null, fol: null, mic: null, running: false, look: false,
   settings: null, clips: new Map(), recNames: new Set(), recCache: new Map(), lastVersion: -1, lastErrors: 0, lastStray: null, lastPrompt: null,
-  prompting: null, lastIdx: null, started: null, tab: 'recite', weakSurah: null, ready: false };
+  prompting: null, lastIdx: null, started: null, tab: 'home', weakSurah: null, ready: false };
 window.hifz = S;
 
 
@@ -50,7 +51,7 @@ function renderHelp() {
 }
 
 function buildStatic() {
-  $('hero-ico').innerHTML = ICONS.book;
+  $('hero-ico').innerHTML = ICONS.bookOpen;
   $('theme-btn').innerHTML = ICONS.moon;
   $('gear-btn').innerHTML = ICONS.gear;
   $('rec').innerHTML = `<span class="mic">${ICONS.mic}</span><span class="stop">${ICONS.stop}</span>`;
@@ -60,7 +61,7 @@ function buildStatic() {
   const surah = $('s-surah');
   const keep = surah.value;
   surah.innerHTML = `<option value="0">${esc(t('a.autoSurah'))}</option>`
-    + Array.from({ length: 114 }, (_, i) => { const n = quran.surahInfo(i + 1); return `<option value="${i + 1}">${n.number}. ${esc(n.english)} — ${esc(n.name)}</option>`; }).join('');
+    + Array.from({ length: 114 }, (_, i) => { const n = quran.surahInfo(i + 1); return `<option value="${i + 1}">${n.number}. ${esc(quran.surahLabel(n.number))} — ${esc(n.name)}</option>`; }).join('');
   surah.value = keep || '0';
   fillWait();
 }
@@ -99,6 +100,7 @@ function onSettingsChange(ids) {
   if (ids.includes('history.clearStreak') || ids.includes('recite.waitS')) renderHelp();
   if (ids.includes('recite.waitS')) { fillWait(); if (S.fol) S.fol.waitS = S.settings.get('recite.waitS'); }
   if (ids.includes('view.lang')) changeLanguage();
+  if (ids.includes('view.name') || ids.some((id) => id.startsWith('goals.'))) S.homeUi?.draw();
   if (ids.includes('view.theme')) S.settingsUi?.refresh();
   if (ids.some((id) => id.startsWith('view.') || id.startsWith('hide.'))) S.fol && render(true);
 }
@@ -110,7 +112,7 @@ async function changeLanguage() { // the UI is redrawn at once, no reload
   S.history && (S.fol ? render(true) : null);
   fillWait(); renderHelp(); renderLegend(); applyLook(); setRecButton(S.running);
   $('hz-t-hint').dataset.tip = t('r.hintTip');
-  if (S.history) { drawToday(); buildProgressSeg(); refreshProgress(); }
+  if (S.history) { drawToday(); buildProgressSeg(); refreshProgress(); S.homeUi?.draw(); }
   if (S.tab === 'test' && !S.testUi?.active()) S.testUi.show();
   if (S.tab === 'listen') S.listenUi?.show();
   S.settingsUi?.refresh();
@@ -142,6 +144,18 @@ function applyStartAt() { // recite.startAt: auto | last | continue (spec C3 §4
   $('s-last').value = a2;
 }
 window.hifzApplyStartAt = applyStartAt;
+
+// C20: a home card opens মুখস্থ with a stretch chosen (sabaq to resume, sabqi / manzil review)
+function goRecite({ s, a1, a2 }) {
+  if (S.running || S.testLive) { toast(t('nav.busy')); return; }
+  $('s-surah').value = String(s);
+  $('l-first').hidden = $('l-last').hidden = false;
+  $('s-first').value = a1;
+  $('s-last').value = a2;
+  makeFollower();
+  render(true);
+  selectTab('recite');
+}
 
 function surahChoice() {
   const s = Number($('s-surah').value);
@@ -364,7 +378,7 @@ async function stop() {
     const e0 = entries[0];
     S.ui = { ...S.ui, lastRecite: { s: e0.surah, a1: e0.ayahs[0], a2: e0.ayahs.at(-1), lastAyah: e0.ayahs.at(-1) } };
     S.store.set('ui', S.ui);
-    const parts = entries.map((e) => t('a.entry', { english: quran.surahInfo(e.surah).english, words: bn(e.words), acc: bn(e.accuracy), missed: bn(e.missed), stuck: bn(e.stuck) })).join('; ');
+    const parts = entries.map((e) => t('a.entry', { english: quran.surahLabel(e.surah), words: bn(e.words), acc: bn(e.accuracy), missed: bn(e.missed), stuck: bn(e.stuck) })).join('; ');
     $('hz-final').innerHTML = `<div class="hz-done">${esc(t('a.saved', { parts }))}</div>`;
   }
   refreshProgress();
@@ -377,7 +391,10 @@ async function wakeLock(on) { // device.keepAwake: Screen Wake Lock while record
   } catch { /* not allowed: ignore */ }
 }
 
-function setLive() { document.documentElement.dataset.live = (S.running && !S.fol?.paused) || S.testLive ? '1' : '0'; }
+function setLive() {
+  document.documentElement.dataset.live = (S.running && !S.fol?.paused) || S.testLive ? '1' : '0';
+  document.body.classList.toggle('hz-busy', !!(S.running || S.testLive)); // C20: the bottom navigation steps aside while a recording or a test runs (switching tabs is blocked then anyway)
+}
 
 async function togglePause() {
   const fol = S.fol;
@@ -586,12 +603,13 @@ function refreshProgress() {
   $('hp-extra').innerHTML = S.goalsUi.summaryHtml();
   $('hp-recent').innerHTML = S.goalsUi.recentHtml();
   drawToday();
+  S.homeUi?.draw();
   S.goalsUi.afterSave();
   if (S.pview && S.pview !== 'overview') showProgressView(S.pview);
   const practised = S.history.surahStats().map((x) => x.surah);
   const sel = $('hp-surah');
   if (!practised.includes(S.weakSurah)) S.weakSurah = practised[0] ?? null;
-  sel.innerHTML = practised.map((n) => { const i = quran.surahInfo(n); return `<option value="${n}">${n}. ${esc(i.english)} — ${esc(i.name)}</option>`; }).join('');
+  sel.innerHTML = practised.map((n) => { const i = quran.surahInfo(n); return `<option value="${n}">${n}. ${esc(quran.surahLabel(i.number))} — ${esc(i.name)}</option>`; }).join('');
   if (S.weakSurah) sel.value = String(S.weakSurah);
   renderWeak();
   S.store.blobNames('recordings').then(async (names) => {
@@ -619,7 +637,7 @@ function showAyahs(surah, from, to) {
   return true;
 }
 
-const TABS = [['recite', 'book'], ['test', 'card'], ['listen', 'speaker'], ['progress', 'chart']]; // টেস্ট and শোনা join here in their phases
+const TABS = [['home', 'home'], ['recite', 'book'], ['test', 'card'], ['listen', 'headphones'], ['progress', 'chart']]; // C20: bottom navigation, হোম first
 const tabLabel = (id) => t(`nav.tab.${id}`);
 function buildTabs() {
   const nav = $('tabs');
@@ -674,6 +692,7 @@ function selectTab(tab, { instant = false } = {}) {
     placeRibbon();
     if (!S.running && !S.testLive) $('hz-timer').hidden = true; // the timer belongs to a recording in progress
     if (tab === 'progress') refreshProgress();
+    if (tab === 'home') S.homeUi?.draw();
     $('hz-player').hidden = tab !== 'listen';
     if (tab === 'listen') S.listenUi?.show(); else if (prev === 'listen') S.listenUi?.stop();
     if (tab === 'test') { S.testUi?.show(); $('hz-t-pause').disabled = false; $('hz-t-next').hidden = false; } else $('hz-t-next').hidden = true;
@@ -716,6 +735,7 @@ async function boot() {
   const sw = await registerServiceWorker();
   if (sw.reloading) return;
   quran.setData(await loadJson('quran.json'));
+  quran.setBnNames(await loadJson('surah-names-bn.json').catch(() => []));
   setStrings(await loadJson('ui-strings.json'));
   buildStatic();
   alafasy.setData(await loadJson('alafasy_words.json'));
@@ -758,13 +778,14 @@ async function boot() {
   });
   S.review = createReview({ history: S.history, feedback: S.feedback, getRecording: (n) => S.recCache.get(n), persist: () => S.store.set('index', data.index) });
 
-  S.memUi = createMemorizedUi({ el: $('pg-memorized'), store: S.store, history: S.history, settings: S.settings, onChange: () => {} });
+  S.memUi = createMemorizedUi({ el: $('pg-memorized'), store: S.store, history: S.history, settings: S.settings, onChange: () => S.homeUi?.draw() });
   S.testUi = createTestUi({ S, t, esc, toast, sheet, confirmDlg, followerDeps, openMicSource, errorPopup, tone, endMark: (s, a) => indopak.endMark(s, a),
     setLive: (on) => { S.testLive = on; $('rec').classList.toggle('is-on', on); setLive(); }, saveUi: (o) => { S.ui = { ...S.ui, ...o }; S.store.set('ui', S.ui); },
     goSettings: (g) => S.settingsUi.open(g), goProgress: (v) => { selectTab('progress'); showProgressView(v); }, refreshProgress: () => refreshProgress(), refreshTests: () => { if (S.pview === 'tests') $('pg-tests').innerHTML = S.goalsUi.testsHtml(); } });
   S.listenUi = createListenUi({ S, t, esc, toast, sheet, confirmDlg });
   S.settingsUi.ctx = null;
   S.goalsUi = createGoalsUi({ S });
+  S.homeUi = createHomeUi({ S, goRecite, selectTab, openMemorized: () => { selectTab('progress'); showProgressView('memorized'); } });
   S.progressRefresh = () => refreshProgress();
   S.pview = 'overview';
   buildProgressSeg();
@@ -785,7 +806,7 @@ async function boot() {
   render(true);
   wireEvents();
   setInterval(() => { try { render(); } catch (e) { console.error(e); } }, 150);
-  selectTab('recite', { instant: true });
+  selectTab('home', { instant: true });
   S.tabsReady = true;
   placeRibbon();
   routeFromHash();
@@ -900,13 +921,13 @@ document.addEventListener('keydown', (e) => {
     const s = Number(m.dataset.es);
     const a = Number(m.dataset.ea);
     const last = quran.surahInfo(s).ayahs;
-    const sh = sheet(`<h2>${esc(quran.surahInfo(s).english)} · ${esc(t('fmt.ayah1', { a: bn(a) }))}</h2><div class="btn-row"><button class="btn" data-g="listen">${esc(t('r.menu.listen'))}</button><button class="btn" data-g="test">${esc(t('r.menu.test'))}</button></div>`);
+    const sh = sheet(`<h2>${esc(quran.surahLabel(s))} · ${esc(t('fmt.ayah1', { a: bn(a) }))}</h2><div class="btn-row"><button class="btn" data-g="listen">${esc(t('r.menu.listen'))}</button><button class="btn" data-g="test">${esc(t('r.menu.test'))}</button></div>`);
     sh.el.addEventListener('click', (e) => {
       const g = e.target.closest('[data-g]')?.dataset.g;
       if (!g) return;
       const spec = { parts: [{ k: 'ayahs', s, from: a, to: last }] };
       sh.close();
-      if (g === 'listen') { selectTab('listen'); S.listenUi.startFromHook(spec); S.listenUi.stop(); S.listenUi.show(); } else { selectTab('test'); S.testUi.setSpec(spec, `${quran.surahInfo(s).english} ${bn(a)}–${bn(last)}`); }
+      if (g === 'listen') { selectTab('listen'); S.listenUi.startFromHook(spec); S.listenUi.stop(); S.listenUi.show(); } else { selectTab('test'); S.testUi.setSpec(spec, `${quran.surahLabel(s)} ${bn(a)}–${bn(last)}`); }
     });
   };
   document.addEventListener('pointerdown', (e) => { const m = e.target.closest('[data-es]'); if (m && !S.running && !S.testLive) timer = setTimeout(() => open(m), 550); });
@@ -936,7 +957,7 @@ window.hifzTest = {
 };
 // #settings or #settings/<group> in the address opens the settings page (screenshots, shortcuts)
 function routeFromHash() {
-  const m = /^#\/?(settings|recite|progress|test|listen)(?:\/(\w+))?/.exec(location.hash);
+  const m = /^#\/?(settings|home|recite|progress|test|listen)(?:\/(\w+))?/.exec(location.hash);
   if (!m) return;
   if (m[1] === 'settings') S.settingsUi.open(m[2]); else selectTab(m[1], { instant: true });
 }

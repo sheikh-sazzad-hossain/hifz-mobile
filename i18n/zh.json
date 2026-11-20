@@ -529,7 +529,43 @@
   "a.timerAria": "背诵时间",
   "a.pauseAria": "暂停",
   "a.lookAria": "阅读 / 凭记忆",
-  "a.hintAria": "提示"
+  "a.hintAria": "提示",
+  "nav.tab.home": "首页",
+  "hm.hello": "色兰，{name}",
+  "hm.helloNo": "色兰",
+  "hm.progress": "背记进度",
+  "hm.juz": "已完成卷数：{n} / {t}",
+  "hm.ayahs": "已背经文：{n} 节",
+  "hm.ringEmpty": "标记已背内容后，这里会显示进度",
+  "hm.infoAria": "如何计算",
+  "hm.ringInfo": "数据来自 进度 → 已背会：您自己标记为已背的经文。显示它占《古兰经》{total} 节经文的比例，以及有几卷被完整标记。应用从不自行标记任何经文为已背。",
+  "hm.openList": "打开已背清单",
+  "hm.streak": "连续天数",
+  "hm.days": "{n} 天",
+  "hm.today": "今天",
+  "hm.yesterday": "昨天",
+  "hm.activity": "{m} 分钟，{a} 节",
+  "hm.ayahTitle": "今日经文",
+  "hm.ayahRef": "{name} 章，第 {a} 节",
+  "hm.trans": "译文：",
+  "hm.sabqi": "近期复习（Sabqi）",
+  "hm.manzil": "旧课复习（Manzil）",
+  "hm.listen": "听并跟读",
+  "hm.selfTest": "自测（凭记忆）",
+  "hm.resume": "继续今天的新课",
+  "hm.place": "{name} 章  |  第 {a} – {b} 节",
+  "hm.start": "开始第一课",
+  "hm.emptyTitle": "还没有需要复习的内容",
+  "hm.emptyBody": "先开始一课（新课）并背下其中的经文，之后这里会显示您的“Sabqi”和“Manzil”复习。",
+  "hm.doneTitle": "赞颂真主！",
+  "hm.doneBody": "今天的新课已完成。",
+  "hm.next": "接下来做什么？",
+  "hm.sabqiRow": "复习（Sabqi）",
+  "hm.listenRow": "听并核对",
+  "hm.testRow": "做一次自测",
+  "hm.testSub": "凭记忆背诵经文",
+  "hm.pickSub": "选择部分",
+  "s.aboutTr": "首页“今日经文”的孟加拉语译文：Muhiuddin Khan，来自 Tanzil Project（tanzil.net/trans）；仅限非商业用途。"
  },
  "settings": {
   "recite.waitS": {
@@ -1366,6 +1402,11 @@
   },
   "adv.cellDark": {
    "label": "…深红的起点"
+  },
+  "view.name": {
+   "label": "您的名字",
+   "sub": "名字",
+   "help": "显示在首页的问候中；留空则问候不带名字"
   }
  },
  "groups": {

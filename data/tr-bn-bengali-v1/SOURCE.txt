@@ -1,0 +1,17 @@
+Bengali translation by Muhiuddin Khan (bn.bengali), from the Tanzil Project: https://tanzil.net/trans/
+Tanzil terms: the translations are for non-commercial purposes only; if used otherwise, permission from the translator or the publisher is needed.
+This app (free, non-commercial) shows one ayah per day on the Home page with this credit (Settings, bottom).
+One file per surah (NNN.json = array of ayah texts). Files are cache-first in sw.js: give a changed copy a new folder name.
+
+Original header:
+# --------------------------------------------------------------------
+#
+#  Quran Translation
+#  Name: মুহিউদ্দীন খান
+#  Translator: Muhiuddin Khan
+#  Language: Bengali
+#  ID: bn.bengali
+#  Last Update: April 30, 2011
+#  Source: Tanzil.net
+#
+# --------------------------------------------------------------------

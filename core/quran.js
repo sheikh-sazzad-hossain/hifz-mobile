@@ -1,6 +1,7 @@
 // Quran text and the word-comparison rules: a line-by-line port of the laptop app's quran.py.
 // The text (data/quran.json) is given by setData(json) so the same module runs in the page and in Node.
 import { SequenceMatcher } from './difflib.js';
+import { lang } from './i18n.js';
 
 export const ISTIADHA = '\u0623\u064e\u0639\u064f\u0648\u0630\u064f \u0628\u0650\u0627\u0644\u0644\u064e\u0651\u0647\u0650 \u0645\u0650\u0646\u064e \u0627\u0644\u0634\u064e\u0651\u064a\u0652\u0637\u064e\u0627\u0646\u0650 \u0627\u0644\u0631\u064e\u0651\u062c\u0650\u064a\u0645\u0650';
 export const BASMALA = '\u0628\u0650\u0633\u0652\u0645\u0650 \u0627\u0644\u0644\u064e\u0651\u0647\u0650 \u0627\u0644\u0631\u064e\u0651\u062d\u0652\u0645\u064e\u0670\u0646\u0650 \u0627\u0644\u0631\u064e\u0651\u062d\u0650\u064a\u0645\u0650';
@@ -138,6 +139,11 @@ export function surahInfo(surah) {
   const s = surahs()[surah - 1];
   return { number: surah, name: s.name, english: s.en, ayahs: s.a.length };
 }
+
+// C22: surah name shown in the UI: Bengali spelling (data/surah-names-bn.json) in the Bengali UI, the transliteration (surahInfo.english) elsewhere.
+let BN_NAMES = [];
+export const setBnNames = (list) => { BN_NAMES = Array.isArray(list) ? list : []; };
+export const surahLabel = (surah, code = lang()) => (code === 'bn' && BN_NAMES[surah - 1]) || surahInfo(surah).english;
 
 const JOINED = new Set(['يا', 'ويا', 'فيا', 'ها']);
 

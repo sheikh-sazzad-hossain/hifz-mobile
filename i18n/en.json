@@ -1,7 +1,7 @@
 {
  "strings": {
   "intro.preparing": "Getting ready…",
-  "nav.tab.recite": "Recite",
+  "nav.tab.recite": "Memorise",
   "nav.tab.test": "Test",
   "nav.tab.listen": "Listen",
   "nav.tab.progress": "Progress",
@@ -529,7 +529,43 @@
   "a.timerAria": "Recitation time",
   "a.pauseAria": "Pause",
   "a.lookAria": "Reading / from memory",
-  "a.hintAria": "Hint"
+  "a.hintAria": "Hint",
+  "nav.tab.home": "Home",
+  "hm.hello": "Assalamu alaikum, {name}",
+  "hm.helloNo": "Assalamu alaikum",
+  "hm.progress": "Hifz progress",
+  "hm.juz": "Juz completed: {n} / {t}",
+  "hm.ayahs": "Ayahs memorised: {n}",
+  "hm.ringEmpty": "Mark what you have memorised to see your progress here",
+  "hm.infoAria": "How this is counted",
+  "hm.ringInfo": "This comes from Progress → Memorised: the ayahs you marked as memorised yourself. It shows what share of the Quran's {total} ayahs that is, and how many juz are fully marked. The app never marks anything as memorised by itself.",
+  "hm.openList": "Open the memorised list",
+  "hm.streak": "Day streak",
+  "hm.days": "{n} days",
+  "hm.today": "Today",
+  "hm.yesterday": "Yesterday",
+  "hm.activity": "{m} min, {a} ayahs",
+  "hm.ayahTitle": "Ayah of the day",
+  "hm.ayahRef": "Surah {name}, ayah {a}",
+  "hm.trans": "Translation:",
+  "hm.sabqi": "Sabqi review",
+  "hm.manzil": "Manzil review",
+  "hm.listen": "Listen and repeat",
+  "hm.selfTest": "Self-test (from memory)",
+  "hm.resume": "Continue today's sabaq",
+  "hm.place": "Surah {name}  |  ayahs {a} – {b}",
+  "hm.start": "Start your first sabaq",
+  "hm.emptyTitle": "Nothing to review yet",
+  "hm.emptyBody": "First start a sabaq (new lesson) and memorise its ayahs; then your \"sabqi\" and \"manzil\" reviews will show here.",
+  "hm.doneTitle": "Alhamdulillah!",
+  "hm.doneBody": "Today's sabaq is done.",
+  "hm.next": "What next?",
+  "hm.sabqiRow": "Review (sabqi)",
+  "hm.listenRow": "Listen and check",
+  "hm.testRow": "Take a self-test",
+  "hm.testSub": "Recite the ayahs from memory",
+  "hm.pickSub": "Choose a part",
+  "s.aboutTr": "Bengali translation of \"Ayah of the day\" on Home: Muhiuddin Khan, from the Tanzil Project (tanzil.net/trans); for non-commercial use only."
  },
  "settings": {
   "recite.waitS": {
@@ -861,12 +897,12 @@
    "help": "Listening slowly makes memorising easier",
    "sub": "Speed and repeats",
    "options": {
+    "1": "1×",
+    "2": "2×",
     "0.5": "0.5×",
     "0.75": "0.75×",
-    "1": "1×",
     "1.25": "1.25×",
-    "1.5": "1.5×",
-    "2": "2×"
+    "1.5": "1.5×"
    }
   },
   "listen.repeatAyah": {
@@ -988,9 +1024,9 @@
   "goals.weekStart": {
    "label": "The week starts on",
    "options": {
-    "6": "Saturday",
     "0": "Sunday",
-    "1": "Monday"
+    "1": "Monday",
+    "6": "Saturday"
    }
   },
   "goals.streakMin": {
@@ -1045,10 +1081,10 @@
    "label": "How many recent sessions to show",
    "sub": "Lists",
    "options": {
+    "0": "All",
     "10": "10",
     "30": "30",
-    "100": "100",
-    "0": "All"
+    "100": "100"
    }
   },
   "history.weekDays": {
@@ -1251,10 +1287,10 @@
    "label": "Processor threads",
    "help": "More = faster, but the phone may get hot",
    "options": {
-    "auto": "Automatic",
     "1": "1",
     "2": "2",
-    "4": "4"
+    "4": "4",
+    "auto": "Automatic"
    }
   },
   "device.slowPhone": {
@@ -1288,11 +1324,11 @@
    "label": "Longest recording",
    "help": "The recording stops by itself after this",
    "options": {
+    "0": "No limit",
     "30": "30",
     "60": "60",
     "90": "90",
-    "120": "120 minutes",
-    "0": "No limit"
+    "120": "120 minutes"
    }
   },
   "adv.windowS": {
@@ -1366,6 +1402,11 @@
   },
   "adv.cellDark": {
    "label": "…dark red from"
+  },
+  "view.name": {
+   "label": "Your name",
+   "sub": "Name",
+   "help": "Shown in the greeting on Home; leave empty for a greeting without a name"
   }
  },
  "groups": {

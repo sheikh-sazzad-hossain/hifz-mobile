@@ -64,7 +64,7 @@ export function createListenUi(ctx) {
         const hidden = mode === 'hide' || (mode === 'reveal' && !L.played.has(`${s}:${a}:${i}`));
         return `<span class="${hidden ? 'hz-hid' : ''}" data-ls="${s}" data-la="${a}" data-lu="${i}">${esc(u.text)}</span>`;
       }).join(' ');
-      return `${a === 1 ? `<div class="hz-sura"><span class="hz-sura-ar">${esc(quran.surahInfo(s).name)}</span><span class="hz-sura-bn">${esc(t('p.sura', { n: bn(s), english: quran.surahInfo(s).english }))}</span></div>` : ''}${spans} <span class="hz-end" data-ls="${s}" data-la="${a}" data-lu="-1">${esc(indopak.endMark(s, a))}</span> `;
+      return `${a === 1 ? `<div class="hz-sura"><span class="hz-sura-ar">${esc(quran.surahInfo(s).name)}</span><span class="hz-sura-bn">${esc(t('p.sura', { n: bn(s), english: quran.surahLabel(s) }))}</span></div>` : ''}${spans} <span class="hz-end" data-ls="${s}" data-la="${a}" data-lu="-1">${esc(indopak.endMark(s, a))}</span> `;
     }).join('');
     el.innerHTML = `<div class="ls-bar card"><button class="btn" data-lb="pick">${esc(t('l.pick'))}</button><span class="hp-note">${esc(parts)}</span><button class="btn" data-lb="off">${esc(t('l.offTitle'))}</button></div>
       <div id="ls-text" class="card"><div class="hz-text" data-live="0">${text || ''}</div></div><div class="hz-footer"></div>`;
@@ -149,7 +149,7 @@ export function createListenUi(ctx) {
     L.status = 'playing';
     L.statusText = step.basmala ? '﷽' : `${t('l.playing', { a: bn(step.a), k: bn(step.k), n: bn(step.n) })}${opts().repeatRange === 0 ? ` · ${t('l.round', { r: bn(step.round) })}` : ''}`;
     if ('mediaSession' in navigator && !step.basmala) {
-      navigator.mediaSession.metadata = new MediaMetadata({ title: `${quran.surahInfo(step.s).english} · ${t('fmt.ayah1', { a: bn(step.a) })}`, artist: t('l.artist'), album: t('app.title') });
+      navigator.mediaSession.metadata = new MediaMetadata({ title: `${quran.surahLabel(step.s)} · ${t('fmt.ayah1', { a: bn(step.a) })}`, artist: t('l.artist'), album: t('app.title') });
     }
   }
 
@@ -225,7 +225,7 @@ export function createListenUi(ctx) {
         const sz = sizes.get(s);
         if (have && sz) total += sz;
         const state = have ? t('l.offHave') : sz && sz > maxB() ? t('l.offTooBig') : '';
-        html.push(`<div class="mm-row"><div class="mm-main">${esc(t('l.offRow', { n: bn(s), english: quran.surahInfo(s).english, size: sz ? size(sz) : '…' }))}<br><small>${esc(state)}</small></div>${have ? `<button class="btn btn-red" data-del="${s}">${esc(t('l.offDel'))}</button>` : sz && sz > maxB() ? '' : `<button class="btn" data-get="${s}">${esc(t('l.offGet'))}</button>`}</div>`);
+        html.push(`<div class="mm-row"><div class="mm-main">${esc(t('l.offRow', { n: bn(s), english: quran.surahLabel(s), size: sz ? size(sz) : '…' }))}<br><small>${esc(state)}</small></div>${have ? `<button class="btn btn-red" data-del="${s}">${esc(t('l.offDel'))}</button>` : sz && sz > maxB() ? '' : `<button class="btn" data-get="${s}">${esc(t('l.offGet'))}</button>`}</div>`);
       }
       list.innerHTML = html.join('');
       sh.el.querySelector('[data-total]').textContent = t('l.offTotal', { mb: bn((total / 1048576).toFixed(1)) });
@@ -235,7 +235,7 @@ export function createListenUi(ctx) {
     sh.el.addEventListener('click', async (e) => {
       const g = e.target.closest('[data-get]'); const d = e.target.closest('[data-del]'); const all = e.target.closest('[data-all]');
       if (g) { const s = Number(g.dataset.get); g.textContent = t('l.offGetting', { p: bn(0) }); const ok = await media.cacheSurah(alafasy.surahUrl(s), (got, tot) => { g.textContent = t('l.offGetting', { p: bn(tot ? Math.round((100 * got) / tot) : 0) }); }, maxB()); if (!ok) toast(t('l.error')); paint(); }
-      else if (d) { const s = Number(d.dataset.del); if (await confirmDlg(t('l.offDelQ', { english: quran.surahInfo(s).english }))) { await media.uncacheSurah(alafasy.surahUrl(s)); paint(); } }
+      else if (d) { const s = Number(d.dataset.del); if (await confirmDlg(t('l.offDelQ', { english: quran.surahLabel(s) }))) { await media.uncacheSurah(alafasy.surahUrl(s)); paint(); } }
       else if (all) {
         const todo = rows.filter((s) => (sizes.get(s) ?? 0) <= maxB());
         const mb = todo.reduce((n, s) => n + (sizes.get(s) ?? 0), 0) / 1048576;
